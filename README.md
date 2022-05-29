@@ -42,4 +42,4 @@ Generated API Clients.
 - https://ventmere.github.io/amazon-sp-api/amazon-sp-vendor-invoices/index.html
 - https://ventmere.github.io/amazon-sp-api/amazon-sp-vendor-orders/index.html
 - https://ventmere.github.io/amazon-sp-api/amazon-sp-vendor-shipments/index.html
-- https://ventmere.github.io/amazon-sp-api/amazon-sp-vendor-transaction-status"
+- https://ventmere.github.io/amazon-sp-api/amazon-sp-vendor-transaction-status/index.html

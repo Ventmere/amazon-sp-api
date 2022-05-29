@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ConditionType","ConditionType : Indicates the condition of the item. Possible values: New, Used, Collectible, Refurbished, Club. Indicates the condition of the item. Possible values: New, Used, Collectible, Refurbished, Club."]]});

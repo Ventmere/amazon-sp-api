@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateDigitalAccessKeyRequest","CreateDigitalAccessKeyRequest : The request schema for the createDigitalAccessKey operation."]]});

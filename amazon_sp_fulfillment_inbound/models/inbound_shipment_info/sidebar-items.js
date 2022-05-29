@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InboundShipmentInfo","InboundShipmentInfo : Information about the seller’s inbound shipments. Returned by the listInboundShipments operation."]]});

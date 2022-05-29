@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CompressionAlgorithm","If present, the feed document contents are compressed using the indicated algorithm."]],"struct":[["FeedDocument","FeedDocument : Information required for the feed document."]]});

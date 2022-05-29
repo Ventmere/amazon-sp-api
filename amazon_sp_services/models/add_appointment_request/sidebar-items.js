@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AddAppointmentRequest","AddAppointmentRequest : Input for add appointment operation."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["MarketplaceTaxInfo","MarketplaceTaxInfo : Tax information about the marketplace."]]});

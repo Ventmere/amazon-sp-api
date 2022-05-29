@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InboundShipmentPlan","InboundShipmentPlan : Inbound shipment information used to create an inbound shipment. Returned by the createInboundShipmentPlan operation."]]});

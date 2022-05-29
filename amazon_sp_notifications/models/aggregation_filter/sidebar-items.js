@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AggregationFilter","AggregationFilter : Use this filter to select the aggregation time period at which to send notifications (e.g. limit to one notification every five minutes for high frequency notifications)."]]});

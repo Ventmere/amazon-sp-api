@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RejectionReason","RejectionReason : The reason for rejecting the order’s regulated information. Not present if the order isn’t rejected."]]});

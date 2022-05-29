@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ProductAdsPaymentEvent","ProductAdsPaymentEvent : A Sponsored Products payment event."]]});

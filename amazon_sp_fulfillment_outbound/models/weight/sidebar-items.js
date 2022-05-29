@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Unit","The unit of weight."]],"struct":[["Weight","Weight : The weight."]]});

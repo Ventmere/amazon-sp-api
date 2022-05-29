@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RegulatedInformation","RegulatedInformation : The regulated information collected during purchase and used to verify the order."]]});

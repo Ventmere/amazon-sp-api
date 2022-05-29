@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["IncludedFeeDetail","IncludedFeeDetail : The type of fee, fee amount, and other details."]]});

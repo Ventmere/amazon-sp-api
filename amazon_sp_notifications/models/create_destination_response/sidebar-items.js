@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateDestinationResponse","CreateDestinationResponse : The response schema for the createDestination operation."]]});

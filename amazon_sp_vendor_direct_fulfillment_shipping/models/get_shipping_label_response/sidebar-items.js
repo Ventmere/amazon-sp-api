@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetShippingLabelResponse","GetShippingLabelResponse : The response schema for the getShippingLabel operation."]]});

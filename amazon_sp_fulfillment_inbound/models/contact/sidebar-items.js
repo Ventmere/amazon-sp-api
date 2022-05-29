@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Contact","Contact : Contact information for the person in the seller’s organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment."]]});

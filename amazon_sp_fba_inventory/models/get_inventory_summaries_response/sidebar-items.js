@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetInventorySummariesResponse","GetInventorySummariesResponse : The Response schema."]]});

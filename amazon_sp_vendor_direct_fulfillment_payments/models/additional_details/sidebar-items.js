@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Type","The type of the additional information provided by the selling party."]],"struct":[["AdditionalDetails","AdditionalDetails : A field where selling party can provide additional information for tax related or any other purposes."]]});

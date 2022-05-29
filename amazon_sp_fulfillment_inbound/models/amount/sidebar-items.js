@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Amount","Amount : The monetary value."]]});

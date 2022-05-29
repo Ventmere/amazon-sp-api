@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Name","The type of fee."]],"struct":[["Fee","Fee : Fee type and cost."]]});

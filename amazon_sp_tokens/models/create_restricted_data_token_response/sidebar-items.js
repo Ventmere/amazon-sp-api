@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateRestrictedDataTokenResponse","CreateRestrictedDataTokenResponse : The response schema for the createRestrictedDataToken operation."]]});

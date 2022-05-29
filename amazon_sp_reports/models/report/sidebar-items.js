@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ProcessingStatus","The processing status of the report."]],"struct":[["Report","Report : Detailed information about the report."]]});

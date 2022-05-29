@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StandardImageCaptionBlock","StandardImageCaptionBlock : The A+ Content standard image and caption block."]]});

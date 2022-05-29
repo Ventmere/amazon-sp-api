@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StandardImageTextCaptionBlock","StandardImageTextCaptionBlock : The A+ Content standard image and text block, with a related caption. The caption may not display on all devices."]]});

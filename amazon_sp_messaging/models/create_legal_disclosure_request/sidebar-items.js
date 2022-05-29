@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateLegalDisclosureRequest","CreateLegalDisclosureRequest : The request schema for the createLegalDisclosure operation."]]});

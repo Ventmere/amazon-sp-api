@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SubmitInvoicesResponse","SubmitInvoicesResponse : The response schema for the submitInvoices operation."]]});

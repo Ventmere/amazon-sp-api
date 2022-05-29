@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ShipmentItem","ShipmentItem : An item of a shipment, refund, guarantee claim, or chargeback."]]});

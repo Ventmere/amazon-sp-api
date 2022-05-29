@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LabelCustomization","LabelCustomization : Custom text for shipping labels."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetPrepInstructionsResponse","GetPrepInstructionsResponse : The response schema for the getPrepInstructions operation."]]});

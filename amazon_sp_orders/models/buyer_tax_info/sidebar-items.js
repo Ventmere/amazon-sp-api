@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BuyerTaxInfo","BuyerTaxInfo : Tax information about the buyer."]]});

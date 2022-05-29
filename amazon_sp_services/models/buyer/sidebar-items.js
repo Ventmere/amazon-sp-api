@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Buyer","Buyer : Information about the buyer."]]});

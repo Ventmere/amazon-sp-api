@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ListHandoverSlotsRequest","ListHandoverSlotsRequest : The request schema for the `listHandoverSlots` operation."]]});

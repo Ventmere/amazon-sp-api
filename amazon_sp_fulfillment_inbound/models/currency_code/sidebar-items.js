@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CurrencyCode","CurrencyCode : The currency code. The currency code."]]});

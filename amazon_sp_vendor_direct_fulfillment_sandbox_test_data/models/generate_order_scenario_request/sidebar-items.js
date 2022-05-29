@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GenerateOrderScenarioRequest","GenerateOrderScenarioRequest : The request body for the generateOrderScenarios operation."]]});

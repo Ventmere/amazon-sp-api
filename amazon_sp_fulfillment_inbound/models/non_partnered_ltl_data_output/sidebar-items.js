@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["NonPartneredLtlDataOutput","NonPartneredLtlDataOutput : Information returned by Amazon about a Less Than Truckload/Full Truckload (LTL/FTL) shipment shipped by a carrier that has not partnered with Amazon."]]});

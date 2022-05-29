@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["VoidTransportResponse","VoidTransportResponse : The response schema for the voidTransport operation."]]});

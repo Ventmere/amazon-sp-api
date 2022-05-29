@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteDestinationResponse","DeleteDestinationResponse : The response schema for the deleteDestination operation."]]});

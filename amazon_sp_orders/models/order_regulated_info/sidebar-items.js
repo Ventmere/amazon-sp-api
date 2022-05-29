@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["OrderRegulatedInfo","OrderRegulatedInfo : The order’s regulated information along with its verification status."]]});

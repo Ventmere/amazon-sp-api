@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ReservedQuantity","ReservedQuantity : The quantity of reserved inventory."]]});

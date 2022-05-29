@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateFulfillmentOrderRequest","CreateFulfillmentOrderRequest : The request body schema for the createFulfillmentOrder operation."]]});

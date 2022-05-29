@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["UpdateVerificationStatusErrorResponse","UpdateVerificationStatusErrorResponse : The error response schema for the UpdateVerificationStatus operation."]]});

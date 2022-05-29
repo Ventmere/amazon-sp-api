@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TransactionReference","TransactionReference : A GUID assigned by Amazon to identify this transaction."]]});

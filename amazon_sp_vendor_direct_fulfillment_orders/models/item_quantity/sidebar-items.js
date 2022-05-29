@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["UnitOfMeasure","Unit of measure for the acknowledged quantity."]],"struct":[["ItemQuantity","ItemQuantity : Details of quantity ordered."]]});

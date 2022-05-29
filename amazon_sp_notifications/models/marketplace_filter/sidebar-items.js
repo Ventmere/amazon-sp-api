@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["MarketplaceFilter","MarketplaceFilter : Use this event filter to customize your subscription to send notifications for only the specified marketplaceId’s."]]});

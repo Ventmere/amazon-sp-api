@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["BarcodeInstruction","BarcodeInstruction : Labeling requirements for the item. For more information about FBA labeling requirements, see the Seller Central Help for your marketplace. Labeling requirements for the item. For more information about FBA labeling requirements, see the Seller Central Help for your marketplace."]]});

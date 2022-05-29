@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Address","Address : Address of the party."]]});

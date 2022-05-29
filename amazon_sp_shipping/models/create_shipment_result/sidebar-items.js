@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateShipmentResult","CreateShipmentResult : The payload schema for the createShipment operation."]]});

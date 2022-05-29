@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Dimension","Dimension : Individual dimension value of an Amazon catalog item or item package."]]});

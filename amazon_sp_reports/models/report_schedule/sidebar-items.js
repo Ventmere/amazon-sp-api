@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ReportSchedule","ReportSchedule : Detailed information about a report schedule."]]});

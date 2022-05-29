@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ScheduledPackageId","ScheduledPackageId : Identifies the scheduled package to be updated."]]});

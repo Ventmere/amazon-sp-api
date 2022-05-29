@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["error",""],["inventory_update",""],["item_details",""],["item_quantity",""],["party_identification",""],["submit_inventory_update_request",""],["submit_inventory_update_response",""],["transaction_reference",""]]});

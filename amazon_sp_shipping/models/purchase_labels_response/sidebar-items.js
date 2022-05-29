@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PurchaseLabelsResponse","PurchaseLabelsResponse : The response schema for the purchaseLabels operation."]]});

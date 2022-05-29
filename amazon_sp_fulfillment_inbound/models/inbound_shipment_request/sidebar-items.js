@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InboundShipmentRequest","InboundShipmentRequest : The request schema for an inbound shipment."]]});

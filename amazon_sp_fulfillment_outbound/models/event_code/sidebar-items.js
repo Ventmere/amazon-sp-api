@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["EventCode","EventCode : The event code for the delivery event. The event code for the delivery event."]]});

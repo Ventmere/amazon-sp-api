@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ReturnAuthorization","ReturnAuthorization : Return authorization information for items accepted for return."]]});

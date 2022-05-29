@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CurrentStatus","CurrentStatus : The current delivery status of the package. The current delivery status of the package."]]});

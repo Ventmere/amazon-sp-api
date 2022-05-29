@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetPreorderInfoResponse","GetPreorderInfoResponse : The response schema for the getPreorderInfo operation."]]});

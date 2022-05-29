@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TextItem","TextItem : Rich positional text, usually presented as a collection of bullet points."]]});

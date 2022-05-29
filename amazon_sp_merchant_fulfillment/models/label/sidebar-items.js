@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Label","Label : Data for creating a shipping label and dimensions for printing the label."]]});

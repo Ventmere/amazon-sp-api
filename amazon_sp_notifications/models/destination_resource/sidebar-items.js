@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DestinationResource","DestinationResource : The destination resource types."]]});

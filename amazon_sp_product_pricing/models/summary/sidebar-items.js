@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Summary","Summary : Contains price information about the product, including the LowestPrices and BuyBoxPrices, the ListPrice, the SuggestedLowerPricePlusShipping, and NumberOfOffers and NumberOfBuyBoxEligibleOffers."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SubmitAcknowledgementResponse","SubmitAcknowledgementResponse : The response schema for the submitAcknowledgement operation."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ContentRecord","ContentRecord : A content document with additional information for content management."]]});

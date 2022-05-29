@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StandardTextModule","StandardTextModule : A standard headline and body text."]]});

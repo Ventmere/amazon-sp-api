@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StandardCompanyLogoModule","StandardCompanyLogoModule : The standard company logo image."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Weight","Weight : The weight."]]});

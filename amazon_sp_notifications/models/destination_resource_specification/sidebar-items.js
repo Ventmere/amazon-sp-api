@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DestinationResourceSpecification","DestinationResourceSpecification : The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination."]]});

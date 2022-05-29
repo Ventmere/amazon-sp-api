@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StandardComparisonTableModule","StandardComparisonTableModule : The standard product comparison table."]]});

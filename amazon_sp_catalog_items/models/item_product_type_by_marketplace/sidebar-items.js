@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ItemProductTypeByMarketplace","ItemProductTypeByMarketplace : Product type associated with the Amazon catalog item for the indicated Amazon marketplace."]]});

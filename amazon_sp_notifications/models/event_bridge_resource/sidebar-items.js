@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["EventBridgeResource","EventBridgeResource : Represents an Amazon EventBridge destination."]]});

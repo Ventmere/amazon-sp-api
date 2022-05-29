@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ProductType","ProductType : An Amazon product type with a definition available."]]});

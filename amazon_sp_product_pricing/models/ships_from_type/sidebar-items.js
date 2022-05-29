@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ShipsFromType","ShipsFromType : The state and country from where the item is shipped."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateAmazonMotorsResponse","CreateAmazonMotorsResponse : The response schema for the createAmazonMotors operation."]]});

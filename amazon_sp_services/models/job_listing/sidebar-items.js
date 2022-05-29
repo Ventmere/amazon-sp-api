@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["JobListing","JobListing : The payload for the GetJobs operation."]]});

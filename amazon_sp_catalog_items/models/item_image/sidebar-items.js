@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Variant","Variant of the image, such as `MAIN` or `PT01`."]],"struct":[["ItemImage","ItemImage : Image for an item in the Amazon catalog."]]});

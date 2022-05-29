@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Participation","Participation : Detailed information that is specific to a seller in a Marketplace."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TransactionStatus","TransactionStatus : The payload for the getOrderScenarios operation."]]});

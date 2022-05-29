@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ScheduledDeliveryInfo","ScheduledDeliveryInfo : Delivery information for a scheduled delivery."]]});

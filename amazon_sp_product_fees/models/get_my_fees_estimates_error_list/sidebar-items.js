@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetMyFeesEstimatesErrorList","GetMyFeesEstimatesErrorList : A list of error responses returned when a request is unsuccessful."]]});

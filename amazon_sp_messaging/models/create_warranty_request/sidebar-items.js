@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateWarrantyRequest","CreateWarrantyRequest : The request schema for the createWarranty operation."]]});

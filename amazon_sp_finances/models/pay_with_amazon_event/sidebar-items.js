@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PayWithAmazonEvent","PayWithAmazonEvent : An event related to the seller’s Pay with Amazon account."]]});

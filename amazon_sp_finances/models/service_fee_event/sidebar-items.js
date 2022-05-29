@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ServiceFeeEvent","ServiceFeeEvent : A service fee on the seller’s account."]]});

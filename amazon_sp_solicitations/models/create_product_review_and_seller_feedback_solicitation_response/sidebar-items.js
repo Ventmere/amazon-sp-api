@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateProductReviewAndSellerFeedbackSolicitationResponse","CreateProductReviewAndSellerFeedbackSolicitationResponse : The response schema for the createProductReviewAndSellerFeedbackSolicitation operation."]]});

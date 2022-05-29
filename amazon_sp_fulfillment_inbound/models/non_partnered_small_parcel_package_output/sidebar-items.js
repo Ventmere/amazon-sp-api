@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["NonPartneredSmallParcelPackageOutput","NonPartneredSmallParcelPackageOutput : Carrier, tracking number, and status information for the package."]]});

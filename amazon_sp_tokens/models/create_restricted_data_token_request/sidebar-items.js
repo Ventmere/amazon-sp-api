@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateRestrictedDataTokenRequest","CreateRestrictedDataTokenRequest : The request schema for the createRestrictedDataToken operation."]]});

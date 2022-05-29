@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TaxWithholdingEvent","TaxWithholdingEvent : A TaxWithholding event on seller’s account."]]});

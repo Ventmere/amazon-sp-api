@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Subscription","Subscription : Represents a subscription to receive notifications."]]});

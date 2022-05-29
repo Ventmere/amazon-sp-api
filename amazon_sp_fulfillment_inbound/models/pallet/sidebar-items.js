@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Pallet","Pallet : Pallet information."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BatchRequest","BatchRequest : Common properties of batch requests against individual APIs."]]});

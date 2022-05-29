@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StandardSingleImageHighlightsModule","StandardSingleImageHighlightsModule : A standard image with several paragraphs and a bulleted list."]]});

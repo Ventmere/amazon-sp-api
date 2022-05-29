@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ItemRelationshipsByMarketplace","ItemRelationshipsByMarketplace : Relationship details for the Amazon catalog item for the indicated Amazon marketplace."]]});

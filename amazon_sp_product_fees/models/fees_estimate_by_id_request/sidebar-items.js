@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FeesEstimateByIdRequest","FeesEstimateByIdRequest : A product, marketplace, and proposed price used to request estimated fees."]]});

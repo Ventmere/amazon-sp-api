@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SafetReimbursementEvent","SafetReimbursementEvent : A SAFE-T claim reimbursement on the seller’s account."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateSubscriptionResponse","CreateSubscriptionResponse : The response schema for the createSubscription operation."]]});

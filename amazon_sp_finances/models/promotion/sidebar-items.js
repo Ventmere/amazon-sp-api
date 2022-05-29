@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Promotion","Promotion : A promotion applied to an item."]]});

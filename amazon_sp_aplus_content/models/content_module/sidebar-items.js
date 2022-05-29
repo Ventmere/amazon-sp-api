@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ContentModule","ContentModule : An A+ Content module. An A+ Content document is composed of content modules. The contentModuleType property selects which content module types to use."]]});

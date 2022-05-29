@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ConditionType","Identifies the condition of the listings item."],["Status","Statuses that apply to the listings item."]],"struct":[["ItemSummaryByMarketplace","ItemSummaryByMarketplace : Summary details of a listings item for an Amazon marketplace."]]});

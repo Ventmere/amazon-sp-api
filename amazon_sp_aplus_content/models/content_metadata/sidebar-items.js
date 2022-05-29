@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ContentMetadata","ContentMetadata : The metadata of an A+ Content document."]]});

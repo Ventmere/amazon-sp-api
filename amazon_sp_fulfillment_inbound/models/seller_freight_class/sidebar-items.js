@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SellerFreightClass","SellerFreightClass : The freight class of the shipment. For information about determining the freight class, contact the carrier. The freight class of the shipment. For information about determining the freight class, contact the carrier."]]});

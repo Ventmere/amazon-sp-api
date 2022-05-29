@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PublishRecord","PublishRecord : The full context for an A+ Content publishing event."]]});

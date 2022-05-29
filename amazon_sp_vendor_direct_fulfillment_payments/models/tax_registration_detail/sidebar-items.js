@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["TaxRegistrationType","Tax registration type for the entity."]],"struct":[["TaxRegistrationDetail","TaxRegistrationDetail : Tax registration details of the entity."]]});

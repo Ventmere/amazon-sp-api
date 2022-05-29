@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DebtRecoveryItem","DebtRecoveryItem : An item of a debt payment or debt adjustment."]]});

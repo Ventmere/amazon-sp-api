@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetFeatureInventoryResponse","GetFeatureInventoryResponse : The breakdown of eligibility inventory by feature."]]});

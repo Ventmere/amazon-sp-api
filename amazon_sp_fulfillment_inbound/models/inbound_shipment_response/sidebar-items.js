@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InboundShipmentResponse","InboundShipmentResponse : The response schema for this operation."]]});

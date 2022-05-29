@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CompetitivePricingType","CompetitivePricingType : Competitive pricing information for the item."]]});

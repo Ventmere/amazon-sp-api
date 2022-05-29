@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Event","Event : An event of a shipment"]]});

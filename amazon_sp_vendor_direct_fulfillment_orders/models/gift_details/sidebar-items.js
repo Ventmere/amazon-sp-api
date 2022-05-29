@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GiftDetails","GiftDetails : Gift details for the item."]]});

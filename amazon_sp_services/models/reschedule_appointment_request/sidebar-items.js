@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RescheduleAppointmentRequest","RescheduleAppointmentRequest : Input for rescheduled appointment operation."]]});

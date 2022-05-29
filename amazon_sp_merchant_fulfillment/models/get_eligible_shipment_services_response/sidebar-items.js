@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetEligibleShipmentServicesResponse","GetEligibleShipmentServicesResponse : Response schema."]]});

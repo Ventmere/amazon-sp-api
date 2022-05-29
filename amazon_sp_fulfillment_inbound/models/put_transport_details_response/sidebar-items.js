@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PutTransportDetailsResponse","PutTransportDetailsResponse : Workflow status for a shipment with an Amazon-partnered carrier."]]});

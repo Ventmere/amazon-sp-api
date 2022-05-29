@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RetrochargeEvent","RetrochargeEvent : A retrocharge or retrocharge reversal."]]});

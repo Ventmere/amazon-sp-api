@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetItemEligibilityPreviewResponse","GetItemEligibilityPreviewResponse : The response schema for the getItemEligibilityPreview operation."]]});

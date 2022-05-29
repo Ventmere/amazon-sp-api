@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LabelData","LabelData : Details of the shipment label."]]});

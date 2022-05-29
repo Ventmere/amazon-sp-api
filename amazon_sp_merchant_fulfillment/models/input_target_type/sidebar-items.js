@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["InputTargetType","InputTargetType : Indicates whether the additional seller input is at the item or shipment level. Indicates whether the additional seller input is at the item or shipment level."]]});

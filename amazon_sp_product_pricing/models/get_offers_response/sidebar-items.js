@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetOffersResponse","GetOffersResponse : The response schema for the getListingOffers and getItemOffers operations."]]});

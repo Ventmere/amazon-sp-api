@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetAuthorizationCodeResponse","GetAuthorizationCodeResponse : The response schema for the GetAuthorizationCode operation."]]});

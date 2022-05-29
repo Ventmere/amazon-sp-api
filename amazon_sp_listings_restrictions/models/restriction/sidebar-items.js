@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ConditionType","The condition that applies to the restriction."]],"struct":[["Restriction","Restriction : A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction."]]});

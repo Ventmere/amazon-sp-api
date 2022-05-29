@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StandardProductDescriptionModule","StandardProductDescriptionModule : Standard product description text."]]});

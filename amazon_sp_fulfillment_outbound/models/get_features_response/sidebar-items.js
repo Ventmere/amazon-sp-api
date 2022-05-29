@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetFeaturesResponse","GetFeaturesResponse : The response schema for the getFeatures operation."]]});

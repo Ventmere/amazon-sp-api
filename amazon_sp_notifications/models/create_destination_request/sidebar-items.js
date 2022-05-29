@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateDestinationRequest","CreateDestinationRequest : The request schema for the createDestination operation."]]});

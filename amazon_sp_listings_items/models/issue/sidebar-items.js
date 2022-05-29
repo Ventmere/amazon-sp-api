@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Severity","The severity of the issue."]],"struct":[["Issue","Issue : An issue with a listings item."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AffordabilityExpenseEvent","AffordabilityExpenseEvent : An expense related to an affordability promotion."]]});

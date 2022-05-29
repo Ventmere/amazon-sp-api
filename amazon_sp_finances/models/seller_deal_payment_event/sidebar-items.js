@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SellerDealPaymentEvent","SellerDealPaymentEvent : An event linked to the payment of a fee related to the specified deal."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["OrderBuyerInfo","OrderBuyerInfo : Buyer information for an order."]]});

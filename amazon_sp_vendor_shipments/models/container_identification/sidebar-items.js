@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ContainerIdentificationType","The container identification type."]],"struct":[["ContainerIdentification",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["OrderAcknowledgementItem","OrderAcknowledgementItem : Details of the item being acknowledged."]]});

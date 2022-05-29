@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ShipmentInvoiceStatus","ShipmentInvoiceStatus : The shipment invoice status. The shipment invoice status."]]});

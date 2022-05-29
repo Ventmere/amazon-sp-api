@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Rate","Rate : The available rate that can be used to send the shipment"]]});

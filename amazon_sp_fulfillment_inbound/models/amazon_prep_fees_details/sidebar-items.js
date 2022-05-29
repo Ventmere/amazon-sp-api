@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AmazonPrepFeesDetails","AmazonPrepFeesDetails : The fees for Amazon to prep goods for shipment."]]});

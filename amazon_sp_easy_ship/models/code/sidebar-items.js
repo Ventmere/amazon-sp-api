@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Code","Code : An error code that identifies the type of error that occurred. The error codes listed below are specific to the Easy Ship section. An error code that identifies the type of error that occurred. The error codes listed below are specific to the Easy Ship section."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ErrorLevel","The type of error."]],"struct":[["Error","Error : Error response returned when the request is unsuccessful."]]});

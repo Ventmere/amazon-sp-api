@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LabelFormat","The format of the label. Enum of PNG only for now."],["LabelStockSize","The label stock size specification in length and height. Enum of 4x6 only for now."]],"struct":[["LabelSpecification","LabelSpecification : The label specification info."]]});

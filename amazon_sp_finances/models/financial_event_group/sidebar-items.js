@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FinancialEventGroup","FinancialEventGroup : Information related to a financial event group."]]});

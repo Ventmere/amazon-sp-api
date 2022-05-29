@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DirectPayment","DirectPayment : A payment made directly to a seller."]]});

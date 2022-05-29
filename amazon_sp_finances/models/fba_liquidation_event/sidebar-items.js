@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FbaLiquidationEvent","FbaLiquidationEvent : A payment event for Fulfillment by Amazon (FBA) inventory liquidation. This event is used only in the US marketplace."]]});

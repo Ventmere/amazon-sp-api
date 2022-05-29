@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ShipmentMeasurements","ShipmentMeasurements : Shipment measurement details."]]});

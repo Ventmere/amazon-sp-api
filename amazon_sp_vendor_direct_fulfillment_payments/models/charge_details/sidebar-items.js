@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Type","Type of charge applied."]],"struct":[["ChargeDetails","ChargeDetails : Monetary and tax details of the charge."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetOrderRegulatedInfoResponse","GetOrderRegulatedInfoResponse : The response schema for the getOrderRegulatedInfo operation."]]});

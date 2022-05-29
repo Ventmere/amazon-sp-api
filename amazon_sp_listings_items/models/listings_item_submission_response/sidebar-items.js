@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Status","The status of the listings item submission."]],"struct":[["ListingsItemSubmissionResponse","ListingsItemSubmissionResponse : Response containing the results of a submission to the Selling Partner API for Listings Items."]]});

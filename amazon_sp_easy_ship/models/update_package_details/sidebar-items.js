@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["UpdatePackageDetails","UpdatePackageDetails : Request to update the time slot of a package."]]});

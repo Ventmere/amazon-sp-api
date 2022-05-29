@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["UnfulfillableQuantity","UnfulfillableQuantity : The quantity of unfulfillable inventory."]]});

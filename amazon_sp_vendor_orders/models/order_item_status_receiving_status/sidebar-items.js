@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ReceiveStatus","Receive status of the line item."]],"struct":[["OrderItemStatusReceivingStatus","OrderItemStatusReceivingStatus : Item receive status at the buyer’s warehouse."]]});

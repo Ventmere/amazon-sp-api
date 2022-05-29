@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SolutionProviderCreditEvent","SolutionProviderCreditEvent : A credit given to a solution provider."]]});

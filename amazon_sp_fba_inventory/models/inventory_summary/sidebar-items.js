@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InventorySummary","InventorySummary : Inventory summary for a specific item."]]});

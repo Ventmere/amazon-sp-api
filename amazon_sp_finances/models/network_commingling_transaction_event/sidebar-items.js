@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["NetworkComminglingTransactionEvent","NetworkComminglingTransactionEvent : A network commingling transaction event."]]});

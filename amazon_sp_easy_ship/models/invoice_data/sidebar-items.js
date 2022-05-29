@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InvoiceData","InvoiceData : Invoice number and date."]]});

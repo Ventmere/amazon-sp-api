@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Model","The tax collection model applied to the item."],["ResponsibleParty","The party responsible for withholding the taxes and remitting them to the taxing authority."]],"struct":[["TaxCollection","TaxCollection : Information about withheld taxes."]]});

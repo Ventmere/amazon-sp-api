@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["UpdateVerificationStatusRequest","UpdateVerificationStatusRequest : Request to update the verification status of an order containing regulated products."]]});

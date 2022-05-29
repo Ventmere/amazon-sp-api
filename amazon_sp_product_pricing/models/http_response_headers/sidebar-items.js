@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["HttpResponseHeaders","HttpResponseHeaders : A mapping of additional HTTP headers to send/receive for the individual batch request."]]});

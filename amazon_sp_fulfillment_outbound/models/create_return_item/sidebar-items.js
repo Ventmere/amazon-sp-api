@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateReturnItem","CreateReturnItem : An item that Amazon accepted for return."]]});

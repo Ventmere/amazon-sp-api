@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetListingOffersBatchRequest","GetListingOffersBatchRequest : The request associated with the getListingOffersBatch API call."]]});

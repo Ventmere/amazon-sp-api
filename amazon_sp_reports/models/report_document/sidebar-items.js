@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CompressionAlgorithm","If present, the report document contents have been compressed with the provided algorithm."]],"struct":[["ReportDocument","ReportDocument : Information required for the report document."]]});

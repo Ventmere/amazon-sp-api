@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Name","The duration of the research."]],"struct":[["ResearchingQuantityEntry","ResearchingQuantityEntry : The misplaced or warehouse damaged inventory that is actively being confirmed at our fulfillment centers."]]});

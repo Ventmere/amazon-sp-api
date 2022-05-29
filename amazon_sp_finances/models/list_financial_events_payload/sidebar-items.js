@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ListFinancialEventsPayload","ListFinancialEventsPayload : The payload for the listFinancialEvents operation."]]});

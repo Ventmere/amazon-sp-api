@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Route","Route : This is used only for direct import shipment confirmations."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SmallAndLightEligibilityStatus","SmallAndLightEligibilityStatus : The Small and Light eligibility status of the item. The Small and Light eligibility status of the item."]]});

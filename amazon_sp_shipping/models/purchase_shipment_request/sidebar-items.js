@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PurchaseShipmentRequest","PurchaseShipmentRequest : The payload schema for the purchaseShipment operation."]]});

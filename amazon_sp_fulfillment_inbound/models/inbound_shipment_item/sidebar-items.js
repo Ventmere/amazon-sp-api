@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InboundShipmentItem","InboundShipmentItem : Item information for an inbound shipment. Submitted with a call to the createInboundShipment or updateInboundShipment operation."]]});

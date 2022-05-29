@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TransportDetailOutput","TransportDetailOutput : Inbound shipment information, including carrier details and shipment status."]]});

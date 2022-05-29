@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LabelFormatOption","LabelFormatOption : The label format details and whether to include a packing slip."]]});

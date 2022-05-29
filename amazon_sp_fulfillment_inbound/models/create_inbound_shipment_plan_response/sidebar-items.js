@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateInboundShipmentPlanResponse","CreateInboundShipmentPlanResponse : The response schema for the createInboundShipmentPlan operation."]]});

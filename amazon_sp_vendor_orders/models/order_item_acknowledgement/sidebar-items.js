@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AcknowledgementCode","This indicates the acknowledgement code."],["RejectionReason","Indicates the reason for rejection."]],"struct":[["OrderItemAcknowledgement",""]]});

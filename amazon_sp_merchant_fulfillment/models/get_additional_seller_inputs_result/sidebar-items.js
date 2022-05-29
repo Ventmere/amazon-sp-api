@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetAdditionalSellerInputsResult","GetAdditionalSellerInputsResult : The payload for the getAdditionalSellerInputs operation."]]});

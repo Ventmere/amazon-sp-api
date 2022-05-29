@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetRatesResult","GetRatesResult : The payload schema for the getRates operation."]]});

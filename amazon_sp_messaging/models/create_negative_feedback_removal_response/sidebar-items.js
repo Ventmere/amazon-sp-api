@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateNegativeFeedbackRemovalResponse","CreateNegativeFeedbackRemovalResponse : The response schema for the createNegativeFeedbackRemoval operation."]]});

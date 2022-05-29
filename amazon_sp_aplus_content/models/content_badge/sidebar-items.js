@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ContentBadge","ContentBadge : A flag that provides additional information about an A+ Content document. A flag that provides additional information about an A+ Content document."]]});

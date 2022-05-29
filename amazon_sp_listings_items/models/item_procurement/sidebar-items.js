@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ItemProcurement","ItemProcurement : Vendor procurement information for the listings item."]]});

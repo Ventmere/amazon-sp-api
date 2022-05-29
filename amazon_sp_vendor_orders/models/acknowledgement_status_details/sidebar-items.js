@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AcknowledgementStatusDetails","AcknowledgementStatusDetails : Details of item quantity ordered"]]});

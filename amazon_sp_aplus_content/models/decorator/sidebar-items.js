@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Decorator","Decorator : A decorator applied to a content string value in order to create rich text."]]});

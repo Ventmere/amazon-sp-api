@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateFeedResponse","CreateFeedResponse : Response schema."]]});

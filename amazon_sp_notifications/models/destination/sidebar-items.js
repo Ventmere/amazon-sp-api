@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Destination","Destination : Represents a destination created when you call the createDestination operation."]]});

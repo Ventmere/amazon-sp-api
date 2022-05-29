@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Scenario","Scenario : A scenario test case response returned when the request is successful."]]});

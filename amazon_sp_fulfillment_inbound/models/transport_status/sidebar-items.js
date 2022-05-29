@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["TransportStatus","TransportStatus : Indicates the status of the Amazon-partnered carrier shipment. Indicates the status of the Amazon-partnered carrier shipment."]]});

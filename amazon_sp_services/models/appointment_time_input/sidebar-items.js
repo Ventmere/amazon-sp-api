@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AppointmentTimeInput","AppointmentTimeInput : The input appointment time details."]]});

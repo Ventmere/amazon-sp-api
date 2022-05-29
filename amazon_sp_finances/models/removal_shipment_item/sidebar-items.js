@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RemovalShipmentItem","RemovalShipmentItem : Item-level information for a removal shipment."]]});

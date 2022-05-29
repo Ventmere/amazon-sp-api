@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AcknowledgementStatus","AcknowledgementStatus : Status of acknowledgement."]]});

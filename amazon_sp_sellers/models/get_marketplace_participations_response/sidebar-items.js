@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetMarketplaceParticipationsResponse","GetMarketplaceParticipationsResponse : The response schema for the getMarketplaceParticipations operation."]]});

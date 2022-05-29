@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["OrderStatus","Current status of the order."]],"struct":[["OrderDetails","OrderDetails : Details of an order."]]});

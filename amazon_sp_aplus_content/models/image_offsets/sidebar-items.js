@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ImageOffsets","ImageOffsets : The top left corner of the cropped image, specified in the original image’s coordinate space."]]});

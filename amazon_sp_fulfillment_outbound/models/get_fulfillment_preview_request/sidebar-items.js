@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetFulfillmentPreviewRequest","GetFulfillmentPreviewRequest : The request body schema for the getFulfillmentPreview operation."]]});

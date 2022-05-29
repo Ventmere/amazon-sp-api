@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SmallAndLightEligibility","SmallAndLightEligibility : The Small and Light eligibility status of the item indicated by the specified seller SKU."]]});

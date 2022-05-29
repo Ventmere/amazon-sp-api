@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetAttributesResponseBuyer","GetAttributesResponseBuyer : The list of attributes related to the buyer."]]});

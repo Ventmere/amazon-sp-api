@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetFeaturesResult","GetFeaturesResult : The payload for the getFeatures operation."]]});

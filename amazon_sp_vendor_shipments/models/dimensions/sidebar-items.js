@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["UnitOfMeasure","The unit of measure for dimensions."]],"struct":[["Dimensions","Dimensions : Physical dimensional measurements of a container."]]});

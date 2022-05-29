@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateFulfillmentReturnResponse","CreateFulfillmentReturnResponse : The response schema for the createFulfillmentReturn operation."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FulfillmentInstruction","FulfillmentInstruction : Contains the instructions about the fulfillment like where should it be fulfilled from."]]});

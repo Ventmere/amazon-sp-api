@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ResearchingQuantity","ResearchingQuantity : The number of misplaced or warehouse damaged units that are actively being confirmed at our fulfillment centers."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetMyFeesEstimateRequest","GetMyFeesEstimateRequest : Request schema."]]});

@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/amazon-sp-merchant-fulfillment/src/models/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><script defer src="../../../main.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script>
+    <noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_merchant_fulfillment/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div>
+        </a><h2 class="location"></h2>
+    </nav>
+    <nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_merchant_fulfillment/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div>
+        </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_merchant_fulfillment/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker hidden"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="22" height="22" alt="Pick another theme!" src="../../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<span id="2">2</span>
+<span id="3">3</span>
+<span id="4">4</span>
+<span id="5">5</span>
+<span id="6">6</span>
+<span id="7">7</span>
+<span id="8">8</span>
+<span id="9">9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
+<span id="80">80</span>
+<span id="81">81</span>
+<span id="82">82</span>
+<span id="83">83</span>
+<span id="84">84</span>
+<span id="85">85</span>
+<span id="86">86</span>
+<span id="87">87</span>
+<span id="88">88</span>
+<span id="89">89</span>
+<span id="90">90</span>
+<span id="91">91</span>
+<span id="92">92</span>
+<span id="93">93</span>
+<span id="94">94</span>
+<span id="95">95</span>
+<span id="96">96</span>
+<span id="97">97</span>
+<span id="98">98</span>
+<span id="99">99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+</pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">additional_inputs</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::additional_inputs::AdditionalInputs</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">additional_seller_input</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::additional_seller_input::AdditionalSellerInput</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">additional_seller_inputs</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::additional_seller_inputs::AdditionalSellerInputs</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">address</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::address::Address</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">available_carrier_will_pick_up_option</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::available_carrier_will_pick_up_option::AvailableCarrierWillPickUpOption</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">available_delivery_experience_option</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::available_delivery_experience_option::AvailableDeliveryExperienceOption</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">available_shipping_service_options</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::available_shipping_service_options::AvailableShippingServiceOptions</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">cancel_shipment_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::cancel_shipment_response::CancelShipmentResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">carrier_will_pick_up_option</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::carrier_will_pick_up_option::CarrierWillPickUpOption</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">constraint</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::constraint::Constraint</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_shipment_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_shipment_request::CreateShipmentRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_shipment_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_shipment_response::CreateShipmentResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">currency_amount</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::currency_amount::CurrencyAmount</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">delivery_experience_option</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::delivery_experience_option::DeliveryExperienceOption</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">delivery_experience_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::delivery_experience_type::DeliveryExperienceType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error::Error</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">file_contents</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::file_contents::FileContents</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">file_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::file_type::FileType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_additional_seller_inputs_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_additional_seller_inputs_request::GetAdditionalSellerInputsRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_additional_seller_inputs_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_additional_seller_inputs_response::GetAdditionalSellerInputsResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_additional_seller_inputs_result</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_additional_seller_inputs_result::GetAdditionalSellerInputsResult</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_eligible_shipment_services_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_eligible_shipment_services_request::GetEligibleShipmentServicesRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_eligible_shipment_services_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_eligible_shipment_services_response::GetEligibleShipmentServicesResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_eligible_shipment_services_result</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_eligible_shipment_services_result::GetEligibleShipmentServicesResult</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_shipment_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_shipment_response::GetShipmentResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">hazmat_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::hazmat_type::HazmatType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">input_target_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::input_target_type::InputTargetType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item::Item</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_level_fields</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_level_fields::ItemLevelFields</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">label</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::label::Label</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">label_customization</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::label_customization::LabelCustomization</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">label_dimensions</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::label_dimensions::LabelDimensions</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">label_format</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::label_format::LabelFormat</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">label_format_option</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::label_format_option::LabelFormatOption</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">label_format_option_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::label_format_option_request::LabelFormatOptionRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">length</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::length::Length</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">package_dimensions</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::package_dimensions::PackageDimensions</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">predefined_package_dimensions</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::predefined_package_dimensions::PredefinedPackageDimensions</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">rejected_shipping_service</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::rejected_shipping_service::RejectedShippingService</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">seller_input_definition</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::seller_input_definition::SellerInputDefinition</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipment</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipment::Shipment</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipment_request_details</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipment_request_details::ShipmentRequestDetails</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipment_status</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipment_status::ShipmentStatus</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipping_offering_filter</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipping_offering_filter::ShippingOfferingFilter</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipping_service</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipping_service::ShippingService</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipping_service_options</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipping_service_options::ShippingServiceOptions</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">standard_id_for_label</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::standard_id_for_label::StandardIdForLabel</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">temporarily_unavailable_carrier</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::temporarily_unavailable_carrier::TemporarilyUnavailableCarrier</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">terms_and_conditions_not_accepted_carrier</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::terms_and_conditions_not_accepted_carrier::TermsAndConditionsNotAcceptedCarrier</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">unit_of_length</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::unit_of_length::UnitOfLength</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">unit_of_weight</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::unit_of_weight::UnitOfWeight</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">weight</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::weight::Weight</span>;
+</code></pre></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_merchant_fulfillment" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0 (fe5b13d68 2022-05-18)" ></div>
+</body></html>

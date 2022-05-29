@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ItemCondition","ItemCondition : Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Constraint","Constraint : A validation constraint."]]});

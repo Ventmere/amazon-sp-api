@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["error",""],["error_list",""],["product_type",""],["product_type_definition",""],["product_type_list",""],["product_type_version",""],["property_group",""],["schema_link",""],["schema_link_link",""]]});

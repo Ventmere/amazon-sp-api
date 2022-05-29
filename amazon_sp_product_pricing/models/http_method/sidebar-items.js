@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["HttpMethod","HttpMethod : The HTTP method associated with the individual APIs being called as part of the batch request. The HTTP method associated with the individual APIs being called as part of the batch request."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Condition","Condition : The condition of the item. The condition of the item."]]});

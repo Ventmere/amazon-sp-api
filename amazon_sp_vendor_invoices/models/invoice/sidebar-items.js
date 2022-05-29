@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["InvoiceType","Identifies the type of invoice."]],"struct":[["Invoice",""]]});

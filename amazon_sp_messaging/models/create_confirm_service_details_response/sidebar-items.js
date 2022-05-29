@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateConfirmServiceDetailsResponse","CreateConfirmServiceDetailsResponse : The response schema for the createConfirmServiceDetails operation."]]});

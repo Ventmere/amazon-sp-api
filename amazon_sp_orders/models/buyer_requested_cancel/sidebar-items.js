@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BuyerRequestedCancel","BuyerRequestedCancel : Information about whether or not a buyer requested cancellation."]]});

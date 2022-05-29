@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["QuantityDiscountPriceType","QuantityDiscountPriceType : Contains pricing information that includes special pricing when buying in bulk."]]});

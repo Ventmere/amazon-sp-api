@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BuyerCustomizedInfoDetail","BuyerCustomizedInfoDetail : Buyer information for custom orders from the Amazon Custom program."]]});

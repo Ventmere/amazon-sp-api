@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LabelDimensions","LabelDimensions : Dimensions for printing a shipping label."]]});

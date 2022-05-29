@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["TaxType","Type of the tax applied."]],"struct":[["TaxDetails","TaxDetails : Details of tax amount applied."]]});

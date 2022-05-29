@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RegulatedOrderVerificationStatus","RegulatedOrderVerificationStatus : The verification status of the order along with associated approval or rejection metadata."]]});

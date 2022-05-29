@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Type","Type of the allowance applied."]],"struct":[["AllowanceDetails","AllowanceDetails : Monetary and tax details of the allowance."]]});

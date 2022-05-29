@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["MessagingAction","MessagingAction : A simple object containing the name of the template."]]});

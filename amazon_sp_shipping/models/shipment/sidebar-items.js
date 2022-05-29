@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Shipment","Shipment : The shipment related data."]]});

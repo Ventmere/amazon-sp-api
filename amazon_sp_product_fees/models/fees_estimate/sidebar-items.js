@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FeesEstimate","FeesEstimate : The total estimated fees for an item and a list of details."]]});

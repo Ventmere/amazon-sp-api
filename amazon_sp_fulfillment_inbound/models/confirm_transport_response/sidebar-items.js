@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ConfirmTransportResponse","ConfirmTransportResponse : The response schema for the confirmTransport operation."]]});

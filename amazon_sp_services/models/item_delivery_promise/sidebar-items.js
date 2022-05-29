@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ItemDeliveryPromise","ItemDeliveryPromise : Promised delivery information for the item."]]});

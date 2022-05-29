@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ShippingSpeedCategory","ShippingSpeedCategory : The shipping method used for the fulfillment order. The shipping method used for the fulfillment order."]]});

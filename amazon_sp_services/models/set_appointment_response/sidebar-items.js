@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SetAppointmentResponse","SetAppointmentResponse : Response schema for add or reschedule appointment operation."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Type","Type of relationship."]],"struct":[["ItemRelationship","ItemRelationship : Relationship details for an Amazon catalog item."]]});

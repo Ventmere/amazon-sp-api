@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Technician","Technician : A technician who is assigned to perform the service job in part or in full."]]});

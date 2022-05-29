@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Dimensions","Dimensions : The dimensions of the scheduled package."]]});

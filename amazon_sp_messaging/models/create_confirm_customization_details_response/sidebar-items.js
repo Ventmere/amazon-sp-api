@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateConfirmCustomizationDetailsResponse","CreateConfirmCustomizationDetailsResponse : The response schema for the confirmCustomizationDetails operation."]]});

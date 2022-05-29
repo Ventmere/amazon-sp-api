@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RemovalShipmentEvent","RemovalShipmentEvent : A removal shipment event for a removal order."]]});

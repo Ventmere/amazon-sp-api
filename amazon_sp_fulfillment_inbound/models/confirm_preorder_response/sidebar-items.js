@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ConfirmPreorderResponse","ConfirmPreorderResponse : The response schema for the confirmPreorder operation."]]});

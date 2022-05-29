@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["PoaType","The type of POA uploaded."]],"struct":[["Poa","Poa : Proof of Appointment (POA) details."]]});

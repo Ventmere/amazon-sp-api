@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AuthorizationCode","AuthorizationCode : A Login with Amazon (LWA) authorization code."]]});

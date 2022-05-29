@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ImageDimensions","ImageDimensions : The dimensions extending from the top left corner of the cropped image, or the top left corner of the original image if there is no cropping. Only `pixels` is allowed as the units value for ImageDimensions."]]});

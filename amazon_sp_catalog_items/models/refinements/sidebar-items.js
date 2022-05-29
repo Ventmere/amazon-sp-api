@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Refinements","Refinements : Search refinements."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["IdType","IdType : The type of product identifier used in a `FeesEstimateByIdRequest`. The type of product identifier used in a `FeesEstimateByIdRequest`."]]});

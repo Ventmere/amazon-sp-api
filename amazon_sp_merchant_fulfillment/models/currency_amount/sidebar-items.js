@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CurrencyAmount","CurrencyAmount : Currency type and amount."]]});

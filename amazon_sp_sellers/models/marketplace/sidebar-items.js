@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Marketplace","Marketplace : Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items."]]});

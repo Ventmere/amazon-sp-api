@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SellerFeedbackType","SellerFeedbackType : Information about the seller’s feedback, including the percentage of positive feedback, and the total number of ratings received."]]});

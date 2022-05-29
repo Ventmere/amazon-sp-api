@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PartneredLtlDataInput","PartneredLtlDataInput : Information that is required by an Amazon-partnered carrier to ship a Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment."]]});

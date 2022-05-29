@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TaxItemDetails","TaxItemDetails : Total tax details for the line item."]]});

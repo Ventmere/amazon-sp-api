@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetCustomerInvoicesResponse","GetCustomerInvoicesResponse : The response schema for the getCustomerInvoices operation."]]});

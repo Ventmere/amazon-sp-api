@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateScheduledPackageRequest","CreateScheduledPackageRequest : The request schema for the `createScheduledPackage` operation."]]});

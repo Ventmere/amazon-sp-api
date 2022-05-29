@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ReportScheduleList","ReportScheduleList : A list of report schedules."]]});

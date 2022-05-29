@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ItemBrowseClassification","ItemBrowseClassification : Classification (browse node) associated with an Amazon catalog item."]]});

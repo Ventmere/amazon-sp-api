@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DimensionType","DimensionType : The dimension type attribute of an item."]]});

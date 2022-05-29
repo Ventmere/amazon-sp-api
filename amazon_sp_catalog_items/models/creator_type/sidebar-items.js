@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreatorType","CreatorType : The creator type attribute of an item."]]});

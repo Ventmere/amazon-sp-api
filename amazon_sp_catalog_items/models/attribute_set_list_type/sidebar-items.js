@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AttributeSetListType","AttributeSetListType : The attributes of the item."]]});

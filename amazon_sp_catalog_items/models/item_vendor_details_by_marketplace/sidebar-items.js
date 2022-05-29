@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["ReplenishmentCategory","Replenishment category associated with an Amazon catalog item."]],"struct":[["ItemVendorDetailsByMarketplace","ItemVendorDetailsByMarketplace : Vendor details associated with an Amazon catalog item for the indicated Amazon marketplace."]]});

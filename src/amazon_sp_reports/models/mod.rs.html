@@ -25,28 +25,56 @@
 <span id="20">20</span>
 <span id="21">21</span>
 <span id="22">22</span>
-</pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_report_response</span>;
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+</pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">cancel_report_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::cancel_report_response::CancelReportResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">cancel_report_schedule_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::cancel_report_schedule_response::CancelReportScheduleResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_report_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_report_response::CreateReportResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_report_result</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_report_result::CreateReportResult</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_report_schedule_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_report_schedule_response::CreateReportScheduleResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_report_schedule_result</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_report_schedule_result::CreateReportScheduleResult</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_report_schedule_specification</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_report_schedule_specification::CreateReportScheduleSpecification</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_report_specification</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_report_specification::CreateReportSpecification</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error::Error</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error_list</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error_list::ErrorList</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_report_document_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_report_document_response::GetReportDocumentResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_report_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_report_response::GetReportResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_report_schedule_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_report_schedule_response::GetReportScheduleResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_report_schedules_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_report_schedules_response::GetReportSchedulesResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_reports_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_reports_response::GetReportsResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">report</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::report::Report</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">report_document</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::report_document::ReportDocument</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">report_document_encryption_details</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::report_document_encryption_details::ReportDocumentEncryptionDetails</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">report_schedule</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::report_schedule::ReportSchedule</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">report_schedule_list</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::report_schedule_list::ReportScheduleList</span>;
 </code></pre></div>
 </section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_reports" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0 (fe5b13d68 2022-05-18)" ></div>
 </body></html>

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateFeedSpecification","CreateFeedSpecification : Information required to create the feed."]]});
+initSidebarItems({"struct":[["CreateFeedSpecification",""]]});

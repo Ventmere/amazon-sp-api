@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["OfferType","Type of offer for the listings item."]],"struct":[["ItemOfferByMarketplace","ItemOfferByMarketplace : Offer details of a listings item for an Amazon marketplace."]]});

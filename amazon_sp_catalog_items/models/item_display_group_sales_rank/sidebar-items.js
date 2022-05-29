@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ItemDisplayGroupSalesRank","ItemDisplayGroupSalesRank : Sales rank of an Amazon catalog item by website display group."]]});

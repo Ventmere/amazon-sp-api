@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["error",""],["error_list",""],["transaction",""],["transaction_status",""]]});
+initSidebarItems({"mod":[["error",""],["get_transaction_response",""],["transaction",""],["transaction_status",""]]});

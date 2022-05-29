@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateFeedDocumentSpecification","CreateFeedDocumentSpecification : Specifies the content type for the createFeedDocument operation."]]});
+initSidebarItems({"struct":[["CreateFeedDocumentSpecification",""]]});

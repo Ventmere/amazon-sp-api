@@ -41,72 +41,44 @@
 <span id="36">36</span>
 <span id="37">37</span>
 <span id="38">38</span>
-<span id="39">39</span>
-<span id="40">40</span>
-<span id="41">41</span>
-<span id="42">42</span>
-<span id="43">43</span>
-<span id="44">44</span>
-<span id="45">45</span>
-<span id="46">46</span>
-<span id="47">47</span>
-<span id="48">48</span>
-<span id="49">49</span>
-<span id="50">50</span>
-<span id="51">51</span>
-<span id="52">52</span>
-</pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">brand_refinement</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::brand_refinement::BrandRefinement</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">classification_refinement</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::classification_refinement::ClassificationRefinement</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">dimension</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::dimension::Dimension</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">dimensions</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::dimensions::Dimensions</span>;
+</pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">asin_identifier</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::asin_identifier::AsinIdentifier</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">attribute_set_list_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::attribute_set_list_type::AttributeSetListType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">categories</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::categories::Categories</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">creator_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::creator_type::CreatorType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">decimal_with_units</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::decimal_with_units::DecimalWithUnits</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">dimension_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::dimension_type::DimensionType</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error::Error</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error_list</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error_list::ErrorList</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_catalog_item_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_catalog_item_response::GetCatalogItemResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">identifier_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::identifier_type::IdentifierType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">image</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::image::Image</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item::Item</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_browse_classification</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_browse_classification::ItemBrowseClassification</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_classification_sales_rank</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_classification_sales_rank::ItemClassificationSalesRank</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_dimensions_by_marketplace</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_dimensions_by_marketplace::ItemDimensionsByMarketplace</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_display_group_sales_rank</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_display_group_sales_rank::ItemDisplayGroupSalesRank</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_identifier</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_identifier::ItemIdentifier</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_identifiers_by_marketplace</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_identifiers_by_marketplace::ItemIdentifiersByMarketplace</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_image</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_image::ItemImage</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_images_by_marketplace</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_images_by_marketplace::ItemImagesByMarketplace</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_product_type_by_marketplace</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_product_type_by_marketplace::ItemProductTypeByMarketplace</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_relationship</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_relationship::ItemRelationship</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_relationships_by_marketplace</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_relationships_by_marketplace::ItemRelationshipsByMarketplace</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_sales_ranks_by_marketplace</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_sales_ranks_by_marketplace::ItemSalesRanksByMarketplace</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_search_results</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_search_results::ItemSearchResults</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_summary_by_marketplace</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_summary_by_marketplace::ItemSummaryByMarketplace</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_variation_theme</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_variation_theme::ItemVariationTheme</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_vendor_details_by_marketplace</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_vendor_details_by_marketplace::ItemVendorDetailsByMarketplace</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_vendor_details_category</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item_vendor_details_category::ItemVendorDetailsCategory</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">pagination</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::pagination::Pagination</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">refinements</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::refinements::Refinements</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">language_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::language_type::LanguageType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">list_catalog_categories_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::list_catalog_categories_response::ListCatalogCategoriesResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">list_catalog_items_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::list_catalog_items_response::ListCatalogItemsResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">list_matching_items_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::list_matching_items_response::ListMatchingItemsResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">price</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::price::Price</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">relationship_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::relationship_type::RelationshipType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">sales_rank_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::sales_rank_type::SalesRankType</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">seller_sku_identifier</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::seller_sku_identifier::SellerSkuIdentifier</span>;
 </code></pre></div>
 </section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_catalog_items" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0 (fe5b13d68 2022-05-18)" ></div>
 </body></html>

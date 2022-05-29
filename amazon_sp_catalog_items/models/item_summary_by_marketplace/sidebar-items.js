@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["ItemClassification","Classification type associated with the Amazon catalog item."]],"struct":[["ItemSummaryByMarketplace","ItemSummaryByMarketplace : Summary details of an Amazon catalog item for the indicated Amazon marketplace."]]});

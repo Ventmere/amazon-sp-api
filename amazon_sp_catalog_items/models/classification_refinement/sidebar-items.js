@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ClassificationRefinement","ClassificationRefinement : Description of a classification that can be used to get more fine-grained search results."]]});

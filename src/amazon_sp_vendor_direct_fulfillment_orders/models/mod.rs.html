@@ -51,14 +51,20 @@
 <span id="46">46</span>
 <span id="47">47</span>
 <span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
 </pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">acknowledgement_status</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::acknowledgement_status::AcknowledgementStatus</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">address</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::address::Address</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error::Error</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error_list</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error_list::ErrorList</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_order_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_order_response::GetOrderResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_orders_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_orders_response::GetOrdersResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">gift_details</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::gift_details::GiftDetails</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item_quantity</span>;
@@ -71,10 +77,14 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::order_acknowledgement_item::OrderAcknowledgementItem</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">order_details</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::order_details::OrderDetails</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">order_details_tax_total</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::order_details_tax_total::OrderDetailsTaxTotal</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">order_item</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::order_item::OrderItem</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">order_item_acknowledgement</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::order_item_acknowledgement::OrderItemAcknowledgement</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">order_item_tax_details</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::order_item_tax_details::OrderItemTaxDetails</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">order_list</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::order_list::OrderList</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">pagination</span>;
@@ -93,8 +103,6 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::submit_acknowledgement_response::SubmitAcknowledgementResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">tax_details</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::tax_details::TaxDetails</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">tax_item_details</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::tax_item_details::TaxItemDetails</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">tax_registration_details</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::tax_registration_details::TaxRegistrationDetails</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">transaction_id</span>;

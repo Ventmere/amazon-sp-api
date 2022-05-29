@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ItemIdentifiersByMarketplace","ItemIdentifiersByMarketplace : Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace."]]});

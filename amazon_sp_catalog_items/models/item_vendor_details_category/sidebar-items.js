@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ItemVendorDetailsCategory","ItemVendorDetailsCategory : Product category or subcategory associated with an Amazon catalog item."]]});

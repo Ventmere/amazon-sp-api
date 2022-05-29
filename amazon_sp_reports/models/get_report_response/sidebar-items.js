@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetReportResponse","GetReportResponse : The response for the getReport operation."]]});

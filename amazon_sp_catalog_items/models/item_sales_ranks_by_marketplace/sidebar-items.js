@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ItemSalesRanksByMarketplace","ItemSalesRanksByMarketplace : Sales ranks of an Amazon catalog item for the indicated Amazon marketplace."]]});

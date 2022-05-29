@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ItemDimensionsByMarketplace","ItemDimensionsByMarketplace : Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace."]]});

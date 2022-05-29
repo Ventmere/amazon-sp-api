@@ -53,6 +53,30 @@
 <span id="48">48</span>
 <span id="49">49</span>
 <span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
 </pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">address</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::address::Address</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">container</span>;
@@ -65,12 +89,14 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::dimensions::Dimensions</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error::Error</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error_list</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error_list::ErrorList</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_customer_invoice_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_customer_invoice_response::GetCustomerInvoiceResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_customer_invoices_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_customer_invoices_response::GetCustomerInvoicesResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_packing_slip_list_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_packing_slip_list_response::GetPackingSlipListResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_packing_slip_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_packing_slip_response::GetPackingSlipResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_shipping_label_list_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_shipping_label_list_response::GetShippingLabelListResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_shipping_label_response</span>;
@@ -83,16 +109,38 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::label_data::LabelData</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">packed_item</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::packed_item::PackedItem</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">packing_slip</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::packing_slip::PackingSlip</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">packing_slip_list</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::packing_slip_list::PackingSlipList</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">pagination</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::pagination::Pagination</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">party_identification</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::party_identification::PartyIdentification</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipment_confirmation</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipment_confirmation::ShipmentConfirmation</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipment_details</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipment_details::ShipmentDetails</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipment_status_update</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipment_status_update::ShipmentStatusUpdate</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipping_label</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipping_label::ShippingLabel</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipping_label_list</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipping_label_list::ShippingLabelList</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">shipping_label_request</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::shipping_label_request::ShippingLabelRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">status_update_details</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::status_update_details::StatusUpdateDetails</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">status_update_details_shipment_schedule</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::status_update_details_shipment_schedule::StatusUpdateDetailsShipmentSchedule</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">submit_shipment_confirmations_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::submit_shipment_confirmations_request::SubmitShipmentConfirmationsRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">submit_shipment_confirmations_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::submit_shipment_confirmations_response::SubmitShipmentConfirmationsResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">submit_shipment_status_updates_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::submit_shipment_status_updates_request::SubmitShipmentStatusUpdatesRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">submit_shipment_status_updates_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::submit_shipment_status_updates_response::SubmitShipmentStatusUpdatesResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">submit_shipping_labels_request</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::submit_shipping_labels_request::SubmitShippingLabelsRequest</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">submit_shipping_labels_response</span>;

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Image","Image : The image attribute of the item."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PackingSlipList","PackingSlipList : A list of packing slips."]]});

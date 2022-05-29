@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StatusUpdateDetails","StatusUpdateDetails : Details for the shipment status update given by the vendor for the specific package."]]});

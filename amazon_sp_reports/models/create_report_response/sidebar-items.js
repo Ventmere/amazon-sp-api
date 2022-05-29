@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateReportResponse","CreateReportResponse : Response schema."]]});
+initSidebarItems({"struct":[["CreateReportResponse","CreateReportResponse : The response for the createReport operation."]]});

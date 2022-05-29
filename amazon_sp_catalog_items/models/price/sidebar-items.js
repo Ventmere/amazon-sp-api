@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Price","Price : The price attribute of the item."]]});

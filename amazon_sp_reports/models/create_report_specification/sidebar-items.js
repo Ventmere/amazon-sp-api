@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateReportSpecification","CreateReportSpecification : Information required to create the report."]]});
+initSidebarItems({"struct":[["CreateReportSpecification",""]]});

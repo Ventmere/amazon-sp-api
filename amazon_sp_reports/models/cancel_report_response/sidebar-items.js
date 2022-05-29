@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CancelReportResponse","CancelReportResponse : The response for the cancelReport operation."]]});

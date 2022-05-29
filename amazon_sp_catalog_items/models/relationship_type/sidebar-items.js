@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RelationshipType","RelationshipType : Specific variations of the item."]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["ItemImagesByMarketplace","ItemImagesByMarketplace : Images for an item in the Amazon catalog for the indicated Amazon marketplace."]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Money","Money : The currency type and the amount."]]});

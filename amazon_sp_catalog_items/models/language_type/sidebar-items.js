@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LanguageType","LanguageType : The language type attribute of an item."]]});

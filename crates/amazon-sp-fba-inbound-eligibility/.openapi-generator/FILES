@@ -1,0 +1,17 @@
+.gitignore
+.travis.yml
+Cargo.toml
+README.md
+docs/Error.md
+docs/FbaInboundApi.md
+docs/GetItemEligibilityPreviewResponse.md
+docs/ItemEligibilityPreview.md
+git_push.sh
+src/apis/configuration.rs
+src/apis/fba_inbound_api.rs
+src/apis/mod.rs
+src/lib.rs
+src/models/error.rs
+src/models/get_item_eligibility_preview_response.rs
+src/models/item_eligibility_preview.rs
+src/models/mod.rs

@@ -1,0 +1,17 @@
+.gitignore
+.travis.yml
+Cargo.toml
+README.md
+docs/CreateUploadDestinationResponse.md
+docs/Error.md
+docs/UploadDestination.md
+docs/UploadsApi.md
+git_push.sh
+src/apis/configuration.rs
+src/apis/mod.rs
+src/apis/uploads_api.rs
+src/lib.rs
+src/models/create_upload_destination_response.rs
+src/models/error.rs
+src/models/mod.rs
+src/models/upload_destination.rs

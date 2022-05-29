@@ -3,7 +3,7 @@
 Cargo.toml
 README.md
 docs/Error.md
-docs/ErrorList.md
+docs/GetTransactionResponse.md
 docs/Transaction.md
 docs/TransactionStatus.md
 docs/VendorTransactionApi.md
@@ -13,7 +13,7 @@ src/apis/mod.rs
 src/apis/vendor_transaction_api.rs
 src/lib.rs
 src/models/error.rs
-src/models/error_list.rs
+src/models/get_transaction_response.rs
 src/models/mod.rs
 src/models/transaction.rs
 src/models/transaction_status.rs

@@ -5,15 +5,18 @@ README.md
 docs/AcknowledgementStatus.md
 docs/Address.md
 docs/Error.md
-docs/ErrorList.md
+docs/GetOrderResponse.md
+docs/GetOrdersResponse.md
 docs/GiftDetails.md
 docs/ItemQuantity.md
 docs/Money.md
 docs/Order.md
 docs/OrderAcknowledgementItem.md
 docs/OrderDetails.md
+docs/OrderDetailsTaxTotal.md
 docs/OrderItem.md
 docs/OrderItemAcknowledgement.md
+docs/OrderItemTaxDetails.md
 docs/OrderList.md
 docs/Pagination.md
 docs/PartyIdentification.md
@@ -23,7 +26,6 @@ docs/ShipmentDetails.md
 docs/SubmitAcknowledgementRequest.md
 docs/SubmitAcknowledgementResponse.md
 docs/TaxDetails.md
-docs/TaxItemDetails.md
 docs/TaxRegistrationDetails.md
 docs/TransactionId.md
 docs/VendorOrdersApi.md
@@ -35,7 +37,8 @@ src/lib.rs
 src/models/acknowledgement_status.rs
 src/models/address.rs
 src/models/error.rs
-src/models/error_list.rs
+src/models/get_order_response.rs
+src/models/get_orders_response.rs
 src/models/gift_details.rs
 src/models/item_quantity.rs
 src/models/mod.rs
@@ -43,8 +46,10 @@ src/models/money.rs
 src/models/order.rs
 src/models/order_acknowledgement_item.rs
 src/models/order_details.rs
+src/models/order_details_tax_total.rs
 src/models/order_item.rs
 src/models/order_item_acknowledgement.rs
+src/models/order_item_tax_details.rs
 src/models/order_list.rs
 src/models/pagination.rs
 src/models/party_identification.rs
@@ -54,6 +59,5 @@ src/models/shipment_details.rs
 src/models/submit_acknowledgement_request.rs
 src/models/submit_acknowledgement_response.rs
 src/models/tax_details.rs
-src/models/tax_item_details.rs
 src/models/tax_registration_details.rs
 src/models/transaction_id.rs

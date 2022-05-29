@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **scheduled_delivery_shipment** | Option<[**crate::models::ScheduledDeliveryShipment**](ScheduledDeliveryShipment.md)> |  | [optional]
 **gift_details** | Option<[**crate::models::GiftDetails**](GiftDetails.md)> |  | [optional]
 **net_price** | [**crate::models::Money**](Money.md) |  | 
-**tax_details** | Option<[**crate::models::TaxItemDetails**](TaxItemDetails.md)> |  | [optional]
+**tax_details** | Option<[**crate::models::OrderItemTaxDetails**](OrderItem_taxDetails.md)> |  | [optional]
 **total_price** | Option<[**crate::models::Money**](Money.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

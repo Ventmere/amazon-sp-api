@@ -129,6 +129,7 @@ fn parse_module(path: PathBuf) -> Result<ModuleInfo> {
     .to_string();
 
   versions.sort();
+  versions.reverse();
 
   Ok(ModuleInfo {
     path,

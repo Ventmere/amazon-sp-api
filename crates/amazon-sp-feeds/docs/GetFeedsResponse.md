@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**feeds** | [**Vec<crate::models::Feed>**](Feed.md) | A list of feeds. | 
+**payload** | Option<[**Vec<crate::models::Feed>**](Feed.md)> |  | [optional]
 **next_token** | Option<**String**> | Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter. | [optional]
+**errors** | Option<[**Vec<crate::models::Error>**](Error.md)> | A list of error responses returned when a request is unsuccessful. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

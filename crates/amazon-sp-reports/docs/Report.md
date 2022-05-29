@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **processing_status** | **String** | The processing status of the report. | 
 **processing_start_time** | Option<**String**> | The date and time when the report processing started, in ISO 8601 date time format. | [optional]
 **processing_end_time** | Option<**String**> | The date and time when the report processing completed, in ISO 8601 date time format. | [optional]
-**report_document_id** | Option<**String**> | The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve the report document's contents. | [optional]
+**report_document_id** | Option<**String**> | The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve and decrypt the report document's contents. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

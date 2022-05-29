@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**report_schedule_id** | **String** | The identifier for the report schedule. This identifier is unique only in combination with a seller ID. | 
+**payload** | Option<[**crate::models::CreateReportScheduleResult**](CreateReportScheduleResult.md)> |  | [optional]
+**errors** | Option<[**Vec<crate::models::Error>**](Error.md)> | A list of error responses returned when a request is unsuccessful. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

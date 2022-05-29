@@ -4,21 +4,21 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_report**](ReportsApi.md#cancel_report) | **DELETE** /reports/2021-06-30/reports/{reportId} | 
-[**cancel_report_schedule**](ReportsApi.md#cancel_report_schedule) | **DELETE** /reports/2021-06-30/schedules/{reportScheduleId} | 
-[**create_report**](ReportsApi.md#create_report) | **POST** /reports/2021-06-30/reports | 
-[**create_report_schedule**](ReportsApi.md#create_report_schedule) | **POST** /reports/2021-06-30/schedules | 
-[**get_report**](ReportsApi.md#get_report) | **GET** /reports/2021-06-30/reports/{reportId} | 
-[**get_report_document**](ReportsApi.md#get_report_document) | **GET** /reports/2021-06-30/documents/{reportDocumentId} | 
-[**get_report_schedule**](ReportsApi.md#get_report_schedule) | **GET** /reports/2021-06-30/schedules/{reportScheduleId} | 
-[**get_report_schedules**](ReportsApi.md#get_report_schedules) | **GET** /reports/2021-06-30/schedules | 
-[**get_reports**](ReportsApi.md#get_reports) | **GET** /reports/2021-06-30/reports | 
+[**cancel_report**](ReportsApi.md#cancel_report) | **DELETE** /reports/2020-09-04/reports/{reportId} | 
+[**cancel_report_schedule**](ReportsApi.md#cancel_report_schedule) | **DELETE** /reports/2020-09-04/schedules/{reportScheduleId} | 
+[**create_report**](ReportsApi.md#create_report) | **POST** /reports/2020-09-04/reports | 
+[**create_report_schedule**](ReportsApi.md#create_report_schedule) | **POST** /reports/2020-09-04/schedules | 
+[**get_report**](ReportsApi.md#get_report) | **GET** /reports/2020-09-04/reports/{reportId} | 
+[**get_report_document**](ReportsApi.md#get_report_document) | **GET** /reports/2020-09-04/documents/{reportDocumentId} | 
+[**get_report_schedule**](ReportsApi.md#get_report_schedule) | **GET** /reports/2020-09-04/schedules/{reportScheduleId} | 
+[**get_report_schedules**](ReportsApi.md#get_report_schedules) | **GET** /reports/2020-09-04/schedules | 
+[**get_reports**](ReportsApi.md#get_reports) | **GET** /reports/2020-09-04/reports | 
 
 
 
 ## cancel_report
 
-> cancel_report(report_id)
+> crate::models::CancelReportResponse cancel_report(report_id)
 
 
 Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -32,7 +32,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::CancelReportResponse**](CancelReportResponse.md)
 
 ### Authorization
 
@@ -48,7 +48,7 @@ No authorization required
 
 ## cancel_report_schedule
 
-> cancel_report_schedule(report_schedule_id)
+> crate::models::CancelReportScheduleResponse cancel_report_schedule(report_schedule_id)
 
 
 Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -62,7 +62,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::CancelReportScheduleResponse**](CancelReportScheduleResponse.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ No authorization required
 
 ## get_report
 
-> crate::models::Report get_report(report_id)
+> crate::models::GetReportResponse get_report(report_id)
 
 
 Returns report details (including the reportDocumentId, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -152,7 +152,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Report**](Report.md)
+[**crate::models::GetReportResponse**](GetReportResponse.md)
 
 ### Authorization
 
@@ -168,10 +168,10 @@ No authorization required
 
 ## get_report_document
 
-> crate::models::ReportDocument get_report_document(report_document_id)
+> crate::models::GetReportDocumentResponse get_report_document(report_document_id)
 
 
-Returns the information required for retrieving a report document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Parameters
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ReportDocument**](ReportDocument.md)
+[**crate::models::GetReportDocumentResponse**](GetReportDocumentResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 ## get_report_schedule
 
-> crate::models::ReportSchedule get_report_schedule(report_schedule_id)
+> crate::models::GetReportScheduleResponse get_report_schedule(report_schedule_id)
 
 
 Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -212,7 +212,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ReportSchedule**](ReportSchedule.md)
+[**crate::models::GetReportScheduleResponse**](GetReportScheduleResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ No authorization required
 
 ## get_report_schedules
 
-> crate::models::ReportScheduleList get_report_schedules(report_types)
+> crate::models::GetReportSchedulesResponse get_report_schedules(report_types)
 
 
 Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -242,7 +242,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ReportScheduleList**](ReportScheduleList.md)
+[**crate::models::GetReportSchedulesResponse**](GetReportSchedulesResponse.md)
 
 ### Authorization
 

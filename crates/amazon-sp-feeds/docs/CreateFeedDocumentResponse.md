@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**feed_document_id** | **String** | The identifier of the feed document. | 
-**url** | **String** | The presigned URL for uploading the feed contents. This URL expires after 5 minutes. | 
+**payload** | Option<[**crate::models::CreateFeedDocumentResult**](CreateFeedDocumentResult.md)> |  | [optional]
+**errors** | Option<[**Vec<crate::models::Error>**](Error.md)> | A list of error responses returned when a request is unsuccessful. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

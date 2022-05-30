@@ -1,5 +1,7 @@
 [workspace]
 members = [
+  "amazon-sp-api",
+
   "binaries/cli",
 
   "crates/amazon-sp-aplus-content",

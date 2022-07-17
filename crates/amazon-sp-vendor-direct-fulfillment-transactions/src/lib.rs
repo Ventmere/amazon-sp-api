@@ -1,3 +1,4 @@
+#![allow(nonstandard_style)]
 #[macro_use]
 extern crate serde_derive;
 

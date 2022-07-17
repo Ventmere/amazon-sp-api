@@ -53,12 +53,20 @@ impl ModuleInfo {
       .arg("-i")
       .arg(in_path)
       .arg("-o")
-      .arg(out_path)
+      .arg(&out_path)
       .output()?;
     if !output.status.success() {
       tracing::error!("{:?}", output);
       return Err(anyhow::format_err!("openapi-generator execution failed"));
     }
+
+    let lib_rs_content = fs::read(out_path.join("src/lib.rs"))?;
+    let updated: Vec<_> = "#![allow(nonstandard_style)]\n".as_bytes().into_iter()
+      .cloned()
+      .chain(lib_rs_content.into_iter())
+      .collect();
+    fs::write(out_path.join("src/lib.rs"), updated)?;
+
     Ok(())
   }
 }

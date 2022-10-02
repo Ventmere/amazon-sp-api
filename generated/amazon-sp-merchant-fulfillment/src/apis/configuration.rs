@@ -1,0 +1,1 @@
+pub use amazon_sp_api_shared::configuration::*;

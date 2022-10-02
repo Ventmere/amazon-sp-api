@@ -1,0 +1,10 @@
+pub mod error;
+pub use self::error::Error;
+pub mod get_marketplace_participations_response;
+pub use self::get_marketplace_participations_response::GetMarketplaceParticipationsResponse;
+pub mod marketplace;
+pub use self::marketplace::Marketplace;
+pub mod marketplace_participation;
+pub use self::marketplace_participation::MarketplaceParticipation;
+pub mod participation;
+pub use self::participation::Participation;

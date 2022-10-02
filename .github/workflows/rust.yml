@@ -1,0 +1,28 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  cargo-doc:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+    - name: Generate
+      uses: actions-rs/cargo@v1
+      with:
+        command: doc
+        args: --no-deps --all-features
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PAT }}
+        publish_dir: ./target/doc

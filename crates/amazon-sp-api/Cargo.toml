@@ -1,0 +1,10 @@
+[package]
+name = "amazon-sp-api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+amazon-sp-api-shared = { path = "../amazon-sp-api-shared" }
+aws-sig-auth = "0.46.0"
+http = "0.2.8"
+thiserror = "1.0.31"

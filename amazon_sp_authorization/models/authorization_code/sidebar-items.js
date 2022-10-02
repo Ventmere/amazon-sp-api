@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AuthorizationCode","AuthorizationCode : A Login with Amazon (LWA) authorization code."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AuthorizationCode","AuthorizationCode : A Login with Amazon (LWA) authorization code."]]};

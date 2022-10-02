@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RetrieveShippingLabelRequest","RetrieveShippingLabelRequest : The request schema for the retrieveShippingLabel operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["RetrieveShippingLabelRequest","RetrieveShippingLabelRequest : The request schema for the retrieveShippingLabel operation."]]};

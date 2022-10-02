@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ConfirmTransportResponse","ConfirmTransportResponse : The response schema for the confirmTransport operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ConfirmTransportResponse","ConfirmTransportResponse : The response schema for the confirmTransport operation."]]};

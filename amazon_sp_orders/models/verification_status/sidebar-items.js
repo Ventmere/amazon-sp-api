@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["VerificationStatus","VerificationStatus : The verification status of the order. The verification status of the order."]]});
+window.SIDEBAR_ITEMS = {"enum":[["VerificationStatus","VerificationStatus : The verification status of the order. The verification status of the order."]]};

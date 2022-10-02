@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetMessagingActionResponseEmbedded",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetMessagingActionResponseEmbedded",""]]};

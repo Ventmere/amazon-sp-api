@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListFinancialEventsResponse","ListFinancialEventsResponse : The response schema for the listFinancialEvents operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListFinancialEventsResponse","ListFinancialEventsResponse : The response schema for the listFinancialEvents operation."]]};

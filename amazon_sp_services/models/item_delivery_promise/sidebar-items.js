@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ItemDeliveryPromise","ItemDeliveryPromise : Promised delivery information for the item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ItemDeliveryPromise","ItemDeliveryPromise : Promised delivery information for the item."]]};

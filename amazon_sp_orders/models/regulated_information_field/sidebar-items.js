@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["FieldType","The type of field the field."]],"struct":[["RegulatedInformationField","RegulatedInformationField : A field collected from the regulatory form."]]});
+window.SIDEBAR_ITEMS = {"enum":[["FieldType","The type of field."]],"struct":[["RegulatedInformationField","RegulatedInformationField : A field collected from the regulatory form."]]};

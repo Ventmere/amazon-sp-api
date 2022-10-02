@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ScheduledDeliveryShipment","ScheduledDeliveryShipment : Dates for the scheduled delivery shipments."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ScheduledDeliveryShipment","ScheduledDeliveryShipment : Dates for the scheduled delivery shipments."]]};

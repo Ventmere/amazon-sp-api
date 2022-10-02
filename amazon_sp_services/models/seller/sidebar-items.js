@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Seller","Seller : Information about the seller of the service job."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Seller","Seller : Information about the seller of the service job."]]};

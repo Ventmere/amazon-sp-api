@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ErrorReason","ErrorReason : The reason that the ASIN is invalid. The reason that the ASIN is invalid."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ErrorReason","ErrorReason : The reason that the ASIN is invalid. The reason that the ASIN is invalid."]]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["ElectronicInvoiceStatus","ElectronicInvoiceStatus : The status of the electronic invoice. The status of the electronic invoice."]]};

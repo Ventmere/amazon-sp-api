@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["BoxContentsSource","BoxContentsSource : Where the seller provided box contents information for a shipment. Where the seller provided box contents information for a shipment."]]});
+window.SIDEBAR_ITEMS = {"enum":[["BoxContentsSource","BoxContentsSource : Where the seller provided box contents information for a shipment. Where the seller provided box contents information for a shipment."]]};

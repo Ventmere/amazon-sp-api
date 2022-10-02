@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateFeedDocumentResponse","CreateFeedDocumentResponse : The response for the createFeedDocument operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateFeedDocumentResponse","CreateFeedDocumentResponse : The response for the createFeedDocument operation."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["HandoverMethod","HandoverMethod : Identifies the method by which a seller will hand a package over to Amazon Logistics. Identifies the method by which a seller will hand a package over to Amazon Logistics."]]});
+window.SIDEBAR_ITEMS = {"enum":[["HandoverMethod","HandoverMethod : Identifies the method by which a seller will hand a package over to Amazon Logistics. Identifies the method by which a seller will hand a package over to Amazon Logistics."]]};

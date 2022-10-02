@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AdditionalInputs","AdditionalInputs : Maps the additional seller input to the definition. The key to the map is the field name."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AdditionalInputs","AdditionalInputs : Maps the additional seller input to the definition. The key to the map is the field name."]]};

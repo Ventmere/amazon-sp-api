@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PackingSlipList","PackingSlipList : A list of packing slips."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PackingSlipList","PackingSlipList : A list of packing slips."]]};

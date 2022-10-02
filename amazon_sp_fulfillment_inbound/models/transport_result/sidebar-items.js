@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TransportResult","TransportResult : The workflow status for a shipment with an Amazon-partnered carrier."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TransportResult","TransportResult : The workflow status for a shipment with an Amazon-partnered carrier."]]};

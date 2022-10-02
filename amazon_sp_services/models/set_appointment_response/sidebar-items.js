@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SetAppointmentResponse","SetAppointmentResponse : Response schema for add or reschedule appointment operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SetAppointmentResponse","SetAppointmentResponse : Response schema for the `addAppointmentForServiceJobByServiceJobId` and `rescheduleAppointmentForServiceJobByServiceJobId` operations."]]};

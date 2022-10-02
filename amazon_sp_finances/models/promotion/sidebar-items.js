@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Promotion","Promotion : A promotion applied to an item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Promotion","Promotion : A promotion applied to an item."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardMultipleImageTextModule","StandardMultipleImageTextModule : Standard images with text, presented one at a time. The user clicks on thumbnails to view each block."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardMultipleImageTextModule","StandardMultipleImageTextModule : Standard images with text, presented one at a time. The user clicks on thumbnails to view each block."]]};

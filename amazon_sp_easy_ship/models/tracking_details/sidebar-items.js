@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TrackingDetails","TrackingDetails : Representation of tracking metadata."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TrackingDetails","TrackingDetails : Representation of tracking metadata."]]};

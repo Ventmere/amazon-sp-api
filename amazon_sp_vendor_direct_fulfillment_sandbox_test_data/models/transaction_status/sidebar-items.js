@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TransactionStatus","TransactionStatus : The payload for the getOrderScenarios operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TransactionStatus","TransactionStatus : The payload for the getOrderScenarios operation."]]};

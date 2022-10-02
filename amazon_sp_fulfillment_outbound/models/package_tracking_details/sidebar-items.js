@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PackageTrackingDetails",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["PackageTrackingDetails",""]]};

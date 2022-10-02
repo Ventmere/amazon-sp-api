@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PutTransportDetailsRequest","PutTransportDetailsRequest : The request schema for a putTransportDetails operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PutTransportDetailsRequest","PutTransportDetailsRequest : The request schema for a putTransportDetails operation."]]};

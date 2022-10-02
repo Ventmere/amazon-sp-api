@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["CurrentStatus","CurrentStatus : The current delivery status of the package. The current delivery status of the package."]]});
+window.SIDEBAR_ITEMS = {"enum":[["CurrentStatus","CurrentStatus : The current delivery status of the package. The current delivery status of the package."]]};

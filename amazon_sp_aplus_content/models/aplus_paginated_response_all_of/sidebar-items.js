@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AplusPaginatedResponseAllOf",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["AplusPaginatedResponseAllOf",""]]};

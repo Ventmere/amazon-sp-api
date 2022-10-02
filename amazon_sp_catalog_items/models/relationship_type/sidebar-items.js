@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RelationshipType","RelationshipType : Specific variations of the item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["RelationshipType","RelationshipType : Specific variations of the item."]]};

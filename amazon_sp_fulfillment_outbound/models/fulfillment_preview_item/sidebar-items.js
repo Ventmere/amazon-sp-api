@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ShippingWeightCalculationMethod","The method used to calculate the estimated shipping weight."]],"struct":[["FulfillmentPreviewItem","FulfillmentPreviewItem : Item information for a shipment in a fulfillment order preview."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ShippingWeightCalculationMethod","The method used to calculate the estimated shipping weight."]],"struct":[["FulfillmentPreviewItem","FulfillmentPreviewItem : Item information for a shipment in a fulfillment order preview."]]};

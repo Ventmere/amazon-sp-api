@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SafetReimbursementEvent","SafetReimbursementEvent : A SAFE-T claim reimbursement on the seller’s account."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SafetReimbursementEvent","SafetReimbursementEvent : A SAFE-T claim reimbursement on the seller’s account."]]};

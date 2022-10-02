@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["LabelCustomization","LabelCustomization : Custom text for shipping labels."]]});
+window.SIDEBAR_ITEMS = {"struct":[["LabelCustomization","LabelCustomization : Custom text for shipping labels."]]};

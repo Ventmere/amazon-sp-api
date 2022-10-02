@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardSingleImageSpecsDetailModule","StandardSingleImageSpecsDetailModule : A standard image with paragraphs and a bulleted list, and extra space for technical details."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardSingleImageSpecsDetailModule","StandardSingleImageSpecsDetailModule : A standard image with paragraphs and a bulleted list, and extra space for technical details."]]};

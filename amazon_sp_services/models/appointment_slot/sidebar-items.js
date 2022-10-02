@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["AppointmentSlot","AppointmentSlot : A time window along with associated capacity in which the service can be performed."]]};

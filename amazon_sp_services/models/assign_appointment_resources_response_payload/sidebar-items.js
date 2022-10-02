@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["AssignAppointmentResourcesResponsePayload","AssignAppointmentResourcesResponsePayload : The payload for the `assignAppointmentResource` operation."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateDigitalAccessKeyRequest","CreateDigitalAccessKeyRequest : The request schema for the createDigitalAccessKey operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateDigitalAccessKeyRequest","CreateDigitalAccessKeyRequest : The request schema for the createDigitalAccessKey operation."]]};

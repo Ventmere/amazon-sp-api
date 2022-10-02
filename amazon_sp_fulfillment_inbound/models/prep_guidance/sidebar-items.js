@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["PrepGuidance","PrepGuidance : Item preparation instructions. Item preparation instructions."]]});
+window.SIDEBAR_ITEMS = {"enum":[["PrepGuidance","PrepGuidance : Item preparation instructions. Item preparation instructions."]]};

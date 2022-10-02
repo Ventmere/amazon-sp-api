@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["OrderMetricsInterval","OrderMetricsInterval : Contains order metrics."]]});
+window.SIDEBAR_ITEMS = {"struct":[["OrderMetricsInterval","OrderMetricsInterval : Contains order metrics."]]};

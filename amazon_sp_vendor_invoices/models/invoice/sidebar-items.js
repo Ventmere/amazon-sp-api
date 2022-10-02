@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["InvoiceType","Identifies the type of invoice."]],"struct":[["Invoice",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["InvoiceType","Identifies the type of invoice."]],"struct":[["Invoice",""]]};

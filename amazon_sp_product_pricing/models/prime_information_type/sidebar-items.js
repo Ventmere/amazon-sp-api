@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PrimeInformationType","PrimeInformationType : Amazon Prime information."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PrimeInformationType","PrimeInformationType : Amazon Prime information."]]};

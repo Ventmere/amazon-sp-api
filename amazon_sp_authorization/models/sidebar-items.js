@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["authorization_code",""],["error",""],["get_authorization_code_response",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["authorization_code",""],["error",""],["get_authorization_code_response",""]]};

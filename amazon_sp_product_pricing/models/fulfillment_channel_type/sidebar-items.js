@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["FulfillmentChannelType","FulfillmentChannelType : Indicates whether the item is fulfilled by Amazon or by the seller (merchant). Indicates whether the item is fulfilled by Amazon or by the seller (merchant)."]]});
+window.SIDEBAR_ITEMS = {"enum":[["FulfillmentChannelType","FulfillmentChannelType : Indicates whether the item is fulfilled by Amazon or by the seller (merchant). Indicates whether the item is fulfilled by Amazon or by the seller (merchant)."]]};

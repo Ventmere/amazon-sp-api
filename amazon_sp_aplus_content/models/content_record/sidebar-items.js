@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ContentRecord","ContentRecord : A content document with additional information for content management."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ContentRecord","ContentRecord : A content document with additional information for content management."]]};

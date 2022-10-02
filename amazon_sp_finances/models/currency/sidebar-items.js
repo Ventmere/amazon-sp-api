@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Currency","Currency : A currency type and amount."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Currency","Currency : A currency type and amount."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetMessagingActionResponseLinks",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetMessagingActionResponseLinks",""]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetTrackingInformationResponse","GetTrackingInformationResponse : The response schema for the getTrackingInformation operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetTrackingInformationResponse","GetTrackingInformationResponse : The response schema for the getTrackingInformation operation."]]};

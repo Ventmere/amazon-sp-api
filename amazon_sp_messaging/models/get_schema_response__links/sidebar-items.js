@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetSchemaResponseLinks",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetSchemaResponseLinks",""]]};

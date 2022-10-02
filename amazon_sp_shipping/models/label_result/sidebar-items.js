@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["LabelResult","LabelResult : Label details including label stream, format, size."]]});
+window.SIDEBAR_ITEMS = {"struct":[["LabelResult","LabelResult : Label details including label stream, format, size."]]};

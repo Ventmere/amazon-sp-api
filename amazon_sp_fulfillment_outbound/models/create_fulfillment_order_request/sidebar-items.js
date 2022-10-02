@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateFulfillmentOrderRequest","CreateFulfillmentOrderRequest : The request body schema for the createFulfillmentOrder operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateFulfillmentOrderRequest","CreateFulfillmentOrderRequest : The request body schema for the createFulfillmentOrder operation."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["CompressionAlgorithm","If present, the report document contents have been compressed with the provided algorithm."]],"struct":[["ReportDocument",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["CompressionAlgorithm","If present, the report document contents have been compressed with the provided algorithm."]],"struct":[["ReportDocument",""]]};

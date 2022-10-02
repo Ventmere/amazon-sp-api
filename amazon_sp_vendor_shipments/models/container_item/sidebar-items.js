@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ContainerItem","ContainerItem : Carton/Pallet level details for the item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ContainerItem","ContainerItem : Carton/Pallet level details for the item."]]};

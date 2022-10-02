@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PointsGrantedDetail","PointsGrantedDetail : The number of Amazon Points offered with the purchase of an item, and their monetary value."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PointsGrantedDetail","PointsGrantedDetail : The number of Amazon Points offered with the purchase of an item, and their monetary value."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["MarketplaceParticipation",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["MarketplaceParticipation",""]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SubmitAcknowledgementRequest","SubmitAcknowledgementRequest : The request schema for the submitAcknowledgment operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SubmitAcknowledgementRequest","SubmitAcknowledgementRequest : The request schema for the submitAcknowledgment operation."]]};

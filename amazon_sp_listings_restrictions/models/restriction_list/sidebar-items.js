@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RestrictionList","RestrictionList : A list of restrictions for the specified Amazon catalog item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["RestrictionList","RestrictionList : A list of restrictions for the specified Amazon catalog item."]]};

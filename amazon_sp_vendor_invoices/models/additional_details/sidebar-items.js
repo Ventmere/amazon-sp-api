@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Type","The type of the additional information provided by the selling party."]],"struct":[["AdditionalDetails","AdditionalDetails : Additional information provided by the selling party for tax-related or any other purpose."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Type","The type of the additional information provided by the selling party."]],"struct":[["AdditionalDetails","AdditionalDetails : Additional information provided by the selling party for tax-related or any other purpose."]]};

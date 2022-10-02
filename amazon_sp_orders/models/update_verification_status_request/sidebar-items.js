@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["UpdateVerificationStatusRequest","UpdateVerificationStatusRequest : Request to update the verification status of an order containing regulated products."]]});
+window.SIDEBAR_ITEMS = {"struct":[["UpdateVerificationStatusRequest","UpdateVerificationStatusRequest : The request body for the updateVerificationStatus operation."]]};

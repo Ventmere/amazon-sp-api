@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["FunctionCode","Provide the function code."]],"struct":[["Stop","Stop : Contractual or operational port or point relevant to the movement of the cargo."]]});
+window.SIDEBAR_ITEMS = {"enum":[["FunctionCode","Provide the function code."]],"struct":[["Stop","Stop : Contractual or operational port or point relevant to the movement of the cargo."]]};

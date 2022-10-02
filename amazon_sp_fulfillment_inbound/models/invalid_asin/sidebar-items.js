@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["InvalidAsin",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["InvalidAsin",""]]};

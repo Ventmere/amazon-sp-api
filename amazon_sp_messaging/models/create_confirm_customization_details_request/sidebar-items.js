@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateConfirmCustomizationDetailsRequest","CreateConfirmCustomizationDetailsRequest : The request schema for the confirmCustomizationDetails operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateConfirmCustomizationDetailsRequest","CreateConfirmCustomizationDetailsRequest : The request schema for the confirmCustomizationDetails operation."]]};

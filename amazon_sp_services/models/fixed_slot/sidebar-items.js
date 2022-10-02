@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["FixedSlot","FixedSlot : In this slot format each slot only has the requested capacity types. This slot size is as specified by slot duration."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetSolicitationActionResponseEmbedded",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetSolicitationActionResponseEmbedded",""]]};

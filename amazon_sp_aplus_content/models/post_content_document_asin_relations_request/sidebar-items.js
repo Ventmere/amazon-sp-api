@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PostContentDocumentAsinRelationsRequest",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["PostContentDocumentAsinRelationsRequest",""]]};

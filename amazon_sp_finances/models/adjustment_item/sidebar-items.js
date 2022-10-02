@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AdjustmentItem","AdjustmentItem : An item in an adjustment to the seller’s account."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AdjustmentItem","AdjustmentItem : An item in an adjustment to the seller’s account."]]};

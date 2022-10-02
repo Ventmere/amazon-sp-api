@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["OrderScheduleDetails","OrderScheduleDetails : This object allows users to specify an order to be scheduled. Only the amazonOrderId is required. "]]};

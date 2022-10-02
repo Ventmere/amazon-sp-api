@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PostContentDocumentRequest",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["PostContentDocumentRequest",""]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["MarketplaceTaxInfo","MarketplaceTaxInfo : Tax information about the marketplace."]]});
+window.SIDEBAR_ITEMS = {"struct":[["MarketplaceTaxInfo","MarketplaceTaxInfo : Tax information about the marketplace."]]};

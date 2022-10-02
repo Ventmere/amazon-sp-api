@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CompetitivePricingType","CompetitivePricingType : Competitive pricing information for the item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CompetitivePricingType","CompetitivePricingType : Competitive pricing information for the item."]]};

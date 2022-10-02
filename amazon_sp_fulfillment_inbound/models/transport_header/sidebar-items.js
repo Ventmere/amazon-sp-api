@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TransportHeader","TransportHeader : The shipping identifier, information about whether the shipment is by an Amazon-partnered carrier, and information about whether the shipment is Small Parcel or Less Than Truckload/Full Truckload (LTL/FTL)."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TransportHeader","TransportHeader : The shipping identifier, information about whether the shipment is by an Amazon-partnered carrier, and information about whether the shipment is Small Parcel or Less Than Truckload/Full Truckload (LTL/FTL)."]]};

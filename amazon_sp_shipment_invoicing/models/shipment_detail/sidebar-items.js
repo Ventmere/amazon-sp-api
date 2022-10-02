@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ShipmentDetail","ShipmentDetail : The information required by a selling partner to issue a shipment invoice."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ShipmentDetail","ShipmentDetail : The information required by a selling partner to issue a shipment invoice."]]};

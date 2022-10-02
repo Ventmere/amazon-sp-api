@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Period","One of a set of predefined ISO 8601 periods that specifies how often a report should be created."]],"struct":[["CreateReportScheduleSpecification",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["Period","One of a set of predefined ISO 8601 periods that specifies how often a report should be created."]],"struct":[["CreateReportScheduleSpecification",""]]};

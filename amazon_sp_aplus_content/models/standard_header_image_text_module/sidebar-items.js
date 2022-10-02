@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardHeaderImageTextModule","StandardHeaderImageTextModule : Standard headline text, an image, and body text."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardHeaderImageTextModule","StandardHeaderImageTextModule : Standard headline text, an image, and body text."]]};

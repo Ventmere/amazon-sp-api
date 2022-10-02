@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["AssignAppointmentResourcesRequest","AssignAppointmentResourcesRequest : Request schema for the `assignAppointmentResources` operation."]]};

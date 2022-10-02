@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TaxWithheldComponent","TaxWithheldComponent : Information about the taxes withheld."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TaxWithheldComponent","TaxWithheldComponent : Information about the taxes withheld."]]};

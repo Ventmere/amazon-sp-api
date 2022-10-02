@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["MethodOfPayment","This is used for import purchase orders only. If the recipient requests, this field will contain the shipment method of payment."]],"struct":[["ImportDetails",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["MethodOfPayment","This is used for import purchase orders only. If the recipient requests, this field will contain the shipment method of payment."]],"struct":[["ImportDetails",""]]};

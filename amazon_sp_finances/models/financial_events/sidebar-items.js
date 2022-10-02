@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["FinancialEvents","FinancialEvents : Contains all information related to a financial event."]]});
+window.SIDEBAR_ITEMS = {"struct":[["FinancialEvents","FinancialEvents : Contains all information related to a financial event."]]};

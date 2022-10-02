@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreatorType","CreatorType : The creator type attribute of an item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreatorType","CreatorType : The creator type attribute of an item."]]};

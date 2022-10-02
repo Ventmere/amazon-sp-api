@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["EventFilterAllOf",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["EventFilterAllOf",""]]};

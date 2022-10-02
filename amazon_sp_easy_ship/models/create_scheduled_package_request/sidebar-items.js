@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateScheduledPackageRequest","CreateScheduledPackageRequest : The request schema for the `createScheduledPackage` operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateScheduledPackageRequest","CreateScheduledPackageRequest : The request schema for the `createScheduledPackage` operation."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListingOffersRequestParams",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListingOffersRequestParams",""]]};

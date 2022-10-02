@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Attachment","Attachment : Represents a file uploaded to a destination that was created by the createUploadDestination operation of the Uploads API."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Attachment","Attachment : Represents a file uploaded to a destination that was created by the createUploadDestinationForResource operation of the Selling Partner API for Uploads."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardCompanyLogoModule","StandardCompanyLogoModule : The standard company logo image."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardCompanyLogoModule","StandardCompanyLogoModule : The standard company logo image."]]};

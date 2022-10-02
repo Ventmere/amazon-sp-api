@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CodSettings","CodSettings : The COD (Cash On Delivery) charges that you associate with a COD fulfillment order."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CodSettings","CodSettings : The COD (Cash On Delivery) charges that you associate with a COD fulfillment order."]]};

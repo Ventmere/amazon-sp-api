@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Status","The current processing status of the transaction."]],"struct":[["Transaction","Transaction : The transaction details including the status. If the transaction was successful, also includes the requested test order data."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Status","The current processing status of the transaction."]],"struct":[["Transaction","Transaction : The transaction details including the status. If the transaction was successful, also includes the requested test order data."]]};

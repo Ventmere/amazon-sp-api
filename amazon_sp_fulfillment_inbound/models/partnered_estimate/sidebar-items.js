@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PartneredEstimate","PartneredEstimate : The estimated shipping cost for a shipment using an Amazon-partnered carrier."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PartneredEstimate","PartneredEstimate : The estimated shipping cost for a shipment using an Amazon-partnered carrier."]]};

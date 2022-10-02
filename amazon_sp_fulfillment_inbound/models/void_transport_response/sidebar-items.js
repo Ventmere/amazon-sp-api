@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["VoidTransportResponse","VoidTransportResponse : The response schema for the voidTransport operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["VoidTransportResponse","VoidTransportResponse : The response schema for the voidTransport operation."]]};

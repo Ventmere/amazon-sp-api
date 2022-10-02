@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["RangeSlot","RangeSlot : Capacity slots represented in a format similar to availability rules."]]};

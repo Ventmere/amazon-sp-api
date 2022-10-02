@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PackageDimensions","PackageDimensions : The dimensions of a package contained in a shipment."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PackageDimensions","PackageDimensions : The dimensions of a package contained in a shipment."]]};

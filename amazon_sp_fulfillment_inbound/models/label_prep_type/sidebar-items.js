@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["LabelPrepType","LabelPrepType : The type of label preparation that is required for the inbound shipment. The type of label preparation that is required for the inbound shipment."]]});
+window.SIDEBAR_ITEMS = {"enum":[["LabelPrepType","LabelPrepType : The type of label preparation that is required for the inbound shipment. The type of label preparation that is required for the inbound shipment."]]};

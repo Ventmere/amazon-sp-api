@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SubmitShipmentConfirmationsRequest","SubmitShipmentConfirmationsRequest : The request schema for the SubmitShipmentConfirmations operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SubmitShipmentConfirmationsRequest","SubmitShipmentConfirmationsRequest : The request schema for the SubmitShipmentConfirmations operation."]]};

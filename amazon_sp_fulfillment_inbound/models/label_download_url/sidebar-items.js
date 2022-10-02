@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["LabelDownloadUrl",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["LabelDownloadUrl",""]]};

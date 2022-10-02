@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ReservedQuantity","ReservedQuantity : The quantity of reserved inventory."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ReservedQuantity","ReservedQuantity : The quantity of reserved inventory."]]};

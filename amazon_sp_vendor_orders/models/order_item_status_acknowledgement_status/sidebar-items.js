@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ConfirmationStatus","Confirmation status of line item."]],"struct":[["OrderItemStatusAcknowledgementStatus","OrderItemStatusAcknowledgementStatus : Acknowledgement status information."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ConfirmationStatus","Confirmation status of line item."]],"struct":[["OrderItemStatusAcknowledgementStatus","OrderItemStatusAcknowledgementStatus : Acknowledgement status information."]]};

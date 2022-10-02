@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListMatchingItemsResponse",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListMatchingItemsResponse",""]]};

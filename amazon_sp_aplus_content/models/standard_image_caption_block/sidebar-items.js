@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardImageCaptionBlock","StandardImageCaptionBlock : The A+ Content standard image and caption block."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardImageCaptionBlock","StandardImageCaptionBlock : The A+ Content standard image and caption block."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ScopeOfWork","ScopeOfWork : The scope of work for the order."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ScopeOfWork","ScopeOfWork : The scope of work for the order."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CartonReferenceDetails",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["CartonReferenceDetails",""]]};

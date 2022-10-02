@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["EventBridgeResourceSpecification","EventBridgeResourceSpecification : The information required to create an Amazon EventBridge destination."]]});
+window.SIDEBAR_ITEMS = {"struct":[["EventBridgeResourceSpecification","EventBridgeResourceSpecification : The information required to create an Amazon EventBridge destination."]]};

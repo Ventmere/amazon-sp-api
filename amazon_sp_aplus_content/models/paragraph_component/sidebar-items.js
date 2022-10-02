@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ParagraphComponent","ParagraphComponent : A list of rich text content, usually presented in a text box."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ParagraphComponent","ParagraphComponent : A list of rich text content, usually presented in a text box."]]};

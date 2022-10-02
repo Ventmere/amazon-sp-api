@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PackageDetails","PackageDetails : Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PackageDetails","PackageDetails : Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`."]]};

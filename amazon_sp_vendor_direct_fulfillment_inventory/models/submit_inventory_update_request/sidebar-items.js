@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SubmitInventoryUpdateRequest","SubmitInventoryUpdateRequest : The request body for the submitInventoryUpdate operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SubmitInventoryUpdateRequest","SubmitInventoryUpdateRequest : The request body for the submitInventoryUpdate operation."]]};

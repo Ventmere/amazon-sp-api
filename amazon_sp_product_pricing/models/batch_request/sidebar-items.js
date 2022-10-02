@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["BatchRequest","BatchRequest : Common properties of batch requests against individual APIs."]]});
+window.SIDEBAR_ITEMS = {"struct":[["BatchRequest","BatchRequest : Common properties of batch requests against individual APIs."]]};

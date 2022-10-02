@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ContentType","ContentType : The A+ Content document type. The A+ Content document type."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ContentType","ContentType : The A+ Content document type. The A+ Content document type."]]};

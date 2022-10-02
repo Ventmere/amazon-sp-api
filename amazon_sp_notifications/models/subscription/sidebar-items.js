@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Subscription","Subscription : Represents a subscription to receive notifications."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Subscription","Subscription : Represents a subscription to receive notifications."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetOrderMetricsResponse","GetOrderMetricsResponse : The response schema for the getOrderMetrics operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetOrderMetricsResponse","GetOrderMetricsResponse : The response schema for the getOrderMetrics operation."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["GuidanceReason","GuidanceReason : A reason for the current inbound guidance for an item. A reason for the current inbound guidance for an item."]]});
+window.SIDEBAR_ITEMS = {"enum":[["GuidanceReason","GuidanceReason : A reason for the current inbound guidance for an item. A reason for the current inbound guidance for an item."]]};

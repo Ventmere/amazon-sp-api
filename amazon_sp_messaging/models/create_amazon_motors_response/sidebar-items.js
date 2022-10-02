@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateAmazonMotorsResponse","CreateAmazonMotorsResponse : The response schema for the createAmazonMotors operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateAmazonMotorsResponse","CreateAmazonMotorsResponse : The response schema for the createAmazonMotors operation."]]};

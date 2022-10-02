@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PartyIdentification",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["PartyIdentification",""]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["UnitOfMeasure","Unit of measure for the acknowledged quantity."]],"struct":[["ItemQuantity","ItemQuantity : Details of quantity ordered."]]});
+window.SIDEBAR_ITEMS = {"enum":[["UnitOfMeasure","Unit of measure for the acknowledged quantity."]],"struct":[["ItemQuantity","ItemQuantity : Details of quantity ordered."]]};

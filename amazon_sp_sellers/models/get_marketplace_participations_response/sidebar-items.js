@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetMarketplaceParticipationsResponse","GetMarketplaceParticipationsResponse : The response schema for the getMarketplaceParticipations operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetMarketplaceParticipationsResponse","GetMarketplaceParticipationsResponse : The response schema for the getMarketplaceParticipations operation."]]};

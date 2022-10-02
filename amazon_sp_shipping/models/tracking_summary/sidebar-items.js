@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TrackingSummary","TrackingSummary : The tracking summary."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TrackingSummary","TrackingSummary : The tracking summary."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Constraint","Constraint : A validation constraint."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Constraint","Constraint : A validation constraint."]]};

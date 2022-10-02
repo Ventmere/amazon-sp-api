@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["DeliveryWindow","DeliveryWindow : The time range within which a Scheduled Delivery fulfillment order should be delivered."]]});
+window.SIDEBAR_ITEMS = {"struct":[["DeliveryWindow","DeliveryWindow : The time range within which a Scheduled Delivery fulfillment order should be delivered."]]};

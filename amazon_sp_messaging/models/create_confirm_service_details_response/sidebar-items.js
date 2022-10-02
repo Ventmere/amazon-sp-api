@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateConfirmServiceDetailsResponse","CreateConfirmServiceDetailsResponse : The response schema for the createConfirmServiceDetails operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateConfirmServiceDetailsResponse","CreateConfirmServiceDetailsResponse : The response schema for the createConfirmServiceDetails operation."]]};

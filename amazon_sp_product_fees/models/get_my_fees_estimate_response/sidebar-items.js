@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetMyFeesEstimateResponse",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetMyFeesEstimateResponse",""]]};

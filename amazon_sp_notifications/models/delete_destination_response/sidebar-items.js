@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["DeleteDestinationResponse","DeleteDestinationResponse : The response schema for the deleteDestination operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["DeleteDestinationResponse","DeleteDestinationResponse : The response schema for the deleteDestination operation."]]};

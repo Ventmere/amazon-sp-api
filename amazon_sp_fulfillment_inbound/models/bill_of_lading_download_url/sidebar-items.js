@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["BillOfLadingDownloadUrl",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["BillOfLadingDownloadUrl",""]]};

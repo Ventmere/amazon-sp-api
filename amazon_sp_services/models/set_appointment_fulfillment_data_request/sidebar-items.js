@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["SetAppointmentFulfillmentDataRequest","SetAppointmentFulfillmentDataRequest : Input for set appointment fulfillment data operation."]]};

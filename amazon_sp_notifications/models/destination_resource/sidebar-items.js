@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["DestinationResource","DestinationResource : The destination resource types."]]});
+window.SIDEBAR_ITEMS = {"struct":[["DestinationResource","DestinationResource : The destination resource types."]]};

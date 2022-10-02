@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["BoxContentsFeeDetails","BoxContentsFeeDetails : The manual processing fee per unit and total fee for a shipment."]]});
+window.SIDEBAR_ITEMS = {"struct":[["BoxContentsFeeDetails","BoxContentsFeeDetails : The manual processing fee per unit and total fee for a shipment."]]};

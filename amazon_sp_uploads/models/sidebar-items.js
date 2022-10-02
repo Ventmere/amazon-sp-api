@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["create_upload_destination_response",""],["error",""],["upload_destination",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["create_upload_destination_response",""],["error",""],["upload_destination",""]]};

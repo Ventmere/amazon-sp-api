@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["LanguageType","LanguageType : The language type attribute of an item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["LanguageType","LanguageType : The language type attribute of an item."]]};

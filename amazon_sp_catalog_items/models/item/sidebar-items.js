@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Item","Item : An item in the Amazon catalog."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Item","Item : An item in the Amazon catalog."]]};

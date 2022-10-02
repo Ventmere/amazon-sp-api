@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SellerInputDefinition","SellerInputDefinition : Specifies characteristics that apply to a seller input."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SellerInputDefinition","SellerInputDefinition : Specifies characteristics that apply to a seller input."]]};

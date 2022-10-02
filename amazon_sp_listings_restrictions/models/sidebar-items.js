@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["error",""],["link",""],["reason",""],["restriction",""],["restriction_list",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["error",""],["link",""],["reason",""],["restriction",""],["restriction_list",""]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ServiceRate","ServiceRate : The specific rate for a shipping service, or null if no service available."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ServiceRate","ServiceRate : The specific rate for a shipping service, or null if no service available."]]};

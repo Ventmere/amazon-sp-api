@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ShippingLabelRequest",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["ShippingLabelRequest",""]]};

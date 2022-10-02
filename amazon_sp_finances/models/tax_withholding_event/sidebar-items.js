@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TaxWithholdingEvent","TaxWithholdingEvent : A TaxWithholding event on seller’s account."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TaxWithholdingEvent","TaxWithholdingEvent : A TaxWithholding event on seller’s account."]]};

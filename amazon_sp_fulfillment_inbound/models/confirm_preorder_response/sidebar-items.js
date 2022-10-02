@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ConfirmPreorderResponse","ConfirmPreorderResponse : The response schema for the confirmPreorder operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ConfirmPreorderResponse","ConfirmPreorderResponse : The response schema for the confirmPreorder operation."]]};

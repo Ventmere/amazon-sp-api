@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["LabelPrepPreference","LabelPrepPreference : The preference for label preparation for an inbound shipment. The preference for label preparation for an inbound shipment."]]});
+window.SIDEBAR_ITEMS = {"enum":[["LabelPrepPreference","LabelPrepPreference : The preference for label preparation for an inbound shipment. The preference for label preparation for an inbound shipment."]]};

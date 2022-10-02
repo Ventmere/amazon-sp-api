@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ReportSchedule","ReportSchedule : Detailed information about a report schedule."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ReportSchedule","ReportSchedule : Detailed information about a report schedule."]]};

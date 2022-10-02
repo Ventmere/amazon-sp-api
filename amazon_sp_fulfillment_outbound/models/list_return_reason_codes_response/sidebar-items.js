@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListReturnReasonCodesResponse","ListReturnReasonCodesResponse : The response schema for the listReturnReasonCodes operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListReturnReasonCodesResponse","ListReturnReasonCodesResponse : The response schema for the listReturnReasonCodes operation."]]};

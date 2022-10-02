@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["FulfillmentAction","FulfillmentAction : Specifies whether the fulfillment order should ship now or have an order hold put on it. Specifies whether the fulfillment order should ship now or have an order hold put on it."]]});
+window.SIDEBAR_ITEMS = {"enum":[["FulfillmentAction","FulfillmentAction : Specifies whether the fulfillment order should ship now or have an order hold put on it. Specifies whether the fulfillment order should ship now or have an order hold put on it."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ContentStatus","ContentStatus : The submission status of the content document. The submission status of the content document."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ContentStatus","ContentStatus : The submission status of the content document. The submission status of the content document."]]};

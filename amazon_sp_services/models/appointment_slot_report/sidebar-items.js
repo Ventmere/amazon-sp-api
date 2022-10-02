@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["SchedulingType","Defines the type of slots."]],"struct":[["AppointmentSlotReport","AppointmentSlotReport : Availability information as per the service context queried."]]};

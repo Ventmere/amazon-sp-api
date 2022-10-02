@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateShipmentResult","CreateShipmentResult : The payload schema for the createShipment operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateShipmentResult","CreateShipmentResult : The payload schema for the createShipment operation."]]};

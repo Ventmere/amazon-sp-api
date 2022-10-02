@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RegulatedInformation","RegulatedInformation : The regulated information collected during purchase and used to verify the order."]]});
+window.SIDEBAR_ITEMS = {"struct":[["RegulatedInformation","RegulatedInformation : The regulated information collected during purchase and used to verify the order."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateDestinationRequest","CreateDestinationRequest : The request schema for the createDestination operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateDestinationRequest","CreateDestinationRequest : The request schema for the createDestination operation."]]};

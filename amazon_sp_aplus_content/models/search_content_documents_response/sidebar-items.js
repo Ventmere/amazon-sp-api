@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SearchContentDocumentsResponse",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["SearchContentDocumentsResponse",""]]};

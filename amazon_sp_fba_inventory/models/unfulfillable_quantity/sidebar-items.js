@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["UnfulfillableQuantity","UnfulfillableQuantity : The quantity of unfulfillable inventory."]]});
+window.SIDEBAR_ITEMS = {"struct":[["UnfulfillableQuantity","UnfulfillableQuantity : The quantity of unfulfillable inventory."]]};

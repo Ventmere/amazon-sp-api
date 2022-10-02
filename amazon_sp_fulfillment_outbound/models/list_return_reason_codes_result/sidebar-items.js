@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListReturnReasonCodesResult",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListReturnReasonCodesResult",""]]};

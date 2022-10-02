@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ContentDocument","ContentDocument : The A+ Content document. This is the enhanced content that is published to product detail pages."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ContentDocument","ContentDocument : The A+ Content document. This is the enhanced content that is published to product detail pages."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["UpdateVerificationStatusRequestBody","UpdateVerificationStatusRequestBody : The updated values of the VerificationStatus field."]]});
+window.SIDEBAR_ITEMS = {"struct":[["UpdateVerificationStatusRequestBody","UpdateVerificationStatusRequestBody : The updated values of the VerificationStatus field."]]};

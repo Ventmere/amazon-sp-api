@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Destination","Destination : Represents a destination created when you call the createDestination operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Destination","Destination : Represents a destination created when you call the createDestination operation."]]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["DayOfWeek","DayOfWeek : The day of the week. The day of the week."]]};

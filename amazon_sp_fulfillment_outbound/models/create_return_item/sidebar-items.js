@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateReturnItem","CreateReturnItem : An item that Amazon accepted for return."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateReturnItem","CreateReturnItem : An item that Amazon accepted for return."]]};

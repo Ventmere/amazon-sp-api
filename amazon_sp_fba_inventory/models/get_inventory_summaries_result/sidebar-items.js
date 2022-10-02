@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetInventorySummariesResult","GetInventorySummariesResult : The payload schema for the getInventorySummaries operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetInventorySummariesResult","GetInventorySummariesResult : The payload schema for the getInventorySummaries operation."]]};

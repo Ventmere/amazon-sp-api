@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Pallet","Pallet : Pallet information."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Pallet","Pallet : Pallet information."]]};

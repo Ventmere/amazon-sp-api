@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PublishRecord","PublishRecord : The full context for an A+ Content publishing event."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PublishRecord","PublishRecord : The full context for an A+ Content publishing event."]]};

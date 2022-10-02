@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Method","The HTTP method in the restricted resource."]],"struct":[["RestrictedResource","RestrictedResource : Model of a restricted resource."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Method","The HTTP method in the restricted resource."]],"struct":[["RestrictedResource","RestrictedResource : Model of a restricted resource."]]};

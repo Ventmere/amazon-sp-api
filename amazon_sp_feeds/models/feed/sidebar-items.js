@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ProcessingStatus","The processing status of the feed."]],"struct":[["Feed",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["ProcessingStatus","The processing status of the feed."]],"struct":[["Feed",""]]};

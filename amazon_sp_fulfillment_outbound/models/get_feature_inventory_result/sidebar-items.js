@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetFeatureInventoryResult","GetFeatureInventoryResult : The payload for the getEligibileInventory operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetFeatureInventoryResult","GetFeatureInventoryResult : The payload for the getEligibileInventory operation."]]};

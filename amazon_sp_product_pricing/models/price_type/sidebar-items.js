@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PriceType",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["PriceType",""]]};

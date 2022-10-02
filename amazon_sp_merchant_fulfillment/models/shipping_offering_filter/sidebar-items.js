@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ShippingOfferingFilter","ShippingOfferingFilter : Filter for use when requesting eligible shipping services."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ShippingOfferingFilter","ShippingOfferingFilter : Filter for use when requesting eligible shipping services."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["OrderBuyerInfo","OrderBuyerInfo : Buyer information for an order."]]});
+window.SIDEBAR_ITEMS = {"struct":[["OrderBuyerInfo","OrderBuyerInfo : Buyer information for an order."]]};

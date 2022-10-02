@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CouponPaymentEvent","CouponPaymentEvent : An event related to coupon payments."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CouponPaymentEvent","CouponPaymentEvent : An event related to coupon payments."]]};

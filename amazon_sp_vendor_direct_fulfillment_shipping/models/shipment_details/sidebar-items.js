@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ShipmentStatus","Indicate the shipment status."]],"struct":[["ShipmentDetails","ShipmentDetails : Details about a shipment."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ShipmentStatus","Indicate the shipment status."]],"struct":[["ShipmentDetails","ShipmentDetails : Details about a shipment."]]};

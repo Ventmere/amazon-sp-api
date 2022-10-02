@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["OrderRegulatedInfo","OrderRegulatedInfo : The order’s regulated information along with its verification status."]]});
+window.SIDEBAR_ITEMS = {"struct":[["OrderRegulatedInfo","OrderRegulatedInfo : The order’s regulated information along with its verification status."]]};

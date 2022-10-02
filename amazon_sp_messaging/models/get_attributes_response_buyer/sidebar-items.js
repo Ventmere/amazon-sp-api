@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetAttributesResponseBuyer","GetAttributesResponseBuyer : The list of attributes related to the buyer."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetAttributesResponseBuyer","GetAttributesResponseBuyer : The list of attributes related to the buyer."]]};

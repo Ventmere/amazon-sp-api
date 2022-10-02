@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["FileContents","FileContents : The document data and checksum."]]});
+window.SIDEBAR_ITEMS = {"struct":[["FileContents","FileContents : The document data and checksum."]]};

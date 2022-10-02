@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["InboundShipmentRequest","InboundShipmentRequest : The request schema for an inbound shipment."]]});
+window.SIDEBAR_ITEMS = {"struct":[["InboundShipmentRequest","InboundShipmentRequest : The request schema for an inbound shipment."]]};

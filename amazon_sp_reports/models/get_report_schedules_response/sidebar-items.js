@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetReportSchedulesResponse","GetReportSchedulesResponse : The response for the getReportSchedules operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetReportSchedulesResponse","GetReportSchedulesResponse : The response for the getReportSchedules operation."]]};

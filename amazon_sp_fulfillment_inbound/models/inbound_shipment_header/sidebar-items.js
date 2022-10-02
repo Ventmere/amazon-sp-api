@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["InboundShipmentHeader","InboundShipmentHeader : Inbound shipment information used to create and update inbound shipments."]]});
+window.SIDEBAR_ITEMS = {"struct":[["InboundShipmentHeader","InboundShipmentHeader : Inbound shipment information used to create and update inbound shipments."]]};

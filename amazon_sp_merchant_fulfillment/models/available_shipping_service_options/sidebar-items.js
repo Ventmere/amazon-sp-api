@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AvailableShippingServiceOptions","AvailableShippingServiceOptions : The available shipping service options."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AvailableShippingServiceOptions","AvailableShippingServiceOptions : The available shipping service options."]]};

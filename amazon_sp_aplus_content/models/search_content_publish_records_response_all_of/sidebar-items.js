@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SearchContentPublishRecordsResponseAllOf",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["SearchContentPublishRecordsResponseAllOf",""]]};

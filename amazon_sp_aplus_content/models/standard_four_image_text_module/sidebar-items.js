@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardFourImageTextModule","StandardFourImageTextModule : Four standard images with text, presented across a single row."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardFourImageTextModule","StandardFourImageTextModule : Four standard images with text, presented across a single row."]]};

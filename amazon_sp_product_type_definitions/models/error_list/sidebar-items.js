@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ErrorList","ErrorList : A list of error responses returned when a request is unsuccessful."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ErrorList","ErrorList : A list of error responses returned when a request is unsuccessful."]]};

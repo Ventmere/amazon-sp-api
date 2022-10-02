@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["LabelFormat","Format of the label."]],"struct":[["ShippingLabel",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["LabelFormat","Format of the label."]],"struct":[["ShippingLabel",""]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["BuyerTaxInfo","BuyerTaxInfo : Tax information about the buyer."]]});
+window.SIDEBAR_ITEMS = {"struct":[["BuyerTaxInfo","BuyerTaxInfo : Tax information about the buyer."]]};

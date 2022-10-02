@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["NetworkComminglingTransactionEvent","NetworkComminglingTransactionEvent : A network commingling transaction event."]]});
+window.SIDEBAR_ITEMS = {"struct":[["NetworkComminglingTransactionEvent","NetworkComminglingTransactionEvent : A network commingling transaction event."]]};

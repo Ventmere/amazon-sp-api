@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetDestinationsResponse","GetDestinationsResponse : The response schema for the getDestinations operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetDestinationsResponse","GetDestinationsResponse : The response schema for the getDestinations operation."]]};

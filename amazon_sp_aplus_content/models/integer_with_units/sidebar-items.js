@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["IntegerWithUnits","IntegerWithUnits : A whole number dimension and its unit of measurement. For example, this can represent 100 pixels."]]});
+window.SIDEBAR_ITEMS = {"struct":[["IntegerWithUnits","IntegerWithUnits : A whole number dimension and its unit of measurement. For example, this can represent 100 pixels."]]};

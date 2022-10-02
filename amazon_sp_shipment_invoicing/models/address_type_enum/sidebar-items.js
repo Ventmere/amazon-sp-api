@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["AddressTypeEnum","AddressTypeEnum : The shipping address type. The shipping address type."]]});
+window.SIDEBAR_ITEMS = {"enum":[["AddressTypeEnum","AddressTypeEnum : The shipping address type. The shipping address type."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Pagination","Pagination : The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It’s a form of traffic management."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Pagination","Pagination : The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It’s a form of traffic management."]]};

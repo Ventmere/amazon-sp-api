@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateFulfillmentReturnResult",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateFulfillmentReturnResult",""]]};

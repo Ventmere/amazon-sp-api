@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["DebtRecoveryItem","DebtRecoveryItem : An item of a debt payment or debt adjustment."]]});
+window.SIDEBAR_ITEMS = {"struct":[["DebtRecoveryItem","DebtRecoveryItem : An item of a debt payment or debt adjustment."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TrackingAddress","TrackingAddress : Address information for tracking the package."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TrackingAddress","TrackingAddress : Address information for tracking the package."]]};

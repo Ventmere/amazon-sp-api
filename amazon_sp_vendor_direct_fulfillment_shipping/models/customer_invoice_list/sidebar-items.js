@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CustomerInvoiceList",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["CustomerInvoiceList",""]]};

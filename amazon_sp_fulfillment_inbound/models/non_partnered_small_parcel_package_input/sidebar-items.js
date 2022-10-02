@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["NonPartneredSmallParcelPackageInput","NonPartneredSmallParcelPackageInput : The tracking number of the package, provided by the carrier."]]});
+window.SIDEBAR_ITEMS = {"struct":[["NonPartneredSmallParcelPackageInput","NonPartneredSmallParcelPackageInput : The tracking number of the package, provided by the carrier."]]};

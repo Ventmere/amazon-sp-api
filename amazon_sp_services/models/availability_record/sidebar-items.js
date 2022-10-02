@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["AvailabilityRecord","AvailabilityRecord : `AvailabilityRecord` to represent the capacity of a resource over a time range."]]};

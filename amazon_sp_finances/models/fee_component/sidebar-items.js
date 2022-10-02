@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["FeeComponent","FeeComponent : A fee associated with the event."]]});
+window.SIDEBAR_ITEMS = {"struct":[["FeeComponent","FeeComponent : A fee associated with the event."]]};

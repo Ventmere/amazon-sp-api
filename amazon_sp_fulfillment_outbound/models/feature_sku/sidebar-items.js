@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["FeatureSku","FeatureSku : Information about an SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool."]]});
+window.SIDEBAR_ITEMS = {"struct":[["FeatureSku","FeatureSku : Information about an SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetFeedDocumentResponse","GetFeedDocumentResponse : Response schema."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetFeedDocumentResponse","GetFeedDocumentResponse : Response schema."]]};

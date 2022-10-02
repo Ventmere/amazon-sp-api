@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["InvalidSku",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["InvalidSku",""]]};

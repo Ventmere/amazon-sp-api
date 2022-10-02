@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["AdditionalLocationInfo","AdditionalLocationInfo : Additional location information. Additional location information."]]});
+window.SIDEBAR_ITEMS = {"enum":[["AdditionalLocationInfo","AdditionalLocationInfo : Additional location information. Additional location information."]]};

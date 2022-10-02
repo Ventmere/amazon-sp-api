@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardHeaderTextListBlock","StandardHeaderTextListBlock : The A+ standard fixed-length list of text, with a related headline."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardHeaderTextListBlock","StandardHeaderTextListBlock : The A+ standard fixed-length list of text, with a related headline."]]};

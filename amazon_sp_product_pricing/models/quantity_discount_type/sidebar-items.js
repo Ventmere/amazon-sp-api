@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["QuantityDiscountType",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["QuantityDiscountType",""]]};

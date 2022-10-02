@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PostContentDocumentResponseAllOf",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["PostContentDocumentResponseAllOf",""]]};

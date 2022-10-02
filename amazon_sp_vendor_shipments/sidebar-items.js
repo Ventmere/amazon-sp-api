@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["apis",""],["models",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["apis",""],["models",""]]};

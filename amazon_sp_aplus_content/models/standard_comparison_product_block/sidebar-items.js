@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardComparisonProductBlock","StandardComparisonProductBlock : The A+ Content standard comparison product block."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardComparisonProductBlock","StandardComparisonProductBlock : The A+ Content standard comparison product block."]]};

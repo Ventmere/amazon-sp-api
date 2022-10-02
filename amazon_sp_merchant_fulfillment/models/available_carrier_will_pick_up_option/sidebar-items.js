@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AvailableCarrierWillPickUpOption","AvailableCarrierWillPickUpOption : Indicates whether the carrier will pick up the package, and what fee is charged, if any."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AvailableCarrierWillPickUpOption","AvailableCarrierWillPickUpOption : Indicates whether the carrier will pick up the package, and what fee is charged, if any."]]};

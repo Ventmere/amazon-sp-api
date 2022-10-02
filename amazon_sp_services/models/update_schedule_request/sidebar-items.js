@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["UpdateScheduleRequest","UpdateScheduleRequest : Request schema for the `updateSchedule` operation."]]};

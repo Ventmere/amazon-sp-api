@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["DeleteSubscriptionByIdResponse","DeleteSubscriptionByIdResponse : The response schema for the deleteSubscriptionById operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["DeleteSubscriptionByIdResponse","DeleteSubscriptionByIdResponse : The response schema for the deleteSubscriptionById operation."]]};

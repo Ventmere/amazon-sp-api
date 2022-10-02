@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["CreateReservationRequest","CreateReservationRequest : Request schema for the `createReservation` operation."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Address","Address : The postal address information."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Address","Address : The postal address information."]]};

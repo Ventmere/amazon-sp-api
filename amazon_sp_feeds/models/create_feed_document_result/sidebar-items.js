@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateFeedDocumentResult","CreateFeedDocumentResult : Information required to encrypt and upload a feed document’s contents."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateFeedDocumentResult","CreateFeedDocumentResult : Information required to encrypt and upload a feed document’s contents."]]};

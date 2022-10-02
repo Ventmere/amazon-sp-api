@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardComparisonTableModule","StandardComparisonTableModule : The standard product comparison table."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardComparisonTableModule","StandardComparisonTableModule : The standard product comparison table."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardProductDescriptionModule","StandardProductDescriptionModule : Standard product description text."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardProductDescriptionModule","StandardProductDescriptionModule : Standard product description text."]]};

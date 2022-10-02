@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["OrderAcknowledgementItem","OrderAcknowledgementItem : Details of the item being acknowledged."]]});
+window.SIDEBAR_ITEMS = {"struct":[["OrderAcknowledgementItem","OrderAcknowledgementItem : Details of the item being acknowledged."]]};

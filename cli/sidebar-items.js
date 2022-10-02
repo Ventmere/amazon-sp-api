@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Cmd",""]],"fn":[["main",""]],"mod":[["generate",""]],"struct":[["Args",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["Cmd",""]],"fn":[["main",""]],"mod":[["auth",""]],"struct":[["Args",""]]};

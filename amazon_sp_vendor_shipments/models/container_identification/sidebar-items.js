@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ContainerIdentificationType","The container identification type."]],"struct":[["ContainerIdentification",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["ContainerIdentificationType","The container identification type."]],"struct":[["ContainerIdentification",""]]};

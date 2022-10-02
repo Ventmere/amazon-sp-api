@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetAccountResponse","GetAccountResponse : The response schema for the getAccount operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetAccountResponse","GetAccountResponse : The response schema for the getAccount operation."]]};

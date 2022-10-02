@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Status","Current processing status of the transaction."]],"struct":[["Transaction","Transaction : The transaction status details."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Status","Current processing status of the transaction."]],"struct":[["Transaction","Transaction : The transaction status details."]]};

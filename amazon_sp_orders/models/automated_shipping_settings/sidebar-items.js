@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AutomatedShippingSettings","AutomatedShippingSettings : Contains information regarding the Shipping Settings Automation program, such as whether the order’s shipping settings were generated automatically, and what those settings are."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AutomatedShippingSettings","AutomatedShippingSettings : Contains information regarding the Shipping Settings Automation program, such as whether the order’s shipping settings were generated automatically, and what those settings are."]]};

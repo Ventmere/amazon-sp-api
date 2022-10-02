@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetInboundGuidanceResult",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetInboundGuidanceResult",""]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PostContentDocumentSuspendSubmissionResponse",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["PostContentDocumentSuspendSubmissionResponse",""]]};

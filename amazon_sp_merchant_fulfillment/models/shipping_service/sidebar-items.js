@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ShippingService","ShippingService : A shipping service offer made by a carrier."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ShippingService","ShippingService : A shipping service offer made by a carrier."]]};

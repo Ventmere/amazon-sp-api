@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ContentMetadataRecord","ContentMetadataRecord : The metadata for an A+ Content document, with additional information for content management."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ContentMetadataRecord","ContentMetadataRecord : The metadata for an A+ Content document, with additional information for content management."]]};

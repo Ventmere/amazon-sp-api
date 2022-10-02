@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ReasonCodeDetails","ReasonCodeDetails : A return reason code, a description, and an optional description translation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ReasonCodeDetails","ReasonCodeDetails : A return reason code, a description, and an optional description translation."]]};

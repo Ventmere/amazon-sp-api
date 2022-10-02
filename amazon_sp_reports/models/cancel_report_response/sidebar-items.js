@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CancelReportResponse","CancelReportResponse : The response for the cancelReport operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CancelReportResponse","CancelReportResponse : The response for the cancelReport operation."]]};

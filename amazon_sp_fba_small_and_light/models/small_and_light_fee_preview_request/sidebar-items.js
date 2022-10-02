@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SmallAndLightFeePreviewRequest","SmallAndLightFeePreviewRequest : Request schema for submitting items for which to retrieve fee estimates."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SmallAndLightFeePreviewRequest","SmallAndLightFeePreviewRequest : Request schema for submitting items for which to retrieve fee estimates."]]};

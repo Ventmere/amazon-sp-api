@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["Standard","The encryption standard required to encrypt or decrypt the document contents."]],"struct":[["EncryptionDetails","EncryptionDetails : Encryption details for required client-side encryption and decryption of document contents."]]};

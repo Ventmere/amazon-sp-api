@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ServiceJobStatus","The status of the service job."]],"struct":[["ServiceJob","ServiceJob : The job details of a service."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ServiceJobStatus","The status of the service job."]],"struct":[["ServiceJob","ServiceJob : The job details of a service."]]};

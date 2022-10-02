@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["error",""],["get_marketplace_participations_response",""],["marketplace",""],["marketplace_participation",""],["participation",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["error",""],["get_marketplace_participations_response",""],["marketplace",""],["marketplace_participation",""],["participation",""]]};

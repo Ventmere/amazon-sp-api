@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RejectedShippingService","RejectedShippingService : Information about a rejected shipping service"]]});
+window.SIDEBAR_ITEMS = {"struct":[["RejectedShippingService","RejectedShippingService : Information about a rejected shipping service"]]};

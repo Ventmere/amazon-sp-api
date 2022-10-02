@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AdditionalSellerInput","AdditionalSellerInput : Additional information required to purchase shipping."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AdditionalSellerInput","AdditionalSellerInput : Additional information required to purchase shipping."]]};

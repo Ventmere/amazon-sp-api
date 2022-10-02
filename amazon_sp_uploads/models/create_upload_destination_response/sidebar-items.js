@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateUploadDestinationResponse","CreateUploadDestinationResponse : The response schema for the createUploadDestination operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateUploadDestinationResponse","CreateUploadDestinationResponse : The response schema for the createUploadDestination operation."]]};

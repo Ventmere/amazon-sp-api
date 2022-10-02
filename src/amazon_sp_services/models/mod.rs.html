@@ -1,9 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `crates/amazon-sp-services/src/models/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><script defer src="../../../main.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script>
-    <noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_services/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div>
-        </a><h2 class="location"></h2>
-    </nav>
-    <nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_services/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div>
-        </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_services/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker hidden"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="22" height="22" alt="Pick another theme!" src="../../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-services/src/models/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_services/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_services/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_services/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -53,26 +48,146 @@
 <span id="48">48</span>
 <span id="49">49</span>
 <span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
+<span id="80">80</span>
+<span id="81">81</span>
+<span id="82">82</span>
+<span id="83">83</span>
+<span id="84">84</span>
+<span id="85">85</span>
+<span id="86">86</span>
+<span id="87">87</span>
+<span id="88">88</span>
+<span id="89">89</span>
+<span id="90">90</span>
+<span id="91">91</span>
+<span id="92">92</span>
+<span id="93">93</span>
+<span id="94">94</span>
+<span id="95">95</span>
+<span id="96">96</span>
+<span id="97">97</span>
+<span id="98">98</span>
+<span id="99">99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
 </pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">add_appointment_request</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::add_appointment_request::AddAppointmentRequest</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">address</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::address::Address</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">appointment</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::appointment::Appointment</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">appointment_resource</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::appointment_resource::AppointmentResource</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">appointment_slot</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::appointment_slot::AppointmentSlot</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">appointment_slot_report</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::appointment_slot_report::AppointmentSlotReport</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">appointment_time</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::appointment_time::AppointmentTime</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">appointment_time_input</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::appointment_time_input::AppointmentTimeInput</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">assign_appointment_resources_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::assign_appointment_resources_request::AssignAppointmentResourcesRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">assign_appointment_resources_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::assign_appointment_resources_response::AssignAppointmentResourcesResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">assign_appointment_resources_response_payload</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::assign_appointment_resources_response_payload::AssignAppointmentResourcesResponsePayload</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">associated_item</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::associated_item::AssociatedItem</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">availability_record</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::availability_record::AvailabilityRecord</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">buyer</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::buyer::Buyer</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">cancel_reservation_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::cancel_reservation_response::CancelReservationResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">cancel_service_job_by_service_job_id_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::cancel_service_job_by_service_job_id_response::CancelServiceJobByServiceJobIdResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">capacity_type</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::capacity_type::CapacityType</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">complete_service_job_by_service_job_id_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::complete_service_job_by_service_job_id_response::CompleteServiceJobByServiceJobIdResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_reservation_record</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_reservation_record::CreateReservationRecord</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_reservation_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_reservation_request::CreateReservationRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_reservation_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_reservation_response::CreateReservationResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_service_document_upload_destination</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_service_document_upload_destination::CreateServiceDocumentUploadDestination</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">day_of_week</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::day_of_week::DayOfWeek</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">encryption_details</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::encryption_details::EncryptionDetails</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error::Error</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">fixed_slot</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::fixed_slot::FixedSlot</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">fixed_slot_capacity</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::fixed_slot_capacity::FixedSlotCapacity</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">fixed_slot_capacity_errors</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::fixed_slot_capacity_errors::FixedSlotCapacityErrors</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">fixed_slot_capacity_query</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::fixed_slot_capacity_query::FixedSlotCapacityQuery</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">fulfillment_document</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::fulfillment_document::FulfillmentDocument</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">fulfillment_time</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::fulfillment_time::FulfillmentTime</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_appointment_slots_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_appointment_slots_response::GetAppointmentSlotsResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_service_job_by_service_job_id_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_service_job_by_service_job_id_response::GetServiceJobByServiceJobIdResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_service_jobs_response</span>;
@@ -85,24 +200,55 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::job_listing::JobListing</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">poa</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::poa::Poa</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">range_capacity</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::range_capacity::RangeCapacity</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">range_slot</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::range_slot::RangeSlot</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">range_slot_capacity</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::range_slot_capacity::RangeSlotCapacity</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">range_slot_capacity_errors</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::range_slot_capacity_errors::RangeSlotCapacityErrors</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">range_slot_capacity_query</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::range_slot_capacity_query::RangeSlotCapacityQuery</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">recurrence</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::recurrence::Recurrence</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">reschedule_appointment_request</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::reschedule_appointment_request::RescheduleAppointmentRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">reservation</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::reservation::Reservation</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">scope_of_work</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::scope_of_work::ScopeOfWork</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">seller</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::seller::Seller</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">service_document_upload_destination</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::service_document_upload_destination::ServiceDocumentUploadDestination</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">service_job</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::service_job::ServiceJob</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">service_job_provider</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::service_job_provider::ServiceJobProvider</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">service_location</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::service_location::ServiceLocation</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">service_upload_document</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::service_upload_document::ServiceUploadDocument</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">set_appointment_fulfillment_data_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::set_appointment_fulfillment_data_request::SetAppointmentFulfillmentDataRequest</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">set_appointment_response</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::set_appointment_response::SetAppointmentResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">technician</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::technician::Technician</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">update_reservation_record</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::update_reservation_record::UpdateReservationRecord</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">update_reservation_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::update_reservation_request::UpdateReservationRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">update_reservation_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::update_reservation_response::UpdateReservationResponse</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">update_schedule_record</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::update_schedule_record::UpdateScheduleRecord</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">update_schedule_request</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::update_schedule_request::UpdateScheduleRequest</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">update_schedule_response</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::update_schedule_response::UpdateScheduleResponse</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">warning</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::warning::Warning</span>;
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_services" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0 (fe5b13d68 2022-05-18)" ></div>
-</body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_services" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>

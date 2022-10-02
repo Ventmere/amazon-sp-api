@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["RejectedOrder","RejectedOrder : A order which we couldn’t schedule on your behalf. It contains its id, and information on the error."]]};

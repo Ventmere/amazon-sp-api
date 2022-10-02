@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Op","Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See https://tools.ietf.org/html/rfc6902."]],"struct":[["PatchOperation","PatchOperation : Individual JSON Patch operation for an HTTP PATCH request."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Op","Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See https://tools.ietf.org/html/rfc6902."]],"struct":[["PatchOperation","PatchOperation : Individual JSON Patch operation for an HTTP PATCH request."]]};

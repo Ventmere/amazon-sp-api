@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetMessagingActionsForOrderResponse","GetMessagingActionsForOrderResponse : The response schema for the getMessagingActionsForOrder operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetMessagingActionsForOrderResponse","GetMessagingActionsForOrderResponse : The response schema for the getMessagingActionsForOrder operation."]]};

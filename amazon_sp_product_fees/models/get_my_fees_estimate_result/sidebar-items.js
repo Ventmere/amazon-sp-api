@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetMyFeesEstimateResult","GetMyFeesEstimateResult : Response schema."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetMyFeesEstimateResult","GetMyFeesEstimateResult : Response schema."]]};

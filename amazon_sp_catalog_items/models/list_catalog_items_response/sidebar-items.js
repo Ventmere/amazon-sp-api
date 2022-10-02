@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListCatalogItemsResponse",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListCatalogItemsResponse",""]]};

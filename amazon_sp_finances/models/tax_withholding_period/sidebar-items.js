@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TaxWithholdingPeriod","TaxWithholdingPeriod : Period which taxwithholding on seller’s account is calculated."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TaxWithholdingPeriod","TaxWithholdingPeriod : Period which taxwithholding on seller’s account is calculated."]]};

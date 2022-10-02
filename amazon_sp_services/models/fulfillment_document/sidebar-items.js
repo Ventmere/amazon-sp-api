@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["FulfillmentDocument","FulfillmentDocument : Document that captured during service appointment fulfillment that portrays proof of completion"]]};

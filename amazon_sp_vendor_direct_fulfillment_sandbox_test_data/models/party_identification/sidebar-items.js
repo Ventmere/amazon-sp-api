@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PartyIdentification","PartyIdentification : The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PartyIdentification","PartyIdentification : The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details."]]};

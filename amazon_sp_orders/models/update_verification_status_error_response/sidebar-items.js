@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["UpdateVerificationStatusErrorResponse","UpdateVerificationStatusErrorResponse : The error response schema for the UpdateVerificationStatus operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["UpdateVerificationStatusErrorResponse","UpdateVerificationStatusErrorResponse : The error response schema for the UpdateVerificationStatus operation."]]};

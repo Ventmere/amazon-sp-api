@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateReportResponse","CreateReportResponse : The response for the createReport operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateReportResponse","CreateReportResponse : The response for the createReport operation."]]};

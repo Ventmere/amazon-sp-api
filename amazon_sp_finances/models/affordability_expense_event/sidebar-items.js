@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AffordabilityExpenseEvent","AffordabilityExpenseEvent : An expense related to an affordability promotion."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AffordabilityExpenseEvent","AffordabilityExpenseEvent : An expense related to an affordability promotion."]]};

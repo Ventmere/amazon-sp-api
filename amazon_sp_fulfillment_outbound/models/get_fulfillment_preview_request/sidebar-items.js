@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetFulfillmentPreviewRequest","GetFulfillmentPreviewRequest : The request body schema for the getFulfillmentPreview operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetFulfillmentPreviewRequest","GetFulfillmentPreviewRequest : The request body schema for the getFulfillmentPreview operation."]]};

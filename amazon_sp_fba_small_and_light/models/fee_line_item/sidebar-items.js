@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["FeeType","The type of fee charged to the seller."]],"struct":[["FeeLineItem","FeeLineItem : Fee details for a specific fee."]]});
+window.SIDEBAR_ITEMS = {"enum":[["FeeType","The type of fee charged to the seller."]],"struct":[["FeeLineItem","FeeLineItem : Fee details for a specific fee."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetPreorderInfoResult",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetPreorderInfoResult",""]]};

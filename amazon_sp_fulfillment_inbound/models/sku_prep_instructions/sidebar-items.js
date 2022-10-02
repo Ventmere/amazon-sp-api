@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SkuPrepInstructions","SkuPrepInstructions : Labeling requirements and item preparation instructions to help you prepare items for shipment to Amazon’s fulfillment network."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SkuPrepInstructions","SkuPrepInstructions : Labeling requirements and item preparation instructions to help you prepare items for shipment to Amazon’s fulfillment network."]]};

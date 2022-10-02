@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetRatesResult","GetRatesResult : The payload schema for the getRates operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetRatesResult","GetRatesResult : The payload schema for the getRates operation."]]};

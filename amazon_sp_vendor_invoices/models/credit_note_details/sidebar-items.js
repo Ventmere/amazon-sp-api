@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreditNoteDetails","CreditNoteDetails : References required in order to process a credit note. This information is required only if InvoiceType is CreditNote."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreditNoteDetails","CreditNoteDetails : References required in order to process a credit note. This information is required only if InvoiceType is CreditNote."]]};

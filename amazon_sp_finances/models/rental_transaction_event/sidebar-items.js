@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RentalTransactionEvent","RentalTransactionEvent : An event related to a rental transaction."]]});
+window.SIDEBAR_ITEMS = {"struct":[["RentalTransactionEvent","RentalTransactionEvent : An event related to a rental transaction."]]};

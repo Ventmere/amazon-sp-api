@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardTextModule","StandardTextModule : A standard headline and body text."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardTextModule","StandardTextModule : A standard headline and body text."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Type","Tax type."]],"struct":[["TaxDetails",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["Type","Tax type."]],"struct":[["TaxDetails",""]]};

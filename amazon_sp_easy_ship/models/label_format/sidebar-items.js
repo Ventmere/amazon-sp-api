@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["LabelFormat","LabelFormat : The file format in which the shipping label will be created. The file format in which the shipping label will be created."]]};

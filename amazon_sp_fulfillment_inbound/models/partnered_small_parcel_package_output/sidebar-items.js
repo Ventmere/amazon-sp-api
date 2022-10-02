@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PartneredSmallParcelPackageOutput","PartneredSmallParcelPackageOutput : Dimension, weight, and shipping information for the package."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PartneredSmallParcelPackageOutput","PartneredSmallParcelPackageOutput : Dimension, weight, and shipping information for the package."]]};

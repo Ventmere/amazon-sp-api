@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PartneredSmallParcelDataOutput","PartneredSmallParcelDataOutput : Information returned by Amazon about a Small Parcel shipment by an Amazon-partnered carrier."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PartneredSmallParcelDataOutput","PartneredSmallParcelDataOutput : Information returned by Amazon about a Small Parcel shipment by an Amazon-partnered carrier."]]};

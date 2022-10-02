@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ShipmentStatus","ShipmentStatus : the status of the shipment of the order to be updated the status of the shipment of the order to be updated"]]});
+window.SIDEBAR_ITEMS = {"enum":[["ShipmentStatus","ShipmentStatus : The shipment status to apply. The shipment status to apply."]]};

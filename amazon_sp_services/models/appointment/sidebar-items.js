@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["AppointmentStatus","The status of the appointment."]],"struct":[["Appointment","Appointment : The details of an appointment."]]});
+window.SIDEBAR_ITEMS = {"enum":[["AppointmentStatus","The status of the appointment."]],"struct":[["Appointment","Appointment : The details of an appointment."]]};

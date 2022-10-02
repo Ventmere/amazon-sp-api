@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetAttributesResponse","GetAttributesResponse : The response schema for the GetAttributes operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetAttributesResponse","GetAttributesResponse : The response schema for the GetAttributes operation."]]};

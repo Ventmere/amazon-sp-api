@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AppointmentTime","AppointmentTime : The time of the appointment window."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AppointmentTime","AppointmentTime : The time of the appointment window."]]};

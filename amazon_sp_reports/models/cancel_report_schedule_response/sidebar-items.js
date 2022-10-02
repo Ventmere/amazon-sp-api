@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CancelReportScheduleResponse","CancelReportScheduleResponse : The response for the cancelReportSchedule operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CancelReportScheduleResponse","CancelReportScheduleResponse : The response for the cancelReportSchedule operation."]]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["InvoiceRequest","InvoiceRequest : The request schema for the sendInvoice operation."]]};

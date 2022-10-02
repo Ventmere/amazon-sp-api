@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AsinIdentifier",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["AsinIdentifier",""]]};

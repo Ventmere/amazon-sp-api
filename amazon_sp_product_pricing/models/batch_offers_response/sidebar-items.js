@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["BatchOffersResponse",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["BatchOffersResponse",""]]};

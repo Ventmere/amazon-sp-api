@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetOffersHttpStatusLine","GetOffersHttpStatusLine : The HTTP status line associated with the response.  For more information, consult RFC 2616."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetOffersHttpStatusLine","GetOffersHttpStatusLine : The HTTP status line associated with the response.  For more information, consult RFC 2616."]]};

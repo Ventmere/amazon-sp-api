@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetFeaturesResult","GetFeaturesResult : The payload for the getFeatures operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetFeaturesResult","GetFeaturesResult : The payload for the getFeatures operation."]]};

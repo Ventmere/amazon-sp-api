@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AplusPaginatedResponse","AplusPaginatedResponse : The base response data for paginated A+ Content operations. Individual operations may extend this with additional data. If nextPageToken is not returned, there are no more pages to return."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AplusPaginatedResponse","AplusPaginatedResponse : The base response data for paginated A+ Content operations. Individual operations may extend this with additional data. If nextPageToken is not returned, there are no more pages to return."]]};

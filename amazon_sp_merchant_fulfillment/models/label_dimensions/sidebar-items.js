@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["LabelDimensions","LabelDimensions : Dimensions for printing a shipping label."]]});
+window.SIDEBAR_ITEMS = {"struct":[["LabelDimensions","LabelDimensions : Dimensions for printing a shipping label."]]};

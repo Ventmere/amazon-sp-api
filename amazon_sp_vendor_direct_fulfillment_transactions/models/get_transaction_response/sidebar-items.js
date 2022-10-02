@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetTransactionResponse","GetTransactionResponse : The response schema for the getTransactionStatus operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetTransactionResponse","GetTransactionResponse : The response schema for the getTransactionStatus operation."]]};

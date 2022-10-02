@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Feature","Feature : A Multi-Channel Fulfillment feature."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Feature","Feature : A Multi-Channel Fulfillment feature."]]};

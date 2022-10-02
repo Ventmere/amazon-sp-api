@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["UploadDestination","UploadDestination : Information about an upload destination."]]});
+window.SIDEBAR_ITEMS = {"struct":[["UploadDestination","UploadDestination : Information about an upload destination."]]};

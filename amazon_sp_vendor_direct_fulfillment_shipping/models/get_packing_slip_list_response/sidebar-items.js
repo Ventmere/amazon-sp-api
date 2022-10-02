@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetPackingSlipListResponse",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetPackingSlipListResponse",""]]};

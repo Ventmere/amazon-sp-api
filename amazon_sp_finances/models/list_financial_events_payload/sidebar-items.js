@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListFinancialEventsPayload","ListFinancialEventsPayload : The payload for the listFinancialEvents operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListFinancialEventsPayload","ListFinancialEventsPayload : The payload for the listFinancialEvents operation."]]};

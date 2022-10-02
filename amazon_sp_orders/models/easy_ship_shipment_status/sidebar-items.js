@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["EasyShipShipmentStatus","EasyShipShipmentStatus : The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders. The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders."]]};

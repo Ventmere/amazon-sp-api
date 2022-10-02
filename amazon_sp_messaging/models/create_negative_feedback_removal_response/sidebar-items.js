@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateNegativeFeedbackRemovalResponse","CreateNegativeFeedbackRemovalResponse : The response schema for the createNegativeFeedbackRemoval operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateNegativeFeedbackRemovalResponse","CreateNegativeFeedbackRemovalResponse : The response schema for the createNegativeFeedbackRemoval operation."]]};

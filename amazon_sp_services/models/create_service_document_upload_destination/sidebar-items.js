@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["CreateServiceDocumentUploadDestination","CreateServiceDocumentUploadDestination : The response schema for the `createServiceDocumentUploadDestination` operation."]]};

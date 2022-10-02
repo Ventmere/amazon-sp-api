@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateFeedDocumentSpecification",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateFeedDocumentSpecification",""]]};

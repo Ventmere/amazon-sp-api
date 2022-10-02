@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TextComponent","TextComponent : Rich text content."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TextComponent","TextComponent : Rich text content."]]};

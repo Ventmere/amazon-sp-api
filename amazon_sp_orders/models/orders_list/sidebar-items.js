@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["OrdersList","OrdersList : A list of orders along with additional information to make subsequent API calls."]]});
+window.SIDEBAR_ITEMS = {"struct":[["OrdersList","OrdersList : A list of orders along with additional information to make subsequent API calls."]]};

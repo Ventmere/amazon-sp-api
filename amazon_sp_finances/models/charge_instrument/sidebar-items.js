@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ChargeInstrument","ChargeInstrument : A payment instrument."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ChargeInstrument","ChargeInstrument : A payment instrument."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AcknowledgementStatus","AcknowledgementStatus : Status of acknowledgement."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AcknowledgementStatus","AcknowledgementStatus : Status of acknowledgement."]]};

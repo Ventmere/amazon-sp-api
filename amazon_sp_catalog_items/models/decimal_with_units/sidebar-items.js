@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["DecimalWithUnits","DecimalWithUnits : The decimal value and unit."]]});
+window.SIDEBAR_ITEMS = {"struct":[["DecimalWithUnits","DecimalWithUnits : The decimal value and unit."]]};

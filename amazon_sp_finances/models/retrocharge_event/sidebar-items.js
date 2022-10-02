@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RetrochargeEvent","RetrochargeEvent : A retrocharge or retrocharge reversal."]]});
+window.SIDEBAR_ITEMS = {"struct":[["RetrochargeEvent","RetrochargeEvent : A retrocharge or retrocharge reversal."]]};

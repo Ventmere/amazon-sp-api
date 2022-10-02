@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Verb","HTTP method for the link operation."]],"struct":[["SchemaLinkLink","SchemaLinkLink : Link to retrieve the schema."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Verb","HTTP method for the link operation."]],"struct":[["SchemaLinkLink","SchemaLinkLink : Link to retrieve the schema."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["PrepOwner","PrepOwner : Indicates who will prepare the item. Indicates who will prepare the item."]]});
+window.SIDEBAR_ITEMS = {"enum":[["PrepOwner","PrepOwner : Indicates who will prepare the item. Indicates who will prepare the item."]]};

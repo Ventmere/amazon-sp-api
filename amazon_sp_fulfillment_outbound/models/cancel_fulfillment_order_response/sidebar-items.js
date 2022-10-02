@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CancelFulfillmentOrderResponse","CancelFulfillmentOrderResponse : The response schema for the cancelFulfillmentOrder operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CancelFulfillmentOrderResponse","CancelFulfillmentOrderResponse : The response schema for the cancelFulfillmentOrder operation."]]};

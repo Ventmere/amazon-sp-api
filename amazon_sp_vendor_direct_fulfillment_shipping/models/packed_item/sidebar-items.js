@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PackedItem",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["PackedItem",""]]};

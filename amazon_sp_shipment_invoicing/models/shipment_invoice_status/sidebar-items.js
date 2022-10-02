@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ShipmentInvoiceStatus","ShipmentInvoiceStatus : The shipment invoice status. The shipment invoice status."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ShipmentInvoiceStatus","ShipmentInvoiceStatus : The shipment invoice status. The shipment invoice status."]]};

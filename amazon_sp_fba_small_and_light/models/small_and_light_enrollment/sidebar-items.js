@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SmallAndLightEnrollment","SmallAndLightEnrollment : The Small and Light enrollment status of the item indicated by the specified seller SKU."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SmallAndLightEnrollment","SmallAndLightEnrollment : The Small and Light enrollment status of the item indicated by the specified seller SKU."]]};

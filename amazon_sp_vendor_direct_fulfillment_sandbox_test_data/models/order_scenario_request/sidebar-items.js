@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["OrderScenarioRequest","OrderScenarioRequest : The party identifiers required to generate the test data."]]});
+window.SIDEBAR_ITEMS = {"struct":[["OrderScenarioRequest","OrderScenarioRequest : The party identifiers required to generate the test data."]]};

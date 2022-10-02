@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SalesRankType",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["SalesRankType",""]]};

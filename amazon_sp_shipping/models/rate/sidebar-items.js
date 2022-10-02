@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Rate","Rate : The available rate that can be used to send the shipment"]]});
+window.SIDEBAR_ITEMS = {"struct":[["Rate","Rate : The available rate that can be used to send the shipment"]]};

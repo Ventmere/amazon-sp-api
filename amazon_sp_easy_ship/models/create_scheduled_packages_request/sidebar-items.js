@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["CreateScheduledPackagesRequest","CreateScheduledPackagesRequest : The request body for the POST /easyShip/2022-03-23/packages/bulk API."]]};

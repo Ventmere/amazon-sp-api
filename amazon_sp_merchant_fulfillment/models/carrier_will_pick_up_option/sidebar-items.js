@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["CarrierWillPickUpOption","CarrierWillPickUpOption : Carrier will pick up option. Carrier will pick up option."]]});
+window.SIDEBAR_ITEMS = {"enum":[["CarrierWillPickUpOption","CarrierWillPickUpOption : Carrier will pick up option. Carrier will pick up option."]]};

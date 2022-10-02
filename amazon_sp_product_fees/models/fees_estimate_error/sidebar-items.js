@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["FeesEstimateError","FeesEstimateError : An unexpected error occurred during this operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["FeesEstimateError","FeesEstimateError : An unexpected error occurred during this operation."]]};

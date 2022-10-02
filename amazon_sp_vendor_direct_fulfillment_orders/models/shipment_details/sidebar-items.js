@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ShipmentDetails","ShipmentDetails : Shipment details required for the shipment."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ShipmentDetails","ShipmentDetails : Shipment details required for the shipment."]]};

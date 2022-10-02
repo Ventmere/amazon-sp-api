@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TemporarilyUnavailableCarrier","TemporarilyUnavailableCarrier : A carrier who is temporarily unavailable, most likely due to a service outage experienced by the carrier."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TemporarilyUnavailableCarrier","TemporarilyUnavailableCarrier : A carrier who is temporarily unavailable, most likely due to a service outage experienced by the carrier."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Weight","Weight : The weight of the scheduled package"]]});
+window.SIDEBAR_ITEMS = {"struct":[["Weight","Weight : The weight of the scheduled package"]]};

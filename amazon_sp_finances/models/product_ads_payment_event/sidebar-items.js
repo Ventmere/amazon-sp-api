@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ProductAdsPaymentEvent","ProductAdsPaymentEvent : A Sponsored Products payment event."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ProductAdsPaymentEvent","ProductAdsPaymentEvent : A Sponsored Products payment event."]]};

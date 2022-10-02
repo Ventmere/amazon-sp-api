@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardTextPairBlock","StandardTextPairBlock : The A+ Content standard label and description block, comprised of a pair of text components."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardTextPairBlock","StandardTextPairBlock : The A+ Content standard label and description block, comprised of a pair of text components."]]};

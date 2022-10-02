@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AsinPrepInstructions","AsinPrepInstructions : Item preparation instructions to help with item sourcing decisions."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AsinPrepInstructions","AsinPrepInstructions : Item preparation instructions to help with item sourcing decisions."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["PurchaseOrderStatus","The status of the buyer’s purchase order for this order."]],"struct":[["OrderStatus","OrderStatus : Current status of a purchase order."]]});
+window.SIDEBAR_ITEMS = {"enum":[["PurchaseOrderStatus","The status of the buyer’s purchase order for this order."]],"struct":[["OrderStatus","OrderStatus : Current status of a purchase order."]]};

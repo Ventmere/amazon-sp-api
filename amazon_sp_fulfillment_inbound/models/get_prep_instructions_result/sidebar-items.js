@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetPrepInstructionsResult",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetPrepInstructionsResult",""]]};

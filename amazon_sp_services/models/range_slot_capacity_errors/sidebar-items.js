@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["RangeSlotCapacityErrors","RangeSlotCapacityErrors : The error response schema for the `getRangeSlotCapacity` operation."]]};

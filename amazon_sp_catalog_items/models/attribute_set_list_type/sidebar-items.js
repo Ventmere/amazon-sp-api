@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AttributeSetListType","AttributeSetListType : The attributes of the item."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AttributeSetListType","AttributeSetListType : The attributes of the item."]]};

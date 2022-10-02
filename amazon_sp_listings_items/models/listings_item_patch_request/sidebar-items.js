@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListingsItemPatchRequest","ListingsItemPatchRequest : The request body schema for the patchListingsItem operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListingsItemPatchRequest","ListingsItemPatchRequest : The request body schema for the patchListingsItem operation."]]};

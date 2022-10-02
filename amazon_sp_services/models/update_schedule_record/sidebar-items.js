@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["UpdateScheduleRecord","UpdateScheduleRecord : `UpdateScheduleRecord` entity contains the `AvailabilityRecord` if there is an error/warning while performing the requested operation on it."]]};

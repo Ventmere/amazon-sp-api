@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ProductTypeList","ProductTypeList : A list of Amazon product types with definitions available."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ProductTypeList","ProductTypeList : A list of Amazon product types with definitions available."]]};

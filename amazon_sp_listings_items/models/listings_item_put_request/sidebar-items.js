@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Requirements","The name of the requirements set for the provided data."]],"struct":[["ListingsItemPutRequest","ListingsItemPutRequest : The request body schema for the putListingsItem operation."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Requirements","The name of the requirements set for the provided data."]],"struct":[["ListingsItemPutRequest","ListingsItemPutRequest : The request body schema for the putListingsItem operation."]]};

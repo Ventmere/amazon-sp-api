@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["LinkObject","LinkObject : A Link object."]]});
+window.SIDEBAR_ITEMS = {"struct":[["LinkObject","LinkObject : A Link object."]]};

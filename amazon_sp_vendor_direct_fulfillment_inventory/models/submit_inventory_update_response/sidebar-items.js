@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SubmitInventoryUpdateResponse","SubmitInventoryUpdateResponse : The response schema for the submitInventoryUpdate operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SubmitInventoryUpdateResponse","SubmitInventoryUpdateResponse : The response schema for the submitInventoryUpdate operation."]]};

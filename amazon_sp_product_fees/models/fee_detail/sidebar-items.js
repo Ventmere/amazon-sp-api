@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["FeeDetail","FeeDetail : The type of fee, fee amount, and other details."]]});
+window.SIDEBAR_ITEMS = {"struct":[["FeeDetail","FeeDetail : The type of fee, fee amount, and other details."]]};

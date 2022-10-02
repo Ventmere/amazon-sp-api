@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ImageOffsets","ImageOffsets : The top left corner of the cropped image, specified in the original image’s coordinate space."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ImageOffsets","ImageOffsets : The top left corner of the cropped image, specified in the original image’s coordinate space."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ValidateContentDocumentAsinRelationsResponse",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["ValidateContentDocumentAsinRelationsResponse",""]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["DurationUnit","Unit for duration."]],"struct":[["Duration",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["DurationUnit","Unit for duration."]],"struct":[["Duration",""]]};

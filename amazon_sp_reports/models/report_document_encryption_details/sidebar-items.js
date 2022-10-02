@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Standard","The encryption standard required to decrypt the document contents."]],"struct":[["ReportDocumentEncryptionDetails","ReportDocumentEncryptionDetails : Encryption details required for decryption of a report document’s contents."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Standard","The encryption standard required to decrypt the document contents."]],"struct":[["ReportDocumentEncryptionDetails","ReportDocumentEncryptionDetails : Encryption details required for decryption of a report document’s contents."]]};

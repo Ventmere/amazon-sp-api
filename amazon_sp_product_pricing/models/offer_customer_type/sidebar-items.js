@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["OfferCustomerType",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["OfferCustomerType",""]]};

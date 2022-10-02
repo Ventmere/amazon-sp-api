@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Error",""]],"fn":[["urlencode",""]],"mod":[["aplus_content_api",""],["configuration",""]],"struct":[["ResponseContent",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["Error",""]],"fn":[["urlencode",""]],"mod":[["aplus_content_api",""],["configuration",""]],"struct":[["ResponseContent",""]]};

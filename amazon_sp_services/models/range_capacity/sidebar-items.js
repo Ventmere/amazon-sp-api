@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["RangeCapacity","RangeCapacity : Range capacity entity where each entry has a capacity type and corresponding slots."]]};

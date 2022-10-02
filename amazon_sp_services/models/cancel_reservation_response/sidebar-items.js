@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["CancelReservationResponse","CancelReservationResponse : Response schema for the `cancelReservation` operation."]]};

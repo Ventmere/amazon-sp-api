@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CreateUnexpectedProblemRequest","CreateUnexpectedProblemRequest : The request schema for the createUnexpectedProblem operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CreateUnexpectedProblemRequest","CreateUnexpectedProblemRequest : The request schema for the createUnexpectedProblem operation."]]};

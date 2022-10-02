@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ContainerItem","ContainerItem : Item in the container."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ContainerItem","ContainerItem : Item in the container."]]};

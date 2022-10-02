@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PlainTextItem","PlainTextItem : Plain positional text, used in collections of brief labels and descriptors."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PlainTextItem","PlainTextItem : Plain positional text, used in collections of brief labels and descriptors."]]};

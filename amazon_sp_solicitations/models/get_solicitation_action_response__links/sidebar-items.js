@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetSolicitationActionResponseLinks",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetSolicitationActionResponseLinks",""]]};

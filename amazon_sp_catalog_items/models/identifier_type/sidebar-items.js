@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["IdentifierType",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["IdentifierType",""]]};

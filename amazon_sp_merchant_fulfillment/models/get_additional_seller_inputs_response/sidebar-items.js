@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetAdditionalSellerInputsResponse","GetAdditionalSellerInputsResponse : Response schema."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetAdditionalSellerInputsResponse","GetAdditionalSellerInputsResponse : Response schema."]]};

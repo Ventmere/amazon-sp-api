@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ShipmentStatus","ShipmentStatus : The shipment status. The shipment status."]]});
+window.SIDEBAR_ITEMS = {"enum":[["ShipmentStatus","ShipmentStatus : The shipment status. The shipment status."]]};

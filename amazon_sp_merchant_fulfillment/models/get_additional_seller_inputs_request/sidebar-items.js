@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetAdditionalSellerInputsRequest","GetAdditionalSellerInputsRequest : Request schema."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetAdditionalSellerInputsRequest","GetAdditionalSellerInputsRequest : Request schema."]]};

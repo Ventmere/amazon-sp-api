@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Pagination",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["Pagination",""]]};

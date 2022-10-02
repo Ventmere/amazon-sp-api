@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ListingOffersRequest",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["ListingOffersRequest",""]]};

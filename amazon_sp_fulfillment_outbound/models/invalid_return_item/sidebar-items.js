@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["InvalidReturnItem","InvalidReturnItem : An item that is invalid for return."]]});
+window.SIDEBAR_ITEMS = {"struct":[["InvalidReturnItem","InvalidReturnItem : An item that is invalid for return."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetPrepInstructionsResponse","GetPrepInstructionsResponse : The response schema for the getPrepInstructions operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetPrepInstructionsResponse","GetPrepInstructionsResponse : The response schema for the getPrepInstructions operation."]]};

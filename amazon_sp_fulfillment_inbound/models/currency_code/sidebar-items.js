@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["CurrencyCode","CurrencyCode : The currency code. The currency code."]]});
+window.SIDEBAR_ITEMS = {"enum":[["CurrencyCode","CurrencyCode : The currency code. The currency code."]]};

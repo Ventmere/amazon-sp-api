@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["PropertyGroup","PropertyGroup : A property group represents a logical grouping of schema properties that can be used for display or informational purposes."]]});
+window.SIDEBAR_ITEMS = {"struct":[["PropertyGroup","PropertyGroup : A property group represents a logical grouping of schema properties that can be used for display or informational purposes."]]};

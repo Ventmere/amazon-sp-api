@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TransactionStatus","TransactionStatus : The payload for the getTransactionStatus operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TransactionStatus","TransactionStatus : The payload for the getTransactionStatus operation."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["TransportationMode","The mode of transportation for this shipment."]],"struct":[["TransportationDetails",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["TransportationMode","The mode of transportation for this shipment."]],"struct":[["TransportationDetails",""]]};

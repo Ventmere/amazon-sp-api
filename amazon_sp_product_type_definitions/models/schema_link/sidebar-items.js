@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SchemaLink",""]]});
+window.SIDEBAR_ITEMS = {"struct":[["SchemaLink",""]]};

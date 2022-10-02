@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CancelFeedResponse","CancelFeedResponse : Response schema."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CancelFeedResponse","CancelFeedResponse : Response schema."]]};

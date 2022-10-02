@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["error",""],["error_list",""],["issue",""],["listings_item_patch_request",""],["listings_item_put_request",""],["listings_item_submission_response",""],["patch_operation",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["error",""],["error_list",""],["issue",""],["listings_item_patch_request",""],["listings_item_put_request",""],["listings_item_submission_response",""],["patch_operation",""]]};

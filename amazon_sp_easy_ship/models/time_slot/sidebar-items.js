@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TimeSlot","TimeSlot : A time window to hand over an Easy Ship package to Amazon Logistics."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TimeSlot","TimeSlot : A time window to hand over an Easy Ship package to Amazon Logistics."]]};

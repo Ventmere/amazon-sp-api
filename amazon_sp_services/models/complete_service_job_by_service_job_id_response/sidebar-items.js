@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CompleteServiceJobByServiceJobIdResponse","CompleteServiceJobByServiceJobIdResponse : Response schema for CompleteServiceJobByServiceJobId operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["CompleteServiceJobByServiceJobIdResponse","CompleteServiceJobByServiceJobIdResponse : Response schema for the `completeServiceJobByServiceJobId` operation."]]};

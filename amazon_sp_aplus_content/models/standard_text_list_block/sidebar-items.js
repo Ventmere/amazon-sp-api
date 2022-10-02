@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["StandardTextListBlock","StandardTextListBlock : The A+ Content standard fixed length list of text, usually presented as bullet points."]]});
+window.SIDEBAR_ITEMS = {"struct":[["StandardTextListBlock","StandardTextListBlock : The A+ Content standard fixed length list of text, usually presented as bullet points."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["SqsResource","SqsResource : The information required to create an Amazon Simple Queue Service (Amazon SQS) queue destination."]]});
+window.SIDEBAR_ITEMS = {"struct":[["SqsResource","SqsResource : The information required to create an Amazon Simple Queue Service (Amazon SQS) queue destination."]]};

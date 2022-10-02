@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ShipmentInvoiceStatusResponse","ShipmentInvoiceStatusResponse : The shipment invoice status response."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ShipmentInvoiceStatusResponse","ShipmentInvoiceStatusResponse : The shipment invoice status response."]]};

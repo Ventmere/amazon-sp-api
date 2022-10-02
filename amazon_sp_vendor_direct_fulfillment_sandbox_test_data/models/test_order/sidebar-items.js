@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TestOrder","TestOrder : Error response returned when the request is unsuccessful."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TestOrder","TestOrder : Error response returned when the request is unsuccessful."]]};

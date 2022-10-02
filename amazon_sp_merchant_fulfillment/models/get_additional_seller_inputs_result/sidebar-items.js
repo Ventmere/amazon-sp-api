@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetAdditionalSellerInputsResult","GetAdditionalSellerInputsResult : The payload for the getAdditionalSellerInputs operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetAdditionalSellerInputsResult","GetAdditionalSellerInputsResult : The payload for the getAdditionalSellerInputs operation."]]};

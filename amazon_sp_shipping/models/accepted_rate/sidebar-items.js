@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AcceptedRate","AcceptedRate : The specific rate purchased for the shipment, or null if unpurchased."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AcceptedRate","AcceptedRate : The specific rate purchased for the shipment, or null if unpurchased."]]};

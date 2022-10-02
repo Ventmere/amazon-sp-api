@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetFeatureInventoryResponse","GetFeatureInventoryResponse : The breakdown of eligibility inventory by feature."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetFeatureInventoryResponse","GetFeatureInventoryResponse : The breakdown of eligibility inventory by feature."]]};

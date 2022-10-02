@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["ContentType","The content type of the to-be-uploaded file"]],"struct":[["ServiceUploadDocument","ServiceUploadDocument : Input for to be uploaded document."]]};

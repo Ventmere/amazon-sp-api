@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ReturnAuthorization","ReturnAuthorization : Return authorization information for items accepted for return."]]});
+window.SIDEBAR_ITEMS = {"struct":[["ReturnAuthorization","ReturnAuthorization : Return authorization information for items accepted for return."]]};

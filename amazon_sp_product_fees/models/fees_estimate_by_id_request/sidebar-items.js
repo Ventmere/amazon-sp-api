@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["FeesEstimateByIdRequest","FeesEstimateByIdRequest : A product, marketplace, and proposed price used to request estimated fees."]]});
+window.SIDEBAR_ITEMS = {"struct":[["FeesEstimateByIdRequest","FeesEstimateByIdRequest : A product, marketplace, and proposed price used to request estimated fees."]]};

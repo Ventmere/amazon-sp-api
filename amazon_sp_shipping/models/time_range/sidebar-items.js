@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TimeRange","TimeRange : The time range."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TimeRange","TimeRange : The time range."]]};

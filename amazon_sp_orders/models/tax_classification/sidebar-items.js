@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TaxClassification","TaxClassification : The tax classification for the order."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TaxClassification","TaxClassification : The tax classification for the order."]]};

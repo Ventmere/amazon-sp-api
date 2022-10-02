@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["UpdateShipmentStatusRequest","UpdateShipmentStatusRequest : Request to update the status of shipment of an order."]]});
+window.SIDEBAR_ITEMS = {"struct":[["UpdateShipmentStatusRequest","UpdateShipmentStatusRequest : The request body for the updateShipmentStatus operation."]]};

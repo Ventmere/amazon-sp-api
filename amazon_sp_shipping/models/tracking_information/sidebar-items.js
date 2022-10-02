@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["TrackingInformation","TrackingInformation : The payload schema for the getTrackingInformation operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["TrackingInformation","TrackingInformation : The payload schema for the getTrackingInformation operation."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["InboundShipmentPlan","InboundShipmentPlan : Inbound shipment information used to create an inbound shipment. Returned by the createInboundShipmentPlan operation."]]});
+window.SIDEBAR_ITEMS = {"struct":[["InboundShipmentPlan","InboundShipmentPlan : Inbound shipment information used to create an inbound shipment. Returned by the createInboundShipmentPlan operation."]]};

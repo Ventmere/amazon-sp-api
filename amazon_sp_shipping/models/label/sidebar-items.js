@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Label","Label : The label details of the container."]]});
+window.SIDEBAR_ITEMS = {"struct":[["Label","Label : The label details of the container."]]};

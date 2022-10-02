@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["CreateReservationRecord","CreateReservationRecord : `CreateReservationRecord` entity contains the `Reservation` if there is an error/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`."]]};

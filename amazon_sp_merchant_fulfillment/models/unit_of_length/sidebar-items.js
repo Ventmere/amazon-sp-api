@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["UnitOfLength","UnitOfLength : The unit of length. The unit of length."]]});
+window.SIDEBAR_ITEMS = {"enum":[["UnitOfLength","UnitOfLength : The unit of length. The unit of length."]]};

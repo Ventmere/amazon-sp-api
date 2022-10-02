@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["GetMessagingActionResponse","GetMessagingActionResponse : Describes a messaging action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input."]]});
+window.SIDEBAR_ITEMS = {"struct":[["GetMessagingActionResponse","GetMessagingActionResponse : Describes a messaging action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input."]]};

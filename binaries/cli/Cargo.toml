@@ -11,3 +11,8 @@ tracing-subscriber = "0.3.11"
 dotenv = "0.15.0"
 regex = "1"
 once_cell = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+reqwest = "0.11.11"
+
+amazon-sp-api = { path = "../../crates/amazon-sp-api" }
+amazon-sp-authorization = { path = "../../generated/amazon-sp-authorization" }

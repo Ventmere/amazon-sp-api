@@ -1,0 +1,17 @@
+templateDir: openapi
+withAWSV4Signature: true
+hasAuthMethods: true
+files:
+  api.mustache:
+    templateType: API
+    destinationFilename: .rs
+  configuration.mustache:
+    templateType: SupportingFiles
+    destinationFilename: src/apis/configuration.rs
+  Cargo.mustache:
+    templateType: SupportingFiles
+    destinationFilename: Cargo.toml
+  api_mod.mustache:
+    templateType: SupportingFiles
+    destinationFilename: src/apis/mod.rs
+  

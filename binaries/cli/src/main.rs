@@ -1,7 +1,7 @@
 use clap::Parser;
 use anyhow::Result;
 
-mod generate;
+mod auth;
 
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
@@ -12,20 +12,20 @@ struct Args {
 
 #[derive(Parser, Debug)]
 enum Cmd {
-    /// Generate client crates from swagger definitions
-    Generate,
+    Auth,
 }
 
-fn main() -> Result<()> {
+#[tokio::main]
+async fn main() -> Result<()> {
     dotenv::dotenv().ok();
     tracing_subscriber::fmt::init();
 
     let args = Args::parse();
 
     match args.cmd {
-        Cmd::Generate => {
-            generate::run()?;
-        },
+        Cmd::Auth => {
+            auth::run().await?;
+        }
     }
 
     Ok(())

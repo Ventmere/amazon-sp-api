@@ -56,7 +56,8 @@ pub async fn get_definitions_product_type(configuration: &configuration::Configu
 
     let local_var_uri_str = format!("{}/definitions/2020-09-01/productTypes/{productType}", local_var_configuration.base_path, productType=crate::apis::urlencode(product_type));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = seller_id {
         url_builder = url_builder.query(&[("sellerId", &local_var_str.to_string())]);
@@ -133,7 +134,8 @@ pub async fn search_definitions_product_types(configuration: &configuration::Con
 
     let local_var_uri_str = format!("{}/definitions/2020-09-01/productTypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = keywords {
         url_builder = match "csv" {

@@ -70,7 +70,8 @@ pub async fn get_shipping_label(configuration: &configuration::Configuration, pu
 
     let local_var_uri_str = format!("{}/vendor/directFulfillment/shipping/v1/shippingLabels/{purchaseOrderNumber}", local_var_configuration.base_path, purchaseOrderNumber=crate::apis::urlencode(purchase_order_number));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -128,7 +129,8 @@ pub async fn get_shipping_labels(configuration: &configuration::Configuration, c
 
     let local_var_uri_str = format!("{}/vendor/directFulfillment/shipping/v1/shippingLabels", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = ship_from_party_id {
         url_builder = url_builder.query(&[("shipFromPartyId", &local_var_str.to_string())]);
@@ -200,7 +202,8 @@ pub async fn submit_shipping_label_request(configuration: &configuration::Config
 
     let local_var_uri_str = format!("{}/vendor/directFulfillment/shipping/v1/shippingLabels", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

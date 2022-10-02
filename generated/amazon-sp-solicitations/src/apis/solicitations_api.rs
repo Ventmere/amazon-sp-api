@@ -56,7 +56,8 @@ pub async fn create_product_review_and_seller_feedback_solicitation(configuratio
 
     let local_var_uri_str = format!("{}/solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -118,7 +119,8 @@ pub async fn get_solicitation_actions_for_order(configuration: &configuration::C
 
     let local_var_uri_str = format!("{}/solicitations/v1/orders/{amazonOrderId}", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),

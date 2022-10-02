@@ -68,7 +68,8 @@ pub async fn get_my_fees_estimate_for_asin(configuration: &configuration::Config
 
     let local_var_uri_str = format!("{}/products/fees/v0/items/{Asin}/feesEstimate", local_var_configuration.base_path, Asin=crate::apis::urlencode(asin));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -127,7 +128,8 @@ pub async fn get_my_fees_estimate_for_sku(configuration: &configuration::Configu
 
     let local_var_uri_str = format!("{}/products/fees/v0/listings/{SellerSKU}/feesEstimate", local_var_configuration.base_path, SellerSKU=crate::apis::urlencode(seller_sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -186,7 +188,8 @@ pub async fn get_my_fees_estimates(configuration: &configuration::Configuration,
 
     let local_var_uri_str = format!("{}/products/fees/v0/feesEstimate", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

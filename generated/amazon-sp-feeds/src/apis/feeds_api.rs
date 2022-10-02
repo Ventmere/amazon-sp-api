@@ -116,7 +116,8 @@ pub async fn cancel_feed(configuration: &configuration::Configuration, feed_id: 
 
     let local_var_uri_str = format!("{}/feeds/2020-09-04/feeds/{feedId}", local_var_configuration.base_path, feedId=crate::apis::urlencode(feed_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -174,7 +175,8 @@ pub async fn create_feed(configuration: &configuration::Configuration, body: cra
 
     let local_var_uri_str = format!("{}/feeds/2020-09-04/feeds", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -233,7 +235,8 @@ pub async fn create_feed_document(configuration: &configuration::Configuration, 
 
     let local_var_uri_str = format!("{}/feeds/2020-09-04/documents", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -292,7 +295,8 @@ pub async fn get_feed(configuration: &configuration::Configuration, feed_id: &st
 
     let local_var_uri_str = format!("{}/feeds/2020-09-04/feeds/{feedId}", local_var_configuration.base_path, feedId=crate::apis::urlencode(feed_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -350,7 +354,8 @@ pub async fn get_feed_document(configuration: &configuration::Configuration, fee
 
     let local_var_uri_str = format!("{}/feeds/2020-09-04/documents/{feedDocumentId}", local_var_configuration.base_path, feedDocumentId=crate::apis::urlencode(feed_document_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -408,7 +413,8 @@ pub async fn get_feeds(configuration: &configuration::Configuration, feed_types:
 
     let local_var_uri_str = format!("{}/feeds/2020-09-04/feeds", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = feed_types {
         url_builder = match "csv" {

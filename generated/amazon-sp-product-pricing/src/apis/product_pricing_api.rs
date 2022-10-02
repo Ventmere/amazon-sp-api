@@ -110,7 +110,8 @@ pub async fn get_competitive_pricing(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/products/pricing/v0/competitivePrice", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
     if let Some(ref local_var_str) = asins {
@@ -185,7 +186,8 @@ pub async fn get_item_offers(configuration: &configuration::Configuration, marke
 
     let local_var_uri_str = format!("{}/products/pricing/v0/items/{Asin}/offers", local_var_configuration.base_path, Asin=crate::apis::urlencode(asin));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
     url_builder = url_builder.query(&[("ItemCondition", &item_condition.to_string())]);
@@ -248,7 +250,8 @@ pub async fn get_item_offers_batch(configuration: &configuration::Configuration,
 
     let local_var_uri_str = format!("{}/batches/products/pricing/v0/itemOffers", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -307,7 +310,8 @@ pub async fn get_listing_offers(configuration: &configuration::Configuration, ma
 
     let local_var_uri_str = format!("{}/products/pricing/v0/listings/{SellerSKU}/offers", local_var_configuration.base_path, SellerSKU=crate::apis::urlencode(seller_sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
     url_builder = url_builder.query(&[("ItemCondition", &item_condition.to_string())]);
@@ -370,7 +374,8 @@ pub async fn get_listing_offers_batch(configuration: &configuration::Configurati
 
     let local_var_uri_str = format!("{}/batches/products/pricing/v0/listingOffers", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -429,7 +434,8 @@ pub async fn get_pricing(configuration: &configuration::Configuration, marketpla
 
     let local_var_uri_str = format!("{}/products/pricing/v0/price", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
     if let Some(ref local_var_str) = asins {

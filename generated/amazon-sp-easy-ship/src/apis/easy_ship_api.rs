@@ -101,7 +101,8 @@ pub async fn create_scheduled_package(configuration: &configuration::Configurati
 
     let local_var_uri_str = format!("{}/easyShip/2022-03-23/package", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -160,7 +161,8 @@ pub async fn create_scheduled_package_bulk(configuration: &configuration::Config
 
     let local_var_uri_str = format!("{}/easyShip/2022-03-23/packages/bulk", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -219,7 +221,8 @@ pub async fn get_scheduled_package(configuration: &configuration::Configuration,
 
     let local_var_uri_str = format!("{}/easyShip/2022-03-23/package", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("amazonOrderId", &amazon_order_id.to_string())]);
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
@@ -279,7 +282,8 @@ pub async fn list_handover_slots(configuration: &configuration::Configuration, l
 
     let local_var_uri_str = format!("{}/easyShip/2022-03-23/timeSlot", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -338,7 +342,8 @@ pub async fn update_scheduled_packages(configuration: &configuration::Configurat
 
     let local_var_uri_str = format!("{}/easyShip/2022-03-23/package", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

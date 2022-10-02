@@ -152,7 +152,8 @@ pub async fn cancel_shipment(configuration: &configuration::Configuration, shipm
 
     let local_var_uri_str = format!("{}/shipping/v1/shipments/{shipmentId}/cancel", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -210,7 +211,8 @@ pub async fn create_shipment(configuration: &configuration::Configuration, body:
 
     let local_var_uri_str = format!("{}/shipping/v1/shipments", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -269,7 +271,8 @@ pub async fn get_account(configuration: &configuration::Configuration, ) -> Resu
 
     let local_var_uri_str = format!("{}/shipping/v1/account", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -327,7 +330,8 @@ pub async fn get_rates(configuration: &configuration::Configuration, body: crate
 
     let local_var_uri_str = format!("{}/shipping/v1/rates", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -386,7 +390,8 @@ pub async fn get_shipment(configuration: &configuration::Configuration, shipment
 
     let local_var_uri_str = format!("{}/shipping/v1/shipments/{shipmentId}", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -444,7 +449,8 @@ pub async fn get_tracking_information(configuration: &configuration::Configurati
 
     let local_var_uri_str = format!("{}/shipping/v1/tracking/{trackingId}", local_var_configuration.base_path, trackingId=crate::apis::urlencode(tracking_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -502,7 +508,8 @@ pub async fn purchase_labels(configuration: &configuration::Configuration, shipm
 
     let local_var_uri_str = format!("{}/shipping/v1/shipments/{shipmentId}/purchaseLabels", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -561,7 +568,8 @@ pub async fn purchase_shipment(configuration: &configuration::Configuration, bod
 
     let local_var_uri_str = format!("{}/shipping/v1/purchaseShipment", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -620,7 +628,8 @@ pub async fn retrieve_shipping_label(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id), trackingId=crate::apis::urlencode(tracking_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

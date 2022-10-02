@@ -68,7 +68,8 @@ pub async fn get_catalog_item(configuration: &configuration::Configuration, mark
 
     let local_var_uri_str = format!("{}/catalog/v0/items/{asin}", local_var_configuration.base_path, asin=crate::apis::urlencode(asin));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
@@ -127,7 +128,8 @@ pub async fn list_catalog_categories(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/catalog/v0/categories", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
     if let Some(ref local_var_str) = ASIN {
@@ -192,7 +194,8 @@ pub async fn list_catalog_items(configuration: &configuration::Configuration, ma
 
     let local_var_uri_str = format!("{}/catalog/v0/items", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
     if let Some(ref local_var_str) = query {

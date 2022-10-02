@@ -264,7 +264,8 @@ pub async fn confirm_preorder(configuration: &configuration::Configuration, ship
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/preorder/confirm", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("NeedByDate", &need_by_date.to_string())]);
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
@@ -324,7 +325,8 @@ pub async fn confirm_transport(configuration: &configuration::Configuration, shi
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/transport/confirm", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -382,7 +384,8 @@ pub async fn create_inbound_shipment(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -441,7 +444,8 @@ pub async fn create_inbound_shipment_plan(configuration: &configuration::Configu
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/plans", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -500,7 +504,8 @@ pub async fn estimate_transport(configuration: &configuration::Configuration, sh
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/transport/estimate", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -558,7 +563,8 @@ pub async fn get_bill_of_lading(configuration: &configuration::Configuration, sh
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/billOfLading", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -616,7 +622,8 @@ pub async fn get_inbound_guidance(configuration: &configuration::Configuration, 
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/itemsGuidance", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
     if let Some(ref local_var_str) = seller_sku_list {
@@ -687,7 +694,8 @@ pub async fn get_labels(configuration: &configuration::Configuration, shipment_i
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/labels", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("PageType", &page_type.to_string())]);
     url_builder = url_builder.query(&[("LabelType", &label_type.to_string())]);
@@ -765,7 +773,8 @@ pub async fn get_preorder_info(configuration: &configuration::Configuration, shi
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/preorder", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
@@ -824,7 +833,8 @@ pub async fn get_prep_instructions(configuration: &configuration::Configuration,
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/prepInstructions", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("ShipToCountryCode", &ship_to_country_code.to_string())]);
     if let Some(ref local_var_str) = seller_sku_list {
@@ -895,7 +905,8 @@ pub async fn get_shipment_items(configuration: &configuration::Configuration, qu
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipmentItems", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = last_updated_after {
         url_builder = url_builder.query(&[("LastUpdatedAfter", &local_var_str.to_string())]);
@@ -964,7 +975,8 @@ pub async fn get_shipment_items_by_shipment_id(configuration: &configuration::Co
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/items", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
@@ -1023,7 +1035,8 @@ pub async fn get_shipments(configuration: &configuration::Configuration, query_t
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = shipment_status_list {
         url_builder = match "csv" {
@@ -1104,7 +1117,8 @@ pub async fn get_transport_details(configuration: &configuration::Configuration,
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/transport", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -1162,7 +1176,8 @@ pub async fn put_transport_details(configuration: &configuration::Configuration,
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/transport", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -1221,7 +1236,8 @@ pub async fn update_inbound_shipment(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -1280,7 +1296,8 @@ pub async fn void_transport(configuration: &configuration::Configuration, shipme
 
     let local_var_uri_str = format!("{}/fba/inbound/v0/shipments/{shipmentId}/transport/void", local_var_configuration.base_path, shipmentId=crate::apis::urlencode(shipment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

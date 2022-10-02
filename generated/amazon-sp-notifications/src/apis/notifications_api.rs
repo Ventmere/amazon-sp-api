@@ -153,7 +153,8 @@ pub async fn create_destination(configuration: &configuration::Configuration, bo
 
     let local_var_uri_str = format!("{}/notifications/v1/destinations", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -212,7 +213,8 @@ pub async fn create_subscription(configuration: &configuration::Configuration, n
 
     let local_var_uri_str = format!("{}/notifications/v1/subscriptions/{notificationType}", local_var_configuration.base_path, notificationType=crate::apis::urlencode(notification_type));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -271,7 +273,8 @@ pub async fn delete_destination(configuration: &configuration::Configuration, de
 
     let local_var_uri_str = format!("{}/notifications/v1/destinations/{destinationId}", local_var_configuration.base_path, destinationId=crate::apis::urlencode(destination_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -329,7 +332,8 @@ pub async fn delete_subscription_by_id(configuration: &configuration::Configurat
 
     let local_var_uri_str = format!("{}/notifications/v1/subscriptions/{notificationType}/{subscriptionId}", local_var_configuration.base_path, subscriptionId=crate::apis::urlencode(subscription_id), notificationType=crate::apis::urlencode(notification_type));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -387,7 +391,8 @@ pub async fn get_destination(configuration: &configuration::Configuration, desti
 
     let local_var_uri_str = format!("{}/notifications/v1/destinations/{destinationId}", local_var_configuration.base_path, destinationId=crate::apis::urlencode(destination_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -445,7 +450,8 @@ pub async fn get_destinations(configuration: &configuration::Configuration, ) ->
 
     let local_var_uri_str = format!("{}/notifications/v1/destinations", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -503,7 +509,8 @@ pub async fn get_subscription(configuration: &configuration::Configuration, noti
 
     let local_var_uri_str = format!("{}/notifications/v1/subscriptions/{notificationType}", local_var_configuration.base_path, notificationType=crate::apis::urlencode(notification_type));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -561,7 +568,8 @@ pub async fn get_subscription_by_id(configuration: &configuration::Configuration
 
     let local_var_uri_str = format!("{}/notifications/v1/subscriptions/{notificationType}/{subscriptionId}", local_var_configuration.base_path, subscriptionId=crate::apis::urlencode(subscription_id), notificationType=crate::apis::urlencode(notification_type));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

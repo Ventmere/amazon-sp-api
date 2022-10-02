@@ -291,7 +291,8 @@ pub async fn add_appointment_for_service_job_by_service_job_id(configuration: &c
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs/{serviceJobId}/appointments", local_var_configuration.base_path, serviceJobId=crate::apis::urlencode(service_job_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -350,7 +351,8 @@ pub async fn assign_appointment_resources(configuration: &configuration::Configu
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources", local_var_configuration.base_path, serviceJobId=crate::apis::urlencode(service_job_id), appointmentId=crate::apis::urlencode(appointment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -409,7 +411,8 @@ pub async fn cancel_reservation(configuration: &configuration::Configuration, re
 
     let local_var_uri_str = format!("{}/service/v1/reservation/{reservationId}", local_var_configuration.base_path, reservationId=crate::apis::urlencode(reservation_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -471,7 +474,8 @@ pub async fn cancel_service_job_by_service_job_id(configuration: &configuration:
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs/{serviceJobId}/cancellations", local_var_configuration.base_path, serviceJobId=crate::apis::urlencode(service_job_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("cancellationReasonCode", &cancellation_reason_code.to_string())]);
 
@@ -530,7 +534,8 @@ pub async fn complete_service_job_by_service_job_id(configuration: &configuratio
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs/{serviceJobId}/completions", local_var_configuration.base_path, serviceJobId=crate::apis::urlencode(service_job_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -588,7 +593,8 @@ pub async fn create_reservation(configuration: &configuration::Configuration, ma
 
     let local_var_uri_str = format!("{}/service/v1/reservation", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -651,7 +657,8 @@ pub async fn create_service_document_upload_destination(configuration: &configur
 
     let local_var_uri_str = format!("{}/service/v1/documents", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -710,7 +717,8 @@ pub async fn get_appointment_slots(configuration: &configuration::Configuration,
 
     let local_var_uri_str = format!("{}/service/v1/appointmentSlots", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("asin", &asin.to_string())]);
     url_builder = url_builder.query(&[("storeId", &store_id.to_string())]);
@@ -780,7 +788,8 @@ pub async fn get_appointmment_slots_by_job_id(configuration: &configuration::Con
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs/{serviceJobId}/appointmentSlots", local_var_configuration.base_path, serviceJobId=crate::apis::urlencode(service_job_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -848,7 +857,8 @@ pub async fn get_fixed_slot_capacity(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/service/v1/serviceResources/{resourceId}/capacity/fixed", local_var_configuration.base_path, resourceId=crate::apis::urlencode(resource_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -914,7 +924,8 @@ pub async fn get_range_slot_capacity(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/service/v1/serviceResources/{resourceId}/capacity/range", local_var_configuration.base_path, resourceId=crate::apis::urlencode(resource_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -980,7 +991,8 @@ pub async fn get_service_job_by_service_job_id(configuration: &configuration::Co
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs/{serviceJobId}", local_var_configuration.base_path, serviceJobId=crate::apis::urlencode(service_job_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -1038,7 +1050,8 @@ pub async fn get_service_jobs(configuration: &configuration::Configuration, mark
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = service_order_ids {
         url_builder = match "csv" {
@@ -1160,7 +1173,8 @@ pub async fn reschedule_appointment_for_service_job_by_service_job_id(configurat
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}", local_var_configuration.base_path, serviceJobId=crate::apis::urlencode(service_job_id), appointmentId=crate::apis::urlencode(appointment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -1219,7 +1233,8 @@ pub async fn set_appointment_fulfillment_data(configuration: &configuration::Con
 
     let local_var_uri_str = format!("{}/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment", local_var_configuration.base_path, serviceJobId=crate::apis::urlencode(service_job_id), appointmentId=crate::apis::urlencode(appointment_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -1278,7 +1293,8 @@ pub async fn update_reservation(configuration: &configuration::Configuration, re
 
     let local_var_uri_str = format!("{}/service/v1/reservation/{reservationId}", local_var_configuration.base_path, reservationId=crate::apis::urlencode(reservation_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -1341,7 +1357,8 @@ pub async fn update_schedule(configuration: &configuration::Configuration, resou
 
     let local_var_uri_str = format!("{}/service/v1/serviceResources/{resourceId}/schedules", local_var_configuration.base_path, resourceId=crate::apis::urlencode(resource_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),

@@ -100,7 +100,8 @@ pub async fn delete_small_and_light_enrollment_by_seller_sku(configuration: &con
 
     let local_var_uri_str = format!("{}/fba/smallAndLight/v1/enrollments/{sellerSKU}", local_var_configuration.base_path, sellerSKU=crate::apis::urlencode(seller_sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -162,7 +163,8 @@ pub async fn get_small_and_light_eligibility_by_seller_sku(configuration: &confi
 
     let local_var_uri_str = format!("{}/fba/smallAndLight/v1/eligibilities/{sellerSKU}", local_var_configuration.base_path, sellerSKU=crate::apis::urlencode(seller_sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -224,7 +226,8 @@ pub async fn get_small_and_light_enrollment_by_seller_sku(configuration: &config
 
     let local_var_uri_str = format!("{}/fba/smallAndLight/v1/enrollments/{sellerSKU}", local_var_configuration.base_path, sellerSKU=crate::apis::urlencode(seller_sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -286,7 +289,8 @@ pub async fn get_small_and_light_fee_preview(configuration: &configuration::Conf
 
     let local_var_uri_str = format!("{}/fba/smallAndLight/v1/feePreviews", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -345,7 +349,8 @@ pub async fn put_small_and_light_enrollment_by_seller_sku(configuration: &config
 
     let local_var_uri_str = format!("{}/fba/smallAndLight/v1/enrollments/{sellerSKU}", local_var_configuration.base_path, sellerSKU=crate::apis::urlencode(seller_sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),

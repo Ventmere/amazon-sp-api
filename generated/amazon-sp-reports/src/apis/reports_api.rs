@@ -161,7 +161,8 @@ pub async fn cancel_report(configuration: &configuration::Configuration, report_
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/reports/{reportId}", local_var_configuration.base_path, reportId=crate::apis::urlencode(report_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -219,7 +220,8 @@ pub async fn cancel_report_schedule(configuration: &configuration::Configuration
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/schedules/{reportScheduleId}", local_var_configuration.base_path, reportScheduleId=crate::apis::urlencode(report_schedule_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -277,7 +279,8 @@ pub async fn create_report(configuration: &configuration::Configuration, body: c
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/reports", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -336,7 +339,8 @@ pub async fn create_report_schedule(configuration: &configuration::Configuration
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/schedules", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -395,7 +399,8 @@ pub async fn get_report(configuration: &configuration::Configuration, report_id:
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/reports/{reportId}", local_var_configuration.base_path, reportId=crate::apis::urlencode(report_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -453,7 +458,8 @@ pub async fn get_report_document(configuration: &configuration::Configuration, r
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/documents/{reportDocumentId}", local_var_configuration.base_path, reportDocumentId=crate::apis::urlencode(report_document_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -511,7 +517,8 @@ pub async fn get_report_schedule(configuration: &configuration::Configuration, r
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/schedules/{reportScheduleId}", local_var_configuration.base_path, reportScheduleId=crate::apis::urlencode(report_schedule_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -569,7 +576,8 @@ pub async fn get_report_schedules(configuration: &configuration::Configuration, 
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/schedules", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&report_types.into_iter().map(|p| ("reportTypes".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -631,7 +639,8 @@ pub async fn get_reports(configuration: &configuration::Configuration, report_ty
 
     let local_var_uri_str = format!("{}/reports/2020-09-04/reports", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = report_types {
         url_builder = match "csv" {

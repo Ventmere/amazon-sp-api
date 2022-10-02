@@ -39,7 +39,8 @@ pub async fn get_inventory_summaries(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/fba/inventory/v1/summaries", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = details {
         url_builder = url_builder.query(&[("details", &local_var_str.to_string())]);

@@ -68,7 +68,8 @@ pub async fn delete_listings_item(configuration: &configuration::Configuration, 
 
     let local_var_uri_str = format!("{}/listings/2020-09-01/items/{sellerId}/{sku}", local_var_configuration.base_path, sellerId=crate::apis::urlencode(seller_id), sku=crate::apis::urlencode(sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -133,7 +134,8 @@ pub async fn patch_listings_item(configuration: &configuration::Configuration, s
 
     let local_var_uri_str = format!("{}/listings/2020-09-01/items/{sellerId}/{sku}", local_var_configuration.base_path, sellerId=crate::apis::urlencode(seller_id), sku=crate::apis::urlencode(sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -199,7 +201,8 @@ pub async fn put_listings_item(configuration: &configuration::Configuration, sel
 
     let local_var_uri_str = format!("{}/listings/2020-09-01/items/{sellerId}/{sku}", local_var_configuration.base_path, sellerId=crate::apis::urlencode(seller_id), sku=crate::apis::urlencode(sku));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),

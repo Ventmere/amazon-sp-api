@@ -84,7 +84,8 @@ pub async fn get_purchase_order(configuration: &configuration::Configuration, pu
 
     let local_var_uri_str = format!("{}/vendor/orders/v1/purchaseOrders/{purchaseOrderNumber}", local_var_configuration.base_path, purchaseOrderNumber=crate::apis::urlencode(purchase_order_number));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -142,7 +143,8 @@ pub async fn get_purchase_orders(configuration: &configuration::Configuration, l
 
     let local_var_uri_str = format!("{}/vendor/orders/v1/purchaseOrders", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = limit {
         url_builder = url_builder.query(&[("limit", &local_var_str.to_string())]);
@@ -236,7 +238,8 @@ pub async fn get_purchase_orders_status(configuration: &configuration::Configura
 
     let local_var_uri_str = format!("{}/vendor/orders/v1/purchaseOrdersStatus", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = limit {
         url_builder = url_builder.query(&[("limit", &local_var_str.to_string())]);
@@ -333,7 +336,8 @@ pub async fn submit_acknowledgement(configuration: &configuration::Configuration
 
     let local_var_uri_str = format!("{}/vendor/orders/v1/acknowledgements", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

@@ -70,7 +70,8 @@ pub async fn get_order(configuration: &configuration::Configuration, purchase_or
 
     let local_var_uri_str = format!("{}/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}", local_var_configuration.base_path, purchaseOrderNumber=crate::apis::urlencode(purchase_order_number));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -128,7 +129,8 @@ pub async fn get_orders(configuration: &configuration::Configuration, created_af
 
     let local_var_uri_str = format!("{}/vendor/directFulfillment/orders/v1/purchaseOrders", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = ship_from_party_id {
         url_builder = url_builder.query(&[("shipFromPartyId", &local_var_str.to_string())]);
@@ -206,7 +208,8 @@ pub async fn submit_acknowledgement(configuration: &configuration::Configuration
 
     let local_var_uri_str = format!("{}/vendor/directFulfillment/orders/v1/acknowledgements", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

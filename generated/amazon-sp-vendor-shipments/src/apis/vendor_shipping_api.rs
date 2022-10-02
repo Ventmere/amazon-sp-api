@@ -41,7 +41,8 @@ pub async fn submit_shipment_confirmations(configuration: &configuration::Config
 
     let local_var_uri_str = format!("{}/vendor/shipping/v1/shipmentConfirmations", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

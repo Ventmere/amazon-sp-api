@@ -173,7 +173,8 @@ pub async fn create_content_document(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentDocuments", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
@@ -233,7 +234,8 @@ pub async fn get_content_document(configuration: &configuration::Configuration, 
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentDocuments/{contentReferenceKey}", local_var_configuration.base_path, contentReferenceKey=crate::apis::urlencode(content_reference_key));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
     url_builder = match "csv" {
@@ -296,7 +298,8 @@ pub async fn list_content_document_asin_relations(configuration: &configuration:
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins", local_var_configuration.base_path, contentReferenceKey=crate::apis::urlencode(content_reference_key));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
     if let Some(ref local_var_str) = included_data_set {
@@ -370,7 +373,8 @@ pub async fn post_content_document_approval_submission(configuration: &configura
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions", local_var_configuration.base_path, contentReferenceKey=crate::apis::urlencode(content_reference_key));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
@@ -429,7 +433,8 @@ pub async fn post_content_document_asin_relations(configuration: &configuration:
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins", local_var_configuration.base_path, contentReferenceKey=crate::apis::urlencode(content_reference_key));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
@@ -489,7 +494,8 @@ pub async fn post_content_document_suspend_submission(configuration: &configurat
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions", local_var_configuration.base_path, contentReferenceKey=crate::apis::urlencode(content_reference_key));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
@@ -548,7 +554,8 @@ pub async fn search_content_documents(configuration: &configuration::Configurati
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentDocuments", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
     if let Some(ref local_var_str) = page_token {
@@ -610,7 +617,8 @@ pub async fn search_content_publish_records(configuration: &configuration::Confi
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentPublishRecords", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
     url_builder = url_builder.query(&[("asin", &asin.to_string())]);
@@ -673,7 +681,8 @@ pub async fn update_content_document(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentDocuments/{contentReferenceKey}", local_var_configuration.base_path, contentReferenceKey=crate::apis::urlencode(content_reference_key));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
@@ -733,7 +742,8 @@ pub async fn validate_content_document_asin_relations(configuration: &configurat
 
     let local_var_uri_str = format!("{}/aplus/2020-11-01/contentAsinValidations", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
     if let Some(ref local_var_str) = asin_set {

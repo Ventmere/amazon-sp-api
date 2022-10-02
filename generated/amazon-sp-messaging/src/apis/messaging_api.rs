@@ -221,7 +221,8 @@ pub async fn confirm_customization_details(configuration: &configuration::Config
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -284,7 +285,8 @@ pub async fn create_amazon_motors(configuration: &configuration::Configuration, 
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/amazonMotors", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -347,7 +349,8 @@ pub async fn create_confirm_delivery_details(configuration: &configuration::Conf
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/confirmDeliveryDetails", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -410,7 +413,8 @@ pub async fn create_confirm_order_details(configuration: &configuration::Configu
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/confirmOrderDetails", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -473,7 +477,8 @@ pub async fn create_confirm_service_details(configuration: &configuration::Confi
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/confirmServiceDetails", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -536,7 +541,8 @@ pub async fn create_digital_access_key(configuration: &configuration::Configurat
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -599,7 +605,8 @@ pub async fn create_legal_disclosure(configuration: &configuration::Configuratio
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -662,7 +669,8 @@ pub async fn create_negative_feedback_removal(configuration: &configuration::Con
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -724,7 +732,8 @@ pub async fn create_unexpected_problem(configuration: &configuration::Configurat
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/unexpectedProblem", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -787,7 +796,8 @@ pub async fn create_warranty(configuration: &configuration::Configuration, amazo
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/warranty", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -850,7 +860,8 @@ pub async fn get_attributes(configuration: &configuration::Configuration, amazon
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/attributes", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -912,7 +923,8 @@ pub async fn get_messaging_actions_for_order(configuration: &configuration::Conf
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -974,7 +986,8 @@ pub async fn send_invoice(configuration: &configuration::Configuration, amazon_o
 
     let local_var_uri_str = format!("{}/messaging/v1/orders/{amazonOrderId}/messages/invoice", local_var_configuration.base_path, amazonOrderId=crate::apis::urlencode(amazon_order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),

@@ -41,7 +41,8 @@ pub async fn get_authorization_code(configuration: &configuration::Configuration
 
     let local_var_uri_str = format!("{}/authorization/v1/authorizationCode", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = url_builder.query(&[("sellingPartnerId", &selling_partner_id.to_string())]);
     url_builder = url_builder.query(&[("developerId", &developer_id.to_string())]);

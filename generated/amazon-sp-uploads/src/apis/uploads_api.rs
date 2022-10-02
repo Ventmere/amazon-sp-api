@@ -41,7 +41,8 @@ pub async fn create_upload_destination_for_resource(configuration: &configuratio
 
     let local_var_uri_str = format!("{}/uploads/2020-11-01/uploadDestinations/{resource}", local_var_configuration.base_path, resource=crate::apis::urlencode(resource));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     url_builder = match "csv" {
         "multi" => url_builder.query(&marketplace_ids.into_iter().map(|p| ("marketplaceIds".to_owned(), p)).collect::<Vec<(std::string::String, std::string::String)>>()),

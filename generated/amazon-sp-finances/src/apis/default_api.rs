@@ -78,7 +78,8 @@ pub async fn list_financial_event_groups(configuration: &configuration::Configur
 
     let local_var_uri_str = format!("{}/finances/v0/financialEventGroups", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = max_results_per_page {
         url_builder = url_builder.query(&[("MaxResultsPerPage", &local_var_str.to_string())]);
@@ -148,7 +149,8 @@ pub async fn list_financial_events(configuration: &configuration::Configuration,
 
     let local_var_uri_str = format!("{}/finances/v0/financialEvents", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = max_results_per_page {
         url_builder = url_builder.query(&[("MaxResultsPerPage", &local_var_str.to_string())]);
@@ -218,7 +220,8 @@ pub async fn list_financial_events_by_group_id(configuration: &configuration::Co
 
     let local_var_uri_str = format!("{}/finances/v0/financialEventGroups/{eventGroupId}/financialEvents", local_var_configuration.base_path, eventGroupId=crate::apis::urlencode(event_group_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = max_results_per_page {
         url_builder = url_builder.query(&[("MaxResultsPerPage", &local_var_str.to_string())]);
@@ -282,7 +285,8 @@ pub async fn list_financial_events_by_order_id(configuration: &configuration::Co
 
     let local_var_uri_str = format!("{}/finances/v0/orders/{orderId}/financialEvents", local_var_configuration.base_path, orderId=crate::apis::urlencode(order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = max_results_per_page {
         url_builder = url_builder.query(&[("MaxResultsPerPage", &local_var_str.to_string())]);

@@ -132,7 +132,8 @@ pub async fn get_order(configuration: &configuration::Configuration, order_id: &
 
     let local_var_uri_str = format!("{}/orders/v0/orders/{orderId}", local_var_configuration.base_path, orderId=crate::apis::urlencode(order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -190,7 +191,8 @@ pub async fn get_order_address(configuration: &configuration::Configuration, ord
 
     let local_var_uri_str = format!("{}/orders/v0/orders/{orderId}/address", local_var_configuration.base_path, orderId=crate::apis::urlencode(order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -248,7 +250,8 @@ pub async fn get_order_buyer_info(configuration: &configuration::Configuration, 
 
     let local_var_uri_str = format!("{}/orders/v0/orders/{orderId}/buyerInfo", local_var_configuration.base_path, orderId=crate::apis::urlencode(order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -306,7 +309,8 @@ pub async fn get_order_items(configuration: &configuration::Configuration, order
 
     let local_var_uri_str = format!("{}/orders/v0/orders/{orderId}/orderItems", local_var_configuration.base_path, orderId=crate::apis::urlencode(order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = next_token {
         url_builder = url_builder.query(&[("NextToken", &local_var_str.to_string())]);
@@ -367,7 +371,8 @@ pub async fn get_order_items_buyer_info(configuration: &configuration::Configura
 
     let local_var_uri_str = format!("{}/orders/v0/orders/{orderId}/orderItems/buyerInfo", local_var_configuration.base_path, orderId=crate::apis::urlencode(order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = next_token {
         url_builder = url_builder.query(&[("NextToken", &local_var_str.to_string())]);
@@ -428,7 +433,8 @@ pub async fn get_order_regulated_info(configuration: &configuration::Configurati
 
     let local_var_uri_str = format!("{}/orders/v0/orders/{orderId}/regulatedInfo", local_var_configuration.base_path, orderId=crate::apis::urlencode(order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;
@@ -486,7 +492,8 @@ pub async fn get_orders(configuration: &configuration::Configuration, marketplac
 
     let local_var_uri_str = format!("{}/orders/v0/orders", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
     if let Some(ref local_var_str) = created_after {
         url_builder = url_builder.query(&[("CreatedAfter", &local_var_str.to_string())]);
@@ -617,7 +624,8 @@ pub async fn update_verification_status(configuration: &configuration::Configura
 
     let local_var_uri_str = format!("{}/orders/v0/orders/{orderId}/regulatedInfo", local_var_configuration.base_path, orderId=crate::apis::urlencode(order_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
-    let url_builder = UrlBuilder::parse(&local_var_uri_str)?;
+    #[allow(unused_mut)]
+    let mut url_builder = UrlBuilder::parse(&local_var_uri_str)?;
 
 
     let url = url_builder.build()?;

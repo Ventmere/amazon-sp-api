@@ -1,8 +1,11 @@
 [package]
 name = "amazon-sp-product-fees"
 version = "0.1.0"
-authors = ["OpenAPI Generator team and contributors"]
+authors = ["Flux Xu <fluxxu@gmail.com>", "OpenAPI Generator team and contributors"]
 edition = "2021"
+license = "MIT"
+repository = "https://github.com/Ventmere/amazon-sp-api"
+description = "Amazon Selling Partner API client library"
 
 [dependencies]
 amazon-sp-api-shared = "0.1.0"

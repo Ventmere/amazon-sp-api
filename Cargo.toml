@@ -1,6 +1,7 @@
 [workspace]
 members = [
   "binaries/gen",
+  "binaries/publish",
   "binaries/cli",
 
   "crates/amazon-sp-api",

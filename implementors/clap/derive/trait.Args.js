@@ -1,4 +1,5 @@
 (function() {var implementors = {
 "cli":[["impl Args for <a class=\"struct\" href=\"cli/exchange_refresh_token/struct.AuthArgs.html\" title=\"struct cli::exchange_refresh_token::AuthArgs\">AuthArgs</a>"],["impl Args for <a class=\"struct\" href=\"cli/migrate_mws_auth_token/struct.AuthArgs.html\" title=\"struct cli::migrate_mws_auth_token::AuthArgs\">AuthArgs</a>"],["impl Args for <a class=\"struct\" href=\"cli/refresh_access_token/struct.AuthArgs.html\" title=\"struct cli::refresh_access_token::AuthArgs\">AuthArgs</a>"],["impl Args for <a class=\"struct\" href=\"cli/struct.Args.html\" title=\"struct cli::Args\">Args</a>"]],
-"gen":[["impl Args for <a class=\"struct\" href=\"gen/struct.Args.html\" title=\"struct gen::Args\">Args</a>"]]
+"gen":[["impl Args for <a class=\"struct\" href=\"gen/struct.Args.html\" title=\"struct gen::Args\">Args</a>"]],
+"publish":[["impl Args for <a class=\"struct\" href=\"publish/struct.Args.html\" title=\"struct publish::Args\">Args</a>"]]
 };if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

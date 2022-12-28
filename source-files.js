@@ -41,6 +41,7 @@ var sourcesIndex = JSON.parse('{\
 "amazon_sp_vendor_shipments":["",[["apis",[],["configuration.rs","mod.rs","vendor_shipping_api.rs"]],["models",[],["address.rs","carton.rs","carton_reference_details.rs","container_identification.rs","container_item.rs","dimensions.rs","duration.rs","error.rs","expiry.rs","import_details.rs","item.rs","item_details.rs","item_quantity.rs","location.rs","mod.rs","money.rs","pallet.rs","party_identification.rs","route.rs","shipment_confirmation.rs","shipment_measurements.rs","stop.rs","submit_shipment_confirmations_request.rs","submit_shipment_confirmations_response.rs","tax_registration_details.rs","transaction_reference.rs","transportation_details.rs","volume.rs","weight.rs"]]],["lib.rs"]],\
 "amazon_sp_vendor_transaction_status":["",[["apis",[],["configuration.rs","mod.rs","vendor_transaction_api.rs"]],["models",[],["error.rs","get_transaction_response.rs","mod.rs","transaction.rs","transaction_status.rs"]]],["lib.rs"]],\
 "cli":["",[],["exchange_refresh_token.rs","main.rs","migrate_mws_auth_token.rs","refresh_access_token.rs"]],\
-"gen":["",[],["generate.rs","main.rs"]]\
+"gen":["",[],["generate.rs","main.rs"]],\
+"publish":["",[],["main.rs","publish.rs"]]\
 }');
 createSourceSidebar();

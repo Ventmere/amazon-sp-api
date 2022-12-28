@@ -20,7 +20,8 @@ pub fn run(filter_module: Option<&str>) -> Result<()> {
     if output.status.success() {
       tracing::info!("published {}", path.display());
     } else {
-      tracing::error!("failed to publish {}: {}", path.display(), String::from_utf8_lossy(&output.stderr));
+      tracing::error!("failed to publish {}:\n {}", path.display(), String::from_utf8_lossy(&output.stderr));
+      return Err(anyhow::anyhow!("failed to publish"));
     }
   }
 

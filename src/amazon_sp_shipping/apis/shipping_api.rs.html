@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-shipping/src/apis/shipping_api.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>shipping_api.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_shipping/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_shipping/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_shipping/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-shipping/src/apis/shipping_api.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>shipping_api.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_shipping/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -687,678 +687,678 @@
  * The version of the OpenAPI document: v1
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
 
-<span class="kw">use</span> <span class="ident">reqwest</span>;
+</span><span class="kw">use </span>reqwest;
 
-<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::apis::ResponseContent</span>;
-<span class="kw">use</span> <span class="kw">super</span>::{<span class="ident">Error</span>, <span class="ident">configuration</span>};
-<span class="kw">use</span> <span class="ident">amazon_sp_api_shared::request::UrlBuilder</span>;
+<span class="kw">use </span><span class="kw">crate</span>::apis::ResponseContent;
+<span class="kw">use super</span>::{Error, configuration};
+<span class="kw">use </span>amazon_sp_api_shared::request::UrlBuilder;
 
 
-<span class="doccomment">/// struct for typed errors of method [`cancel_shipment`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">CancelShipmentError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::CancelShipmentResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::CancelShipmentResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::CancelShipmentResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::CancelShipmentResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::CancelShipmentResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::CancelShipmentResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::CancelShipmentResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`cancel_shipment`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>CancelShipmentError {
+    Status400(<span class="kw">crate</span>::models::CancelShipmentResponse),
+    Status401(<span class="kw">crate</span>::models::CancelShipmentResponse),
+    Status403(<span class="kw">crate</span>::models::CancelShipmentResponse),
+    Status404(<span class="kw">crate</span>::models::CancelShipmentResponse),
+    Status429(<span class="kw">crate</span>::models::CancelShipmentResponse),
+    Status500(<span class="kw">crate</span>::models::CancelShipmentResponse),
+    Status503(<span class="kw">crate</span>::models::CancelShipmentResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`create_shipment`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">CreateShipmentError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::CreateShipmentResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::CreateShipmentResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::CreateShipmentResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::CreateShipmentResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::CreateShipmentResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::CreateShipmentResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::CreateShipmentResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`create_shipment`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>CreateShipmentError {
+    Status400(<span class="kw">crate</span>::models::CreateShipmentResponse),
+    Status401(<span class="kw">crate</span>::models::CreateShipmentResponse),
+    Status403(<span class="kw">crate</span>::models::CreateShipmentResponse),
+    Status404(<span class="kw">crate</span>::models::CreateShipmentResponse),
+    Status429(<span class="kw">crate</span>::models::CreateShipmentResponse),
+    Status500(<span class="kw">crate</span>::models::CreateShipmentResponse),
+    Status503(<span class="kw">crate</span>::models::CreateShipmentResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_account`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetAccountError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetAccountResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::GetAccountResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetAccountResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetAccountResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetAccountResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetAccountResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetAccountResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_account`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetAccountError {
+    Status400(<span class="kw">crate</span>::models::GetAccountResponse),
+    Status401(<span class="kw">crate</span>::models::GetAccountResponse),
+    Status403(<span class="kw">crate</span>::models::GetAccountResponse),
+    Status404(<span class="kw">crate</span>::models::GetAccountResponse),
+    Status429(<span class="kw">crate</span>::models::GetAccountResponse),
+    Status500(<span class="kw">crate</span>::models::GetAccountResponse),
+    Status503(<span class="kw">crate</span>::models::GetAccountResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_rates`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetRatesError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetRatesResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::GetRatesResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetRatesResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetRatesResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetRatesResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetRatesResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetRatesResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_rates`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetRatesError {
+    Status400(<span class="kw">crate</span>::models::GetRatesResponse),
+    Status401(<span class="kw">crate</span>::models::GetRatesResponse),
+    Status403(<span class="kw">crate</span>::models::GetRatesResponse),
+    Status404(<span class="kw">crate</span>::models::GetRatesResponse),
+    Status429(<span class="kw">crate</span>::models::GetRatesResponse),
+    Status500(<span class="kw">crate</span>::models::GetRatesResponse),
+    Status503(<span class="kw">crate</span>::models::GetRatesResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_shipment`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetShipmentError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetShipmentResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::GetShipmentResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetShipmentResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetShipmentResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetShipmentResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetShipmentResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetShipmentResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_shipment`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetShipmentError {
+    Status400(<span class="kw">crate</span>::models::GetShipmentResponse),
+    Status401(<span class="kw">crate</span>::models::GetShipmentResponse),
+    Status403(<span class="kw">crate</span>::models::GetShipmentResponse),
+    Status404(<span class="kw">crate</span>::models::GetShipmentResponse),
+    Status429(<span class="kw">crate</span>::models::GetShipmentResponse),
+    Status500(<span class="kw">crate</span>::models::GetShipmentResponse),
+    Status503(<span class="kw">crate</span>::models::GetShipmentResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_tracking_information`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetTrackingInformationError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetTrackingInformationResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::GetTrackingInformationResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetTrackingInformationResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetTrackingInformationResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetTrackingInformationResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetTrackingInformationResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetTrackingInformationResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_tracking_information`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetTrackingInformationError {
+    Status400(<span class="kw">crate</span>::models::GetTrackingInformationResponse),
+    Status401(<span class="kw">crate</span>::models::GetTrackingInformationResponse),
+    Status403(<span class="kw">crate</span>::models::GetTrackingInformationResponse),
+    Status404(<span class="kw">crate</span>::models::GetTrackingInformationResponse),
+    Status429(<span class="kw">crate</span>::models::GetTrackingInformationResponse),
+    Status500(<span class="kw">crate</span>::models::GetTrackingInformationResponse),
+    Status503(<span class="kw">crate</span>::models::GetTrackingInformationResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`purchase_labels`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">PurchaseLabelsError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`purchase_labels`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>PurchaseLabelsError {
+    Status400(<span class="kw">crate</span>::models::PurchaseLabelsResponse),
+    Status401(<span class="kw">crate</span>::models::PurchaseLabelsResponse),
+    Status403(<span class="kw">crate</span>::models::PurchaseLabelsResponse),
+    Status404(<span class="kw">crate</span>::models::PurchaseLabelsResponse),
+    Status429(<span class="kw">crate</span>::models::PurchaseLabelsResponse),
+    Status500(<span class="kw">crate</span>::models::PurchaseLabelsResponse),
+    Status503(<span class="kw">crate</span>::models::PurchaseLabelsResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`purchase_shipment`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">PurchaseShipmentError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`purchase_shipment`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>PurchaseShipmentError {
+    Status400(<span class="kw">crate</span>::models::PurchaseShipmentResponse),
+    Status401(<span class="kw">crate</span>::models::PurchaseShipmentResponse),
+    Status403(<span class="kw">crate</span>::models::PurchaseShipmentResponse),
+    Status404(<span class="kw">crate</span>::models::PurchaseShipmentResponse),
+    Status429(<span class="kw">crate</span>::models::PurchaseShipmentResponse),
+    Status500(<span class="kw">crate</span>::models::PurchaseShipmentResponse),
+    Status503(<span class="kw">crate</span>::models::PurchaseShipmentResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`retrieve_shipping_label`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">RetrieveShippingLabelError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`retrieve_shipping_label`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>RetrieveShippingLabelError {
+    Status400(<span class="kw">crate</span>::models::RetrieveShippingLabelResponse),
+    Status401(<span class="kw">crate</span>::models::RetrieveShippingLabelResponse),
+    Status403(<span class="kw">crate</span>::models::RetrieveShippingLabelResponse),
+    Status404(<span class="kw">crate</span>::models::RetrieveShippingLabelResponse),
+    Status429(<span class="kw">crate</span>::models::RetrieveShippingLabelResponse),
+    Status500(<span class="kw">crate</span>::models::RetrieveShippingLabelResponse),
+    Status503(<span class="kw">crate</span>::models::RetrieveShippingLabelResponse),
+    UnknownValue(serde_json::Value),
 }
 
 
-<span class="doccomment">/// Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">cancel_shipment</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">shipment_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::CancelShipmentResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">CancelShipmentError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>cancel_shipment(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, shipment_id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::CancelShipmentResponse, Error&lt;CancelShipmentError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments/{shipmentId}/cancel&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">shipmentId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">shipment_id</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments/{shipmentId}/cancel&quot;</span>, local_var_configuration.base_path, shipmentId=<span class="kw">crate</span>::apis::urlencode(shipment_id));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">CancelShipmentError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;CancelShipmentError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">create_shipment</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">body</span>: <span class="ident"><span class="kw">crate</span>::models::CreateShipmentRequest</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::CreateShipmentResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">CreateShipmentError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+</span><span class="kw">pub async fn </span>create_shipment(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, body: <span class="kw">crate</span>::models::CreateShipmentRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::CreateShipmentResponse, Error&lt;CreateShipmentError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
-	    <span class="kw-2">&amp;</span><span class="ident">serde_json::to_string</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>).<span class="ident">expect</span>(<span class="string">&quot;param should serialize to string&quot;</span>),
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
+	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">json</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>);
+    local_var_req_builder = local_var_req_builder.json(<span class="kw-2">&amp;</span>body);
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">CreateShipmentError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;CreateShipmentError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_account</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, ) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetAccountResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetAccountError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_account(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, ) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetAccountResponse, Error&lt;GetAccountError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/account&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/account&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetAccountError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetAccountError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_rates</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">body</span>: <span class="ident"><span class="kw">crate</span>::models::GetRatesRequest</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetRatesResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetRatesError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_rates(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, body: <span class="kw">crate</span>::models::GetRatesRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetRatesResponse, Error&lt;GetRatesError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/rates&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/rates&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
-	    <span class="kw-2">&amp;</span><span class="ident">serde_json::to_string</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>).<span class="ident">expect</span>(<span class="string">&quot;param should serialize to string&quot;</span>),
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
+	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">json</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>);
+    local_var_req_builder = local_var_req_builder.json(<span class="kw-2">&amp;</span>body);
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetRatesError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetRatesError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_shipment</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">shipment_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetShipmentResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetShipmentError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_shipment(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, shipment_id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetShipmentResponse, Error&lt;GetShipmentError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments/{shipmentId}&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">shipmentId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">shipment_id</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments/{shipmentId}&quot;</span>, local_var_configuration.base_path, shipmentId=<span class="kw">crate</span>::apis::urlencode(shipment_id));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetShipmentError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetShipmentError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_tracking_information</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">tracking_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetTrackingInformationResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetTrackingInformationError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_tracking_information(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, tracking_id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetTrackingInformationResponse, Error&lt;GetTrackingInformationError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/tracking/{trackingId}&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">trackingId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">tracking_id</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/tracking/{trackingId}&quot;</span>, local_var_configuration.base_path, trackingId=<span class="kw">crate</span>::apis::urlencode(tracking_id));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetTrackingInformationError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetTrackingInformationError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">purchase_labels</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">shipment_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">body</span>: <span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsRequest</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::PurchaseLabelsResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">PurchaseLabelsError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>purchase_labels(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, shipment_id: <span class="kw-2">&amp;</span>str, body: <span class="kw">crate</span>::models::PurchaseLabelsRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::PurchaseLabelsResponse, Error&lt;PurchaseLabelsError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments/{shipmentId}/purchaseLabels&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">shipmentId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">shipment_id</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments/{shipmentId}/purchaseLabels&quot;</span>, local_var_configuration.base_path, shipmentId=<span class="kw">crate</span>::apis::urlencode(shipment_id));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
-	    <span class="kw-2">&amp;</span><span class="ident">serde_json::to_string</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>).<span class="ident">expect</span>(<span class="string">&quot;param should serialize to string&quot;</span>),
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
+	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">json</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>);
+    local_var_req_builder = local_var_req_builder.json(<span class="kw-2">&amp;</span>body);
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">PurchaseLabelsError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;PurchaseLabelsError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">purchase_shipment</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">body</span>: <span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentRequest</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::PurchaseShipmentResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">PurchaseShipmentError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>purchase_shipment(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, body: <span class="kw">crate</span>::models::PurchaseShipmentRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::PurchaseShipmentResponse, Error&lt;PurchaseShipmentError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/purchaseShipment&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/purchaseShipment&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
-	    <span class="kw-2">&amp;</span><span class="ident">serde_json::to_string</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>).<span class="ident">expect</span>(<span class="string">&quot;param should serialize to string&quot;</span>),
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
+	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">json</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>);
+    local_var_req_builder = local_var_req_builder.json(<span class="kw-2">&amp;</span>body);
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">PurchaseShipmentError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;PurchaseShipmentError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">retrieve_shipping_label</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">shipment_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">tracking_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">body</span>: <span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelRequest</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::RetrieveShippingLabelResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">RetrieveShippingLabelError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>retrieve_shipping_label(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, shipment_id: <span class="kw-2">&amp;</span>str, tracking_id: <span class="kw-2">&amp;</span>str, body: <span class="kw">crate</span>::models::RetrieveShippingLabelRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::RetrieveShippingLabelResponse, Error&lt;RetrieveShippingLabelError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">shipmentId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">shipment_id</span>), <span class="ident">trackingId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">tracking_id</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label&quot;</span>, local_var_configuration.base_path, shipmentId=<span class="kw">crate</span>::apis::urlencode(shipment_id), trackingId=<span class="kw">crate</span>::apis::urlencode(tracking_id));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
-	    <span class="kw-2">&amp;</span><span class="ident">serde_json::to_string</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>).<span class="ident">expect</span>(<span class="string">&quot;param should serialize to string&quot;</span>),
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
+	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">json</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>);
+    local_var_req_builder = local_var_req_builder.json(<span class="kw-2">&amp;</span>body);
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">RetrieveShippingLabelError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;RetrieveShippingLabelError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_shipping" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_shipping" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

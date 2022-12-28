@@ -1,3 +1,3 @@
-(function() {var implementors = {};
-implementors["amazon_sp_api"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.64.0/core/str/traits/trait.FromStr.html\" title=\"trait core::str::traits::FromStr\">FromStr</a> for <a class=\"enum\" href=\"amazon_sp_api/enum.SpApiEndpoint.html\" title=\"enum amazon_sp_api::SpApiEndpoint\">SpApiEndpoint</a>","synthetic":false,"types":["amazon_sp_api::constants::SpApiEndpoint"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
+(function() {var implementors = {
+"amazon_sp_api":[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.66.0/core/str/traits/trait.FromStr.html\" title=\"trait core::str::traits::FromStr\">FromStr</a> for <a class=\"enum\" href=\"amazon_sp_api/enum.SpApiEndpoint.html\" title=\"enum amazon_sp_api::SpApiEndpoint\">SpApiEndpoint</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

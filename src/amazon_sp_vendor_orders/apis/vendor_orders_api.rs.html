@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-vendor-orders/src/apis/vendor_orders_api.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>vendor_orders_api.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_vendor_orders/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_vendor_orders/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_vendor_orders/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-vendor-orders/src/apis/vendor_orders_api.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>vendor_orders_api.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_vendor_orders/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -395,386 +395,386 @@
  * The version of the OpenAPI document: v1
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
 
-<span class="kw">use</span> <span class="ident">reqwest</span>;
+</span><span class="kw">use </span>reqwest;
 
-<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::apis::ResponseContent</span>;
-<span class="kw">use</span> <span class="kw">super</span>::{<span class="ident">Error</span>, <span class="ident">configuration</span>};
-<span class="kw">use</span> <span class="ident">amazon_sp_api_shared::request::UrlBuilder</span>;
+<span class="kw">use </span><span class="kw">crate</span>::apis::ResponseContent;
+<span class="kw">use super</span>::{Error, configuration};
+<span class="kw">use </span>amazon_sp_api_shared::request::UrlBuilder;
 
 
-<span class="doccomment">/// struct for typed errors of method [`get_purchase_order`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetPurchaseOrderError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_purchase_order`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetPurchaseOrderError {
+    Status400(<span class="kw">crate</span>::models::GetPurchaseOrderResponse),
+    Status401(<span class="kw">crate</span>::models::GetPurchaseOrderResponse),
+    Status403(<span class="kw">crate</span>::models::GetPurchaseOrderResponse),
+    Status404(<span class="kw">crate</span>::models::GetPurchaseOrderResponse),
+    Status415(<span class="kw">crate</span>::models::GetPurchaseOrderResponse),
+    Status429(<span class="kw">crate</span>::models::GetPurchaseOrderResponse),
+    Status500(<span class="kw">crate</span>::models::GetPurchaseOrderResponse),
+    Status503(<span class="kw">crate</span>::models::GetPurchaseOrderResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_purchase_orders`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetPurchaseOrdersError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_purchase_orders`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetPurchaseOrdersError {
+    Status400(<span class="kw">crate</span>::models::GetPurchaseOrdersResponse),
+    Status403(<span class="kw">crate</span>::models::GetPurchaseOrdersResponse),
+    Status404(<span class="kw">crate</span>::models::GetPurchaseOrdersResponse),
+    Status415(<span class="kw">crate</span>::models::GetPurchaseOrdersResponse),
+    Status429(<span class="kw">crate</span>::models::GetPurchaseOrdersResponse),
+    Status500(<span class="kw">crate</span>::models::GetPurchaseOrdersResponse),
+    Status503(<span class="kw">crate</span>::models::GetPurchaseOrdersResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_purchase_orders_status`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetPurchaseOrdersStatusError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_purchase_orders_status`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetPurchaseOrdersStatusError {
+    Status400(<span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse),
+    Status403(<span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse),
+    Status404(<span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse),
+    Status415(<span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse),
+    Status429(<span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse),
+    Status500(<span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse),
+    Status503(<span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`submit_acknowledgement`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">SubmitAcknowledgementError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>),
-    <span class="ident">Status413</span>(<span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`submit_acknowledgement`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>SubmitAcknowledgementError {
+    Status400(<span class="kw">crate</span>::models::SubmitAcknowledgementResponse),
+    Status403(<span class="kw">crate</span>::models::SubmitAcknowledgementResponse),
+    Status404(<span class="kw">crate</span>::models::SubmitAcknowledgementResponse),
+    Status413(<span class="kw">crate</span>::models::SubmitAcknowledgementResponse),
+    Status415(<span class="kw">crate</span>::models::SubmitAcknowledgementResponse),
+    Status429(<span class="kw">crate</span>::models::SubmitAcknowledgementResponse),
+    Status500(<span class="kw">crate</span>::models::SubmitAcknowledgementResponse),
+    Status503(<span class="kw">crate</span>::models::SubmitAcknowledgementResponse),
+    UnknownValue(serde_json::Value),
 }
 
 
-<span class="doccomment">/// Returns a purchase order based on the purchaseOrderNumber value that you specify.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_purchase_order</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">purchase_order_number</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrderResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetPurchaseOrderError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Returns a purchase order based on the purchaseOrderNumber value that you specify.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_purchase_order(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, purchase_order_number: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetPurchaseOrderResponse, Error&lt;GetPurchaseOrderError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/vendor/orders/v1/purchaseOrders/{purchaseOrderNumber}&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">purchaseOrderNumber</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">purchase_order_number</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/vendor/orders/v1/purchaseOrders/{purchaseOrderNumber}&quot;</span>, local_var_configuration.base_path, purchaseOrderNumber=<span class="kw">crate</span>::apis::urlencode(purchase_order_number));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetPurchaseOrderError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetPurchaseOrderError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Returns a list of purchase orders created or changed during the time frame that you specify. You define the time frame using the createdAfter, createdBefore, changedAfter and changedBefore parameters. The date range to search must not be more than 7 days. You can choose to get only the purchase order numbers by setting includeDetails to false. You can then use the getPurchaseOrder operation to receive details for a specific purchase order.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_purchase_orders</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">limit</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i64</span><span class="op">&gt;</span>, <span class="ident">created_after</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">created_before</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">sort_order</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">next_token</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">include_details</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">changed_after</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">changed_before</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">po_item_state</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">is_po_changed</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">purchase_order_state</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">ordering_vendor_code</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetPurchaseOrdersError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Returns a list of purchase orders created or changed during the time frame that you specify. You define the time frame using the createdAfter, createdBefore, changedAfter and changedBefore parameters. The date range to search must not be more than 7 days. You can choose to get only the purchase order numbers by setting includeDetails to false. You can then use the getPurchaseOrder operation to receive details for a specific purchase order.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_purchase_orders(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, limit: <span class="prelude-ty">Option</span>&lt;i64&gt;, created_after: <span class="prelude-ty">Option</span>&lt;String&gt;, created_before: <span class="prelude-ty">Option</span>&lt;String&gt;, sort_order: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, next_token: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, include_details: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, changed_after: <span class="prelude-ty">Option</span>&lt;String&gt;, changed_before: <span class="prelude-ty">Option</span>&lt;String&gt;, po_item_state: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, is_po_changed: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, purchase_order_state: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, ordering_vendor_code: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetPurchaseOrdersResponse, Error&lt;GetPurchaseOrdersError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/vendor/orders/v1/purchaseOrders&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/vendor/orders/v1/purchaseOrders&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">limit</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;limit&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = limit {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;limit&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">created_after</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdAfter&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = created_after {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdAfter&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">created_before</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdBefore&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = created_before {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdBefore&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">sort_order</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;sortOrder&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = sort_order {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;sortOrder&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">next_token</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;nextToken&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = next_token {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;nextToken&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">include_details</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;includeDetails&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = include_details {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;includeDetails&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">changed_after</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;changedAfter&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = changed_after {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;changedAfter&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">changed_before</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;changedBefore&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = changed_before {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;changedBefore&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">po_item_state</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;poItemState&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = po_item_state {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;poItemState&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">is_po_changed</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;isPOChanged&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = is_po_changed {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;isPOChanged&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">purchase_order_state</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;purchaseOrderState&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = purchase_order_state {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;purchaseOrderState&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">ordering_vendor_code</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;orderingVendorCode&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = ordering_vendor_code {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;orderingVendorCode&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetPurchaseOrdersError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetPurchaseOrdersError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Returns purchase order statuses based on the filters that you specify. Date range to search must not be more than 7 days. You can return a list of purchase order statuses using the available filters, or a single purchase order status by providing the purchase order number.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_purchase_orders_status</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">limit</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i64</span><span class="op">&gt;</span>, <span class="ident">sort_order</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">next_token</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">created_after</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">created_before</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">updated_after</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">updated_before</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">purchase_order_number</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">purchase_order_status</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">item_confirmation_status</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">item_receive_status</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">ordering_vendor_code</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">ship_to_party_id</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetPurchaseOrdersStatusError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Returns purchase order statuses based on the filters that you specify. Date range to search must not be more than 7 days. You can return a list of purchase order statuses using the available filters, or a single purchase order status by providing the purchase order number.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_purchase_orders_status(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, limit: <span class="prelude-ty">Option</span>&lt;i64&gt;, sort_order: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, next_token: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, created_after: <span class="prelude-ty">Option</span>&lt;String&gt;, created_before: <span class="prelude-ty">Option</span>&lt;String&gt;, updated_after: <span class="prelude-ty">Option</span>&lt;String&gt;, updated_before: <span class="prelude-ty">Option</span>&lt;String&gt;, purchase_order_number: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, purchase_order_status: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, item_confirmation_status: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, item_receive_status: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, ordering_vendor_code: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, ship_to_party_id: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetPurchaseOrdersStatusResponse, Error&lt;GetPurchaseOrdersStatusError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/vendor/orders/v1/purchaseOrdersStatus&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/vendor/orders/v1/purchaseOrdersStatus&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">limit</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;limit&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = limit {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;limit&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">sort_order</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;sortOrder&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = sort_order {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;sortOrder&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">next_token</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;nextToken&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = next_token {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;nextToken&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">created_after</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdAfter&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = created_after {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdAfter&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">created_before</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdBefore&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = created_before {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdBefore&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">updated_after</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;updatedAfter&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = updated_after {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;updatedAfter&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">updated_before</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;updatedBefore&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = updated_before {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;updatedBefore&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">purchase_order_number</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;purchaseOrderNumber&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = purchase_order_number {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;purchaseOrderNumber&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">purchase_order_status</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;purchaseOrderStatus&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = purchase_order_status {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;purchaseOrderStatus&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">item_confirmation_status</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;itemConfirmationStatus&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = item_confirmation_status {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;itemConfirmationStatus&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">item_receive_status</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;itemReceiveStatus&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = item_receive_status {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;itemReceiveStatus&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">ordering_vendor_code</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;orderingVendorCode&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = ordering_vendor_code {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;orderingVendorCode&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">ship_to_party_id</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;shipToPartyId&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = ship_to_party_id {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;shipToPartyId&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetPurchaseOrdersStatusError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetPurchaseOrdersStatusError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Submits acknowledgements for one or more purchase orders.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">submit_acknowledgement</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">body</span>: <span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementRequest</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::SubmitAcknowledgementResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">SubmitAcknowledgementError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Submits acknowledgements for one or more purchase orders.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>submit_acknowledgement(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, body: <span class="kw">crate</span>::models::SubmitAcknowledgementRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SubmitAcknowledgementResponse, Error&lt;SubmitAcknowledgementError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/vendor/orders/v1/acknowledgements&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/vendor/orders/v1/acknowledgements&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
-	    <span class="kw-2">&amp;</span><span class="ident">serde_json::to_string</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>).<span class="ident">expect</span>(<span class="string">&quot;param should serialize to string&quot;</span>),
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
+	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">json</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>);
+    local_var_req_builder = local_var_req_builder.json(<span class="kw-2">&amp;</span>body);
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">SubmitAcknowledgementError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;SubmitAcknowledgementError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_vendor_orders" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_vendor_orders" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

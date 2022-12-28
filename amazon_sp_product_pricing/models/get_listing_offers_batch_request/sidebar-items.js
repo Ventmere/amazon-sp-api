@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["GetListingOffersBatchRequest","GetListingOffersBatchRequest : The request associated with the getListingOffersBatch API call."]]};
+window.SIDEBAR_ITEMS = {"struct":[["GetListingOffersBatchRequest","GetListingOffersBatchRequest : The request associated with the `getListingOffersBatch` API call."]]};

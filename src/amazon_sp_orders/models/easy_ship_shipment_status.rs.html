@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-orders/src/models/easy_ship_shipment_status.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>easy_ship_shipment_status.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_orders/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_orders/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_orders/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-orders/src/models/easy_ship_shipment_status.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>easy_ship_shipment_status.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_orders/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -88,74 +88,74 @@
  * The version of the OpenAPI document: v0
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
-<span class="doccomment">/// EasyShipShipmentStatus : The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.</span>
+</span><span class="doccomment">/// EasyShipShipmentStatus : The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
 
-<span class="doccomment">/// The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">EasyShipShipmentStatus</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PendingSchedule&quot;</span>)]</span>
-    <span class="ident">PendingSchedule</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PendingPickUp&quot;</span>)]</span>
-    <span class="ident">PendingPickUp</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PendingDropOff&quot;</span>)]</span>
-    <span class="ident">PendingDropOff</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;LabelCanceled&quot;</span>)]</span>
-    <span class="ident">LabelCanceled</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PickedUp&quot;</span>)]</span>
-    <span class="ident">PickedUp</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;DroppedOff&quot;</span>)]</span>
-    <span class="ident">DroppedOff</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;AtOriginFC&quot;</span>)]</span>
-    <span class="ident">AtOriginFC</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;AtDestinationFC&quot;</span>)]</span>
-    <span class="ident">AtDestinationFC</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Delivered&quot;</span>)]</span>
-    <span class="ident">Delivered</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;RejectedByBuyer&quot;</span>)]</span>
-    <span class="ident">RejectedByBuyer</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Undeliverable&quot;</span>)]</span>
-    <span class="ident">Undeliverable</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ReturningToSeller&quot;</span>)]</span>
-    <span class="ident">ReturningToSeller</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ReturnedToSeller&quot;</span>)]</span>
-    <span class="ident">ReturnedToSeller</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Lost&quot;</span>)]</span>
-    <span class="ident">Lost</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;OutForDelivery&quot;</span>)]</span>
-    <span class="ident">OutForDelivery</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Damaged&quot;</span>)]</span>
-    <span class="ident">Damaged</span>,
+/// The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>EasyShipShipmentStatus {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;PendingSchedule&quot;</span>)]
+    </span>PendingSchedule,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;PendingPickUp&quot;</span>)]
+    </span>PendingPickUp,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;PendingDropOff&quot;</span>)]
+    </span>PendingDropOff,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;LabelCanceled&quot;</span>)]
+    </span>LabelCanceled,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;PickedUp&quot;</span>)]
+    </span>PickedUp,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;DroppedOff&quot;</span>)]
+    </span>DroppedOff,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;AtOriginFC&quot;</span>)]
+    </span>AtOriginFC,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;AtDestinationFC&quot;</span>)]
+    </span>AtDestinationFC,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Delivered&quot;</span>)]
+    </span>Delivered,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;RejectedByBuyer&quot;</span>)]
+    </span>RejectedByBuyer,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Undeliverable&quot;</span>)]
+    </span>Undeliverable,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;ReturningToSeller&quot;</span>)]
+    </span>ReturningToSeller,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;ReturnedToSeller&quot;</span>)]
+    </span>ReturnedToSeller,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Lost&quot;</span>)]
+    </span>Lost,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;OutForDelivery&quot;</span>)]
+    </span>OutForDelivery,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Damaged&quot;</span>)]
+    </span>Damaged,
 
 }
 
-<span class="kw">impl</span> <span class="ident">ToString</span> <span class="kw">for</span> <span class="ident">EasyShipShipmentStatus</span> {
-    <span class="kw">fn</span> <span class="ident">to_string</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">String</span> {
-        <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::PendingSchedule</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;PendingSchedule&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::PendingPickUp</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;PendingPickUp&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::PendingDropOff</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;PendingDropOff&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::LabelCanceled</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;LabelCanceled&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::PickedUp</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;PickedUp&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::DroppedOff</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;DroppedOff&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::AtOriginFC</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;AtOriginFC&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::AtDestinationFC</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;AtDestinationFC&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::Delivered</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;Delivered&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::RejectedByBuyer</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;RejectedByBuyer&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::Undeliverable</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;Undeliverable&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::ReturningToSeller</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;ReturningToSeller&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::ReturnedToSeller</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;ReturnedToSeller&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::Lost</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;Lost&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::OutForDelivery</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;OutForDelivery&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::Damaged</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;Damaged&quot;</span>),
+<span class="kw">impl </span>ToString <span class="kw">for </span>EasyShipShipmentStatus {
+    <span class="kw">fn </span>to_string(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; String {
+        <span class="kw">match </span><span class="self">self </span>{
+            <span class="self">Self</span>::PendingSchedule =&gt; String::from(<span class="string">&quot;PendingSchedule&quot;</span>),
+            <span class="self">Self</span>::PendingPickUp =&gt; String::from(<span class="string">&quot;PendingPickUp&quot;</span>),
+            <span class="self">Self</span>::PendingDropOff =&gt; String::from(<span class="string">&quot;PendingDropOff&quot;</span>),
+            <span class="self">Self</span>::LabelCanceled =&gt; String::from(<span class="string">&quot;LabelCanceled&quot;</span>),
+            <span class="self">Self</span>::PickedUp =&gt; String::from(<span class="string">&quot;PickedUp&quot;</span>),
+            <span class="self">Self</span>::DroppedOff =&gt; String::from(<span class="string">&quot;DroppedOff&quot;</span>),
+            <span class="self">Self</span>::AtOriginFC =&gt; String::from(<span class="string">&quot;AtOriginFC&quot;</span>),
+            <span class="self">Self</span>::AtDestinationFC =&gt; String::from(<span class="string">&quot;AtDestinationFC&quot;</span>),
+            <span class="self">Self</span>::Delivered =&gt; String::from(<span class="string">&quot;Delivered&quot;</span>),
+            <span class="self">Self</span>::RejectedByBuyer =&gt; String::from(<span class="string">&quot;RejectedByBuyer&quot;</span>),
+            <span class="self">Self</span>::Undeliverable =&gt; String::from(<span class="string">&quot;Undeliverable&quot;</span>),
+            <span class="self">Self</span>::ReturningToSeller =&gt; String::from(<span class="string">&quot;ReturningToSeller&quot;</span>),
+            <span class="self">Self</span>::ReturnedToSeller =&gt; String::from(<span class="string">&quot;ReturnedToSeller&quot;</span>),
+            <span class="self">Self</span>::Lost =&gt; String::from(<span class="string">&quot;Lost&quot;</span>),
+            <span class="self">Self</span>::OutForDelivery =&gt; String::from(<span class="string">&quot;OutForDelivery&quot;</span>),
+            <span class="self">Self</span>::Damaged =&gt; String::from(<span class="string">&quot;Damaged&quot;</span>),
         }
     }
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">EasyShipShipmentStatus</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">EasyShipShipmentStatus</span> {
-        <span class="ident"><span class="self">Self</span>::PendingSchedule</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>EasyShipShipmentStatus {
+    <span class="kw">fn </span>default() -&gt; EasyShipShipmentStatus {
+        <span class="self">Self</span>::PendingSchedule
     }
 }
 
@@ -163,4 +163,4 @@
 
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_orders" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_orders" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

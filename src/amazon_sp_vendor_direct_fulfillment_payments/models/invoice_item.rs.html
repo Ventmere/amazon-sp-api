@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-vendor-direct-fulfillment-payments/src/models/invoice_item.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>invoice_item.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_vendor_direct_fulfillment_payments/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_vendor_direct_fulfillment_payments/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_vendor_direct_fulfillment_payments/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-vendor-direct-fulfillment-payments/src/models/invoice_item.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>invoice_item.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_vendor_direct_fulfillment_payments/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -69,60 +69,60 @@
  * The version of the OpenAPI document: v1
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
 
 
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Default</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">InvoiceItem</span> {
-    <span class="doccomment">/// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;itemSequenceNumber&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">item_sequence_number</span>: <span class="ident">String</span>,
-    <span class="doccomment">/// Buyer&#39;s standard identification number (ASIN) of an item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;buyerProductIdentifier&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">buyer_product_identifier</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The vendor selected product identification of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;vendorProductIdentifier&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">vendor_product_identifier</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;invoicedQuantity&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">invoiced_quantity</span>: <span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::ItemQuantity</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;netCost&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">net_cost</span>: <span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Money</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;purchaseOrderNumber&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">purchase_order_number</span>: <span class="ident">String</span>,
-    <span class="doccomment">/// The vendor&#39;s order number for this order.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;vendorOrderNumber&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">vendor_order_number</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// HSN tax code. The HSN number cannot contain alphabets.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;hsnCode&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">hsn_code</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// Individual tax details per line item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;taxDetails&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">tax_details</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::TaxDetail</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// Individual charge details per line item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;chargeDetails&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">charge_details</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::ChargeDetails</span><span class="op">&gt;</span><span class="op">&gt;</span>,
+</span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+</span><span class="kw">pub struct </span>InvoiceItem {
+    <span class="doccomment">/// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;itemSequenceNumber&quot;</span>)]
+    </span><span class="kw">pub </span>item_sequence_number: String,
+    <span class="doccomment">/// Buyer&#39;s standard identification number (ASIN) of an item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>buyer_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The vendor selected product identification of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>vendor_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;invoicedQuantity&quot;</span>)]
+    </span><span class="kw">pub </span>invoiced_quantity: Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;netCost&quot;</span>)]
+    </span><span class="kw">pub </span>net_cost: Box&lt;<span class="kw">crate</span>::models::Money&gt;,
+    <span class="doccomment">/// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="kw">pub </span>purchase_order_number: String,
+    <span class="doccomment">/// The vendor&#39;s order number for this order.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;vendorOrderNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>vendor_order_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// HSN tax code. The HSN number cannot contain alphabets.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;hsnCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>hsn_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// Individual tax details per line item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>tax_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TaxDetail&gt;&gt;,
+    <span class="doccomment">/// Individual charge details per line item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;chargeDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>charge_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ChargeDetails&gt;&gt;,
 }
 
-<span class="kw">impl</span> <span class="ident">InvoiceItem</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">item_sequence_number</span>: <span class="ident">String</span>, <span class="ident">invoiced_quantity</span>: <span class="ident"><span class="kw">crate</span>::models::ItemQuantity</span>, <span class="ident">net_cost</span>: <span class="ident"><span class="kw">crate</span>::models::Money</span>, <span class="ident">purchase_order_number</span>: <span class="ident">String</span>) -&gt; <span class="ident">InvoiceItem</span> {
-        <span class="ident">InvoiceItem</span> {
-            <span class="ident">item_sequence_number</span>,
-            <span class="ident">buyer_product_identifier</span>: <span class="prelude-val">None</span>,
-            <span class="ident">vendor_product_identifier</span>: <span class="prelude-val">None</span>,
-            <span class="ident">invoiced_quantity</span>: <span class="ident">Box::new</span>(<span class="ident">invoiced_quantity</span>),
-            <span class="ident">net_cost</span>: <span class="ident">Box::new</span>(<span class="ident">net_cost</span>),
-            <span class="ident">purchase_order_number</span>,
-            <span class="ident">vendor_order_number</span>: <span class="prelude-val">None</span>,
-            <span class="ident">hsn_code</span>: <span class="prelude-val">None</span>,
-            <span class="ident">tax_details</span>: <span class="prelude-val">None</span>,
-            <span class="ident">charge_details</span>: <span class="prelude-val">None</span>,
+<span class="kw">impl </span>InvoiceItem {
+    <span class="kw">pub fn </span>new(item_sequence_number: String, invoiced_quantity: <span class="kw">crate</span>::models::ItemQuantity, net_cost: <span class="kw">crate</span>::models::Money, purchase_order_number: String) -&gt; InvoiceItem {
+        InvoiceItem {
+            item_sequence_number,
+            buyer_product_identifier: <span class="prelude-val">None</span>,
+            vendor_product_identifier: <span class="prelude-val">None</span>,
+            invoiced_quantity: Box::new(invoiced_quantity),
+            net_cost: Box::new(net_cost),
+            purchase_order_number,
+            vendor_order_number: <span class="prelude-val">None</span>,
+            hsn_code: <span class="prelude-val">None</span>,
+            tax_details: <span class="prelude-val">None</span>,
+            charge_details: <span class="prelude-val">None</span>,
         }
     }
 }
 
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_vendor_direct_fulfillment_payments" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_vendor_direct_fulfillment_payments" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

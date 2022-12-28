@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["GetOffersResponse","GetOffersResponse : The response schema for the getListingOffers and getItemOffers operations."]]};
+window.SIDEBAR_ITEMS = {"struct":[["GetOffersResponse","GetOffersResponse : The response schema for the `getListingOffers` and `getItemOffers` operations."]]};

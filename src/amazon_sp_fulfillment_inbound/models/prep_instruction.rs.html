@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-fulfillment-inbound/src/models/prep_instruction.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>prep_instruction.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_fulfillment_inbound/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_fulfillment_inbound/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_fulfillment_inbound/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-fulfillment-inbound/src/models/prep_instruction.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>prep_instruction.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_fulfillment_inbound/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -50,6 +50,33 @@
 <span id="50">50</span>
 <span id="51">51</span>
 <span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for Fulfillment Inbound
  *
@@ -58,44 +85,71 @@
  * The version of the OpenAPI document: v0
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
-<span class="doccomment">/// PrepInstruction : Preparation instructions for shipping an item to Amazon&#39;s fulfillment network. For more information about preparing items for shipment to Amazon&#39;s fulfillment network, see the Seller Central Help for your marketplace.</span>
+</span><span class="doccomment">/// PrepInstruction : Preparation instructions for shipping an item to Amazon&#39;s fulfillment network. For more information about preparing items for shipment to Amazon&#39;s fulfillment network, see the Seller Central Help for your marketplace.
 
-<span class="doccomment">/// Preparation instructions for shipping an item to Amazon&#39;s fulfillment network. For more information about preparing items for shipment to Amazon&#39;s fulfillment network, see the Seller Central Help for your marketplace.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">PrepInstruction</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Polybagging&quot;</span>)]</span>
-    <span class="ident">Polybagging</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BubbleWrapping&quot;</span>)]</span>
-    <span class="ident">BubbleWrapping</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Taping&quot;</span>)]</span>
-    <span class="ident">Taping</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BlackShrinkWrapping&quot;</span>)]</span>
-    <span class="ident">BlackShrinkWrapping</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Labeling&quot;</span>)]</span>
-    <span class="ident">Labeling</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;HangGarment&quot;</span>)]</span>
-    <span class="ident">HangGarment</span>,
+/// Preparation instructions for shipping an item to Amazon&#39;s fulfillment network. For more information about preparing items for shipment to Amazon&#39;s fulfillment network, see the Seller Central Help for your marketplace.
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>PrepInstruction {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Polybagging&quot;</span>)]
+    </span>Polybagging,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;BubbleWrapping&quot;</span>)]
+    </span>BubbleWrapping,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Taping&quot;</span>)]
+    </span>Taping,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;BlackShrinkWrapping&quot;</span>)]
+    </span>BlackShrinkWrapping,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Labeling&quot;</span>)]
+    </span>Labeling,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;HangGarment&quot;</span>)]
+    </span>HangGarment,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;SetCreation&quot;</span>)]
+    </span>SetCreation,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Boxing&quot;</span>)]
+    </span>Boxing,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;RemoveFromHanger&quot;</span>)]
+    </span>RemoveFromHanger,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Debundle&quot;</span>)]
+    </span>Debundle,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;SuffocationStickering&quot;</span>)]
+    </span>SuffocationStickering,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;CapSealing&quot;</span>)]
+    </span>CapSealing,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;SetStickering&quot;</span>)]
+    </span>SetStickering,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;BlankStickering&quot;</span>)]
+    </span>BlankStickering,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;NoPrep&quot;</span>)]
+    </span>NoPrep,
 
 }
 
-<span class="kw">impl</span> <span class="ident">ToString</span> <span class="kw">for</span> <span class="ident">PrepInstruction</span> {
-    <span class="kw">fn</span> <span class="ident">to_string</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">String</span> {
-        <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Polybagging</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;Polybagging&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::BubbleWrapping</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;BubbleWrapping&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::Taping</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;Taping&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::BlackShrinkWrapping</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;BlackShrinkWrapping&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::Labeling</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;Labeling&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::HangGarment</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;HangGarment&quot;</span>),
+<span class="kw">impl </span>ToString <span class="kw">for </span>PrepInstruction {
+    <span class="kw">fn </span>to_string(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; String {
+        <span class="kw">match </span><span class="self">self </span>{
+            <span class="self">Self</span>::Polybagging =&gt; String::from(<span class="string">&quot;Polybagging&quot;</span>),
+            <span class="self">Self</span>::BubbleWrapping =&gt; String::from(<span class="string">&quot;BubbleWrapping&quot;</span>),
+            <span class="self">Self</span>::Taping =&gt; String::from(<span class="string">&quot;Taping&quot;</span>),
+            <span class="self">Self</span>::BlackShrinkWrapping =&gt; String::from(<span class="string">&quot;BlackShrinkWrapping&quot;</span>),
+            <span class="self">Self</span>::Labeling =&gt; String::from(<span class="string">&quot;Labeling&quot;</span>),
+            <span class="self">Self</span>::HangGarment =&gt; String::from(<span class="string">&quot;HangGarment&quot;</span>),
+            <span class="self">Self</span>::SetCreation =&gt; String::from(<span class="string">&quot;SetCreation&quot;</span>),
+            <span class="self">Self</span>::Boxing =&gt; String::from(<span class="string">&quot;Boxing&quot;</span>),
+            <span class="self">Self</span>::RemoveFromHanger =&gt; String::from(<span class="string">&quot;RemoveFromHanger&quot;</span>),
+            <span class="self">Self</span>::Debundle =&gt; String::from(<span class="string">&quot;Debundle&quot;</span>),
+            <span class="self">Self</span>::SuffocationStickering =&gt; String::from(<span class="string">&quot;SuffocationStickering&quot;</span>),
+            <span class="self">Self</span>::CapSealing =&gt; String::from(<span class="string">&quot;CapSealing&quot;</span>),
+            <span class="self">Self</span>::SetStickering =&gt; String::from(<span class="string">&quot;SetStickering&quot;</span>),
+            <span class="self">Self</span>::BlankStickering =&gt; String::from(<span class="string">&quot;BlankStickering&quot;</span>),
+            <span class="self">Self</span>::NoPrep =&gt; String::from(<span class="string">&quot;NoPrep&quot;</span>),
         }
     }
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">PrepInstruction</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">PrepInstruction</span> {
-        <span class="ident"><span class="self">Self</span>::Polybagging</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>PrepInstruction {
+    <span class="kw">fn </span>default() -&gt; PrepInstruction {
+        <span class="self">Self</span>::Polybagging
     }
 }
 
@@ -103,4 +157,4 @@
 
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_fulfillment_inbound" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_fulfillment_inbound" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

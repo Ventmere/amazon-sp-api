@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-catalog-items/src/models/attribute_set_list_type.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>attribute_set_list_type.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_catalog_items/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_catalog_items/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_catalog_items/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-catalog-items/src/models/attribute_set_list_type.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>attribute_set_list_type.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_catalog_items/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -399,390 +399,390 @@
  * The version of the OpenAPI document: v0
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
-<span class="doccomment">/// AttributeSetListType : The attributes of the item.</span>
+</span><span class="doccomment">/// AttributeSetListType : The attributes of the item.
 
 
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Default</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AttributeSetListType</span> {
-    <span class="doccomment">/// The actor attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Actor&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">actor</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The artist attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Artist&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">artist</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The aspect ratio attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;AspectRatio&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">aspect_ratio</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The audience rating attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;AudienceRating&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">audience_rating</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The author attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Author&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">author</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The back finding attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BackFinding&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">back_finding</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The band material type attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BandMaterialType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">band_material_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The binding attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Binding&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">binding</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The Bluray region attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BlurayRegion&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">bluray_region</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The brand attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Brand&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">brand</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The CERO age rating attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;CeroAgeRating&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">cero_age_rating</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The chain type attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ChainType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">chain_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The clasp type attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ClaspType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">clasp_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The color attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Color&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">color</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The CPU manufacturer attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;CpuManufacturer&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">cpu_manufacturer</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;CpuSpeed&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">cpu_speed</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The CPU type attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;CpuType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">cpu_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The creator attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Creator&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">creator</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::CreatorType</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The department attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Department&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">department</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The director attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Director&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">director</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;DisplaySize&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">display_size</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The edition attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Edition&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">edition</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The episode sequence attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EpisodeSequence&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">episode_sequence</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The ESRB age rating attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EsrbAgeRating&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">esrb_age_rating</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The feature attributes of the item</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Feature&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">feature</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The flavor attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Flavor&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">flavor</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The format attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Format&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">format</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The gem type attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;GemType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">gem_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The genre attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Genre&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">genre</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The golf club flex attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;GolfClubFlex&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">golf_club_flex</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;GolfClubLoft&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">golf_club_loft</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The hand orientation attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;HandOrientation&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">hand_orientation</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The hard disk interface attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;HardDiskInterface&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">hard_disk_interface</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;HardDiskSize&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">hard_disk_size</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The hardware platform attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;HardwarePlatform&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">hardware_platform</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The hazardous material type attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;HazardousMaterialType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">hazardous_material_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ItemDimensions&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">item_dimensions</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DimensionType</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The adult product attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsAdultProduct&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_adult_product</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The autographed attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsAutographed&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_autographed</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The is eligible for trade in attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsEligibleForTradeIn&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_eligible_for_trade_in</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The is memorabilia attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsMemorabilia&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_memorabilia</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The issues per year attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IssuesPerYear&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">issues_per_year</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The item part number attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ItemPartNumber&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">item_part_number</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The label attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Label&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">label</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The languages attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Languages&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">languages</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::LanguageType</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The legal disclaimer attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;LegalDisclaimer&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">legal_disclaimer</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ListPrice&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">list_price</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Price</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The manufacturer attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Manufacturer&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">manufacturer</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ManufacturerMaximumAge&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">manufacturer_maximum_age</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ManufacturerMinimumAge&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">manufacturer_minimum_age</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The manufacturer parts warranty description attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ManufacturerPartsWarrantyDescription&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">manufacturer_parts_warranty_description</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The material type attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;MaterialType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">material_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;MaximumResolution&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">maximum_resolution</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The media type attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;MediaType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">media_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The metal stamp attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;MetalStamp&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">metal_stamp</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The metal type attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;MetalType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">metal_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The model attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Model&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">model</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The number of discs attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;NumberOfDiscs&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">number_of_discs</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The number of issues attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;NumberOfIssues&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">number_of_issues</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The number of items attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;NumberOfItems&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">number_of_items</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The number of pages attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;NumberOfPages&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">number_of_pages</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The number of tracks attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;NumberOfTracks&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">number_of_tracks</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The operating system attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;OperatingSystem&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">operating_system</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;OpticalZoom&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">optical_zoom</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PackageDimensions&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">package_dimensions</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DimensionType</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The package quantity attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PackageQuantity&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">package_quantity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The part number attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PartNumber&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">part_number</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The PEGI rating attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PegiRating&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">pegi_rating</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The platform attributes of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Platform&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">platform</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The processor count attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ProcessorCount&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">processor_count</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The product group attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ProductGroup&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">product_group</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The product type name attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ProductTypeName&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">product_type_name</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The product type subcategory attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ProductTypeSubcategory&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">product_type_subcategory</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The publication date attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PublicationDate&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">publication_date</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The publisher attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Publisher&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">publisher</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The region code attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;RegionCode&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">region_code</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The release date attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ReleaseDate&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">release_date</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The ring size attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;RingSize&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">ring_size</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;RunningTime&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">running_time</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The shaft material attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ShaftMaterial&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">shaft_material</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The scent attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Scent&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">scent</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The season sequence attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SeasonSequence&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">season_sequence</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The Seikodo product code attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SeikodoProductCode&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">seikodo_product_code</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The size attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Size&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">size</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The size per pearl attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SizePerPearl&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">size_per_pearl</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SmallImage&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">small_image</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Image</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The studio attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Studio&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">studio</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SubscriptionLength&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">subscription_length</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SystemMemorySize&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">system_memory_size</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The system memory type attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SystemMemoryType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">system_memory_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The theatrical release date attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;TheatricalReleaseDate&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">theatrical_release_date</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The title attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Title&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">title</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;TotalDiamondWeight&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">total_diamond_weight</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;TotalGemWeight&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">total_gem_weight</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::DecimalWithUnits</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The warranty attribute of the item.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Warranty&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">warranty</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;WeeeTaxValue&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">weee_tax_value</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Price</span><span class="op">&gt;</span><span class="op">&gt;</span>,
+</span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+</span><span class="kw">pub struct </span>AttributeSetListType {
+    <span class="doccomment">/// The actor attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Actor&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>actor: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The artist attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Artist&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>artist: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The aspect ratio attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AspectRatio&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>aspect_ratio: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The audience rating attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AudienceRating&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>audience_rating: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The author attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Author&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>author: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The back finding attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BackFinding&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>back_finding: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The band material type attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BandMaterialType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>band_material_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The binding attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Binding&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>binding: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The Bluray region attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BlurayRegion&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>bluray_region: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The brand attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Brand&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>brand: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The CERO age rating attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CeroAgeRating&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>cero_age_rating: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The chain type attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ChainType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>chain_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The clasp type attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ClaspType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>clasp_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The color attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Color&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>color: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The CPU manufacturer attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CpuManufacturer&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>cpu_manufacturer: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;CpuSpeed&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>cpu_speed: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The CPU type attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CpuType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>cpu_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The creator attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Creator&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>creator: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::CreatorType&gt;&gt;,
+    <span class="doccomment">/// The department attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Department&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>department: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The director attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Director&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>director: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;DisplaySize&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>display_size: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The edition attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Edition&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>edition: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The episode sequence attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;EpisodeSequence&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>episode_sequence: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The ESRB age rating attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;EsrbAgeRating&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>esrb_age_rating: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The feature attributes of the item
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Feature&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>feature: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The flavor attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Flavor&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>flavor: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The format attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Format&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>format: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The gem type attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;GemType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>gem_type: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The genre attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Genre&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>genre: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The golf club flex attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;GolfClubFlex&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>golf_club_flex: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;GolfClubLoft&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>golf_club_loft: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The hand orientation attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;HandOrientation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>hand_orientation: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The hard disk interface attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;HardDiskInterface&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>hard_disk_interface: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;HardDiskSize&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>hard_disk_size: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The hardware platform attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;HardwarePlatform&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>hardware_platform: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The hazardous material type attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;HazardousMaterialType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>hazardous_material_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;ItemDimensions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>item_dimensions: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DimensionType&gt;&gt;,
+    <span class="doccomment">/// The adult product attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsAdultProduct&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_adult_product: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// The autographed attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsAutographed&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_autographed: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// The is eligible for trade in attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsEligibleForTradeIn&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_eligible_for_trade_in: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// The is memorabilia attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsMemorabilia&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_memorabilia: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// The issues per year attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IssuesPerYear&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>issues_per_year: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The item part number attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemPartNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>item_part_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The label attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Label&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>label: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The languages attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Languages&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>languages: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::LanguageType&gt;&gt;,
+    <span class="doccomment">/// The legal disclaimer attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;LegalDisclaimer&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>legal_disclaimer: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;ListPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>list_price: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Price&gt;&gt;,
+    <span class="doccomment">/// The manufacturer attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Manufacturer&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>manufacturer: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;ManufacturerMaximumAge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>manufacturer_maximum_age: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;ManufacturerMinimumAge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>manufacturer_minimum_age: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The manufacturer parts warranty description attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ManufacturerPartsWarrantyDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>manufacturer_parts_warranty_description: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The material type attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MaterialType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>material_type: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;MaximumResolution&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>maximum_resolution: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The media type attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MediaType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>media_type: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The metal stamp attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MetalStamp&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>metal_stamp: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The metal type attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MetalType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>metal_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The model attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Model&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>model: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The number of discs attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfDiscs&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>number_of_discs: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// The number of issues attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfIssues&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>number_of_issues: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// The number of items attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>number_of_items: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// The number of pages attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfPages&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>number_of_pages: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// The number of tracks attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfTracks&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>number_of_tracks: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// The operating system attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OperatingSystem&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>operating_system: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;OpticalZoom&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>optical_zoom: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;PackageDimensions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>package_dimensions: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DimensionType&gt;&gt;,
+    <span class="doccomment">/// The package quantity attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PackageQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>package_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// The part number attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PartNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>part_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The PEGI rating attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PegiRating&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>pegi_rating: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The platform attributes of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Platform&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>platform: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The processor count attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProcessorCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>processor_count: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// The product group attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProductGroup&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>product_group: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The product type name attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProductTypeName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>product_type_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The product type subcategory attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProductTypeSubcategory&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>product_type_subcategory: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The publication date attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PublicationDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>publication_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The publisher attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Publisher&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>publisher: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The region code attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RegionCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>region_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The release date attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ReleaseDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>release_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The ring size attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RingSize&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>ring_size: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;RunningTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>running_time: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The shaft material attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShaftMaterial&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>shaft_material: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The scent attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Scent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>scent: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The season sequence attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SeasonSequence&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>season_sequence: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The Seikodo product code attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SeikodoProductCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>seikodo_product_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The size attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Size&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>size: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The size per pearl attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SizePerPearl&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>size_per_pearl: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;SmallImage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>small_image: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Image&gt;&gt;,
+    <span class="doccomment">/// The studio attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Studio&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>studio: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;SubscriptionLength&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>subscription_length: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;SystemMemorySize&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>system_memory_size: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The system memory type attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SystemMemoryType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>system_memory_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The theatrical release date attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TheatricalReleaseDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>theatrical_release_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The title attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>title: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;TotalDiamondWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>total_diamond_weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;TotalGemWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>total_gem_weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
+    <span class="doccomment">/// The warranty attribute of the item.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Warranty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>warranty: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;WeeeTaxValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>weee_tax_value: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Price&gt;&gt;,
 }
 
-<span class="kw">impl</span> <span class="ident">AttributeSetListType</span> {
-    <span class="doccomment">/// The attributes of the item.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() -&gt; <span class="ident">AttributeSetListType</span> {
-        <span class="ident">AttributeSetListType</span> {
-            <span class="ident">actor</span>: <span class="prelude-val">None</span>,
-            <span class="ident">artist</span>: <span class="prelude-val">None</span>,
-            <span class="ident">aspect_ratio</span>: <span class="prelude-val">None</span>,
-            <span class="ident">audience_rating</span>: <span class="prelude-val">None</span>,
-            <span class="ident">author</span>: <span class="prelude-val">None</span>,
-            <span class="ident">back_finding</span>: <span class="prelude-val">None</span>,
-            <span class="ident">band_material_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">binding</span>: <span class="prelude-val">None</span>,
-            <span class="ident">bluray_region</span>: <span class="prelude-val">None</span>,
-            <span class="ident">brand</span>: <span class="prelude-val">None</span>,
-            <span class="ident">cero_age_rating</span>: <span class="prelude-val">None</span>,
-            <span class="ident">chain_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">clasp_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">color</span>: <span class="prelude-val">None</span>,
-            <span class="ident">cpu_manufacturer</span>: <span class="prelude-val">None</span>,
-            <span class="ident">cpu_speed</span>: <span class="prelude-val">None</span>,
-            <span class="ident">cpu_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">creator</span>: <span class="prelude-val">None</span>,
-            <span class="ident">department</span>: <span class="prelude-val">None</span>,
-            <span class="ident">director</span>: <span class="prelude-val">None</span>,
-            <span class="ident">display_size</span>: <span class="prelude-val">None</span>,
-            <span class="ident">edition</span>: <span class="prelude-val">None</span>,
-            <span class="ident">episode_sequence</span>: <span class="prelude-val">None</span>,
-            <span class="ident">esrb_age_rating</span>: <span class="prelude-val">None</span>,
-            <span class="ident">feature</span>: <span class="prelude-val">None</span>,
-            <span class="ident">flavor</span>: <span class="prelude-val">None</span>,
-            <span class="ident">format</span>: <span class="prelude-val">None</span>,
-            <span class="ident">gem_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">genre</span>: <span class="prelude-val">None</span>,
-            <span class="ident">golf_club_flex</span>: <span class="prelude-val">None</span>,
-            <span class="ident">golf_club_loft</span>: <span class="prelude-val">None</span>,
-            <span class="ident">hand_orientation</span>: <span class="prelude-val">None</span>,
-            <span class="ident">hard_disk_interface</span>: <span class="prelude-val">None</span>,
-            <span class="ident">hard_disk_size</span>: <span class="prelude-val">None</span>,
-            <span class="ident">hardware_platform</span>: <span class="prelude-val">None</span>,
-            <span class="ident">hazardous_material_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">item_dimensions</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_adult_product</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_autographed</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_eligible_for_trade_in</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_memorabilia</span>: <span class="prelude-val">None</span>,
-            <span class="ident">issues_per_year</span>: <span class="prelude-val">None</span>,
-            <span class="ident">item_part_number</span>: <span class="prelude-val">None</span>,
-            <span class="ident">label</span>: <span class="prelude-val">None</span>,
-            <span class="ident">languages</span>: <span class="prelude-val">None</span>,
-            <span class="ident">legal_disclaimer</span>: <span class="prelude-val">None</span>,
-            <span class="ident">list_price</span>: <span class="prelude-val">None</span>,
-            <span class="ident">manufacturer</span>: <span class="prelude-val">None</span>,
-            <span class="ident">manufacturer_maximum_age</span>: <span class="prelude-val">None</span>,
-            <span class="ident">manufacturer_minimum_age</span>: <span class="prelude-val">None</span>,
-            <span class="ident">manufacturer_parts_warranty_description</span>: <span class="prelude-val">None</span>,
-            <span class="ident">material_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">maximum_resolution</span>: <span class="prelude-val">None</span>,
-            <span class="ident">media_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">metal_stamp</span>: <span class="prelude-val">None</span>,
-            <span class="ident">metal_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">model</span>: <span class="prelude-val">None</span>,
-            <span class="ident">number_of_discs</span>: <span class="prelude-val">None</span>,
-            <span class="ident">number_of_issues</span>: <span class="prelude-val">None</span>,
-            <span class="ident">number_of_items</span>: <span class="prelude-val">None</span>,
-            <span class="ident">number_of_pages</span>: <span class="prelude-val">None</span>,
-            <span class="ident">number_of_tracks</span>: <span class="prelude-val">None</span>,
-            <span class="ident">operating_system</span>: <span class="prelude-val">None</span>,
-            <span class="ident">optical_zoom</span>: <span class="prelude-val">None</span>,
-            <span class="ident">package_dimensions</span>: <span class="prelude-val">None</span>,
-            <span class="ident">package_quantity</span>: <span class="prelude-val">None</span>,
-            <span class="ident">part_number</span>: <span class="prelude-val">None</span>,
-            <span class="ident">pegi_rating</span>: <span class="prelude-val">None</span>,
-            <span class="ident">platform</span>: <span class="prelude-val">None</span>,
-            <span class="ident">processor_count</span>: <span class="prelude-val">None</span>,
-            <span class="ident">product_group</span>: <span class="prelude-val">None</span>,
-            <span class="ident">product_type_name</span>: <span class="prelude-val">None</span>,
-            <span class="ident">product_type_subcategory</span>: <span class="prelude-val">None</span>,
-            <span class="ident">publication_date</span>: <span class="prelude-val">None</span>,
-            <span class="ident">publisher</span>: <span class="prelude-val">None</span>,
-            <span class="ident">region_code</span>: <span class="prelude-val">None</span>,
-            <span class="ident">release_date</span>: <span class="prelude-val">None</span>,
-            <span class="ident">ring_size</span>: <span class="prelude-val">None</span>,
-            <span class="ident">running_time</span>: <span class="prelude-val">None</span>,
-            <span class="ident">shaft_material</span>: <span class="prelude-val">None</span>,
-            <span class="ident">scent</span>: <span class="prelude-val">None</span>,
-            <span class="ident">season_sequence</span>: <span class="prelude-val">None</span>,
-            <span class="ident">seikodo_product_code</span>: <span class="prelude-val">None</span>,
-            <span class="ident">size</span>: <span class="prelude-val">None</span>,
-            <span class="ident">size_per_pearl</span>: <span class="prelude-val">None</span>,
-            <span class="ident">small_image</span>: <span class="prelude-val">None</span>,
-            <span class="ident">studio</span>: <span class="prelude-val">None</span>,
-            <span class="ident">subscription_length</span>: <span class="prelude-val">None</span>,
-            <span class="ident">system_memory_size</span>: <span class="prelude-val">None</span>,
-            <span class="ident">system_memory_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">theatrical_release_date</span>: <span class="prelude-val">None</span>,
-            <span class="ident">title</span>: <span class="prelude-val">None</span>,
-            <span class="ident">total_diamond_weight</span>: <span class="prelude-val">None</span>,
-            <span class="ident">total_gem_weight</span>: <span class="prelude-val">None</span>,
-            <span class="ident">warranty</span>: <span class="prelude-val">None</span>,
-            <span class="ident">weee_tax_value</span>: <span class="prelude-val">None</span>,
+<span class="kw">impl </span>AttributeSetListType {
+    <span class="doccomment">/// The attributes of the item.
+    </span><span class="kw">pub fn </span>new() -&gt; AttributeSetListType {
+        AttributeSetListType {
+            actor: <span class="prelude-val">None</span>,
+            artist: <span class="prelude-val">None</span>,
+            aspect_ratio: <span class="prelude-val">None</span>,
+            audience_rating: <span class="prelude-val">None</span>,
+            author: <span class="prelude-val">None</span>,
+            back_finding: <span class="prelude-val">None</span>,
+            band_material_type: <span class="prelude-val">None</span>,
+            binding: <span class="prelude-val">None</span>,
+            bluray_region: <span class="prelude-val">None</span>,
+            brand: <span class="prelude-val">None</span>,
+            cero_age_rating: <span class="prelude-val">None</span>,
+            chain_type: <span class="prelude-val">None</span>,
+            clasp_type: <span class="prelude-val">None</span>,
+            color: <span class="prelude-val">None</span>,
+            cpu_manufacturer: <span class="prelude-val">None</span>,
+            cpu_speed: <span class="prelude-val">None</span>,
+            cpu_type: <span class="prelude-val">None</span>,
+            creator: <span class="prelude-val">None</span>,
+            department: <span class="prelude-val">None</span>,
+            director: <span class="prelude-val">None</span>,
+            display_size: <span class="prelude-val">None</span>,
+            edition: <span class="prelude-val">None</span>,
+            episode_sequence: <span class="prelude-val">None</span>,
+            esrb_age_rating: <span class="prelude-val">None</span>,
+            feature: <span class="prelude-val">None</span>,
+            flavor: <span class="prelude-val">None</span>,
+            format: <span class="prelude-val">None</span>,
+            gem_type: <span class="prelude-val">None</span>,
+            genre: <span class="prelude-val">None</span>,
+            golf_club_flex: <span class="prelude-val">None</span>,
+            golf_club_loft: <span class="prelude-val">None</span>,
+            hand_orientation: <span class="prelude-val">None</span>,
+            hard_disk_interface: <span class="prelude-val">None</span>,
+            hard_disk_size: <span class="prelude-val">None</span>,
+            hardware_platform: <span class="prelude-val">None</span>,
+            hazardous_material_type: <span class="prelude-val">None</span>,
+            item_dimensions: <span class="prelude-val">None</span>,
+            is_adult_product: <span class="prelude-val">None</span>,
+            is_autographed: <span class="prelude-val">None</span>,
+            is_eligible_for_trade_in: <span class="prelude-val">None</span>,
+            is_memorabilia: <span class="prelude-val">None</span>,
+            issues_per_year: <span class="prelude-val">None</span>,
+            item_part_number: <span class="prelude-val">None</span>,
+            label: <span class="prelude-val">None</span>,
+            languages: <span class="prelude-val">None</span>,
+            legal_disclaimer: <span class="prelude-val">None</span>,
+            list_price: <span class="prelude-val">None</span>,
+            manufacturer: <span class="prelude-val">None</span>,
+            manufacturer_maximum_age: <span class="prelude-val">None</span>,
+            manufacturer_minimum_age: <span class="prelude-val">None</span>,
+            manufacturer_parts_warranty_description: <span class="prelude-val">None</span>,
+            material_type: <span class="prelude-val">None</span>,
+            maximum_resolution: <span class="prelude-val">None</span>,
+            media_type: <span class="prelude-val">None</span>,
+            metal_stamp: <span class="prelude-val">None</span>,
+            metal_type: <span class="prelude-val">None</span>,
+            model: <span class="prelude-val">None</span>,
+            number_of_discs: <span class="prelude-val">None</span>,
+            number_of_issues: <span class="prelude-val">None</span>,
+            number_of_items: <span class="prelude-val">None</span>,
+            number_of_pages: <span class="prelude-val">None</span>,
+            number_of_tracks: <span class="prelude-val">None</span>,
+            operating_system: <span class="prelude-val">None</span>,
+            optical_zoom: <span class="prelude-val">None</span>,
+            package_dimensions: <span class="prelude-val">None</span>,
+            package_quantity: <span class="prelude-val">None</span>,
+            part_number: <span class="prelude-val">None</span>,
+            pegi_rating: <span class="prelude-val">None</span>,
+            platform: <span class="prelude-val">None</span>,
+            processor_count: <span class="prelude-val">None</span>,
+            product_group: <span class="prelude-val">None</span>,
+            product_type_name: <span class="prelude-val">None</span>,
+            product_type_subcategory: <span class="prelude-val">None</span>,
+            publication_date: <span class="prelude-val">None</span>,
+            publisher: <span class="prelude-val">None</span>,
+            region_code: <span class="prelude-val">None</span>,
+            release_date: <span class="prelude-val">None</span>,
+            ring_size: <span class="prelude-val">None</span>,
+            running_time: <span class="prelude-val">None</span>,
+            shaft_material: <span class="prelude-val">None</span>,
+            scent: <span class="prelude-val">None</span>,
+            season_sequence: <span class="prelude-val">None</span>,
+            seikodo_product_code: <span class="prelude-val">None</span>,
+            size: <span class="prelude-val">None</span>,
+            size_per_pearl: <span class="prelude-val">None</span>,
+            small_image: <span class="prelude-val">None</span>,
+            studio: <span class="prelude-val">None</span>,
+            subscription_length: <span class="prelude-val">None</span>,
+            system_memory_size: <span class="prelude-val">None</span>,
+            system_memory_type: <span class="prelude-val">None</span>,
+            theatrical_release_date: <span class="prelude-val">None</span>,
+            title: <span class="prelude-val">None</span>,
+            total_diamond_weight: <span class="prelude-val">None</span>,
+            total_gem_weight: <span class="prelude-val">None</span>,
+            warranty: <span class="prelude-val">None</span>,
+            weee_tax_value: <span class="prelude-val">None</span>,
         }
     }
 }
 
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_catalog_items" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_catalog_items" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

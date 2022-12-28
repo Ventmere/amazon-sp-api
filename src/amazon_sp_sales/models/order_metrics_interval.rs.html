@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-sales/src/models/order_metrics_interval.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>order_metrics_interval.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_sales/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_sales/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_sales/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-sales/src/models/order_metrics_interval.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>order_metrics_interval.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_sales/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -55,46 +55,46 @@
  * The version of the OpenAPI document: v1
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
-<span class="doccomment">/// OrderMetricsInterval : Contains order metrics.</span>
+</span><span class="doccomment">/// OrderMetricsInterval : Contains order metrics.
 
 
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Default</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">OrderMetricsInterval</span> {
-    <span class="doccomment">/// The interval of time based on requested granularity (ex. Hour, Day, etc.) If this is the first or the last interval from the list, it might contain incomplete data if the requested interval doesn&#39;t align with the requested granularity (ex. request interval 2018-09-01T02:00:00Z--2018-09-04T19:00:00Z and granularity day will result in Sept 1st UTC day and Sept 4th UTC days having partial data).</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;interval&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">interval</span>: <span class="ident">String</span>,
-    <span class="doccomment">/// The number of units in orders based on the specified filters.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;unitCount&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">unit_count</span>: <span class="ident">i32</span>,
-    <span class="doccomment">/// The number of order items based on the specified filters.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;orderItemCount&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">order_item_count</span>: <span class="ident">i32</span>,
-    <span class="doccomment">/// The number of orders based on the specified filters.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;orderCount&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">order_count</span>: <span class="ident">i32</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;averageUnitPrice&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">average_unit_price</span>: <span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Money</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;totalSales&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">total_sales</span>: <span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Money</span><span class="op">&gt;</span>,
+</span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+</span><span class="kw">pub struct </span>OrderMetricsInterval {
+    <span class="doccomment">/// The interval of time based on requested granularity (ex. Hour, Day, etc.) If this is the first or the last interval from the list, it might contain incomplete data if the requested interval doesn&#39;t align with the requested granularity (ex. request interval 2018-09-01T02:00:00Z--2018-09-04T19:00:00Z and granularity day will result in Sept 1st UTC day and Sept 4th UTC days having partial data).
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;interval&quot;</span>)]
+    </span><span class="kw">pub </span>interval: String,
+    <span class="doccomment">/// The number of units in orders based on the specified filters.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;unitCount&quot;</span>)]
+    </span><span class="kw">pub </span>unit_count: i32,
+    <span class="doccomment">/// The number of order items based on the specified filters.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderItemCount&quot;</span>)]
+    </span><span class="kw">pub </span>order_item_count: i32,
+    <span class="doccomment">/// The number of orders based on the specified filters.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderCount&quot;</span>)]
+    </span><span class="kw">pub </span>order_count: i32,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;averageUnitPrice&quot;</span>)]
+    </span><span class="kw">pub </span>average_unit_price: Box&lt;<span class="kw">crate</span>::models::Money&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;totalSales&quot;</span>)]
+    </span><span class="kw">pub </span>total_sales: Box&lt;<span class="kw">crate</span>::models::Money&gt;,
 }
 
-<span class="kw">impl</span> <span class="ident">OrderMetricsInterval</span> {
-    <span class="doccomment">/// Contains order metrics.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">interval</span>: <span class="ident">String</span>, <span class="ident">unit_count</span>: <span class="ident">i32</span>, <span class="ident">order_item_count</span>: <span class="ident">i32</span>, <span class="ident">order_count</span>: <span class="ident">i32</span>, <span class="ident">average_unit_price</span>: <span class="ident"><span class="kw">crate</span>::models::Money</span>, <span class="ident">total_sales</span>: <span class="ident"><span class="kw">crate</span>::models::Money</span>) -&gt; <span class="ident">OrderMetricsInterval</span> {
-        <span class="ident">OrderMetricsInterval</span> {
-            <span class="ident">interval</span>,
-            <span class="ident">unit_count</span>,
-            <span class="ident">order_item_count</span>,
-            <span class="ident">order_count</span>,
-            <span class="ident">average_unit_price</span>: <span class="ident">Box::new</span>(<span class="ident">average_unit_price</span>),
-            <span class="ident">total_sales</span>: <span class="ident">Box::new</span>(<span class="ident">total_sales</span>),
+<span class="kw">impl </span>OrderMetricsInterval {
+    <span class="doccomment">/// Contains order metrics.
+    </span><span class="kw">pub fn </span>new(interval: String, unit_count: i32, order_item_count: i32, order_count: i32, average_unit_price: <span class="kw">crate</span>::models::Money, total_sales: <span class="kw">crate</span>::models::Money) -&gt; OrderMetricsInterval {
+        OrderMetricsInterval {
+            interval,
+            unit_count,
+            order_item_count,
+            order_count,
+            average_unit_price: Box::new(average_unit_price),
+            total_sales: Box::new(total_sales),
         }
     }
 }
 
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_sales" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_sales" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

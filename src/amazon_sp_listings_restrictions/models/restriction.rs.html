@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-listings-restrictions/src/models/restriction.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>restriction.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_listings_restrictions/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_listings_restrictions/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_listings_restrictions/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-listings-restrictions/src/models/restriction.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>restriction.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_listings_restrictions/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -81,72 +81,72 @@
  * The version of the OpenAPI document: 2021-08-01
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
-<span class="doccomment">/// Restriction : A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.</span>
+</span><span class="doccomment">/// Restriction : A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.
 
 
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Default</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Restriction</span> {
-    <span class="doccomment">/// A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;marketplaceId&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">marketplace_id</span>: <span class="ident">String</span>,
-    <span class="doccomment">/// The condition that applies to the restriction.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;conditionType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">condition_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">ConditionType</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// A list of reasons for the restriction.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;reasons&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">reasons</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Reason</span><span class="op">&gt;</span><span class="op">&gt;</span>,
+</span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+</span><span class="kw">pub struct </span>Restriction {
+    <span class="doccomment">/// A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="kw">pub </span>marketplace_id: String,
+    <span class="doccomment">/// The condition that applies to the restriction.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;conditionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>condition_type: <span class="prelude-ty">Option</span>&lt;ConditionType&gt;,
+    <span class="doccomment">/// A list of reasons for the restriction.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reasons&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>reasons: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Reason&gt;&gt;,
 }
 
-<span class="kw">impl</span> <span class="ident">Restriction</span> {
-    <span class="doccomment">/// A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">marketplace_id</span>: <span class="ident">String</span>) -&gt; <span class="ident">Restriction</span> {
-        <span class="ident">Restriction</span> {
-            <span class="ident">marketplace_id</span>,
-            <span class="ident">condition_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">reasons</span>: <span class="prelude-val">None</span>,
+<span class="kw">impl </span>Restriction {
+    <span class="doccomment">/// A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction.
+    </span><span class="kw">pub fn </span>new(marketplace_id: String) -&gt; Restriction {
+        Restriction {
+            marketplace_id,
+            condition_type: <span class="prelude-val">None</span>,
+            reasons: <span class="prelude-val">None</span>,
         }
     }
 }
 
-<span class="doccomment">/// The condition that applies to the restriction.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ConditionType</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;new_new&quot;</span>)]</span>
-    <span class="ident">NewNew</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;new_open_box&quot;</span>)]</span>
-    <span class="ident">NewOpenBox</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;new_oem&quot;</span>)]</span>
-    <span class="ident">NewOem</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;refurbished_refurbished&quot;</span>)]</span>
-    <span class="ident">RefurbishedRefurbished</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;used_like_new&quot;</span>)]</span>
-    <span class="ident">UsedLikeNew</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;used_very_good&quot;</span>)]</span>
-    <span class="ident">UsedVeryGood</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;used_good&quot;</span>)]</span>
-    <span class="ident">UsedGood</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;used_acceptable&quot;</span>)]</span>
-    <span class="ident">UsedAcceptable</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;collectible_like_new&quot;</span>)]</span>
-    <span class="ident">CollectibleLikeNew</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;collectible_very_good&quot;</span>)]</span>
-    <span class="ident">CollectibleVeryGood</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;collectible_good&quot;</span>)]</span>
-    <span class="ident">CollectibleGood</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;collectible_acceptable&quot;</span>)]</span>
-    <span class="ident">CollectibleAcceptable</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;club_club&quot;</span>)]</span>
-    <span class="ident">ClubClub</span>,
+<span class="doccomment">/// The condition that applies to the restriction.
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>ConditionType {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;new_new&quot;</span>)]
+    </span>NewNew,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;new_open_box&quot;</span>)]
+    </span>NewOpenBox,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;new_oem&quot;</span>)]
+    </span>NewOem,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;refurbished_refurbished&quot;</span>)]
+    </span>RefurbishedRefurbished,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;used_like_new&quot;</span>)]
+    </span>UsedLikeNew,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;used_very_good&quot;</span>)]
+    </span>UsedVeryGood,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;used_good&quot;</span>)]
+    </span>UsedGood,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;used_acceptable&quot;</span>)]
+    </span>UsedAcceptable,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;collectible_like_new&quot;</span>)]
+    </span>CollectibleLikeNew,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;collectible_very_good&quot;</span>)]
+    </span>CollectibleVeryGood,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;collectible_good&quot;</span>)]
+    </span>CollectibleGood,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;collectible_acceptable&quot;</span>)]
+    </span>CollectibleAcceptable,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;club_club&quot;</span>)]
+    </span>ClubClub,
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">ConditionType</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">ConditionType</span> {
-        <span class="ident"><span class="self">Self</span>::NewNew</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>ConditionType {
+    <span class="kw">fn </span>default() -&gt; ConditionType {
+        <span class="self">Self</span>::NewNew
     }
 }
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_listings_restrictions" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_listings_restrictions" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

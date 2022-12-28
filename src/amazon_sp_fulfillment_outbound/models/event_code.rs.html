@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-fulfillment-outbound/src/models/event_code.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>event_code.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_fulfillment_outbound/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_fulfillment_outbound/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_fulfillment_outbound/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-fulfillment-outbound/src/models/event_code.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>event_code.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_fulfillment_outbound/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -139,125 +139,125 @@
  * The version of the OpenAPI document: 2020-07-01
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
-<span class="doccomment">/// EventCode : The event code for the delivery event.</span>
+</span><span class="doccomment">/// EventCode : The event code for the delivery event.
 
-<span class="doccomment">/// The event code for the delivery event.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">EventCode</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_101&quot;</span>)]</span>
-    <span class="ident">_101</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_102&quot;</span>)]</span>
-    <span class="ident">_102</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_201&quot;</span>)]</span>
-    <span class="ident">_201</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_202&quot;</span>)]</span>
-    <span class="ident">_202</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_203&quot;</span>)]</span>
-    <span class="ident">_203</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_204&quot;</span>)]</span>
-    <span class="ident">_204</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_205&quot;</span>)]</span>
-    <span class="ident">_205</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_206&quot;</span>)]</span>
-    <span class="ident">_206</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_301&quot;</span>)]</span>
-    <span class="ident">_301</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_302&quot;</span>)]</span>
-    <span class="ident">_302</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_304&quot;</span>)]</span>
-    <span class="ident">_304</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_306&quot;</span>)]</span>
-    <span class="ident">_306</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_307&quot;</span>)]</span>
-    <span class="ident">_307</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_308&quot;</span>)]</span>
-    <span class="ident">_308</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_309&quot;</span>)]</span>
-    <span class="ident">_309</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_401&quot;</span>)]</span>
-    <span class="ident">_401</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_402&quot;</span>)]</span>
-    <span class="ident">_402</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_403&quot;</span>)]</span>
-    <span class="ident">_403</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_404&quot;</span>)]</span>
-    <span class="ident">_404</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_405&quot;</span>)]</span>
-    <span class="ident">_405</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_406&quot;</span>)]</span>
-    <span class="ident">_406</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_407&quot;</span>)]</span>
-    <span class="ident">_407</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_408&quot;</span>)]</span>
-    <span class="ident">_408</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_409&quot;</span>)]</span>
-    <span class="ident">_409</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_411&quot;</span>)]</span>
-    <span class="ident">_411</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_412&quot;</span>)]</span>
-    <span class="ident">_412</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_413&quot;</span>)]</span>
-    <span class="ident">_413</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_414&quot;</span>)]</span>
-    <span class="ident">_414</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_415&quot;</span>)]</span>
-    <span class="ident">_415</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_416&quot;</span>)]</span>
-    <span class="ident">_416</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_417&quot;</span>)]</span>
-    <span class="ident">_417</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_418&quot;</span>)]</span>
-    <span class="ident">_418</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EVENT_419&quot;</span>)]</span>
-    <span class="ident">_419</span>,
+/// The event code for the delivery event.
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>EventCode {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_101&quot;</span>)]
+    </span>_101,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_102&quot;</span>)]
+    </span>_102,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_201&quot;</span>)]
+    </span>_201,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_202&quot;</span>)]
+    </span>_202,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_203&quot;</span>)]
+    </span>_203,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_204&quot;</span>)]
+    </span>_204,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_205&quot;</span>)]
+    </span>_205,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_206&quot;</span>)]
+    </span>_206,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_301&quot;</span>)]
+    </span>_301,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_302&quot;</span>)]
+    </span>_302,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_304&quot;</span>)]
+    </span>_304,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_306&quot;</span>)]
+    </span>_306,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_307&quot;</span>)]
+    </span>_307,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_308&quot;</span>)]
+    </span>_308,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_309&quot;</span>)]
+    </span>_309,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_401&quot;</span>)]
+    </span>_401,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_402&quot;</span>)]
+    </span>_402,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_403&quot;</span>)]
+    </span>_403,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_404&quot;</span>)]
+    </span>_404,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_405&quot;</span>)]
+    </span>_405,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_406&quot;</span>)]
+    </span>_406,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_407&quot;</span>)]
+    </span>_407,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_408&quot;</span>)]
+    </span>_408,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_409&quot;</span>)]
+    </span>_409,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_411&quot;</span>)]
+    </span>_411,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_412&quot;</span>)]
+    </span>_412,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_413&quot;</span>)]
+    </span>_413,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_414&quot;</span>)]
+    </span>_414,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_415&quot;</span>)]
+    </span>_415,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_416&quot;</span>)]
+    </span>_416,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_417&quot;</span>)]
+    </span>_417,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_418&quot;</span>)]
+    </span>_418,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EVENT_419&quot;</span>)]
+    </span>_419,
 
 }
 
-<span class="kw">impl</span> <span class="ident">ToString</span> <span class="kw">for</span> <span class="ident">EventCode</span> {
-    <span class="kw">fn</span> <span class="ident">to_string</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">String</span> {
-        <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::_101</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_101&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_102</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_102&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_201</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_201&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_202</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_202&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_203</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_203&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_204</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_204&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_205</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_205&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_206</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_206&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_301</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_301&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_302</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_302&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_304</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_304&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_306</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_306&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_307</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_307&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_308</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_308&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_309</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_309&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_401</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_401&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_402</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_402&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_403</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_403&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_404</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_404&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_405</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_405&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_406</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_406&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_407</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_407&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_408</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_408&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_409</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_409&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_411</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_411&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_412</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_412&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_413</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_413&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_414</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_414&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_415</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_415&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_416</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_416&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_417</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_417&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_418</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_418&quot;</span>),
-            <span class="ident"><span class="self">Self</span>::_419</span> =&gt; <span class="ident">String::from</span>(<span class="string">&quot;EVENT_419&quot;</span>),
+<span class="kw">impl </span>ToString <span class="kw">for </span>EventCode {
+    <span class="kw">fn </span>to_string(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; String {
+        <span class="kw">match </span><span class="self">self </span>{
+            <span class="self">Self</span>::_101 =&gt; String::from(<span class="string">&quot;EVENT_101&quot;</span>),
+            <span class="self">Self</span>::_102 =&gt; String::from(<span class="string">&quot;EVENT_102&quot;</span>),
+            <span class="self">Self</span>::_201 =&gt; String::from(<span class="string">&quot;EVENT_201&quot;</span>),
+            <span class="self">Self</span>::_202 =&gt; String::from(<span class="string">&quot;EVENT_202&quot;</span>),
+            <span class="self">Self</span>::_203 =&gt; String::from(<span class="string">&quot;EVENT_203&quot;</span>),
+            <span class="self">Self</span>::_204 =&gt; String::from(<span class="string">&quot;EVENT_204&quot;</span>),
+            <span class="self">Self</span>::_205 =&gt; String::from(<span class="string">&quot;EVENT_205&quot;</span>),
+            <span class="self">Self</span>::_206 =&gt; String::from(<span class="string">&quot;EVENT_206&quot;</span>),
+            <span class="self">Self</span>::_301 =&gt; String::from(<span class="string">&quot;EVENT_301&quot;</span>),
+            <span class="self">Self</span>::_302 =&gt; String::from(<span class="string">&quot;EVENT_302&quot;</span>),
+            <span class="self">Self</span>::_304 =&gt; String::from(<span class="string">&quot;EVENT_304&quot;</span>),
+            <span class="self">Self</span>::_306 =&gt; String::from(<span class="string">&quot;EVENT_306&quot;</span>),
+            <span class="self">Self</span>::_307 =&gt; String::from(<span class="string">&quot;EVENT_307&quot;</span>),
+            <span class="self">Self</span>::_308 =&gt; String::from(<span class="string">&quot;EVENT_308&quot;</span>),
+            <span class="self">Self</span>::_309 =&gt; String::from(<span class="string">&quot;EVENT_309&quot;</span>),
+            <span class="self">Self</span>::_401 =&gt; String::from(<span class="string">&quot;EVENT_401&quot;</span>),
+            <span class="self">Self</span>::_402 =&gt; String::from(<span class="string">&quot;EVENT_402&quot;</span>),
+            <span class="self">Self</span>::_403 =&gt; String::from(<span class="string">&quot;EVENT_403&quot;</span>),
+            <span class="self">Self</span>::_404 =&gt; String::from(<span class="string">&quot;EVENT_404&quot;</span>),
+            <span class="self">Self</span>::_405 =&gt; String::from(<span class="string">&quot;EVENT_405&quot;</span>),
+            <span class="self">Self</span>::_406 =&gt; String::from(<span class="string">&quot;EVENT_406&quot;</span>),
+            <span class="self">Self</span>::_407 =&gt; String::from(<span class="string">&quot;EVENT_407&quot;</span>),
+            <span class="self">Self</span>::_408 =&gt; String::from(<span class="string">&quot;EVENT_408&quot;</span>),
+            <span class="self">Self</span>::_409 =&gt; String::from(<span class="string">&quot;EVENT_409&quot;</span>),
+            <span class="self">Self</span>::_411 =&gt; String::from(<span class="string">&quot;EVENT_411&quot;</span>),
+            <span class="self">Self</span>::_412 =&gt; String::from(<span class="string">&quot;EVENT_412&quot;</span>),
+            <span class="self">Self</span>::_413 =&gt; String::from(<span class="string">&quot;EVENT_413&quot;</span>),
+            <span class="self">Self</span>::_414 =&gt; String::from(<span class="string">&quot;EVENT_414&quot;</span>),
+            <span class="self">Self</span>::_415 =&gt; String::from(<span class="string">&quot;EVENT_415&quot;</span>),
+            <span class="self">Self</span>::_416 =&gt; String::from(<span class="string">&quot;EVENT_416&quot;</span>),
+            <span class="self">Self</span>::_417 =&gt; String::from(<span class="string">&quot;EVENT_417&quot;</span>),
+            <span class="self">Self</span>::_418 =&gt; String::from(<span class="string">&quot;EVENT_418&quot;</span>),
+            <span class="self">Self</span>::_419 =&gt; String::from(<span class="string">&quot;EVENT_419&quot;</span>),
         }
     }
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">EventCode</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">EventCode</span> {
-        <span class="ident"><span class="self">Self</span>::_101</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>EventCode {
+    <span class="kw">fn </span>default() -&gt; EventCode {
+        <span class="self">Self</span>::_101
     }
 }
 
@@ -265,4 +265,4 @@
 
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_fulfillment_outbound" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_fulfillment_outbound" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

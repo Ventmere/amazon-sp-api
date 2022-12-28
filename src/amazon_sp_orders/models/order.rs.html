@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-orders/src/models/order.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>order.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_orders/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_orders/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_orders/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-orders/src/models/order.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>order.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_orders/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -301,292 +301,292 @@
  * The version of the OpenAPI document: v0
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
-<span class="doccomment">/// Order : Order information.</span>
+</span><span class="doccomment">/// Order : Order information.
 
 
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Default</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Order</span> {
-    <span class="doccomment">/// An Amazon-defined order identifier, in 3-7-7 format.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;AmazonOrderId&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">amazon_order_id</span>: <span class="ident">String</span>,
-    <span class="doccomment">/// A seller-defined order identifier.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SellerOrderId&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">seller_order_id</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The date when the order was created.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PurchaseDate&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">purchase_date</span>: <span class="ident">String</span>,
-    <span class="doccomment">/// The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;LastUpdateDate&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">last_update_date</span>: <span class="ident">String</span>,
-    <span class="doccomment">/// The current order status.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;OrderStatus&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">order_status</span>: <span class="ident">OrderStatus</span>,
-    <span class="doccomment">/// Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;FulfillmentChannel&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">fulfillment_channel</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">FulfillmentChannel</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The sales channel of the first item in the order.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SalesChannel&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">sales_channel</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The order channel of the first item in the order.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;OrderChannel&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">order_channel</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The shipment service level of the order.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ShipServiceLevel&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">ship_service_level</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;OrderTotal&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">order_total</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Money</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The number of items shipped.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;NumberOfItemsShipped&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">number_of_items_shipped</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The number of items unshipped.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;NumberOfItemsUnshipped&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">number_of_items_unshipped</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// A list of payment execution detail items.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PaymentExecutionDetail&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">payment_execution_detail</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::PaymentExecutionDetailItem</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PaymentMethod&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">payment_method</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">PaymentMethod</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// A list of payment method detail items.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PaymentMethodDetails&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">payment_method_details</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The identifier for the marketplace where the order was placed.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;MarketplaceId&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">marketplace_id</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ShipmentServiceLevelCategory&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">shipment_service_level_category</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EasyShipShipmentStatus&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">easy_ship_shipment_status</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::EasyShipShipmentStatus</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// Custom ship label for Checkout by Amazon (CBA).</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;CbaDisplayableShippingLabel&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">cba_displayable_shipping_label</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The type of the order.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;OrderType&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">order_type</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">OrderType</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EarliestShipDate&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">earliest_ship_date</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;LatestShipDate&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">latest_ship_date</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;EarliestDeliveryDate&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">earliest_delivery_date</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;LatestDeliveryDate&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">latest_delivery_date</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsBusinessOrder&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_business_order</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, the order is a seller-fulfilled Amazon Prime order.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsPrime&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_prime</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsPremiumOrder&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_premium_order</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, the order is a GlobalExpress order.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsGlobalExpressEnabled&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_global_express_enabled</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ReplacedOrderId&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">replaced_order_id</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, this is a replacement order.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsReplacementOrder&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_replacement_order</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PromiseResponseDueDate&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">promise_response_due_date</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsEstimatedShipDateSet&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_estimated_ship_date_set</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsSoldByAB&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_sold_by_ab</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsIBA&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_iba</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;DefaultShipFromLocationAddress&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">default_ship_from_location_address</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Address</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The buyer&#39;s invoicing preference. Available only in the TR marketplace.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BuyerInvoicePreference&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">buyer_invoice_preference</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">BuyerInvoicePreference</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BuyerTaxInformation&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">buyer_tax_information</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::BuyerTaxInformation</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;FulfillmentInstruction&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">fulfillment_instruction</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::FulfillmentInstruction</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, this order is marked to be picked up from a store rather than delivered.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsISPU&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_ispu</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;IsAccessPointOrder&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">is_access_point_order</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;MarketplaceTaxInfo&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">marketplace_tax_info</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::MarketplaceTaxInfo</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// The seller’s friendly name registered in the marketplace.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SellerDisplayName&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">seller_display_name</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ShippingAddress&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">shipping_address</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::Address</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BuyerInfo&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">buyer_info</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::BuyerInfo</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;AutomatedShippingSettings&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">automated_shipping_settings</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::AutomatedShippingSettings</span><span class="op">&gt;</span><span class="op">&gt;</span>,
-    <span class="doccomment">/// Whether the order contains regulated items which may require additional approval steps before being fulfilled.</span>
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;HasRegulatedItems&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">has_regulated_items</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;ElectronicInvoiceStatus&quot;</span>, <span class="ident">skip_serializing_if</span> <span class="op">=</span> <span class="string">&quot;Option::is_none&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="ident">electronic_invoice_status</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::ElectronicInvoiceStatus</span><span class="op">&gt;</span>,
+</span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+</span><span class="kw">pub struct </span>Order {
+    <span class="doccomment">/// An Amazon-defined order identifier, in 3-7-7 format.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
+    </span><span class="kw">pub </span>amazon_order_id: String,
+    <span class="doccomment">/// A seller-defined order identifier.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>seller_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The date when the order was created.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PurchaseDate&quot;</span>)]
+    </span><span class="kw">pub </span>purchase_date: String,
+    <span class="doccomment">/// The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;LastUpdateDate&quot;</span>)]
+    </span><span class="kw">pub </span>last_update_date: String,
+    <span class="doccomment">/// The current order status.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderStatus&quot;</span>)]
+    </span><span class="kw">pub </span>order_status: OrderStatus,
+    <span class="doccomment">/// Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FulfillmentChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>fulfillment_channel: <span class="prelude-ty">Option</span>&lt;FulfillmentChannel&gt;,
+    <span class="doccomment">/// The sales channel of the first item in the order.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SalesChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>sales_channel: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The order channel of the first item in the order.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>order_channel: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The shipment service level of the order.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipServiceLevel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>ship_service_level: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;OrderTotal&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>order_total: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
+    <span class="doccomment">/// The number of items shipped.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfItemsShipped&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>number_of_items_shipped: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// The number of items unshipped.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfItemsUnshipped&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>number_of_items_unshipped: <span class="prelude-ty">Option</span>&lt;i32&gt;,
+    <span class="doccomment">/// A list of payment execution detail items.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PaymentExecutionDetail&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>payment_execution_detail: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::PaymentExecutionDetailItem&gt;&gt;,
+    <span class="doccomment">/// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PaymentMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>payment_method: <span class="prelude-ty">Option</span>&lt;PaymentMethod&gt;,
+    <span class="doccomment">/// A list of payment method detail items.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PaymentMethodDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>payment_method_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
+    <span class="doccomment">/// The identifier for the marketplace where the order was placed.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>marketplace_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentServiceLevelCategory&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>shipment_service_level_category: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;EasyShipShipmentStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>easy_ship_shipment_status: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::EasyShipShipmentStatus&gt;,
+    <span class="doccomment">/// Custom ship label for Checkout by Amazon (CBA).
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CbaDisplayableShippingLabel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>cba_displayable_shipping_label: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The type of the order.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>order_type: <span class="prelude-ty">Option</span>&lt;OrderType&gt;,
+    <span class="doccomment">/// The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;EarliestShipDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>earliest_ship_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;LatestShipDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>latest_ship_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;EarliestDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>earliest_delivery_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;LatestDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>latest_delivery_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsBusinessOrder&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_business_order: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// When true, the order is a seller-fulfilled Amazon Prime order.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsPrime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_prime: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \&quot;Premium Shipping Options\&quot; in the Seller Central Help for your marketplace.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsPremiumOrder&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_premium_order: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// When true, the order is a GlobalExpress order.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsGlobalExpressEnabled&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_global_express_enabled: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ReplacedOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>replaced_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// When true, this is a replacement order.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsReplacementOrder&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_replacement_order: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PromiseResponseDueDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>promise_response_due_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="doccomment">/// When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsEstimatedShipDateSet&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_estimated_ship_date_set: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsSoldByAB&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_sold_by_ab: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsIBA&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_iba: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;DefaultShipFromLocationAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>default_ship_from_location_address: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Address&gt;&gt;,
+    <span class="doccomment">/// The buyer&#39;s invoicing preference. Available only in the TR marketplace.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerInvoicePreference&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>buyer_invoice_preference: <span class="prelude-ty">Option</span>&lt;BuyerInvoicePreference&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyerTaxInformation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>buyer_tax_information: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::BuyerTaxInformation&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;FulfillmentInstruction&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>fulfillment_instruction: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FulfillmentInstruction&gt;&gt;,
+    <span class="doccomment">/// When true, this order is marked to be picked up from a store rather than delivered.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsISPU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_ispu: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="doccomment">/// When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsAccessPointOrder&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>is_access_point_order: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceTaxInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>marketplace_tax_info: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MarketplaceTaxInfo&gt;&gt;,
+    <span class="doccomment">/// The seller’s friendly name registered in the marketplace.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerDisplayName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>seller_display_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>shipping_address: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Address&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyerInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>buyer_info: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::BuyerInfo&gt;&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;AutomatedShippingSettings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>automated_shipping_settings: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::AutomatedShippingSettings&gt;&gt;,
+    <span class="doccomment">/// Whether the order contains regulated items which may require additional approval steps before being fulfilled.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;HasRegulatedItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>has_regulated_items: <span class="prelude-ty">Option</span>&lt;bool&gt;,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;ElectronicInvoiceStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>electronic_invoice_status: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::ElectronicInvoiceStatus&gt;,
 }
 
-<span class="kw">impl</span> <span class="ident">Order</span> {
-    <span class="doccomment">/// Order information.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">amazon_order_id</span>: <span class="ident">String</span>, <span class="ident">purchase_date</span>: <span class="ident">String</span>, <span class="ident">last_update_date</span>: <span class="ident">String</span>, <span class="ident">order_status</span>: <span class="ident">OrderStatus</span>) -&gt; <span class="ident">Order</span> {
-        <span class="ident">Order</span> {
-            <span class="ident">amazon_order_id</span>,
-            <span class="ident">seller_order_id</span>: <span class="prelude-val">None</span>,
-            <span class="ident">purchase_date</span>,
-            <span class="ident">last_update_date</span>,
-            <span class="ident">order_status</span>,
-            <span class="ident">fulfillment_channel</span>: <span class="prelude-val">None</span>,
-            <span class="ident">sales_channel</span>: <span class="prelude-val">None</span>,
-            <span class="ident">order_channel</span>: <span class="prelude-val">None</span>,
-            <span class="ident">ship_service_level</span>: <span class="prelude-val">None</span>,
-            <span class="ident">order_total</span>: <span class="prelude-val">None</span>,
-            <span class="ident">number_of_items_shipped</span>: <span class="prelude-val">None</span>,
-            <span class="ident">number_of_items_unshipped</span>: <span class="prelude-val">None</span>,
-            <span class="ident">payment_execution_detail</span>: <span class="prelude-val">None</span>,
-            <span class="ident">payment_method</span>: <span class="prelude-val">None</span>,
-            <span class="ident">payment_method_details</span>: <span class="prelude-val">None</span>,
-            <span class="ident">marketplace_id</span>: <span class="prelude-val">None</span>,
-            <span class="ident">shipment_service_level_category</span>: <span class="prelude-val">None</span>,
-            <span class="ident">easy_ship_shipment_status</span>: <span class="prelude-val">None</span>,
-            <span class="ident">cba_displayable_shipping_label</span>: <span class="prelude-val">None</span>,
-            <span class="ident">order_type</span>: <span class="prelude-val">None</span>,
-            <span class="ident">earliest_ship_date</span>: <span class="prelude-val">None</span>,
-            <span class="ident">latest_ship_date</span>: <span class="prelude-val">None</span>,
-            <span class="ident">earliest_delivery_date</span>: <span class="prelude-val">None</span>,
-            <span class="ident">latest_delivery_date</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_business_order</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_prime</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_premium_order</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_global_express_enabled</span>: <span class="prelude-val">None</span>,
-            <span class="ident">replaced_order_id</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_replacement_order</span>: <span class="prelude-val">None</span>,
-            <span class="ident">promise_response_due_date</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_estimated_ship_date_set</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_sold_by_ab</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_iba</span>: <span class="prelude-val">None</span>,
-            <span class="ident">default_ship_from_location_address</span>: <span class="prelude-val">None</span>,
-            <span class="ident">buyer_invoice_preference</span>: <span class="prelude-val">None</span>,
-            <span class="ident">buyer_tax_information</span>: <span class="prelude-val">None</span>,
-            <span class="ident">fulfillment_instruction</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_ispu</span>: <span class="prelude-val">None</span>,
-            <span class="ident">is_access_point_order</span>: <span class="prelude-val">None</span>,
-            <span class="ident">marketplace_tax_info</span>: <span class="prelude-val">None</span>,
-            <span class="ident">seller_display_name</span>: <span class="prelude-val">None</span>,
-            <span class="ident">shipping_address</span>: <span class="prelude-val">None</span>,
-            <span class="ident">buyer_info</span>: <span class="prelude-val">None</span>,
-            <span class="ident">automated_shipping_settings</span>: <span class="prelude-val">None</span>,
-            <span class="ident">has_regulated_items</span>: <span class="prelude-val">None</span>,
-            <span class="ident">electronic_invoice_status</span>: <span class="prelude-val">None</span>,
+<span class="kw">impl </span>Order {
+    <span class="doccomment">/// Order information.
+    </span><span class="kw">pub fn </span>new(amazon_order_id: String, purchase_date: String, last_update_date: String, order_status: OrderStatus) -&gt; Order {
+        Order {
+            amazon_order_id,
+            seller_order_id: <span class="prelude-val">None</span>,
+            purchase_date,
+            last_update_date,
+            order_status,
+            fulfillment_channel: <span class="prelude-val">None</span>,
+            sales_channel: <span class="prelude-val">None</span>,
+            order_channel: <span class="prelude-val">None</span>,
+            ship_service_level: <span class="prelude-val">None</span>,
+            order_total: <span class="prelude-val">None</span>,
+            number_of_items_shipped: <span class="prelude-val">None</span>,
+            number_of_items_unshipped: <span class="prelude-val">None</span>,
+            payment_execution_detail: <span class="prelude-val">None</span>,
+            payment_method: <span class="prelude-val">None</span>,
+            payment_method_details: <span class="prelude-val">None</span>,
+            marketplace_id: <span class="prelude-val">None</span>,
+            shipment_service_level_category: <span class="prelude-val">None</span>,
+            easy_ship_shipment_status: <span class="prelude-val">None</span>,
+            cba_displayable_shipping_label: <span class="prelude-val">None</span>,
+            order_type: <span class="prelude-val">None</span>,
+            earliest_ship_date: <span class="prelude-val">None</span>,
+            latest_ship_date: <span class="prelude-val">None</span>,
+            earliest_delivery_date: <span class="prelude-val">None</span>,
+            latest_delivery_date: <span class="prelude-val">None</span>,
+            is_business_order: <span class="prelude-val">None</span>,
+            is_prime: <span class="prelude-val">None</span>,
+            is_premium_order: <span class="prelude-val">None</span>,
+            is_global_express_enabled: <span class="prelude-val">None</span>,
+            replaced_order_id: <span class="prelude-val">None</span>,
+            is_replacement_order: <span class="prelude-val">None</span>,
+            promise_response_due_date: <span class="prelude-val">None</span>,
+            is_estimated_ship_date_set: <span class="prelude-val">None</span>,
+            is_sold_by_ab: <span class="prelude-val">None</span>,
+            is_iba: <span class="prelude-val">None</span>,
+            default_ship_from_location_address: <span class="prelude-val">None</span>,
+            buyer_invoice_preference: <span class="prelude-val">None</span>,
+            buyer_tax_information: <span class="prelude-val">None</span>,
+            fulfillment_instruction: <span class="prelude-val">None</span>,
+            is_ispu: <span class="prelude-val">None</span>,
+            is_access_point_order: <span class="prelude-val">None</span>,
+            marketplace_tax_info: <span class="prelude-val">None</span>,
+            seller_display_name: <span class="prelude-val">None</span>,
+            shipping_address: <span class="prelude-val">None</span>,
+            buyer_info: <span class="prelude-val">None</span>,
+            automated_shipping_settings: <span class="prelude-val">None</span>,
+            has_regulated_items: <span class="prelude-val">None</span>,
+            electronic_invoice_status: <span class="prelude-val">None</span>,
         }
     }
 }
 
-<span class="doccomment">/// The current order status.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">OrderStatus</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Pending&quot;</span>)]</span>
-    <span class="ident">Pending</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Unshipped&quot;</span>)]</span>
-    <span class="ident">Unshipped</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PartiallyShipped&quot;</span>)]</span>
-    <span class="ident">PartiallyShipped</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Shipped&quot;</span>)]</span>
-    <span class="ident">Shipped</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Canceled&quot;</span>)]</span>
-    <span class="ident">Canceled</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Unfulfillable&quot;</span>)]</span>
-    <span class="ident">Unfulfillable</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;InvoiceUnconfirmed&quot;</span>)]</span>
-    <span class="ident">InvoiceUnconfirmed</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;PendingAvailability&quot;</span>)]</span>
-    <span class="ident">PendingAvailability</span>,
+<span class="doccomment">/// The current order status.
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>OrderStatus {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Pending&quot;</span>)]
+    </span>Pending,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Unshipped&quot;</span>)]
+    </span>Unshipped,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;PartiallyShipped&quot;</span>)]
+    </span>PartiallyShipped,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Shipped&quot;</span>)]
+    </span>Shipped,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Canceled&quot;</span>)]
+    </span>Canceled,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Unfulfillable&quot;</span>)]
+    </span>Unfulfillable,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;InvoiceUnconfirmed&quot;</span>)]
+    </span>InvoiceUnconfirmed,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;PendingAvailability&quot;</span>)]
+    </span>PendingAvailability,
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">OrderStatus</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">OrderStatus</span> {
-        <span class="ident"><span class="self">Self</span>::Pending</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>OrderStatus {
+    <span class="kw">fn </span>default() -&gt; OrderStatus {
+        <span class="self">Self</span>::Pending
     }
 }
-<span class="doccomment">/// Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">FulfillmentChannel</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;MFN&quot;</span>)]</span>
-    <span class="ident">MFN</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;AFN&quot;</span>)]</span>
-    <span class="ident">AFN</span>,
+<span class="doccomment">/// Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>FulfillmentChannel {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;MFN&quot;</span>)]
+    </span>MFN,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;AFN&quot;</span>)]
+    </span>AFN,
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">FulfillmentChannel</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">FulfillmentChannel</span> {
-        <span class="ident"><span class="self">Self</span>::MFN</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>FulfillmentChannel {
+    <span class="kw">fn </span>default() -&gt; FulfillmentChannel {
+        <span class="self">Self</span>::MFN
     }
 }
-<span class="doccomment">/// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">PaymentMethod</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;COD&quot;</span>)]</span>
-    <span class="ident">COD</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;CVS&quot;</span>)]</span>
-    <span class="ident">CVS</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Other&quot;</span>)]</span>
-    <span class="ident">Other</span>,
+<span class="doccomment">/// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>PaymentMethod {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;COD&quot;</span>)]
+    </span>COD,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;CVS&quot;</span>)]
+    </span>CVS,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Other&quot;</span>)]
+    </span>Other,
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">PaymentMethod</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">PaymentMethod</span> {
-        <span class="ident"><span class="self">Self</span>::COD</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>PaymentMethod {
+    <span class="kw">fn </span>default() -&gt; PaymentMethod {
+        <span class="self">Self</span>::COD
     }
 }
-<span class="doccomment">/// The type of the order.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">OrderType</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;StandardOrder&quot;</span>)]</span>
-    <span class="ident">StandardOrder</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;LongLeadTimeOrder&quot;</span>)]</span>
-    <span class="ident">LongLeadTimeOrder</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;Preorder&quot;</span>)]</span>
-    <span class="ident">Preorder</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BackOrder&quot;</span>)]</span>
-    <span class="ident">BackOrder</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;SourcingOnDemandOrder&quot;</span>)]</span>
-    <span class="ident">SourcingOnDemandOrder</span>,
+<span class="doccomment">/// The type of the order.
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>OrderType {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;StandardOrder&quot;</span>)]
+    </span>StandardOrder,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;LongLeadTimeOrder&quot;</span>)]
+    </span>LongLeadTimeOrder,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Preorder&quot;</span>)]
+    </span>Preorder,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;BackOrder&quot;</span>)]
+    </span>BackOrder,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;SourcingOnDemandOrder&quot;</span>)]
+    </span>SourcingOnDemandOrder,
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">OrderType</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">OrderType</span> {
-        <span class="ident"><span class="self">Self</span>::StandardOrder</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>OrderType {
+    <span class="kw">fn </span>default() -&gt; OrderType {
+        <span class="self">Self</span>::StandardOrder
     }
 }
-<span class="doccomment">/// The buyer&#39;s invoicing preference. Available only in the TR marketplace.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">BuyerInvoicePreference</span> {
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;INDIVIDUAL&quot;</span>)]</span>
-    <span class="ident">INDIVIDUAL</span>,
-    <span class="attribute">#[<span class="ident">serde</span>(<span class="ident">rename</span> <span class="op">=</span> <span class="string">&quot;BUSINESS&quot;</span>)]</span>
-    <span class="ident">BUSINESS</span>,
+<span class="doccomment">/// The buyer&#39;s invoicing preference. Available only in the TR marketplace.
+</span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+</span><span class="kw">pub enum </span>BuyerInvoicePreference {
+    <span class="attribute">#[serde(rename = <span class="string">&quot;INDIVIDUAL&quot;</span>)]
+    </span>INDIVIDUAL,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;BUSINESS&quot;</span>)]
+    </span>BUSINESS,
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">BuyerInvoicePreference</span> {
-    <span class="kw">fn</span> <span class="ident">default</span>() -&gt; <span class="ident">BuyerInvoicePreference</span> {
-        <span class="ident"><span class="self">Self</span>::INDIVIDUAL</span>
+<span class="kw">impl </span>Default <span class="kw">for </span>BuyerInvoicePreference {
+    <span class="kw">fn </span>default() -&gt; BuyerInvoicePreference {
+        <span class="self">Self</span>::INDIVIDUAL
     }
 }
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_orders" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_orders" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

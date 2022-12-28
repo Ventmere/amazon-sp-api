@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-catalog-items/src/models/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_catalog_items/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_catalog_items/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_catalog_items/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-catalog-items/src/models/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_catalog_items/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -36,43 +36,43 @@
 <span id="36">36</span>
 <span id="37">37</span>
 <span id="38">38</span>
-</pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">asin_identifier</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::asin_identifier::AsinIdentifier</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">attribute_set_list_type</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::attribute_set_list_type::AttributeSetListType</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">categories</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::categories::Categories</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">creator_type</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::creator_type::CreatorType</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">decimal_with_units</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::decimal_with_units::DecimalWithUnits</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">dimension_type</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::dimension_type::DimensionType</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error::Error</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_catalog_item_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_catalog_item_response::GetCatalogItemResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">identifier_type</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::identifier_type::IdentifierType</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">image</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::image::Image</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">item</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::item::Item</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">language_type</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::language_type::LanguageType</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">list_catalog_categories_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::list_catalog_categories_response::ListCatalogCategoriesResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">list_catalog_items_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::list_catalog_items_response::ListCatalogItemsResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">list_matching_items_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::list_matching_items_response::ListMatchingItemsResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">price</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::price::Price</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">relationship_type</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::relationship_type::RelationshipType</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">sales_rank_type</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::sales_rank_type::SalesRankType</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">seller_sku_identifier</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::seller_sku_identifier::SellerSkuIdentifier</span>;
+</pre><pre class="rust"><code><span class="kw">pub mod </span>asin_identifier;
+<span class="kw">pub use </span><span class="self">self</span>::asin_identifier::AsinIdentifier;
+<span class="kw">pub mod </span>attribute_set_list_type;
+<span class="kw">pub use </span><span class="self">self</span>::attribute_set_list_type::AttributeSetListType;
+<span class="kw">pub mod </span>categories;
+<span class="kw">pub use </span><span class="self">self</span>::categories::Categories;
+<span class="kw">pub mod </span>creator_type;
+<span class="kw">pub use </span><span class="self">self</span>::creator_type::CreatorType;
+<span class="kw">pub mod </span>decimal_with_units;
+<span class="kw">pub use </span><span class="self">self</span>::decimal_with_units::DecimalWithUnits;
+<span class="kw">pub mod </span>dimension_type;
+<span class="kw">pub use </span><span class="self">self</span>::dimension_type::DimensionType;
+<span class="kw">pub mod </span>error;
+<span class="kw">pub use </span><span class="self">self</span>::error::Error;
+<span class="kw">pub mod </span>get_catalog_item_response;
+<span class="kw">pub use </span><span class="self">self</span>::get_catalog_item_response::GetCatalogItemResponse;
+<span class="kw">pub mod </span>identifier_type;
+<span class="kw">pub use </span><span class="self">self</span>::identifier_type::IdentifierType;
+<span class="kw">pub mod </span>image;
+<span class="kw">pub use </span><span class="self">self</span>::image::Image;
+<span class="kw">pub mod </span>item;
+<span class="kw">pub use </span><span class="self">self</span>::item::Item;
+<span class="kw">pub mod </span>language_type;
+<span class="kw">pub use </span><span class="self">self</span>::language_type::LanguageType;
+<span class="kw">pub mod </span>list_catalog_categories_response;
+<span class="kw">pub use </span><span class="self">self</span>::list_catalog_categories_response::ListCatalogCategoriesResponse;
+<span class="kw">pub mod </span>list_catalog_items_response;
+<span class="kw">pub use </span><span class="self">self</span>::list_catalog_items_response::ListCatalogItemsResponse;
+<span class="kw">pub mod </span>list_matching_items_response;
+<span class="kw">pub use </span><span class="self">self</span>::list_matching_items_response::ListMatchingItemsResponse;
+<span class="kw">pub mod </span>price;
+<span class="kw">pub use </span><span class="self">self</span>::price::Price;
+<span class="kw">pub mod </span>relationship_type;
+<span class="kw">pub use </span><span class="self">self</span>::relationship_type::RelationshipType;
+<span class="kw">pub mod </span>sales_rank_type;
+<span class="kw">pub use </span><span class="self">self</span>::sales_rank_type::SalesRankType;
+<span class="kw">pub mod </span>seller_sku_identifier;
+<span class="kw">pub use </span><span class="self">self</span>::seller_sku_identifier::SellerSkuIdentifier;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_catalog_items" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_catalog_items" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

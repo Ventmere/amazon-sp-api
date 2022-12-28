@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-feeds/src/apis/feeds_api.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>feeds_api.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_feeds/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_feeds/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_feeds/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-feeds/src/apis/feeds_api.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>feeds_api.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_feeds/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -501,492 +501,492 @@
  * The version of the OpenAPI document: 2020-09-04
  * 
  * Generated by: https://openapi-generator.tech
- */</span>
+ */
 
 
-<span class="kw">use</span> <span class="ident">reqwest</span>;
+</span><span class="kw">use </span>reqwest;
 
-<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::apis::ResponseContent</span>;
-<span class="kw">use</span> <span class="kw">super</span>::{<span class="ident">Error</span>, <span class="ident">configuration</span>};
-<span class="kw">use</span> <span class="ident">amazon_sp_api_shared::request::UrlBuilder</span>;
+<span class="kw">use </span><span class="kw">crate</span>::apis::ResponseContent;
+<span class="kw">use super</span>::{Error, configuration};
+<span class="kw">use </span>amazon_sp_api_shared::request::UrlBuilder;
 
 
-<span class="doccomment">/// struct for typed errors of method [`cancel_feed`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">CancelFeedError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`cancel_feed`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>CancelFeedError {
+    Status400(<span class="kw">crate</span>::models::CancelFeedResponse),
+    Status401(<span class="kw">crate</span>::models::CancelFeedResponse),
+    Status403(<span class="kw">crate</span>::models::CancelFeedResponse),
+    Status404(<span class="kw">crate</span>::models::CancelFeedResponse),
+    Status415(<span class="kw">crate</span>::models::CancelFeedResponse),
+    Status429(<span class="kw">crate</span>::models::CancelFeedResponse),
+    Status500(<span class="kw">crate</span>::models::CancelFeedResponse),
+    Status503(<span class="kw">crate</span>::models::CancelFeedResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`create_feed`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">CreateFeedError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`create_feed`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>CreateFeedError {
+    Status400(<span class="kw">crate</span>::models::CreateFeedResponse),
+    Status401(<span class="kw">crate</span>::models::CreateFeedResponse),
+    Status403(<span class="kw">crate</span>::models::CreateFeedResponse),
+    Status404(<span class="kw">crate</span>::models::CreateFeedResponse),
+    Status415(<span class="kw">crate</span>::models::CreateFeedResponse),
+    Status429(<span class="kw">crate</span>::models::CreateFeedResponse),
+    Status500(<span class="kw">crate</span>::models::CreateFeedResponse),
+    Status503(<span class="kw">crate</span>::models::CreateFeedResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`create_feed_document`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">CreateFeedDocumentError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>),
-    <span class="ident">Status413</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`create_feed_document`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>CreateFeedDocumentError {
+    Status400(<span class="kw">crate</span>::models::CreateFeedDocumentResponse),
+    Status403(<span class="kw">crate</span>::models::CreateFeedDocumentResponse),
+    Status404(<span class="kw">crate</span>::models::CreateFeedDocumentResponse),
+    Status413(<span class="kw">crate</span>::models::CreateFeedDocumentResponse),
+    Status415(<span class="kw">crate</span>::models::CreateFeedDocumentResponse),
+    Status429(<span class="kw">crate</span>::models::CreateFeedDocumentResponse),
+    Status500(<span class="kw">crate</span>::models::CreateFeedDocumentResponse),
+    Status503(<span class="kw">crate</span>::models::CreateFeedDocumentResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_feed`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetFeedError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_feed`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetFeedError {
+    Status400(<span class="kw">crate</span>::models::GetFeedResponse),
+    Status401(<span class="kw">crate</span>::models::GetFeedResponse),
+    Status403(<span class="kw">crate</span>::models::GetFeedResponse),
+    Status404(<span class="kw">crate</span>::models::GetFeedResponse),
+    Status415(<span class="kw">crate</span>::models::GetFeedResponse),
+    Status429(<span class="kw">crate</span>::models::GetFeedResponse),
+    Status500(<span class="kw">crate</span>::models::GetFeedResponse),
+    Status503(<span class="kw">crate</span>::models::GetFeedResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_feed_document`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetFeedDocumentError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_feed_document`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetFeedDocumentError {
+    Status400(<span class="kw">crate</span>::models::GetFeedDocumentResponse),
+    Status401(<span class="kw">crate</span>::models::GetFeedDocumentResponse),
+    Status403(<span class="kw">crate</span>::models::GetFeedDocumentResponse),
+    Status404(<span class="kw">crate</span>::models::GetFeedDocumentResponse),
+    Status415(<span class="kw">crate</span>::models::GetFeedDocumentResponse),
+    Status429(<span class="kw">crate</span>::models::GetFeedDocumentResponse),
+    Status500(<span class="kw">crate</span>::models::GetFeedDocumentResponse),
+    Status503(<span class="kw">crate</span>::models::GetFeedDocumentResponse),
+    UnknownValue(serde_json::Value),
 }
 
-<span class="doccomment">/// struct for typed errors of method [`get_feeds`]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Serialize</span>, <span class="ident">Deserialize</span>)]</span>
-<span class="attribute">#[<span class="ident">serde</span>(<span class="ident">untagged</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GetFeedsError</span> {
-    <span class="ident">Status400</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>),
-    <span class="ident">Status401</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>),
-    <span class="ident">Status403</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>),
-    <span class="ident">Status404</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>),
-    <span class="ident">Status415</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>),
-    <span class="ident">Status429</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>),
-    <span class="ident">Status500</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>),
-    <span class="ident">Status503</span>(<span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>),
-    <span class="ident">UnknownValue</span>(<span class="ident">serde_json::Value</span>),
+<span class="doccomment">/// struct for typed errors of method [`get_feeds`]
+</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+</span><span class="kw">pub enum </span>GetFeedsError {
+    Status400(<span class="kw">crate</span>::models::GetFeedsResponse),
+    Status401(<span class="kw">crate</span>::models::GetFeedsResponse),
+    Status403(<span class="kw">crate</span>::models::GetFeedsResponse),
+    Status404(<span class="kw">crate</span>::models::GetFeedsResponse),
+    Status415(<span class="kw">crate</span>::models::GetFeedsResponse),
+    Status429(<span class="kw">crate</span>::models::GetFeedsResponse),
+    Status500(<span class="kw">crate</span>::models::GetFeedsResponse),
+    Status503(<span class="kw">crate</span>::models::GetFeedsResponse),
+    UnknownValue(serde_json::Value),
 }
 
 
-<span class="doccomment">/// Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can be cancelled. Cancelled feeds are returned in subsequent calls to the getFeed and getFeeds operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">cancel_feed</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">feed_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::CancelFeedResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">CancelFeedError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can be cancelled. Cancelled feeds are returned in subsequent calls to the getFeed and getFeeds operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>cancel_feed(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, feed_id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::CancelFeedResponse, Error&lt;CancelFeedError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/feeds/{feedId}&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">feedId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">feed_id</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::DELETE</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/feeds/{feedId}&quot;</span>, local_var_configuration.base_path, feedId=<span class="kw">crate</span>::apis::urlencode(feed_id));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;DELETE&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">CancelFeedError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;CancelFeedError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">create_feed</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">body</span>: <span class="ident"><span class="kw">crate</span>::models::CreateFeedSpecification</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::CreateFeedResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">CreateFeedError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>create_feed(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, body: <span class="kw">crate</span>::models::CreateFeedSpecification) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::CreateFeedResponse, Error&lt;CreateFeedError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/feeds&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/feeds&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
-	    <span class="kw-2">&amp;</span><span class="ident">serde_json::to_string</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>).<span class="ident">expect</span>(<span class="string">&quot;param should serialize to string&quot;</span>),
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
+	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">json</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>);
+    local_var_req_builder = local_var_req_builder.json(<span class="kw-2">&amp;</span>body);
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">CreateFeedError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;CreateFeedError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">create_feed_document</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">body</span>: <span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentSpecification</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::CreateFeedDocumentResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">CreateFeedDocumentError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>create_feed_document(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, body: <span class="kw">crate</span>::models::CreateFeedDocumentSpecification) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::CreateFeedDocumentResponse, Error&lt;CreateFeedDocumentError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/documents&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::POST</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/documents&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
-	    <span class="kw-2">&amp;</span><span class="ident">serde_json::to_string</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>).<span class="ident">expect</span>(<span class="string">&quot;param should serialize to string&quot;</span>),
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
+	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">json</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>);
+    local_var_req_builder = local_var_req_builder.json(<span class="kw-2">&amp;</span>body);
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">CreateFeedDocumentError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;CreateFeedDocumentError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Returns feed details (including the resultDocumentId, if available) for the feed that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_feed</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">feed_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetFeedResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetFeedError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Returns feed details (including the resultDocumentId, if available) for the feed that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_feed(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, feed_id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetFeedResponse, Error&lt;GetFeedError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/feeds/{feedId}&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">feedId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">feed_id</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/feeds/{feedId}&quot;</span>, local_var_configuration.base_path, feedId=<span class="kw">crate</span>::apis::urlencode(feed_id));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetFeedError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetFeedError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Returns the information required for retrieving a feed document&#39;s contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document&#39;s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_feed_document</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">feed_document_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetFeedDocumentResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetFeedDocumentError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Returns the information required for retrieving a feed document&#39;s contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document&#39;s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_feed_document(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, feed_document_id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetFeedDocumentResponse, Error&lt;GetFeedDocumentError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
-
-
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/documents/{feedDocumentId}&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>, <span class="ident">feedDocumentId</span><span class="op">=</span><span class="ident"><span class="kw">crate</span>::apis::urlencode</span>(<span class="ident">feed_document_id</span>));
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/documents/{feedDocumentId}&quot;</span>, local_var_configuration.base_path, feedDocumentId=<span class="kw">crate</span>::apis::urlencode(feed_document_id));
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetFeedDocumentError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetFeedDocumentError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
-<span class="doccomment">/// Returns feed details for the feeds that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.</span>
-<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">get_feeds</span>(<span class="ident">configuration</span>: <span class="kw-2">&amp;</span><span class="ident">configuration::Configuration</span>, <span class="ident">feed_types</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>, <span class="ident">marketplace_ids</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>, <span class="ident">page_size</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>, <span class="ident">processing_statuses</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>, <span class="ident">created_since</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">created_until</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span>, <span class="ident">next_token</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::models::GetFeedsResponse</span>, <span class="ident">Error</span><span class="op">&lt;</span><span class="ident">GetFeedsError</span><span class="op">&gt;</span><span class="op">&gt;</span> {
-    <span class="kw">let</span> <span class="ident">local_var_configuration</span> <span class="op">=</span> <span class="ident">configuration</span>;
+<span class="doccomment">/// Returns feed details for the feeds that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+</span><span class="kw">pub async fn </span>get_feeds(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, feed_types: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;, marketplace_ids: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;, page_size: <span class="prelude-ty">Option</span>&lt;i32&gt;, processing_statuses: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;, created_since: <span class="prelude-ty">Option</span>&lt;String&gt;, created_until: <span class="prelude-ty">Option</span>&lt;String&gt;, next_token: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetFeedsResponse, Error&lt;GetFeedsError&gt;&gt; {
+    <span class="kw">let </span>local_var_configuration = configuration;
 
-    <span class="kw">let</span> <span class="ident">local_var_client</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>;
+    <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
 
 
-    <span class="kw">let</span> <span class="ident">local_var_uri_str</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/feeds&quot;</span>, <span class="ident">local_var_configuration</span>.<span class="ident">base_path</span>);
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">request</span>(<span class="ident">reqwest::Method::GET</span>, <span class="ident">local_var_uri_str</span>.<span class="ident">as_str</span>());
-    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_mut</span>)]</span>
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">UrlBuilder::parse</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_uri_str</span>)<span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_uri_str = <span class="macro">format!</span>(<span class="string">&quot;{}/feeds/2020-09-04/feeds&quot;</span>, local_var_configuration.base_path);
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+    <span class="attribute">#[allow(unused_mut)]
+    </span><span class="kw">let </span><span class="kw-2">mut </span>url_builder = UrlBuilder::parse(<span class="kw-2">&amp;</span>local_var_uri_str)<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">feed_types</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="kw">match</span> <span class="string">&quot;csv&quot;</span> {
-            <span class="string">&quot;multi&quot;</span> =&gt; <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">into_iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">p</span><span class="op">|</span> (<span class="string">&quot;feedTypes&quot;</span>.<span class="ident">to_owned</span>(), <span class="ident">p</span>.<span class="ident">to_string</span>())).<span class="ident">collect</span>::<span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span>(<span class="ident">std::string::String</span>, <span class="ident">std::string::String</span>)<span class="op">&gt;</span><span class="op">&gt;</span>()),
-            <span class="kw">_</span> =&gt; <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;feedTypes&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">into_iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">p</span><span class="op">|</span> <span class="ident">p</span>.<span class="ident">to_string</span>()).<span class="ident">collect</span>::<span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>().<span class="ident">join</span>(<span class="string">&quot;,&quot;</span>).<span class="ident">to_string</span>())]),
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = feed_types {
+        url_builder = <span class="kw">match </span><span class="string">&quot;csv&quot; </span>{
+            <span class="string">&quot;multi&quot; </span>=&gt; url_builder.query(<span class="kw-2">&amp;</span>local_var_str.into_iter().map(|p| (<span class="string">&quot;feedTypes&quot;</span>.to_owned(), p.to_string())).collect::&lt;Vec&lt;(std::string::String, std::string::String)&gt;&gt;()),
+            <span class="kw">_ </span>=&gt; url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;feedTypes&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.into_iter().map(|p| p.to_string()).collect::&lt;Vec&lt;String&gt;&gt;().join(<span class="string">&quot;,&quot;</span>).to_string())]),
         };
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">marketplace_ids</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="kw">match</span> <span class="string">&quot;csv&quot;</span> {
-            <span class="string">&quot;multi&quot;</span> =&gt; <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">into_iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">p</span><span class="op">|</span> (<span class="string">&quot;marketplaceIds&quot;</span>.<span class="ident">to_owned</span>(), <span class="ident">p</span>.<span class="ident">to_string</span>())).<span class="ident">collect</span>::<span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span>(<span class="ident">std::string::String</span>, <span class="ident">std::string::String</span>)<span class="op">&gt;</span><span class="op">&gt;</span>()),
-            <span class="kw">_</span> =&gt; <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;marketplaceIds&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">into_iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">p</span><span class="op">|</span> <span class="ident">p</span>.<span class="ident">to_string</span>()).<span class="ident">collect</span>::<span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>().<span class="ident">join</span>(<span class="string">&quot;,&quot;</span>).<span class="ident">to_string</span>())]),
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = marketplace_ids {
+        url_builder = <span class="kw">match </span><span class="string">&quot;csv&quot; </span>{
+            <span class="string">&quot;multi&quot; </span>=&gt; url_builder.query(<span class="kw-2">&amp;</span>local_var_str.into_iter().map(|p| (<span class="string">&quot;marketplaceIds&quot;</span>.to_owned(), p.to_string())).collect::&lt;Vec&lt;(std::string::String, std::string::String)&gt;&gt;()),
+            <span class="kw">_ </span>=&gt; url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;marketplaceIds&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.into_iter().map(|p| p.to_string()).collect::&lt;Vec&lt;String&gt;&gt;().join(<span class="string">&quot;,&quot;</span>).to_string())]),
         };
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">page_size</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;pageSize&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = page_size {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;pageSize&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">processing_statuses</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="kw">match</span> <span class="string">&quot;csv&quot;</span> {
-            <span class="string">&quot;multi&quot;</span> =&gt; <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">into_iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">p</span><span class="op">|</span> (<span class="string">&quot;processingStatuses&quot;</span>.<span class="ident">to_owned</span>(), <span class="ident">p</span>.<span class="ident">to_string</span>())).<span class="ident">collect</span>::<span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span>(<span class="ident">std::string::String</span>, <span class="ident">std::string::String</span>)<span class="op">&gt;</span><span class="op">&gt;</span>()),
-            <span class="kw">_</span> =&gt; <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;processingStatuses&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">into_iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">p</span><span class="op">|</span> <span class="ident">p</span>.<span class="ident">to_string</span>()).<span class="ident">collect</span>::<span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span><span class="op">&gt;</span>().<span class="ident">join</span>(<span class="string">&quot;,&quot;</span>).<span class="ident">to_string</span>())]),
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = processing_statuses {
+        url_builder = <span class="kw">match </span><span class="string">&quot;csv&quot; </span>{
+            <span class="string">&quot;multi&quot; </span>=&gt; url_builder.query(<span class="kw-2">&amp;</span>local_var_str.into_iter().map(|p| (<span class="string">&quot;processingStatuses&quot;</span>.to_owned(), p.to_string())).collect::&lt;Vec&lt;(std::string::String, std::string::String)&gt;&gt;()),
+            <span class="kw">_ </span>=&gt; url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;processingStatuses&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.into_iter().map(|p| p.to_string()).collect::&lt;Vec&lt;String&gt;&gt;().join(<span class="string">&quot;,&quot;</span>).to_string())]),
         };
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">created_since</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdSince&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = created_since {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdSince&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">created_until</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdUntil&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = created_until {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;createdUntil&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_str</span>) <span class="op">=</span> <span class="ident">next_token</span> {
-        <span class="ident">url_builder</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">query</span>(<span class="kw-2">&amp;</span>[(<span class="string">&quot;nextToken&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">local_var_str</span>.<span class="ident">to_string</span>())]);
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = next_token {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;nextToken&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
 
-    <span class="kw">let</span> <span class="ident">url</span> <span class="op">=</span> <span class="ident">url_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
+    <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_aws_v4_key</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">aws_v4_key</span> {
-        <span class="kw">let</span> <span class="ident">local_var_new_headers</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">local_var_aws_v4_key</span>.<span class="ident">sign</span>(
-	    <span class="ident">url</span>.<span class="ident">as_str</span>(),
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
+        <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
+	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">configuration</span>.<span class="ident">auth</span> {
-            <span class="prelude-val">Some</span>(<span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else</span> {
-            <span class="prelude-val">None</span>
-        },
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>},
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
-	      <span class="prelude-val">Ok</span>(<span class="ident">new_headers</span>) =&gt; <span class="ident">new_headers</span>,
-	      <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::AWSV4SignatureError</span>(<span class="ident">err</span>)),
+	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
+	      <span class="prelude-val">Err</span>(err) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(Error::AWSV4SignatureError(err)),
 	    };
-	<span class="kw">for</span> (<span class="ident">local_var_name</span>, <span class="ident">local_var_value</span>) <span class="kw">in</span> <span class="ident">local_var_new_headers</span>.<span class="ident">iter</span>() {
-	    <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">local_var_name</span>.<span class="ident">as_str</span>(), <span class="ident">local_var_value</span>.<span class="ident">as_str</span>());
+	<span class="kw">for </span>(local_var_name, local_var_value) <span class="kw">in </span>local_var_new_headers.iter() {
+	    local_var_req_builder = local_var_req_builder.header(local_var_name.as_str(), local_var_value.as_str());
 	}
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">auth</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">auth</span> {
-        <span class="kw">let</span> <span class="ident">token</span> <span class="op">=</span> <span class="ident">auth</span>.<span class="ident">get_access_token</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_configuration</span>.<span class="ident">client</span>).<span class="kw">await</span><span class="question-mark">?</span>;
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="string">&quot;x-amz-access-token&quot;</span>, <span class="ident">token</span>.<span class="ident">as_str</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+        local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
-    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">local_var_user_agent</span>) <span class="op">=</span> <span class="ident">local_var_configuration</span>.<span class="ident">user_agent</span> {
-        <span class="ident">local_var_req_builder</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">header</span>(<span class="ident">reqwest::header::USER_AGENT</span>, <span class="ident">local_var_user_agent</span>.<span class="ident">clone</span>());
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">local_var_req</span> <span class="op">=</span> <span class="ident">local_var_req_builder</span>.<span class="ident">build</span>()<span class="question-mark">?</span>;
-    <span class="kw-2">*</span><span class="ident">local_var_req</span>.<span class="ident">url_mut</span>() <span class="op">=</span> <span class="ident">url</span>;
-    <span class="kw">let</span> <span class="ident">local_var_resp</span> <span class="op">=</span> <span class="ident">local_var_client</span>.<span class="ident">execute</span>(<span class="ident">local_var_req</span>).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span><span class="kw-2">mut </span>local_var_req = local_var_req_builder.build()<span class="question-mark">?</span>;
+    <span class="kw-2">*</span>local_var_req.url_mut() = url;
+    <span class="kw">let </span>local_var_resp = local_var_client.execute(local_var_req).<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">let</span> <span class="ident">local_var_status</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">status</span>();
-    <span class="kw">let</span> <span class="ident">local_var_content</span> <span class="op">=</span> <span class="ident">local_var_resp</span>.<span class="ident">text</span>().<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">let </span>local_var_status = local_var_resp.status();
+    <span class="kw">let </span>local_var_content = local_var_resp.text().<span class="kw">await</span><span class="question-mark">?</span>;
 
-    <span class="kw">if</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_client_error</span>() <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="ident">local_var_status</span>.<span class="ident">is_server_error</span>() {
-        <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">map_err</span>(<span class="ident">Error::from</span>)
-    } <span class="kw">else</span> {
-        <span class="kw">let</span> <span class="ident">local_var_entity</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetFeedsError</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">serde_json::from_str</span>(<span class="kw-2">&amp;</span><span class="ident">local_var_content</span>).<span class="ident">ok</span>();
-        <span class="kw">let</span> <span class="ident">local_var_error</span> <span class="op">=</span> <span class="ident">ResponseContent</span> { <span class="ident">status</span>: <span class="ident">local_var_status</span>, <span class="ident">content</span>: <span class="ident">local_var_content</span>, <span class="ident">entity</span>: <span class="ident">local_var_entity</span> };
-        <span class="prelude-val">Err</span>(<span class="ident">Error::ResponseError</span>(<span class="ident">local_var_error</span>))
+    <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
+        serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
+    } <span class="kw">else </span>{
+        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetFeedsError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_feeds" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_feeds" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

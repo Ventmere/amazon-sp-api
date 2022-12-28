@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-notifications/src/models/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../../amazon_sp_notifications/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a><h2 class="location"></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../../../amazon_sp_notifications/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../amazon_sp_notifications/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><button type="button">?</button></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `generated/amazon-sp-notifications/src/models/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../amazon_sp_notifications/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -48,55 +48,55 @@
 <span id="48">48</span>
 <span id="49">49</span>
 <span id="50">50</span>
-</pre><pre class="rust"><code><span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">aggregation_filter</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::aggregation_filter::AggregationFilter</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">aggregation_settings</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::aggregation_settings::AggregationSettings</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">aggregation_time_period</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::aggregation_time_period::AggregationTimePeriod</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_destination_request</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_destination_request::CreateDestinationRequest</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_destination_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_destination_response::CreateDestinationResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_subscription_request</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_subscription_request::CreateSubscriptionRequest</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">create_subscription_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::create_subscription_response::CreateSubscriptionResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">delete_destination_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::delete_destination_response::DeleteDestinationResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">delete_subscription_by_id_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::delete_subscription_by_id_response::DeleteSubscriptionByIdResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">destination</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::destination::Destination</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">destination_resource</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::destination_resource::DestinationResource</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">destination_resource_specification</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::destination_resource_specification::DestinationResourceSpecification</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::error::Error</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">event_bridge_resource</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::event_bridge_resource::EventBridgeResource</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">event_bridge_resource_specification</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::event_bridge_resource_specification::EventBridgeResourceSpecification</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">event_filter</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::event_filter::EventFilter</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">event_filter_all_of</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::event_filter_all_of::EventFilterAllOf</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_destination_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_destination_response::GetDestinationResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_destinations_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_destinations_response::GetDestinationsResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_subscription_by_id_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_subscription_by_id_response::GetSubscriptionByIdResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">get_subscription_response</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::get_subscription_response::GetSubscriptionResponse</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">marketplace_filter</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::marketplace_filter::MarketplaceFilter</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">processing_directive</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::processing_directive::ProcessingDirective</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">sqs_resource</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::sqs_resource::SqsResource</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">subscription</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident"><span class="self">self</span>::subscription::Subscription</span>;
+</pre><pre class="rust"><code><span class="kw">pub mod </span>aggregation_filter;
+<span class="kw">pub use </span><span class="self">self</span>::aggregation_filter::AggregationFilter;
+<span class="kw">pub mod </span>aggregation_settings;
+<span class="kw">pub use </span><span class="self">self</span>::aggregation_settings::AggregationSettings;
+<span class="kw">pub mod </span>aggregation_time_period;
+<span class="kw">pub use </span><span class="self">self</span>::aggregation_time_period::AggregationTimePeriod;
+<span class="kw">pub mod </span>create_destination_request;
+<span class="kw">pub use </span><span class="self">self</span>::create_destination_request::CreateDestinationRequest;
+<span class="kw">pub mod </span>create_destination_response;
+<span class="kw">pub use </span><span class="self">self</span>::create_destination_response::CreateDestinationResponse;
+<span class="kw">pub mod </span>create_subscription_request;
+<span class="kw">pub use </span><span class="self">self</span>::create_subscription_request::CreateSubscriptionRequest;
+<span class="kw">pub mod </span>create_subscription_response;
+<span class="kw">pub use </span><span class="self">self</span>::create_subscription_response::CreateSubscriptionResponse;
+<span class="kw">pub mod </span>delete_destination_response;
+<span class="kw">pub use </span><span class="self">self</span>::delete_destination_response::DeleteDestinationResponse;
+<span class="kw">pub mod </span>delete_subscription_by_id_response;
+<span class="kw">pub use </span><span class="self">self</span>::delete_subscription_by_id_response::DeleteSubscriptionByIdResponse;
+<span class="kw">pub mod </span>destination;
+<span class="kw">pub use </span><span class="self">self</span>::destination::Destination;
+<span class="kw">pub mod </span>destination_resource;
+<span class="kw">pub use </span><span class="self">self</span>::destination_resource::DestinationResource;
+<span class="kw">pub mod </span>destination_resource_specification;
+<span class="kw">pub use </span><span class="self">self</span>::destination_resource_specification::DestinationResourceSpecification;
+<span class="kw">pub mod </span>error;
+<span class="kw">pub use </span><span class="self">self</span>::error::Error;
+<span class="kw">pub mod </span>event_bridge_resource;
+<span class="kw">pub use </span><span class="self">self</span>::event_bridge_resource::EventBridgeResource;
+<span class="kw">pub mod </span>event_bridge_resource_specification;
+<span class="kw">pub use </span><span class="self">self</span>::event_bridge_resource_specification::EventBridgeResourceSpecification;
+<span class="kw">pub mod </span>event_filter;
+<span class="kw">pub use </span><span class="self">self</span>::event_filter::EventFilter;
+<span class="kw">pub mod </span>event_filter_all_of;
+<span class="kw">pub use </span><span class="self">self</span>::event_filter_all_of::EventFilterAllOf;
+<span class="kw">pub mod </span>get_destination_response;
+<span class="kw">pub use </span><span class="self">self</span>::get_destination_response::GetDestinationResponse;
+<span class="kw">pub mod </span>get_destinations_response;
+<span class="kw">pub use </span><span class="self">self</span>::get_destinations_response::GetDestinationsResponse;
+<span class="kw">pub mod </span>get_subscription_by_id_response;
+<span class="kw">pub use </span><span class="self">self</span>::get_subscription_by_id_response::GetSubscriptionByIdResponse;
+<span class="kw">pub mod </span>get_subscription_response;
+<span class="kw">pub use </span><span class="self">self</span>::get_subscription_response::GetSubscriptionResponse;
+<span class="kw">pub mod </span>marketplace_filter;
+<span class="kw">pub use </span><span class="self">self</span>::marketplace_filter::MarketplaceFilter;
+<span class="kw">pub mod </span>processing_directive;
+<span class="kw">pub use </span><span class="self">self</span>::processing_directive::ProcessingDirective;
+<span class="kw">pub mod </span>sqs_resource;
+<span class="kw">pub use </span><span class="self">self</span>::sqs_resource::SqsResource;
+<span class="kw">pub mod </span>subscription;
+<span class="kw">pub use </span><span class="self">self</span>::subscription::Subscription;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_notifications" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0 (a55dd71d5 2022-09-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="amazon_sp_notifications" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

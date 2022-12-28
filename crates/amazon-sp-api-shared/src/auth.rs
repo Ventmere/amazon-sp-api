@@ -123,7 +123,7 @@ impl AuthState {
           refresh_token: None,
         };
         let res = client.post("https://api.amazon.com/auth/o2/token")
-          .json(&req)
+          .form(&req)
           .send().await?;
         let status = res.status();
         let body = res.text().await.ok();

@@ -25,6 +25,24 @@ pub enum PrepInstruction {
     Labeling,
     #[serde(rename = "HangGarment")]
     HangGarment,
+    #[serde(rename = "SetCreation")]
+    SetCreation,
+    #[serde(rename = "Boxing")]
+    Boxing,
+    #[serde(rename = "RemoveFromHanger")]
+    RemoveFromHanger,
+    #[serde(rename = "Debundle")]
+    Debundle,
+    #[serde(rename = "SuffocationStickering")]
+    SuffocationStickering,
+    #[serde(rename = "CapSealing")]
+    CapSealing,
+    #[serde(rename = "SetStickering")]
+    SetStickering,
+    #[serde(rename = "BlankStickering")]
+    BlankStickering,
+    #[serde(rename = "NoPrep")]
+    NoPrep,
 
 }
 
@@ -37,6 +55,15 @@ impl ToString for PrepInstruction {
             Self::BlackShrinkWrapping => String::from("BlackShrinkWrapping"),
             Self::Labeling => String::from("Labeling"),
             Self::HangGarment => String::from("HangGarment"),
+            Self::SetCreation => String::from("SetCreation"),
+            Self::Boxing => String::from("Boxing"),
+            Self::RemoveFromHanger => String::from("RemoveFromHanger"),
+            Self::Debundle => String::from("Debundle"),
+            Self::SuffocationStickering => String::from("SuffocationStickering"),
+            Self::CapSealing => String::from("CapSealing"),
+            Self::SetStickering => String::from("SetStickering"),
+            Self::BlankStickering => String::from("BlankStickering"),
+            Self::NoPrep => String::from("NoPrep"),
         }
     }
 }

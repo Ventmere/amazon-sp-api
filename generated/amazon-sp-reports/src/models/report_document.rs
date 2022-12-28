@@ -16,12 +16,12 @@ pub struct ReportDocument {
     /// The identifier for the report document. This identifier is unique only in combination with a seller ID.
     #[serde(rename = "reportDocumentId")]
     pub report_document_id: String,
-    /// A presigned URL for the report document. This URL expires after 5 minutes.
+    /// A presigned URL for the report document. If `compressionAlgorithm` is not returned, you can download the report directly from this URL. This URL expires after 5 minutes.
     #[serde(rename = "url")]
     pub url: String,
     #[serde(rename = "encryptionDetails")]
     pub encryption_details: Box<crate::models::ReportDocumentEncryptionDetails>,
-    /// If present, the report document contents have been compressed with the provided algorithm.
+    /// If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download and decrypt the report](doc:reports-api-v2020-09-04-use-case-guide#step-2-download-and-decrypt-the-report) in the use case guide, where sample code is provided.
     #[serde(rename = "compressionAlgorithm", skip_serializing_if = "Option::is_none")]
     pub compression_algorithm: Option<CompressionAlgorithm>,
 }
@@ -37,7 +37,7 @@ impl ReportDocument {
     }
 }
 
-/// If present, the report document contents have been compressed with the provided algorithm.
+/// If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download and decrypt the report](doc:reports-api-v2020-09-04-use-case-guide#step-2-download-and-decrypt-the-report) in the use case guide, where sample code is provided.
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum CompressionAlgorithm {
     #[serde(rename = "GZIP")]

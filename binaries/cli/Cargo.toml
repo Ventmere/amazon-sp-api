@@ -15,4 +15,5 @@ tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 reqwest = "0.11"
 
 amazon-sp-api = { path = "../../crates/amazon-sp-api" }
+
 amazon-sp-authorization = { path = "../../generated/amazon-sp-authorization" }

@@ -3,8 +3,89 @@ name = "amazon-sp-api"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+aplus-content = ["amazon-sp-aplus-content"]
+authorization = ["amazon-sp-authorization"]
+catalog-items = ["amazon-sp-catalog-items"]
+easy-ship = ["amazon-sp-easy-ship"]
+fba-inbound-eligibility = ["amazon-sp-fba-inbound-eligibility"]
+fba-inventory = ["amazon-sp-fba-inventory"]
+fba-small-and-light = ["amazon-sp-fba-small-and-light"]
+feeds = ["amazon-sp-feeds"]
+finances = ["amazon-sp-finances"]
+fulfillment-inbound = ["amazon-sp-fulfillment-inbound"]
+fulfillment-outbound = ["amazon-sp-fulfillment-outbound"]
+listings-items = ["amazon-sp-listings-items"]
+listings-restrictions = ["amazon-sp-listings-restrictions"]
+merchant-fulfillment = ["amazon-sp-merchant-fulfillment"]
+messaging = ["amazon-sp-messaging"]
+notifications = ["amazon-sp-notifications"]
+orders = ["amazon-sp-orders"]
+product-fees = ["amazon-sp-product-fees"]
+product-pricing = ["amazon-sp-product-pricing"]
+product-type-definitions = ["amazon-sp-product-type-definitions"]
+reports = ["amazon-sp-reports"]
+sales = ["amazon-sp-sales"]
+sellers = ["amazon-sp-sellers"]
+services = ["amazon-sp-services"]
+shipment-invoicing = ["amazon-sp-shipment-invoicing"]
+shipping = ["amazon-sp-shipping"]
+solicitations = ["amazon-sp-solicitations"]
+tokens = ["amazon-sp-tokens"]
+uploads = ["amazon-sp-uploads"]
+vendor-direct-fulfillment-inventory = ["amazon-sp-vendor-direct-fulfillment-inventory"]
+vendor-direct-fulfillment-orders = ["amazon-sp-vendor-direct-fulfillment-orders"]
+vendor-direct-fulfillment-payments = ["amazon-sp-vendor-direct-fulfillment-payments"]
+vendor-direct-fulfillment-sandbox-test-data = ["amazon-sp-vendor-direct-fulfillment-sandbox-test-data"]
+vendor-direct-fulfillment-shipping = ["amazon-sp-vendor-direct-fulfillment-shipping"]
+vendor-direct-fulfillment-transactions = ["amazon-sp-vendor-direct-fulfillment-transactions"]
+vendor-invoices = ["amazon-sp-vendor-invoices"]
+vendor-orders = ["amazon-sp-vendor-orders"]
+vendor-shipments = ["amazon-sp-vendor-shipments"]
+vendor-transaction-status = ["amazon-sp-vendor-transaction-status"]
+
 [dependencies]
 amazon-sp-api-shared = { path = "../amazon-sp-api-shared" }
 aws-sig-auth = "0.46.0"
 http = "0.2.8"
 thiserror = "1.0.31"
+
+amazon-sp-aplus-content = { version = "0.1.0", optional = true }
+amazon-sp-authorization = { version = "0.1.0", optional = true }
+amazon-sp-catalog-items = { version = "0.1.0", optional = true }
+amazon-sp-easy-ship = { version = "0.1.0", optional = true }
+amazon-sp-fba-inbound-eligibility = { version = "0.1.0", optional = true }
+amazon-sp-fba-inventory = { version = "0.1.0", optional = true }
+amazon-sp-fba-small-and-light = { version = "0.1.0", optional = true }
+amazon-sp-feeds = { version = "0.1.0", optional = true }
+amazon-sp-finances = { version = "0.1.0", optional = true }
+amazon-sp-fulfillment-inbound = { version = "0.1.0", optional = true }
+amazon-sp-fulfillment-outbound = { version = "0.1.0", optional = true }
+amazon-sp-listings-items = { version = "0.1.0", optional = true }
+amazon-sp-listings-restrictions = { version = "0.1.0", optional = true }
+amazon-sp-merchant-fulfillment = { version = "0.1.0", optional = true }
+amazon-sp-messaging = { version = "0.1.0", optional = true }
+amazon-sp-notifications = { version = "0.1.0", optional = true }
+amazon-sp-orders = { version = "0.1.0", optional = true }
+amazon-sp-product-fees = { version = "0.1.0", optional = true }
+amazon-sp-product-pricing = { version = "0.1.0", optional = true }
+amazon-sp-product-type-definitions = { version = "0.1.0", optional = true }
+amazon-sp-reports = { version = "0.1.0", optional = true }
+amazon-sp-sales = { version = "0.1.0", optional = true }
+amazon-sp-sellers = { version = "0.1.0", optional = true }
+amazon-sp-services = { version = "0.1.0", optional = true }
+amazon-sp-shipment-invoicing = { version = "0.1.0", optional = true }
+amazon-sp-shipping = { version = "0.1.0", optional = true }
+amazon-sp-solicitations = { version = "0.1.0", optional = true }
+amazon-sp-tokens = { version = "0.1.0", optional = true }
+amazon-sp-uploads = { version = "0.1.0", optional = true }
+amazon-sp-vendor-direct-fulfillment-inventory = { version = "0.1.0", optional = true }
+amazon-sp-vendor-direct-fulfillment-orders = { version = "0.1.0", optional = true }
+amazon-sp-vendor-direct-fulfillment-payments = { version = "0.1.0", optional = true }
+amazon-sp-vendor-direct-fulfillment-sandbox-test-data = { version = "0.1.0", optional = true }
+amazon-sp-vendor-direct-fulfillment-shipping = { version = "0.1.0", optional = true }
+amazon-sp-vendor-direct-fulfillment-transactions = { version = "0.1.0", optional = true }
+amazon-sp-vendor-invoices = { version = "0.1.0", optional = true }
+amazon-sp-vendor-orders = { version = "0.1.0", optional = true }
+amazon-sp-vendor-shipments = { version = "0.1.0", optional = true }
+amazon-sp-vendor-transaction-status = { version = "0.1.0", optional = true }

@@ -46,3 +46,45 @@ members = [
   "generated/amazon-sp-vendor-shipments",
   "generated/amazon-sp-vendor-transaction-status"
 ]
+
+[patch.crates-io]
+amazon-sp-api-shared = { path = "./crates/amazon-sp-api-shared" }
+amazon-sp-aplus-content = { path = "./generated/amazon-sp-aplus-content" }
+amazon-sp-authorization = { path = "./generated/amazon-sp-authorization" }
+amazon-sp-catalog-items = { path = "./generated/amazon-sp-catalog-items" }
+amazon-sp-easy-ship = { path = "./generated/amazon-sp-easy-ship" }
+amazon-sp-fba-inbound-eligibility = { path = "./generated/amazon-sp-fba-inbound-eligibility" }
+amazon-sp-fba-inventory = { path = "./generated/amazon-sp-fba-inventory" }
+amazon-sp-fba-small-and-light = { path = "./generated/amazon-sp-fba-small-and-light" }
+amazon-sp-feeds = { path = "./generated/amazon-sp-feeds" }
+amazon-sp-finances = { path = "./generated/amazon-sp-finances" }
+amazon-sp-fulfillment-inbound = { path = "./generated/amazon-sp-fulfillment-inbound" }
+amazon-sp-fulfillment-outbound = { path = "./generated/amazon-sp-fulfillment-outbound" }
+amazon-sp-listings-items = { path = "./generated/amazon-sp-listings-items" }
+amazon-sp-listings-restrictions = { path = "./generated/amazon-sp-listings-restrictions" }
+amazon-sp-merchant-fulfillment = { path = "./generated/amazon-sp-merchant-fulfillment" }
+amazon-sp-messaging = { path = "./generated/amazon-sp-messaging" }
+amazon-sp-notifications = { path = "./generated/amazon-sp-notifications" }
+amazon-sp-orders = { path = "./generated/amazon-sp-orders" }
+amazon-sp-product-fees = { path = "./generated/amazon-sp-product-fees" }
+amazon-sp-product-pricing = { path = "./generated/amazon-sp-product-pricing" }
+amazon-sp-product-type-definitions = { path = "./generated/amazon-sp-product-type-definitions" }
+amazon-sp-reports = { path = "./generated/amazon-sp-reports" }
+amazon-sp-sales = { path = "./generated/amazon-sp-sales" }
+amazon-sp-sellers = { path = "./generated/amazon-sp-sellers" }
+amazon-sp-services = { path = "./generated/amazon-sp-services" }
+amazon-sp-shipment-invoicing = { path = "./generated/amazon-sp-shipment-invoicing" }
+amazon-sp-shipping = { path = "./generated/amazon-sp-shipping" }
+amazon-sp-solicitations = { path = "./generated/amazon-sp-solicitations" }
+amazon-sp-tokens = { path = "./generated/amazon-sp-tokens" }
+amazon-sp-uploads = { path = "./generated/amazon-sp-uploads" }
+amazon-sp-vendor-direct-fulfillment-inventory = { path = "./generated/amazon-sp-vendor-direct-fulfillment-inventory" }
+amazon-sp-vendor-direct-fulfillment-orders = { path = "./generated/amazon-sp-vendor-direct-fulfillment-orders" }
+amazon-sp-vendor-direct-fulfillment-payments = { path = "./generated/amazon-sp-vendor-direct-fulfillment-payments" }
+amazon-sp-vendor-direct-fulfillment-sandbox-test-data = { path = "./generated/amazon-sp-vendor-direct-fulfillment-sandbox-test-data" }
+amazon-sp-vendor-direct-fulfillment-shipping = { path = "./generated/amazon-sp-vendor-direct-fulfillment-shipping" }
+amazon-sp-vendor-direct-fulfillment-transactions = { path = "./generated/amazon-sp-vendor-direct-fulfillment-transactions" }
+amazon-sp-vendor-invoices = { path = "./generated/amazon-sp-vendor-invoices" }
+amazon-sp-vendor-orders = { path = "./generated/amazon-sp-vendor-orders" }
+amazon-sp-vendor-shipments = { path = "./generated/amazon-sp-vendor-shipments" }
+amazon-sp-vendor-transaction-status = { path = "./generated/amazon-sp-vendor-transaction-status" }

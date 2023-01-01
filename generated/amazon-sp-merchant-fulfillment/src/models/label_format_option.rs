@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LabelFormatOption {
     /// When true, include a packing slip with the label.
-    #[serde(rename = "IncludePackingSlipWithLabel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IncludePackingSlipWithLabel", skip_serializing_if = "Option::is_none")]
     pub include_packing_slip_with_label: Option<bool>,
-    #[serde(rename = "LabelFormat", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LabelFormat", skip_serializing_if = "Option::is_none")]
     pub label_format: Option<crate::models::LabelFormat>,
 }
 

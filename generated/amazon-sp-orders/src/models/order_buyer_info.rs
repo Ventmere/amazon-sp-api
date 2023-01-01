@@ -15,21 +15,21 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderBuyerInfo {
     /// An Amazon-defined order identifier, in 3-7-7 format.
-    #[serde(rename = "AmazonOrderId")]
+    #[serde(default, rename = "AmazonOrderId")]
     pub amazon_order_id: String,
     /// The anonymized email address of the buyer.
-    #[serde(rename = "BuyerEmail", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerEmail", skip_serializing_if = "Option::is_none")]
     pub buyer_email: Option<String>,
     /// The buyer name or the recipient name.
-    #[serde(rename = "BuyerName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerName", skip_serializing_if = "Option::is_none")]
     pub buyer_name: Option<String>,
     /// The county of the buyer.
-    #[serde(rename = "BuyerCounty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerCounty", skip_serializing_if = "Option::is_none")]
     pub buyer_county: Option<String>,
-    #[serde(rename = "BuyerTaxInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerTaxInfo", skip_serializing_if = "Option::is_none")]
     pub buyer_tax_info: Option<Box<crate::models::BuyerTaxInfo>>,
     /// The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
-    #[serde(rename = "PurchaseOrderNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PurchaseOrderNumber", skip_serializing_if = "Option::is_none")]
     pub purchase_order_number: Option<String>,
 }
 

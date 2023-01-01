@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ProcessingDirective {
-    #[serde(rename = "eventFilter", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "eventFilter", skip_serializing_if = "Option::is_none")]
     pub event_filter: Option<Box<crate::models::EventFilter>>,
 }
 

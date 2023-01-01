@@ -15,26 +15,26 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentShipment {
     /// A shipment identifier assigned by Amazon.
-    #[serde(rename = "amazonShipmentId")]
+    #[serde(default, rename = "amazonShipmentId")]
     pub amazon_shipment_id: String,
     /// An identifier for the fulfillment center that the shipment will be sent from.
-    #[serde(rename = "fulfillmentCenterId")]
+    #[serde(default, rename = "fulfillmentCenterId")]
     pub fulfillment_center_id: String,
     /// The current status of the shipment.
-    #[serde(rename = "fulfillmentShipmentStatus")]
+    #[serde(default, rename = "fulfillmentShipmentStatus")]
     pub fulfillment_shipment_status: FulfillmentShipmentStatus,
-    #[serde(rename = "shippingDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingDate", skip_serializing_if = "Option::is_none")]
     pub shipping_date: Option<String>,
-    #[serde(rename = "estimatedArrivalDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedArrivalDate", skip_serializing_if = "Option::is_none")]
     pub estimated_arrival_date: Option<String>,
     /// Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren't available.
-    #[serde(rename = "shippingNotes", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingNotes", skip_serializing_if = "Option::is_none")]
     pub shipping_notes: Option<Vec<String>>,
     /// An array of fulfillment shipment item information.
-    #[serde(rename = "fulfillmentShipmentItem")]
+    #[serde(default, rename = "fulfillmentShipmentItem")]
     pub fulfillment_shipment_item: Vec<crate::models::FulfillmentShipmentItem>,
     /// An array of fulfillment shipment package information.
-    #[serde(rename = "fulfillmentShipmentPackage", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentShipmentPackage", skip_serializing_if = "Option::is_none")]
     pub fulfillment_shipment_package: Option<Vec<crate::models::FulfillmentShipmentPackage>>,
 }
 

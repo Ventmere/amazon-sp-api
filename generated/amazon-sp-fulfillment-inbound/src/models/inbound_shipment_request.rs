@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InboundShipmentRequest {
-    #[serde(rename = "InboundShipmentHeader")]
+    #[serde(default, rename = "InboundShipmentHeader")]
     pub inbound_shipment_header: Box<crate::models::InboundShipmentHeader>,
     /// A list of inbound shipment item information.
-    #[serde(rename = "InboundShipmentItems")]
+    #[serde(default, rename = "InboundShipmentItems")]
     pub inbound_shipment_items: Vec<crate::models::InboundShipmentItem>,
     /// A marketplace identifier. Specifies the marketplace where the product would be stored.
-    #[serde(rename = "MarketplaceId")]
+    #[serde(default, rename = "MarketplaceId")]
     pub marketplace_id: String,
 }
 

@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetMyFeesEstimatesErrorList {
-    #[serde(rename = "errors")]
+    #[serde(default, rename = "errors")]
     pub errors: Vec<crate::models::Error>,
 }
 

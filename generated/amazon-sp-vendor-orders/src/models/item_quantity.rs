@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemQuantity {
     /// Acknowledged quantity. This value should not be zero.
-    #[serde(rename = "amount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "amount", skip_serializing_if = "Option::is_none")]
     pub amount: Option<i32>,
     /// Unit of measure for the acknowledged quantity.
-    #[serde(rename = "unitOfMeasure", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "unitOfMeasure", skip_serializing_if = "Option::is_none")]
     pub unit_of_measure: Option<UnitOfMeasure>,
     /// The case size, in the event that we ordered using cases.
-    #[serde(rename = "unitSize", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "unitSize", skip_serializing_if = "Option::is_none")]
     pub unit_size: Option<i32>,
 }
 

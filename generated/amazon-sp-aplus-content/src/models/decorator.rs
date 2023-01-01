@@ -14,16 +14,16 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Decorator {
-    #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "type", skip_serializing_if = "Option::is_none")]
     pub _type: Option<crate::models::DecoratorType>,
     /// The starting character of this decorator within the content string. Use zero for the first character.
-    #[serde(rename = "offset", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "offset", skip_serializing_if = "Option::is_none")]
     pub offset: Option<i32>,
     /// The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.
-    #[serde(rename = "length", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "length", skip_serializing_if = "Option::is_none")]
     pub length: Option<i32>,
     /// The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
-    #[serde(rename = "depth", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "depth", skip_serializing_if = "Option::is_none")]
     pub depth: Option<i32>,
 }
 

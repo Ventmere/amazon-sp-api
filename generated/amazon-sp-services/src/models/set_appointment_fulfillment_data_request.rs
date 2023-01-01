@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SetAppointmentFulfillmentDataRequest {
-    #[serde(rename = "fulfillmentTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentTime", skip_serializing_if = "Option::is_none")]
     pub fulfillment_time: Option<Box<crate::models::FulfillmentTime>>,
     /// List of resources that performs or performed job appointment fulfillment.
-    #[serde(rename = "appointmentResources", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "appointmentResources", skip_serializing_if = "Option::is_none")]
     pub appointment_resources: Option<Vec<crate::models::AppointmentResource>>,
     /// List of documents captured during service appointment fulfillment.
-    #[serde(rename = "fulfillmentDocuments", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentDocuments", skip_serializing_if = "Option::is_none")]
     pub fulfillment_documents: Option<Vec<crate::models::FulfillmentDocument>>,
 }
 

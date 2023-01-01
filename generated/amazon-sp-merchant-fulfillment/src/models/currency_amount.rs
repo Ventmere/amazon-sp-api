@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CurrencyAmount {
     /// Three-digit currency code in ISO 4217 format.
-    #[serde(rename = "CurrencyCode")]
+    #[serde(default, rename = "CurrencyCode")]
     pub currency_code: String,
     /// The currency amount.
-    #[serde(rename = "Amount")]
+    #[serde(default, rename = "Amount")]
     pub amount: f64,
 }
 

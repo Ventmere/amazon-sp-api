@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ProductTypeVersion {
     /// Version identifier.
-    #[serde(rename = "version")]
+    #[serde(default, rename = "version")]
     pub version: String,
     /// When true, the version indicated by the version identifier is the latest available for the Amazon product type.
-    #[serde(rename = "latest")]
+    #[serde(default, rename = "latest")]
     pub latest: bool,
     /// When true, the version indicated by the version identifier is the prerelease (release candidate) for the Amazon product type.
-    #[serde(rename = "releaseCandidate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "releaseCandidate", skip_serializing_if = "Option::is_none")]
     pub release_candidate: Option<bool>,
 }
 

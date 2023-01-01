@@ -14,12 +14,12 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Pallet {
-    #[serde(rename = "Dimensions")]
+    #[serde(default, rename = "Dimensions")]
     pub dimensions: Box<crate::models::Dimensions>,
-    #[serde(rename = "Weight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Weight", skip_serializing_if = "Option::is_none")]
     pub weight: Option<Box<crate::models::Weight>>,
     /// Indicates whether pallets will be stacked when carrier arrives for pick-up.
-    #[serde(rename = "IsStacked")]
+    #[serde(default, rename = "IsStacked")]
     pub is_stacked: bool,
 }
 

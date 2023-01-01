@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardTextModule {
-    #[serde(rename = "headline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headline", skip_serializing_if = "Option::is_none")]
     pub headline: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "body")]
+    #[serde(default, rename = "body")]
     pub body: Box<crate::models::ParagraphComponent>,
 }
 

@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CustomerInvoice {
     /// The purchase order number for this order.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
     /// The Base64encoded customer invoice.
-    #[serde(rename = "content")]
+    #[serde(default, rename = "content")]
     pub content: String,
 }
 

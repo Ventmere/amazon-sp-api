@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Currency {
     /// The amount of currency.
-    #[serde(rename = "value")]
+    #[serde(default, rename = "value")]
     pub value: f32,
     /// A 3-character currency code.
-    #[serde(rename = "unit")]
+    #[serde(default, rename = "unit")]
     pub unit: String,
 }
 

@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListFinancialEventGroupsPayload {
     /// When present and not empty, pass this string token in the next request to return the next response page.
-    #[serde(rename = "NextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
     /// A list of financial event group information.
-    #[serde(rename = "FinancialEventGroupList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FinancialEventGroupList", skip_serializing_if = "Option::is_none")]
     pub financial_event_group_list: Option<Vec<crate::models::FinancialEventGroup>>,
 }
 

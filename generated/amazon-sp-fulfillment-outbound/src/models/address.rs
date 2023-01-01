@@ -15,34 +15,34 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Address {
     /// The name of the person, business or institution at the address.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
     /// The first line of the address.
-    #[serde(rename = "addressLine1")]
+    #[serde(default, rename = "addressLine1")]
     pub address_line1: String,
     /// Additional address information, if required.
-    #[serde(rename = "addressLine2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "addressLine2", skip_serializing_if = "Option::is_none")]
     pub address_line2: Option<String>,
     /// Additional address information, if required.
-    #[serde(rename = "addressLine3", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "addressLine3", skip_serializing_if = "Option::is_none")]
     pub address_line3: Option<String>,
     /// The city where the person, business, or institution is located.
-    #[serde(rename = "city", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "city", skip_serializing_if = "Option::is_none")]
     pub city: Option<String>,
     /// The district or county where the person, business, or institution is located.
-    #[serde(rename = "districtOrCounty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "districtOrCounty", skip_serializing_if = "Option::is_none")]
     pub district_or_county: Option<String>,
     /// The state or region where the person, business or institution is located.
-    #[serde(rename = "stateOrRegion")]
+    #[serde(default, rename = "stateOrRegion")]
     pub state_or_region: String,
     /// The postal code of the address.
-    #[serde(rename = "postalCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "postalCode", skip_serializing_if = "Option::is_none")]
     pub postal_code: Option<String>,
     /// The two digit country code. In ISO 3166-1 alpha-2 format.
-    #[serde(rename = "countryCode")]
+    #[serde(default, rename = "countryCode")]
     pub country_code: String,
     /// The phone number of the person, business, or institution located at the address.
-    #[serde(rename = "phone", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "phone", skip_serializing_if = "Option::is_none")]
     pub phone: Option<String>,
 }
 

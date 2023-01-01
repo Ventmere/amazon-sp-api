@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentShipmentItem {
     /// The seller SKU of the item.
-    #[serde(rename = "sellerSku")]
+    #[serde(default, rename = "sellerSku")]
     pub seller_sku: String,
     /// The fulfillment order item identifier that the seller created and submitted with a call to the createFulfillmentOrder operation.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
     /// The item quantity.
-    #[serde(rename = "quantity")]
+    #[serde(default, rename = "quantity")]
     pub quantity: i32,
     /// An identifier for the package that contains the item quantity.
-    #[serde(rename = "packageNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageNumber", skip_serializing_if = "Option::is_none")]
     pub package_number: Option<i32>,
     /// The serial number of the shipped item.
-    #[serde(rename = "serialNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serialNumber", skip_serializing_if = "Option::is_none")]
     pub serial_number: Option<String>,
 }
 

@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Technician {
     /// The technician identifier.
-    #[serde(rename = "technicianId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "technicianId", skip_serializing_if = "Option::is_none")]
     pub technician_id: Option<String>,
     /// The name of the technician.
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
 }
 

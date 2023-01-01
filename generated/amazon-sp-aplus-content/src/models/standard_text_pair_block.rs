@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardTextPairBlock {
-    #[serde(rename = "label", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "label", skip_serializing_if = "Option::is_none")]
     pub label: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<Box<crate::models::TextComponent>>,
 }
 

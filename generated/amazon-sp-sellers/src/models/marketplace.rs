@@ -15,22 +15,22 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Marketplace {
     /// The encrypted marketplace value.
-    #[serde(rename = "id")]
+    #[serde(default, rename = "id")]
     pub id: String,
     /// Marketplace name.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
     /// The ISO 3166-1 alpha-2 format country code of the marketplace.
-    #[serde(rename = "countryCode")]
+    #[serde(default, rename = "countryCode")]
     pub country_code: String,
     /// The ISO 4217 format currency code of the marketplace.
-    #[serde(rename = "defaultCurrencyCode")]
+    #[serde(default, rename = "defaultCurrencyCode")]
     pub default_currency_code: String,
     /// The ISO 639-1 format language code of the marketplace.
-    #[serde(rename = "defaultLanguageCode")]
+    #[serde(default, rename = "defaultLanguageCode")]
     pub default_language_code: String,
     /// The domain name of the marketplace.
-    #[serde(rename = "domainName")]
+    #[serde(default, rename = "domainName")]
     pub domain_name: String,
 }
 

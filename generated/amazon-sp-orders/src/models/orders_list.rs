@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrdersList {
     /// A list of orders.
-    #[serde(rename = "Orders")]
+    #[serde(default, rename = "Orders")]
     pub orders: Vec<crate::models::Order>,
     /// When present and not empty, pass this string token in the next request to return the next response page.
-    #[serde(rename = "NextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
     /// A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in ISO 8601 format.
-    #[serde(rename = "LastUpdatedBefore", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LastUpdatedBefore", skip_serializing_if = "Option::is_none")]
     pub last_updated_before: Option<String>,
     /// A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
-    #[serde(rename = "CreatedBefore", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CreatedBefore", skip_serializing_if = "Option::is_none")]
     pub created_before: Option<String>,
 }
 

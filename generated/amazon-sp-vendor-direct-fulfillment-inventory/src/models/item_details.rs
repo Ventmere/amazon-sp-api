@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemDetails {
     /// The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
-    #[serde(rename = "buyerProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "buyerProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub buyer_product_identifier: Option<String>,
     /// The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
-    #[serde(rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub vendor_product_identifier: Option<String>,
-    #[serde(rename = "availableQuantity")]
+    #[serde(default, rename = "availableQuantity")]
     pub available_quantity: Box<crate::models::ItemQuantity>,
     /// When true, the item is permanently unavailable.
-    #[serde(rename = "isObsolete", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "isObsolete", skip_serializing_if = "Option::is_none")]
     pub is_obsolete: Option<bool>,
 }
 

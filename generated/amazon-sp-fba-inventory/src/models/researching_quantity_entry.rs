@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ResearchingQuantityEntry {
     /// The duration of the research.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: Name,
     /// The number of units.
-    #[serde(rename = "quantity")]
+    #[serde(default, rename = "quantity")]
     pub quantity: i32,
 }
 

@@ -14,16 +14,16 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Item {
-    #[serde(rename = "Identifiers")]
+    #[serde(default, rename = "Identifiers")]
     pub identifiers: Box<crate::models::IdentifierType>,
     /// A list of attributes for the item.
-    #[serde(rename = "AttributeSets", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AttributeSets", skip_serializing_if = "Option::is_none")]
     pub attribute_sets: Option<Vec<crate::models::AttributeSetListType>>,
     /// A list of variation relationship information, if applicable for the item.
-    #[serde(rename = "Relationships", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Relationships", skip_serializing_if = "Option::is_none")]
     pub relationships: Option<Vec<crate::models::RelationshipType>>,
     /// A list of sales rank information for the item by category.
-    #[serde(rename = "SalesRankings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SalesRankings", skip_serializing_if = "Option::is_none")]
     pub sales_rankings: Option<Vec<crate::models::SalesRankType>>,
 }
 

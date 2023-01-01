@@ -15,23 +15,23 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderStatus {
     /// The buyer's purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
     /// The status of the buyer's purchase order for this order.
-    #[serde(rename = "purchaseOrderStatus")]
+    #[serde(default, rename = "purchaseOrderStatus")]
     pub purchase_order_status: PurchaseOrderStatus,
     /// The date the purchase order was placed. Must be in ISO-8601 date/time format.
-    #[serde(rename = "purchaseOrderDate")]
+    #[serde(default, rename = "purchaseOrderDate")]
     pub purchase_order_date: String,
     /// The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
-    #[serde(rename = "lastUpdatedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "lastUpdatedDate", skip_serializing_if = "Option::is_none")]
     pub last_updated_date: Option<String>,
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipToParty")]
+    #[serde(default, rename = "shipToParty")]
     pub ship_to_party: Box<crate::models::PartyIdentification>,
     /// Detailed description of items order status.
-    #[serde(rename = "itemStatus")]
+    #[serde(default, rename = "itemStatus")]
     pub item_status: Vec<crate::models::OrderItemStatus>,
 }
 

@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Packages {
-    #[serde(rename = "packages")]
+    #[serde(default, rename = "packages")]
     pub packages: Vec<crate::models::Package>,
 }
 

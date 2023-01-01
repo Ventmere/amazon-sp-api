@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ServiceDocumentUploadDestination {
     /// The unique identifier to be used by APIs that reference the upload destination.
-    #[serde(rename = "uploadDestinationId")]
+    #[serde(default, rename = "uploadDestinationId")]
     pub upload_destination_id: String,
     /// The URL to which to upload the file.
-    #[serde(rename = "url")]
+    #[serde(default, rename = "url")]
     pub url: String,
-    #[serde(rename = "encryptionDetails")]
+    #[serde(default, rename = "encryptionDetails")]
     pub encryption_details: Box<crate::models::EncryptionDetails>,
     /// The headers to include in the upload request.
-    #[serde(rename = "headers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headers", skip_serializing_if = "Option::is_none")]
     pub headers: Option<serde_json::Value>,
 }
 

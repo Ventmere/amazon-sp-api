@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Promotion {
     /// The type of promotion.
-    #[serde(rename = "PromotionType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PromotionType", skip_serializing_if = "Option::is_none")]
     pub promotion_type: Option<String>,
     /// The seller-specified identifier for the promotion.
-    #[serde(rename = "PromotionId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PromotionId", skip_serializing_if = "Option::is_none")]
     pub promotion_id: Option<String>,
-    #[serde(rename = "PromotionAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PromotionAmount", skip_serializing_if = "Option::is_none")]
     pub promotion_amount: Option<Box<crate::models::Currency>>,
 }
 

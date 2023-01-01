@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemDelivery {
     /// The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
-    #[serde(rename = "estimatedDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub estimated_delivery_date: Option<String>,
-    #[serde(rename = "itemDeliveryPromise", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "itemDeliveryPromise", skip_serializing_if = "Option::is_none")]
     pub item_delivery_promise: Option<Box<crate::models::ItemDeliveryPromise>>,
 }
 

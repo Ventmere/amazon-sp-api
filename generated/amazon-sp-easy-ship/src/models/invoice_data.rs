@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InvoiceData {
     /// A string of up to 255 characters.
-    #[serde(rename = "invoiceNumber")]
+    #[serde(default, rename = "invoiceNumber")]
     pub invoice_number: String,
     /// A datetime value in ISO 8601 format.
-    #[serde(rename = "invoiceDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "invoiceDate", skip_serializing_if = "Option::is_none")]
     pub invoice_date: Option<String>,
 }
 

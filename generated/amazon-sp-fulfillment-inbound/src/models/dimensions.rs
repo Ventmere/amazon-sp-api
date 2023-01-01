@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Dimensions {
-    #[serde(rename = "Length")]
+    #[serde(default, rename = "Length")]
     pub length: f64,
-    #[serde(rename = "Width")]
+    #[serde(default, rename = "Width")]
     pub width: f64,
-    #[serde(rename = "Height")]
+    #[serde(default, rename = "Height")]
     pub height: f64,
-    #[serde(rename = "Unit")]
+    #[serde(default, rename = "Unit")]
     pub unit: crate::models::UnitOfMeasurement,
 }
 

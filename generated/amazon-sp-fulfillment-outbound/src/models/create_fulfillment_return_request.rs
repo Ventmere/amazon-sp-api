@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateFulfillmentReturnRequest {
     /// An array of items to be returned.
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::CreateReturnItem>,
 }
 

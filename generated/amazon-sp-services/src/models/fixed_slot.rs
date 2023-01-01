@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FixedSlot {
     /// Start date time of slot in ISO 8601 format with precision of seconds.
-    #[serde(rename = "startDateTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "startDateTime", skip_serializing_if = "Option::is_none")]
     pub start_date_time: Option<String>,
     /// Scheduled capacity corresponding to the slot. This capacity represents the originally allocated capacity as per resource schedule.
-    #[serde(rename = "scheduledCapacity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scheduledCapacity", skip_serializing_if = "Option::is_none")]
     pub scheduled_capacity: Option<i32>,
     /// Available capacity corresponding to the slot. This capacity represents the capacity available for allocation to reservations.
-    #[serde(rename = "availableCapacity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "availableCapacity", skip_serializing_if = "Option::is_none")]
     pub available_capacity: Option<i32>,
     /// Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.
-    #[serde(rename = "encumberedCapacity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "encumberedCapacity", skip_serializing_if = "Option::is_none")]
     pub encumbered_capacity: Option<i32>,
     /// Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.
-    #[serde(rename = "reservedCapacity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reservedCapacity", skip_serializing_if = "Option::is_none")]
     pub reserved_capacity: Option<i32>,
 }
 

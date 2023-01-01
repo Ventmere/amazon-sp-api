@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Price {
     /// The amount.
-    #[serde(rename = "Amount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Amount", skip_serializing_if = "Option::is_none")]
     pub amount: Option<f32>,
     /// The currency code of the amount.
-    #[serde(rename = "CurrencyCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CurrencyCode", skip_serializing_if = "Option::is_none")]
     pub currency_code: Option<String>,
 }
 

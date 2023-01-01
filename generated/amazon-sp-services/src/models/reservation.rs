@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Reservation {
     /// Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
-    #[serde(rename = "reservationId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reservationId", skip_serializing_if = "Option::is_none")]
     pub reservation_id: Option<String>,
     /// Type of reservation.
-    #[serde(rename = "type")]
+    #[serde(default, rename = "type")]
     pub _type: Type,
-    #[serde(rename = "availability")]
+    #[serde(default, rename = "availability")]
     pub availability: Box<crate::models::AvailabilityRecord>,
 }
 

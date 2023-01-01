@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SchemaLinkLink {
     /// URI resource for the link.
-    #[serde(rename = "resource")]
+    #[serde(default, rename = "resource")]
     pub resource: String,
     /// HTTP method for the link operation.
-    #[serde(rename = "verb")]
+    #[serde(default, rename = "verb")]
     pub verb: Verb,
 }
 

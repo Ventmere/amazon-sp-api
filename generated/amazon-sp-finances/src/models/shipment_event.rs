@@ -15,42 +15,42 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentEvent {
     /// An Amazon-defined identifier for an order.
-    #[serde(rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
     pub amazon_order_id: Option<String>,
     /// A seller-defined identifier for an order.
-    #[serde(rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
     pub seller_order_id: Option<String>,
     /// The name of the marketplace where the event occurred.
-    #[serde(rename = "MarketplaceName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceName", skip_serializing_if = "Option::is_none")]
     pub marketplace_name: Option<String>,
     /// A list of charge information on the seller's account.
-    #[serde(rename = "OrderChargeList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderChargeList", skip_serializing_if = "Option::is_none")]
     pub order_charge_list: Option<Vec<crate::models::ChargeComponent>>,
     /// A list of charge information on the seller's account.
-    #[serde(rename = "OrderChargeAdjustmentList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderChargeAdjustmentList", skip_serializing_if = "Option::is_none")]
     pub order_charge_adjustment_list: Option<Vec<crate::models::ChargeComponent>>,
     /// A list of fee component information.
-    #[serde(rename = "ShipmentFeeList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentFeeList", skip_serializing_if = "Option::is_none")]
     pub shipment_fee_list: Option<Vec<crate::models::FeeComponent>>,
     /// A list of fee component information.
-    #[serde(rename = "ShipmentFeeAdjustmentList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentFeeAdjustmentList", skip_serializing_if = "Option::is_none")]
     pub shipment_fee_adjustment_list: Option<Vec<crate::models::FeeComponent>>,
     /// A list of fee component information.
-    #[serde(rename = "OrderFeeList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderFeeList", skip_serializing_if = "Option::is_none")]
     pub order_fee_list: Option<Vec<crate::models::FeeComponent>>,
     /// A list of fee component information.
-    #[serde(rename = "OrderFeeAdjustmentList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderFeeAdjustmentList", skip_serializing_if = "Option::is_none")]
     pub order_fee_adjustment_list: Option<Vec<crate::models::FeeComponent>>,
     /// A list of direct payment information.
-    #[serde(rename = "DirectPaymentList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DirectPaymentList", skip_serializing_if = "Option::is_none")]
     pub direct_payment_list: Option<Vec<crate::models::DirectPayment>>,
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// A list of shipment items.
-    #[serde(rename = "ShipmentItemList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentItemList", skip_serializing_if = "Option::is_none")]
     pub shipment_item_list: Option<Vec<crate::models::ShipmentItem>>,
     /// A list of shipment items.
-    #[serde(rename = "ShipmentItemAdjustmentList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentItemAdjustmentList", skip_serializing_if = "Option::is_none")]
     pub shipment_item_adjustment_list: Option<Vec<crate::models::ShipmentItem>>,
 }
 

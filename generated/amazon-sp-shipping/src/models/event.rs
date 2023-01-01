@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Event {
     /// The event code of a shipment, such as Departed, Received, and ReadyForReceive.
-    #[serde(rename = "eventCode")]
+    #[serde(default, rename = "eventCode")]
     pub event_code: String,
     /// The date and time of an event for a shipment.
-    #[serde(rename = "eventTime")]
+    #[serde(default, rename = "eventTime")]
     pub event_time: String,
-    #[serde(rename = "location", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "location", skip_serializing_if = "Option::is_none")]
     pub location: Option<Box<crate::models::Location>>,
 }
 

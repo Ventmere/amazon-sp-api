@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdateVerificationStatusRequest {
-    #[serde(rename = "regulatedOrderVerificationStatus")]
+    #[serde(default, rename = "regulatedOrderVerificationStatus")]
     pub regulated_order_verification_status: Box<crate::models::UpdateVerificationStatusRequestBody>,
 }
 

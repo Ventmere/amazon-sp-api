@@ -15,20 +15,20 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StatusUpdateDetails {
     /// This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation.
-    #[serde(rename = "trackingNumber")]
+    #[serde(default, rename = "trackingNumber")]
     pub tracking_number: String,
     /// Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer.
-    #[serde(rename = "statusCode")]
+    #[serde(default, rename = "statusCode")]
     pub status_code: String,
     /// Provides a reason code for the status of the package that will provide additional information about the transportation status.
-    #[serde(rename = "reasonCode")]
+    #[serde(default, rename = "reasonCode")]
     pub reason_code: String,
     /// The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
-    #[serde(rename = "statusDateTime")]
+    #[serde(default, rename = "statusDateTime")]
     pub status_date_time: String,
-    #[serde(rename = "statusLocationAddress")]
+    #[serde(default, rename = "statusLocationAddress")]
     pub status_location_address: Box<crate::models::Address>,
-    #[serde(rename = "shipmentSchedule", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipmentSchedule", skip_serializing_if = "Option::is_none")]
     pub shipment_schedule: Option<Box<crate::models::StatusUpdateDetailsShipmentSchedule>>,
 }
 

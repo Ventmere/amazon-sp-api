@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Destination {
     /// The developer-defined name for this destination.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
     /// The destination identifier generated when you created the destination.
-    #[serde(rename = "destinationId")]
+    #[serde(default, rename = "destinationId")]
     pub destination_id: String,
-    #[serde(rename = "resource")]
+    #[serde(default, rename = "resource")]
     pub resource: Box<crate::models::DestinationResource>,
 }
 

@@ -14,19 +14,19 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentPreviewShipment {
-    #[serde(rename = "earliestShipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "earliestShipDate", skip_serializing_if = "Option::is_none")]
     pub earliest_ship_date: Option<String>,
-    #[serde(rename = "latestShipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "latestShipDate", skip_serializing_if = "Option::is_none")]
     pub latest_ship_date: Option<String>,
-    #[serde(rename = "earliestArrivalDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "earliestArrivalDate", skip_serializing_if = "Option::is_none")]
     pub earliest_arrival_date: Option<String>,
-    #[serde(rename = "latestArrivalDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "latestArrivalDate", skip_serializing_if = "Option::is_none")]
     pub latest_arrival_date: Option<String>,
     /// Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
-    #[serde(rename = "shippingNotes", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingNotes", skip_serializing_if = "Option::is_none")]
     pub shipping_notes: Option<Vec<String>>,
     /// An array of fulfillment preview item information.
-    #[serde(rename = "fulfillmentPreviewItems")]
+    #[serde(default, rename = "fulfillmentPreviewItems")]
     pub fulfillment_preview_items: Vec<crate::models::FulfillmentPreviewItem>,
 }
 

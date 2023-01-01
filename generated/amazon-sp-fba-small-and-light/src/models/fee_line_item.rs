@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeeLineItem {
     /// The type of fee charged to the seller.
-    #[serde(rename = "feeType")]
+    #[serde(default, rename = "feeType")]
     pub fee_type: FeeType,
-    #[serde(rename = "feeCharge")]
+    #[serde(default, rename = "feeCharge")]
     pub fee_charge: Box<crate::models::MoneyType>,
 }
 

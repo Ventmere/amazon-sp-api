@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AcknowledgementStatus {
     /// Acknowledgement code is a unique two digit value which indicates the status of the acknowledgement. For a list of acknowledgement codes that Amazon supports, see the Vendor Direct Fulfillment APIs Use Case Guide.
-    #[serde(rename = "code", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "code", skip_serializing_if = "Option::is_none")]
     pub code: Option<String>,
     /// Reason for the acknowledgement code.
-    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
 }
 

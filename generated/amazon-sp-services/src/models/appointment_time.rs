@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AppointmentTime {
     /// The date and time of the start of the appointment window in ISO 8601 format.
-    #[serde(rename = "startTime")]
+    #[serde(default, rename = "startTime")]
     pub start_time: String,
     /// The duration of the appointment window, in minutes.
-    #[serde(rename = "durationInMinutes")]
+    #[serde(default, rename = "durationInMinutes")]
     pub duration_in_minutes: i32,
 }
 

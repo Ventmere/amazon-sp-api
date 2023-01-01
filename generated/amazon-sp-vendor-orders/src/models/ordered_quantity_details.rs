@@ -15,11 +15,11 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderedQuantityDetails {
     /// The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
-    #[serde(rename = "updatedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "updatedDate", skip_serializing_if = "Option::is_none")]
     pub updated_date: Option<String>,
-    #[serde(rename = "orderedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderedQuantity", skip_serializing_if = "Option::is_none")]
     pub ordered_quantity: Option<Box<crate::models::ItemQuantity>>,
-    #[serde(rename = "cancelledQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "cancelledQuantity", skip_serializing_if = "Option::is_none")]
     pub cancelled_quantity: Option<Box<crate::models::ItemQuantity>>,
 }
 

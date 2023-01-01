@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RejectionReason {
     /// The unique identifier for the rejection reason.
-    #[serde(rename = "RejectionReasonId")]
+    #[serde(default, rename = "RejectionReasonId")]
     pub rejection_reason_id: String,
     /// The description of this rejection reason.
-    #[serde(rename = "RejectionReasonDescription")]
+    #[serde(default, rename = "RejectionReasonDescription")]
     pub rejection_reason_description: String,
 }
 

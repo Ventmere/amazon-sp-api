@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ScheduledDeliveryInfo {
     /// The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo.
-    #[serde(rename = "deliveryTimeZone")]
+    #[serde(default, rename = "deliveryTimeZone")]
     pub delivery_time_zone: String,
     /// An array of delivery windows.
-    #[serde(rename = "deliveryWindows")]
+    #[serde(default, rename = "deliveryWindows")]
     pub delivery_windows: Vec<crate::models::DeliveryWindow>,
 }
 

@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Stop {
     /// Provide the function code.
-    #[serde(rename = "functionCode")]
+    #[serde(default, rename = "functionCode")]
     pub function_code: FunctionCode,
-    #[serde(rename = "locationIdentification", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "locationIdentification", skip_serializing_if = "Option::is_none")]
     pub location_identification: Option<Box<crate::models::Location>>,
     /// Date and time of the arrival of the cargo.
-    #[serde(rename = "arrivalTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "arrivalTime", skip_serializing_if = "Option::is_none")]
     pub arrival_time: Option<String>,
     /// Date and time of the departure of the cargo.
-    #[serde(rename = "departureTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "departureTime", skip_serializing_if = "Option::is_none")]
     pub departure_time: Option<String>,
 }
 

@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ProductTypeList {
-    #[serde(rename = "productTypes")]
+    #[serde(default, rename = "productTypes")]
     pub product_types: Vec<crate::models::ProductType>,
 }
 

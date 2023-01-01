@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CodSettings {
     /// When true, this fulfillment order requires a COD (Cash On Delivery) payment.
-    #[serde(rename = "isCodRequired")]
+    #[serde(default, rename = "isCodRequired")]
     pub is_cod_required: bool,
-    #[serde(rename = "codCharge", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "codCharge", skip_serializing_if = "Option::is_none")]
     pub cod_charge: Option<Box<crate::models::Money>>,
-    #[serde(rename = "codChargeTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "codChargeTax", skip_serializing_if = "Option::is_none")]
     pub cod_charge_tax: Option<Box<crate::models::Money>>,
-    #[serde(rename = "shippingCharge", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingCharge", skip_serializing_if = "Option::is_none")]
     pub shipping_charge: Option<Box<crate::models::Money>>,
-    #[serde(rename = "shippingChargeTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingChargeTax", skip_serializing_if = "Option::is_none")]
     pub shipping_charge_tax: Option<Box<crate::models::Money>>,
 }
 

@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TaxWithholdingEvent {
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
-    #[serde(rename = "BaseAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BaseAmount", skip_serializing_if = "Option::is_none")]
     pub base_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "WithheldAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "WithheldAmount", skip_serializing_if = "Option::is_none")]
     pub withheld_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "TaxWithholdingPeriod", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxWithholdingPeriod", skip_serializing_if = "Option::is_none")]
     pub tax_withholding_period: Option<Box<crate::models::TaxWithholdingPeriod>>,
 }
 

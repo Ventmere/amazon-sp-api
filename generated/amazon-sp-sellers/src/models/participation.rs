@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Participation {
-    #[serde(rename = "isParticipating")]
+    #[serde(default, rename = "isParticipating")]
     pub is_participating: bool,
     /// Specifies if the seller has suspended listings. True if the seller Listing Status is set to Inactive, otherwise False.
-    #[serde(rename = "hasSuspendedListings")]
+    #[serde(default, rename = "hasSuspendedListings")]
     pub has_suspended_listings: bool,
 }
 

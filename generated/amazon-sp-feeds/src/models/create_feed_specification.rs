@@ -14,16 +14,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateFeedSpecification {
     /// The feed type.
-    #[serde(rename = "feedType")]
+    #[serde(default, rename = "feedType")]
     pub feed_type: String,
     /// A list of identifiers for marketplaces that you want the feed to be applied to.
-    #[serde(rename = "marketplaceIds")]
+    #[serde(default, rename = "marketplaceIds")]
     pub marketplace_ids: Vec<String>,
     /// The document identifier returned by the createFeedDocument operation. Encrypt and upload the feed document contents before calling the createFeed operation.
-    #[serde(rename = "inputFeedDocumentId")]
+    #[serde(default, rename = "inputFeedDocumentId")]
     pub input_feed_document_id: String,
     /// Additional options to control the feed. For feeds that use the feedOptions parameter, you can find the parameter values in the feed description in [feedType values](https://github.com/amzn/selling-partner-api-docs/blob/main/references/feeds-api/feedtype-values.md).
-    #[serde(rename = "feedOptions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "feedOptions", skip_serializing_if = "Option::is_none")]
     pub feed_options: Option<::std::collections::HashMap<String, String>>,
 }
 

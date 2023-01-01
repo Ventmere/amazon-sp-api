@@ -13,13 +13,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InventoryUpdate {
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
     /// When true, this request contains a full feed. Otherwise, this request contains a partial feed. When sending a full feed, you must send information about all items in the warehouse. Any items not in the full feed are updated as not available. When sending a partial feed, only include the items that need an update to inventory. The status of other items will remain unchanged.
-    #[serde(rename = "isFullUpdate")]
+    #[serde(default, rename = "isFullUpdate")]
     pub is_full_update: bool,
     /// A list of inventory items with updated details, including quantity available.
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::ItemDetails>,
 }
 

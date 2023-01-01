@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemQuantity {
     /// Quantity of units available for a specific item.
-    #[serde(rename = "amount")]
+    #[serde(default, rename = "amount")]
     pub amount: i32,
     /// Unit of measure for the available quantity.
-    #[serde(rename = "unitOfMeasure")]
+    #[serde(default, rename = "unitOfMeasure")]
     pub unit_of_measure: String,
 }
 

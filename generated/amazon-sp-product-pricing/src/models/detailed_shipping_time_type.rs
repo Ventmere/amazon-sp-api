@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DetailedShippingTimeType {
     /// The minimum time, in hours, that the item will likely be shipped after the order has been placed.
-    #[serde(rename = "minimumHours", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "minimumHours", skip_serializing_if = "Option::is_none")]
     pub minimum_hours: Option<i64>,
     /// The maximum time, in hours, that the item will likely be shipped after the order has been placed.
-    #[serde(rename = "maximumHours", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "maximumHours", skip_serializing_if = "Option::is_none")]
     pub maximum_hours: Option<i64>,
     /// The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
-    #[serde(rename = "availableDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "availableDate", skip_serializing_if = "Option::is_none")]
     pub available_date: Option<String>,
     /// Indicates whether the item is available for shipping now, or on a known or an unknown date in the future. If known, the availableDate property indicates the date that the item will be available for shipping. Possible values: NOW, FUTURE_WITHOUT_DATE, FUTURE_WITH_DATE.
-    #[serde(rename = "availabilityType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "availabilityType", skip_serializing_if = "Option::is_none")]
     pub availability_type: Option<AvailabilityType>,
 }
 

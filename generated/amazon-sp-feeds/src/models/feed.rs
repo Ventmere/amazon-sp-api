@@ -14,28 +14,28 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Feed {
     /// The identifier for the feed. This identifier is unique only in combination with a seller ID.
-    #[serde(rename = "feedId")]
+    #[serde(default, rename = "feedId")]
     pub feed_id: String,
     /// The feed type.
-    #[serde(rename = "feedType")]
+    #[serde(default, rename = "feedType")]
     pub feed_type: String,
     /// A list of identifiers for the marketplaces that the feed is applied to.
-    #[serde(rename = "marketplaceIds", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "marketplaceIds", skip_serializing_if = "Option::is_none")]
     pub marketplace_ids: Option<Vec<String>>,
     /// The date and time when the feed was created, in ISO 8601 date time format.
-    #[serde(rename = "createdTime")]
+    #[serde(default, rename = "createdTime")]
     pub created_time: String,
     /// The processing status of the feed.
-    #[serde(rename = "processingStatus")]
+    #[serde(default, rename = "processingStatus")]
     pub processing_status: ProcessingStatus,
     /// The date and time when feed processing started, in ISO 8601 date time format.
-    #[serde(rename = "processingStartTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "processingStartTime", skip_serializing_if = "Option::is_none")]
     pub processing_start_time: Option<String>,
     /// The date and time when feed processing completed, in ISO 8601 date time format.
-    #[serde(rename = "processingEndTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "processingEndTime", skip_serializing_if = "Option::is_none")]
     pub processing_end_time: Option<String>,
     /// The identifier for the feed document. This identifier is unique only in combination with a seller ID.
-    #[serde(rename = "resultFeedDocumentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "resultFeedDocumentId", skip_serializing_if = "Option::is_none")]
     pub result_feed_document_id: Option<String>,
 }
 

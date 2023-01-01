@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AvailabilityRecord {
     /// Denotes the time from when the resource is available in a day in ISO-8601 format.
-    #[serde(rename = "startTime")]
+    #[serde(default, rename = "startTime")]
     pub start_time: String,
     /// Denotes the time till when the resource is available in a day in ISO-8601 format.
-    #[serde(rename = "endTime")]
+    #[serde(default, rename = "endTime")]
     pub end_time: String,
-    #[serde(rename = "recurrence", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "recurrence", skip_serializing_if = "Option::is_none")]
     pub recurrence: Option<Box<crate::models::Recurrence>>,
     /// Signifies the capacity of a resource which is available.
-    #[serde(rename = "capacity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "capacity", skip_serializing_if = "Option::is_none")]
     pub capacity: Option<i32>,
 }
 

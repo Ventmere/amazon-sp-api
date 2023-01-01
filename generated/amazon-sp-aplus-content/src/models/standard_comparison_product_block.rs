@@ -15,21 +15,21 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardComparisonProductBlock {
     /// The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module.
-    #[serde(rename = "position")]
+    #[serde(default, rename = "position")]
     pub position: i32,
-    #[serde(rename = "image", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "image", skip_serializing_if = "Option::is_none")]
     pub image: Option<Box<crate::models::ImageComponent>>,
     /// The comparison product title.
-    #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     /// The Amazon Standard Identification Number (ASIN).
-    #[serde(rename = "asin", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "asin", skip_serializing_if = "Option::is_none")]
     pub asin: Option<String>,
     /// Determines whether this block of content is visually highlighted.
-    #[serde(rename = "highlight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "highlight", skip_serializing_if = "Option::is_none")]
     pub highlight: Option<bool>,
     /// Comparison metrics for the product.
-    #[serde(rename = "metrics", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "metrics", skip_serializing_if = "Option::is_none")]
     pub metrics: Option<Vec<crate::models::PlainTextItem>>,
 }
 

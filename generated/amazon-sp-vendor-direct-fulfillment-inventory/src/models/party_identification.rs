@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartyIdentification {
     /// Assigned identification for the party.
-    #[serde(rename = "partyId")]
+    #[serde(default, rename = "partyId")]
     pub party_id: String,
 }
 

@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Reason {
     /// A message describing the reason for the restriction.
-    #[serde(rename = "message")]
+    #[serde(default, rename = "message")]
     pub message: String,
     /// A code indicating why the listing is restricted.
-    #[serde(rename = "reasonCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reasonCode", skip_serializing_if = "Option::is_none")]
     pub reason_code: Option<ReasonCode>,
     /// A list of path forward links that may allow Selling Partners to remove the restriction.
-    #[serde(rename = "links", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "links", skip_serializing_if = "Option::is_none")]
     pub links: Option<Vec<crate::models::Link>>,
 }
 

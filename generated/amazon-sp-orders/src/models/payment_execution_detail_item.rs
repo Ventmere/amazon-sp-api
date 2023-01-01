@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PaymentExecutionDetailItem {
-    #[serde(rename = "Payment")]
+    #[serde(default, rename = "Payment")]
     pub payment: Box<crate::models::Money>,
     /// A sub-payment method for a COD order.  Possible values:  * COD - Cash On Delivery.  * GC - Gift Card.  * PointsAccount - Amazon Points.
-    #[serde(rename = "PaymentMethod")]
+    #[serde(default, rename = "PaymentMethod")]
     pub payment_method: String,
 }
 

@@ -14,12 +14,12 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetSolicitationActionsForOrderResponse {
-    #[serde(rename = "_links", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "_links", skip_serializing_if = "Option::is_none")]
     pub _links: Option<Box<crate::models::GetSolicitationActionsForOrderResponseLinks>>,
-    #[serde(rename = "_embedded", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "_embedded", skip_serializing_if = "Option::is_none")]
     pub _embedded: Option<Box<crate::models::GetSolicitationActionsForOrderResponseEmbedded>>,
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<crate::models::Error>>,
 }
 

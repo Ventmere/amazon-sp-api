@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TestCaseData {
     /// Set of use cases that describes the possible test scenarios.
-    #[serde(rename = "scenarios", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scenarios", skip_serializing_if = "Option::is_none")]
     pub scenarios: Option<Vec<crate::models::Scenario>>,
 }
 

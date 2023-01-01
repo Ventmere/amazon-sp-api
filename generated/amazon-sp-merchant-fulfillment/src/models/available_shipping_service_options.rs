@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AvailableShippingServiceOptions {
     /// List of available carrier pickup options.
-    #[serde(rename = "AvailableCarrierWillPickUpOptions")]
+    #[serde(default, rename = "AvailableCarrierWillPickUpOptions")]
     pub available_carrier_will_pick_up_options: Vec<crate::models::AvailableCarrierWillPickUpOption>,
     /// List of available delivery experience options.
-    #[serde(rename = "AvailableDeliveryExperienceOptions")]
+    #[serde(default, rename = "AvailableDeliveryExperienceOptions")]
     pub available_delivery_experience_options: Vec<crate::models::AvailableDeliveryExperienceOption>,
 }
 

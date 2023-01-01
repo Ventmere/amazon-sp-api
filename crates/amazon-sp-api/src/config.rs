@@ -1,6 +1,6 @@
 use std::env;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct SpApiConfig {
   pub app_id: String,
   pub is_draft: bool,

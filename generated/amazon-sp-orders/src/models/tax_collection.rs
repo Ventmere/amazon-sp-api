@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TaxCollection {
     /// The tax collection model applied to the item.
-    #[serde(rename = "Model", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Model", skip_serializing_if = "Option::is_none")]
     pub model: Option<Model>,
     /// The party responsible for withholding the taxes and remitting them to the taxing authority.
-    #[serde(rename = "ResponsibleParty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ResponsibleParty", skip_serializing_if = "Option::is_none")]
     pub responsible_party: Option<ResponsibleParty>,
 }
 

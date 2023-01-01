@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Transaction {
     /// The unique identifier sent in the 'transactionId' field in response to the post request of a specific transaction.
-    #[serde(rename = "transactionId")]
+    #[serde(default, rename = "transactionId")]
     pub transaction_id: String,
     /// Current processing status of the transaction.
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: Status,
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<crate::models::Error>>,
 }
 

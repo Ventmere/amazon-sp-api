@@ -15,22 +15,22 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InventoryDetails {
     /// The item quantity that can be picked, packed, and shipped.
-    #[serde(rename = "fulfillableQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillableQuantity", skip_serializing_if = "Option::is_none")]
     pub fulfillable_quantity: Option<i32>,
     /// The number of units in an inbound shipment for which you have notified Amazon.
-    #[serde(rename = "inboundWorkingQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "inboundWorkingQuantity", skip_serializing_if = "Option::is_none")]
     pub inbound_working_quantity: Option<i32>,
     /// The number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number.
-    #[serde(rename = "inboundShippedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "inboundShippedQuantity", skip_serializing_if = "Option::is_none")]
     pub inbound_shipped_quantity: Option<i32>,
     /// The number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed.
-    #[serde(rename = "inboundReceivingQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "inboundReceivingQuantity", skip_serializing_if = "Option::is_none")]
     pub inbound_receiving_quantity: Option<i32>,
-    #[serde(rename = "reservedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reservedQuantity", skip_serializing_if = "Option::is_none")]
     pub reserved_quantity: Option<Box<crate::models::ReservedQuantity>>,
-    #[serde(rename = "researchingQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "researchingQuantity", skip_serializing_if = "Option::is_none")]
     pub researching_quantity: Option<Box<crate::models::ResearchingQuantity>>,
-    #[serde(rename = "unfulfillableQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "unfulfillableQuantity", skip_serializing_if = "Option::is_none")]
     pub unfulfillable_quantity: Option<Box<crate::models::UnfulfillableQuantity>>,
 }
 

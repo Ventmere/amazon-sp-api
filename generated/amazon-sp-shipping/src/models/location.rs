@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Location {
     /// The state or region where the person, business or institution is located.
-    #[serde(rename = "stateOrRegion", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "stateOrRegion", skip_serializing_if = "Option::is_none")]
     pub state_or_region: Option<String>,
     /// The city where the person, business or institution is located.
-    #[serde(rename = "city", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "city", skip_serializing_if = "Option::is_none")]
     pub city: Option<String>,
     /// The two digit country code. In ISO 3166-1 alpha-2 format.
-    #[serde(rename = "countryCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "countryCode", skip_serializing_if = "Option::is_none")]
     pub country_code: Option<String>,
     /// The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
-    #[serde(rename = "postalCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "postalCode", skip_serializing_if = "Option::is_none")]
     pub postal_code: Option<String>,
 }
 

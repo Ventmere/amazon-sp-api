@@ -14,11 +14,11 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartyIdentification {
     /// Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
-    #[serde(rename = "partyId")]
+    #[serde(default, rename = "partyId")]
     pub party_id: String,
-    #[serde(rename = "address", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "address", skip_serializing_if = "Option::is_none")]
     pub address: Option<Box<crate::models::Address>>,
-    #[serde(rename = "taxInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxInfo", skip_serializing_if = "Option::is_none")]
     pub tax_info: Option<Box<crate::models::TaxRegistrationDetails>>,
 }
 

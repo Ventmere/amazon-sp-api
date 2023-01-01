@@ -15,37 +15,37 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Address {
     /// The name of the addressee, or business name.
-    #[serde(rename = "Name")]
+    #[serde(default, rename = "Name")]
     pub name: String,
     /// The street address information.
-    #[serde(rename = "AddressLine1")]
+    #[serde(default, rename = "AddressLine1")]
     pub address_line1: String,
     /// Additional street address information.
-    #[serde(rename = "AddressLine2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AddressLine2", skip_serializing_if = "Option::is_none")]
     pub address_line2: Option<String>,
     /// Additional street address information.
-    #[serde(rename = "AddressLine3", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AddressLine3", skip_serializing_if = "Option::is_none")]
     pub address_line3: Option<String>,
     /// The district or county.
-    #[serde(rename = "DistrictOrCounty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DistrictOrCounty", skip_serializing_if = "Option::is_none")]
     pub district_or_county: Option<String>,
     /// The email address.
-    #[serde(rename = "Email")]
+    #[serde(default, rename = "Email")]
     pub email: String,
     /// The city.
-    #[serde(rename = "City")]
+    #[serde(default, rename = "City")]
     pub city: String,
     /// The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
-    #[serde(rename = "StateOrProvinceCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "StateOrProvinceCode", skip_serializing_if = "Option::is_none")]
     pub state_or_province_code: Option<String>,
     /// The zip code or postal code.
-    #[serde(rename = "PostalCode")]
+    #[serde(default, rename = "PostalCode")]
     pub postal_code: String,
     /// The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
-    #[serde(rename = "CountryCode")]
+    #[serde(default, rename = "CountryCode")]
     pub country_code: String,
     /// The phone number.
-    #[serde(rename = "Phone")]
+    #[serde(default, rename = "Phone")]
     pub phone: String,
 }
 

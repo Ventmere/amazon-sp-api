@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PropertyGroup {
     /// The display label of the property group.
-    #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     /// The description of the property group.
-    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
     /// The names of the schema properties for the property group.
-    #[serde(rename = "propertyNames", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "propertyNames", skip_serializing_if = "Option::is_none")]
     pub property_names: Option<Vec<String>>,
 }
 

@@ -14,28 +14,28 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CompetitivePriceType {
     /// The pricing model for each price that is returned.  Possible values:  * 1 - New Buy Box Price. * 2 - Used Buy Box Price.
-    #[serde(rename = "CompetitivePriceId")]
+    #[serde(default, rename = "CompetitivePriceId")]
     pub competitive_price_id: String,
-    #[serde(rename = "Price")]
+    #[serde(default, rename = "Price")]
     pub price: Box<crate::models::PriceType>,
     /// Indicates the condition of the item whose pricing information is returned. Possible values are: New, Used, Collectible, Refurbished, or Club.
-    #[serde(rename = "condition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "condition", skip_serializing_if = "Option::is_none")]
     pub condition: Option<String>,
     /// Indicates the subcondition of the item whose pricing information is returned. Possible values are: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-    #[serde(rename = "subcondition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "subcondition", skip_serializing_if = "Option::is_none")]
     pub subcondition: Option<String>,
-    #[serde(rename = "offerType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "offerType", skip_serializing_if = "Option::is_none")]
     pub offer_type: Option<crate::models::OfferCustomerType>,
     /// Indicates at what quantity this price becomes active.
-    #[serde(rename = "quantityTier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantityTier", skip_serializing_if = "Option::is_none")]
     pub quantity_tier: Option<i32>,
-    #[serde(rename = "quantityDiscountType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantityDiscountType", skip_serializing_if = "Option::is_none")]
     pub quantity_discount_type: Option<crate::models::QuantityDiscountType>,
     /// The seller identifier for the offer.
-    #[serde(rename = "sellerId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sellerId", skip_serializing_if = "Option::is_none")]
     pub seller_id: Option<String>,
     ///  Indicates whether or not the pricing information is for an offer listing that belongs to the requester. The requester is the seller associated with the SellerId that was submitted with the request. Possible values are: true and false.
-    #[serde(rename = "belongsToRequester", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "belongsToRequester", skip_serializing_if = "Option::is_none")]
     pub belongs_to_requester: Option<bool>,
 }
 

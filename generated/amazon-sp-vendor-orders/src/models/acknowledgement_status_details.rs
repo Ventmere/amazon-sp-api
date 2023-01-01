@@ -15,11 +15,11 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AcknowledgementStatusDetails {
     /// The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
-    #[serde(rename = "acknowledgementDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "acknowledgementDate", skip_serializing_if = "Option::is_none")]
     pub acknowledgement_date: Option<String>,
-    #[serde(rename = "acceptedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "acceptedQuantity", skip_serializing_if = "Option::is_none")]
     pub accepted_quantity: Option<Box<crate::models::ItemQuantity>>,
-    #[serde(rename = "rejectedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "rejectedQuantity", skip_serializing_if = "Option::is_none")]
     pub rejected_quantity: Option<Box<crate::models::ItemQuantity>>,
 }
 

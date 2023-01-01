@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItemBuyerInfo {
     /// An Amazon-defined order item identifier.
-    #[serde(rename = "OrderItemId")]
+    #[serde(default, rename = "OrderItemId")]
     pub order_item_id: String,
-    #[serde(rename = "BuyerCustomizedInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerCustomizedInfo", skip_serializing_if = "Option::is_none")]
     pub buyer_customized_info: Option<Box<crate::models::BuyerCustomizedInfoDetail>>,
-    #[serde(rename = "GiftWrapPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GiftWrapPrice", skip_serializing_if = "Option::is_none")]
     pub gift_wrap_price: Option<Box<crate::models::Money>>,
-    #[serde(rename = "GiftWrapTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GiftWrapTax", skip_serializing_if = "Option::is_none")]
     pub gift_wrap_tax: Option<Box<crate::models::Money>>,
     /// A gift message provided by the buyer.
-    #[serde(rename = "GiftMessageText", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GiftMessageText", skip_serializing_if = "Option::is_none")]
     pub gift_message_text: Option<String>,
     /// The gift wrap level specified by the buyer.
-    #[serde(rename = "GiftWrapLevel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GiftWrapLevel", skip_serializing_if = "Option::is_none")]
     pub gift_wrap_level: Option<String>,
 }
 

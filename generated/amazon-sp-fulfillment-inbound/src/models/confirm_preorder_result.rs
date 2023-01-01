@@ -13,9 +13,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ConfirmPreorderResult {
-    #[serde(rename = "ConfirmedNeedByDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConfirmedNeedByDate", skip_serializing_if = "Option::is_none")]
     pub confirmed_need_by_date: Option<String>,
-    #[serde(rename = "ConfirmedFulfillableDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConfirmedFulfillableDate", skip_serializing_if = "Option::is_none")]
     pub confirmed_fulfillable_date: Option<String>,
 }
 

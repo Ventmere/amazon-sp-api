@@ -15,32 +15,32 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentItem {
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
     /// The seller SKU of the item.
-    #[serde(rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
     /// The Amazon-defined identifier for the order item.
-    #[serde(rename = "OrderItemId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderItemId", skip_serializing_if = "Option::is_none")]
     pub order_item_id: Option<String>,
     /// The name of the item.
-    #[serde(rename = "Title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     /// The number of items ordered.
-    #[serde(rename = "QuantityOrdered", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "QuantityOrdered", skip_serializing_if = "Option::is_none")]
     pub quantity_ordered: Option<f32>,
-    #[serde(rename = "ItemPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemPrice", skip_serializing_if = "Option::is_none")]
     pub item_price: Option<Box<crate::models::Money>>,
-    #[serde(rename = "ShippingPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingPrice", skip_serializing_if = "Option::is_none")]
     pub shipping_price: Option<Box<crate::models::Money>>,
-    #[serde(rename = "GiftWrapPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GiftWrapPrice", skip_serializing_if = "Option::is_none")]
     pub gift_wrap_price: Option<Box<crate::models::Money>>,
-    #[serde(rename = "ShippingDiscount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingDiscount", skip_serializing_if = "Option::is_none")]
     pub shipping_discount: Option<Box<crate::models::Money>>,
-    #[serde(rename = "PromotionDiscount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PromotionDiscount", skip_serializing_if = "Option::is_none")]
     pub promotion_discount: Option<Box<crate::models::Money>>,
     /// The list of serial numbers.
-    #[serde(rename = "SerialNumbers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SerialNumbers", skip_serializing_if = "Option::is_none")]
     pub serial_numbers: Option<Vec<String>>,
 }
 

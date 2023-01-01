@@ -14,28 +14,28 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItem {
     /// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
-    #[serde(rename = "itemSequenceNumber")]
+    #[serde(default, rename = "itemSequenceNumber")]
     pub item_sequence_number: String,
     /// Buyer's standard identification number (ASIN) of an item.
-    #[serde(rename = "buyerProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "buyerProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub buyer_product_identifier: Option<String>,
     /// The vendor selected product identification of the item.
-    #[serde(rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub vendor_product_identifier: Option<String>,
     /// Title for the item.
-    #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
-    #[serde(rename = "orderedQuantity")]
+    #[serde(default, rename = "orderedQuantity")]
     pub ordered_quantity: Box<crate::models::ItemQuantity>,
-    #[serde(rename = "scheduledDeliveryShipment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scheduledDeliveryShipment", skip_serializing_if = "Option::is_none")]
     pub scheduled_delivery_shipment: Option<Box<crate::models::ScheduledDeliveryShipment>>,
-    #[serde(rename = "giftDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "giftDetails", skip_serializing_if = "Option::is_none")]
     pub gift_details: Option<Box<crate::models::GiftDetails>>,
-    #[serde(rename = "netPrice")]
+    #[serde(default, rename = "netPrice")]
     pub net_price: Box<crate::models::Money>,
-    #[serde(rename = "taxDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxDetails", skip_serializing_if = "Option::is_none")]
     pub tax_details: Option<Box<crate::models::OrderItemTaxDetails>>,
-    #[serde(rename = "totalPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "totalPrice", skip_serializing_if = "Option::is_none")]
     pub total_price: Option<Box<crate::models::Money>>,
 }
 

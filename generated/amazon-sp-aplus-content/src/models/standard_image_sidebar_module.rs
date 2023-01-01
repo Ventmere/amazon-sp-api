@@ -14,17 +14,17 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardImageSidebarModule {
-    #[serde(rename = "headline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headline", skip_serializing_if = "Option::is_none")]
     pub headline: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "imageCaptionBlock", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "imageCaptionBlock", skip_serializing_if = "Option::is_none")]
     pub image_caption_block: Option<Box<crate::models::StandardImageCaptionBlock>>,
-    #[serde(rename = "descriptionTextBlock", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "descriptionTextBlock", skip_serializing_if = "Option::is_none")]
     pub description_text_block: Option<Box<crate::models::StandardTextBlock>>,
-    #[serde(rename = "descriptionListBlock", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "descriptionListBlock", skip_serializing_if = "Option::is_none")]
     pub description_list_block: Option<Box<crate::models::StandardTextListBlock>>,
-    #[serde(rename = "sidebarImageTextBlock", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sidebarImageTextBlock", skip_serializing_if = "Option::is_none")]
     pub sidebar_image_text_block: Option<Box<crate::models::StandardImageTextBlock>>,
-    #[serde(rename = "sidebarListBlock", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sidebarListBlock", skip_serializing_if = "Option::is_none")]
     pub sidebar_list_block: Option<Box<crate::models::StandardTextListBlock>>,
 }
 

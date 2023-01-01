@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartneredSmallParcelPackageInput {
-    #[serde(rename = "Dimensions")]
+    #[serde(default, rename = "Dimensions")]
     pub dimensions: Box<crate::models::Dimensions>,
-    #[serde(rename = "Weight")]
+    #[serde(default, rename = "Weight")]
     pub weight: Box<crate::models::Weight>,
 }
 

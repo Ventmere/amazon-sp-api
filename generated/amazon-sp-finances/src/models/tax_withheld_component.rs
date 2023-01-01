@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TaxWithheldComponent {
     /// The tax collection model applied to the item.  Possible values:  * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.  * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
-    #[serde(rename = "TaxCollectionModel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxCollectionModel", skip_serializing_if = "Option::is_none")]
     pub tax_collection_model: Option<String>,
     /// A list of charge information on the seller's account.
-    #[serde(rename = "TaxesWithheld", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxesWithheld", skip_serializing_if = "Option::is_none")]
     pub taxes_withheld: Option<Vec<crate::models::ChargeComponent>>,
 }
 

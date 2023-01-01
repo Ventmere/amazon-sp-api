@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SmallAndLightEnrollment {
     /// A marketplace identifier.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// Identifies an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-    #[serde(rename = "sellerSKU")]
+    #[serde(default, rename = "sellerSKU")]
     pub seller_sku: String,
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: crate::models::SmallAndLightEnrollmentStatus,
 }
 

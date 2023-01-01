@@ -15,43 +15,43 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Address {
     /// The name.
-    #[serde(rename = "Name")]
+    #[serde(default, rename = "Name")]
     pub name: String,
     /// The street address.
-    #[serde(rename = "AddressLine1", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AddressLine1", skip_serializing_if = "Option::is_none")]
     pub address_line1: Option<String>,
     /// Additional street address information, if required.
-    #[serde(rename = "AddressLine2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AddressLine2", skip_serializing_if = "Option::is_none")]
     pub address_line2: Option<String>,
     /// Additional street address information, if required.
-    #[serde(rename = "AddressLine3", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AddressLine3", skip_serializing_if = "Option::is_none")]
     pub address_line3: Option<String>,
     /// The city 
-    #[serde(rename = "City", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "City", skip_serializing_if = "Option::is_none")]
     pub city: Option<String>,
     /// The county.
-    #[serde(rename = "County", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "County", skip_serializing_if = "Option::is_none")]
     pub county: Option<String>,
     /// The district.
-    #[serde(rename = "District", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "District", skip_serializing_if = "Option::is_none")]
     pub district: Option<String>,
     /// The state or region.
-    #[serde(rename = "StateOrRegion", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "StateOrRegion", skip_serializing_if = "Option::is_none")]
     pub state_or_region: Option<String>,
     /// The municipality.
-    #[serde(rename = "Municipality", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Municipality", skip_serializing_if = "Option::is_none")]
     pub municipality: Option<String>,
     /// The postal code.
-    #[serde(rename = "PostalCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostalCode", skip_serializing_if = "Option::is_none")]
     pub postal_code: Option<String>,
     /// The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
-    #[serde(rename = "CountryCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CountryCode", skip_serializing_if = "Option::is_none")]
     pub country_code: Option<String>,
     /// The phone number. Not returned for Fulfillment by Amazon (FBA) orders.
-    #[serde(rename = "Phone", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Phone", skip_serializing_if = "Option::is_none")]
     pub phone: Option<String>,
     /// The address type of the shipping address.
-    #[serde(rename = "AddressType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AddressType", skip_serializing_if = "Option::is_none")]
     pub address_type: Option<AddressType>,
 }
 

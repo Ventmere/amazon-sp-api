@@ -15,11 +15,11 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PutTransportDetailsRequest {
     /// Indicates whether a putTransportDetails request is for an Amazon-partnered carrier.
-    #[serde(rename = "IsPartnered")]
+    #[serde(default, rename = "IsPartnered")]
     pub is_partnered: bool,
-    #[serde(rename = "ShipmentType")]
+    #[serde(default, rename = "ShipmentType")]
     pub shipment_type: crate::models::ShipmentType,
-    #[serde(rename = "TransportDetails")]
+    #[serde(default, rename = "TransportDetails")]
     pub transport_details: Box<crate::models::TransportDetailInput>,
 }
 

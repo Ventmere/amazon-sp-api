@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SearchContentPublishRecordsResponseAllOf {
     /// A list of A+ Content publishing records.
-    #[serde(rename = "publishRecordList")]
+    #[serde(default, rename = "publishRecordList")]
     pub publish_record_list: Vec<crate::models::PublishRecord>,
 }
 

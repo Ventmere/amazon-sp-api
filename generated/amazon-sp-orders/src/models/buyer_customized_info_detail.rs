@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct BuyerCustomizedInfoDetail {
     /// The location of a zip file containing Amazon Custom data.
-    #[serde(rename = "CustomizedURL", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CustomizedURL", skip_serializing_if = "Option::is_none")]
     pub customized_url: Option<String>,
 }
 

@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TrackingSummary {
     /// The derived status based on the events in the eventHistory.
-    #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 }
 

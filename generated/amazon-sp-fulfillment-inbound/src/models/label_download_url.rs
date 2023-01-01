@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LabelDownloadUrl {
     /// URL to download the label for the package. Note: The URL will only be valid for 15 seconds
-    #[serde(rename = "DownloadURL", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DownloadURL", skip_serializing_if = "Option::is_none")]
     pub download_url: Option<String>,
 }
 

@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardComparisonTableModule {
-    #[serde(rename = "productColumns", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "productColumns", skip_serializing_if = "Option::is_none")]
     pub product_columns: Option<Vec<crate::models::StandardComparisonProductBlock>>,
-    #[serde(rename = "metricRowLabels", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "metricRowLabels", skip_serializing_if = "Option::is_none")]
     pub metric_row_labels: Option<Vec<crate::models::PlainTextItem>>,
 }
 

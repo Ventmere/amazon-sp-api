@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TestOrder {
     /// An error code that identifies the type of error that occurred.
-    #[serde(rename = "orderId")]
+    #[serde(default, rename = "orderId")]
     pub order_id: String,
 }
 

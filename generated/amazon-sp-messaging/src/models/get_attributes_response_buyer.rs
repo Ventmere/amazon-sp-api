@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetAttributesResponseBuyer {
     /// The buyer's language of preference, indicated with a locale-specific language tag. Examples: \"en-US\", \"zh-CN\", and \"en-GB\".
-    #[serde(rename = "locale", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "locale", skip_serializing_if = "Option::is_none")]
     pub locale: Option<String>,
 }
 

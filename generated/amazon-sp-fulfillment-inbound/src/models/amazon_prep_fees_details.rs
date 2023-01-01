@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AmazonPrepFeesDetails {
-    #[serde(rename = "PrepInstruction", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PrepInstruction", skip_serializing_if = "Option::is_none")]
     pub prep_instruction: Option<crate::models::PrepInstruction>,
-    #[serde(rename = "FeePerUnit", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeePerUnit", skip_serializing_if = "Option::is_none")]
     pub fee_per_unit: Option<Box<crate::models::Amount>>,
 }
 

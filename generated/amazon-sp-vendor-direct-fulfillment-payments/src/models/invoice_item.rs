@@ -14,32 +14,32 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InvoiceItem {
     /// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
-    #[serde(rename = "itemSequenceNumber")]
+    #[serde(default, rename = "itemSequenceNumber")]
     pub item_sequence_number: String,
     /// Buyer's standard identification number (ASIN) of an item.
-    #[serde(rename = "buyerProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "buyerProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub buyer_product_identifier: Option<String>,
     /// The vendor selected product identification of the item.
-    #[serde(rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub vendor_product_identifier: Option<String>,
-    #[serde(rename = "invoicedQuantity")]
+    #[serde(default, rename = "invoicedQuantity")]
     pub invoiced_quantity: Box<crate::models::ItemQuantity>,
-    #[serde(rename = "netCost")]
+    #[serde(default, rename = "netCost")]
     pub net_cost: Box<crate::models::Money>,
     /// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
     /// The vendor's order number for this order.
-    #[serde(rename = "vendorOrderNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "vendorOrderNumber", skip_serializing_if = "Option::is_none")]
     pub vendor_order_number: Option<String>,
     /// HSN tax code. The HSN number cannot contain alphabets.
-    #[serde(rename = "hsnCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "hsnCode", skip_serializing_if = "Option::is_none")]
     pub hsn_code: Option<String>,
     /// Individual tax details per line item.
-    #[serde(rename = "taxDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxDetails", skip_serializing_if = "Option::is_none")]
     pub tax_details: Option<Vec<crate::models::TaxDetail>>,
     /// Individual charge details per line item.
-    #[serde(rename = "chargeDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "chargeDetails", skip_serializing_if = "Option::is_none")]
     pub charge_details: Option<Vec<crate::models::ChargeDetails>>,
 }
 

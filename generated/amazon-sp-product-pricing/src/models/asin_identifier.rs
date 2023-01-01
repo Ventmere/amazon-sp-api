@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AsinIdentifier {
     /// A marketplace identifier.
-    #[serde(rename = "MarketplaceId")]
+    #[serde(default, rename = "MarketplaceId")]
     pub marketplace_id: String,
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN")]
+    #[serde(default, rename = "ASIN")]
     pub ASIN: String,
 }
 

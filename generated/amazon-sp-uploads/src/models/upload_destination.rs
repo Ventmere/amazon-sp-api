@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UploadDestination {
     /// The unique identifier for the upload destination.
-    #[serde(rename = "uploadDestinationId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "uploadDestinationId", skip_serializing_if = "Option::is_none")]
     pub upload_destination_id: Option<String>,
     /// The URL for the upload destination.
-    #[serde(rename = "url", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "url", skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
     /// The headers to include in the upload request.
-    #[serde(rename = "headers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headers", skip_serializing_if = "Option::is_none")]
     pub headers: Option<serde_json::Value>,
 }
 

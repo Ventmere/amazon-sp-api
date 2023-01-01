@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ProductInfoDetail {
     /// The total number of items that are included in the ASIN.
-    #[serde(rename = "NumberOfItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfItems", skip_serializing_if = "Option::is_none", deserialize_with = "amazon_sp_api_shared::helpers::deserialize_opt_i32_with_parse")]
     pub number_of_items: Option<i32>,
 }
 

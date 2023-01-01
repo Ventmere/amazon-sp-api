@@ -15,27 +15,27 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InventorySummary {
     /// The Amazon Standard Identification Number (ASIN) of an item.
-    #[serde(rename = "asin", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "asin", skip_serializing_if = "Option::is_none")]
     pub asin: Option<String>,
     /// Amazon's fulfillment network SKU identifier.
-    #[serde(rename = "fnSku", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fnSku", skip_serializing_if = "Option::is_none")]
     pub fn_sku: Option<String>,
     /// The seller SKU of the item.
-    #[serde(rename = "sellerSku", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sellerSku", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
     /// The condition of the item as described by the seller (for example, New Item).
-    #[serde(rename = "condition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "condition", skip_serializing_if = "Option::is_none")]
     pub condition: Option<String>,
-    #[serde(rename = "inventoryDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "inventoryDetails", skip_serializing_if = "Option::is_none")]
     pub inventory_details: Option<Box<crate::models::InventoryDetails>>,
     /// The date and time that any quantity was last updated.
-    #[serde(rename = "lastUpdatedTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "lastUpdatedTime", skip_serializing_if = "Option::is_none")]
     pub last_updated_time: Option<String>,
     /// The localized language product title of the item within the specific marketplace.
-    #[serde(rename = "productName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "productName", skip_serializing_if = "Option::is_none")]
     pub product_name: Option<String>,
     /// The total number of units in an inbound shipment or in Amazon fulfillment centers.
-    #[serde(rename = "totalQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "totalQuantity", skip_serializing_if = "Option::is_none")]
     pub total_quantity: Option<i32>,
 }
 

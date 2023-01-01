@@ -14,37 +14,37 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Report {
     /// A list of marketplace identifiers for the report.
-    #[serde(rename = "marketplaceIds", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "marketplaceIds", skip_serializing_if = "Option::is_none")]
     pub marketplace_ids: Option<Vec<String>>,
     /// The identifier for the report. This identifier is unique only in combination with a seller ID.
-    #[serde(rename = "reportId")]
+    #[serde(default, rename = "reportId")]
     pub report_id: String,
     /// The report type.
-    #[serde(rename = "reportType")]
+    #[serde(default, rename = "reportType")]
     pub report_type: String,
     /// The start of a date and time range used for selecting the data to report.
-    #[serde(rename = "dataStartTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "dataStartTime", skip_serializing_if = "Option::is_none")]
     pub data_start_time: Option<String>,
     /// The end of a date and time range used for selecting the data to report.
-    #[serde(rename = "dataEndTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "dataEndTime", skip_serializing_if = "Option::is_none")]
     pub data_end_time: Option<String>,
     /// The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.
-    #[serde(rename = "reportScheduleId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reportScheduleId", skip_serializing_if = "Option::is_none")]
     pub report_schedule_id: Option<String>,
     /// The date and time when the report was created.
-    #[serde(rename = "createdTime")]
+    #[serde(default, rename = "createdTime")]
     pub created_time: String,
     /// The processing status of the report.
-    #[serde(rename = "processingStatus")]
+    #[serde(default, rename = "processingStatus")]
     pub processing_status: ProcessingStatus,
     /// The date and time when the report processing started, in ISO 8601 date time format.
-    #[serde(rename = "processingStartTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "processingStartTime", skip_serializing_if = "Option::is_none")]
     pub processing_start_time: Option<String>,
     /// The date and time when the report processing completed, in ISO 8601 date time format.
-    #[serde(rename = "processingEndTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "processingEndTime", skip_serializing_if = "Option::is_none")]
     pub processing_end_time: Option<String>,
     /// The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve and decrypt the report document's contents.
-    #[serde(rename = "reportDocumentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reportDocumentId", skip_serializing_if = "Option::is_none")]
     pub report_document_id: Option<String>,
 }
 

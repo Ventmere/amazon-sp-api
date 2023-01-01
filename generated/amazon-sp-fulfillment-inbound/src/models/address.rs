@@ -14,28 +14,28 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Address {
     /// Name of the individual or business.
-    #[serde(rename = "Name")]
+    #[serde(default, rename = "Name")]
     pub name: String,
     /// The street address information.
-    #[serde(rename = "AddressLine1")]
+    #[serde(default, rename = "AddressLine1")]
     pub address_line1: String,
     /// Additional street address information, if required.
-    #[serde(rename = "AddressLine2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AddressLine2", skip_serializing_if = "Option::is_none")]
     pub address_line2: Option<String>,
     /// The district or county.
-    #[serde(rename = "DistrictOrCounty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DistrictOrCounty", skip_serializing_if = "Option::is_none")]
     pub district_or_county: Option<String>,
     /// The city.
-    #[serde(rename = "City")]
+    #[serde(default, rename = "City")]
     pub city: String,
     /// The state or province code.  If state or province codes are used in your marketplace, it is recommended that you include one with your request. This helps Amazon to select the most appropriate Amazon fulfillment center for your inbound shipment plan.
-    #[serde(rename = "StateOrProvinceCode")]
+    #[serde(default, rename = "StateOrProvinceCode")]
     pub state_or_province_code: String,
     /// The country code in two-character ISO 3166-1 alpha-2 format.
-    #[serde(rename = "CountryCode")]
+    #[serde(default, rename = "CountryCode")]
     pub country_code: String,
     /// The postal code.  If postal codes are used in your marketplace, we recommended that you include one with your request. This helps Amazon select the most appropriate Amazon fulfillment center for the inbound shipment plan.
-    #[serde(rename = "PostalCode")]
+    #[serde(default, rename = "PostalCode")]
     pub postal_code: String,
 }
 

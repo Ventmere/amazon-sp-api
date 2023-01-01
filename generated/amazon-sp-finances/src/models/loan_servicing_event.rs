@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LoanServicingEvent {
-    #[serde(rename = "LoanAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LoanAmount", skip_serializing_if = "Option::is_none")]
     pub loan_amount: Option<Box<crate::models::Currency>>,
     /// The type of event.  Possible values:  * LoanAdvance  * LoanPayment  * LoanRefund
-    #[serde(rename = "SourceBusinessEventType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SourceBusinessEventType", skip_serializing_if = "Option::is_none")]
     pub source_business_event_type: Option<String>,
 }
 

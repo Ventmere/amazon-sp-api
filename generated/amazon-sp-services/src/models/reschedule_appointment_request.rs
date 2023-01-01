@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RescheduleAppointmentRequest {
-    #[serde(rename = "appointmentTime")]
+    #[serde(default, rename = "appointmentTime")]
     pub appointment_time: Box<crate::models::AppointmentTimeInput>,
     /// The appointment reschedule reason code.
-    #[serde(rename = "rescheduleReasonCode")]
+    #[serde(default, rename = "rescheduleReasonCode")]
     pub reschedule_reason_code: String,
 }
 

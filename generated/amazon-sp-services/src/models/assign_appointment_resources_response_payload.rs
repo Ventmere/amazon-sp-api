@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AssignAppointmentResourcesResponsePayload {
     /// A list of warnings returned in the sucessful execution response of an API request.
-    #[serde(rename = "warnings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "warnings", skip_serializing_if = "Option::is_none")]
     pub warnings: Option<Vec<crate::models::Warning>>,
 }
 

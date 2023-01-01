@@ -14,43 +14,43 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Invoice {
     /// Identifies the type of invoice.
-    #[serde(rename = "invoiceType")]
+    #[serde(default, rename = "invoiceType")]
     pub invoice_type: InvoiceType,
     /// Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection.
-    #[serde(rename = "id")]
+    #[serde(default, rename = "id")]
     pub id: String,
     /// An additional unique reference number used for regulatory or other purposes.
-    #[serde(rename = "referenceNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "referenceNumber", skip_serializing_if = "Option::is_none")]
     pub reference_number: Option<String>,
     /// Defines a date and time according to ISO8601.
-    #[serde(rename = "date")]
+    #[serde(default, rename = "date")]
     pub date: String,
-    #[serde(rename = "remitToParty")]
+    #[serde(default, rename = "remitToParty")]
     pub remit_to_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipToParty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipToParty", skip_serializing_if = "Option::is_none")]
     pub ship_to_party: Option<Box<crate::models::PartyIdentification>>,
-    #[serde(rename = "shipFromParty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipFromParty", skip_serializing_if = "Option::is_none")]
     pub ship_from_party: Option<Box<crate::models::PartyIdentification>>,
-    #[serde(rename = "billToParty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "billToParty", skip_serializing_if = "Option::is_none")]
     pub bill_to_party: Option<Box<crate::models::PartyIdentification>>,
-    #[serde(rename = "paymentTerms", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "paymentTerms", skip_serializing_if = "Option::is_none")]
     pub payment_terms: Option<Box<crate::models::PaymentTerms>>,
-    #[serde(rename = "invoiceTotal")]
+    #[serde(default, rename = "invoiceTotal")]
     pub invoice_total: Box<crate::models::Money>,
     /// Total tax amount details for all line items.
-    #[serde(rename = "taxDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxDetails", skip_serializing_if = "Option::is_none")]
     pub tax_details: Option<Vec<crate::models::TaxDetails>>,
     /// Additional details provided by the selling party, for tax related or other purposes.
-    #[serde(rename = "additionalDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "additionalDetails", skip_serializing_if = "Option::is_none")]
     pub additional_details: Option<Vec<crate::models::AdditionalDetails>>,
     /// Total charge amount details for all line items.
-    #[serde(rename = "chargeDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "chargeDetails", skip_serializing_if = "Option::is_none")]
     pub charge_details: Option<Vec<crate::models::ChargeDetails>>,
     /// Total allowance amount details for all line items.
-    #[serde(rename = "allowanceDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "allowanceDetails", skip_serializing_if = "Option::is_none")]
     pub allowance_details: Option<Vec<crate::models::AllowanceDetails>>,
     /// The list of invoice items.
-    #[serde(rename = "items", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "items", skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<crate::models::InvoiceItem>>,
 }
 

@@ -14,34 +14,34 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentPreview {
-    #[serde(rename = "shippingSpeedCategory")]
+    #[serde(default, rename = "shippingSpeedCategory")]
     pub shipping_speed_category: crate::models::ShippingSpeedCategory,
-    #[serde(rename = "scheduledDeliveryInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scheduledDeliveryInfo", skip_serializing_if = "Option::is_none")]
     pub scheduled_delivery_info: Option<Box<crate::models::ScheduledDeliveryInfo>>,
     /// When true, this fulfillment order preview is fulfillable.
-    #[serde(rename = "isFulfillable")]
+    #[serde(default, rename = "isFulfillable")]
     pub is_fulfillable: bool,
     /// When true, this fulfillment order preview is for COD (Cash On Delivery).
-    #[serde(rename = "isCODCapable")]
+    #[serde(default, rename = "isCODCapable")]
     pub is_cod_capable: bool,
-    #[serde(rename = "estimatedShippingWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedShippingWeight", skip_serializing_if = "Option::is_none")]
     pub estimated_shipping_weight: Option<Box<crate::models::Weight>>,
     /// An array of fee type and cost pairs.
-    #[serde(rename = "estimatedFees", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedFees", skip_serializing_if = "Option::is_none")]
     pub estimated_fees: Option<Vec<crate::models::Fee>>,
     /// An array of fulfillment preview shipment information.
-    #[serde(rename = "fulfillmentPreviewShipments", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentPreviewShipments", skip_serializing_if = "Option::is_none")]
     pub fulfillment_preview_shipments: Option<Vec<crate::models::FulfillmentPreviewShipment>>,
     /// An array of unfulfillable preview item information.
-    #[serde(rename = "unfulfillablePreviewItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "unfulfillablePreviewItems", skip_serializing_if = "Option::is_none")]
     pub unfulfillable_preview_items: Option<Vec<crate::models::UnfulfillablePreviewItem>>,
-    #[serde(rename = "orderUnfulfillableReasons", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderUnfulfillableReasons", skip_serializing_if = "Option::is_none")]
     pub order_unfulfillable_reasons: Option<Vec<String>>,
     /// The marketplace the fulfillment order is placed against.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// A list of features and their fulfillment policies to apply to the order.
-    #[serde(rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
     pub feature_constraints: Option<Vec<crate::models::FeatureSettings>>,
 }
 

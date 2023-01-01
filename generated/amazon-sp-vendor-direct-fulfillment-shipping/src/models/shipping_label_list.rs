@@ -13,9 +13,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShippingLabelList {
-    #[serde(rename = "pagination", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "pagination", skip_serializing_if = "Option::is_none")]
     pub pagination: Option<Box<crate::models::Pagination>>,
-    #[serde(rename = "shippingLabels", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingLabels", skip_serializing_if = "Option::is_none")]
     pub shipping_labels: Option<Vec<crate::models::ShippingLabel>>,
 }
 

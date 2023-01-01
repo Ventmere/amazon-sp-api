@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdateVerificationStatusRequestBody {
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: crate::models::VerificationStatus,
     /// The identifier for the order's regulated information reviewer.
-    #[serde(rename = "externalReviewerId")]
+    #[serde(default, rename = "externalReviewerId")]
     pub external_reviewer_id: String,
     /// The unique identifier for the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
-    #[serde(rename = "rejectionReasonId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "rejectionReasonId", skip_serializing_if = "Option::is_none")]
     pub rejection_reason_id: Option<String>,
 }
 

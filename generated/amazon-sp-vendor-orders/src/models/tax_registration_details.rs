@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TaxRegistrationDetails {
     /// Tax registration type for the entity.
-    #[serde(rename = "taxRegistrationType")]
+    #[serde(default, rename = "taxRegistrationType")]
     pub tax_registration_type: TaxRegistrationType,
     /// Tax registration number for the entity. For example, VAT ID.
-    #[serde(rename = "taxRegistrationNumber")]
+    #[serde(default, rename = "taxRegistrationNumber")]
     pub tax_registration_number: String,
 }
 

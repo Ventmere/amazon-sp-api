@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ImageDimensions {
-    #[serde(rename = "width")]
+    #[serde(default, rename = "width")]
     pub width: Box<crate::models::IntegerWithUnits>,
-    #[serde(rename = "height")]
+    #[serde(default, rename = "height")]
     pub height: Box<crate::models::IntegerWithUnits>,
 }
 

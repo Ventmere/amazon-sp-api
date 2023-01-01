@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PatchOperation {
     /// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See <https://tools.ietf.org/html/rfc6902>.
-    #[serde(rename = "op")]
+    #[serde(default, rename = "op")]
     pub op: Op,
     /// JSON Pointer path of the element to patch. See <https://tools.ietf.org/html/rfc6902>.
-    #[serde(rename = "path")]
+    #[serde(default, rename = "path")]
     pub path: String,
     /// JSON value to add, replace, or delete.
-    #[serde(rename = "value", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "value", skip_serializing_if = "Option::is_none")]
     pub value: Option<Vec<serde_json::Value>>,
 }
 

@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RetrieveShippingLabelRequest {
-    #[serde(rename = "labelSpecification")]
+    #[serde(default, rename = "labelSpecification")]
     pub label_specification: Box<crate::models::LabelSpecification>,
 }
 

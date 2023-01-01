@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ReasonCodeDetails {
     /// A code that indicates a valid return reason.
-    #[serde(rename = "returnReasonCode")]
+    #[serde(default, rename = "returnReasonCode")]
     pub return_reason_code: String,
     /// A human readable description of the return reason code.
-    #[serde(rename = "description")]
+    #[serde(default, rename = "description")]
     pub description: String,
     /// A translation of the description. The translation is in the language specified in the Language request parameter.
-    #[serde(rename = "translatedDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "translatedDescription", skip_serializing_if = "Option::is_none")]
     pub translated_description: Option<String>,
 }
 

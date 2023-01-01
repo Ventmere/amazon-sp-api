@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ServiceLocation {
     /// The location of the service job.
-    #[serde(rename = "serviceLocationType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceLocationType", skip_serializing_if = "Option::is_none")]
     pub service_location_type: Option<ServiceLocationType>,
-    #[serde(rename = "address", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "address", skip_serializing_if = "Option::is_none")]
     pub address: Option<Box<crate::models::Address>>,
 }
 

@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct BuyerRequestedCancel {
     /// When true, the buyer has requested cancellation.
-    #[serde(rename = "IsBuyerRequestedCancel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsBuyerRequestedCancel", skip_serializing_if = "Option::is_none")]
     pub is_buyer_requested_cancel: Option<bool>,
     /// The reason that the buyer requested cancellation.
-    #[serde(rename = "BuyerCancelReason", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerCancelReason", skip_serializing_if = "Option::is_none")]
     pub buyer_cancel_reason: Option<String>,
 }
 

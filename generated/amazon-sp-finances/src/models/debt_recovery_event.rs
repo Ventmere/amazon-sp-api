@@ -15,17 +15,17 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DebtRecoveryEvent {
     /// The debt recovery type.  Possible values:  * DebtPayment  * DebtPaymentFailure  *DebtAdjustment
-    #[serde(rename = "DebtRecoveryType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DebtRecoveryType", skip_serializing_if = "Option::is_none")]
     pub debt_recovery_type: Option<String>,
-    #[serde(rename = "RecoveryAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RecoveryAmount", skip_serializing_if = "Option::is_none")]
     pub recovery_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "OverPaymentCredit", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OverPaymentCredit", skip_serializing_if = "Option::is_none")]
     pub over_payment_credit: Option<Box<crate::models::Currency>>,
     /// A list of debt recovery item information.
-    #[serde(rename = "DebtRecoveryItemList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DebtRecoveryItemList", skip_serializing_if = "Option::is_none")]
     pub debt_recovery_item_list: Option<Vec<crate::models::DebtRecoveryItem>>,
     /// A list of payment instruments.
-    #[serde(rename = "ChargeInstrumentList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ChargeInstrumentList", skip_serializing_if = "Option::is_none")]
     pub charge_instrument_list: Option<Vec<crate::models::ChargeInstrument>>,
 }
 

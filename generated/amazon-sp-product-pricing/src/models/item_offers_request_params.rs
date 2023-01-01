@@ -14,14 +14,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemOffersRequestParams {
     /// A marketplace identifier. Specifies the marketplace for which prices are returned.
-    #[serde(rename = "MarketplaceId")]
+    #[serde(default, rename = "MarketplaceId")]
     pub marketplace_id: String,
-    #[serde(rename = "ItemCondition")]
+    #[serde(default, rename = "ItemCondition")]
     pub item_condition: crate::models::ItemCondition,
-    #[serde(rename = "CustomerType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CustomerType", skip_serializing_if = "Option::is_none")]
     pub customer_type: Option<crate::models::CustomerType>,
     /// The Amazon Standard Identification Number (ASIN) of the item. This is the same Asin passed as a request parameter.
-    #[serde(rename = "Asin", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Asin", skip_serializing_if = "Option::is_none")]
     pub asin: Option<String>,
 }
 

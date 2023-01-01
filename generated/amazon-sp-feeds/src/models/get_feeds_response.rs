@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetFeedsResponse {
-    #[serde(rename = "payload", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "payload", skip_serializing_if = "Option::is_none")]
     pub payload: Option<Vec<crate::models::Feed>>,
     /// Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter.
-    #[serde(rename = "nextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "nextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<crate::models::Error>>,
 }
 

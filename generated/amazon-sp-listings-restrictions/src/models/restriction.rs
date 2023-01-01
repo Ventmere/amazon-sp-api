@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Restriction {
     /// A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// The condition that applies to the restriction.
-    #[serde(rename = "conditionType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "conditionType", skip_serializing_if = "Option::is_none")]
     pub condition_type: Option<ConditionType>,
     /// A list of reasons for the restriction.
-    #[serde(rename = "reasons", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reasons", skip_serializing_if = "Option::is_none")]
     pub reasons: Option<Vec<crate::models::Reason>>,
 }
 

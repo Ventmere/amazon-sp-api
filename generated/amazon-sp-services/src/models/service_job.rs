@@ -15,41 +15,41 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ServiceJob {
     /// The date and time of the creation of the job in ISO 8601 format.
-    #[serde(rename = "createTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "createTime", skip_serializing_if = "Option::is_none")]
     pub create_time: Option<String>,
     /// Amazon identifier for the service job.
-    #[serde(rename = "serviceJobId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceJobId", skip_serializing_if = "Option::is_none")]
     pub service_job_id: Option<String>,
     /// The status of the service job.
-    #[serde(rename = "serviceJobStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceJobStatus", skip_serializing_if = "Option::is_none")]
     pub service_job_status: Option<ServiceJobStatus>,
-    #[serde(rename = "scopeOfWork", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scopeOfWork", skip_serializing_if = "Option::is_none")]
     pub scope_of_work: Option<Box<crate::models::ScopeOfWork>>,
-    #[serde(rename = "seller", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "seller", skip_serializing_if = "Option::is_none")]
     pub seller: Option<Box<crate::models::Seller>>,
-    #[serde(rename = "serviceJobProvider", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceJobProvider", skip_serializing_if = "Option::is_none")]
     pub service_job_provider: Option<Box<crate::models::ServiceJobProvider>>,
     /// A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
-    #[serde(rename = "preferredAppointmentTimes", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "preferredAppointmentTimes", skip_serializing_if = "Option::is_none")]
     pub preferred_appointment_times: Option<Vec<crate::models::AppointmentTime>>,
     /// A list of appointments.
-    #[serde(rename = "appointments", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "appointments", skip_serializing_if = "Option::is_none")]
     pub appointments: Option<Vec<crate::models::Appointment>>,
     /// The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format.
-    #[serde(rename = "serviceOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceOrderId", skip_serializing_if = "Option::is_none")]
     pub service_order_id: Option<String>,
     /// The marketplace identifier.
-    #[serde(rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// The Amazon-defined identifier for the region scope.
-    #[serde(rename = "storeId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "storeId", skip_serializing_if = "Option::is_none")]
     pub store_id: Option<String>,
-    #[serde(rename = "buyer", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "buyer", skip_serializing_if = "Option::is_none")]
     pub buyer: Option<Box<crate::models::Buyer>>,
     /// A list of items associated with the service job.
-    #[serde(rename = "associatedItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "associatedItems", skip_serializing_if = "Option::is_none")]
     pub associated_items: Option<Vec<crate::models::AssociatedItem>>,
-    #[serde(rename = "serviceLocation", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceLocation", skip_serializing_if = "Option::is_none")]
     pub service_location: Option<Box<crate::models::ServiceLocation>>,
 }
 

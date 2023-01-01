@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItemsList {
     /// A list of order items.
-    #[serde(rename = "OrderItems")]
+    #[serde(default, rename = "OrderItems")]
     pub order_items: Vec<crate::models::OrderItem>,
     /// When present and not empty, pass this string token in the next request to return the next response page.
-    #[serde(rename = "NextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
     /// An Amazon-defined order identifier, in 3-7-7 format.
-    #[serde(rename = "AmazonOrderId")]
+    #[serde(default, rename = "AmazonOrderId")]
     pub amazon_order_id: String,
 }
 

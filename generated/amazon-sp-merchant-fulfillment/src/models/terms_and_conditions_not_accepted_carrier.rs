@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TermsAndConditionsNotAcceptedCarrier {
     /// The name of the carrier.
-    #[serde(rename = "CarrierName")]
+    #[serde(default, rename = "CarrierName")]
     pub carrier_name: String,
 }
 

@@ -15,18 +15,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ContentDocument {
     /// The A+ Content document name.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
-    #[serde(rename = "contentType")]
+    #[serde(default, rename = "contentType")]
     pub content_type: crate::models::ContentType,
     /// The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
-    #[serde(rename = "contentSubType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "contentSubType", skip_serializing_if = "Option::is_none")]
     pub content_sub_type: Option<String>,
     /// The IETF language tag. This only supports the primary language subtag with one secondary language subtag. The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
-    #[serde(rename = "locale")]
+    #[serde(default, rename = "locale")]
     pub locale: String,
     /// A list of A+ Content modules.
-    #[serde(rename = "contentModuleList")]
+    #[serde(default, rename = "contentModuleList")]
     pub content_module_list: Vec<crate::models::ContentModule>,
 }
 

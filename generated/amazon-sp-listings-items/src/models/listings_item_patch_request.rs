@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListingsItemPatchRequest {
     /// The Amazon product type of the listings item.
-    #[serde(rename = "productType")]
+    #[serde(default, rename = "productType")]
     pub product_type: String,
     /// One or more JSON Patch operations to perform on the listings item.
-    #[serde(rename = "patches")]
+    #[serde(default, rename = "patches")]
     pub patches: Vec<crate::models::PatchOperation>,
 }
 

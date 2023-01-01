@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PrepDetails {
-    #[serde(rename = "PrepInstruction")]
+    #[serde(default, rename = "PrepInstruction")]
     pub prep_instruction: crate::models::PrepInstruction,
-    #[serde(rename = "PrepOwner")]
+    #[serde(default, rename = "PrepOwner")]
     pub prep_owner: crate::models::PrepOwner,
 }
 

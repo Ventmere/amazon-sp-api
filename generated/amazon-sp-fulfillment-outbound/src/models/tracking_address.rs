@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TrackingAddress {
     /// The city.
-    #[serde(rename = "city")]
+    #[serde(default, rename = "city")]
     pub city: String,
     /// The state.
-    #[serde(rename = "state")]
+    #[serde(default, rename = "state")]
     pub state: String,
     /// The country.
-    #[serde(rename = "country")]
+    #[serde(default, rename = "country")]
     pub country: String,
 }
 

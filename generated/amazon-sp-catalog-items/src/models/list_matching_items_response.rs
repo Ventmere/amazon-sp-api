@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListMatchingItemsResponse {
     /// A list of items.
-    #[serde(rename = "Items", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Items", skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<crate::models::Item>>,
 }
 

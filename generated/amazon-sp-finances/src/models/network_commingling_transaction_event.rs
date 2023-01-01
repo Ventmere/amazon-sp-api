@@ -15,25 +15,25 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct NetworkComminglingTransactionEvent {
     /// The type of network item swap.  Possible values:  * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.  * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
-    #[serde(rename = "TransactionType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TransactionType", skip_serializing_if = "Option::is_none")]
     pub transaction_type: Option<String>,
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// The identifier for the network item swap.
-    #[serde(rename = "NetCoTransactionID", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NetCoTransactionID", skip_serializing_if = "Option::is_none")]
     pub net_co_transaction_id: Option<String>,
     /// The reason for the network item swap.
-    #[serde(rename = "SwapReason", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SwapReason", skip_serializing_if = "Option::is_none")]
     pub swap_reason: Option<String>,
     /// The Amazon Standard Identification Number (ASIN) of the swapped item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
     /// The marketplace in which the event took place.
-    #[serde(rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
-    #[serde(rename = "TaxExclusiveAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxExclusiveAmount", skip_serializing_if = "Option::is_none")]
     pub tax_exclusive_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "TaxAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxAmount", skip_serializing_if = "Option::is_none")]
     pub tax_amount: Option<Box<crate::models::Currency>>,
 }
 

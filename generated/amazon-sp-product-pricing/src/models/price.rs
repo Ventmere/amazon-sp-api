@@ -14,15 +14,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Price {
     /// The status of the operation.
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: String,
     /// The seller stock keeping unit (SKU) of the item.
-    #[serde(rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
-    #[serde(rename = "Product", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Product", skip_serializing_if = "Option::is_none")]
     pub product: Option<Box<crate::models::Product>>,
 }
 

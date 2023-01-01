@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TrackingInformation {
     /// The tracking id generated to each shipment. It contains a series of letters or digits or both.
-    #[serde(rename = "trackingId")]
+    #[serde(default, rename = "trackingId")]
     pub tracking_id: String,
-    #[serde(rename = "summary")]
+    #[serde(default, rename = "summary")]
     pub summary: Box<crate::models::TrackingSummary>,
     /// The promised delivery date and time of a shipment.
-    #[serde(rename = "promisedDeliveryDate")]
+    #[serde(default, rename = "promisedDeliveryDate")]
     pub promised_delivery_date: String,
     /// A list of events of a shipment.
-    #[serde(rename = "eventHistory")]
+    #[serde(default, rename = "eventHistory")]
     pub event_history: Vec<crate::models::Event>,
 }
 

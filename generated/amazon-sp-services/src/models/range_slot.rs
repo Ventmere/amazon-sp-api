@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RangeSlot {
     /// Start date time of slot in ISO 8601 format with precision of seconds.
-    #[serde(rename = "startDateTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "startDateTime", skip_serializing_if = "Option::is_none")]
     pub start_date_time: Option<String>,
     /// End date time of slot in ISO 8601 format with precision of seconds.
-    #[serde(rename = "endDateTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "endDateTime", skip_serializing_if = "Option::is_none")]
     pub end_date_time: Option<String>,
     /// Capacity of the slot.
-    #[serde(rename = "capacity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "capacity", skip_serializing_if = "Option::is_none")]
     pub capacity: Option<i32>,
 }
 

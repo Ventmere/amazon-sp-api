@@ -13,19 +13,19 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetFulfillmentOrderResult {
-    #[serde(rename = "fulfillmentOrder")]
+    #[serde(default, rename = "fulfillmentOrder")]
     pub fulfillment_order: Box<crate::models::FulfillmentOrder>,
     /// An array of fulfillment order item information.
-    #[serde(rename = "fulfillmentOrderItems")]
+    #[serde(default, rename = "fulfillmentOrderItems")]
     pub fulfillment_order_items: Vec<crate::models::FulfillmentOrderItem>,
     /// An array of fulfillment shipment information.
-    #[serde(rename = "fulfillmentShipments", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentShipments", skip_serializing_if = "Option::is_none")]
     pub fulfillment_shipments: Option<Vec<crate::models::FulfillmentShipment>>,
     /// An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
-    #[serde(rename = "returnItems")]
+    #[serde(default, rename = "returnItems")]
     pub return_items: Vec<crate::models::ReturnItem>,
     /// An array of return authorization information.
-    #[serde(rename = "returnAuthorizations")]
+    #[serde(default, rename = "returnAuthorizations")]
     pub return_authorizations: Vec<crate::models::ReturnAuthorization>,
 }
 

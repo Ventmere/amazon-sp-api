@@ -13,13 +13,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemOffersResponse {
-    #[serde(rename = "headers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headers", skip_serializing_if = "Option::is_none")]
     pub headers: Option<crate::models::HttpResponseHeaders>,
-    #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<Box<crate::models::GetOffersHttpStatusLine>>,
-    #[serde(rename = "body")]
+    #[serde(default, rename = "body")]
     pub body: Box<crate::models::GetOffersResponse>,
-    #[serde(rename = "request")]
+    #[serde(default, rename = "request")]
     pub request: Box<crate::models::ItemOffersRequestParams>,
 }
 

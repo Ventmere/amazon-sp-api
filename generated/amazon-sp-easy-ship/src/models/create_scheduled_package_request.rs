@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateScheduledPackageRequest {
     /// An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-    #[serde(rename = "amazonOrderId")]
+    #[serde(default, rename = "amazonOrderId")]
     pub amazon_order_id: String,
     /// A string of up to 255 characters.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
-    #[serde(rename = "packageDetails")]
+    #[serde(default, rename = "packageDetails")]
     pub package_details: Box<crate::models::PackageDetails>,
 }
 

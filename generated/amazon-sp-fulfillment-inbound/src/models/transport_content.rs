@@ -14,11 +14,11 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TransportContent {
-    #[serde(rename = "TransportHeader")]
+    #[serde(default, rename = "TransportHeader")]
     pub transport_header: Box<crate::models::TransportHeader>,
-    #[serde(rename = "TransportDetails")]
+    #[serde(default, rename = "TransportDetails")]
     pub transport_details: Box<crate::models::TransportDetailOutput>,
-    #[serde(rename = "TransportResult")]
+    #[serde(default, rename = "TransportResult")]
     pub transport_result: Box<crate::models::TransportResult>,
 }
 

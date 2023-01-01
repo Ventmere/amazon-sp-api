@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DimensionType {
-    #[serde(rename = "Height", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Height", skip_serializing_if = "Option::is_none")]
     pub height: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "Length", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Length", skip_serializing_if = "Option::is_none")]
     pub length: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "Width", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Width", skip_serializing_if = "Option::is_none")]
     pub width: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "Weight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Weight", skip_serializing_if = "Option::is_none")]
     pub weight: Option<Box<crate::models::DecimalWithUnits>>,
 }
 

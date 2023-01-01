@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Account {
     /// This is the Amazon Shipping account id generated during the Amazon Shipping onboarding process.
-    #[serde(rename = "accountId")]
+    #[serde(default, rename = "accountId")]
     pub account_id: String,
 }
 

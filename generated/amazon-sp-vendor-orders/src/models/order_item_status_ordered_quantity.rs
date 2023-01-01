@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItemStatusOrderedQuantity {
-    #[serde(rename = "orderedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderedQuantity", skip_serializing_if = "Option::is_none")]
     pub ordered_quantity: Option<Box<crate::models::ItemQuantity>>,
     /// Details of item quantity ordered.
-    #[serde(rename = "orderedQuantityDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderedQuantityDetails", skip_serializing_if = "Option::is_none")]
     pub ordered_quantity_details: Option<Vec<crate::models::OrderedQuantityDetails>>,
 }
 

@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateFeedDocumentSpecification {
     /// The content type of the feed.
-    #[serde(rename = "contentType")]
+    #[serde(default, rename = "contentType")]
     pub content_type: String,
 }
 

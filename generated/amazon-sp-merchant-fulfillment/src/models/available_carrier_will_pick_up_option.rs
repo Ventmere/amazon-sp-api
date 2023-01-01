@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AvailableCarrierWillPickUpOption {
-    #[serde(rename = "CarrierWillPickUpOption")]
+    #[serde(default, rename = "CarrierWillPickUpOption")]
     pub carrier_will_pick_up_option: crate::models::CarrierWillPickUpOption,
-    #[serde(rename = "Charge")]
+    #[serde(default, rename = "Charge")]
     pub charge: Box<crate::models::CurrencyAmount>,
 }
 

@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AdditionalSellerInputs {
     /// The name of the additional input field.
-    #[serde(rename = "AdditionalInputFieldName")]
+    #[serde(default, rename = "AdditionalInputFieldName")]
     pub additional_input_field_name: String,
-    #[serde(rename = "AdditionalSellerInput")]
+    #[serde(default, rename = "AdditionalSellerInput")]
     pub additional_seller_input: Box<crate::models::AdditionalSellerInput>,
 }
 

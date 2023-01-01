@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetEligibleShipmentServicesRequest {
-    #[serde(rename = "ShipmentRequestDetails")]
+    #[serde(default, rename = "ShipmentRequestDetails")]
     pub shipment_request_details: Box<crate::models::ShipmentRequestDetails>,
-    #[serde(rename = "ShippingOfferingFilter", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingOfferingFilter", skip_serializing_if = "Option::is_none")]
     pub shipping_offering_filter: Option<Box<crate::models::ShippingOfferingFilter>>,
 }
 

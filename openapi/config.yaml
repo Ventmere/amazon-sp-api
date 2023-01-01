@@ -14,4 +14,6 @@ files:
   api_mod.mustache:
     templateType: SupportingFiles
     destinationFilename: src/apis/mod.rs
-  
+  model.mustache:
+    templateType: Model
+    destinationFilename: .rs

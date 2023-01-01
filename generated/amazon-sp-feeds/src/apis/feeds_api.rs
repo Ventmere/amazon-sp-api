@@ -11,104 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`cancel_feed`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CancelFeedError {
-    Status400(crate::models::CancelFeedResponse),
-    Status401(crate::models::CancelFeedResponse),
-    Status403(crate::models::CancelFeedResponse),
-    Status404(crate::models::CancelFeedResponse),
-    Status415(crate::models::CancelFeedResponse),
-    Status429(crate::models::CancelFeedResponse),
-    Status500(crate::models::CancelFeedResponse),
-    Status503(crate::models::CancelFeedResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_feed`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateFeedError {
-    Status400(crate::models::CreateFeedResponse),
-    Status401(crate::models::CreateFeedResponse),
-    Status403(crate::models::CreateFeedResponse),
-    Status404(crate::models::CreateFeedResponse),
-    Status415(crate::models::CreateFeedResponse),
-    Status429(crate::models::CreateFeedResponse),
-    Status500(crate::models::CreateFeedResponse),
-    Status503(crate::models::CreateFeedResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_feed_document`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateFeedDocumentError {
-    Status400(crate::models::CreateFeedDocumentResponse),
-    Status403(crate::models::CreateFeedDocumentResponse),
-    Status404(crate::models::CreateFeedDocumentResponse),
-    Status413(crate::models::CreateFeedDocumentResponse),
-    Status415(crate::models::CreateFeedDocumentResponse),
-    Status429(crate::models::CreateFeedDocumentResponse),
-    Status500(crate::models::CreateFeedDocumentResponse),
-    Status503(crate::models::CreateFeedDocumentResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_feed`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetFeedError {
-    Status400(crate::models::GetFeedResponse),
-    Status401(crate::models::GetFeedResponse),
-    Status403(crate::models::GetFeedResponse),
-    Status404(crate::models::GetFeedResponse),
-    Status415(crate::models::GetFeedResponse),
-    Status429(crate::models::GetFeedResponse),
-    Status500(crate::models::GetFeedResponse),
-    Status503(crate::models::GetFeedResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_feed_document`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetFeedDocumentError {
-    Status400(crate::models::GetFeedDocumentResponse),
-    Status401(crate::models::GetFeedDocumentResponse),
-    Status403(crate::models::GetFeedDocumentResponse),
-    Status404(crate::models::GetFeedDocumentResponse),
-    Status415(crate::models::GetFeedDocumentResponse),
-    Status429(crate::models::GetFeedDocumentResponse),
-    Status500(crate::models::GetFeedDocumentResponse),
-    Status503(crate::models::GetFeedDocumentResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_feeds`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetFeedsError {
-    Status400(crate::models::GetFeedsResponse),
-    Status401(crate::models::GetFeedsResponse),
-    Status403(crate::models::GetFeedsResponse),
-    Status404(crate::models::GetFeedsResponse),
-    Status415(crate::models::GetFeedsResponse),
-    Status429(crate::models::GetFeedsResponse),
-    Status500(crate::models::GetFeedsResponse),
-    Status503(crate::models::GetFeedsResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can be cancelled. Cancelled feeds are returned in subsequent calls to the getFeed and getFeeds operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn cancel_feed(configuration: &configuration::Configuration, feed_id: &str) -> Result<crate::models::CancelFeedResponse, Error<CancelFeedError>> {
+pub async fn cancel_feed(configuration: &configuration::Configuration, feed_id: &str) -> Result<crate::models::CancelFeedResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -121,16 +29,21 @@ pub async fn cancel_feed(configuration: &configuration::Configuration, feed_id: 
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "DELETE",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -141,8 +54,7 @@ pub async fn cancel_feed(configuration: &configuration::Configuration, feed_id: 
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -160,14 +72,14 @@ pub async fn cancel_feed(configuration: &configuration::Configuration, feed_id: 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CancelFeedError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_feed(configuration: &configuration::Configuration, body: crate::models::CreateFeedSpecification) -> Result<crate::models::CreateFeedResponse, Error<CreateFeedError>> {
+pub async fn create_feed(configuration: &configuration::Configuration, body: crate::models::CreateFeedSpecification) -> Result<crate::models::CreateFeedResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -180,16 +92,21 @@ pub async fn create_feed(configuration: &configuration::Configuration, body: cra
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -200,8 +117,7 @@ pub async fn create_feed(configuration: &configuration::Configuration, body: cra
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -220,14 +136,14 @@ pub async fn create_feed(configuration: &configuration::Configuration, body: cra
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateFeedError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_feed_document(configuration: &configuration::Configuration, body: crate::models::CreateFeedDocumentSpecification) -> Result<crate::models::CreateFeedDocumentResponse, Error<CreateFeedDocumentError>> {
+pub async fn create_feed_document(configuration: &configuration::Configuration, body: crate::models::CreateFeedDocumentSpecification) -> Result<crate::models::CreateFeedDocumentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -240,16 +156,21 @@ pub async fn create_feed_document(configuration: &configuration::Configuration, 
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -260,8 +181,7 @@ pub async fn create_feed_document(configuration: &configuration::Configuration, 
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -280,14 +200,14 @@ pub async fn create_feed_document(configuration: &configuration::Configuration, 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateFeedDocumentError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns feed details (including the resultDocumentId, if available) for the feed that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_feed(configuration: &configuration::Configuration, feed_id: &str) -> Result<crate::models::GetFeedResponse, Error<GetFeedError>> {
+pub async fn get_feed(configuration: &configuration::Configuration, feed_id: &str) -> Result<crate::models::GetFeedResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -300,16 +220,21 @@ pub async fn get_feed(configuration: &configuration::Configuration, feed_id: &st
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -320,8 +245,7 @@ pub async fn get_feed(configuration: &configuration::Configuration, feed_id: &st
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -339,14 +263,14 @@ pub async fn get_feed(configuration: &configuration::Configuration, feed_id: &st
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetFeedError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the information required for retrieving a feed document's contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_feed_document(configuration: &configuration::Configuration, feed_document_id: &str) -> Result<crate::models::GetFeedDocumentResponse, Error<GetFeedDocumentError>> {
+pub async fn get_feed_document(configuration: &configuration::Configuration, feed_document_id: &str) -> Result<crate::models::GetFeedDocumentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -359,16 +283,21 @@ pub async fn get_feed_document(configuration: &configuration::Configuration, fee
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -379,8 +308,7 @@ pub async fn get_feed_document(configuration: &configuration::Configuration, fee
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -398,14 +326,14 @@ pub async fn get_feed_document(configuration: &configuration::Configuration, fee
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetFeedDocumentError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns feed details for the feeds that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_feeds(configuration: &configuration::Configuration, feed_types: Option<Vec<String>>, marketplace_ids: Option<Vec<String>>, page_size: Option<i32>, processing_statuses: Option<Vec<String>>, created_since: Option<String>, created_until: Option<String>, next_token: Option<&str>) -> Result<crate::models::GetFeedsResponse, Error<GetFeedsError>> {
+pub async fn get_feeds(configuration: &configuration::Configuration, feed_types: Option<Vec<String>>, marketplace_ids: Option<Vec<String>>, page_size: Option<i32>, processing_statuses: Option<Vec<String>>, created_since: Option<String>, created_until: Option<String>, next_token: Option<&str>) -> Result<crate::models::GetFeedsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -448,16 +376,21 @@ pub async fn get_feeds(configuration: &configuration::Configuration, feed_types:
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -468,8 +401,7 @@ pub async fn get_feeds(configuration: &configuration::Configuration, feed_types:
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -487,8 +419,8 @@ pub async fn get_feeds(configuration: &configuration::Configuration, feed_types:
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetFeedsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

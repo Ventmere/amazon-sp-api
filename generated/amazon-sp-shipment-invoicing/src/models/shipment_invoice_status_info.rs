@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentInvoiceStatusInfo {
     /// The Amazon-defined shipment identifier.
-    #[serde(rename = "AmazonShipmentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonShipmentId", skip_serializing_if = "Option::is_none")]
     pub amazon_shipment_id: Option<String>,
-    #[serde(rename = "InvoiceStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "InvoiceStatus", skip_serializing_if = "Option::is_none")]
     pub invoice_status: Option<crate::models::ShipmentInvoiceStatus>,
 }
 

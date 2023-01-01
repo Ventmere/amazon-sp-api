@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Money {
     /// Three-digit currency code. In ISO 4217 format.
-    #[serde(rename = "currencyCode")]
+    #[serde(default, rename = "currencyCode")]
     pub currency_code: String,
     /// A decimal number with no loss of precision. Useful when precision loss is unnaceptable, as with currencies. Follows RFC7159 for number representation.
-    #[serde(rename = "amount")]
+    #[serde(default, rename = "amount")]
     pub amount: String,
 }
 

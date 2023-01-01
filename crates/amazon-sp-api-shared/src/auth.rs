@@ -2,9 +2,9 @@ use parking_lot::RwLock;
 use std::sync::Arc;
 use std::time::{Instant, Duration};
 use reqwest::Client;
-use serde_derive::{Serialize, Deserialize};
+use serde::{Serialize, Deserialize};
 use crate::error::{SharedError};
-use crate::request::ResponseContent;
+use crate::request::ResponseError;
 
 #[derive(Debug, Clone)]
 pub struct AuthState {
@@ -52,7 +52,7 @@ impl AuthState {
     self.token.write().take();
   }
 
-  pub async fn get_access_token<T>(&self, client: &Client) -> Result<String, SharedError<T>> {
+  pub async fn get_access_token(&self, client: &Client) -> Result<String, SharedError> {
     if let Some(token) = self.token.read().as_ref().map(|v| v.clone()) {
       if token.expires_at.checked_duration_since(Instant::now()).map(|d| d > Duration::from_secs(60)).unwrap_or_default() {
         tracing::debug!("reuse token");
@@ -79,10 +79,10 @@ impl AuthState {
         let body = res.text().await.ok();
         if !status.is_success() {
           return Err(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
                 status,
                 content: body.unwrap_or_default(),
-                entity: None,
+                error_list: None,
             })
           )
         }
@@ -91,10 +91,10 @@ impl AuthState {
           serde_json::from_str(body)?
         } else {
           return Err(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
               status,
               content: "".to_string(),
-              entity: None,
+              error_list: None,
             })
           )
         };
@@ -129,10 +129,10 @@ impl AuthState {
         let body = res.text().await.ok();
         if !status.is_success() {
           return Err(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
                 status,
                 content: body.unwrap_or_default(),
-                entity: None,
+                error_list: None,
             })
           )
         }
@@ -141,10 +141,10 @@ impl AuthState {
           serde_json::from_str(body)?
         } else {
           return Err(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
               status,
               content: "".to_string(),
-              entity: None,
+              error_list: None,
             })
           )
         };
@@ -180,10 +180,10 @@ impl AuthState {
         let body = res.text().await.ok();
         if !status.is_success() {
           return Err(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
                 status,
                 content: body.unwrap_or_default(),
-                entity: None,
+                error_list: None,
             })
           )
         }
@@ -192,10 +192,10 @@ impl AuthState {
           serde_json::from_str(body)?
         } else {
           return Err(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
               status,
               content: "".to_string(),
-              entity: None,
+              error_list: None,
             })
           )
         };
@@ -243,10 +243,11 @@ enum AuthType {
   },
   Grantless {
     scope: &'static str,
-  }
+  },
 }
 
 #[derive(Debug, Clone)]
+#[allow(unused)]
 struct Token {
   access_token: String,
   expires_at: Instant,
@@ -271,6 +272,7 @@ struct ClientCredentialsGrantReply {
 }
 
 #[derive(Debug, Deserialize)]
+#[allow(unused)]
 struct AuthorizationCodeGrantReply {
   access_token: String,
   token_type: String,

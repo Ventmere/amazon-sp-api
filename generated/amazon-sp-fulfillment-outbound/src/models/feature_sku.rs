@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeatureSku {
     /// Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-    #[serde(rename = "sellerSku", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sellerSku", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
     /// The unique SKU used by Amazon's fulfillment network.
-    #[serde(rename = "fnSku", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fnSku", skip_serializing_if = "Option::is_none")]
     pub fn_sku: Option<String>,
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "asin", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "asin", skip_serializing_if = "Option::is_none")]
     pub asin: Option<String>,
     /// The number of SKUs available for this service.
-    #[serde(rename = "skuCount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "skuCount", skip_serializing_if = "Option::is_none")]
     pub sku_count: Option<f32>,
     /// Other seller SKUs that are shared across the same inventory.
-    #[serde(rename = "overlappingSkus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "overlappingSkus", skip_serializing_if = "Option::is_none")]
     pub overlapping_skus: Option<Vec<String>>,
 }
 

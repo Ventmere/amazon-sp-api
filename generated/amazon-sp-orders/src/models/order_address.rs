@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderAddress {
     /// An Amazon-defined order identifier, in 3-7-7 format.
-    #[serde(rename = "AmazonOrderId")]
+    #[serde(default, rename = "AmazonOrderId")]
     pub amazon_order_id: String,
-    #[serde(rename = "ShippingAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingAddress", skip_serializing_if = "Option::is_none")]
     pub shipping_address: Option<Box<crate::models::Address>>,
 }
 

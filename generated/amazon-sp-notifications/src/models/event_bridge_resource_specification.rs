@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct EventBridgeResourceSpecification {
     /// The AWS region in which you will be receiving the notifications.
-    #[serde(rename = "region")]
+    #[serde(default, rename = "region")]
     pub region: String,
     /// The identifier for the AWS account that is responsible for charges related to receiving notifications.
-    #[serde(rename = "accountId")]
+    #[serde(default, rename = "accountId")]
     pub account_id: String,
 }
 

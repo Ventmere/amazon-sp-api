@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Label {
     /// Contains binary image data encoded as a base-64 string.
-    #[serde(rename = "labelStream", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "labelStream", skip_serializing_if = "Option::is_none")]
     pub label_stream: Option<String>,
-    #[serde(rename = "labelSpecification", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "labelSpecification", skip_serializing_if = "Option::is_none")]
     pub label_specification: Option<Box<crate::models::LabelSpecification>>,
 }
 

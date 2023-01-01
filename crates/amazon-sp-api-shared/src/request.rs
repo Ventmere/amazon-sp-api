@@ -1,20 +1,20 @@
 use crate::error::SharedError;
 use reqwest::Url;
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 #[derive(Debug, Clone)]
-pub struct ResponseContent<T> {
+pub struct ResponseError {
   pub status: reqwest::StatusCode,
   pub content: String,
-  pub entity: Option<T>,
+  pub error_list: Option<Vec<Error>>,
 }
 
-pub struct UrlBuilder<E> {
-  url: Result<Url, SharedError<E>>,
+pub struct UrlBuilder {
+  url: Result<Url, SharedError>,
 }
 
-impl<E> UrlBuilder<E> {
-  pub fn parse(base: &str) -> Result<Self, SharedError<E>> {
+impl UrlBuilder {
+  pub fn parse(base: &str) -> Result<Self, SharedError> {
     Ok(Self {
       url: Ok(Url::parse(base)?),
     })
@@ -35,7 +35,38 @@ impl<E> UrlBuilder<E> {
     self
   }
 
-  pub fn build(self) -> Result<Url, SharedError<E>> {
+  pub fn build(self) -> Result<Url, SharedError> {
     self.url
   }
+}
+
+
+#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+pub struct Error {
+    /// The code that identifies the type of error condition.
+    #[serde(rename = "code")]
+    pub code: String,
+    /// A human readable description of the error condition.
+    #[serde(rename = "message")]
+    pub message: String,
+    /// Additional information, if available, to clarify the error condition.
+    #[serde(rename = "details", skip_serializing_if = "Option::is_none")]
+    pub details: Option<String>,
+}
+
+impl Error {
+    /// Error response returned when the request is unsuccessful.
+    pub fn new(code: String, message: String) -> Error {
+        Error {
+            code,
+            message,
+            details: None,
+        }
+    }
+}
+
+#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+pub struct ErrorList {
+    /// A list of error responses returned when the request is unsuccessful.
+    pub errors: Vec<Error>,
 }

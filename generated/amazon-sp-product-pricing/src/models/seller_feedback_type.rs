@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SellerFeedbackType {
     /// The percentage of positive feedback for the seller in the past 365 days.
-    #[serde(rename = "SellerPositiveFeedbackRating", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerPositiveFeedbackRating", skip_serializing_if = "Option::is_none")]
     pub seller_positive_feedback_rating: Option<f64>,
     /// The number of ratings received about the seller.
-    #[serde(rename = "FeedbackCount")]
+    #[serde(default, rename = "FeedbackCount")]
     pub feedback_count: i64,
 }
 

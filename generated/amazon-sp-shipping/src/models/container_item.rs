@@ -15,14 +15,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ContainerItem {
     /// The quantity of the items of this type in the container.
-    #[serde(rename = "quantity")]
+    #[serde(default, rename = "quantity")]
     pub quantity: f32,
-    #[serde(rename = "unitPrice")]
+    #[serde(default, rename = "unitPrice")]
     pub unit_price: Box<crate::models::Currency>,
-    #[serde(rename = "unitWeight")]
+    #[serde(default, rename = "unitWeight")]
     pub unit_weight: Box<crate::models::Weight>,
     /// A descriptive title of the item.
-    #[serde(rename = "title")]
+    #[serde(default, rename = "title")]
     pub title: String,
 }
 

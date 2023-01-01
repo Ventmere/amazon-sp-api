@@ -13,9 +13,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CustomerInvoiceList {
-    #[serde(rename = "pagination", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "pagination", skip_serializing_if = "Option::is_none")]
     pub pagination: Option<Box<crate::models::Pagination>>,
-    #[serde(rename = "customerInvoices", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "customerInvoices", skip_serializing_if = "Option::is_none")]
     pub customer_invoices: Option<Vec<crate::models::CustomerInvoice>>,
 }
 

@@ -15,18 +15,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ContentMetadata {
     /// The A+ Content document name.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
     /// The identifier for the marketplace where the A+ Content is published.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: crate::models::ContentStatus,
     /// The set of content badges.
-    #[serde(rename = "badgeSet")]
+    #[serde(default, rename = "badgeSet")]
     pub badge_set: Vec<crate::models::ContentBadge>,
     /// The approximate age of the A+ Content document and metadata.
-    #[serde(rename = "updateTime")]
+    #[serde(default, rename = "updateTime")]
     pub update_time: String,
 }
 

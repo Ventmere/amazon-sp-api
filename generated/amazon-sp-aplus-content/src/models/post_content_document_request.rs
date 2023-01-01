@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PostContentDocumentRequest {
-    #[serde(rename = "contentDocument")]
+    #[serde(default, rename = "contentDocument")]
     pub content_document: Box<crate::models::ContentDocument>,
 }
 

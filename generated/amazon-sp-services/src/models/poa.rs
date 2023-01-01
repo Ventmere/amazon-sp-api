@@ -14,19 +14,19 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Poa {
-    #[serde(rename = "appointmentTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "appointmentTime", skip_serializing_if = "Option::is_none")]
     pub appointment_time: Option<Box<crate::models::AppointmentTime>>,
     /// A list of technicians.
-    #[serde(rename = "technicians", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "technicians", skip_serializing_if = "Option::is_none")]
     pub technicians: Option<Vec<crate::models::Technician>>,
     /// The identifier of the technician who uploaded the POA.
-    #[serde(rename = "uploadingTechnician", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "uploadingTechnician", skip_serializing_if = "Option::is_none")]
     pub uploading_technician: Option<String>,
     /// The date and time when the POA was uploaded in ISO 8601 format.
-    #[serde(rename = "uploadTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "uploadTime", skip_serializing_if = "Option::is_none")]
     pub upload_time: Option<String>,
     /// The type of POA uploaded.
-    #[serde(rename = "poaType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "poaType", skip_serializing_if = "Option::is_none")]
     pub poa_type: Option<PoaType>,
 }
 

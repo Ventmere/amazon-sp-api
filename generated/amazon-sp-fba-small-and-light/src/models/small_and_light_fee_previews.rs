@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SmallAndLightFeePreviews {
     /// A list of fee estimates for the requested items. The order of the fee estimates will follow the same order as the items in the request, with duplicates removed.
-    #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "data", skip_serializing_if = "Option::is_none")]
     pub data: Option<Vec<crate::models::FeePreview>>,
 }
 

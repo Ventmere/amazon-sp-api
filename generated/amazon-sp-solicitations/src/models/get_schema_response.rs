@@ -13,13 +13,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetSchemaResponse {
-    #[serde(rename = "_links", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "_links", skip_serializing_if = "Option::is_none")]
     pub _links: Option<Box<crate::models::GetSchemaResponseLinks>>,
     /// A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>.
-    #[serde(rename = "payload", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "payload", skip_serializing_if = "Option::is_none")]
     pub payload: Option<::std::collections::HashMap<String, serde_json::Value>>,
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<crate::models::Error>>,
 }
 

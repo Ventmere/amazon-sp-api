@@ -15,37 +15,37 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShippingService {
     /// A plain text representation of a carrier's shipping service. For example, \"UPS Ground\" or \"FedEx Standard Overnight\". 
-    #[serde(rename = "ShippingServiceName")]
+    #[serde(default, rename = "ShippingServiceName")]
     pub shipping_service_name: String,
     /// The name of the carrier.
-    #[serde(rename = "CarrierName")]
+    #[serde(default, rename = "CarrierName")]
     pub carrier_name: String,
     /// An Amazon-defined shipping service identifier.
-    #[serde(rename = "ShippingServiceId")]
+    #[serde(default, rename = "ShippingServiceId")]
     pub shipping_service_id: String,
     /// An Amazon-defined shipping service offer identifier.
-    #[serde(rename = "ShippingServiceOfferId")]
+    #[serde(default, rename = "ShippingServiceOfferId")]
     pub shipping_service_offer_id: String,
-    #[serde(rename = "ShipDate")]
+    #[serde(default, rename = "ShipDate")]
     pub ship_date: String,
-    #[serde(rename = "EarliestEstimatedDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EarliestEstimatedDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub earliest_estimated_delivery_date: Option<String>,
-    #[serde(rename = "LatestEstimatedDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LatestEstimatedDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub latest_estimated_delivery_date: Option<String>,
-    #[serde(rename = "Rate")]
+    #[serde(default, rename = "Rate")]
     pub rate: Box<crate::models::CurrencyAmount>,
-    #[serde(rename = "ShippingServiceOptions")]
+    #[serde(default, rename = "ShippingServiceOptions")]
     pub shipping_service_options: Box<crate::models::ShippingServiceOptions>,
-    #[serde(rename = "AvailableShippingServiceOptions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AvailableShippingServiceOptions", skip_serializing_if = "Option::is_none")]
     pub available_shipping_service_options: Option<Box<crate::models::AvailableShippingServiceOptions>>,
     /// List of label formats.
-    #[serde(rename = "AvailableLabelFormats", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AvailableLabelFormats", skip_serializing_if = "Option::is_none")]
     pub available_label_formats: Option<Vec<crate::models::LabelFormat>>,
     /// The available label formats.
-    #[serde(rename = "AvailableFormatOptionsForLabel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AvailableFormatOptionsForLabel", skip_serializing_if = "Option::is_none")]
     pub available_format_options_for_label: Option<Vec<crate::models::LabelFormatOption>>,
     /// When true, additional seller inputs are required.
-    #[serde(rename = "RequiresAdditionalSellerInputs")]
+    #[serde(default, rename = "RequiresAdditionalSellerInputs")]
     pub requires_additional_seller_inputs: bool,
 }
 

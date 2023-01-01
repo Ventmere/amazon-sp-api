@@ -14,17 +14,17 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShippingLabel {
     /// This field will contain the Purchase Order Number for this order.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipFromParty")]
+    #[serde(default, rename = "shipFromParty")]
     pub ship_from_party: Box<crate::models::PartyIdentification>,
     /// Format of the label.
-    #[serde(rename = "labelFormat")]
+    #[serde(default, rename = "labelFormat")]
     pub label_format: LabelFormat,
     /// Provides the details of the packages in this shipment.
-    #[serde(rename = "labelData")]
+    #[serde(default, rename = "labelData")]
     pub label_data: Vec<crate::models::LabelData>,
 }
 

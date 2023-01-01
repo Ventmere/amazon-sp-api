@@ -14,14 +14,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShippingLabelRequest {
     /// Purchase order number of the order for which to create a shipping label.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipFromParty")]
+    #[serde(default, rename = "shipFromParty")]
     pub ship_from_party: Box<crate::models::PartyIdentification>,
     /// A list of the packages in this shipment.
-    #[serde(rename = "containers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "containers", skip_serializing_if = "Option::is_none")]
     pub containers: Option<Vec<crate::models::Container>>,
 }
 

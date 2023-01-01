@@ -14,12 +14,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Order {
     /// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
     /// This field will contain the current state of the purchase order.
-    #[serde(rename = "purchaseOrderState")]
+    #[serde(default, rename = "purchaseOrderState")]
     pub purchase_order_state: PurchaseOrderState,
-    #[serde(rename = "orderDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderDetails", skip_serializing_if = "Option::is_none")]
     pub order_details: Option<Box<crate::models::OrderDetails>>,
 }
 

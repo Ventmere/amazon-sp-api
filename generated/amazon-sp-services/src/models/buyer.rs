@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Buyer {
     /// The identifier of the buyer.
-    #[serde(rename = "buyerId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "buyerId", skip_serializing_if = "Option::is_none")]
     pub buyer_id: Option<String>,
     /// The name of the buyer.
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     /// The phone number of the buyer.
-    #[serde(rename = "phone", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "phone", skip_serializing_if = "Option::is_none")]
     pub phone: Option<String>,
     /// When true, the service is for an Amazon Prime buyer.
-    #[serde(rename = "isPrimeMember", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "isPrimeMember", skip_serializing_if = "Option::is_none")]
     pub is_prime_member: Option<bool>,
 }
 

@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderDetailsTaxTotal {
     /// A list of tax line items.
-    #[serde(rename = "taxLineItem", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxLineItem", skip_serializing_if = "Option::is_none")]
     pub tax_line_item: Option<Vec<crate::models::TaxDetails>>,
 }
 

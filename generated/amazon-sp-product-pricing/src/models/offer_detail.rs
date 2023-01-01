@@ -14,43 +14,43 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OfferDetail {
     /// When true, this is the seller's offer.
-    #[serde(rename = "MyOffer", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MyOffer", skip_serializing_if = "Option::is_none")]
     pub my_offer: Option<bool>,
-    #[serde(rename = "offerType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "offerType", skip_serializing_if = "Option::is_none")]
     pub offer_type: Option<crate::models::OfferCustomerType>,
     /// The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-    #[serde(rename = "SubCondition")]
+    #[serde(default, rename = "SubCondition")]
     pub sub_condition: String,
     /// The seller identifier for the offer.
-    #[serde(rename = "SellerId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerId", skip_serializing_if = "Option::is_none")]
     pub seller_id: Option<String>,
     /// Information about the condition of the item.
-    #[serde(rename = "ConditionNotes", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConditionNotes", skip_serializing_if = "Option::is_none")]
     pub condition_notes: Option<String>,
-    #[serde(rename = "SellerFeedbackRating", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerFeedbackRating", skip_serializing_if = "Option::is_none")]
     pub seller_feedback_rating: Option<Box<crate::models::SellerFeedbackType>>,
-    #[serde(rename = "ShippingTime")]
+    #[serde(default, rename = "ShippingTime")]
     pub shipping_time: Box<crate::models::DetailedShippingTimeType>,
-    #[serde(rename = "ListingPrice")]
+    #[serde(default, rename = "ListingPrice")]
     pub listing_price: Box<crate::models::MoneyType>,
-    #[serde(rename = "quantityDiscountPrices", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantityDiscountPrices", skip_serializing_if = "Option::is_none")]
     pub quantity_discount_prices: Option<Vec<crate::models::QuantityDiscountPriceType>>,
-    #[serde(rename = "Points", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Points", skip_serializing_if = "Option::is_none")]
     pub points: Option<Box<crate::models::Points>>,
-    #[serde(rename = "Shipping")]
+    #[serde(default, rename = "Shipping")]
     pub shipping: Box<crate::models::MoneyType>,
-    #[serde(rename = "ShipsFrom", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipsFrom", skip_serializing_if = "Option::is_none")]
     pub ships_from: Option<Box<crate::models::ShipsFromType>>,
     /// When true, the offer is fulfilled by Amazon.
-    #[serde(rename = "IsFulfilledByAmazon")]
+    #[serde(default, rename = "IsFulfilledByAmazon")]
     pub is_fulfilled_by_amazon: bool,
-    #[serde(rename = "PrimeInformation", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PrimeInformation", skip_serializing_if = "Option::is_none")]
     pub prime_information: Option<Box<crate::models::PrimeInformationType>>,
     /// When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.
-    #[serde(rename = "IsBuyBoxWinner", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsBuyBoxWinner", skip_serializing_if = "Option::is_none")]
     pub is_buy_box_winner: Option<bool>,
     /// When true, the seller of the item is eligible to win the Buy Box.
-    #[serde(rename = "IsFeaturedMerchant", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsFeaturedMerchant", skip_serializing_if = "Option::is_none")]
     pub is_featured_merchant: Option<bool>,
 }
 

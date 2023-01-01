@@ -15,274 +15,274 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AttributeSetListType {
     /// The actor attributes of the item.
-    #[serde(rename = "Actor", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Actor", skip_serializing_if = "Option::is_none")]
     pub actor: Option<Vec<String>>,
     /// The artist attributes of the item.
-    #[serde(rename = "Artist", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Artist", skip_serializing_if = "Option::is_none")]
     pub artist: Option<Vec<String>>,
     /// The aspect ratio attribute of the item.
-    #[serde(rename = "AspectRatio", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AspectRatio", skip_serializing_if = "Option::is_none")]
     pub aspect_ratio: Option<String>,
     /// The audience rating attribute of the item.
-    #[serde(rename = "AudienceRating", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AudienceRating", skip_serializing_if = "Option::is_none")]
     pub audience_rating: Option<String>,
     /// The author attributes of the item.
-    #[serde(rename = "Author", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Author", skip_serializing_if = "Option::is_none")]
     pub author: Option<Vec<String>>,
     /// The back finding attribute of the item.
-    #[serde(rename = "BackFinding", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BackFinding", skip_serializing_if = "Option::is_none")]
     pub back_finding: Option<String>,
     /// The band material type attribute of the item.
-    #[serde(rename = "BandMaterialType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BandMaterialType", skip_serializing_if = "Option::is_none")]
     pub band_material_type: Option<String>,
     /// The binding attribute of the item.
-    #[serde(rename = "Binding", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Binding", skip_serializing_if = "Option::is_none")]
     pub binding: Option<String>,
     /// The Bluray region attribute of the item.
-    #[serde(rename = "BlurayRegion", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BlurayRegion", skip_serializing_if = "Option::is_none")]
     pub bluray_region: Option<String>,
     /// The brand attribute of the item.
-    #[serde(rename = "Brand", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Brand", skip_serializing_if = "Option::is_none")]
     pub brand: Option<String>,
     /// The CERO age rating attribute of the item.
-    #[serde(rename = "CeroAgeRating", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CeroAgeRating", skip_serializing_if = "Option::is_none")]
     pub cero_age_rating: Option<String>,
     /// The chain type attribute of the item.
-    #[serde(rename = "ChainType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ChainType", skip_serializing_if = "Option::is_none")]
     pub chain_type: Option<String>,
     /// The clasp type attribute of the item.
-    #[serde(rename = "ClaspType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ClaspType", skip_serializing_if = "Option::is_none")]
     pub clasp_type: Option<String>,
     /// The color attribute of the item.
-    #[serde(rename = "Color", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Color", skip_serializing_if = "Option::is_none")]
     pub color: Option<String>,
     /// The CPU manufacturer attribute of the item.
-    #[serde(rename = "CpuManufacturer", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CpuManufacturer", skip_serializing_if = "Option::is_none")]
     pub cpu_manufacturer: Option<String>,
-    #[serde(rename = "CpuSpeed", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CpuSpeed", skip_serializing_if = "Option::is_none")]
     pub cpu_speed: Option<Box<crate::models::DecimalWithUnits>>,
     /// The CPU type attribute of the item.
-    #[serde(rename = "CpuType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CpuType", skip_serializing_if = "Option::is_none")]
     pub cpu_type: Option<String>,
     /// The creator attributes of the item.
-    #[serde(rename = "Creator", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Creator", skip_serializing_if = "Option::is_none")]
     pub creator: Option<Vec<crate::models::CreatorType>>,
     /// The department attribute of the item.
-    #[serde(rename = "Department", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Department", skip_serializing_if = "Option::is_none")]
     pub department: Option<String>,
     /// The director attributes of the item.
-    #[serde(rename = "Director", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Director", skip_serializing_if = "Option::is_none")]
     pub director: Option<Vec<String>>,
-    #[serde(rename = "DisplaySize", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DisplaySize", skip_serializing_if = "Option::is_none")]
     pub display_size: Option<Box<crate::models::DecimalWithUnits>>,
     /// The edition attribute of the item.
-    #[serde(rename = "Edition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Edition", skip_serializing_if = "Option::is_none")]
     pub edition: Option<String>,
     /// The episode sequence attribute of the item.
-    #[serde(rename = "EpisodeSequence", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EpisodeSequence", skip_serializing_if = "Option::is_none")]
     pub episode_sequence: Option<String>,
     /// The ESRB age rating attribute of the item.
-    #[serde(rename = "EsrbAgeRating", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EsrbAgeRating", skip_serializing_if = "Option::is_none")]
     pub esrb_age_rating: Option<String>,
     /// The feature attributes of the item
-    #[serde(rename = "Feature", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Feature", skip_serializing_if = "Option::is_none")]
     pub feature: Option<Vec<String>>,
     /// The flavor attribute of the item.
-    #[serde(rename = "Flavor", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Flavor", skip_serializing_if = "Option::is_none")]
     pub flavor: Option<String>,
     /// The format attributes of the item.
-    #[serde(rename = "Format", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Format", skip_serializing_if = "Option::is_none")]
     pub format: Option<Vec<String>>,
     /// The gem type attributes of the item.
-    #[serde(rename = "GemType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GemType", skip_serializing_if = "Option::is_none")]
     pub gem_type: Option<Vec<String>>,
     /// The genre attribute of the item.
-    #[serde(rename = "Genre", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Genre", skip_serializing_if = "Option::is_none")]
     pub genre: Option<String>,
     /// The golf club flex attribute of the item.
-    #[serde(rename = "GolfClubFlex", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GolfClubFlex", skip_serializing_if = "Option::is_none")]
     pub golf_club_flex: Option<String>,
-    #[serde(rename = "GolfClubLoft", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GolfClubLoft", skip_serializing_if = "Option::is_none")]
     pub golf_club_loft: Option<Box<crate::models::DecimalWithUnits>>,
     /// The hand orientation attribute of the item.
-    #[serde(rename = "HandOrientation", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HandOrientation", skip_serializing_if = "Option::is_none")]
     pub hand_orientation: Option<String>,
     /// The hard disk interface attribute of the item.
-    #[serde(rename = "HardDiskInterface", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HardDiskInterface", skip_serializing_if = "Option::is_none")]
     pub hard_disk_interface: Option<String>,
-    #[serde(rename = "HardDiskSize", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HardDiskSize", skip_serializing_if = "Option::is_none")]
     pub hard_disk_size: Option<Box<crate::models::DecimalWithUnits>>,
     /// The hardware platform attribute of the item.
-    #[serde(rename = "HardwarePlatform", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HardwarePlatform", skip_serializing_if = "Option::is_none")]
     pub hardware_platform: Option<String>,
     /// The hazardous material type attribute of the item.
-    #[serde(rename = "HazardousMaterialType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HazardousMaterialType", skip_serializing_if = "Option::is_none")]
     pub hazardous_material_type: Option<String>,
-    #[serde(rename = "ItemDimensions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemDimensions", skip_serializing_if = "Option::is_none")]
     pub item_dimensions: Option<Box<crate::models::DimensionType>>,
     /// The adult product attribute of the item.
-    #[serde(rename = "IsAdultProduct", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsAdultProduct", skip_serializing_if = "Option::is_none")]
     pub is_adult_product: Option<bool>,
     /// The autographed attribute of the item.
-    #[serde(rename = "IsAutographed", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsAutographed", skip_serializing_if = "Option::is_none")]
     pub is_autographed: Option<bool>,
     /// The is eligible for trade in attribute of the item.
-    #[serde(rename = "IsEligibleForTradeIn", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsEligibleForTradeIn", skip_serializing_if = "Option::is_none")]
     pub is_eligible_for_trade_in: Option<bool>,
     /// The is memorabilia attribute of the item.
-    #[serde(rename = "IsMemorabilia", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsMemorabilia", skip_serializing_if = "Option::is_none")]
     pub is_memorabilia: Option<bool>,
     /// The issues per year attribute of the item.
-    #[serde(rename = "IssuesPerYear", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IssuesPerYear", skip_serializing_if = "Option::is_none")]
     pub issues_per_year: Option<String>,
     /// The item part number attribute of the item.
-    #[serde(rename = "ItemPartNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemPartNumber", skip_serializing_if = "Option::is_none")]
     pub item_part_number: Option<String>,
     /// The label attribute of the item.
-    #[serde(rename = "Label", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Label", skip_serializing_if = "Option::is_none")]
     pub label: Option<String>,
     /// The languages attribute of the item.
-    #[serde(rename = "Languages", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Languages", skip_serializing_if = "Option::is_none")]
     pub languages: Option<Vec<crate::models::LanguageType>>,
     /// The legal disclaimer attribute of the item.
-    #[serde(rename = "LegalDisclaimer", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LegalDisclaimer", skip_serializing_if = "Option::is_none")]
     pub legal_disclaimer: Option<String>,
-    #[serde(rename = "ListPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ListPrice", skip_serializing_if = "Option::is_none")]
     pub list_price: Option<Box<crate::models::Price>>,
     /// The manufacturer attribute of the item.
-    #[serde(rename = "Manufacturer", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Manufacturer", skip_serializing_if = "Option::is_none")]
     pub manufacturer: Option<String>,
-    #[serde(rename = "ManufacturerMaximumAge", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ManufacturerMaximumAge", skip_serializing_if = "Option::is_none")]
     pub manufacturer_maximum_age: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "ManufacturerMinimumAge", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ManufacturerMinimumAge", skip_serializing_if = "Option::is_none")]
     pub manufacturer_minimum_age: Option<Box<crate::models::DecimalWithUnits>>,
     /// The manufacturer parts warranty description attribute of the item.
-    #[serde(rename = "ManufacturerPartsWarrantyDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ManufacturerPartsWarrantyDescription", skip_serializing_if = "Option::is_none")]
     pub manufacturer_parts_warranty_description: Option<String>,
     /// The material type attributes of the item.
-    #[serde(rename = "MaterialType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MaterialType", skip_serializing_if = "Option::is_none")]
     pub material_type: Option<Vec<String>>,
-    #[serde(rename = "MaximumResolution", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MaximumResolution", skip_serializing_if = "Option::is_none")]
     pub maximum_resolution: Option<Box<crate::models::DecimalWithUnits>>,
     /// The media type attributes of the item.
-    #[serde(rename = "MediaType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MediaType", skip_serializing_if = "Option::is_none")]
     pub media_type: Option<Vec<String>>,
     /// The metal stamp attribute of the item.
-    #[serde(rename = "MetalStamp", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MetalStamp", skip_serializing_if = "Option::is_none")]
     pub metal_stamp: Option<String>,
     /// The metal type attribute of the item.
-    #[serde(rename = "MetalType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MetalType", skip_serializing_if = "Option::is_none")]
     pub metal_type: Option<String>,
     /// The model attribute of the item.
-    #[serde(rename = "Model", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Model", skip_serializing_if = "Option::is_none")]
     pub model: Option<String>,
     /// The number of discs attribute of the item.
-    #[serde(rename = "NumberOfDiscs", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfDiscs", skip_serializing_if = "Option::is_none")]
     pub number_of_discs: Option<i32>,
     /// The number of issues attribute of the item.
-    #[serde(rename = "NumberOfIssues", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfIssues", skip_serializing_if = "Option::is_none")]
     pub number_of_issues: Option<i32>,
     /// The number of items attribute of the item.
-    #[serde(rename = "NumberOfItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfItems", skip_serializing_if = "Option::is_none")]
     pub number_of_items: Option<i32>,
     /// The number of pages attribute of the item.
-    #[serde(rename = "NumberOfPages", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfPages", skip_serializing_if = "Option::is_none")]
     pub number_of_pages: Option<i32>,
     /// The number of tracks attribute of the item.
-    #[serde(rename = "NumberOfTracks", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfTracks", skip_serializing_if = "Option::is_none")]
     pub number_of_tracks: Option<i32>,
     /// The operating system attributes of the item.
-    #[serde(rename = "OperatingSystem", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OperatingSystem", skip_serializing_if = "Option::is_none")]
     pub operating_system: Option<Vec<String>>,
-    #[serde(rename = "OpticalZoom", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OpticalZoom", skip_serializing_if = "Option::is_none")]
     pub optical_zoom: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "PackageDimensions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PackageDimensions", skip_serializing_if = "Option::is_none")]
     pub package_dimensions: Option<Box<crate::models::DimensionType>>,
     /// The package quantity attribute of the item.
-    #[serde(rename = "PackageQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PackageQuantity", skip_serializing_if = "Option::is_none")]
     pub package_quantity: Option<i32>,
     /// The part number attribute of the item.
-    #[serde(rename = "PartNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PartNumber", skip_serializing_if = "Option::is_none")]
     pub part_number: Option<String>,
     /// The PEGI rating attribute of the item.
-    #[serde(rename = "PegiRating", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PegiRating", skip_serializing_if = "Option::is_none")]
     pub pegi_rating: Option<String>,
     /// The platform attributes of the item.
-    #[serde(rename = "Platform", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Platform", skip_serializing_if = "Option::is_none")]
     pub platform: Option<Vec<String>>,
     /// The processor count attribute of the item.
-    #[serde(rename = "ProcessorCount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProcessorCount", skip_serializing_if = "Option::is_none")]
     pub processor_count: Option<i32>,
     /// The product group attribute of the item.
-    #[serde(rename = "ProductGroup", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductGroup", skip_serializing_if = "Option::is_none")]
     pub product_group: Option<String>,
     /// The product type name attribute of the item.
-    #[serde(rename = "ProductTypeName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductTypeName", skip_serializing_if = "Option::is_none")]
     pub product_type_name: Option<String>,
     /// The product type subcategory attribute of the item.
-    #[serde(rename = "ProductTypeSubcategory", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductTypeSubcategory", skip_serializing_if = "Option::is_none")]
     pub product_type_subcategory: Option<String>,
     /// The publication date attribute of the item.
-    #[serde(rename = "PublicationDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PublicationDate", skip_serializing_if = "Option::is_none")]
     pub publication_date: Option<String>,
     /// The publisher attribute of the item.
-    #[serde(rename = "Publisher", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Publisher", skip_serializing_if = "Option::is_none")]
     pub publisher: Option<String>,
     /// The region code attribute of the item.
-    #[serde(rename = "RegionCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RegionCode", skip_serializing_if = "Option::is_none")]
     pub region_code: Option<String>,
     /// The release date attribute of the item.
-    #[serde(rename = "ReleaseDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ReleaseDate", skip_serializing_if = "Option::is_none")]
     pub release_date: Option<String>,
     /// The ring size attribute of the item.
-    #[serde(rename = "RingSize", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RingSize", skip_serializing_if = "Option::is_none")]
     pub ring_size: Option<String>,
-    #[serde(rename = "RunningTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RunningTime", skip_serializing_if = "Option::is_none")]
     pub running_time: Option<Box<crate::models::DecimalWithUnits>>,
     /// The shaft material attribute of the item.
-    #[serde(rename = "ShaftMaterial", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShaftMaterial", skip_serializing_if = "Option::is_none")]
     pub shaft_material: Option<String>,
     /// The scent attribute of the item.
-    #[serde(rename = "Scent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Scent", skip_serializing_if = "Option::is_none")]
     pub scent: Option<String>,
     /// The season sequence attribute of the item.
-    #[serde(rename = "SeasonSequence", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SeasonSequence", skip_serializing_if = "Option::is_none")]
     pub season_sequence: Option<String>,
     /// The Seikodo product code attribute of the item.
-    #[serde(rename = "SeikodoProductCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SeikodoProductCode", skip_serializing_if = "Option::is_none")]
     pub seikodo_product_code: Option<String>,
     /// The size attribute of the item.
-    #[serde(rename = "Size", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Size", skip_serializing_if = "Option::is_none")]
     pub size: Option<String>,
     /// The size per pearl attribute of the item.
-    #[serde(rename = "SizePerPearl", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SizePerPearl", skip_serializing_if = "Option::is_none")]
     pub size_per_pearl: Option<String>,
-    #[serde(rename = "SmallImage", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SmallImage", skip_serializing_if = "Option::is_none")]
     pub small_image: Option<Box<crate::models::Image>>,
     /// The studio attribute of the item.
-    #[serde(rename = "Studio", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Studio", skip_serializing_if = "Option::is_none")]
     pub studio: Option<String>,
-    #[serde(rename = "SubscriptionLength", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SubscriptionLength", skip_serializing_if = "Option::is_none")]
     pub subscription_length: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "SystemMemorySize", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SystemMemorySize", skip_serializing_if = "Option::is_none")]
     pub system_memory_size: Option<Box<crate::models::DecimalWithUnits>>,
     /// The system memory type attribute of the item.
-    #[serde(rename = "SystemMemoryType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SystemMemoryType", skip_serializing_if = "Option::is_none")]
     pub system_memory_type: Option<String>,
     /// The theatrical release date attribute of the item.
-    #[serde(rename = "TheatricalReleaseDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TheatricalReleaseDate", skip_serializing_if = "Option::is_none")]
     pub theatrical_release_date: Option<String>,
     /// The title attribute of the item.
-    #[serde(rename = "Title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
-    #[serde(rename = "TotalDiamondWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalDiamondWeight", skip_serializing_if = "Option::is_none")]
     pub total_diamond_weight: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "TotalGemWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalGemWeight", skip_serializing_if = "Option::is_none")]
     pub total_gem_weight: Option<Box<crate::models::DecimalWithUnits>>,
     /// The warranty attribute of the item.
-    #[serde(rename = "Warranty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Warranty", skip_serializing_if = "Option::is_none")]
     pub warranty: Option<String>,
-    #[serde(rename = "WeeeTaxValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "WeeeTaxValue", skip_serializing_if = "Option::is_none")]
     pub weee_tax_value: Option<Box<crate::models::Price>>,
 }
 

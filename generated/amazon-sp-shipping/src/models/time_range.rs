@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TimeRange {
     /// The start date and time. This defaults to the current date and time.
-    #[serde(rename = "start", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "start", skip_serializing_if = "Option::is_none")]
     pub start: Option<String>,
     /// The end date and time. This must come after the value of start. This defaults to the next business day from the start.
-    #[serde(rename = "end", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "end", skip_serializing_if = "Option::is_none")]
     pub end: Option<String>,
 }
 

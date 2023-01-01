@@ -15,23 +15,23 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SellerInputDefinition {
     /// When true, the additional input field is required.
-    #[serde(rename = "IsRequired")]
+    #[serde(default, rename = "IsRequired")]
     pub is_required: bool,
     /// The data type of the additional input field.
-    #[serde(rename = "DataType")]
+    #[serde(default, rename = "DataType")]
     pub data_type: String,
     /// List of constraints.
-    #[serde(rename = "Constraints")]
+    #[serde(default, rename = "Constraints")]
     pub constraints: Vec<crate::models::Constraint>,
     /// The display text for the additional input field.
-    #[serde(rename = "InputDisplayText")]
+    #[serde(default, rename = "InputDisplayText")]
     pub input_display_text: String,
-    #[serde(rename = "InputTarget", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "InputTarget", skip_serializing_if = "Option::is_none")]
     pub input_target: Option<crate::models::InputTargetType>,
-    #[serde(rename = "StoredValue")]
+    #[serde(default, rename = "StoredValue")]
     pub stored_value: Box<crate::models::AdditionalSellerInput>,
     /// The set of fixed values in an additional seller input.
-    #[serde(rename = "RestrictedSetValues", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RestrictedSetValues", skip_serializing_if = "Option::is_none")]
     pub restricted_set_values: Option<Vec<String>>,
 }
 

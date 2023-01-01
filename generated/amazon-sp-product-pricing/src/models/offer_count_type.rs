@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OfferCountType {
     /// Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-    #[serde(rename = "condition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "condition", skip_serializing_if = "Option::is_none")]
     pub condition: Option<String>,
-    #[serde(rename = "fulfillmentChannel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentChannel", skip_serializing_if = "Option::is_none")]
     pub fulfillment_channel: Option<crate::models::FulfillmentChannelType>,
     /// The number of offers in a fulfillment channel that meet a specific condition.
-    #[serde(rename = "OfferCount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OfferCount", skip_serializing_if = "Option::is_none")]
     pub offer_count: Option<i32>,
 }
 

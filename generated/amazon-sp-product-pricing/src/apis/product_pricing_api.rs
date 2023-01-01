@@ -11,98 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`get_competitive_pricing`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetCompetitivePricingError {
-    Status400(crate::models::GetPricingResponse),
-    Status401(crate::models::GetPricingResponse),
-    Status403(crate::models::GetPricingResponse),
-    Status404(crate::models::GetPricingResponse),
-    Status429(crate::models::GetPricingResponse),
-    Status500(crate::models::GetPricingResponse),
-    Status503(crate::models::GetPricingResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_item_offers`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetItemOffersError {
-    Status400(crate::models::GetOffersResponse),
-    Status401(crate::models::GetOffersResponse),
-    Status403(crate::models::GetOffersResponse),
-    Status404(crate::models::GetOffersResponse),
-    Status429(crate::models::GetOffersResponse),
-    Status500(crate::models::GetOffersResponse),
-    Status503(crate::models::GetOffersResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_item_offers_batch`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetItemOffersBatchError {
-    Status400(crate::models::Errors),
-    Status401(crate::models::Errors),
-    Status403(crate::models::Errors),
-    Status404(crate::models::Errors),
-    Status429(crate::models::Errors),
-    Status500(crate::models::Errors),
-    Status503(crate::models::Errors),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_listing_offers`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetListingOffersError {
-    Status400(crate::models::GetOffersResponse),
-    Status401(crate::models::GetOffersResponse),
-    Status403(crate::models::GetOffersResponse),
-    Status404(crate::models::GetOffersResponse),
-    Status429(crate::models::GetOffersResponse),
-    Status500(crate::models::GetOffersResponse),
-    Status503(crate::models::GetOffersResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_listing_offers_batch`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetListingOffersBatchError {
-    Status400(crate::models::Errors),
-    Status401(crate::models::Errors),
-    Status403(crate::models::Errors),
-    Status404(crate::models::Errors),
-    Status429(crate::models::Errors),
-    Status500(crate::models::Errors),
-    Status503(crate::models::Errors),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_pricing`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetPricingError {
-    Status400(crate::models::GetPricingResponse),
-    Status401(crate::models::GetPricingResponse),
-    Status403(crate::models::GetPricingResponse),
-    Status404(crate::models::GetPricingResponse),
-    Status429(crate::models::GetPricingResponse),
-    Status500(crate::models::GetPricingResponse),
-    Status503(crate::models::GetPricingResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_competitive_pricing(configuration: &configuration::Configuration, marketplace_id: &str, item_type: &str, asins: Option<Vec<String>>, skus: Option<Vec<String>>, customer_type: Option<&str>) -> Result<crate::models::GetPricingResponse, Error<GetCompetitivePricingError>> {
+pub async fn get_competitive_pricing(configuration: &configuration::Configuration, marketplace_id: &str, item_type: &str, asins: Option<Vec<String>>, skus: Option<Vec<String>>, customer_type: Option<&str>) -> Result<crate::models::GetPricingResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -132,16 +46,21 @@ pub async fn get_competitive_pricing(configuration: &configuration::Configuratio
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -152,8 +71,7 @@ pub async fn get_competitive_pricing(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -171,14 +89,14 @@ pub async fn get_competitive_pricing(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetCompetitivePricingError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the lowest priced offers for a single item based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_item_offers(configuration: &configuration::Configuration, marketplace_id: &str, item_condition: &str, asin: &str, customer_type: Option<&str>) -> Result<crate::models::GetOffersResponse, Error<GetItemOffersError>> {
+pub async fn get_item_offers(configuration: &configuration::Configuration, marketplace_id: &str, item_condition: &str, asin: &str, customer_type: Option<&str>) -> Result<crate::models::GetOffersResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -196,16 +114,21 @@ pub async fn get_item_offers(configuration: &configuration::Configuration, marke
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -216,8 +139,7 @@ pub async fn get_item_offers(configuration: &configuration::Configuration, marke
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -235,14 +157,14 @@ pub async fn get_item_offers(configuration: &configuration::Configuration, marke
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetItemOffersError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the lowest priced offers for a batch of items based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_item_offers_batch(configuration: &configuration::Configuration, get_item_offers_batch_request_body: crate::models::GetItemOffersBatchRequest) -> Result<crate::models::GetItemOffersBatchResponse, Error<GetItemOffersBatchError>> {
+pub async fn get_item_offers_batch(configuration: &configuration::Configuration, get_item_offers_batch_request_body: crate::models::GetItemOffersBatchRequest) -> Result<crate::models::GetItemOffersBatchResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -255,16 +177,21 @@ pub async fn get_item_offers_batch(configuration: &configuration::Configuration,
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&get_item_offers_batch_request_body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -275,8 +202,7 @@ pub async fn get_item_offers_batch(configuration: &configuration::Configuration,
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -295,14 +221,14 @@ pub async fn get_item_offers_batch(configuration: &configuration::Configuration,
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetItemOffersBatchError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the lowest priced offers for a single SKU listing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_listing_offers(configuration: &configuration::Configuration, marketplace_id: &str, item_condition: &str, seller_sku: &str, customer_type: Option<&str>) -> Result<crate::models::GetOffersResponse, Error<GetListingOffersError>> {
+pub async fn get_listing_offers(configuration: &configuration::Configuration, marketplace_id: &str, item_condition: &str, seller_sku: &str, customer_type: Option<&str>) -> Result<crate::models::GetOffersResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -320,16 +246,21 @@ pub async fn get_listing_offers(configuration: &configuration::Configuration, ma
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -340,8 +271,7 @@ pub async fn get_listing_offers(configuration: &configuration::Configuration, ma
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -359,14 +289,14 @@ pub async fn get_listing_offers(configuration: &configuration::Configuration, ma
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetListingOffersError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the lowest priced offers for a batch of listings by SKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_listing_offers_batch(configuration: &configuration::Configuration, get_listing_offers_batch_request_body: crate::models::GetListingOffersBatchRequest) -> Result<crate::models::GetListingOffersBatchResponse, Error<GetListingOffersBatchError>> {
+pub async fn get_listing_offers_batch(configuration: &configuration::Configuration, get_listing_offers_batch_request_body: crate::models::GetListingOffersBatchRequest) -> Result<crate::models::GetListingOffersBatchResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -379,16 +309,21 @@ pub async fn get_listing_offers_batch(configuration: &configuration::Configurati
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&get_listing_offers_batch_request_body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -399,8 +334,7 @@ pub async fn get_listing_offers_batch(configuration: &configuration::Configurati
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -419,14 +353,14 @@ pub async fn get_listing_offers_batch(configuration: &configuration::Configurati
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetListingOffersBatchError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns pricing information for a seller's offer listings based on seller SKU or ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_pricing(configuration: &configuration::Configuration, marketplace_id: &str, item_type: &str, asins: Option<Vec<String>>, skus: Option<Vec<String>>, item_condition: Option<&str>, offer_type: Option<&str>) -> Result<crate::models::GetPricingResponse, Error<GetPricingError>> {
+pub async fn get_pricing(configuration: &configuration::Configuration, marketplace_id: &str, item_type: &str, asins: Option<Vec<String>>, skus: Option<Vec<String>>, item_condition: Option<&str>, offer_type: Option<&str>) -> Result<crate::models::GetPricingResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -459,16 +393,21 @@ pub async fn get_pricing(configuration: &configuration::Configuration, marketpla
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -479,8 +418,7 @@ pub async fn get_pricing(configuration: &configuration::Configuration, marketpla
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -498,8 +436,8 @@ pub async fn get_pricing(configuration: &configuration::Configuration, marketpla
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetPricingError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

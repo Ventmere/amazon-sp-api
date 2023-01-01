@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ChargeComponent {
     /// The type of charge.
-    #[serde(rename = "ChargeType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ChargeType", skip_serializing_if = "Option::is_none")]
     pub charge_type: Option<String>,
-    #[serde(rename = "ChargeAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ChargeAmount", skip_serializing_if = "Option::is_none")]
     pub charge_amount: Option<Box<crate::models::Currency>>,
 }
 

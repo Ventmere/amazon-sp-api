@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SqsResource {
     /// The Amazon Resource Name (ARN) associated with the SQS queue.
-    #[serde(rename = "arn")]
+    #[serde(default, rename = "arn")]
     pub arn: String,
 }
 

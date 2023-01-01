@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Item {
     /// The Amazon Standard Identification Number (ASIN) value used to identify the item.
-    #[serde(rename = "asin")]
+    #[serde(default, rename = "asin")]
     pub asin: String,
-    #[serde(rename = "price")]
+    #[serde(default, rename = "price")]
     pub price: Box<crate::models::MoneyType>,
 }
 

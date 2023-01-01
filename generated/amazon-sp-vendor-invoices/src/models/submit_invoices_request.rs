@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SubmitInvoicesRequest {
-    #[serde(rename = "invoices", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "invoices", skip_serializing_if = "Option::is_none")]
     pub invoices: Option<Vec<crate::models::Invoice>>,
 }
 

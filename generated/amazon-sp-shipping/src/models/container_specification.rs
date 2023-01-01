@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ContainerSpecification {
-    #[serde(rename = "dimensions")]
+    #[serde(default, rename = "dimensions")]
     pub dimensions: Box<crate::models::Dimensions>,
-    #[serde(rename = "weight")]
+    #[serde(default, rename = "weight")]
     pub weight: Box<crate::models::Weight>,
 }
 

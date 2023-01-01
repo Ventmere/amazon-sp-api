@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Weight {
     /// The weight value.
-    #[serde(rename = "Value")]
+    #[serde(default, rename = "Value")]
     pub value: f64,
-    #[serde(rename = "Unit")]
+    #[serde(default, rename = "Unit")]
     pub unit: crate::models::UnitOfWeight,
 }
 

@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PurchaseLabelsRequest {
     /// An identifier for the rating.
-    #[serde(rename = "rateId")]
+    #[serde(default, rename = "rateId")]
     pub rate_id: String,
-    #[serde(rename = "labelSpecification")]
+    #[serde(default, rename = "labelSpecification")]
     pub label_specification: Box<crate::models::LabelSpecification>,
 }
 

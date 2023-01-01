@@ -14,19 +14,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateReportScheduleSpecification {
     /// The report type.
-    #[serde(rename = "reportType")]
+    #[serde(default, rename = "reportType")]
     pub report_type: String,
     /// A list of marketplace identifiers for the report schedule.
-    #[serde(rename = "marketplaceIds")]
+    #[serde(default, rename = "marketplaceIds")]
     pub marketplace_ids: Vec<String>,
     /// Additional information passed to reports. This varies by report type.
-    #[serde(rename = "reportOptions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reportOptions", skip_serializing_if = "Option::is_none")]
     pub report_options: Option<::std::collections::HashMap<String, String>>,
     /// One of a set of predefined ISO 8601 periods that specifies how often a report should be created.
-    #[serde(rename = "period")]
+    #[serde(default, rename = "period")]
     pub period: Period,
     /// The date and time when the schedule will create its next report, in ISO 8601 date time format.
-    #[serde(rename = "nextReportCreationTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "nextReportCreationTime", skip_serializing_if = "Option::is_none")]
     pub next_report_creation_time: Option<String>,
 }
 

@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SmallAndLightFeePreviewRequest {
     /// A marketplace identifier.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// A list of items for which to retrieve fee estimates (limit: 25).
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::Item>,
 }
 

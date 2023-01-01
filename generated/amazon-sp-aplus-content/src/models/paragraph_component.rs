@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ParagraphComponent {
-    #[serde(rename = "textList")]
+    #[serde(default, rename = "textList")]
     pub text_list: Vec<crate::models::TextComponent>,
 }
 

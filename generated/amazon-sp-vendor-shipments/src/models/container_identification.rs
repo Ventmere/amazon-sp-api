@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ContainerIdentification {
     /// The container identification type.
-    #[serde(rename = "containerIdentificationType")]
+    #[serde(default, rename = "containerIdentificationType")]
     pub container_identification_type: ContainerIdentificationType,
     /// Container identification number that adheres to the definition of the container identification type.
-    #[serde(rename = "containerIdentificationNumber")]
+    #[serde(default, rename = "containerIdentificationNumber")]
     pub container_identification_number: String,
 }
 

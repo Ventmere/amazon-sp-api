@@ -15,22 +15,22 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Pallet {
     /// A list of pallet identifiers.
-    #[serde(rename = "palletIdentifiers")]
+    #[serde(default, rename = "palletIdentifiers")]
     pub pallet_identifiers: Vec<crate::models::ContainerIdentification>,
     /// Number of layers per pallet.
-    #[serde(rename = "tier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "tier", skip_serializing_if = "Option::is_none")]
     pub tier: Option<i32>,
     /// Number of cartons per layer on the pallet.
-    #[serde(rename = "block", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "block", skip_serializing_if = "Option::is_none")]
     pub block: Option<i32>,
-    #[serde(rename = "dimensions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "dimensions", skip_serializing_if = "Option::is_none")]
     pub dimensions: Option<Box<crate::models::Dimensions>>,
-    #[serde(rename = "weight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "weight", skip_serializing_if = "Option::is_none")]
     pub weight: Option<Box<crate::models::Weight>>,
-    #[serde(rename = "cartonReferenceDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "cartonReferenceDetails", skip_serializing_if = "Option::is_none")]
     pub carton_reference_details: Option<Box<crate::models::CartonReferenceDetails>>,
     /// A list of container item details.
-    #[serde(rename = "items", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "items", skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<crate::models::ContainerItem>>,
 }
 

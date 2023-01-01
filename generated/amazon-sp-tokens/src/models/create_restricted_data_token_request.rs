@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateRestrictedDataTokenRequest {
     /// The application ID for the target application to which access is being delegated.
-    #[serde(rename = "targetApplication", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "targetApplication", skip_serializing_if = "Option::is_none")]
     pub target_application: Option<String>,
     /// A list of restricted resources. Maximum: 50
-    #[serde(rename = "restrictedResources")]
+    #[serde(default, rename = "restrictedResources")]
     pub restricted_resources: Vec<crate::models::RestrictedResource>,
 }
 

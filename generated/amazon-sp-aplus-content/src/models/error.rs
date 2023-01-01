@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Error {
     /// The code that identifies the type of error condition.
-    #[serde(rename = "code")]
+    #[serde(default, rename = "code")]
     pub code: String,
     /// A human readable description of the error condition.
-    #[serde(rename = "message")]
+    #[serde(default, rename = "message")]
     pub message: String,
     /// Additional information, if available, to clarify the error condition.
-    #[serde(rename = "details", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "details", skip_serializing_if = "Option::is_none")]
     pub details: Option<String>,
 }
 

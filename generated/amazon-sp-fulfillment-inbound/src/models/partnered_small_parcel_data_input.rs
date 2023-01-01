@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartneredSmallParcelDataInput {
     /// A list of dimensions and weight information for packages.
-    #[serde(rename = "PackageList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PackageList", skip_serializing_if = "Option::is_none")]
     pub package_list: Option<Vec<crate::models::PartneredSmallParcelPackageInput>>,
     /// The Amazon-partnered carrier to use for the inbound shipment. **`CarrierName`** values in France (FR), Italy (IT), Spain (ES), the United Kingdom (UK), and the United States (US): `UNITED_PARCEL_SERVICE_INC`. <br> **`CarrierName`** values in Germany (DE): `DHL_STANDARD`,`UNITED_PARCEL_SERVICE_INC`. <br>Default: `UNITED_PARCEL_SERVICE_INC`.
-    #[serde(rename = "CarrierName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CarrierName", skip_serializing_if = "Option::is_none")]
     pub carrier_name: Option<String>,
 }
 

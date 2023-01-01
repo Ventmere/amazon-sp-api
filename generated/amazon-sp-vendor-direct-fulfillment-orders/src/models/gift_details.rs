@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GiftDetails {
     /// Gift message to be printed in shipment.
-    #[serde(rename = "giftMessage", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "giftMessage", skip_serializing_if = "Option::is_none")]
     pub gift_message: Option<String>,
     /// Gift wrap identifier for the gift wrapping, if any.
-    #[serde(rename = "giftWrapId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "giftWrapId", skip_serializing_if = "Option::is_none")]
     pub gift_wrap_id: Option<String>,
 }
 

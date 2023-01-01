@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardImageTextOverlayModule {
-    #[serde(rename = "overlayColorType")]
+    #[serde(default, rename = "overlayColorType")]
     pub overlay_color_type: crate::models::ColorType,
-    #[serde(rename = "block", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "block", skip_serializing_if = "Option::is_none")]
     pub block: Option<Box<crate::models::StandardImageTextBlock>>,
 }
 

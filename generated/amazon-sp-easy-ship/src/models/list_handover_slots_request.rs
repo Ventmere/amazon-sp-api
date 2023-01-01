@@ -15,14 +15,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListHandoverSlotsRequest {
     /// A string of up to 255 characters.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-    #[serde(rename = "amazonOrderId")]
+    #[serde(default, rename = "amazonOrderId")]
     pub amazon_order_id: String,
-    #[serde(rename = "packageDimensions")]
+    #[serde(default, rename = "packageDimensions")]
     pub package_dimensions: Box<crate::models::Dimensions>,
-    #[serde(rename = "packageWeight")]
+    #[serde(default, rename = "packageWeight")]
     pub package_weight: Box<crate::models::Weight>,
 }
 

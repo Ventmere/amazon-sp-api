@@ -14,19 +14,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentConfirmation {
     /// Purchase order number corresponding to the shipment.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
-    #[serde(rename = "shipmentDetails")]
+    #[serde(default, rename = "shipmentDetails")]
     pub shipment_details: Box<crate::models::ShipmentDetails>,
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipFromParty")]
+    #[serde(default, rename = "shipFromParty")]
     pub ship_from_party: Box<crate::models::PartyIdentification>,
     /// Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::Item>,
     /// Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
-    #[serde(rename = "containers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "containers", skip_serializing_if = "Option::is_none")]
     pub containers: Option<Vec<crate::models::Container>>,
 }
 

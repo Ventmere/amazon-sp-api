@@ -15,32 +15,32 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SolutionProviderCreditEvent {
     /// The transaction type.
-    #[serde(rename = "ProviderTransactionType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProviderTransactionType", skip_serializing_if = "Option::is_none")]
     pub provider_transaction_type: Option<String>,
     /// A seller-defined identifier for an order.
-    #[serde(rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
     pub seller_order_id: Option<String>,
     /// The identifier of the marketplace where the order was placed.
-    #[serde(rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// The two-letter country code of the country associated with the marketplace where the order was placed.
-    #[serde(rename = "MarketplaceCountryCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceCountryCode", skip_serializing_if = "Option::is_none")]
     pub marketplace_country_code: Option<String>,
     /// The Amazon-defined identifier of the seller.
-    #[serde(rename = "SellerId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerId", skip_serializing_if = "Option::is_none")]
     pub seller_id: Option<String>,
     /// The store name where the payment event occurred.
-    #[serde(rename = "SellerStoreName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerStoreName", skip_serializing_if = "Option::is_none")]
     pub seller_store_name: Option<String>,
     /// The Amazon-defined identifier of the solution provider.
-    #[serde(rename = "ProviderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProviderId", skip_serializing_if = "Option::is_none")]
     pub provider_id: Option<String>,
     /// The store name where the payment event occurred.
-    #[serde(rename = "ProviderStoreName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProviderStoreName", skip_serializing_if = "Option::is_none")]
     pub provider_store_name: Option<String>,
-    #[serde(rename = "TransactionAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TransactionAmount", skip_serializing_if = "Option::is_none")]
     pub transaction_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "TransactionCreationDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TransactionCreationDate", skip_serializing_if = "Option::is_none")]
     pub transaction_creation_date: Option<String>,
 }
 

@@ -14,11 +14,11 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartneredEstimate {
-    #[serde(rename = "Amount")]
+    #[serde(default, rename = "Amount")]
     pub amount: Box<crate::models::Amount>,
-    #[serde(rename = "ConfirmDeadline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConfirmDeadline", skip_serializing_if = "Option::is_none")]
     pub confirm_deadline: Option<String>,
-    #[serde(rename = "VoidDeadline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "VoidDeadline", skip_serializing_if = "Option::is_none")]
     pub void_deadline: Option<String>,
 }
 

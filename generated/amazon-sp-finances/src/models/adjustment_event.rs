@@ -15,14 +15,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AdjustmentEvent {
     /// The type of adjustment.  Possible values:  * FBAInventoryReimbursement - An FBA inventory reimbursement to a seller's account. This occurs if a seller's inventory is damaged.  * ReserveEvent - A reserve event that is generated at the time of a settlement period closing. This occurs when some money from a seller's account is held back.  * PostageBilling - The amount paid by a seller for shipping labels.  * PostageRefund - The reimbursement of shipping labels purchased for orders that were canceled or refunded.  * LostOrDamagedReimbursement - An Amazon Easy Ship reimbursement to a seller's account for a package that we lost or damaged.  * CanceledButPickedUpReimbursement - An Amazon Easy Ship reimbursement to a seller's account. This occurs when a package is picked up and the order is subsequently canceled. This value is used only in the India marketplace.  * ReimbursementClawback - An Amazon Easy Ship reimbursement clawback from a seller's account. This occurs when a prior reimbursement is reversed. This value is used only in the India marketplace.  * SellerRewards - An award credited to a seller's account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace.
-    #[serde(rename = "AdjustmentType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AdjustmentType", skip_serializing_if = "Option::is_none")]
     pub adjustment_type: Option<String>,
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
-    #[serde(rename = "AdjustmentAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AdjustmentAmount", skip_serializing_if = "Option::is_none")]
     pub adjustment_amount: Option<Box<crate::models::Currency>>,
     /// A list of information about items in an adjustment to the seller's account.
-    #[serde(rename = "AdjustmentItemList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AdjustmentItemList", skip_serializing_if = "Option::is_none")]
     pub adjustment_item_list: Option<Vec<crate::models::AdjustmentItem>>,
 }
 

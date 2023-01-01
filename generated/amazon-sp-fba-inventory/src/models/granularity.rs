@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Granularity {
     /// The granularity type for the inventory aggregation level.
-    #[serde(rename = "granularityType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "granularityType", skip_serializing_if = "Option::is_none")]
     pub granularity_type: Option<String>,
     /// The granularity ID for the specified granularity type. When granularityType is Marketplace, specify the marketplaceId.
-    #[serde(rename = "granularityId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "granularityId", skip_serializing_if = "Option::is_none")]
     pub granularity_id: Option<String>,
 }
 

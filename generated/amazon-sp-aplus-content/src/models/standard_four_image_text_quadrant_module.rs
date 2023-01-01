@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardFourImageTextQuadrantModule {
-    #[serde(rename = "block1")]
+    #[serde(default, rename = "block1")]
     pub block1: Box<crate::models::StandardImageTextBlock>,
-    #[serde(rename = "block2")]
+    #[serde(default, rename = "block2")]
     pub block2: Box<crate::models::StandardImageTextBlock>,
-    #[serde(rename = "block3")]
+    #[serde(default, rename = "block3")]
     pub block3: Box<crate::models::StandardImageTextBlock>,
-    #[serde(rename = "block4")]
+    #[serde(default, rename = "block4")]
     pub block4: Box<crate::models::StandardImageTextBlock>,
 }
 

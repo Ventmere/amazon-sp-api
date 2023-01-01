@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderScenarioRequest {
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipFromParty")]
+    #[serde(default, rename = "shipFromParty")]
     pub ship_from_party: Box<crate::models::PartyIdentification>,
 }
 

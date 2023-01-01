@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ServiceJobProvider {
     /// The identifier of the service job provider.
-    #[serde(rename = "serviceJobProviderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceJobProviderId", skip_serializing_if = "Option::is_none")]
     pub service_job_provider_id: Option<String>,
 }
 

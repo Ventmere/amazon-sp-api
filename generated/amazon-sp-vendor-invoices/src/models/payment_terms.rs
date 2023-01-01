@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PaymentTerms {
     /// The payment term type for the invoice.
-    #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "type", skip_serializing_if = "Option::is_none")]
     pub _type: Option<Type>,
     /// A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
-    #[serde(rename = "discountPercent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "discountPercent", skip_serializing_if = "Option::is_none")]
     pub discount_percent: Option<String>,
     /// The number of calendar days from the Base date (Invoice date) until the discount is no longer valid.
-    #[serde(rename = "discountDueDays", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "discountDueDays", skip_serializing_if = "Option::is_none")]
     pub discount_due_days: Option<f32>,
     /// The number of calendar days from the base date (invoice date) until the total amount on the invoice is due.
-    #[serde(rename = "netDueDays", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "netDueDays", skip_serializing_if = "Option::is_none")]
     pub net_due_days: Option<f32>,
 }
 

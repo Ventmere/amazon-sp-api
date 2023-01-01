@@ -14,18 +14,18 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetRatesRequest {
-    #[serde(rename = "shipTo")]
+    #[serde(default, rename = "shipTo")]
     pub ship_to: Box<crate::models::Address>,
-    #[serde(rename = "shipFrom")]
+    #[serde(default, rename = "shipFrom")]
     pub ship_from: Box<crate::models::Address>,
     /// A list of service types that can be used to send the shipment.
-    #[serde(rename = "serviceTypes")]
+    #[serde(default, rename = "serviceTypes")]
     pub service_types: Vec<crate::models::ServiceType>,
     /// The start date and time. This defaults to the current date and time.
-    #[serde(rename = "shipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipDate", skip_serializing_if = "Option::is_none")]
     pub ship_date: Option<String>,
     /// A list of container specifications.
-    #[serde(rename = "containerSpecifications")]
+    #[serde(default, rename = "containerSpecifications")]
     pub container_specifications: Vec<crate::models::ContainerSpecification>,
 }
 

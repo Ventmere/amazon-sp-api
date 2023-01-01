@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Fee {
     /// The type of fee.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: Name,
-    #[serde(rename = "amount")]
+    #[serde(default, rename = "amount")]
     pub amount: Box<crate::models::Money>,
 }
 

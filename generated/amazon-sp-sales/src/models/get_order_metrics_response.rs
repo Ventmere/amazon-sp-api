@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetOrderMetricsResponse {
     /// A set of order metrics, each scoped to a particular time interval.
-    #[serde(rename = "payload", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "payload", skip_serializing_if = "Option::is_none")]
     pub payload: Option<Vec<crate::models::OrderMetricsInterval>>,
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<crate::models::Error>>,
 }
 

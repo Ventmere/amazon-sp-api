@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PostContentDocumentAsinRelationsRequest {
     /// The set of ASINs.
-    #[serde(rename = "asinSet")]
+    #[serde(default, rename = "asinSet")]
     pub asin_set: Vec<String>,
 }
 

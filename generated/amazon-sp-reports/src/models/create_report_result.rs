@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateReportResult {
     /// The identifier for the report. This identifier is unique only in combination with a seller ID.
-    #[serde(rename = "reportId")]
+    #[serde(default, rename = "reportId")]
     pub report_id: String,
 }
 

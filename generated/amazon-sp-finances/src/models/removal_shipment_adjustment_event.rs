@@ -14,22 +14,22 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RemovalShipmentAdjustmentEvent {
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// The unique identifier for the adjustment event.
-    #[serde(rename = "AdjustmentEventId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AdjustmentEventId", skip_serializing_if = "Option::is_none")]
     pub adjustment_event_id: Option<String>,
     /// The merchant removal orderId.
-    #[serde(rename = "MerchantOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MerchantOrderId", skip_serializing_if = "Option::is_none")]
     pub merchant_order_id: Option<String>,
     /// The orderId for shipping inventory.
-    #[serde(rename = "OrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderId", skip_serializing_if = "Option::is_none")]
     pub order_id: Option<String>,
     /// The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION.
-    #[serde(rename = "TransactionType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TransactionType", skip_serializing_if = "Option::is_none")]
     pub transaction_type: Option<String>,
     /// A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
-    #[serde(rename = "RemovalShipmentItemAdjustmentList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RemovalShipmentItemAdjustmentList", skip_serializing_if = "Option::is_none")]
     pub removal_shipment_item_adjustment_list: Option<Vec<crate::models::RemovalShipmentItemAdjustment>>,
 }
 

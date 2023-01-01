@@ -13,27 +13,27 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OfferType {
-    #[serde(rename = "offerType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "offerType", skip_serializing_if = "Option::is_none")]
     pub offer_type: Option<crate::models::OfferCustomerType>,
-    #[serde(rename = "BuyingPrice")]
+    #[serde(default, rename = "BuyingPrice")]
     pub buying_price: Box<crate::models::PriceType>,
-    #[serde(rename = "RegularPrice")]
+    #[serde(default, rename = "RegularPrice")]
     pub regular_price: Box<crate::models::MoneyType>,
-    #[serde(rename = "businessPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "businessPrice", skip_serializing_if = "Option::is_none")]
     pub business_price: Option<Box<crate::models::MoneyType>>,
-    #[serde(rename = "quantityDiscountPrices", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantityDiscountPrices", skip_serializing_if = "Option::is_none")]
     pub quantity_discount_prices: Option<Vec<crate::models::QuantityDiscountPriceType>>,
     /// The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
-    #[serde(rename = "FulfillmentChannel")]
+    #[serde(default, rename = "FulfillmentChannel")]
     pub fulfillment_channel: String,
     /// The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
-    #[serde(rename = "ItemCondition")]
+    #[serde(default, rename = "ItemCondition")]
     pub item_condition: String,
     /// The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-    #[serde(rename = "ItemSubCondition")]
+    #[serde(default, rename = "ItemSubCondition")]
     pub item_sub_condition: String,
     /// The seller stock keeping unit (SKU) of the item.
-    #[serde(rename = "SellerSKU")]
+    #[serde(default, rename = "SellerSKU")]
     pub seller_sku: String,
 }
 

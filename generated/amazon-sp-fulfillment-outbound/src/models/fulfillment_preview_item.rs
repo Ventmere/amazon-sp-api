@@ -15,18 +15,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentPreviewItem {
     /// The seller SKU of the item.
-    #[serde(rename = "sellerSku")]
+    #[serde(default, rename = "sellerSku")]
     pub seller_sku: String,
     /// The item quantity.
-    #[serde(rename = "quantity")]
+    #[serde(default, rename = "quantity")]
     pub quantity: i32,
     /// A fulfillment order item identifier that the seller created with a call to the createFulfillmentOrder operation.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
-    #[serde(rename = "estimatedShippingWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedShippingWeight", skip_serializing_if = "Option::is_none")]
     pub estimated_shipping_weight: Option<Box<crate::models::Weight>>,
     /// The method used to calculate the estimated shipping weight.
-    #[serde(rename = "shippingWeightCalculationMethod", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingWeightCalculationMethod", skip_serializing_if = "Option::is_none")]
     pub shipping_weight_calculation_method: Option<ShippingWeightCalculationMethod>,
 }
 

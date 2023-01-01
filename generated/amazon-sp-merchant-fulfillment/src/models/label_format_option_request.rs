@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LabelFormatOptionRequest {
     /// When true, include a packing slip with the label.
-    #[serde(rename = "IncludePackingSlipWithLabel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IncludePackingSlipWithLabel", skip_serializing_if = "Option::is_none")]
     pub include_packing_slip_with_label: Option<bool>,
 }
 

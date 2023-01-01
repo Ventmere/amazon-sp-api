@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SubmitInvoiceRequest {
     /// Shipment invoice document content.
-    #[serde(rename = "InvoiceContent")]
+    #[serde(default, rename = "InvoiceContent")]
     pub invoice_content: String,
     /// An Amazon marketplace identifier.
-    #[serde(rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).
-    #[serde(rename = "ContentMD5Value")]
+    #[serde(default, rename = "ContentMD5Value")]
     pub content_md5_value: String,
 }
 

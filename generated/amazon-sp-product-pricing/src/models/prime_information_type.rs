@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PrimeInformationType {
     /// Indicates whether the offer is an Amazon Prime offer.
-    #[serde(rename = "IsPrime")]
+    #[serde(default, rename = "IsPrime")]
     pub is_prime: bool,
     /// Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.
-    #[serde(rename = "IsNationalPrime")]
+    #[serde(default, rename = "IsNationalPrime")]
     pub is_national_prime: bool,
 }
 

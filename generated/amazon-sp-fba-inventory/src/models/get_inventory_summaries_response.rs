@@ -14,12 +14,12 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetInventorySummariesResponse {
-    #[serde(rename = "payload", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "payload", skip_serializing_if = "Option::is_none")]
     pub payload: Option<Box<crate::models::GetInventorySummariesResult>>,
-    #[serde(rename = "pagination", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "pagination", skip_serializing_if = "Option::is_none")]
     pub pagination: Option<Box<crate::models::Pagination>>,
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<crate::models::Error>>,
 }
 

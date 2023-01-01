@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipsFromType {
     /// The state from where the item is shipped.
-    #[serde(rename = "State", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "State", skip_serializing_if = "Option::is_none")]
     pub state: Option<String>,
     /// The country from where the item is shipped.
-    #[serde(rename = "Country", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Country", skip_serializing_if = "Option::is_none")]
     pub country: Option<String>,
 }
 

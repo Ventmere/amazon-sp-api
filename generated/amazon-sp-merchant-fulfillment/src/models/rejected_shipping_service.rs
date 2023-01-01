@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RejectedShippingService {
     /// The rejected shipping carrier name. e.g. USPS
-    #[serde(rename = "CarrierName")]
+    #[serde(default, rename = "CarrierName")]
     pub carrier_name: String,
     /// The rejected shipping service localized name. e.g. FedEx Standard Overnight
-    #[serde(rename = "ShippingServiceName")]
+    #[serde(default, rename = "ShippingServiceName")]
     pub shipping_service_name: String,
     /// An Amazon-defined shipping service identifier.
-    #[serde(rename = "ShippingServiceId")]
+    #[serde(default, rename = "ShippingServiceId")]
     pub shipping_service_id: String,
     /// A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX
-    #[serde(rename = "RejectionReasonCode")]
+    #[serde(default, rename = "RejectionReasonCode")]
     pub rejection_reason_code: String,
     /// A localized human readable description of the rejected reason.
-    #[serde(rename = "RejectionReasonMessage", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RejectionReasonMessage", skip_serializing_if = "Option::is_none")]
     pub rejection_reason_message: Option<String>,
 }
 

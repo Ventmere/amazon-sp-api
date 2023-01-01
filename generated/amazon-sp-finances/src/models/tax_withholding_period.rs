@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TaxWithholdingPeriod {
-    #[serde(rename = "StartDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "StartDate", skip_serializing_if = "Option::is_none")]
     pub start_date: Option<String>,
-    #[serde(rename = "EndDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EndDate", skip_serializing_if = "Option::is_none")]
     pub end_date: Option<String>,
 }
 

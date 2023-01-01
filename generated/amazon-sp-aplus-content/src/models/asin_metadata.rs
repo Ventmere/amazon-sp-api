@@ -15,22 +15,22 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AsinMetadata {
     /// The Amazon Standard Identification Number (ASIN).
-    #[serde(rename = "asin")]
+    #[serde(default, rename = "asin")]
     pub asin: String,
     /// The set of ASIN badges.
-    #[serde(rename = "badgeSet", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "badgeSet", skip_serializing_if = "Option::is_none")]
     pub badge_set: Option<Vec<crate::models::AsinBadge>>,
     /// The Amazon Standard Identification Number (ASIN).
-    #[serde(rename = "parent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "parent", skip_serializing_if = "Option::is_none")]
     pub parent: Option<String>,
     /// The title for the ASIN in the Amazon catalog.
-    #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     /// The default image for the ASIN in the Amazon catalog.
-    #[serde(rename = "imageUrl", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "imageUrl", skip_serializing_if = "Option::is_none")]
     pub image_url: Option<String>,
     /// A set of content reference keys.
-    #[serde(rename = "contentReferenceKeySet", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "contentReferenceKeySet", skip_serializing_if = "Option::is_none")]
     pub content_reference_key_set: Option<Vec<String>>,
 }
 

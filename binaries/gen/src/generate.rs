@@ -1,7 +1,7 @@
 use anyhow::Result;
 use once_cell::sync::Lazy;
 use regex::Regex;
-use std::{fs, path::{Path, PathBuf}, process};
+use std::{fs, path::{Path, PathBuf}, process, io::Write};
 
 pub fn run(filter_module: Option<&str>) -> Result<()> {
   let models_dir = fs::read_dir("deps/selling-partner-api-models/models")?;
@@ -63,7 +63,8 @@ impl ModuleInfo {
       .arg("openapi/config.yaml")
       .output()?;
     if !output.status.success() {
-      tracing::error!("{:?}", output);
+      tracing::error!("openapi-generator exited with error:");
+      std::io::stderr().write_all(&output.stderr)?;
       return Err(anyhow::format_err!("openapi-generator execution failed"));
     }
 
@@ -73,6 +74,24 @@ impl ModuleInfo {
       .chain(lib_rs_content.into_iter())
       .collect();
     fs::write(out_path.join("src/lib.rs"), updated)?;
+
+    if self.name == "orders" {
+      // https://github.com/amzn/selling-partner-api-docs/issues/480
+
+      let replaces = &[
+        ("src/models/product_info_detail.rs", r##"#[serde(default, rename = "NumberOfItems", skip_serializing_if = "Option::is_none")]"##, r##"#[serde(default, rename = "NumberOfItems", skip_serializing_if = "Option::is_none", deserialize_with = "amazon_sp_api_shared::helpers::deserialize_opt_i32_with_parse")]"##),
+        ("src/models/order_item.rs", r##"#[serde(default, rename = "IsGift", skip_serializing_if = "Option::is_none")]"##, r##"#[serde(default, rename = "IsGift", skip_serializing_if = "Option::is_none", deserialize_with = "amazon_sp_api_shared::helpers::deserialize_opt_bool_from_string")]"##),
+      ];
+
+      for (file, from, to) in replaces {
+        let lib_rs_content = fs::read_to_string(out_path.join(file))?;
+        let updated = lib_rs_content.replace(
+          from, 
+          to
+        );
+        fs::write(out_path.join(file), updated)?;
+      }      
+    }
 
     Ok(())
   }

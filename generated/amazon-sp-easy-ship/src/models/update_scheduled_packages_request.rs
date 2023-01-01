@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdateScheduledPackagesRequest {
     /// A string of up to 255 characters.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// A list of package update details.
-    #[serde(rename = "updatePackageDetailsList")]
+    #[serde(default, rename = "updatePackageDetailsList")]
     pub update_package_details_list: Vec<crate::models::UpdatePackageDetails>,
 }
 

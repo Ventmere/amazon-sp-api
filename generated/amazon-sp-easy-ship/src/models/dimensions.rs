@@ -15,18 +15,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Dimensions {
     /// The numerical value of the specified dimension.
-    #[serde(rename = "length", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "length", skip_serializing_if = "Option::is_none")]
     pub length: Option<f32>,
     /// The numerical value of the specified dimension.
-    #[serde(rename = "width", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "width", skip_serializing_if = "Option::is_none")]
     pub width: Option<f32>,
     /// The numerical value of the specified dimension.
-    #[serde(rename = "height", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "height", skip_serializing_if = "Option::is_none")]
     pub height: Option<f32>,
-    #[serde(rename = "unit", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "unit", skip_serializing_if = "Option::is_none")]
     pub unit: Option<crate::models::UnitOfLength>,
     /// A string of up to 255 characters.
-    #[serde(rename = "identifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "identifier", skip_serializing_if = "Option::is_none")]
     pub identifier: Option<String>,
 }
 

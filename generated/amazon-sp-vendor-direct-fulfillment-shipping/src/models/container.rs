@@ -14,38 +14,38 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Container {
     /// The type of container.
-    #[serde(rename = "containerType")]
+    #[serde(default, rename = "containerType")]
     pub container_type: ContainerType,
     /// The container identifier.
-    #[serde(rename = "containerIdentifier")]
+    #[serde(default, rename = "containerIdentifier")]
     pub container_identifier: String,
     /// The tracking number.
-    #[serde(rename = "trackingNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "trackingNumber", skip_serializing_if = "Option::is_none")]
     pub tracking_number: Option<String>,
     /// The manifest identifier.
-    #[serde(rename = "manifestId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "manifestId", skip_serializing_if = "Option::is_none")]
     pub manifest_id: Option<String>,
     /// The date of the manifest.
-    #[serde(rename = "manifestDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "manifestDate", skip_serializing_if = "Option::is_none")]
     pub manifest_date: Option<String>,
     /// The shipment method.
-    #[serde(rename = "shipMethod", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipMethod", skip_serializing_if = "Option::is_none")]
     pub ship_method: Option<String>,
     /// SCAC code required for NA VOC vendors only.
-    #[serde(rename = "scacCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scacCode", skip_serializing_if = "Option::is_none")]
     pub scac_code: Option<String>,
     /// Carrier required for EU VOC vendors only.
-    #[serde(rename = "carrier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "carrier", skip_serializing_if = "Option::is_none")]
     pub carrier: Option<String>,
     /// An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
-    #[serde(rename = "containerSequenceNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "containerSequenceNumber", skip_serializing_if = "Option::is_none")]
     pub container_sequence_number: Option<i32>,
-    #[serde(rename = "dimensions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "dimensions", skip_serializing_if = "Option::is_none")]
     pub dimensions: Option<Box<crate::models::Dimensions>>,
-    #[serde(rename = "weight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "weight", skip_serializing_if = "Option::is_none")]
     pub weight: Option<Box<crate::models::Weight>>,
     /// A list of packed items.
-    #[serde(rename = "packedItems")]
+    #[serde(default, rename = "packedItems")]
     pub packed_items: Vec<crate::models::PackedItem>,
 }
 

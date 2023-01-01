@@ -15,14 +15,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateShipmentRequest {
     /// Client reference id.
-    #[serde(rename = "clientReferenceId")]
+    #[serde(default, rename = "clientReferenceId")]
     pub client_reference_id: String,
-    #[serde(rename = "shipTo")]
+    #[serde(default, rename = "shipTo")]
     pub ship_to: Box<crate::models::Address>,
-    #[serde(rename = "shipFrom")]
+    #[serde(default, rename = "shipFrom")]
     pub ship_from: Box<crate::models::Address>,
     /// A list of container.
-    #[serde(rename = "containers")]
+    #[serde(default, rename = "containers")]
     pub containers: Vec<crate::models::Container>,
 }
 

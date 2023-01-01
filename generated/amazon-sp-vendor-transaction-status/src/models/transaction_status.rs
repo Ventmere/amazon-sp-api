@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TransactionStatus {
-    #[serde(rename = "transactionStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "transactionStatus", skip_serializing_if = "Option::is_none")]
     pub transaction_status: Option<Box<crate::models::Transaction>>,
 }
 

@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetOffersHttpStatusLine {
     /// The HTTP response Status Code.
-    #[serde(rename = "statusCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "statusCode", skip_serializing_if = "Option::is_none")]
     pub status_code: Option<i32>,
     /// The HTTP response Reason-Phase.
-    #[serde(rename = "reasonPhrase", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reasonPhrase", skip_serializing_if = "Option::is_none")]
     pub reason_phrase: Option<String>,
 }
 

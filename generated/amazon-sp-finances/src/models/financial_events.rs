@@ -15,85 +15,85 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FinancialEvents {
     /// A list of shipment event information.
-    #[serde(rename = "ShipmentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentEventList", skip_serializing_if = "Option::is_none")]
     pub shipment_event_list: Option<Vec<crate::models::ShipmentEvent>>,
     /// A list of shipment event information.
-    #[serde(rename = "RefundEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RefundEventList", skip_serializing_if = "Option::is_none")]
     pub refund_event_list: Option<Vec<crate::models::ShipmentEvent>>,
     /// A list of shipment event information.
-    #[serde(rename = "GuaranteeClaimEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GuaranteeClaimEventList", skip_serializing_if = "Option::is_none")]
     pub guarantee_claim_event_list: Option<Vec<crate::models::ShipmentEvent>>,
     /// A list of shipment event information.
-    #[serde(rename = "ChargebackEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ChargebackEventList", skip_serializing_if = "Option::is_none")]
     pub chargeback_event_list: Option<Vec<crate::models::ShipmentEvent>>,
     /// A list of events related to the seller's Pay with Amazon account.
-    #[serde(rename = "PayWithAmazonEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PayWithAmazonEventList", skip_serializing_if = "Option::is_none")]
     pub pay_with_amazon_event_list: Option<Vec<crate::models::PayWithAmazonEvent>>,
     /// A list of information about solution provider credits.
-    #[serde(rename = "ServiceProviderCreditEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ServiceProviderCreditEventList", skip_serializing_if = "Option::is_none")]
     pub service_provider_credit_event_list: Option<Vec<crate::models::SolutionProviderCreditEvent>>,
     /// A list of information about Retrocharge or RetrochargeReversal events.
-    #[serde(rename = "RetrochargeEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RetrochargeEventList", skip_serializing_if = "Option::is_none")]
     pub retrocharge_event_list: Option<Vec<crate::models::RetrochargeEvent>>,
     /// A list of rental transaction event information.
-    #[serde(rename = "RentalTransactionEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RentalTransactionEventList", skip_serializing_if = "Option::is_none")]
     pub rental_transaction_event_list: Option<Vec<crate::models::RentalTransactionEvent>>,
     /// A list of sponsored products payment events.
-    #[serde(rename = "ProductAdsPaymentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductAdsPaymentEventList", skip_serializing_if = "Option::is_none")]
     pub product_ads_payment_event_list: Option<Vec<crate::models::ProductAdsPaymentEvent>>,
     /// A list of information about service fee events.
-    #[serde(rename = "ServiceFeeEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ServiceFeeEventList", skip_serializing_if = "Option::is_none")]
     pub service_fee_event_list: Option<Vec<crate::models::ServiceFeeEvent>>,
     /// A list of payment events for deal-related fees.
-    #[serde(rename = "SellerDealPaymentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerDealPaymentEventList", skip_serializing_if = "Option::is_none")]
     pub seller_deal_payment_event_list: Option<Vec<crate::models::SellerDealPaymentEvent>>,
     /// A list of debt recovery event information.
-    #[serde(rename = "DebtRecoveryEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DebtRecoveryEventList", skip_serializing_if = "Option::is_none")]
     pub debt_recovery_event_list: Option<Vec<crate::models::DebtRecoveryEvent>>,
     /// A list of loan servicing events.
-    #[serde(rename = "LoanServicingEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LoanServicingEventList", skip_serializing_if = "Option::is_none")]
     pub loan_servicing_event_list: Option<Vec<crate::models::LoanServicingEvent>>,
     /// A list of adjustment event information for the seller's account.
-    #[serde(rename = "AdjustmentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AdjustmentEventList", skip_serializing_if = "Option::is_none")]
     pub adjustment_event_list: Option<Vec<crate::models::AdjustmentEvent>>,
     /// A list of SAFETReimbursementEvents.
-    #[serde(rename = "SAFETReimbursementEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SAFETReimbursementEventList", skip_serializing_if = "Option::is_none")]
     pub safet_reimbursement_event_list: Option<Vec<crate::models::SafetReimbursementEvent>>,
     /// A list of information about fee events for the Early Reviewer Program.
-    #[serde(rename = "SellerReviewEnrollmentPaymentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerReviewEnrollmentPaymentEventList", skip_serializing_if = "Option::is_none")]
     pub seller_review_enrollment_payment_event_list: Option<Vec<crate::models::SellerReviewEnrollmentPaymentEvent>>,
     /// A list of FBA inventory liquidation payment events.
-    #[serde(rename = "FBALiquidationEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FBALiquidationEventList", skip_serializing_if = "Option::is_none")]
     pub fba_liquidation_event_list: Option<Vec<crate::models::FbaLiquidationEvent>>,
     /// A list of coupon payment event information.
-    #[serde(rename = "CouponPaymentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CouponPaymentEventList", skip_serializing_if = "Option::is_none")]
     pub coupon_payment_event_list: Option<Vec<crate::models::CouponPaymentEvent>>,
     /// A list of fee events related to Amazon Imaging services.
-    #[serde(rename = "ImagingServicesFeeEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ImagingServicesFeeEventList", skip_serializing_if = "Option::is_none")]
     pub imaging_services_fee_event_list: Option<Vec<crate::models::ImagingServicesFeeEvent>>,
     /// A list of network commingling transaction events.
-    #[serde(rename = "NetworkComminglingTransactionEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NetworkComminglingTransactionEventList", skip_serializing_if = "Option::is_none")]
     pub network_commingling_transaction_event_list: Option<Vec<crate::models::NetworkComminglingTransactionEvent>>,
     /// A list of expense information related to an affordability promotion.
-    #[serde(rename = "AffordabilityExpenseEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AffordabilityExpenseEventList", skip_serializing_if = "Option::is_none")]
     pub affordability_expense_event_list: Option<Vec<crate::models::AffordabilityExpenseEvent>>,
     /// A list of expense information related to an affordability promotion.
-    #[serde(rename = "AffordabilityExpenseReversalEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AffordabilityExpenseReversalEventList", skip_serializing_if = "Option::is_none")]
     pub affordability_expense_reversal_event_list: Option<Vec<crate::models::AffordabilityExpenseEvent>>,
     /// A list of information about trial shipment financial events.
-    #[serde(rename = "TrialShipmentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TrialShipmentEventList", skip_serializing_if = "Option::is_none")]
     pub trial_shipment_event_list: Option<Vec<crate::models::TrialShipmentEvent>>,
     /// A list of information about shipment settle financial events.
-    #[serde(rename = "ShipmentSettleEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentSettleEventList", skip_serializing_if = "Option::is_none")]
     pub shipment_settle_event_list: Option<Vec<crate::models::ShipmentEvent>>,
     /// List of TaxWithholding events.
-    #[serde(rename = "TaxWithholdingEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxWithholdingEventList", skip_serializing_if = "Option::is_none")]
     pub tax_withholding_event_list: Option<Vec<crate::models::TaxWithholdingEvent>>,
     /// A list of removal shipment event information.
-    #[serde(rename = "RemovalShipmentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RemovalShipmentEventList", skip_serializing_if = "Option::is_none")]
     pub removal_shipment_event_list: Option<Vec<crate::models::RemovalShipmentEvent>>,
     /// A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
-    #[serde(rename = "RemovalShipmentAdjustmentEventList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RemovalShipmentAdjustmentEventList", skip_serializing_if = "Option::is_none")]
     pub removal_shipment_adjustment_event_list: Option<Vec<crate::models::RemovalShipmentAdjustmentEvent>>,
 }
 

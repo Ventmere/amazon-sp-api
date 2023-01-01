@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Container {
     /// The type of physical container being used. (always 'PACKAGE')
-    #[serde(rename = "containerType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "containerType", skip_serializing_if = "Option::is_none")]
     pub container_type: Option<ContainerType>,
     /// An identifier for the container. This must be unique within all the containers in the same shipment.
-    #[serde(rename = "containerReferenceId")]
+    #[serde(default, rename = "containerReferenceId")]
     pub container_reference_id: String,
-    #[serde(rename = "value")]
+    #[serde(default, rename = "value")]
     pub value: Box<crate::models::Currency>,
-    #[serde(rename = "dimensions")]
+    #[serde(default, rename = "dimensions")]
     pub dimensions: Box<crate::models::Dimensions>,
     /// A list of the items in the container.
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::ContainerItem>,
-    #[serde(rename = "weight")]
+    #[serde(default, rename = "weight")]
     pub weight: Box<crate::models::Weight>,
 }
 

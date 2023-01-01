@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AppointmentResource {
     /// The resource identifier.
-    #[serde(rename = "resourceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "resourceId", skip_serializing_if = "Option::is_none")]
     pub resource_id: Option<String>,
 }
 

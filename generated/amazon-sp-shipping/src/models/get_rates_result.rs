@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetRatesResult {
     /// A list of service rates.
-    #[serde(rename = "serviceRates")]
+    #[serde(default, rename = "serviceRates")]
     pub service_rates: Vec<crate::models::ServiceRate>,
 }
 

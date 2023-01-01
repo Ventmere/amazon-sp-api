@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct IncludedFeeDetail {
     /// The type of fee charged to a seller.
-    #[serde(rename = "FeeType")]
+    #[serde(default, rename = "FeeType")]
     pub fee_type: String,
-    #[serde(rename = "FeeAmount")]
+    #[serde(default, rename = "FeeAmount")]
     pub fee_amount: Box<crate::models::MoneyType>,
-    #[serde(rename = "FeePromotion", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeePromotion", skip_serializing_if = "Option::is_none")]
     pub fee_promotion: Option<Box<crate::models::MoneyType>>,
-    #[serde(rename = "TaxAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxAmount", skip_serializing_if = "Option::is_none")]
     pub tax_amount: Option<Box<crate::models::MoneyType>>,
-    #[serde(rename = "FinalFee")]
+    #[serde(default, rename = "FinalFee")]
     pub final_fee: Box<crate::models::MoneyType>,
 }
 

@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListHandoverSlotsResponse {
     /// An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-    #[serde(rename = "amazonOrderId")]
+    #[serde(default, rename = "amazonOrderId")]
     pub amazon_order_id: String,
     /// A list of time slots.
-    #[serde(rename = "timeSlots")]
+    #[serde(default, rename = "timeSlots")]
     pub time_slots: Vec<crate::models::TimeSlot>,
 }
 

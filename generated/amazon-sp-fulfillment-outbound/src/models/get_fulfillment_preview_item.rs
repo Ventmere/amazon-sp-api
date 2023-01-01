@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetFulfillmentPreviewItem {
     /// The seller SKU of the item.
-    #[serde(rename = "sellerSku")]
+    #[serde(default, rename = "sellerSku")]
     pub seller_sku: String,
     /// The item quantity.
-    #[serde(rename = "quantity")]
+    #[serde(default, rename = "quantity")]
     pub quantity: i32,
-    #[serde(rename = "perUnitDeclaredValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "perUnitDeclaredValue", skip_serializing_if = "Option::is_none")]
     pub per_unit_declared_value: Option<Box<crate::models::Money>>,
     /// A fulfillment order item identifier that the seller creates to track items in the fulfillment preview.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
 }
 

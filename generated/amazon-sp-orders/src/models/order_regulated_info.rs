@@ -15,14 +15,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderRegulatedInfo {
     /// An Amazon-defined order identifier, in 3-7-7 format.
-    #[serde(rename = "AmazonOrderId")]
+    #[serde(default, rename = "AmazonOrderId")]
     pub amazon_order_id: String,
-    #[serde(rename = "RegulatedInformation")]
+    #[serde(default, rename = "RegulatedInformation")]
     pub regulated_information: Box<crate::models::RegulatedInformation>,
     /// When true, the order requires attaching a dosage information label when shipped.
-    #[serde(rename = "RequiresDosageLabel")]
+    #[serde(default, rename = "RequiresDosageLabel")]
     pub requires_dosage_label: bool,
-    #[serde(rename = "RegulatedOrderVerificationStatus")]
+    #[serde(default, rename = "RegulatedOrderVerificationStatus")]
     pub regulated_order_verification_status: Box<crate::models::RegulatedOrderVerificationStatus>,
 }
 

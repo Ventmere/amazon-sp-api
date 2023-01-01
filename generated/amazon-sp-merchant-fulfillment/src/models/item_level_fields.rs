@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemLevelFields {
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "Asin")]
+    #[serde(default, rename = "Asin")]
     pub asin: String,
     /// A list of additional inputs.
-    #[serde(rename = "AdditionalInputs")]
+    #[serde(default, rename = "AdditionalInputs")]
     pub additional_inputs: Vec<crate::models::AdditionalInputs>,
 }
 

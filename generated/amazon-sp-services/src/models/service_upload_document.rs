@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ServiceUploadDocument {
     /// The content type of the to-be-uploaded file
-    #[serde(rename = "contentType")]
+    #[serde(default, rename = "contentType")]
     pub content_type: ContentType,
     /// The content length of the to-be-uploaded file
-    #[serde(rename = "contentLength")]
+    #[serde(default, rename = "contentLength")]
     pub content_length: f32,
     /// An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
-    #[serde(rename = "contentMD5", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "contentMD5", skip_serializing_if = "Option::is_none")]
     pub content_md5: Option<String>,
 }
 

@@ -15,17 +15,17 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Item {
     /// Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level.
-    #[serde(rename = "itemSequenceNumber")]
+    #[serde(default, rename = "itemSequenceNumber")]
     pub item_sequence_number: String,
     /// Amazon Standard Identification Number (ASIN) of an item.
-    #[serde(rename = "amazonProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "amazonProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub amazon_product_identifier: Option<String>,
     /// The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
-    #[serde(rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub vendor_product_identifier: Option<String>,
-    #[serde(rename = "shippedQuantity")]
+    #[serde(default, rename = "shippedQuantity")]
     pub shipped_quantity: Box<crate::models::ItemQuantity>,
-    #[serde(rename = "itemDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "itemDetails", skip_serializing_if = "Option::is_none")]
     pub item_details: Option<Box<crate::models::ItemDetails>>,
 }
 

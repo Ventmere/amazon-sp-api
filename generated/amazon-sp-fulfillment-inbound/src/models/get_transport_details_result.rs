@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetTransportDetailsResult {
-    #[serde(rename = "TransportContent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TransportContent", skip_serializing_if = "Option::is_none")]
     pub transport_content: Option<Box<crate::models::TransportContent>>,
 }
 

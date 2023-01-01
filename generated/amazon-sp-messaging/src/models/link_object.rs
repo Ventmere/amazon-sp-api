@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LinkObject {
     /// A URI for this object.
-    #[serde(rename = "href")]
+    #[serde(default, rename = "href")]
     pub href: String,
     /// An identifier for this object.
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
 }
 

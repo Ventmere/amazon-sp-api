@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct NonPartneredLtlDataOutput {
     /// The carrier that you are using for the inbound shipment.
-    #[serde(rename = "CarrierName")]
+    #[serde(default, rename = "CarrierName")]
     pub carrier_name: String,
     /// The PRO number (\"progressive number\" or \"progressive ID\") assigned to the shipment by the carrier.
-    #[serde(rename = "ProNumber")]
+    #[serde(default, rename = "ProNumber")]
     pub pro_number: String,
 }
 

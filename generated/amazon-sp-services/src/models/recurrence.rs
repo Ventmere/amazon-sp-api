@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Recurrence {
     /// End time of the recurrence.
-    #[serde(rename = "endTime")]
+    #[serde(default, rename = "endTime")]
     pub end_time: String,
     /// Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
-    #[serde(rename = "daysOfWeek", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "daysOfWeek", skip_serializing_if = "Option::is_none")]
     pub days_of_week: Option<Vec<crate::models::DayOfWeek>>,
     /// Days of the month when recurrence is valid.
-    #[serde(rename = "daysOfMonth", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "daysOfMonth", skip_serializing_if = "Option::is_none")]
     pub days_of_month: Option<Vec<i32>>,
 }
 

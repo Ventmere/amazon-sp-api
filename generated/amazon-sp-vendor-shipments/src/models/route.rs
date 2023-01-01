@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Route {
-    #[serde(rename = "stops")]
+    #[serde(default, rename = "stops")]
     pub stops: Vec<crate::models::Stop>,
 }
 

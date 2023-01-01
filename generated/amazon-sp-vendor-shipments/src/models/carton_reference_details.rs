@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CartonReferenceDetails {
     /// Pallet level carton count is mandatory for single item pallet and optional for mixed item pallet.
-    #[serde(rename = "cartonCount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "cartonCount", skip_serializing_if = "Option::is_none")]
     pub carton_count: Option<i32>,
     /// Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the 'cartons' segment to refer to that carton's details here.
-    #[serde(rename = "cartonReferenceNumbers")]
+    #[serde(default, rename = "cartonReferenceNumbers")]
     pub carton_reference_numbers: Vec<String>,
 }
 

@@ -11,161 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`create_content_document`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateContentDocumentError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_content_document`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetContentDocumentError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status410(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`list_content_document_asin_relations`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ListContentDocumentAsinRelationsError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status410(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`post_content_document_approval_submission`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PostContentDocumentApprovalSubmissionError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status410(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`post_content_document_asin_relations`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PostContentDocumentAsinRelationsError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status410(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`post_content_document_suspend_submission`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PostContentDocumentSuspendSubmissionError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status410(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`search_content_documents`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SearchContentDocumentsError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status410(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`search_content_publish_records`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SearchContentPublishRecordsError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`update_content_document`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum UpdateContentDocumentError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status410(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`validate_content_document_asin_relations`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ValidateContentDocumentAsinRelationsError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Creates a new A+ Content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_content_document(configuration: &configuration::Configuration, marketplace_id: &str, post_content_document_request: crate::models::PostContentDocumentRequest) -> Result<crate::models::PostContentDocumentResponse, Error<CreateContentDocumentError>> {
+pub async fn create_content_document(configuration: &configuration::Configuration, marketplace_id: &str, post_content_document_request: crate::models::PostContentDocumentRequest) -> Result<crate::models::PostContentDocumentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -179,16 +30,21 @@ pub async fn create_content_document(configuration: &configuration::Configuratio
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&post_content_document_request).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -199,8 +55,7 @@ pub async fn create_content_document(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -219,14 +74,14 @@ pub async fn create_content_document(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateContentDocumentError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns an A+ Content document, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_content_document(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str, included_data_set: Vec<String>) -> Result<crate::models::GetContentDocumentResponse, Error<GetContentDocumentError>> {
+pub async fn get_content_document(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str, included_data_set: Vec<String>) -> Result<crate::models::GetContentDocumentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -244,16 +99,21 @@ pub async fn get_content_document(configuration: &configuration::Configuration, 
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -264,8 +124,7 @@ pub async fn get_content_document(configuration: &configuration::Configuration, 
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -283,14 +142,14 @@ pub async fn get_content_document(configuration: &configuration::Configuration, 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetContentDocumentError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn list_content_document_asin_relations(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str, included_data_set: Option<Vec<String>>, asin_set: Option<Vec<String>>, page_token: Option<&str>) -> Result<crate::models::ListContentDocumentAsinRelationsResponse, Error<ListContentDocumentAsinRelationsError>> {
+pub async fn list_content_document_asin_relations(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str, included_data_set: Option<Vec<String>>, asin_set: Option<Vec<String>>, page_token: Option<&str>) -> Result<crate::models::ListContentDocumentAsinRelationsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -319,16 +178,21 @@ pub async fn list_content_document_asin_relations(configuration: &configuration:
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -339,8 +203,7 @@ pub async fn list_content_document_asin_relations(configuration: &configuration:
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -358,14 +221,14 @@ pub async fn list_content_document_asin_relations(configuration: &configuration:
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ListContentDocumentAsinRelationsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Submits an A+ Content document for review, approval, and publishing.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn post_content_document_approval_submission(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str) -> Result<crate::models::PostContentDocumentApprovalSubmissionResponse, Error<PostContentDocumentApprovalSubmissionError>> {
+pub async fn post_content_document_approval_submission(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str) -> Result<crate::models::PostContentDocumentApprovalSubmissionResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -379,16 +242,21 @@ pub async fn post_content_document_approval_submission(configuration: &configura
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -399,8 +267,7 @@ pub async fn post_content_document_approval_submission(configuration: &configura
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -418,14 +285,14 @@ pub async fn post_content_document_approval_submission(configuration: &configura
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PostContentDocumentApprovalSubmissionError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn post_content_document_asin_relations(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str, post_content_document_asin_relations_request: crate::models::PostContentDocumentAsinRelationsRequest) -> Result<crate::models::PostContentDocumentAsinRelationsResponse, Error<PostContentDocumentAsinRelationsError>> {
+pub async fn post_content_document_asin_relations(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str, post_content_document_asin_relations_request: crate::models::PostContentDocumentAsinRelationsRequest) -> Result<crate::models::PostContentDocumentAsinRelationsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -439,16 +306,21 @@ pub async fn post_content_document_asin_relations(configuration: &configuration:
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&post_content_document_asin_relations_request).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -459,8 +331,7 @@ pub async fn post_content_document_asin_relations(configuration: &configuration:
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -479,14 +350,14 @@ pub async fn post_content_document_asin_relations(configuration: &configuration:
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PostContentDocumentAsinRelationsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn post_content_document_suspend_submission(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str) -> Result<crate::models::PostContentDocumentSuspendSubmissionResponse, Error<PostContentDocumentSuspendSubmissionError>> {
+pub async fn post_content_document_suspend_submission(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str) -> Result<crate::models::PostContentDocumentSuspendSubmissionResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -500,16 +371,21 @@ pub async fn post_content_document_suspend_submission(configuration: &configurat
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -520,8 +396,7 @@ pub async fn post_content_document_suspend_submission(configuration: &configurat
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -539,14 +414,14 @@ pub async fn post_content_document_suspend_submission(configuration: &configurat
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PostContentDocumentSuspendSubmissionError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the getContentDocument operation to get the actual contents of the A+ Content documents.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn search_content_documents(configuration: &configuration::Configuration, marketplace_id: &str, page_token: Option<&str>) -> Result<crate::models::SearchContentDocumentsResponse, Error<SearchContentDocumentsError>> {
+pub async fn search_content_documents(configuration: &configuration::Configuration, marketplace_id: &str, page_token: Option<&str>) -> Result<crate::models::SearchContentDocumentsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -563,16 +438,21 @@ pub async fn search_content_documents(configuration: &configuration::Configurati
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -583,8 +463,7 @@ pub async fn search_content_documents(configuration: &configuration::Configurati
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -602,14 +481,14 @@ pub async fn search_content_documents(configuration: &configuration::Configurati
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SearchContentDocumentsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Searches for A+ Content publishing records, if available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn search_content_publish_records(configuration: &configuration::Configuration, marketplace_id: &str, asin: &str, page_token: Option<&str>) -> Result<crate::models::SearchContentPublishRecordsResponse, Error<SearchContentPublishRecordsError>> {
+pub async fn search_content_publish_records(configuration: &configuration::Configuration, marketplace_id: &str, asin: &str, page_token: Option<&str>) -> Result<crate::models::SearchContentPublishRecordsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -627,16 +506,21 @@ pub async fn search_content_publish_records(configuration: &configuration::Confi
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -647,8 +531,7 @@ pub async fn search_content_publish_records(configuration: &configuration::Confi
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -666,14 +549,14 @@ pub async fn search_content_publish_records(configuration: &configuration::Confi
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SearchContentPublishRecordsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Updates an existing A+ Content document.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn update_content_document(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str, post_content_document_request: crate::models::PostContentDocumentRequest) -> Result<crate::models::PostContentDocumentResponse, Error<UpdateContentDocumentError>> {
+pub async fn update_content_document(configuration: &configuration::Configuration, content_reference_key: &str, marketplace_id: &str, post_content_document_request: crate::models::PostContentDocumentRequest) -> Result<crate::models::PostContentDocumentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -687,16 +570,21 @@ pub async fn update_content_document(configuration: &configuration::Configuratio
     url_builder = url_builder.query(&[("marketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&post_content_document_request).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -707,8 +595,7 @@ pub async fn update_content_document(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -727,14 +614,14 @@ pub async fn update_content_document(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<UpdateContentDocumentError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn validate_content_document_asin_relations(configuration: &configuration::Configuration, marketplace_id: &str, post_content_document_request: crate::models::PostContentDocumentRequest, asin_set: Option<Vec<String>>) -> Result<crate::models::ValidateContentDocumentAsinRelationsResponse, Error<ValidateContentDocumentAsinRelationsError>> {
+pub async fn validate_content_document_asin_relations(configuration: &configuration::Configuration, marketplace_id: &str, post_content_document_request: crate::models::PostContentDocumentRequest, asin_set: Option<Vec<String>>) -> Result<crate::models::ValidateContentDocumentAsinRelationsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -754,16 +641,21 @@ pub async fn validate_content_document_asin_relations(configuration: &configurat
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&post_content_document_request).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -774,8 +666,7 @@ pub async fn validate_content_document_asin_relations(configuration: &configurat
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -794,8 +685,8 @@ pub async fn validate_content_document_asin_relations(configuration: &configurat
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ValidateContentDocumentAsinRelationsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

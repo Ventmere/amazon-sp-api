@@ -15,37 +15,37 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Address {
     /// The name of the person, business or institution at that address.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
     /// First line of street address.
-    #[serde(rename = "addressLine1")]
+    #[serde(default, rename = "addressLine1")]
     pub address_line1: String,
     /// Additional address information, if required.
-    #[serde(rename = "addressLine2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "addressLine2", skip_serializing_if = "Option::is_none")]
     pub address_line2: Option<String>,
     /// Additional address information, if required.
-    #[serde(rename = "addressLine3", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "addressLine3", skip_serializing_if = "Option::is_none")]
     pub address_line3: Option<String>,
     /// The city where the person, business or institution is located.
-    #[serde(rename = "city", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "city", skip_serializing_if = "Option::is_none")]
     pub city: Option<String>,
     /// The county where person, business or institution is located.
-    #[serde(rename = "county", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "county", skip_serializing_if = "Option::is_none")]
     pub county: Option<String>,
     /// The district where person, business or institution is located.
-    #[serde(rename = "district", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "district", skip_serializing_if = "Option::is_none")]
     pub district: Option<String>,
     /// The state or region where person, business or institution is located.
-    #[serde(rename = "stateOrRegion", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "stateOrRegion", skip_serializing_if = "Option::is_none")]
     pub state_or_region: Option<String>,
     /// The postal or zip code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
-    #[serde(rename = "postalOrZipCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "postalOrZipCode", skip_serializing_if = "Option::is_none")]
     pub postal_or_zip_code: Option<String>,
     /// The two digit country code. In ISO 3166-1 alpha-2 format.
-    #[serde(rename = "countryCode")]
+    #[serde(default, rename = "countryCode")]
     pub country_code: String,
     /// The phone number of the person, business or institution located at that address.
-    #[serde(rename = "phone", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "phone", skip_serializing_if = "Option::is_none")]
     pub phone: Option<String>,
 }
 

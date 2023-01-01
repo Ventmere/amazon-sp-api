@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct BuyerTaxInfo {
     /// The legal name of the company.
-    #[serde(rename = "CompanyLegalName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CompanyLegalName", skip_serializing_if = "Option::is_none")]
     pub company_legal_name: Option<String>,
     /// The country or region imposing the tax.
-    #[serde(rename = "TaxingRegion", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxingRegion", skip_serializing_if = "Option::is_none")]
     pub taxing_region: Option<String>,
     /// A list of tax classifications that apply to the order.
-    #[serde(rename = "TaxClassifications", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxClassifications", skip_serializing_if = "Option::is_none")]
     pub tax_classifications: Option<Vec<crate::models::TaxClassification>>,
 }
 

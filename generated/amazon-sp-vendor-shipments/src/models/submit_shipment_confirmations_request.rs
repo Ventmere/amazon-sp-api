@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SubmitShipmentConfirmationsRequest {
-    #[serde(rename = "shipmentConfirmations", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipmentConfirmations", skip_serializing_if = "Option::is_none")]
     pub shipment_confirmations: Option<Vec<crate::models::ShipmentConfirmation>>,
 }
 

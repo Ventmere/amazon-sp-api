@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AsinInboundGuidance {
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN")]
+    #[serde(default, rename = "ASIN")]
     pub ASIN: String,
-    #[serde(rename = "InboundGuidance")]
+    #[serde(default, rename = "InboundGuidance")]
     pub inbound_guidance: crate::models::InboundGuidance,
     /// A list of inbound guidance reason information.
-    #[serde(rename = "GuidanceReasonList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GuidanceReasonList", skip_serializing_if = "Option::is_none")]
     pub guidance_reason_list: Option<Vec<crate::models::GuidanceReason>>,
 }
 

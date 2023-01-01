@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TransportDetailOutput {
-    #[serde(rename = "PartneredSmallParcelData", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PartneredSmallParcelData", skip_serializing_if = "Option::is_none")]
     pub partnered_small_parcel_data: Option<Box<crate::models::PartneredSmallParcelDataOutput>>,
-    #[serde(rename = "NonPartneredSmallParcelData", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NonPartneredSmallParcelData", skip_serializing_if = "Option::is_none")]
     pub non_partnered_small_parcel_data: Option<Box<crate::models::NonPartneredSmallParcelDataOutput>>,
-    #[serde(rename = "PartneredLtlData", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PartneredLtlData", skip_serializing_if = "Option::is_none")]
     pub partnered_ltl_data: Option<Box<crate::models::PartneredLtlDataOutput>>,
-    #[serde(rename = "NonPartneredLtlData", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NonPartneredLtlData", skip_serializing_if = "Option::is_none")]
     pub non_partnered_ltl_data: Option<Box<crate::models::NonPartneredLtlDataOutput>>,
 }
 

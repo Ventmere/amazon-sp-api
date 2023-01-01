@@ -15,21 +15,21 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PurchaseShipmentRequest {
     /// Client reference id.
-    #[serde(rename = "clientReferenceId")]
+    #[serde(default, rename = "clientReferenceId")]
     pub client_reference_id: String,
-    #[serde(rename = "shipTo")]
+    #[serde(default, rename = "shipTo")]
     pub ship_to: Box<crate::models::Address>,
-    #[serde(rename = "shipFrom")]
+    #[serde(default, rename = "shipFrom")]
     pub ship_from: Box<crate::models::Address>,
     /// The start date and time. This defaults to the current date and time.
-    #[serde(rename = "shipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipDate", skip_serializing_if = "Option::is_none")]
     pub ship_date: Option<String>,
-    #[serde(rename = "serviceType")]
+    #[serde(default, rename = "serviceType")]
     pub service_type: crate::models::ServiceType,
     /// A list of container.
-    #[serde(rename = "containers")]
+    #[serde(default, rename = "containers")]
     pub containers: Vec<crate::models::Container>,
-    #[serde(rename = "labelSpecification")]
+    #[serde(default, rename = "labelSpecification")]
     pub label_specification: Box<crate::models::LabelSpecification>,
 }
 

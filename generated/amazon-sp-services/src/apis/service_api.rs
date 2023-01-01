@@ -11,279 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`add_appointment_for_service_job_by_service_job_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AddAppointmentForServiceJobByServiceJobIdError {
-    Status400(crate::models::SetAppointmentResponse),
-    Status403(crate::models::SetAppointmentResponse),
-    Status404(crate::models::SetAppointmentResponse),
-    Status413(crate::models::SetAppointmentResponse),
-    Status415(crate::models::SetAppointmentResponse),
-    Status422(crate::models::SetAppointmentResponse),
-    Status429(crate::models::SetAppointmentResponse),
-    Status500(crate::models::SetAppointmentResponse),
-    Status503(crate::models::SetAppointmentResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`assign_appointment_resources`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AssignAppointmentResourcesError {
-    Status400(crate::models::AssignAppointmentResourcesResponse),
-    Status403(crate::models::AssignAppointmentResourcesResponse),
-    Status404(crate::models::AssignAppointmentResourcesResponse),
-    Status413(crate::models::AssignAppointmentResourcesResponse),
-    Status415(crate::models::AssignAppointmentResourcesResponse),
-    Status422(crate::models::AssignAppointmentResourcesResponse),
-    Status429(crate::models::AssignAppointmentResourcesResponse),
-    Status500(crate::models::AssignAppointmentResourcesResponse),
-    Status503(crate::models::AssignAppointmentResourcesResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`cancel_reservation`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CancelReservationError {
-    Status400(crate::models::CancelReservationResponse),
-    Status403(crate::models::CancelReservationResponse),
-    Status404(crate::models::CancelReservationResponse),
-    Status413(crate::models::CancelReservationResponse),
-    Status415(crate::models::CancelReservationResponse),
-    Status429(crate::models::CancelReservationResponse),
-    Status500(crate::models::CancelReservationResponse),
-    Status503(crate::models::CancelReservationResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`cancel_service_job_by_service_job_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CancelServiceJobByServiceJobIdError {
-    Status400(crate::models::CancelServiceJobByServiceJobIdResponse),
-    Status403(crate::models::CancelServiceJobByServiceJobIdResponse),
-    Status404(crate::models::CancelServiceJobByServiceJobIdResponse),
-    Status413(crate::models::CancelServiceJobByServiceJobIdResponse),
-    Status415(crate::models::CancelServiceJobByServiceJobIdResponse),
-    Status422(crate::models::CancelServiceJobByServiceJobIdResponse),
-    Status429(crate::models::CancelServiceJobByServiceJobIdResponse),
-    Status500(crate::models::CancelServiceJobByServiceJobIdResponse),
-    Status503(crate::models::CancelServiceJobByServiceJobIdResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`complete_service_job_by_service_job_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CompleteServiceJobByServiceJobIdError {
-    Status400(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    Status403(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    Status404(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    Status413(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    Status415(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    Status422(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    Status429(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    Status500(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    Status503(crate::models::CompleteServiceJobByServiceJobIdResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_reservation`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateReservationError {
-    Status400(crate::models::CreateReservationResponse),
-    Status403(crate::models::CreateReservationResponse),
-    Status404(crate::models::CreateReservationResponse),
-    Status413(crate::models::CreateReservationResponse),
-    Status415(crate::models::CreateReservationResponse),
-    Status429(crate::models::CreateReservationResponse),
-    Status500(crate::models::CreateReservationResponse),
-    Status503(crate::models::CreateReservationResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_service_document_upload_destination`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateServiceDocumentUploadDestinationError {
-    Status400(crate::models::CreateServiceDocumentUploadDestination),
-    Status403(crate::models::CreateServiceDocumentUploadDestination),
-    Status404(crate::models::CreateServiceDocumentUploadDestination),
-    Status413(crate::models::CreateServiceDocumentUploadDestination),
-    Status415(crate::models::CreateServiceDocumentUploadDestination),
-    Status422(crate::models::CreateServiceDocumentUploadDestination),
-    Status429(crate::models::CreateServiceDocumentUploadDestination),
-    Status500(crate::models::CreateServiceDocumentUploadDestination),
-    Status503(crate::models::CreateServiceDocumentUploadDestination),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_appointment_slots`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetAppointmentSlotsError {
-    Status400(crate::models::GetAppointmentSlotsResponse),
-    Status403(crate::models::GetAppointmentSlotsResponse),
-    Status404(crate::models::GetAppointmentSlotsResponse),
-    Status415(crate::models::GetAppointmentSlotsResponse),
-    Status422(crate::models::GetAppointmentSlotsResponse),
-    Status429(crate::models::GetAppointmentSlotsResponse),
-    Status500(crate::models::GetAppointmentSlotsResponse),
-    Status503(crate::models::GetAppointmentSlotsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_appointmment_slots_by_job_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetAppointmmentSlotsByJobIdError {
-    Status400(crate::models::GetAppointmentSlotsResponse),
-    Status403(crate::models::GetAppointmentSlotsResponse),
-    Status404(crate::models::GetAppointmentSlotsResponse),
-    Status415(crate::models::GetAppointmentSlotsResponse),
-    Status422(crate::models::GetAppointmentSlotsResponse),
-    Status429(crate::models::GetAppointmentSlotsResponse),
-    Status500(crate::models::GetAppointmentSlotsResponse),
-    Status503(crate::models::GetAppointmentSlotsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_fixed_slot_capacity`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetFixedSlotCapacityError {
-    Status400(crate::models::FixedSlotCapacityErrors),
-    Status401(crate::models::FixedSlotCapacityErrors),
-    Status403(crate::models::FixedSlotCapacityErrors),
-    Status404(crate::models::FixedSlotCapacityErrors),
-    Status413(crate::models::FixedSlotCapacityErrors),
-    Status415(crate::models::FixedSlotCapacityErrors),
-    Status429(crate::models::FixedSlotCapacityErrors),
-    Status500(crate::models::FixedSlotCapacityErrors),
-    Status503(crate::models::FixedSlotCapacityErrors),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_range_slot_capacity`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetRangeSlotCapacityError {
-    Status400(crate::models::RangeSlotCapacityErrors),
-    Status401(crate::models::RangeSlotCapacityErrors),
-    Status403(crate::models::RangeSlotCapacityErrors),
-    Status404(crate::models::RangeSlotCapacityErrors),
-    Status413(crate::models::RangeSlotCapacityErrors),
-    Status415(crate::models::RangeSlotCapacityErrors),
-    Status429(crate::models::RangeSlotCapacityErrors),
-    Status500(crate::models::RangeSlotCapacityErrors),
-    Status503(crate::models::RangeSlotCapacityErrors),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_service_job_by_service_job_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetServiceJobByServiceJobIdError {
-    Status400(crate::models::GetServiceJobByServiceJobIdResponse),
-    Status403(crate::models::GetServiceJobByServiceJobIdResponse),
-    Status404(crate::models::GetServiceJobByServiceJobIdResponse),
-    Status413(crate::models::GetServiceJobByServiceJobIdResponse),
-    Status415(crate::models::GetServiceJobByServiceJobIdResponse),
-    Status422(crate::models::GetServiceJobByServiceJobIdResponse),
-    Status429(crate::models::GetServiceJobByServiceJobIdResponse),
-    Status500(crate::models::GetServiceJobByServiceJobIdResponse),
-    Status503(crate::models::GetServiceJobByServiceJobIdResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_service_jobs`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetServiceJobsError {
-    Status400(crate::models::GetServiceJobsResponse),
-    Status403(crate::models::GetServiceJobsResponse),
-    Status404(crate::models::GetServiceJobsResponse),
-    Status413(crate::models::GetServiceJobsResponse),
-    Status415(crate::models::GetServiceJobsResponse),
-    Status429(crate::models::GetServiceJobsResponse),
-    Status500(crate::models::GetServiceJobsResponse),
-    Status503(crate::models::GetServiceJobsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`reschedule_appointment_for_service_job_by_service_job_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum RescheduleAppointmentForServiceJobByServiceJobIdError {
-    Status400(crate::models::SetAppointmentResponse),
-    Status403(crate::models::SetAppointmentResponse),
-    Status404(crate::models::SetAppointmentResponse),
-    Status413(crate::models::SetAppointmentResponse),
-    Status415(crate::models::SetAppointmentResponse),
-    Status422(crate::models::SetAppointmentResponse),
-    Status429(crate::models::SetAppointmentResponse),
-    Status500(crate::models::SetAppointmentResponse),
-    Status503(crate::models::SetAppointmentResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`set_appointment_fulfillment_data`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SetAppointmentFulfillmentDataError {
-    Status400(Vec<crate::models::Error>),
-    Status403(Vec<crate::models::Error>),
-    Status404(Vec<crate::models::Error>),
-    Status413(Vec<crate::models::Error>),
-    Status415(Vec<crate::models::Error>),
-    Status422(Vec<crate::models::Error>),
-    Status429(Vec<crate::models::Error>),
-    Status500(Vec<crate::models::Error>),
-    Status503(Vec<crate::models::Error>),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`update_reservation`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum UpdateReservationError {
-    Status400(crate::models::UpdateReservationResponse),
-    Status403(crate::models::UpdateReservationResponse),
-    Status404(crate::models::UpdateReservationResponse),
-    Status413(crate::models::UpdateReservationResponse),
-    Status415(crate::models::UpdateReservationResponse),
-    Status429(crate::models::UpdateReservationResponse),
-    Status500(crate::models::UpdateReservationResponse),
-    Status503(crate::models::UpdateReservationResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`update_schedule`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum UpdateScheduleError {
-    Status400(crate::models::UpdateScheduleResponse),
-    Status403(crate::models::UpdateScheduleResponse),
-    Status404(crate::models::UpdateScheduleResponse),
-    Status413(crate::models::UpdateScheduleResponse),
-    Status415(crate::models::UpdateScheduleResponse),
-    Status429(crate::models::UpdateScheduleResponse),
-    Status500(crate::models::UpdateScheduleResponse),
-    Status503(crate::models::UpdateScheduleResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Adds an appointment to the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn add_appointment_for_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str, body: crate::models::AddAppointmentRequest) -> Result<crate::models::SetAppointmentResponse, Error<AddAppointmentForServiceJobByServiceJobIdError>> {
+pub async fn add_appointment_for_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str, body: crate::models::AddAppointmentRequest) -> Result<crate::models::SetAppointmentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -296,16 +29,21 @@ pub async fn add_appointment_for_service_job_by_service_job_id(configuration: &c
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -316,8 +54,7 @@ pub async fn add_appointment_for_service_job_by_service_job_id(configuration: &c
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -336,14 +73,14 @@ pub async fn add_appointment_for_service_job_by_service_job_id(configuration: &c
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<AddAppointmentForServiceJobByServiceJobIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn assign_appointment_resources(configuration: &configuration::Configuration, service_job_id: &str, appointment_id: &str, body: crate::models::AssignAppointmentResourcesRequest) -> Result<crate::models::AssignAppointmentResourcesResponse, Error<AssignAppointmentResourcesError>> {
+pub async fn assign_appointment_resources(configuration: &configuration::Configuration, service_job_id: &str, appointment_id: &str, body: crate::models::AssignAppointmentResourcesRequest) -> Result<crate::models::AssignAppointmentResourcesResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -356,16 +93,21 @@ pub async fn assign_appointment_resources(configuration: &configuration::Configu
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -376,8 +118,7 @@ pub async fn assign_appointment_resources(configuration: &configuration::Configu
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -396,14 +137,14 @@ pub async fn assign_appointment_resources(configuration: &configuration::Configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<AssignAppointmentResourcesError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Cancel a reservation.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn cancel_reservation(configuration: &configuration::Configuration, reservation_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::CancelReservationResponse, Error<CancelReservationError>> {
+pub async fn cancel_reservation(configuration: &configuration::Configuration, reservation_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::CancelReservationResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -420,16 +161,21 @@ pub async fn cancel_reservation(configuration: &configuration::Configuration, re
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "DELETE",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -440,8 +186,7 @@ pub async fn cancel_reservation(configuration: &configuration::Configuration, re
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -459,14 +204,14 @@ pub async fn cancel_reservation(configuration: &configuration::Configuration, re
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CancelReservationError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Cancels the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn cancel_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str, cancellation_reason_code: &str) -> Result<crate::models::CancelServiceJobByServiceJobIdResponse, Error<CancelServiceJobByServiceJobIdError>> {
+pub async fn cancel_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str, cancellation_reason_code: &str) -> Result<crate::models::CancelServiceJobByServiceJobIdResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -480,16 +225,21 @@ pub async fn cancel_service_job_by_service_job_id(configuration: &configuration:
     url_builder = url_builder.query(&[("cancellationReasonCode", &cancellation_reason_code.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -500,8 +250,7 @@ pub async fn cancel_service_job_by_service_job_id(configuration: &configuration:
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -519,14 +268,14 @@ pub async fn cancel_service_job_by_service_job_id(configuration: &configuration:
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CancelServiceJobByServiceJobIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Completes the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn complete_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str) -> Result<crate::models::CompleteServiceJobByServiceJobIdResponse, Error<CompleteServiceJobByServiceJobIdError>> {
+pub async fn complete_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str) -> Result<crate::models::CompleteServiceJobByServiceJobIdResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -539,16 +288,21 @@ pub async fn complete_service_job_by_service_job_id(configuration: &configuratio
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -559,8 +313,7 @@ pub async fn complete_service_job_by_service_job_id(configuration: &configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -578,14 +331,14 @@ pub async fn complete_service_job_by_service_job_id(configuration: &configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CompleteServiceJobByServiceJobIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Create a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn create_reservation(configuration: &configuration::Configuration, marketplace_ids: Vec<String>, body: crate::models::CreateReservationRequest) -> Result<crate::models::CreateReservationResponse, Error<CreateReservationError>> {
+pub async fn create_reservation(configuration: &configuration::Configuration, marketplace_ids: Vec<String>, body: crate::models::CreateReservationRequest) -> Result<crate::models::CreateReservationResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -602,16 +355,21 @@ pub async fn create_reservation(configuration: &configuration::Configuration, ma
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -622,8 +380,7 @@ pub async fn create_reservation(configuration: &configuration::Configuration, ma
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -642,14 +399,14 @@ pub async fn create_reservation(configuration: &configuration::Configuration, ma
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateReservationError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Creates an upload destination.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn create_service_document_upload_destination(configuration: &configuration::Configuration, body: crate::models::ServiceUploadDocument) -> Result<crate::models::CreateServiceDocumentUploadDestination, Error<CreateServiceDocumentUploadDestinationError>> {
+pub async fn create_service_document_upload_destination(configuration: &configuration::Configuration, body: crate::models::ServiceUploadDocument) -> Result<crate::models::CreateServiceDocumentUploadDestination, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -662,16 +419,21 @@ pub async fn create_service_document_upload_destination(configuration: &configur
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -682,8 +444,7 @@ pub async fn create_service_document_upload_destination(configuration: &configur
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -702,14 +463,14 @@ pub async fn create_service_document_upload_destination(configuration: &configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateServiceDocumentUploadDestinationError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Gets appointment slots as per the service context specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_appointment_slots(configuration: &configuration::Configuration, asin: &str, store_id: &str, marketplace_ids: Vec<String>, start_time: Option<&str>, end_time: Option<&str>) -> Result<crate::models::GetAppointmentSlotsResponse, Error<GetAppointmentSlotsError>> {
+pub async fn get_appointment_slots(configuration: &configuration::Configuration, asin: &str, store_id: &str, marketplace_ids: Vec<String>, start_time: Option<&str>, end_time: Option<&str>) -> Result<crate::models::GetAppointmentSlotsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -734,16 +495,21 @@ pub async fn get_appointment_slots(configuration: &configuration::Configuration,
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -754,8 +520,7 @@ pub async fn get_appointment_slots(configuration: &configuration::Configuration,
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -773,14 +538,14 @@ pub async fn get_appointment_slots(configuration: &configuration::Configuration,
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetAppointmentSlotsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Gets appointment slots for the service associated with the service job id specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_appointmment_slots_by_job_id(configuration: &configuration::Configuration, service_job_id: &str, marketplace_ids: Vec<String>, start_time: Option<&str>, end_time: Option<&str>) -> Result<crate::models::GetAppointmentSlotsResponse, Error<GetAppointmmentSlotsByJobIdError>> {
+pub async fn get_appointmment_slots_by_job_id(configuration: &configuration::Configuration, service_job_id: &str, marketplace_ids: Vec<String>, start_time: Option<&str>, end_time: Option<&str>) -> Result<crate::models::GetAppointmentSlotsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -803,16 +568,21 @@ pub async fn get_appointmment_slots_by_job_id(configuration: &configuration::Con
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -823,8 +593,7 @@ pub async fn get_appointmment_slots_by_job_id(configuration: &configuration::Con
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -842,14 +611,14 @@ pub async fn get_appointmment_slots_by_job_id(configuration: &configuration::Con
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetAppointmmentSlotsByJobIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Provides capacity in fixed-size slots.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_fixed_slot_capacity(configuration: &configuration::Configuration, resource_id: &str, marketplace_ids: Vec<String>, body: crate::models::FixedSlotCapacityQuery, next_page_token: Option<&str>) -> Result<crate::models::FixedSlotCapacity, Error<GetFixedSlotCapacityError>> {
+pub async fn get_fixed_slot_capacity(configuration: &configuration::Configuration, resource_id: &str, marketplace_ids: Vec<String>, body: crate::models::FixedSlotCapacityQuery, next_page_token: Option<&str>) -> Result<crate::models::FixedSlotCapacity, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -869,16 +638,21 @@ pub async fn get_fixed_slot_capacity(configuration: &configuration::Configuratio
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -889,8 +663,7 @@ pub async fn get_fixed_slot_capacity(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -909,14 +682,14 @@ pub async fn get_fixed_slot_capacity(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetFixedSlotCapacityError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Provides capacity slots in a format similar to availability records.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_range_slot_capacity(configuration: &configuration::Configuration, resource_id: &str, marketplace_ids: Vec<String>, body: crate::models::RangeSlotCapacityQuery, next_page_token: Option<&str>) -> Result<crate::models::RangeSlotCapacity, Error<GetRangeSlotCapacityError>> {
+pub async fn get_range_slot_capacity(configuration: &configuration::Configuration, resource_id: &str, marketplace_ids: Vec<String>, body: crate::models::RangeSlotCapacityQuery, next_page_token: Option<&str>) -> Result<crate::models::RangeSlotCapacity, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -936,16 +709,21 @@ pub async fn get_range_slot_capacity(configuration: &configuration::Configuratio
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -956,8 +734,7 @@ pub async fn get_range_slot_capacity(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -976,14 +753,14 @@ pub async fn get_range_slot_capacity(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetRangeSlotCapacityError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Gets details of service job indicated by the provided `serviceJobID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str) -> Result<crate::models::GetServiceJobByServiceJobIdResponse, Error<GetServiceJobByServiceJobIdError>> {
+pub async fn get_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str) -> Result<crate::models::GetServiceJobByServiceJobIdResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -996,16 +773,21 @@ pub async fn get_service_job_by_service_job_id(configuration: &configuration::Co
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1016,8 +798,7 @@ pub async fn get_service_job_by_service_job_id(configuration: &configuration::Co
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1035,14 +816,14 @@ pub async fn get_service_job_by_service_job_id(configuration: &configuration::Co
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetServiceJobByServiceJobIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_service_jobs(configuration: &configuration::Configuration, marketplace_ids: Vec<String>, service_order_ids: Option<Vec<String>>, service_job_status: Option<Vec<String>>, page_token: Option<&str>, page_size: Option<i32>, sort_field: Option<&str>, sort_order: Option<&str>, created_after: Option<&str>, created_before: Option<&str>, last_updated_after: Option<&str>, last_updated_before: Option<&str>, schedule_start_date: Option<&str>, schedule_end_date: Option<&str>, asins: Option<Vec<String>>, required_skills: Option<Vec<String>>, store_ids: Option<Vec<String>>) -> Result<crate::models::GetServiceJobsResponse, Error<GetServiceJobsError>> {
+pub async fn get_service_jobs(configuration: &configuration::Configuration, marketplace_ids: Vec<String>, service_order_ids: Option<Vec<String>>, service_job_status: Option<Vec<String>>, page_token: Option<&str>, page_size: Option<i32>, sort_field: Option<&str>, sort_order: Option<&str>, created_after: Option<&str>, created_before: Option<&str>, last_updated_after: Option<&str>, last_updated_before: Option<&str>, schedule_start_date: Option<&str>, schedule_end_date: Option<&str>, asins: Option<Vec<String>>, required_skills: Option<Vec<String>>, store_ids: Option<Vec<String>>) -> Result<crate::models::GetServiceJobsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1119,16 +900,21 @@ pub async fn get_service_jobs(configuration: &configuration::Configuration, mark
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1139,8 +925,7 @@ pub async fn get_service_jobs(configuration: &configuration::Configuration, mark
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1158,14 +943,14 @@ pub async fn get_service_jobs(configuration: &configuration::Configuration, mark
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetServiceJobsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Reschedules an appointment for the service job indicated by the service job identifier specified.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn reschedule_appointment_for_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str, appointment_id: &str, body: crate::models::RescheduleAppointmentRequest) -> Result<crate::models::SetAppointmentResponse, Error<RescheduleAppointmentForServiceJobByServiceJobIdError>> {
+pub async fn reschedule_appointment_for_service_job_by_service_job_id(configuration: &configuration::Configuration, service_job_id: &str, appointment_id: &str, body: crate::models::RescheduleAppointmentRequest) -> Result<crate::models::SetAppointmentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1178,16 +963,21 @@ pub async fn reschedule_appointment_for_service_job_by_service_job_id(configurat
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1198,8 +988,7 @@ pub async fn reschedule_appointment_for_service_job_by_service_job_id(configurat
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1218,14 +1007,14 @@ pub async fn reschedule_appointment_for_service_job_by_service_job_id(configurat
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<RescheduleAppointmentForServiceJobByServiceJobIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn set_appointment_fulfillment_data(configuration: &configuration::Configuration, service_job_id: &str, appointment_id: &str, body: crate::models::SetAppointmentFulfillmentDataRequest) -> Result<String, Error<SetAppointmentFulfillmentDataError>> {
+pub async fn set_appointment_fulfillment_data(configuration: &configuration::Configuration, service_job_id: &str, appointment_id: &str, body: crate::models::SetAppointmentFulfillmentDataRequest) -> Result<String, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1238,16 +1027,21 @@ pub async fn set_appointment_fulfillment_data(configuration: &configuration::Con
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1258,8 +1052,7 @@ pub async fn set_appointment_fulfillment_data(configuration: &configuration::Con
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1278,14 +1071,14 @@ pub async fn set_appointment_fulfillment_data(configuration: &configuration::Con
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SetAppointmentFulfillmentDataError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Update a reservation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn update_reservation(configuration: &configuration::Configuration, reservation_id: &str, marketplace_ids: Vec<String>, body: crate::models::UpdateReservationRequest) -> Result<crate::models::UpdateReservationResponse, Error<UpdateReservationError>> {
+pub async fn update_reservation(configuration: &configuration::Configuration, reservation_id: &str, marketplace_ids: Vec<String>, body: crate::models::UpdateReservationRequest) -> Result<crate::models::UpdateReservationResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1302,16 +1095,21 @@ pub async fn update_reservation(configuration: &configuration::Configuration, re
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1322,8 +1120,7 @@ pub async fn update_reservation(configuration: &configuration::Configuration, re
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1342,14 +1139,14 @@ pub async fn update_reservation(configuration: &configuration::Configuration, re
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<UpdateReservationError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Update the schedule of the given resource.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn update_schedule(configuration: &configuration::Configuration, resource_id: &str, marketplace_ids: Vec<String>, body: crate::models::UpdateScheduleRequest) -> Result<crate::models::UpdateScheduleResponse, Error<UpdateScheduleError>> {
+pub async fn update_schedule(configuration: &configuration::Configuration, resource_id: &str, marketplace_ids: Vec<String>, body: crate::models::UpdateScheduleRequest) -> Result<crate::models::UpdateScheduleResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1366,16 +1163,21 @@ pub async fn update_schedule(configuration: &configuration::Configuration, resou
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1386,8 +1188,7 @@ pub async fn update_schedule(configuration: &configuration::Configuration, resou
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1406,8 +1207,8 @@ pub async fn update_schedule(configuration: &configuration::Configuration, resou
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<UpdateScheduleError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

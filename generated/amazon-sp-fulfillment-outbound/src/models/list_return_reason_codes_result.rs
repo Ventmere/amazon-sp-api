@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListReturnReasonCodesResult {
     /// An array of return reason code details.
-    #[serde(rename = "reasonCodeDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "reasonCodeDetails", skip_serializing_if = "Option::is_none")]
     pub reason_code_details: Option<Vec<crate::models::ReasonCodeDetails>>,
 }
 

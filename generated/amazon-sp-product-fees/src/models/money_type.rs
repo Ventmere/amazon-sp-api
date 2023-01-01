@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct MoneyType {
     /// The currency code in ISO 4217 format.
-    #[serde(rename = "CurrencyCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CurrencyCode", skip_serializing_if = "Option::is_none")]
     pub currency_code: Option<String>,
     /// The monetary value.
-    #[serde(rename = "Amount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Amount", skip_serializing_if = "Option::is_none")]
     pub amount: Option<f32>,
 }
 

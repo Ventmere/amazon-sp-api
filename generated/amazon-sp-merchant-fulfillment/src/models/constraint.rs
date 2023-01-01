@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Constraint {
     /// A regular expression.
-    #[serde(rename = "ValidationRegEx", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValidationRegEx", skip_serializing_if = "Option::is_none")]
     pub validation_reg_ex: Option<String>,
     /// A validation string.
-    #[serde(rename = "ValidationString")]
+    #[serde(default, rename = "ValidationString")]
     pub validation_string: String,
 }
 

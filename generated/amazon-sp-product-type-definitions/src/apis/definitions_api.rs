@@ -11,44 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`get_definitions_product_type`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetDefinitionsProductTypeError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`search_definitions_product_types`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SearchDefinitionsProductTypesError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Retrieve an Amazon product type definition.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_definitions_product_type(configuration: &configuration::Configuration, product_type: &str, marketplace_ids: Vec<String>, seller_id: Option<&str>, product_type_version: Option<&str>, requirements: Option<&str>, requirements_enforced: Option<&str>, locale: Option<&str>) -> Result<crate::models::ProductTypeDefinition, Error<GetDefinitionsProductTypeError>> {
+pub async fn get_definitions_product_type(configuration: &configuration::Configuration, product_type: &str, marketplace_ids: Vec<String>, seller_id: Option<&str>, product_type_version: Option<&str>, requirements: Option<&str>, requirements_enforced: Option<&str>, locale: Option<&str>) -> Result<crate::models::ProductTypeDefinition, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -80,16 +48,21 @@ pub async fn get_definitions_product_type(configuration: &configuration::Configu
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -100,8 +73,7 @@ pub async fn get_definitions_product_type(configuration: &configuration::Configu
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -119,14 +91,14 @@ pub async fn get_definitions_product_type(configuration: &configuration::Configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetDefinitionsProductTypeError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Search for and return a list of Amazon product types that have definitions available.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn search_definitions_product_types(configuration: &configuration::Configuration, marketplace_ids: Vec<String>, keywords: Option<Vec<String>>) -> Result<crate::models::ProductTypeList, Error<SearchDefinitionsProductTypesError>> {
+pub async fn search_definitions_product_types(configuration: &configuration::Configuration, marketplace_ids: Vec<String>, keywords: Option<Vec<String>>) -> Result<crate::models::ProductTypeList, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -149,16 +121,21 @@ pub async fn search_definitions_product_types(configuration: &configuration::Con
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -169,8 +146,7 @@ pub async fn search_definitions_product_types(configuration: &configuration::Con
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -188,8 +164,8 @@ pub async fn search_definitions_product_types(configuration: &configuration::Con
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SearchDefinitionsProductTypesError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

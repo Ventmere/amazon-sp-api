@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LabelResult {
     /// An identifier for the container. This must be unique within all the containers in the same shipment.
-    #[serde(rename = "containerReferenceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "containerReferenceId", skip_serializing_if = "Option::is_none")]
     pub container_reference_id: Option<String>,
     /// The tracking identifier assigned to the container.
-    #[serde(rename = "trackingId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "trackingId", skip_serializing_if = "Option::is_none")]
     pub tracking_id: Option<String>,
-    #[serde(rename = "label", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "label", skip_serializing_if = "Option::is_none")]
     pub label: Option<Box<crate::models::Label>>,
 }
 

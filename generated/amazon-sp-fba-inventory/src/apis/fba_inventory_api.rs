@@ -11,27 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`get_inventory_summaries`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetInventorySummariesError {
-    Status400(crate::models::GetInventorySummariesResponse),
-    Status403(crate::models::GetInventorySummariesResponse),
-    Status404(crate::models::GetInventorySummariesResponse),
-    Status429(crate::models::GetInventorySummariesResponse),
-    Status500(crate::models::GetInventorySummariesResponse),
-    Status503(crate::models::GetInventorySummariesResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime` and `sellerSkus` parameters:  - All inventory summaries with available details are returned when the `startDateTime` and `sellerSkus` parameters are omitted. - When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` parameter is ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified. - When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn get_inventory_summaries(configuration: &configuration::Configuration, granularity_type: &str, granularity_id: &str, marketplace_ids: Vec<String>, details: Option<bool>, start_date_time: Option<String>, seller_skus: Option<Vec<String>>, next_token: Option<&str>) -> Result<crate::models::GetInventorySummariesResponse, Error<GetInventorySummariesError>> {
+pub async fn get_inventory_summaries(configuration: &configuration::Configuration, granularity_type: &str, granularity_id: &str, marketplace_ids: Vec<String>, details: Option<bool>, start_date_time: Option<String>, seller_skus: Option<Vec<String>>, next_token: Option<&str>) -> Result<crate::models::GetInventorySummariesResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -65,16 +50,21 @@ pub async fn get_inventory_summaries(configuration: &configuration::Configuratio
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -85,8 +75,7 @@ pub async fn get_inventory_summaries(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -104,8 +93,8 @@ pub async fn get_inventory_summaries(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetInventorySummariesError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

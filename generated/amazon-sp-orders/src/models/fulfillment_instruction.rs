@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentInstruction {
     /// Denotes the recommended sourceId where the order should be fulfilled from.
-    #[serde(rename = "FulfillmentSupplySourceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FulfillmentSupplySourceId", skip_serializing_if = "Option::is_none")]
     pub fulfillment_supply_source_id: Option<String>,
 }
 

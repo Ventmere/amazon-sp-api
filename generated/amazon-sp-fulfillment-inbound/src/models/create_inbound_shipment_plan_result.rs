@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateInboundShipmentPlanResult {
     /// A list of inbound shipment plan information
-    #[serde(rename = "InboundShipmentPlans", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "InboundShipmentPlans", skip_serializing_if = "Option::is_none")]
     pub inbound_shipment_plans: Option<Vec<crate::models::InboundShipmentPlan>>,
 }
 

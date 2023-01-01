@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemDeliveryPromise {
     /// The date and time of the start of the promised delivery window in ISO 8601 format.
-    #[serde(rename = "startTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "startTime", skip_serializing_if = "Option::is_none")]
     pub start_time: Option<String>,
     /// The date and time of the end of the promised delivery window in ISO 8601 format.
-    #[serde(rename = "endTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "endTime", skip_serializing_if = "Option::is_none")]
     pub end_time: Option<String>,
 }
 

@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ScheduledDeliveryShipment {
     /// Scheduled delivery service type.
-    #[serde(rename = "scheduledDeliveryServiceType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scheduledDeliveryServiceType", skip_serializing_if = "Option::is_none")]
     pub scheduled_delivery_service_type: Option<String>,
     /// Earliest nominated delivery date for the scheduled delivery.
-    #[serde(rename = "earliestNominatedDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "earliestNominatedDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub earliest_nominated_delivery_date: Option<String>,
     /// Latest nominated delivery date for the scheduled delivery.
-    #[serde(rename = "latestNominatedDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "latestNominatedDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub latest_nominated_delivery_date: Option<String>,
 }
 

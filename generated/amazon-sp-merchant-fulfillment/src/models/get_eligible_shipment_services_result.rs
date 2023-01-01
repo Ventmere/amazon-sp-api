@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetEligibleShipmentServicesResult {
     /// A list of shipping services offers.
-    #[serde(rename = "ShippingServiceList")]
+    #[serde(default, rename = "ShippingServiceList")]
     pub shipping_service_list: Vec<crate::models::ShippingService>,
     /// List of services that were for some reason unavailable for this request
-    #[serde(rename = "RejectedShippingServiceList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RejectedShippingServiceList", skip_serializing_if = "Option::is_none")]
     pub rejected_shipping_service_list: Option<Vec<crate::models::RejectedShippingService>>,
     /// A list of temporarily unavailable carriers.
-    #[serde(rename = "TemporarilyUnavailableCarrierList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TemporarilyUnavailableCarrierList", skip_serializing_if = "Option::is_none")]
     pub temporarily_unavailable_carrier_list: Option<Vec<crate::models::TemporarilyUnavailableCarrier>>,
     /// List of carriers whose terms and conditions were not accepted by the seller.
-    #[serde(rename = "TermsAndConditionsNotAcceptedCarrierList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TermsAndConditionsNotAcceptedCarrierList", skip_serializing_if = "Option::is_none")]
     pub terms_and_conditions_not_accepted_carrier_list: Option<Vec<crate::models::TermsAndConditionsNotAcceptedCarrier>>,
 }
 

@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct NonPartneredSmallParcelPackageInput {
     /// The tracking number of the package, provided by the carrier.
-    #[serde(rename = "TrackingId")]
+    #[serde(default, rename = "TrackingId")]
     pub tracking_id: String,
 }
 

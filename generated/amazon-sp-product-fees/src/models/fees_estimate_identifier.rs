@@ -15,25 +15,25 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeesEstimateIdentifier {
     /// A marketplace identifier.
-    #[serde(rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// The seller identifier.
-    #[serde(rename = "SellerId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerId", skip_serializing_if = "Option::is_none")]
     pub seller_id: Option<String>,
-    #[serde(rename = "IdType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IdType", skip_serializing_if = "Option::is_none")]
     pub id_type: Option<crate::models::IdType>,
     /// The item identifier.
-    #[serde(rename = "IdValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IdValue", skip_serializing_if = "Option::is_none")]
     pub id_value: Option<String>,
     /// When true, the offer is fulfilled by Amazon.
-    #[serde(rename = "IsAmazonFulfilled", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsAmazonFulfilled", skip_serializing_if = "Option::is_none")]
     pub is_amazon_fulfilled: Option<bool>,
-    #[serde(rename = "PriceToEstimateFees", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PriceToEstimateFees", skip_serializing_if = "Option::is_none")]
     pub price_to_estimate_fees: Option<Box<crate::models::PriceToEstimateFees>>,
     /// A unique identifier provided by the caller to track this request.
-    #[serde(rename = "SellerInputIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerInputIdentifier", skip_serializing_if = "Option::is_none")]
     pub seller_input_identifier: Option<String>,
-    #[serde(rename = "OptionalFulfillmentProgram", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OptionalFulfillmentProgram", skip_serializing_if = "Option::is_none")]
     pub optional_fulfillment_program: Option<crate::models::OptionalFulfillmentProgram>,
 }
 

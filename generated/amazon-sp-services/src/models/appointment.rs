@@ -15,20 +15,20 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Appointment {
     /// The appointment identifier.
-    #[serde(rename = "appointmentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "appointmentId", skip_serializing_if = "Option::is_none")]
     pub appointment_id: Option<String>,
     /// The status of the appointment.
-    #[serde(rename = "appointmentStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "appointmentStatus", skip_serializing_if = "Option::is_none")]
     pub appointment_status: Option<AppointmentStatus>,
-    #[serde(rename = "appointmentTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "appointmentTime", skip_serializing_if = "Option::is_none")]
     pub appointment_time: Option<Box<crate::models::AppointmentTime>>,
     /// A list of technicians assigned to the service job.
-    #[serde(rename = "assignedTechnicians", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "assignedTechnicians", skip_serializing_if = "Option::is_none")]
     pub assigned_technicians: Option<Vec<crate::models::Technician>>,
     /// The appointment identifier.
-    #[serde(rename = "rescheduledAppointmentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "rescheduledAppointmentId", skip_serializing_if = "Option::is_none")]
     pub rescheduled_appointment_id: Option<String>,
-    #[serde(rename = "poa", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "poa", skip_serializing_if = "Option::is_none")]
     pub poa: Option<Box<crate::models::Poa>>,
 }
 

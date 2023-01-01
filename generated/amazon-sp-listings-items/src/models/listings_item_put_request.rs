@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListingsItemPutRequest {
     /// The Amazon product type of the listings item.
-    #[serde(rename = "productType")]
+    #[serde(default, rename = "productType")]
     pub product_type: String,
     /// The name of the requirements set for the provided data.
-    #[serde(rename = "requirements", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "requirements", skip_serializing_if = "Option::is_none")]
     pub requirements: Option<Requirements>,
     /// JSON object containing structured listings item attribute data keyed by attribute name.
-    #[serde(rename = "attributes")]
+    #[serde(default, rename = "attributes")]
     pub attributes: serde_json::Value,
 }
 

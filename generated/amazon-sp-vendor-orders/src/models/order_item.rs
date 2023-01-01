@@ -14,22 +14,22 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItem {
     /// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
-    #[serde(rename = "itemSequenceNumber")]
+    #[serde(default, rename = "itemSequenceNumber")]
     pub item_sequence_number: String,
     /// Amazon Standard Identification Number (ASIN) of an item.
-    #[serde(rename = "amazonProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "amazonProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub amazon_product_identifier: Option<String>,
     /// The vendor selected product identification of the item.
-    #[serde(rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub vendor_product_identifier: Option<String>,
-    #[serde(rename = "orderedQuantity")]
+    #[serde(default, rename = "orderedQuantity")]
     pub ordered_quantity: Box<crate::models::ItemQuantity>,
     /// When true, we will accept backorder confirmations for this item.
-    #[serde(rename = "isBackOrderAllowed")]
+    #[serde(default, rename = "isBackOrderAllowed")]
     pub is_back_order_allowed: bool,
-    #[serde(rename = "netCost", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "netCost", skip_serializing_if = "Option::is_none")]
     pub net_cost: Option<Box<crate::models::Money>>,
-    #[serde(rename = "listPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "listPrice", skip_serializing_if = "Option::is_none")]
     pub list_price: Option<Box<crate::models::Money>>,
 }
 

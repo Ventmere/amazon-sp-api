@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct NonPartneredSmallParcelDataOutput {
     /// A list of packages, including carrier, tracking number, and status information for each package.
-    #[serde(rename = "PackageList")]
+    #[serde(default, rename = "PackageList")]
     pub package_list: Vec<crate::models::NonPartneredSmallParcelPackageOutput>,
 }
 

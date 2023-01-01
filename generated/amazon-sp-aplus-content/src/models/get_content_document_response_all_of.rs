@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetContentDocumentResponseAllOf {
-    #[serde(rename = "contentRecord")]
+    #[serde(default, rename = "contentRecord")]
     pub content_record: Box<crate::models::ContentRecord>,
 }
 

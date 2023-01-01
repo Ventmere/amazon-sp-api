@@ -15,27 +15,27 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentRequestDetails {
     /// An Amazon-defined order identifier, in 3-7-7 format.
-    #[serde(rename = "AmazonOrderId")]
+    #[serde(default, rename = "AmazonOrderId")]
     pub amazon_order_id: String,
     /// A seller-defined order identifier.
-    #[serde(rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
     pub seller_order_id: Option<String>,
     /// The list of items to be included in a shipment.
-    #[serde(rename = "ItemList")]
+    #[serde(default, rename = "ItemList")]
     pub item_list: Vec<crate::models::Item>,
-    #[serde(rename = "ShipFromAddress")]
+    #[serde(default, rename = "ShipFromAddress")]
     pub ship_from_address: Box<crate::models::Address>,
-    #[serde(rename = "PackageDimensions")]
+    #[serde(default, rename = "PackageDimensions")]
     pub package_dimensions: Box<crate::models::PackageDimensions>,
-    #[serde(rename = "Weight")]
+    #[serde(default, rename = "Weight")]
     pub weight: Box<crate::models::Weight>,
-    #[serde(rename = "MustArriveByDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MustArriveByDate", skip_serializing_if = "Option::is_none")]
     pub must_arrive_by_date: Option<String>,
-    #[serde(rename = "ShipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipDate", skip_serializing_if = "Option::is_none")]
     pub ship_date: Option<String>,
-    #[serde(rename = "ShippingServiceOptions")]
+    #[serde(default, rename = "ShippingServiceOptions")]
     pub shipping_service_options: Box<crate::models::ShippingServiceOptions>,
-    #[serde(rename = "LabelCustomization", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LabelCustomization", skip_serializing_if = "Option::is_none")]
     pub label_customization: Option<Box<crate::models::LabelCustomization>>,
 }
 

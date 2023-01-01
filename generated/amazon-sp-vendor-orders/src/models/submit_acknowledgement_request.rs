@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SubmitAcknowledgementRequest {
-    #[serde(rename = "acknowledgements", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "acknowledgements", skip_serializing_if = "Option::is_none")]
     pub acknowledgements: Option<Vec<crate::models::OrderAcknowledgement>>,
 }
 

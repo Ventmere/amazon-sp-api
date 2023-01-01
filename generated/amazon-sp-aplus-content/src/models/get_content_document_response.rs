@@ -14,9 +14,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetContentDocumentResponse {
     /// A set of messages to the user, such as warnings or comments.
-    #[serde(rename = "warnings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "warnings", skip_serializing_if = "Option::is_none")]
     pub warnings: Option<Vec<crate::models::Error>>,
-    #[serde(rename = "contentRecord")]
+    #[serde(default, rename = "contentRecord")]
     pub content_record: Box<crate::models::ContentRecord>,
 }
 

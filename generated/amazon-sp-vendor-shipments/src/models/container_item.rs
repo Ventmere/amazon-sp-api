@@ -15,11 +15,11 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ContainerItem {
     /// The reference number for the item. Please provide the itemSequenceNumber from the 'items' segment to refer to that item's details here.
-    #[serde(rename = "itemReference")]
+    #[serde(default, rename = "itemReference")]
     pub item_reference: String,
-    #[serde(rename = "shippedQuantity")]
+    #[serde(default, rename = "shippedQuantity")]
     pub shipped_quantity: Box<crate::models::ItemQuantity>,
-    #[serde(rename = "itemDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "itemDetails", skip_serializing_if = "Option::is_none")]
     pub item_details: Option<Box<crate::models::ItemDetails>>,
 }
 

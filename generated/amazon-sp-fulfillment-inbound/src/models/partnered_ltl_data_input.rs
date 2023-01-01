@@ -14,20 +14,20 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartneredLtlDataInput {
-    #[serde(rename = "Contact", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Contact", skip_serializing_if = "Option::is_none")]
     pub contact: Option<Box<crate::models::Contact>>,
-    #[serde(rename = "BoxCount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BoxCount", skip_serializing_if = "Option::is_none")]
     pub box_count: Option<i64>,
-    #[serde(rename = "SellerFreightClass", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerFreightClass", skip_serializing_if = "Option::is_none")]
     pub seller_freight_class: Option<crate::models::SellerFreightClass>,
-    #[serde(rename = "FreightReadyDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FreightReadyDate", skip_serializing_if = "Option::is_none")]
     pub freight_ready_date: Option<String>,
     /// A list of pallet information.
-    #[serde(rename = "PalletList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PalletList", skip_serializing_if = "Option::is_none")]
     pub pallet_list: Option<Vec<crate::models::Pallet>>,
-    #[serde(rename = "TotalWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalWeight", skip_serializing_if = "Option::is_none")]
     pub total_weight: Option<Box<crate::models::Weight>>,
-    #[serde(rename = "SellerDeclaredValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerDeclaredValue", skip_serializing_if = "Option::is_none")]
     pub seller_declared_value: Option<Box<crate::models::Amount>>,
 }
 

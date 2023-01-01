@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InboundShipmentPlan {
     /// A shipment identifier originally returned by the createInboundShipmentPlan operation.
-    #[serde(rename = "ShipmentId")]
+    #[serde(default, rename = "ShipmentId")]
     pub shipment_id: String,
     /// An Amazon fulfillment center identifier created by Amazon.
-    #[serde(rename = "DestinationFulfillmentCenterId")]
+    #[serde(default, rename = "DestinationFulfillmentCenterId")]
     pub destination_fulfillment_center_id: String,
-    #[serde(rename = "ShipToAddress")]
+    #[serde(default, rename = "ShipToAddress")]
     pub ship_to_address: Box<crate::models::Address>,
-    #[serde(rename = "LabelPrepType")]
+    #[serde(default, rename = "LabelPrepType")]
     pub label_prep_type: crate::models::LabelPrepType,
     /// A list of inbound shipment plan item information.
-    #[serde(rename = "Items")]
+    #[serde(default, rename = "Items")]
     pub items: Vec<crate::models::InboundShipmentPlanItem>,
-    #[serde(rename = "EstimatedBoxContentsFee", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EstimatedBoxContentsFee", skip_serializing_if = "Option::is_none")]
     pub estimated_box_contents_fee: Option<Box<crate::models::BoxContentsFeeDetails>>,
 }
 

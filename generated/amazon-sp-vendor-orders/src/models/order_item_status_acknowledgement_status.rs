@@ -15,14 +15,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItemStatusAcknowledgementStatus {
     /// Confirmation status of line item.
-    #[serde(rename = "confirmationStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "confirmationStatus", skip_serializing_if = "Option::is_none")]
     pub confirmation_status: Option<ConfirmationStatus>,
-    #[serde(rename = "acceptedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "acceptedQuantity", skip_serializing_if = "Option::is_none")]
     pub accepted_quantity: Option<Box<crate::models::ItemQuantity>>,
-    #[serde(rename = "rejectedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "rejectedQuantity", skip_serializing_if = "Option::is_none")]
     pub rejected_quantity: Option<Box<crate::models::ItemQuantity>>,
     /// Details of item quantity confirmed.
-    #[serde(rename = "acknowledgementStatusDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "acknowledgementStatusDetails", skip_serializing_if = "Option::is_none")]
     pub acknowledgement_status_details: Option<Vec<crate::models::AcknowledgementStatusDetails>>,
 }
 

@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TaxRegistrationDetail {
     /// Tax registration type for the entity.
-    #[serde(rename = "taxRegistrationType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxRegistrationType", skip_serializing_if = "Option::is_none")]
     pub tax_registration_type: Option<TaxRegistrationType>,
     /// Tax registration number for the party. For example, VAT ID.
-    #[serde(rename = "taxRegistrationNumber")]
+    #[serde(default, rename = "taxRegistrationNumber")]
     pub tax_registration_number: String,
-    #[serde(rename = "taxRegistrationAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxRegistrationAddress", skip_serializing_if = "Option::is_none")]
     pub tax_registration_address: Option<Box<crate::models::Address>>,
     /// Tax registration message that can be used for additional tax related details.
-    #[serde(rename = "taxRegistrationMessage", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxRegistrationMessage", skip_serializing_if = "Option::is_none")]
     pub tax_registration_message: Option<String>,
 }
 

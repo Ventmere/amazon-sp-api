@@ -15,26 +15,26 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AdditionalSellerInput {
     /// The data type of the additional information.
-    #[serde(rename = "DataType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DataType", skip_serializing_if = "Option::is_none")]
     pub data_type: Option<String>,
     /// The value when the data type is string.
-    #[serde(rename = "ValueAsString", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValueAsString", skip_serializing_if = "Option::is_none")]
     pub value_as_string: Option<String>,
     /// The value when the data type is boolean.
-    #[serde(rename = "ValueAsBoolean", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValueAsBoolean", skip_serializing_if = "Option::is_none")]
     pub value_as_boolean: Option<bool>,
     /// The value when the data type is integer.
-    #[serde(rename = "ValueAsInteger", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValueAsInteger", skip_serializing_if = "Option::is_none")]
     pub value_as_integer: Option<i32>,
-    #[serde(rename = "ValueAsTimestamp", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValueAsTimestamp", skip_serializing_if = "Option::is_none")]
     pub value_as_timestamp: Option<String>,
-    #[serde(rename = "ValueAsAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValueAsAddress", skip_serializing_if = "Option::is_none")]
     pub value_as_address: Option<Box<crate::models::Address>>,
-    #[serde(rename = "ValueAsWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValueAsWeight", skip_serializing_if = "Option::is_none")]
     pub value_as_weight: Option<Box<crate::models::Weight>>,
-    #[serde(rename = "ValueAsDimension", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValueAsDimension", skip_serializing_if = "Option::is_none")]
     pub value_as_dimension: Option<Box<crate::models::Length>>,
-    #[serde(rename = "ValueAsCurrency", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ValueAsCurrency", skip_serializing_if = "Option::is_none")]
     pub value_as_currency: Option<Box<crate::models::CurrencyAmount>>,
 }
 

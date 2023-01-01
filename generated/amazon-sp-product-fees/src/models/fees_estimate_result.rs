@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeesEstimateResult {
     /// The status of the fee request. Possible values: Success, ClientError, ServiceError.
-    #[serde(rename = "Status", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Status", skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
-    #[serde(rename = "FeesEstimateIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeesEstimateIdentifier", skip_serializing_if = "Option::is_none")]
     pub fees_estimate_identifier: Option<Box<crate::models::FeesEstimateIdentifier>>,
-    #[serde(rename = "FeesEstimate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeesEstimate", skip_serializing_if = "Option::is_none")]
     pub fees_estimate: Option<Box<crate::models::FeesEstimate>>,
-    #[serde(rename = "Error", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Error", skip_serializing_if = "Option::is_none")]
     pub error: Option<Box<crate::models::FeesEstimateError>>,
 }
 

@@ -14,15 +14,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderAcknowledgement {
     /// The purchase order number. Formatting Notes: 8-character alpha-numeric code.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
     /// The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
-    #[serde(rename = "acknowledgementDate")]
+    #[serde(default, rename = "acknowledgementDate")]
     pub acknowledgement_date: String,
     /// A list of the items being acknowledged with associated details.
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::OrderAcknowledgementItem>,
 }
 

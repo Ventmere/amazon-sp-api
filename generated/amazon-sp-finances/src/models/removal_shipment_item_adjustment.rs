@@ -15,22 +15,22 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RemovalShipmentItemAdjustment {
     /// An identifier for an item in a removal shipment.
-    #[serde(rename = "RemovalShipmentItemId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RemovalShipmentItemId", skip_serializing_if = "Option::is_none")]
     pub removal_shipment_item_id: Option<String>,
     /// The tax collection model applied to the item.  Possible values:  * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.  * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
-    #[serde(rename = "TaxCollectionModel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxCollectionModel", skip_serializing_if = "Option::is_none")]
     pub tax_collection_model: Option<String>,
     /// The Amazon fulfillment network SKU for the item.
-    #[serde(rename = "FulfillmentNetworkSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FulfillmentNetworkSKU", skip_serializing_if = "Option::is_none")]
     pub fulfillment_network_sku: Option<String>,
     /// Adjusted quantity of removal shipmentItemAdjustment items.
-    #[serde(rename = "AdjustedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AdjustedQuantity", skip_serializing_if = "Option::is_none")]
     pub adjusted_quantity: Option<i32>,
-    #[serde(rename = "RevenueAdjustment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RevenueAdjustment", skip_serializing_if = "Option::is_none")]
     pub revenue_adjustment: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "TaxAmountAdjustment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxAmountAdjustment", skip_serializing_if = "Option::is_none")]
     pub tax_amount_adjustment: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "TaxWithheldAdjustment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxWithheldAdjustment", skip_serializing_if = "Option::is_none")]
     pub tax_withheld_adjustment: Option<Box<crate::models::Currency>>,
 }
 

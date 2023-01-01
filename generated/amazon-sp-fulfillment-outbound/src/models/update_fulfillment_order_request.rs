@@ -14,35 +14,35 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdateFulfillmentOrderRequest {
     /// The marketplace the fulfillment order is placed against.
-    #[serde(rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
-    #[serde(rename = "displayableOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "displayableOrderId", skip_serializing_if = "Option::is_none")]
     pub displayable_order_id: Option<String>,
-    #[serde(rename = "displayableOrderDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "displayableOrderDate", skip_serializing_if = "Option::is_none")]
     pub displayable_order_date: Option<String>,
     /// Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip.
-    #[serde(rename = "displayableOrderComment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "displayableOrderComment", skip_serializing_if = "Option::is_none")]
     pub displayable_order_comment: Option<String>,
-    #[serde(rename = "shippingSpeedCategory", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingSpeedCategory", skip_serializing_if = "Option::is_none")]
     pub shipping_speed_category: Option<crate::models::ShippingSpeedCategory>,
-    #[serde(rename = "destinationAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "destinationAddress", skip_serializing_if = "Option::is_none")]
     pub destination_address: Option<Box<crate::models::Address>>,
-    #[serde(rename = "fulfillmentAction", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentAction", skip_serializing_if = "Option::is_none")]
     pub fulfillment_action: Option<crate::models::FulfillmentAction>,
-    #[serde(rename = "fulfillmentPolicy", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentPolicy", skip_serializing_if = "Option::is_none")]
     pub fulfillment_policy: Option<crate::models::FulfillmentPolicy>,
     /// The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
-    #[serde(rename = "shipFromCountryCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipFromCountryCode", skip_serializing_if = "Option::is_none")]
     pub ship_from_country_code: Option<String>,
     /// A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
-    #[serde(rename = "notificationEmails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "notificationEmails", skip_serializing_if = "Option::is_none")]
     pub notification_emails: Option<Vec<String>>,
     /// A list of features and their fulfillment policies to apply to the order.
-    #[serde(rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
     pub feature_constraints: Option<Vec<crate::models::FeatureSettings>>,
     /// An array of fulfillment order item information for updating a fulfillment order.
-    #[serde(rename = "items", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "items", skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<crate::models::UpdateFulfillmentOrderItem>>,
 }
 

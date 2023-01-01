@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Item {
     /// The Amazon-defined order item identifier.
-    #[serde(rename = "orderItemId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderItemId", skip_serializing_if = "Option::is_none")]
     pub order_item_id: Option<String>,
     /// A list of serial numbers for the items associated with the `OrderItemId` value.
-    #[serde(rename = "orderItemSerialNumbers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderItemSerialNumbers", skip_serializing_if = "Option::is_none")]
     pub order_item_serial_numbers: Option<Vec<String>>,
 }
 

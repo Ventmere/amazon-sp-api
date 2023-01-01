@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AggregationFilter {
-    #[serde(rename = "aggregationSettings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "aggregationSettings", skip_serializing_if = "Option::is_none")]
     pub aggregation_settings: Option<Box<crate::models::AggregationSettings>>,
 }
 

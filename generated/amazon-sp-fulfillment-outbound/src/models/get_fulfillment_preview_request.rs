@@ -15,23 +15,23 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetFulfillmentPreviewRequest {
     /// The marketplace the fulfillment order is placed against.
-    #[serde(rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
-    #[serde(rename = "address")]
+    #[serde(default, rename = "address")]
     pub address: Box<crate::models::Address>,
     /// An array of fulfillment preview item information.
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::GetFulfillmentPreviewItem>,
-    #[serde(rename = "shippingSpeedCategories", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingSpeedCategories", skip_serializing_if = "Option::is_none")]
     pub shipping_speed_categories: Option<Vec<crate::models::ShippingSpeedCategory>>,
     /// Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).  Possible values:  * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
-    #[serde(rename = "includeCODFulfillmentPreview", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "includeCODFulfillmentPreview", skip_serializing_if = "Option::is_none")]
     pub include_cod_fulfillment_preview: Option<bool>,
     /// Specifies whether to return the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
-    #[serde(rename = "includeDeliveryWindows", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "includeDeliveryWindows", skip_serializing_if = "Option::is_none")]
     pub include_delivery_windows: Option<bool>,
     /// A list of features and their fulfillment policies to apply to the order.
-    #[serde(rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
     pub feature_constraints: Option<Vec<crate::models::FeatureSettings>>,
 }
 

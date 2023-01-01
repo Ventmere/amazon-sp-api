@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FileContents {
     /// Data for printing labels, in the form of a Base64-encoded, GZip-compressed string.
-    #[serde(rename = "Contents")]
+    #[serde(default, rename = "Contents")]
     pub contents: String,
-    #[serde(rename = "FileType")]
+    #[serde(default, rename = "FileType")]
     pub file_type: crate::models::FileType,
     /// An MD5 hash to validate the PDF document data, in the form of a Base64-encoded string.
-    #[serde(rename = "Checksum")]
+    #[serde(default, rename = "Checksum")]
     pub checksum: String,
 }
 

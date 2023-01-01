@@ -15,43 +15,43 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentDetail {
     /// The Amazon-defined identifier for the warehouse.
-    #[serde(rename = "WarehouseId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "WarehouseId", skip_serializing_if = "Option::is_none")]
     pub warehouse_id: Option<String>,
     /// The Amazon-defined identifier for the order.
-    #[serde(rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
     pub amazon_order_id: Option<String>,
     /// The Amazon-defined identifier for the shipment.
-    #[serde(rename = "AmazonShipmentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonShipmentId", skip_serializing_if = "Option::is_none")]
     pub amazon_shipment_id: Option<String>,
     /// The date and time when the order was created.
-    #[serde(rename = "PurchaseDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PurchaseDate", skip_serializing_if = "Option::is_none")]
     pub purchase_date: Option<String>,
-    #[serde(rename = "ShippingAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingAddress", skip_serializing_if = "Option::is_none")]
     pub shipping_address: Option<Box<crate::models::Address>>,
     /// The list of payment method details.
-    #[serde(rename = "PaymentMethodDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PaymentMethodDetails", skip_serializing_if = "Option::is_none")]
     pub payment_method_details: Option<Vec<String>>,
     /// The identifier for the marketplace where the order was placed.
-    #[serde(rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// The seller identifier.
-    #[serde(rename = "SellerId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerId", skip_serializing_if = "Option::is_none")]
     pub seller_id: Option<String>,
     /// The name of the buyer.
-    #[serde(rename = "BuyerName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerName", skip_serializing_if = "Option::is_none")]
     pub buyer_name: Option<String>,
     /// The county of the buyer.
-    #[serde(rename = "BuyerCounty", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerCounty", skip_serializing_if = "Option::is_none")]
     pub buyer_county: Option<String>,
-    #[serde(rename = "BuyerTaxInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerTaxInfo", skip_serializing_if = "Option::is_none")]
     pub buyer_tax_info: Option<Box<crate::models::BuyerTaxInfo>>,
-    #[serde(rename = "MarketplaceTaxInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceTaxInfo", skip_serializing_if = "Option::is_none")]
     pub marketplace_tax_info: Option<Box<crate::models::MarketplaceTaxInfo>>,
     /// The seller’s friendly name registered in the marketplace.
-    #[serde(rename = "SellerDisplayName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerDisplayName", skip_serializing_if = "Option::is_none")]
     pub seller_display_name: Option<String>,
     /// A list of shipment items.
-    #[serde(rename = "ShipmentItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentItems", skip_serializing_if = "Option::is_none")]
     pub shipment_items: Option<Vec<crate::models::ShipmentItem>>,
 }
 

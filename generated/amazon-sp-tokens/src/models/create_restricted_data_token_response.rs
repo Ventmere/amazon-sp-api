@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateRestrictedDataTokenResponse {
     /// A Restricted Data Token (RDT). This is a short-lived access token that authorizes calls to restricted operations. Pass this value with the x-amz-access-token header when making subsequent calls to these restricted resources.
-    #[serde(rename = "restrictedDataToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "restrictedDataToken", skip_serializing_if = "Option::is_none")]
     pub restricted_data_token: Option<String>,
     /// The lifetime of the Restricted Data Token, in seconds.
-    #[serde(rename = "expiresIn", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "expiresIn", skip_serializing_if = "Option::is_none")]
     pub expires_in: Option<i32>,
 }
 

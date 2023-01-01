@@ -13,10 +13,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SchemaLink {
-    #[serde(rename = "link")]
+    #[serde(default, rename = "link")]
     pub link: Box<crate::models::SchemaLinkLink>,
     /// Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.
-    #[serde(rename = "checksum")]
+    #[serde(default, rename = "checksum")]
     pub checksum: String,
 }
 

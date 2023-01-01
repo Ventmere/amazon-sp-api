@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdatePackageDetails {
-    #[serde(rename = "scheduledPackageId")]
+    #[serde(default, rename = "scheduledPackageId")]
     pub scheduled_package_id: Box<crate::models::ScheduledPackageId>,
-    #[serde(rename = "packageTimeSlot")]
+    #[serde(default, rename = "packageTimeSlot")]
     pub package_time_slot: Box<crate::models::TimeSlot>,
 }
 

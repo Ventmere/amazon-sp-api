@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SearchContentDocumentsResponseAllOf {
     /// A list of A+ Content metadata records.
-    #[serde(rename = "contentMetadataRecords")]
+    #[serde(default, rename = "contentMetadataRecords")]
     pub content_metadata_records: Vec<crate::models::ContentMetadataRecord>,
 }
 

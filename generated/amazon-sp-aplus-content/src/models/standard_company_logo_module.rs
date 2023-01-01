@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardCompanyLogoModule {
-    #[serde(rename = "companyLogo")]
+    #[serde(default, rename = "companyLogo")]
     pub company_logo: Box<crate::models::ImageComponent>,
 }
 

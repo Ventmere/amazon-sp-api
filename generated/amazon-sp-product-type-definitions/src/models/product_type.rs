@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ProductType {
     /// The name of the Amazon product type.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
     /// The Amazon marketplace identifiers for which the product type definition is available.
-    #[serde(rename = "marketplaceIds")]
+    #[serde(default, rename = "marketplaceIds")]
     pub marketplace_ids: Vec<String>,
 }
 

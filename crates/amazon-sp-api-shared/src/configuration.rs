@@ -11,11 +11,12 @@
 
 use reqwest;
 
-use std::time::SystemTime;
+use std::time::{SystemTime, Instant};
 use aws_sigv4::http_request::{sign, SigningSettings, SigningParams, SignableRequest};
 use http;
 use secrecy::{SecretString, ExposeSecret};
 use crate::auth::AuthState;
+use crate::error::SharedError;
 
 #[derive(Debug, Clone)]
 pub struct Configuration {
@@ -23,6 +24,7 @@ pub struct Configuration {
     pub user_agent: Option<String>,
     pub client: reqwest::Client,
     pub aws_v4_key: Option<AWSv4Key>,
+    pub rdt: Option<RestrictedDataToken>,
     pub auth: Option<AuthState>,
 }
 
@@ -69,9 +71,36 @@ impl AWSv4Key {
     }
 }
 
+#[derive(Debug, Clone)]
+pub struct RestrictedDataToken {
+    token: String,
+    expires_at: Instant,
+}
+
+impl RestrictedDataToken {
+    pub fn token(&self) -> Result<String, SharedError> {
+        if self.expires_at > Instant::now() + std::time::Duration::from_secs(15) {
+            Ok(self.token.clone())
+        } else {
+            Err(SharedError::ExpiredRDT)
+        }
+    }
+}
+
 impl Configuration {
     pub fn new() -> Configuration {
         Configuration::default()
+    }
+
+    pub fn with_rdt(&self, token: String, expires_in_secs: u64) -> Self {
+        Self {
+            rdt: Some(RestrictedDataToken {
+                token,
+                expires_at: Instant::now() + std::time::Duration::from_secs(expires_in_secs as u64),
+            }),
+            auth: None,
+            ..self.clone()
+        }
     }
 }
 
@@ -82,6 +111,7 @@ impl Default for Configuration {
             user_agent: Some("OpenAPI-Generator/v1/rust".to_owned()),
             client: reqwest::Client::new(),
             aws_v4_key: None,
+            rdt: None,
             auth: None,
         }
     }

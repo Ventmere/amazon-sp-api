@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateScheduledPackagesResponse {
     /// A list of packages. Refer to the `Package` object.
-    #[serde(rename = "scheduledPackages", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scheduledPackages", skip_serializing_if = "Option::is_none")]
     pub scheduled_packages: Option<Vec<crate::models::Package>>,
     /// A list of orders we couldn't scheduled on your behalf. Each element contains the reason and details on the error.
-    #[serde(rename = "rejectedOrders", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "rejectedOrders", skip_serializing_if = "Option::is_none")]
     pub rejected_orders: Option<Vec<crate::models::RejectedOrder>>,
     /// A pre-signed URL for the zip document containing the shipping labels and the documents enabled for your marketplace.
-    #[serde(rename = "printableDocumentsUrl", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "printableDocumentsUrl", skip_serializing_if = "Option::is_none")]
     pub printable_documents_url: Option<String>,
 }
 

@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ImagingServicesFeeEvent {
     /// The identifier for the imaging services request.
-    #[serde(rename = "ImagingRequestBillingItemID", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ImagingRequestBillingItemID", skip_serializing_if = "Option::is_none")]
     pub imaging_request_billing_item_id: Option<String>,
     /// The Amazon Standard Identification Number (ASIN) of the item for which the imaging service was requested.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// A list of fee component information.
-    #[serde(rename = "FeeList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeeList", skip_serializing_if = "Option::is_none")]
     pub fee_list: Option<Vec<crate::models::FeeComponent>>,
 }
 

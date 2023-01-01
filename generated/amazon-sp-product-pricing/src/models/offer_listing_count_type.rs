@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OfferListingCountType {
     /// The number of offer listings.
-    #[serde(rename = "Count")]
+    #[serde(default, rename = "Count")]
     pub count: i32,
     /// The condition of the item.
-    #[serde(rename = "condition")]
+    #[serde(default, rename = "condition")]
     pub condition: String,
 }
 

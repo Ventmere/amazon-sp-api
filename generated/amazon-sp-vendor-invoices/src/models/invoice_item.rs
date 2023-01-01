@@ -15,34 +15,34 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InvoiceItem {
     /// Unique number related to this line item.
-    #[serde(rename = "itemSequenceNumber")]
+    #[serde(default, rename = "itemSequenceNumber")]
     pub item_sequence_number: i32,
     /// Amazon Standard Identification Number (ASIN) of an item.
-    #[serde(rename = "amazonProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "amazonProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub amazon_product_identifier: Option<String>,
     /// The vendor selected product identifier of the item. Should be the same as was provided in the purchase order.
-    #[serde(rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub vendor_product_identifier: Option<String>,
-    #[serde(rename = "invoicedQuantity")]
+    #[serde(default, rename = "invoicedQuantity")]
     pub invoiced_quantity: Box<crate::models::ItemQuantity>,
-    #[serde(rename = "netCost")]
+    #[serde(default, rename = "netCost")]
     pub net_cost: Box<crate::models::Money>,
     /// The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
-    #[serde(rename = "purchaseOrderNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "purchaseOrderNumber", skip_serializing_if = "Option::is_none")]
     pub purchase_order_number: Option<String>,
     /// HSN Tax code. The HSN number cannot contain alphabets.
-    #[serde(rename = "hsnCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "hsnCode", skip_serializing_if = "Option::is_none")]
     pub hsn_code: Option<String>,
-    #[serde(rename = "creditNoteDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "creditNoteDetails", skip_serializing_if = "Option::is_none")]
     pub credit_note_details: Option<Box<crate::models::CreditNoteDetails>>,
     /// Individual tax details per line item.
-    #[serde(rename = "taxDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxDetails", skip_serializing_if = "Option::is_none")]
     pub tax_details: Option<Vec<crate::models::TaxDetails>>,
     /// Individual charge details per line item.
-    #[serde(rename = "chargeDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "chargeDetails", skip_serializing_if = "Option::is_none")]
     pub charge_details: Option<Vec<crate::models::ChargeDetails>>,
     /// Individual allowance details per line item.
-    #[serde(rename = "allowanceDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "allowanceDetails", skip_serializing_if = "Option::is_none")]
     pub allowance_details: Option<Vec<crate::models::AllowanceDetails>>,
 }
 

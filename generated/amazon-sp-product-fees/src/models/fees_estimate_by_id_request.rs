@@ -14,12 +14,12 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeesEstimateByIdRequest {
-    #[serde(rename = "FeesEstimateRequest", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeesEstimateRequest", skip_serializing_if = "Option::is_none")]
     pub fees_estimate_request: Option<Box<crate::models::FeesEstimateRequest>>,
-    #[serde(rename = "IdType")]
+    #[serde(default, rename = "IdType")]
     pub id_type: crate::models::IdType,
     /// The item identifier.
-    #[serde(rename = "IdValue")]
+    #[serde(default, rename = "IdValue")]
     pub id_value: String,
 }
 

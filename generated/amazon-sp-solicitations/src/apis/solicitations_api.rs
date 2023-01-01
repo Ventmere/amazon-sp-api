@@ -11,44 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`create_product_review_and_seller_feedback_solicitation`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateProductReviewAndSellerFeedbackSolicitationError {
-    Status400(crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse),
-    Status403(crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse),
-    Status404(crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse),
-    Status413(crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse),
-    Status415(crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse),
-    Status429(crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse),
-    Status500(crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse),
-    Status503(crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_solicitation_actions_for_order`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetSolicitationActionsForOrderError {
-    Status400(crate::models::GetSolicitationActionsForOrderResponse),
-    Status403(crate::models::GetSolicitationActionsForOrderResponse),
-    Status404(crate::models::GetSolicitationActionsForOrderResponse),
-    Status413(crate::models::GetSolicitationActionsForOrderResponse),
-    Status415(crate::models::GetSolicitationActionsForOrderResponse),
-    Status429(crate::models::GetSolicitationActionsForOrderResponse),
-    Status500(crate::models::GetSolicitationActionsForOrderResponse),
-    Status503(crate::models::GetSolicitationActionsForOrderResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_product_review_and_seller_feedback_solicitation(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse, Error<CreateProductReviewAndSellerFeedbackSolicitationError>> {
+pub async fn create_product_review_and_seller_feedback_solicitation(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::CreateProductReviewAndSellerFeedbackSolicitationResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -65,16 +33,21 @@ pub async fn create_product_review_and_seller_feedback_solicitation(configuratio
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -85,8 +58,7 @@ pub async fn create_product_review_and_seller_feedback_solicitation(configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -104,14 +76,14 @@ pub async fn create_product_review_and_seller_feedback_solicitation(configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateProductReviewAndSellerFeedbackSolicitationError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_solicitation_actions_for_order(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::GetSolicitationActionsForOrderResponse, Error<GetSolicitationActionsForOrderError>> {
+pub async fn get_solicitation_actions_for_order(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::GetSolicitationActionsForOrderResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -128,16 +100,21 @@ pub async fn get_solicitation_actions_for_order(configuration: &configuration::C
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -148,8 +125,7 @@ pub async fn get_solicitation_actions_for_order(configuration: &configuration::C
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -167,8 +143,8 @@ pub async fn get_solicitation_actions_for_order(configuration: &configuration::C
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetSolicitationActionsForOrderError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SubmitShippingLabelsRequest {
-    #[serde(rename = "shippingLabelRequests", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shippingLabelRequests", skip_serializing_if = "Option::is_none")]
     pub shipping_label_requests: Option<Vec<crate::models::ShippingLabelRequest>>,
 }
 

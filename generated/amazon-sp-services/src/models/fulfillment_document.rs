@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentDocument {
     /// The identifier of the upload destination. Get this value by calling the `createServiceDocumentUploadDestination` operation of the Services API.
-    #[serde(rename = "uploadDestinationId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "uploadDestinationId", skip_serializing_if = "Option::is_none")]
     pub upload_destination_id: Option<String>,
     /// Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit.
-    #[serde(rename = "contentSha256", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "contentSha256", skip_serializing_if = "Option::is_none")]
     pub content_sha256: Option<String>,
 }
 

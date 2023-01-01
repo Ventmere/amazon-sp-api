@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DeliveryWindow {
-    #[serde(rename = "startDate")]
+    #[serde(default, rename = "startDate")]
     pub start_date: String,
-    #[serde(rename = "endDate")]
+    #[serde(default, rename = "endDate")]
     pub end_date: String,
 }
 

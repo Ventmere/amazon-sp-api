@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListingOffersResponseAllOf {
-    #[serde(rename = "request", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "request", skip_serializing_if = "Option::is_none")]
     pub request: Option<Box<crate::models::ListingOffersRequestParams>>,
 }
 

@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetListingOffersBatchRequest {
     /// A list of `getListingOffers` batched requests to run.
-    #[serde(rename = "requests", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "requests", skip_serializing_if = "Option::is_none")]
     pub requests: Option<Vec<crate::models::ListingOffersRequest>>,
 }
 

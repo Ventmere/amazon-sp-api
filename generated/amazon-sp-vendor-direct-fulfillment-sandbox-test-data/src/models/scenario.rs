@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Scenario {
     /// An identifier that identifies the type of scenario that user can use for testing.
-    #[serde(rename = "scenarioId")]
+    #[serde(default, rename = "scenarioId")]
     pub scenario_id: String,
     /// A list of orders that can be used by the caller to test each life cycle or scenario.
-    #[serde(rename = "orders")]
+    #[serde(default, rename = "orders")]
     pub orders: Vec<crate::models::TestOrder>,
 }
 

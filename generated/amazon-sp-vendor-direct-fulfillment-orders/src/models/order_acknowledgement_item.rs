@@ -15,22 +15,22 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderAcknowledgementItem {
     /// The purchase order number for this order. Formatting Notes: alpha-numeric code.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
     /// The vendor's order number for this order.
-    #[serde(rename = "vendorOrderNumber")]
+    #[serde(default, rename = "vendorOrderNumber")]
     pub vendor_order_number: String,
     /// The date and time when the order is acknowledged, in ISO-8601 date/time format. For example: 2018-07-16T23:00:00Z / 2018-07-16T23:00:00-05:00 / 2018-07-16T23:00:00-08:00.
-    #[serde(rename = "acknowledgementDate")]
+    #[serde(default, rename = "acknowledgementDate")]
     pub acknowledgement_date: String,
-    #[serde(rename = "acknowledgementStatus")]
+    #[serde(default, rename = "acknowledgementStatus")]
     pub acknowledgement_status: Box<crate::models::AcknowledgementStatus>,
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipFromParty")]
+    #[serde(default, rename = "shipFromParty")]
     pub ship_from_party: Box<crate::models::PartyIdentification>,
     /// Item details including acknowledged quantity.
-    #[serde(rename = "itemAcknowledgements")]
+    #[serde(default, rename = "itemAcknowledgements")]
     pub item_acknowledgements: Vec<crate::models::OrderItemAcknowledgement>,
 }
 

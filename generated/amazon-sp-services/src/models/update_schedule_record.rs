@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdateScheduleRecord {
-    #[serde(rename = "availability", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "availability", skip_serializing_if = "Option::is_none")]
     pub availability: Option<Box<crate::models::AvailabilityRecord>>,
     /// A list of warnings returned in the sucessful execution response of an API request.
-    #[serde(rename = "warnings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "warnings", skip_serializing_if = "Option::is_none")]
     pub warnings: Option<Vec<crate::models::Warning>>,
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<crate::models::Error>>,
 }
 

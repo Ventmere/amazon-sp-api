@@ -11,56 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`get_catalog_item`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetCatalogItemError {
-    Status400(crate::models::GetCatalogItemResponse),
-    Status401(crate::models::GetCatalogItemResponse),
-    Status403(crate::models::GetCatalogItemResponse),
-    Status404(crate::models::GetCatalogItemResponse),
-    Status429(crate::models::GetCatalogItemResponse),
-    Status500(crate::models::GetCatalogItemResponse),
-    Status503(crate::models::GetCatalogItemResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`list_catalog_categories`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ListCatalogCategoriesError {
-    Status400(crate::models::ListCatalogCategoriesResponse),
-    Status401(crate::models::ListCatalogCategoriesResponse),
-    Status403(crate::models::ListCatalogCategoriesResponse),
-    Status404(crate::models::ListCatalogCategoriesResponse),
-    Status429(crate::models::ListCatalogCategoriesResponse),
-    Status500(crate::models::ListCatalogCategoriesResponse),
-    Status503(crate::models::ListCatalogCategoriesResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`list_catalog_items`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ListCatalogItemsError {
-    Status400(crate::models::ListCatalogItemsResponse),
-    Status401(crate::models::ListCatalogItemsResponse),
-    Status403(crate::models::ListCatalogItemsResponse),
-    Status404(crate::models::ListCatalogItemsResponse),
-    Status429(crate::models::ListCatalogItemsResponse),
-    Status500(crate::models::ListCatalogItemsResponse),
-    Status503(crate::models::ListCatalogItemsResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Effective September 30, 2022, the `getCatalogItem` operation will no longer be available in the Selling Partner API for Catalog Items v0. This operation is available in the latest version of the [Selling Partner API for Catalog Items v2022-04-01](doc:catalog-items-api-v2022-04-01-reference). Integrations that rely on this operation should migrate to the latest version to avoid service disruption.  _Note:_ The [`listCatalogCategories`](#get-catalogv0categories) operation is not being deprecated and you can continue to make calls to it.
-pub async fn get_catalog_item(configuration: &configuration::Configuration, marketplace_id: &str, asin: &str) -> Result<crate::models::GetCatalogItemResponse, Error<GetCatalogItemError>> {
+pub async fn get_catalog_item(configuration: &configuration::Configuration, marketplace_id: &str, asin: &str) -> Result<crate::models::GetCatalogItemResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -74,16 +30,21 @@ pub async fn get_catalog_item(configuration: &configuration::Configuration, mark
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -94,8 +55,7 @@ pub async fn get_catalog_item(configuration: &configuration::Configuration, mark
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -113,14 +73,14 @@ pub async fn get_catalog_item(configuration: &configuration::Configuration, mark
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetCatalogItemError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the parent categories to which an item belongs, based on the specified ASIN or SellerSKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 2 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn list_catalog_categories(configuration: &configuration::Configuration, marketplace_id: &str, ASIN: Option<&str>, seller_sku: Option<&str>) -> Result<crate::models::ListCatalogCategoriesResponse, Error<ListCatalogCategoriesError>> {
+pub async fn list_catalog_categories(configuration: &configuration::Configuration, marketplace_id: &str, ASIN: Option<&str>, seller_sku: Option<&str>) -> Result<crate::models::ListCatalogCategoriesResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -140,16 +100,21 @@ pub async fn list_catalog_categories(configuration: &configuration::Configuratio
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -160,8 +125,7 @@ pub async fn list_catalog_categories(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -179,14 +143,14 @@ pub async fn list_catalog_categories(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ListCatalogCategoriesError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Effective September 30, 2022, the `listCatalogItems` operation will no longer be available in the Selling Partner API for Catalog Items v0. As an alternative, `searchCatalogItems` is available in the latest version of the [Selling Partner API for Catalog Items v2022-04-01](doc:catalog-items-api-v2022-04-01-reference). Integrations that rely on the `listCatalogItems` operation should migrate to the `searchCatalogItems`operation to avoid service disruption.  _Note:_ The [`listCatalogCategories`](#get-catalogv0categories) operation is not being deprecated and you can continue to make calls to it.
-pub async fn list_catalog_items(configuration: &configuration::Configuration, marketplace_id: &str, query: Option<&str>, query_context_id: Option<&str>, seller_sku: Option<&str>, UPC: Option<&str>, EAN: Option<&str>, ISBN: Option<&str>, JAN: Option<&str>) -> Result<crate::models::ListCatalogItemsResponse, Error<ListCatalogItemsError>> {
+pub async fn list_catalog_items(configuration: &configuration::Configuration, marketplace_id: &str, query: Option<&str>, query_context_id: Option<&str>, seller_sku: Option<&str>, UPC: Option<&str>, EAN: Option<&str>, ISBN: Option<&str>, JAN: Option<&str>) -> Result<crate::models::ListCatalogItemsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -221,16 +185,21 @@ pub async fn list_catalog_items(configuration: &configuration::Configuration, ma
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -241,8 +210,7 @@ pub async fn list_catalog_items(configuration: &configuration::Configuration, ma
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -260,8 +228,8 @@ pub async fn list_catalog_items(configuration: &configuration::Configuration, ma
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ListCatalogItemsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

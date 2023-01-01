@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PointsGrantedDetail {
     /// The number of Amazon Points granted with the purchase of an item.
-    #[serde(rename = "PointsNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PointsNumber", skip_serializing_if = "Option::is_none")]
     pub points_number: Option<i32>,
-    #[serde(rename = "PointsMonetaryValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PointsMonetaryValue", skip_serializing_if = "Option::is_none")]
     pub points_monetary_value: Option<Box<crate::models::Money>>,
 }
 

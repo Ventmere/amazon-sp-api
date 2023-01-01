@@ -15,91 +15,91 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItem {
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN")]
+    #[serde(default, rename = "ASIN")]
     pub ASIN: String,
     /// The seller stock keeping unit (SKU) of the item.
-    #[serde(rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
     /// An Amazon-defined order item identifier.
-    #[serde(rename = "OrderItemId")]
+    #[serde(default, rename = "OrderItemId")]
     pub order_item_id: String,
     /// The name of the item.
-    #[serde(rename = "Title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     /// The number of items in the order. 
-    #[serde(rename = "QuantityOrdered")]
+    #[serde(default, rename = "QuantityOrdered")]
     pub quantity_ordered: i32,
     /// The number of items shipped.
-    #[serde(rename = "QuantityShipped", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "QuantityShipped", skip_serializing_if = "Option::is_none")]
     pub quantity_shipped: Option<i32>,
-    #[serde(rename = "ProductInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductInfo", skip_serializing_if = "Option::is_none")]
     pub product_info: Option<Box<crate::models::ProductInfoDetail>>,
-    #[serde(rename = "PointsGranted", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PointsGranted", skip_serializing_if = "Option::is_none")]
     pub points_granted: Option<Box<crate::models::PointsGrantedDetail>>,
-    #[serde(rename = "ItemPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemPrice", skip_serializing_if = "Option::is_none")]
     pub item_price: Option<Box<crate::models::Money>>,
-    #[serde(rename = "ShippingPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingPrice", skip_serializing_if = "Option::is_none")]
     pub shipping_price: Option<Box<crate::models::Money>>,
-    #[serde(rename = "ItemTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemTax", skip_serializing_if = "Option::is_none")]
     pub item_tax: Option<Box<crate::models::Money>>,
-    #[serde(rename = "ShippingTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingTax", skip_serializing_if = "Option::is_none")]
     pub shipping_tax: Option<Box<crate::models::Money>>,
-    #[serde(rename = "ShippingDiscount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingDiscount", skip_serializing_if = "Option::is_none")]
     pub shipping_discount: Option<Box<crate::models::Money>>,
-    #[serde(rename = "ShippingDiscountTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingDiscountTax", skip_serializing_if = "Option::is_none")]
     pub shipping_discount_tax: Option<Box<crate::models::Money>>,
-    #[serde(rename = "PromotionDiscount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PromotionDiscount", skip_serializing_if = "Option::is_none")]
     pub promotion_discount: Option<Box<crate::models::Money>>,
-    #[serde(rename = "PromotionDiscountTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PromotionDiscountTax", skip_serializing_if = "Option::is_none")]
     pub promotion_discount_tax: Option<Box<crate::models::Money>>,
     /// A list of promotion identifiers provided by the seller when the promotions were created.
-    #[serde(rename = "PromotionIds", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PromotionIds", skip_serializing_if = "Option::is_none")]
     pub promotion_ids: Option<Vec<String>>,
-    #[serde(rename = "CODFee", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CODFee", skip_serializing_if = "Option::is_none")]
     pub cod_fee: Option<Box<crate::models::Money>>,
-    #[serde(rename = "CODFeeDiscount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CODFeeDiscount", skip_serializing_if = "Option::is_none")]
     pub cod_fee_discount: Option<Box<crate::models::Money>>,
     /// When true, the item is a gift.
-    #[serde(rename = "IsGift", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsGift", skip_serializing_if = "Option::is_none", deserialize_with = "amazon_sp_api_shared::helpers::deserialize_opt_bool_from_string")]
     pub is_gift: Option<bool>,
     /// The condition of the item as described by the seller.
-    #[serde(rename = "ConditionNote", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConditionNote", skip_serializing_if = "Option::is_none")]
     pub condition_note: Option<String>,
     /// The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
-    #[serde(rename = "ConditionId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConditionId", skip_serializing_if = "Option::is_none")]
     pub condition_id: Option<String>,
     /// The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
-    #[serde(rename = "ConditionSubtypeId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConditionSubtypeId", skip_serializing_if = "Option::is_none")]
     pub condition_subtype_id: Option<String>,
     /// The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
-    #[serde(rename = "ScheduledDeliveryStartDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ScheduledDeliveryStartDate", skip_serializing_if = "Option::is_none")]
     pub scheduled_delivery_start_date: Option<String>,
     /// The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
-    #[serde(rename = "ScheduledDeliveryEndDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ScheduledDeliveryEndDate", skip_serializing_if = "Option::is_none")]
     pub scheduled_delivery_end_date: Option<String>,
     /// Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
-    #[serde(rename = "PriceDesignation", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PriceDesignation", skip_serializing_if = "Option::is_none")]
     pub price_designation: Option<String>,
-    #[serde(rename = "TaxCollection", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxCollection", skip_serializing_if = "Option::is_none")]
     pub tax_collection: Option<Box<crate::models::TaxCollection>>,
     /// When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders.
-    #[serde(rename = "SerialNumberRequired", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SerialNumberRequired", skip_serializing_if = "Option::is_none")]
     pub serial_number_required: Option<bool>,
     /// When true, transparency codes are required.
-    #[serde(rename = "IsTransparency", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsTransparency", skip_serializing_if = "Option::is_none")]
     pub is_transparency: Option<bool>,
     /// The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
-    #[serde(rename = "IossNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IossNumber", skip_serializing_if = "Option::is_none")]
     pub ioss_number: Option<String>,
     /// The store chain store identifier. Linked to a specific store in a store chain.
-    #[serde(rename = "StoreChainStoreId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "StoreChainStoreId", skip_serializing_if = "Option::is_none")]
     pub store_chain_store_id: Option<String>,
     /// The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
-    #[serde(rename = "DeemedResellerCategory", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DeemedResellerCategory", skip_serializing_if = "Option::is_none")]
     pub deemed_reseller_category: Option<DeemedResellerCategory>,
-    #[serde(rename = "BuyerInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerInfo", skip_serializing_if = "Option::is_none")]
     pub buyer_info: Option<Box<crate::models::ItemBuyerInfo>>,
-    #[serde(rename = "BuyerRequestedCancel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerRequestedCancel", skip_serializing_if = "Option::is_none")]
     pub buyer_requested_cancel: Option<Box<crate::models::BuyerRequestedCancel>>,
 }
 

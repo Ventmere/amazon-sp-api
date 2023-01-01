@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AdditionalDetails {
     /// The type of the additional information provided by the selling party.
-    #[serde(rename = "type")]
+    #[serde(default, rename = "type")]
     pub _type: Type,
     /// The detail of the additional information provided by the selling party.
-    #[serde(rename = "detail")]
+    #[serde(default, rename = "detail")]
     pub detail: String,
     /// The language code of the additional information detail.
-    #[serde(rename = "languageCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "languageCode", skip_serializing_if = "Option::is_none")]
     pub language_code: Option<String>,
 }
 

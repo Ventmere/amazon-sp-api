@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ErrorList {
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors")]
+    #[serde(default, rename = "errors")]
     pub errors: Vec<crate::models::Error>,
 }
 

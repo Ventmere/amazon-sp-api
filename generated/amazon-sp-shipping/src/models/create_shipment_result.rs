@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateShipmentResult {
     /// The unique shipment identifier.
-    #[serde(rename = "shipmentId")]
+    #[serde(default, rename = "shipmentId")]
     pub shipment_id: String,
     /// A list of all the available rates that can be used to send the shipment.
-    #[serde(rename = "eligibleRates")]
+    #[serde(default, rename = "eligibleRates")]
     pub eligible_rates: Vec<crate::models::Rate>,
 }
 

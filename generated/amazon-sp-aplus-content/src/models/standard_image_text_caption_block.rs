@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardImageTextCaptionBlock {
-    #[serde(rename = "block", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "block", skip_serializing_if = "Option::is_none")]
     pub block: Option<Box<crate::models::StandardImageTextBlock>>,
-    #[serde(rename = "caption", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "caption", skip_serializing_if = "Option::is_none")]
     pub caption: Option<Box<crate::models::TextComponent>>,
 }
 

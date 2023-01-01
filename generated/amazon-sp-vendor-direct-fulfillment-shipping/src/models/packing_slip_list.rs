@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PackingSlipList {
-    #[serde(rename = "pagination", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "pagination", skip_serializing_if = "Option::is_none")]
     pub pagination: Option<Box<crate::models::Pagination>>,
-    #[serde(rename = "packingSlips", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packingSlips", skip_serializing_if = "Option::is_none")]
     pub packing_slips: Option<Vec<crate::models::PackingSlip>>,
 }
 

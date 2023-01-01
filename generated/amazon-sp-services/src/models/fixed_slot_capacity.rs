@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FixedSlotCapacity {
     /// Resource Identifier.
-    #[serde(rename = "resourceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "resourceId", skip_serializing_if = "Option::is_none")]
     pub resource_id: Option<String>,
     /// The duration of each slot which is returned. This value will be a multiple of 5 and fall in the following range: 5 <= `slotDuration` <= 360.
-    #[serde(rename = "slotDuration", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "slotDuration", skip_serializing_if = "Option::is_none")]
     pub slot_duration: Option<f32>,
     /// Array of capacity slots in fixed slot format.
-    #[serde(rename = "capacities", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "capacities", skip_serializing_if = "Option::is_none")]
     pub capacities: Option<Vec<crate::models::FixedSlot>>,
     /// Next page token, if there are more pages.
-    #[serde(rename = "nextPageToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "nextPageToken", skip_serializing_if = "Option::is_none")]
     pub next_page_token: Option<String>,
 }
 

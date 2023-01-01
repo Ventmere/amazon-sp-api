@@ -15,28 +15,28 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InboundShipmentInfo {
     /// The shipment identifier submitted in the request.
-    #[serde(rename = "ShipmentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentId", skip_serializing_if = "Option::is_none")]
     pub shipment_id: Option<String>,
     /// The name for the inbound shipment.
-    #[serde(rename = "ShipmentName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentName", skip_serializing_if = "Option::is_none")]
     pub shipment_name: Option<String>,
-    #[serde(rename = "ShipFromAddress")]
+    #[serde(default, rename = "ShipFromAddress")]
     pub ship_from_address: Box<crate::models::Address>,
     /// An Amazon fulfillment center identifier created by Amazon.
-    #[serde(rename = "DestinationFulfillmentCenterId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DestinationFulfillmentCenterId", skip_serializing_if = "Option::is_none")]
     pub destination_fulfillment_center_id: Option<String>,
-    #[serde(rename = "ShipmentStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentStatus", skip_serializing_if = "Option::is_none")]
     pub shipment_status: Option<crate::models::ShipmentStatus>,
-    #[serde(rename = "LabelPrepType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LabelPrepType", skip_serializing_if = "Option::is_none")]
     pub label_prep_type: Option<crate::models::LabelPrepType>,
     /// Indicates whether or not an inbound shipment contains case-packed boxes. When AreCasesRequired = true for an inbound shipment, all items in the inbound shipment must be case packed.
-    #[serde(rename = "AreCasesRequired")]
+    #[serde(default, rename = "AreCasesRequired")]
     pub are_cases_required: bool,
-    #[serde(rename = "ConfirmedNeedByDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConfirmedNeedByDate", skip_serializing_if = "Option::is_none")]
     pub confirmed_need_by_date: Option<String>,
-    #[serde(rename = "BoxContentsSource", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BoxContentsSource", skip_serializing_if = "Option::is_none")]
     pub box_contents_source: Option<crate::models::BoxContentsSource>,
-    #[serde(rename = "EstimatedBoxContentsFee", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EstimatedBoxContentsFee", skip_serializing_if = "Option::is_none")]
     pub estimated_box_contents_fee: Option<Box<crate::models::BoxContentsFeeDetails>>,
 }
 

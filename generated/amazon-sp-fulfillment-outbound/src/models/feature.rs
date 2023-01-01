@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Feature {
     /// The feature name.
-    #[serde(rename = "featureName")]
+    #[serde(default, rename = "featureName")]
     pub feature_name: String,
     /// The feature description.
-    #[serde(rename = "featureDescription")]
+    #[serde(default, rename = "featureDescription")]
     pub feature_description: String,
     /// When true, indicates that the seller is eligible to use the feature.
-    #[serde(rename = "sellerEligible", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sellerEligible", skip_serializing_if = "Option::is_none")]
     pub seller_eligible: Option<bool>,
 }
 

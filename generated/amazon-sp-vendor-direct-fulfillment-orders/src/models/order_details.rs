@@ -15,28 +15,28 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderDetails {
     /// The customer order number.
-    #[serde(rename = "customerOrderNumber")]
+    #[serde(default, rename = "customerOrderNumber")]
     pub customer_order_number: String,
     /// The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
-    #[serde(rename = "orderDate")]
+    #[serde(default, rename = "orderDate")]
     pub order_date: String,
     /// Current status of the order.
-    #[serde(rename = "orderStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderStatus", skip_serializing_if = "Option::is_none")]
     pub order_status: Option<OrderStatus>,
-    #[serde(rename = "shipmentDetails")]
+    #[serde(default, rename = "shipmentDetails")]
     pub shipment_details: Box<crate::models::ShipmentDetails>,
-    #[serde(rename = "taxTotal", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxTotal", skip_serializing_if = "Option::is_none")]
     pub tax_total: Option<Box<crate::models::OrderDetailsTaxTotal>>,
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipFromParty")]
+    #[serde(default, rename = "shipFromParty")]
     pub ship_from_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipToParty")]
+    #[serde(default, rename = "shipToParty")]
     pub ship_to_party: Box<crate::models::Address>,
-    #[serde(rename = "billToParty")]
+    #[serde(default, rename = "billToParty")]
     pub bill_to_party: Box<crate::models::PartyIdentification>,
     /// A list of items in this purchase order.
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::OrderItem>,
 }
 

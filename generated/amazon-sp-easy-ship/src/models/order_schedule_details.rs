@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderScheduleDetails {
     /// An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-    #[serde(rename = "amazonOrderId")]
+    #[serde(default, rename = "amazonOrderId")]
     pub amazon_order_id: String,
-    #[serde(rename = "packageDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageDetails", skip_serializing_if = "Option::is_none")]
     pub package_details: Option<Box<crate::models::PackageDetails>>,
 }
 

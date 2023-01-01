@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentShipmentPackage {
     /// Identifies a package in a shipment.
-    #[serde(rename = "packageNumber")]
+    #[serde(default, rename = "packageNumber")]
     pub package_number: i32,
     /// Identifies the carrier who will deliver the shipment to the recipient.
-    #[serde(rename = "carrierCode")]
+    #[serde(default, rename = "carrierCode")]
     pub carrier_code: String,
     /// The tracking number, if provided, can be used to obtain tracking and delivery information.
-    #[serde(rename = "trackingNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "trackingNumber", skip_serializing_if = "Option::is_none")]
     pub tracking_number: Option<String>,
-    #[serde(rename = "estimatedArrivalDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedArrivalDate", skip_serializing_if = "Option::is_none")]
     pub estimated_arrival_date: Option<String>,
 }
 

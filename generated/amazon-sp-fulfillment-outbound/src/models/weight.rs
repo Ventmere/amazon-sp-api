@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Weight {
     /// The unit of weight.
-    #[serde(rename = "unit")]
+    #[serde(default, rename = "unit")]
     pub unit: Unit,
     /// The weight value.
-    #[serde(rename = "value")]
+    #[serde(default, rename = "value")]
     pub value: String,
 }
 

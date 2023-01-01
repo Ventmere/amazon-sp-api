@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeesEstimate {
     /// The time at which the fees were estimated. This defaults to the time the request is made.
-    #[serde(rename = "TimeOfFeesEstimation")]
+    #[serde(default, rename = "TimeOfFeesEstimation")]
     pub time_of_fees_estimation: String,
-    #[serde(rename = "TotalFeesEstimate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalFeesEstimate", skip_serializing_if = "Option::is_none")]
     pub total_fees_estimate: Option<Box<crate::models::MoneyType>>,
     /// A list of other fees that contribute to a given fee.
-    #[serde(rename = "FeeDetailList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeeDetailList", skip_serializing_if = "Option::is_none")]
     pub fee_detail_list: Option<Vec<crate::models::FeeDetail>>,
 }
 

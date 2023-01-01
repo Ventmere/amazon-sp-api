@@ -14,15 +14,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeedDocument {
     /// The identifier for the feed document. This identifier is unique only in combination with a seller ID.
-    #[serde(rename = "feedDocumentId")]
+    #[serde(default, rename = "feedDocumentId")]
     pub feed_document_id: String,
     /// A presigned URL for the feed document. If `compressionAlgorithm` is not returned, you can download the feed directly from this URL. This URL expires after 5 minutes.
-    #[serde(rename = "url")]
+    #[serde(default, rename = "url")]
     pub url: String,
-    #[serde(rename = "encryptionDetails")]
+    #[serde(default, rename = "encryptionDetails")]
     pub encryption_details: Box<crate::models::FeedDocumentEncryptionDetails>,
     /// If the feed document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the feed when you download. Otherwise, you can download the feed directly. Refer to [Step 6. Download and decrypt the feed processing report](doc:feeds-api-v2020-09-04-use-case-guide#step-6-download-and-decrypt-the-feed-processing-report) in the use case guide, where sample code is provided.
-    #[serde(rename = "compressionAlgorithm", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "compressionAlgorithm", skip_serializing_if = "Option::is_none")]
     pub compression_algorithm: Option<CompressionAlgorithm>,
 }
 

@@ -11,149 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`cancel_report`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CancelReportError {
-    Status400(crate::models::CancelReportResponse),
-    Status401(crate::models::CancelReportResponse),
-    Status403(crate::models::CancelReportResponse),
-    Status404(crate::models::CancelReportResponse),
-    Status415(crate::models::CancelReportResponse),
-    Status429(crate::models::CancelReportResponse),
-    Status500(crate::models::CancelReportResponse),
-    Status503(crate::models::CancelReportResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`cancel_report_schedule`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CancelReportScheduleError {
-    Status400(crate::models::CancelReportScheduleResponse),
-    Status401(crate::models::CancelReportScheduleResponse),
-    Status403(crate::models::CancelReportScheduleResponse),
-    Status404(crate::models::CancelReportScheduleResponse),
-    Status415(crate::models::CancelReportScheduleResponse),
-    Status429(crate::models::CancelReportScheduleResponse),
-    Status500(crate::models::CancelReportScheduleResponse),
-    Status503(crate::models::CancelReportScheduleResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_report`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateReportError {
-    Status400(crate::models::CreateReportResponse),
-    Status401(crate::models::CreateReportResponse),
-    Status403(crate::models::CreateReportResponse),
-    Status404(crate::models::CreateReportResponse),
-    Status415(crate::models::CreateReportResponse),
-    Status429(crate::models::CreateReportResponse),
-    Status500(crate::models::CreateReportResponse),
-    Status503(crate::models::CreateReportResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_report_schedule`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateReportScheduleError {
-    Status400(crate::models::CreateReportScheduleResponse),
-    Status401(crate::models::CreateReportScheduleResponse),
-    Status403(crate::models::CreateReportScheduleResponse),
-    Status404(crate::models::CreateReportScheduleResponse),
-    Status415(crate::models::CreateReportScheduleResponse),
-    Status429(crate::models::CreateReportScheduleResponse),
-    Status500(crate::models::CreateReportScheduleResponse),
-    Status503(crate::models::CreateReportScheduleResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_report`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetReportError {
-    Status400(crate::models::GetReportResponse),
-    Status401(crate::models::GetReportResponse),
-    Status403(crate::models::GetReportResponse),
-    Status404(crate::models::GetReportResponse),
-    Status415(crate::models::GetReportResponse),
-    Status429(crate::models::GetReportResponse),
-    Status500(crate::models::GetReportResponse),
-    Status503(crate::models::GetReportResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_report_document`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetReportDocumentError {
-    Status400(crate::models::GetReportDocumentResponse),
-    Status401(crate::models::GetReportDocumentResponse),
-    Status403(crate::models::GetReportDocumentResponse),
-    Status404(crate::models::GetReportDocumentResponse),
-    Status415(crate::models::GetReportDocumentResponse),
-    Status429(crate::models::GetReportDocumentResponse),
-    Status500(crate::models::GetReportDocumentResponse),
-    Status503(crate::models::GetReportDocumentResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_report_schedule`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetReportScheduleError {
-    Status400(crate::models::GetReportScheduleResponse),
-    Status401(crate::models::GetReportScheduleResponse),
-    Status403(crate::models::GetReportScheduleResponse),
-    Status404(crate::models::GetReportScheduleResponse),
-    Status415(crate::models::GetReportScheduleResponse),
-    Status429(crate::models::GetReportScheduleResponse),
-    Status500(crate::models::GetReportScheduleResponse),
-    Status503(crate::models::GetReportScheduleResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_report_schedules`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetReportSchedulesError {
-    Status400(crate::models::GetReportSchedulesResponse),
-    Status401(crate::models::GetReportSchedulesResponse),
-    Status403(crate::models::GetReportSchedulesResponse),
-    Status404(crate::models::GetReportSchedulesResponse),
-    Status415(crate::models::GetReportSchedulesResponse),
-    Status429(crate::models::GetReportSchedulesResponse),
-    Status500(crate::models::GetReportSchedulesResponse),
-    Status503(crate::models::GetReportSchedulesResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_reports`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetReportsError {
-    Status400(crate::models::GetReportsResponse),
-    Status401(crate::models::GetReportsResponse),
-    Status403(crate::models::GetReportsResponse),
-    Status404(crate::models::GetReportsResponse),
-    Status415(crate::models::GetReportsResponse),
-    Status429(crate::models::GetReportsResponse),
-    Status500(crate::models::GetReportsResponse),
-    Status503(crate::models::GetReportsResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn cancel_report(configuration: &configuration::Configuration, report_id: &str) -> Result<crate::models::CancelReportResponse, Error<CancelReportError>> {
+pub async fn cancel_report(configuration: &configuration::Configuration, report_id: &str) -> Result<crate::models::CancelReportResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -166,16 +29,21 @@ pub async fn cancel_report(configuration: &configuration::Configuration, report_
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "DELETE",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -186,8 +54,7 @@ pub async fn cancel_report(configuration: &configuration::Configuration, report_
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -205,14 +72,14 @@ pub async fn cancel_report(configuration: &configuration::Configuration, report_
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CancelReportError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn cancel_report_schedule(configuration: &configuration::Configuration, report_schedule_id: &str) -> Result<crate::models::CancelReportScheduleResponse, Error<CancelReportScheduleError>> {
+pub async fn cancel_report_schedule(configuration: &configuration::Configuration, report_schedule_id: &str) -> Result<crate::models::CancelReportScheduleResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -225,16 +92,21 @@ pub async fn cancel_report_schedule(configuration: &configuration::Configuration
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "DELETE",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -245,8 +117,7 @@ pub async fn cancel_report_schedule(configuration: &configuration::Configuration
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -264,14 +135,14 @@ pub async fn cancel_report_schedule(configuration: &configuration::Configuration
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CancelReportScheduleError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_report(configuration: &configuration::Configuration, body: crate::models::CreateReportSpecification) -> Result<crate::models::CreateReportResponse, Error<CreateReportError>> {
+pub async fn create_report(configuration: &configuration::Configuration, body: crate::models::CreateReportSpecification) -> Result<crate::models::CreateReportResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -284,16 +155,21 @@ pub async fn create_report(configuration: &configuration::Configuration, body: c
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -304,8 +180,7 @@ pub async fn create_report(configuration: &configuration::Configuration, body: c
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -324,14 +199,14 @@ pub async fn create_report(configuration: &configuration::Configuration, body: c
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateReportError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_report_schedule(configuration: &configuration::Configuration, body: crate::models::CreateReportScheduleSpecification) -> Result<crate::models::CreateReportScheduleResponse, Error<CreateReportScheduleError>> {
+pub async fn create_report_schedule(configuration: &configuration::Configuration, body: crate::models::CreateReportScheduleSpecification) -> Result<crate::models::CreateReportScheduleResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -344,16 +219,21 @@ pub async fn create_report_schedule(configuration: &configuration::Configuration
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -364,8 +244,7 @@ pub async fn create_report_schedule(configuration: &configuration::Configuration
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -384,14 +263,14 @@ pub async fn create_report_schedule(configuration: &configuration::Configuration
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateReportScheduleError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns report details (including the reportDocumentId, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_report(configuration: &configuration::Configuration, report_id: &str) -> Result<crate::models::GetReportResponse, Error<GetReportError>> {
+pub async fn get_report(configuration: &configuration::Configuration, report_id: &str) -> Result<crate::models::GetReportResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -404,16 +283,21 @@ pub async fn get_report(configuration: &configuration::Configuration, report_id:
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -424,8 +308,7 @@ pub async fn get_report(configuration: &configuration::Configuration, report_id:
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -443,14 +326,14 @@ pub async fn get_report(configuration: &configuration::Configuration, report_id:
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetReportError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_report_document(configuration: &configuration::Configuration, report_document_id: &str) -> Result<crate::models::GetReportDocumentResponse, Error<GetReportDocumentError>> {
+pub async fn get_report_document(configuration: &configuration::Configuration, report_document_id: &str) -> Result<crate::models::GetReportDocumentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -463,16 +346,21 @@ pub async fn get_report_document(configuration: &configuration::Configuration, r
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -483,8 +371,7 @@ pub async fn get_report_document(configuration: &configuration::Configuration, r
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -502,14 +389,14 @@ pub async fn get_report_document(configuration: &configuration::Configuration, r
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetReportDocumentError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_report_schedule(configuration: &configuration::Configuration, report_schedule_id: &str) -> Result<crate::models::GetReportScheduleResponse, Error<GetReportScheduleError>> {
+pub async fn get_report_schedule(configuration: &configuration::Configuration, report_schedule_id: &str) -> Result<crate::models::GetReportScheduleResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -522,16 +409,21 @@ pub async fn get_report_schedule(configuration: &configuration::Configuration, r
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -542,8 +434,7 @@ pub async fn get_report_schedule(configuration: &configuration::Configuration, r
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -561,14 +452,14 @@ pub async fn get_report_schedule(configuration: &configuration::Configuration, r
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetReportScheduleError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_report_schedules(configuration: &configuration::Configuration, report_types: Vec<String>) -> Result<crate::models::GetReportSchedulesResponse, Error<GetReportSchedulesError>> {
+pub async fn get_report_schedules(configuration: &configuration::Configuration, report_types: Vec<String>) -> Result<crate::models::GetReportSchedulesResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -585,16 +476,21 @@ pub async fn get_report_schedules(configuration: &configuration::Configuration, 
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -605,8 +501,7 @@ pub async fn get_report_schedules(configuration: &configuration::Configuration, 
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -624,14 +519,14 @@ pub async fn get_report_schedules(configuration: &configuration::Configuration, 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetReportSchedulesError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_reports(configuration: &configuration::Configuration, report_types: Option<Vec<String>>, processing_statuses: Option<Vec<String>>, marketplace_ids: Option<Vec<String>>, page_size: Option<i32>, created_since: Option<String>, created_until: Option<String>, next_token: Option<&str>) -> Result<crate::models::GetReportsResponse, Error<GetReportsError>> {
+pub async fn get_reports(configuration: &configuration::Configuration, report_types: Option<Vec<String>>, processing_statuses: Option<Vec<String>>, marketplace_ids: Option<Vec<String>>, page_size: Option<i32>, created_since: Option<String>, created_until: Option<String>, next_token: Option<&str>) -> Result<crate::models::GetReportsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -674,16 +569,21 @@ pub async fn get_reports(configuration: &configuration::Configuration, report_ty
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -694,8 +594,7 @@ pub async fn get_reports(configuration: &configuration::Configuration, report_ty
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -713,8 +612,8 @@ pub async fn get_reports(configuration: &configuration::Configuration, report_ty
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetReportsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

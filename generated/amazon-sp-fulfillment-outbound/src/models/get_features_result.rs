@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetFeaturesResult {
     /// An array of features.
-    #[serde(rename = "features")]
+    #[serde(default, rename = "features")]
     pub features: Vec<crate::models::Feature>,
 }
 

@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RestrictionList {
-    #[serde(rename = "restrictions")]
+    #[serde(default, rename = "restrictions")]
     pub restrictions: Vec<crate::models::Restriction>,
 }
 

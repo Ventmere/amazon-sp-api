@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ScopeOfWork {
     /// The Amazon Standard Identification Number (ASIN) of the service job.
-    #[serde(rename = "asin", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "asin", skip_serializing_if = "Option::is_none")]
     pub asin: Option<String>,
     /// The title of the service job.
-    #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     /// The number of service jobs.
-    #[serde(rename = "quantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantity", skip_serializing_if = "Option::is_none")]
     pub quantity: Option<i32>,
     /// A list of skills required to perform the job.
-    #[serde(rename = "requiredSkills", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "requiredSkills", skip_serializing_if = "Option::is_none")]
     pub required_skills: Option<Vec<String>>,
 }
 

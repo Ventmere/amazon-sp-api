@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ServiceRate {
-    #[serde(rename = "totalCharge")]
+    #[serde(default, rename = "totalCharge")]
     pub total_charge: Box<crate::models::Currency>,
-    #[serde(rename = "billableWeight")]
+    #[serde(default, rename = "billableWeight")]
     pub billable_weight: Box<crate::models::Weight>,
-    #[serde(rename = "serviceType")]
+    #[serde(default, rename = "serviceType")]
     pub service_type: crate::models::ServiceType,
-    #[serde(rename = "promise")]
+    #[serde(default, rename = "promise")]
     pub promise: Box<crate::models::ShippingPromiseSet>,
 }
 

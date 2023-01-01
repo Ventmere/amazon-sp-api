@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TextComponent {
     /// The actual plain text.
-    #[serde(rename = "value")]
+    #[serde(default, rename = "value")]
     pub value: String,
     /// A set of content decorators.
-    #[serde(rename = "decoratorSet", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "decoratorSet", skip_serializing_if = "Option::is_none")]
     pub decorator_set: Option<Vec<crate::models::Decorator>>,
 }
 

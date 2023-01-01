@@ -14,17 +14,17 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardSingleImageHighlightsModule {
-    #[serde(rename = "image", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "image", skip_serializing_if = "Option::is_none")]
     pub image: Option<Box<crate::models::ImageComponent>>,
-    #[serde(rename = "headline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headline", skip_serializing_if = "Option::is_none")]
     pub headline: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "textBlock1", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "textBlock1", skip_serializing_if = "Option::is_none")]
     pub text_block1: Option<Box<crate::models::StandardTextBlock>>,
-    #[serde(rename = "textBlock2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "textBlock2", skip_serializing_if = "Option::is_none")]
     pub text_block2: Option<Box<crate::models::StandardTextBlock>>,
-    #[serde(rename = "textBlock3", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "textBlock3", skip_serializing_if = "Option::is_none")]
     pub text_block3: Option<Box<crate::models::StandardTextBlock>>,
-    #[serde(rename = "bulletedListBlock", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "bulletedListBlock", skip_serializing_if = "Option::is_none")]
     pub bulleted_list_block: Option<Box<crate::models::StandardHeaderTextListBlock>>,
 }
 

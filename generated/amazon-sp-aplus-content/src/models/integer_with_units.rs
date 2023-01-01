@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct IntegerWithUnits {
     /// The dimension value.
-    #[serde(rename = "value")]
+    #[serde(default, rename = "value")]
     pub value: i32,
     /// The unit of measurement.
-    #[serde(rename = "units")]
+    #[serde(default, rename = "units")]
     pub units: String,
 }
 

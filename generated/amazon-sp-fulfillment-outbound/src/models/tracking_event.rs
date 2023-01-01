@@ -14,14 +14,14 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TrackingEvent {
-    #[serde(rename = "eventDate")]
+    #[serde(default, rename = "eventDate")]
     pub event_date: String,
-    #[serde(rename = "eventAddress")]
+    #[serde(default, rename = "eventAddress")]
     pub event_address: Box<crate::models::TrackingAddress>,
-    #[serde(rename = "eventCode")]
+    #[serde(default, rename = "eventCode")]
     pub event_code: crate::models::EventCode,
     /// A description for the corresponding event code.
-    #[serde(rename = "eventDescription")]
+    #[serde(default, rename = "eventDescription")]
     pub event_description: String,
 }
 

@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemOffersRequestParamsAllOf {
     /// The Amazon Standard Identification Number (ASIN) of the item. This is the same Asin passed as a request parameter.
-    #[serde(rename = "Asin", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Asin", skip_serializing_if = "Option::is_none")]
     pub asin: Option<String>,
 }
 

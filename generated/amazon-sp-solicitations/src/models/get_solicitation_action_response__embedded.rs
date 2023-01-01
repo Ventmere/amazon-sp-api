@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetSolicitationActionResponseEmbedded {
-    #[serde(rename = "schema", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "schema", skip_serializing_if = "Option::is_none")]
     pub schema: Option<Box<crate::models::GetSchemaResponse>>,
 }
 

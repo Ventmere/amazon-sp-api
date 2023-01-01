@@ -14,21 +14,21 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RegulatedOrderVerificationStatus {
-    #[serde(rename = "Status")]
+    #[serde(default, rename = "Status")]
     pub status: crate::models::VerificationStatus,
     /// When true, the regulated information provided in the order requires a review by the merchant.
-    #[serde(rename = "RequiresMerchantAction")]
+    #[serde(default, rename = "RequiresMerchantAction")]
     pub requires_merchant_action: bool,
     /// A list of valid rejection reasons that may be used to reject the order's regulated information.
-    #[serde(rename = "ValidRejectionReasons")]
+    #[serde(default, rename = "ValidRejectionReasons")]
     pub valid_rejection_reasons: Vec<crate::models::RejectionReason>,
-    #[serde(rename = "RejectionReason", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RejectionReason", skip_serializing_if = "Option::is_none")]
     pub rejection_reason: Option<Box<crate::models::RejectionReason>>,
     /// The date the order was reviewed. In ISO 8601 date time format.
-    #[serde(rename = "ReviewDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ReviewDate", skip_serializing_if = "Option::is_none")]
     pub review_date: Option<String>,
     /// The identifier for the order's regulated information reviewer.
-    #[serde(rename = "ExternalReviewerId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ExternalReviewerId", skip_serializing_if = "Option::is_none")]
     pub external_reviewer_id: Option<String>,
 }
 

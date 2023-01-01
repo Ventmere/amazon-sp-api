@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TrackingDetails {
     /// A string of up to 255 characters.
-    #[serde(rename = "trackingId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "trackingId", skip_serializing_if = "Option::is_none")]
     pub tracking_id: Option<String>,
 }
 

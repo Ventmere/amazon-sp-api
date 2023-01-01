@@ -14,25 +14,25 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CouponPaymentEvent {
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// A coupon identifier.
-    #[serde(rename = "CouponId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CouponId", skip_serializing_if = "Option::is_none")]
     pub coupon_id: Option<String>,
     /// The description provided by the seller when they created the coupon.
-    #[serde(rename = "SellerCouponDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerCouponDescription", skip_serializing_if = "Option::is_none")]
     pub seller_coupon_description: Option<String>,
     /// The number of coupon clips or redemptions.
-    #[serde(rename = "ClipOrRedemptionCount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ClipOrRedemptionCount", skip_serializing_if = "Option::is_none")]
     pub clip_or_redemption_count: Option<i64>,
     /// A payment event identifier.
-    #[serde(rename = "PaymentEventId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PaymentEventId", skip_serializing_if = "Option::is_none")]
     pub payment_event_id: Option<String>,
-    #[serde(rename = "FeeComponent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeeComponent", skip_serializing_if = "Option::is_none")]
     pub fee_component: Option<Box<crate::models::FeeComponent>>,
-    #[serde(rename = "ChargeComponent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ChargeComponent", skip_serializing_if = "Option::is_none")]
     pub charge_component: Option<Box<crate::models::ChargeComponent>>,
-    #[serde(rename = "TotalAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalAmount", skip_serializing_if = "Option::is_none")]
     pub total_amount: Option<Box<crate::models::Currency>>,
 }
 

@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateConfirmCustomizationDetailsRequest {
     /// The text to be sent to the buyer. Only links related to customization details are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
-    #[serde(rename = "text", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "text", skip_serializing_if = "Option::is_none")]
     pub text: Option<String>,
     /// Attachments to include in the message to the buyer.
-    #[serde(rename = "attachments", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "attachments", skip_serializing_if = "Option::is_none")]
     pub attachments: Option<Vec<crate::models::Attachment>>,
 }
 

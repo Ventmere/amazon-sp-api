@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct MarketplaceTaxInfo {
     /// A list of tax classifications that apply to the order.
-    #[serde(rename = "TaxClassifications", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TaxClassifications", skip_serializing_if = "Option::is_none")]
     pub tax_classifications: Option<Vec<crate::models::TaxClassification>>,
 }
 

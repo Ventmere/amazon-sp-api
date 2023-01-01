@@ -15,11 +15,11 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ContentRecord {
     /// A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-    #[serde(rename = "contentReferenceKey")]
+    #[serde(default, rename = "contentReferenceKey")]
     pub content_reference_key: String,
-    #[serde(rename = "contentMetadata", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "contentMetadata", skip_serializing_if = "Option::is_none")]
     pub content_metadata: Option<Box<crate::models::ContentMetadata>>,
-    #[serde(rename = "contentDocument", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "contentDocument", skip_serializing_if = "Option::is_none")]
     pub content_document: Option<Box<crate::models::ContentDocument>>,
 }
 

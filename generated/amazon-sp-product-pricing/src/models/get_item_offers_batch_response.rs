@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetItemOffersBatchResponse {
     /// A list of `getItemOffers` batched responses.
-    #[serde(rename = "responses", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "responses", skip_serializing_if = "Option::is_none")]
     pub responses: Option<Vec<crate::models::ItemOffersResponse>>,
 }
 

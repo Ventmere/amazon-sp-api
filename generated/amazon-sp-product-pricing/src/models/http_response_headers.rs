@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct HttpResponseHeaders {
     /// The timestamp that the API request was received.  For more information, consult [RFC 2616 Section 14](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
-    #[serde(rename = "Date", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Date", skip_serializing_if = "Option::is_none")]
     pub date: Option<String>,
     /// Unique request reference ID.
-    #[serde(rename = "x-amzn-RequestId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "x-amzn-RequestId", skip_serializing_if = "Option::is_none")]
     pub x_amzn_request_id: Option<String>,
 }
 

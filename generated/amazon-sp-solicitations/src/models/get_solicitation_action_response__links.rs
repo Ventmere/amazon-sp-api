@@ -13,9 +13,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetSolicitationActionResponseLinks {
-    #[serde(rename = "self")]
+    #[serde(default, rename = "self")]
     pub _self: Box<crate::models::LinkObject>,
-    #[serde(rename = "schema")]
+    #[serde(default, rename = "schema")]
     pub schema: Box<crate::models::LinkObject>,
 }
 

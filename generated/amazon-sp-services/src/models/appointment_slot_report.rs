@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AppointmentSlotReport {
     /// Defines the type of slots.
-    #[serde(rename = "schedulingType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "schedulingType", skip_serializing_if = "Option::is_none")]
     pub scheduling_type: Option<SchedulingType>,
     /// Start Time from which the appointment slots are generated in ISO 8601 format.
-    #[serde(rename = "startTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "startTime", skip_serializing_if = "Option::is_none")]
     pub start_time: Option<String>,
     /// End Time up to which the appointment slots are generated in ISO 8601 format.
-    #[serde(rename = "endTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "endTime", skip_serializing_if = "Option::is_none")]
     pub end_time: Option<String>,
     /// A list of time windows along with associated capacity in which the service can be performed.
-    #[serde(rename = "appointmentSlots", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "appointmentSlots", skip_serializing_if = "Option::is_none")]
     pub appointment_slots: Option<Vec<crate::models::AppointmentSlot>>,
 }
 

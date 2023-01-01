@@ -14,14 +14,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetPreorderInfoResult {
     /// Indicates whether the shipment contains items that have been enabled for pre-order. For more information about enabling items for pre-order, see the Seller Central Help.
-    #[serde(rename = "ShipmentContainsPreorderableItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentContainsPreorderableItems", skip_serializing_if = "Option::is_none")]
     pub shipment_contains_preorderable_items: Option<bool>,
     /// Indicates whether this shipment has been confirmed for pre-order.
-    #[serde(rename = "ShipmentConfirmedForPreorder", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentConfirmedForPreorder", skip_serializing_if = "Option::is_none")]
     pub shipment_confirmed_for_preorder: Option<bool>,
-    #[serde(rename = "NeedByDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NeedByDate", skip_serializing_if = "Option::is_none")]
     pub need_by_date: Option<String>,
-    #[serde(rename = "ConfirmedFulfillableDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConfirmedFulfillableDate", skip_serializing_if = "Option::is_none")]
     pub confirmed_fulfillable_date: Option<String>,
 }
 

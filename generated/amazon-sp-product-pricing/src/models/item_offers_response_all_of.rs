@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemOffersResponseAllOf {
-    #[serde(rename = "request")]
+    #[serde(default, rename = "request")]
     pub request: Box<crate::models::ItemOffersRequestParams>,
 }
 

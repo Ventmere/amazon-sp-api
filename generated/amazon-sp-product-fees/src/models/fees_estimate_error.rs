@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeesEstimateError {
     /// An error type, identifying either the receiver or the sender as the originator of the error.
-    #[serde(rename = "Type")]
+    #[serde(default, rename = "Type")]
     pub _type: String,
     /// An error code that identifies the type of error that occurred.
-    #[serde(rename = "Code")]
+    #[serde(default, rename = "Code")]
     pub code: String,
     /// A message that describes the error condition.
-    #[serde(rename = "Message")]
+    #[serde(default, rename = "Message")]
     pub message: String,
     /// Additional information that can help the caller understand or fix the issue.
-    #[serde(rename = "Detail")]
+    #[serde(default, rename = "Detail")]
     pub detail: Vec<serde_json::Value>,
 }
 

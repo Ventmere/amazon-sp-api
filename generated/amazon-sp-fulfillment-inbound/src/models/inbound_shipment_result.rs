@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InboundShipmentResult {
     /// The shipment identifier submitted in the request.
-    #[serde(rename = "ShipmentId")]
+    #[serde(default, rename = "ShipmentId")]
     pub shipment_id: String,
 }
 

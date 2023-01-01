@@ -14,17 +14,17 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeesEstimateRequest {
     /// A marketplace identifier.
-    #[serde(rename = "MarketplaceId")]
+    #[serde(default, rename = "MarketplaceId")]
     pub marketplace_id: String,
     /// When true, the offer is fulfilled by Amazon.
-    #[serde(rename = "IsAmazonFulfilled", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsAmazonFulfilled", skip_serializing_if = "Option::is_none")]
     pub is_amazon_fulfilled: Option<bool>,
-    #[serde(rename = "PriceToEstimateFees")]
+    #[serde(default, rename = "PriceToEstimateFees")]
     pub price_to_estimate_fees: Box<crate::models::PriceToEstimateFees>,
     /// A unique identifier provided by the caller to track this request.
-    #[serde(rename = "Identifier")]
+    #[serde(default, rename = "Identifier")]
     pub identifier: String,
-    #[serde(rename = "OptionalFulfillmentProgram", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OptionalFulfillmentProgram", skip_serializing_if = "Option::is_none")]
     pub optional_fulfillment_program: Option<crate::models::OptionalFulfillmentProgram>,
 }
 

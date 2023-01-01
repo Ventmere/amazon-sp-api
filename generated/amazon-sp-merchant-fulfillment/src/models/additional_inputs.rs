@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AdditionalInputs {
     /// The field name.
-    #[serde(rename = "AdditionalInputFieldName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AdditionalInputFieldName", skip_serializing_if = "Option::is_none")]
     pub additional_input_field_name: Option<String>,
-    #[serde(rename = "SellerInputDefinition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerInputDefinition", skip_serializing_if = "Option::is_none")]
     pub seller_input_definition: Option<Box<crate::models::SellerInputDefinition>>,
 }
 

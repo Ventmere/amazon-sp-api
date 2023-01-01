@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateConfirmDeliveryDetailsRequest {
     /// The text to be sent to the buyer. Only links related to order delivery are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
-    #[serde(rename = "text", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "text", skip_serializing_if = "Option::is_none")]
     pub text: Option<String>,
 }
 

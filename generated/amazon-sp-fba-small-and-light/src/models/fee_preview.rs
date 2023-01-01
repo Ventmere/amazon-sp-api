@@ -15,17 +15,17 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeePreview {
     /// The Amazon Standard Identification Number (ASIN) value used to identify the item.
-    #[serde(rename = "asin", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "asin", skip_serializing_if = "Option::is_none")]
     pub asin: Option<String>,
-    #[serde(rename = "price", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "price", skip_serializing_if = "Option::is_none")]
     pub price: Option<Box<crate::models::MoneyType>>,
     /// A list of the Small and Light fees for the item.
-    #[serde(rename = "feeBreakdown", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "feeBreakdown", skip_serializing_if = "Option::is_none")]
     pub fee_breakdown: Option<Vec<crate::models::FeeLineItem>>,
-    #[serde(rename = "totalFees", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "totalFees", skip_serializing_if = "Option::is_none")]
     pub total_fees: Option<Box<crate::models::MoneyType>>,
     /// One or more unexpected errors occurred during the getSmallAndLightFeePreview operation.
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "errors", skip_serializing_if = "Option::is_none")]
     pub errors: Option<Vec<crate::models::Error>>,
 }
 

@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UnfulfillablePreviewItem {
     /// The seller SKU of the item.
-    #[serde(rename = "sellerSku")]
+    #[serde(default, rename = "sellerSku")]
     pub seller_sku: String,
     /// The item quantity.
-    #[serde(rename = "quantity")]
+    #[serde(default, rename = "quantity")]
     pub quantity: i32,
     /// A fulfillment order item identifier created with a call to the getFulfillmentPreview operation.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
-    #[serde(rename = "itemUnfulfillableReasons", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "itemUnfulfillableReasons", skip_serializing_if = "Option::is_none")]
     pub item_unfulfillable_reasons: Option<Vec<String>>,
 }
 

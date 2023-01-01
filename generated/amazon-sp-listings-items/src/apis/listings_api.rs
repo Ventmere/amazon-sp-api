@@ -11,56 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`delete_listings_item`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum DeleteListingsItemError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`patch_listings_item`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PatchListingsItemError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`put_listings_item`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PutListingsItemError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Delete a listings item for a selling partner.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn delete_listings_item(configuration: &configuration::Configuration, seller_id: &str, sku: &str, marketplace_ids: Vec<String>, issue_locale: Option<&str>) -> Result<crate::models::ListingsItemSubmissionResponse, Error<DeleteListingsItemError>> {
+pub async fn delete_listings_item(configuration: &configuration::Configuration, seller_id: &str, sku: &str, marketplace_ids: Vec<String>, issue_locale: Option<&str>) -> Result<crate::models::ListingsItemSubmissionResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -80,16 +36,21 @@ pub async fn delete_listings_item(configuration: &configuration::Configuration, 
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "DELETE",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -100,8 +61,7 @@ pub async fn delete_listings_item(configuration: &configuration::Configuration, 
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -119,14 +79,14 @@ pub async fn delete_listings_item(configuration: &configuration::Configuration, 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<DeleteListingsItemError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn patch_listings_item(configuration: &configuration::Configuration, seller_id: &str, sku: &str, marketplace_ids: Vec<String>, body: crate::models::ListingsItemPatchRequest, issue_locale: Option<&str>) -> Result<crate::models::ListingsItemSubmissionResponse, Error<PatchListingsItemError>> {
+pub async fn patch_listings_item(configuration: &configuration::Configuration, seller_id: &str, sku: &str, marketplace_ids: Vec<String>, body: crate::models::ListingsItemPatchRequest, issue_locale: Option<&str>) -> Result<crate::models::ListingsItemSubmissionResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -146,16 +106,21 @@ pub async fn patch_listings_item(configuration: &configuration::Configuration, s
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PATCH",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -166,8 +131,7 @@ pub async fn patch_listings_item(configuration: &configuration::Configuration, s
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -186,14 +150,14 @@ pub async fn patch_listings_item(configuration: &configuration::Configuration, s
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PatchListingsItemError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-pub async fn put_listings_item(configuration: &configuration::Configuration, seller_id: &str, sku: &str, marketplace_ids: Vec<String>, body: crate::models::ListingsItemPutRequest, issue_locale: Option<&str>) -> Result<crate::models::ListingsItemSubmissionResponse, Error<PutListingsItemError>> {
+pub async fn put_listings_item(configuration: &configuration::Configuration, seller_id: &str, sku: &str, marketplace_ids: Vec<String>, body: crate::models::ListingsItemPutRequest, issue_locale: Option<&str>) -> Result<crate::models::ListingsItemSubmissionResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -213,16 +177,21 @@ pub async fn put_listings_item(configuration: &configuration::Configuration, sel
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -233,8 +202,7 @@ pub async fn put_listings_item(configuration: &configuration::Configuration, sel
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -253,8 +221,8 @@ pub async fn put_listings_item(configuration: &configuration::Configuration, sel
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PutListingsItemError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetAdditionalSellerInputsRequest {
     /// An Amazon-defined shipping service identifier.
-    #[serde(rename = "ShippingServiceId")]
+    #[serde(default, rename = "ShippingServiceId")]
     pub shipping_service_id: String,
-    #[serde(rename = "ShipFromAddress")]
+    #[serde(default, rename = "ShipFromAddress")]
     pub ship_from_address: Box<crate::models::Address>,
     /// An Amazon-defined order identifier, in 3-7-7 format.
-    #[serde(rename = "OrderId")]
+    #[serde(default, rename = "OrderId")]
     pub order_id: String,
 }
 

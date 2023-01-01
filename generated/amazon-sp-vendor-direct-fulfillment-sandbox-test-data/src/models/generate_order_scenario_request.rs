@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GenerateOrderScenarioRequest {
     /// The list of test orders requested as indicated by party identifiers.
-    #[serde(rename = "orders", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orders", skip_serializing_if = "Option::is_none")]
     pub orders: Option<Vec<crate::models::OrderScenarioRequest>>,
 }
 

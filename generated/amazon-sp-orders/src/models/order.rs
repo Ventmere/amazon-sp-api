@@ -15,135 +15,135 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Order {
     /// An Amazon-defined order identifier, in 3-7-7 format.
-    #[serde(rename = "AmazonOrderId")]
+    #[serde(default, rename = "AmazonOrderId")]
     pub amazon_order_id: String,
     /// A seller-defined order identifier.
-    #[serde(rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
     pub seller_order_id: Option<String>,
     /// The date when the order was created.
-    #[serde(rename = "PurchaseDate")]
+    #[serde(default, rename = "PurchaseDate")]
     pub purchase_date: String,
     /// The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
-    #[serde(rename = "LastUpdateDate")]
+    #[serde(default, rename = "LastUpdateDate")]
     pub last_update_date: String,
     /// The current order status.
-    #[serde(rename = "OrderStatus")]
+    #[serde(default, rename = "OrderStatus")]
     pub order_status: OrderStatus,
     /// Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).
-    #[serde(rename = "FulfillmentChannel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FulfillmentChannel", skip_serializing_if = "Option::is_none")]
     pub fulfillment_channel: Option<FulfillmentChannel>,
     /// The sales channel of the first item in the order.
-    #[serde(rename = "SalesChannel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SalesChannel", skip_serializing_if = "Option::is_none")]
     pub sales_channel: Option<String>,
     /// The order channel of the first item in the order.
-    #[serde(rename = "OrderChannel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderChannel", skip_serializing_if = "Option::is_none")]
     pub order_channel: Option<String>,
     /// The shipment service level of the order.
-    #[serde(rename = "ShipServiceLevel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipServiceLevel", skip_serializing_if = "Option::is_none")]
     pub ship_service_level: Option<String>,
-    #[serde(rename = "OrderTotal", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderTotal", skip_serializing_if = "Option::is_none")]
     pub order_total: Option<Box<crate::models::Money>>,
     /// The number of items shipped.
-    #[serde(rename = "NumberOfItemsShipped", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfItemsShipped", skip_serializing_if = "Option::is_none")]
     pub number_of_items_shipped: Option<i32>,
     /// The number of items unshipped.
-    #[serde(rename = "NumberOfItemsUnshipped", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfItemsUnshipped", skip_serializing_if = "Option::is_none")]
     pub number_of_items_unshipped: Option<i32>,
     /// A list of payment execution detail items.
-    #[serde(rename = "PaymentExecutionDetail", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PaymentExecutionDetail", skip_serializing_if = "Option::is_none")]
     pub payment_execution_detail: Option<Vec<crate::models::PaymentExecutionDetailItem>>,
     /// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
-    #[serde(rename = "PaymentMethod", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PaymentMethod", skip_serializing_if = "Option::is_none")]
     pub payment_method: Option<PaymentMethod>,
     /// A list of payment method detail items.
-    #[serde(rename = "PaymentMethodDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PaymentMethodDetails", skip_serializing_if = "Option::is_none")]
     pub payment_method_details: Option<Vec<String>>,
     /// The identifier for the marketplace where the order was placed.
-    #[serde(rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
-    #[serde(rename = "ShipmentServiceLevelCategory", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentServiceLevelCategory", skip_serializing_if = "Option::is_none")]
     pub shipment_service_level_category: Option<String>,
-    #[serde(rename = "EasyShipShipmentStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EasyShipShipmentStatus", skip_serializing_if = "Option::is_none")]
     pub easy_ship_shipment_status: Option<crate::models::EasyShipShipmentStatus>,
     /// Custom ship label for Checkout by Amazon (CBA).
-    #[serde(rename = "CbaDisplayableShippingLabel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CbaDisplayableShippingLabel", skip_serializing_if = "Option::is_none")]
     pub cba_displayable_shipping_label: Option<String>,
     /// The type of the order.
-    #[serde(rename = "OrderType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderType", skip_serializing_if = "Option::is_none")]
     pub order_type: Option<OrderType>,
     /// The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
-    #[serde(rename = "EarliestShipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EarliestShipDate", skip_serializing_if = "Option::is_none")]
     pub earliest_ship_date: Option<String>,
     /// The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
-    #[serde(rename = "LatestShipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LatestShipDate", skip_serializing_if = "Option::is_none")]
     pub latest_ship_date: Option<String>,
     /// The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
-    #[serde(rename = "EarliestDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EarliestDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub earliest_delivery_date: Option<String>,
     /// The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
-    #[serde(rename = "LatestDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LatestDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub latest_delivery_date: Option<String>,
     /// When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer.
-    #[serde(rename = "IsBusinessOrder", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsBusinessOrder", skip_serializing_if = "Option::is_none")]
     pub is_business_order: Option<bool>,
     /// When true, the order is a seller-fulfilled Amazon Prime order.
-    #[serde(rename = "IsPrime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsPrime", skip_serializing_if = "Option::is_none")]
     pub is_prime: Option<bool>,
     /// When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \"Premium Shipping Options\" in the Seller Central Help for your marketplace.
-    #[serde(rename = "IsPremiumOrder", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsPremiumOrder", skip_serializing_if = "Option::is_none")]
     pub is_premium_order: Option<bool>,
     /// When true, the order is a GlobalExpress order.
-    #[serde(rename = "IsGlobalExpressEnabled", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsGlobalExpressEnabled", skip_serializing_if = "Option::is_none")]
     pub is_global_express_enabled: Option<bool>,
     /// The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.
-    #[serde(rename = "ReplacedOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ReplacedOrderId", skip_serializing_if = "Option::is_none")]
     pub replaced_order_id: Option<String>,
     /// When true, this is a replacement order.
-    #[serde(rename = "IsReplacementOrder", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsReplacementOrder", skip_serializing_if = "Option::is_none")]
     pub is_replacement_order: Option<bool>,
     /// Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders.
-    #[serde(rename = "PromiseResponseDueDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PromiseResponseDueDate", skip_serializing_if = "Option::is_none")]
     pub promise_response_due_date: Option<String>,
     /// When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders.
-    #[serde(rename = "IsEstimatedShipDateSet", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsEstimatedShipDateSet", skip_serializing_if = "Option::is_none")]
     pub is_estimated_ship_date_set: Option<bool>,
     /// When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
-    #[serde(rename = "IsSoldByAB", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsSoldByAB", skip_serializing_if = "Option::is_none")]
     pub is_sold_by_ab: Option<bool>,
     /// When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
-    #[serde(rename = "IsIBA", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsIBA", skip_serializing_if = "Option::is_none")]
     pub is_iba: Option<bool>,
-    #[serde(rename = "DefaultShipFromLocationAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DefaultShipFromLocationAddress", skip_serializing_if = "Option::is_none")]
     pub default_ship_from_location_address: Option<Box<crate::models::Address>>,
     /// The buyer's invoicing preference. Available only in the TR marketplace.
-    #[serde(rename = "BuyerInvoicePreference", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerInvoicePreference", skip_serializing_if = "Option::is_none")]
     pub buyer_invoice_preference: Option<BuyerInvoicePreference>,
-    #[serde(rename = "BuyerTaxInformation", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerTaxInformation", skip_serializing_if = "Option::is_none")]
     pub buyer_tax_information: Option<Box<crate::models::BuyerTaxInformation>>,
-    #[serde(rename = "FulfillmentInstruction", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FulfillmentInstruction", skip_serializing_if = "Option::is_none")]
     pub fulfillment_instruction: Option<Box<crate::models::FulfillmentInstruction>>,
     /// When true, this order is marked to be picked up from a store rather than delivered.
-    #[serde(rename = "IsISPU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsISPU", skip_serializing_if = "Option::is_none")]
     pub is_ispu: Option<bool>,
     /// When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
-    #[serde(rename = "IsAccessPointOrder", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsAccessPointOrder", skip_serializing_if = "Option::is_none")]
     pub is_access_point_order: Option<bool>,
-    #[serde(rename = "MarketplaceTaxInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceTaxInfo", skip_serializing_if = "Option::is_none")]
     pub marketplace_tax_info: Option<Box<crate::models::MarketplaceTaxInfo>>,
     /// The seller’s friendly name registered in the marketplace.
-    #[serde(rename = "SellerDisplayName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerDisplayName", skip_serializing_if = "Option::is_none")]
     pub seller_display_name: Option<String>,
-    #[serde(rename = "ShippingAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingAddress", skip_serializing_if = "Option::is_none")]
     pub shipping_address: Option<Box<crate::models::Address>>,
-    #[serde(rename = "BuyerInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerInfo", skip_serializing_if = "Option::is_none")]
     pub buyer_info: Option<Box<crate::models::BuyerInfo>>,
-    #[serde(rename = "AutomatedShippingSettings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AutomatedShippingSettings", skip_serializing_if = "Option::is_none")]
     pub automated_shipping_settings: Option<Box<crate::models::AutomatedShippingSettings>>,
     /// Whether the order contains regulated items which may require additional approval steps before being fulfilled.
-    #[serde(rename = "HasRegulatedItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HasRegulatedItems", skip_serializing_if = "Option::is_none")]
     pub has_regulated_items: Option<bool>,
-    #[serde(rename = "ElectronicInvoiceStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ElectronicInvoiceStatus", skip_serializing_if = "Option::is_none")]
     pub electronic_invoice_status: Option<crate::models::ElectronicInvoiceStatus>,
 }
 

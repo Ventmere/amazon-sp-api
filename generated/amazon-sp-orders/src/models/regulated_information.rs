@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RegulatedInformation {
     /// A list of regulated information fields as collected from the regulatory form.
-    #[serde(rename = "Fields")]
+    #[serde(default, rename = "Fields")]
     pub fields: Vec<crate::models::RegulatedInformationField>,
 }
 

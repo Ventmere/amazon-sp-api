@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Duration {
     /// Unit for duration.
-    #[serde(rename = "durationUnit")]
+    #[serde(default, rename = "durationUnit")]
     pub duration_unit: DurationUnit,
     /// Value for the duration in terms of the durationUnit.
-    #[serde(rename = "durationValue")]
+    #[serde(default, rename = "durationValue")]
     pub duration_value: i32,
 }
 

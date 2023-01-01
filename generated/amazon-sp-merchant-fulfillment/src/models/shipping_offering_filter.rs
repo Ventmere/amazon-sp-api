@@ -15,14 +15,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShippingOfferingFilter {
     /// When true, include a packing slip with the label.
-    #[serde(rename = "IncludePackingSlipWithLabel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IncludePackingSlipWithLabel", skip_serializing_if = "Option::is_none")]
     pub include_packing_slip_with_label: Option<bool>,
     /// When true, include complex shipping options.
-    #[serde(rename = "IncludeComplexShippingOptions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IncludeComplexShippingOptions", skip_serializing_if = "Option::is_none")]
     pub include_complex_shipping_options: Option<bool>,
-    #[serde(rename = "CarrierWillPickUp", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CarrierWillPickUp", skip_serializing_if = "Option::is_none")]
     pub carrier_will_pick_up: Option<crate::models::CarrierWillPickUpOption>,
-    #[serde(rename = "DeliveryExperience", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DeliveryExperience", skip_serializing_if = "Option::is_none")]
     pub delivery_experience: Option<crate::models::DeliveryExperienceOption>,
 }
 

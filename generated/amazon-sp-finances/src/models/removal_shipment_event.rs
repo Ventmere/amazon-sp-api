@@ -14,19 +14,19 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RemovalShipmentEvent {
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// The merchant removal orderId.
-    #[serde(rename = "MerchantOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MerchantOrderId", skip_serializing_if = "Option::is_none")]
     pub merchant_order_id: Option<String>,
     /// The identifier for the removal shipment order.
-    #[serde(rename = "OrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OrderId", skip_serializing_if = "Option::is_none")]
     pub order_id: Option<String>,
     /// The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION
-    #[serde(rename = "TransactionType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TransactionType", skip_serializing_if = "Option::is_none")]
     pub transaction_type: Option<String>,
     /// A list of information about removal shipment items.
-    #[serde(rename = "RemovalShipmentItemList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RemovalShipmentItemList", skip_serializing_if = "Option::is_none")]
     pub removal_shipment_item_list: Option<Vec<crate::models::RemovalShipmentItem>>,
 }
 

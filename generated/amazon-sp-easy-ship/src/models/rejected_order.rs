@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RejectedOrder {
     /// An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-    #[serde(rename = "amazonOrderId")]
+    #[serde(default, rename = "amazonOrderId")]
     pub amazon_order_id: String,
-    #[serde(rename = "error", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "error", skip_serializing_if = "Option::is_none")]
     pub error: Option<Box<crate::models::Error>>,
 }
 

@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Volume {
     /// The unit of measurement.
-    #[serde(rename = "unitOfMeasure")]
+    #[serde(default, rename = "unitOfMeasure")]
     pub unit_of_measure: UnitOfMeasure,
     /// A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
-    #[serde(rename = "value")]
+    #[serde(default, rename = "value")]
     pub value: String,
 }
 

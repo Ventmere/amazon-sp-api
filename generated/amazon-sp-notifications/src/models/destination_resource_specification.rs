@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DestinationResourceSpecification {
-    #[serde(rename = "sqs", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sqs", skip_serializing_if = "Option::is_none")]
     pub sqs: Option<Box<crate::models::SqsResource>>,
-    #[serde(rename = "eventBridge", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "eventBridge", skip_serializing_if = "Option::is_none")]
     pub event_bridge: Option<Box<crate::models::EventBridgeResourceSpecification>>,
 }
 

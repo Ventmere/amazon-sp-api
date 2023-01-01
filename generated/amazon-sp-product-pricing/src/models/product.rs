@@ -14,21 +14,21 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Product {
-    #[serde(rename = "Identifiers")]
+    #[serde(default, rename = "Identifiers")]
     pub identifiers: Box<crate::models::IdentifierType>,
     /// A list of product attributes if they are applicable to the product that is returned.
-    #[serde(rename = "AttributeSets", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AttributeSets", skip_serializing_if = "Option::is_none")]
     pub attribute_sets: Option<Vec<serde_json::Value>>,
     /// A list that contains product variation information, if applicable.
-    #[serde(rename = "Relationships", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Relationships", skip_serializing_if = "Option::is_none")]
     pub relationships: Option<Vec<serde_json::Value>>,
-    #[serde(rename = "CompetitivePricing", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CompetitivePricing", skip_serializing_if = "Option::is_none")]
     pub competitive_pricing: Option<Box<crate::models::CompetitivePricingType>>,
     /// A list of sales rank information for the item, by category.
-    #[serde(rename = "SalesRankings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SalesRankings", skip_serializing_if = "Option::is_none")]
     pub sales_rankings: Option<Vec<crate::models::SalesRankType>>,
     /// A list of offers.
-    #[serde(rename = "Offers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Offers", skip_serializing_if = "Option::is_none")]
     pub offers: Option<Vec<crate::models::OfferType>>,
 }
 

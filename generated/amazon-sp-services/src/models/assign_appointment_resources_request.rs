@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AssignAppointmentResourcesRequest {
     /// List of resources that performs or performed job appointment fulfillment.
-    #[serde(rename = "resources")]
+    #[serde(default, rename = "resources")]
     pub resources: Vec<crate::models::AppointmentResource>,
 }
 

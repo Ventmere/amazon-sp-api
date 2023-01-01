@@ -15,39 +15,39 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Shipment {
     /// An Amazon-defined shipment identifier.
-    #[serde(rename = "ShipmentId")]
+    #[serde(default, rename = "ShipmentId")]
     pub shipment_id: String,
     /// An Amazon-defined order identifier, in 3-7-7 format.
-    #[serde(rename = "AmazonOrderId")]
+    #[serde(default, rename = "AmazonOrderId")]
     pub amazon_order_id: String,
     /// A seller-defined order identifier.
-    #[serde(rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerOrderId", skip_serializing_if = "Option::is_none")]
     pub seller_order_id: Option<String>,
     /// The list of items to be included in a shipment.
-    #[serde(rename = "ItemList")]
+    #[serde(default, rename = "ItemList")]
     pub item_list: Vec<crate::models::Item>,
-    #[serde(rename = "ShipFromAddress")]
+    #[serde(default, rename = "ShipFromAddress")]
     pub ship_from_address: Box<crate::models::Address>,
-    #[serde(rename = "ShipToAddress")]
+    #[serde(default, rename = "ShipToAddress")]
     pub ship_to_address: Box<crate::models::Address>,
-    #[serde(rename = "PackageDimensions")]
+    #[serde(default, rename = "PackageDimensions")]
     pub package_dimensions: Box<crate::models::PackageDimensions>,
-    #[serde(rename = "Weight")]
+    #[serde(default, rename = "Weight")]
     pub weight: Box<crate::models::Weight>,
-    #[serde(rename = "Insurance")]
+    #[serde(default, rename = "Insurance")]
     pub insurance: Box<crate::models::CurrencyAmount>,
-    #[serde(rename = "ShippingService")]
+    #[serde(default, rename = "ShippingService")]
     pub shipping_service: Box<crate::models::ShippingService>,
-    #[serde(rename = "Label")]
+    #[serde(default, rename = "Label")]
     pub label: Box<crate::models::Label>,
-    #[serde(rename = "Status")]
+    #[serde(default, rename = "Status")]
     pub status: crate::models::ShipmentStatus,
     /// The shipment tracking identifier provided by the carrier.
-    #[serde(rename = "TrackingId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TrackingId", skip_serializing_if = "Option::is_none")]
     pub tracking_id: Option<String>,
-    #[serde(rename = "CreatedDate")]
+    #[serde(default, rename = "CreatedDate")]
     pub created_date: String,
-    #[serde(rename = "LastUpdatedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LastUpdatedDate", skip_serializing_if = "Option::is_none")]
     pub last_updated_date: Option<String>,
 }
 

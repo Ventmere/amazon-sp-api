@@ -15,42 +15,42 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateFulfillmentOrderRequest {
     /// The marketplace the fulfillment order is placed against.
-    #[serde(rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// A fulfillment order identifier that the seller creates to track their fulfillment order. The SellerFulfillmentOrderId must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
-    #[serde(rename = "sellerFulfillmentOrderId")]
+    #[serde(default, rename = "sellerFulfillmentOrderId")]
     pub seller_fulfillment_order_id: String,
     /// A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.  The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
-    #[serde(rename = "displayableOrderId")]
+    #[serde(default, rename = "displayableOrderId")]
     pub displayable_order_id: String,
-    #[serde(rename = "displayableOrderDate")]
+    #[serde(default, rename = "displayableOrderDate")]
     pub displayable_order_date: String,
     /// Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip.
-    #[serde(rename = "displayableOrderComment")]
+    #[serde(default, rename = "displayableOrderComment")]
     pub displayable_order_comment: String,
-    #[serde(rename = "shippingSpeedCategory")]
+    #[serde(default, rename = "shippingSpeedCategory")]
     pub shipping_speed_category: crate::models::ShippingSpeedCategory,
-    #[serde(rename = "deliveryWindow", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "deliveryWindow", skip_serializing_if = "Option::is_none")]
     pub delivery_window: Option<Box<crate::models::DeliveryWindow>>,
-    #[serde(rename = "destinationAddress")]
+    #[serde(default, rename = "destinationAddress")]
     pub destination_address: Box<crate::models::Address>,
-    #[serde(rename = "fulfillmentAction", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentAction", skip_serializing_if = "Option::is_none")]
     pub fulfillment_action: Option<crate::models::FulfillmentAction>,
-    #[serde(rename = "fulfillmentPolicy", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentPolicy", skip_serializing_if = "Option::is_none")]
     pub fulfillment_policy: Option<crate::models::FulfillmentPolicy>,
-    #[serde(rename = "codSettings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "codSettings", skip_serializing_if = "Option::is_none")]
     pub cod_settings: Option<Box<crate::models::CodSettings>>,
     /// The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
-    #[serde(rename = "shipFromCountryCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipFromCountryCode", skip_serializing_if = "Option::is_none")]
     pub ship_from_country_code: Option<String>,
     /// A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
-    #[serde(rename = "notificationEmails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "notificationEmails", skip_serializing_if = "Option::is_none")]
     pub notification_emails: Option<Vec<String>>,
     /// A list of features and their fulfillment policies to apply to the order.
-    #[serde(rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
     pub feature_constraints: Option<Vec<crate::models::FeatureSettings>>,
     /// An array of item information for creating a fulfillment order.
-    #[serde(rename = "items")]
+    #[serde(default, rename = "items")]
     pub items: Vec<crate::models::CreateFulfillmentOrderItem>,
 }
 

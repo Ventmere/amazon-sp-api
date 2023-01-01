@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SubmitAcknowledgementRequest {
     /// A list of one or more purchase orders.
-    #[serde(rename = "orderAcknowledgements", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderAcknowledgements", skip_serializing_if = "Option::is_none")]
     pub order_acknowledgements: Option<Vec<crate::models::OrderAcknowledgementItem>>,
 }
 

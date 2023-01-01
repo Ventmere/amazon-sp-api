@@ -14,19 +14,19 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ProductAdsPaymentEvent {
-    #[serde(rename = "postedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "postedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// Indicates if the transaction is for a charge or a refund.  Possible values:  * charge - Charge  * refund - Refund
-    #[serde(rename = "transactionType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "transactionType", skip_serializing_if = "Option::is_none")]
     pub transaction_type: Option<String>,
     /// Identifier for the invoice that the transaction appears in.
-    #[serde(rename = "invoiceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "invoiceId", skip_serializing_if = "Option::is_none")]
     pub invoice_id: Option<String>,
-    #[serde(rename = "baseValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "baseValue", skip_serializing_if = "Option::is_none")]
     pub base_value: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "taxValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxValue", skip_serializing_if = "Option::is_none")]
     pub tax_value: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "transactionValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "transactionValue", skip_serializing_if = "Option::is_none")]
     pub transaction_value: Option<Box<crate::models::Currency>>,
 }
 

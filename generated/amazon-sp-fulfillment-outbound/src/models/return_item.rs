@@ -15,34 +15,34 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ReturnItem {
     /// An identifier assigned by the seller to the return item.
-    #[serde(rename = "sellerReturnItemId")]
+    #[serde(default, rename = "sellerReturnItemId")]
     pub seller_return_item_id: String,
     /// The identifier assigned to the item by the seller when the fulfillment order was created.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
     /// The identifier for the shipment that is associated with the return item.
-    #[serde(rename = "amazonShipmentId")]
+    #[serde(default, rename = "amazonShipmentId")]
     pub amazon_shipment_id: String,
     /// The return reason code assigned to the return item by the seller.
-    #[serde(rename = "sellerReturnReasonCode")]
+    #[serde(default, rename = "sellerReturnReasonCode")]
     pub seller_return_reason_code: String,
     /// An optional comment about the return item.
-    #[serde(rename = "returnComment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "returnComment", skip_serializing_if = "Option::is_none")]
     pub return_comment: Option<String>,
     /// The return reason code that the Amazon fulfillment center assigned to the return item.
-    #[serde(rename = "amazonReturnReasonCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "amazonReturnReasonCode", skip_serializing_if = "Option::is_none")]
     pub amazon_return_reason_code: Option<String>,
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: crate::models::FulfillmentReturnItemStatus,
-    #[serde(rename = "statusChangedDate")]
+    #[serde(default, rename = "statusChangedDate")]
     pub status_changed_date: String,
     /// Identifies the return authorization used to return this item. See ReturnAuthorization.
-    #[serde(rename = "returnAuthorizationId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "returnAuthorizationId", skip_serializing_if = "Option::is_none")]
     pub return_authorization_id: Option<String>,
-    #[serde(rename = "returnReceivedCondition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "returnReceivedCondition", skip_serializing_if = "Option::is_none")]
     pub return_received_condition: Option<crate::models::ReturnItemDisposition>,
     /// The identifier for the Amazon fulfillment center that processed the return item.
-    #[serde(rename = "fulfillmentCenterId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentCenterId", skip_serializing_if = "Option::is_none")]
     pub fulfillment_center_id: Option<String>,
 }
 

@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RangeSlotCapacity {
     /// Resource Identifier.
-    #[serde(rename = "resourceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "resourceId", skip_serializing_if = "Option::is_none")]
     pub resource_id: Option<String>,
     /// Array of range capacities where each entry is for a specific capacity type.
-    #[serde(rename = "capacities", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "capacities", skip_serializing_if = "Option::is_none")]
     pub capacities: Option<Vec<crate::models::RangeCapacity>>,
     /// Next page token, if there are more pages.
-    #[serde(rename = "nextPageToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "nextPageToken", skip_serializing_if = "Option::is_none")]
     pub next_page_token: Option<String>,
 }
 

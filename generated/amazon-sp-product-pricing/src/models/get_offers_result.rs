@@ -14,24 +14,24 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetOffersResult {
     /// A marketplace identifier.
-    #[serde(rename = "MarketplaceID")]
+    #[serde(default, rename = "MarketplaceID")]
     pub marketplace_id: String,
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
     /// The stock keeping unit (SKU) of the item.
-    #[serde(rename = "SKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SKU", skip_serializing_if = "Option::is_none")]
     pub SKU: Option<String>,
-    #[serde(rename = "ItemCondition")]
+    #[serde(default, rename = "ItemCondition")]
     pub item_condition: crate::models::ConditionType,
     /// The status of the operation.
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: String,
-    #[serde(rename = "Identifier")]
+    #[serde(default, rename = "Identifier")]
     pub identifier: Box<crate::models::ItemIdentifier>,
-    #[serde(rename = "Summary")]
+    #[serde(default, rename = "Summary")]
     pub summary: Box<crate::models::Summary>,
-    #[serde(rename = "Offers")]
+    #[serde(default, rename = "Offers")]
     pub offers: Vec<crate::models::OfferDetail>,
 }
 

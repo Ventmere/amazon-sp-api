@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AggregationSettings {
-    #[serde(rename = "aggregationTimePeriod")]
+    #[serde(default, rename = "aggregationTimePeriod")]
     pub aggregation_time_period: crate::models::AggregationTimePeriod,
 }
 

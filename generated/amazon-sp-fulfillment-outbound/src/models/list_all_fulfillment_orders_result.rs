@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListAllFulfillmentOrdersResult {
     /// When present and not empty, pass this string token in the next request to return the next response page.
-    #[serde(rename = "nextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "nextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
     /// An array of fulfillment order information.
-    #[serde(rename = "fulfillmentOrders", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentOrders", skip_serializing_if = "Option::is_none")]
     pub fulfillment_orders: Option<Vec<crate::models::FulfillmentOrder>>,
 }
 

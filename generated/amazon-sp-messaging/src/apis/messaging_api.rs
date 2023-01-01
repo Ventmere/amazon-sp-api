@@ -11,209 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`confirm_customization_details`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ConfirmCustomizationDetailsError {
-    Status400(crate::models::CreateConfirmCustomizationDetailsResponse),
-    Status403(crate::models::CreateConfirmCustomizationDetailsResponse),
-    Status404(crate::models::CreateConfirmCustomizationDetailsResponse),
-    Status413(crate::models::CreateConfirmCustomizationDetailsResponse),
-    Status415(crate::models::CreateConfirmCustomizationDetailsResponse),
-    Status429(crate::models::CreateConfirmCustomizationDetailsResponse),
-    Status500(crate::models::CreateConfirmCustomizationDetailsResponse),
-    Status503(crate::models::CreateConfirmCustomizationDetailsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_amazon_motors`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateAmazonMotorsError {
-    Status400(crate::models::CreateAmazonMotorsResponse),
-    Status403(crate::models::CreateAmazonMotorsResponse),
-    Status404(crate::models::CreateAmazonMotorsResponse),
-    Status413(crate::models::CreateAmazonMotorsResponse),
-    Status415(crate::models::CreateAmazonMotorsResponse),
-    Status429(crate::models::CreateAmazonMotorsResponse),
-    Status500(crate::models::CreateAmazonMotorsResponse),
-    Status503(crate::models::CreateAmazonMotorsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_confirm_delivery_details`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateConfirmDeliveryDetailsError {
-    Status400(crate::models::CreateConfirmDeliveryDetailsResponse),
-    Status403(crate::models::CreateConfirmDeliveryDetailsResponse),
-    Status404(crate::models::CreateConfirmDeliveryDetailsResponse),
-    Status413(crate::models::CreateConfirmDeliveryDetailsResponse),
-    Status415(crate::models::CreateConfirmDeliveryDetailsResponse),
-    Status429(crate::models::CreateConfirmDeliveryDetailsResponse),
-    Status500(crate::models::CreateConfirmDeliveryDetailsResponse),
-    Status503(crate::models::CreateConfirmDeliveryDetailsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_confirm_order_details`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateConfirmOrderDetailsError {
-    Status400(crate::models::CreateConfirmOrderDetailsResponse),
-    Status403(crate::models::CreateConfirmOrderDetailsResponse),
-    Status404(crate::models::CreateConfirmOrderDetailsResponse),
-    Status413(crate::models::CreateConfirmOrderDetailsResponse),
-    Status415(crate::models::CreateConfirmOrderDetailsResponse),
-    Status429(crate::models::CreateConfirmOrderDetailsResponse),
-    Status500(crate::models::CreateConfirmOrderDetailsResponse),
-    Status503(crate::models::CreateConfirmOrderDetailsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_confirm_service_details`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateConfirmServiceDetailsError {
-    Status400(crate::models::CreateConfirmServiceDetailsResponse),
-    Status403(crate::models::CreateConfirmServiceDetailsResponse),
-    Status404(crate::models::CreateConfirmServiceDetailsResponse),
-    Status413(crate::models::CreateConfirmServiceDetailsResponse),
-    Status415(crate::models::CreateConfirmServiceDetailsResponse),
-    Status429(crate::models::CreateConfirmServiceDetailsResponse),
-    Status500(crate::models::CreateConfirmServiceDetailsResponse),
-    Status503(crate::models::CreateConfirmServiceDetailsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_digital_access_key`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateDigitalAccessKeyError {
-    Status400(crate::models::CreateDigitalAccessKeyResponse),
-    Status403(crate::models::CreateDigitalAccessKeyResponse),
-    Status404(crate::models::CreateDigitalAccessKeyResponse),
-    Status413(crate::models::CreateDigitalAccessKeyResponse),
-    Status415(crate::models::CreateDigitalAccessKeyResponse),
-    Status429(crate::models::CreateDigitalAccessKeyResponse),
-    Status500(crate::models::CreateDigitalAccessKeyResponse),
-    Status503(crate::models::CreateDigitalAccessKeyResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_legal_disclosure`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateLegalDisclosureError {
-    Status400(crate::models::CreateLegalDisclosureResponse),
-    Status403(crate::models::CreateLegalDisclosureResponse),
-    Status404(crate::models::CreateLegalDisclosureResponse),
-    Status413(crate::models::CreateLegalDisclosureResponse),
-    Status415(crate::models::CreateLegalDisclosureResponse),
-    Status429(crate::models::CreateLegalDisclosureResponse),
-    Status500(crate::models::CreateLegalDisclosureResponse),
-    Status503(crate::models::CreateLegalDisclosureResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_negative_feedback_removal`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateNegativeFeedbackRemovalError {
-    Status400(crate::models::CreateNegativeFeedbackRemovalResponse),
-    Status403(crate::models::CreateNegativeFeedbackRemovalResponse),
-    Status404(crate::models::CreateNegativeFeedbackRemovalResponse),
-    Status413(crate::models::CreateNegativeFeedbackRemovalResponse),
-    Status415(crate::models::CreateNegativeFeedbackRemovalResponse),
-    Status429(crate::models::CreateNegativeFeedbackRemovalResponse),
-    Status500(crate::models::CreateNegativeFeedbackRemovalResponse),
-    Status503(crate::models::CreateNegativeFeedbackRemovalResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_unexpected_problem`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateUnexpectedProblemError {
-    Status400(crate::models::CreateUnexpectedProblemResponse),
-    Status403(crate::models::CreateUnexpectedProblemResponse),
-    Status404(crate::models::CreateUnexpectedProblemResponse),
-    Status413(crate::models::CreateUnexpectedProblemResponse),
-    Status415(crate::models::CreateUnexpectedProblemResponse),
-    Status429(crate::models::CreateUnexpectedProblemResponse),
-    Status500(crate::models::CreateUnexpectedProblemResponse),
-    Status503(crate::models::CreateUnexpectedProblemResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_warranty`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateWarrantyError {
-    Status400(crate::models::CreateWarrantyResponse),
-    Status403(crate::models::CreateWarrantyResponse),
-    Status404(crate::models::CreateWarrantyResponse),
-    Status413(crate::models::CreateWarrantyResponse),
-    Status415(crate::models::CreateWarrantyResponse),
-    Status429(crate::models::CreateWarrantyResponse),
-    Status500(crate::models::CreateWarrantyResponse),
-    Status503(crate::models::CreateWarrantyResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_attributes`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetAttributesError {
-    Status400(crate::models::GetAttributesResponse),
-    Status403(crate::models::GetAttributesResponse),
-    Status404(crate::models::GetAttributesResponse),
-    Status413(crate::models::GetAttributesResponse),
-    Status415(crate::models::GetAttributesResponse),
-    Status429(crate::models::GetAttributesResponse),
-    Status500(crate::models::GetAttributesResponse),
-    Status503(crate::models::GetAttributesResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_messaging_actions_for_order`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetMessagingActionsForOrderError {
-    Status400(crate::models::GetMessagingActionsForOrderResponse),
-    Status403(crate::models::GetMessagingActionsForOrderResponse),
-    Status404(crate::models::GetMessagingActionsForOrderResponse),
-    Status413(crate::models::GetMessagingActionsForOrderResponse),
-    Status415(crate::models::GetMessagingActionsForOrderResponse),
-    Status429(crate::models::GetMessagingActionsForOrderResponse),
-    Status500(crate::models::GetMessagingActionsForOrderResponse),
-    Status503(crate::models::GetMessagingActionsForOrderResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`send_invoice`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SendInvoiceError {
-    Status400(crate::models::InvoiceResponse),
-    Status403(crate::models::InvoiceResponse),
-    Status404(crate::models::InvoiceResponse),
-    Status413(crate::models::InvoiceResponse),
-    Status415(crate::models::InvoiceResponse),
-    Status429(crate::models::InvoiceResponse),
-    Status500(crate::models::InvoiceResponse),
-    Status503(crate::models::InvoiceResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Sends a message asking a buyer to provide or verify customization details such as name spelling, images, initials, etc.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn confirm_customization_details(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateConfirmCustomizationDetailsRequest) -> Result<crate::models::CreateConfirmCustomizationDetailsResponse, Error<ConfirmCustomizationDetailsError>> {
+pub async fn confirm_customization_details(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateConfirmCustomizationDetailsRequest) -> Result<crate::models::CreateConfirmCustomizationDetailsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -230,16 +33,21 @@ pub async fn confirm_customization_details(configuration: &configuration::Config
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -250,8 +58,7 @@ pub async fn confirm_customization_details(configuration: &configuration::Config
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -270,14 +77,14 @@ pub async fn confirm_customization_details(configuration: &configuration::Config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ConfirmCustomizationDetailsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_amazon_motors(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateAmazonMotorsRequest) -> Result<crate::models::CreateAmazonMotorsResponse, Error<CreateAmazonMotorsError>> {
+pub async fn create_amazon_motors(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateAmazonMotorsRequest) -> Result<crate::models::CreateAmazonMotorsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -294,16 +101,21 @@ pub async fn create_amazon_motors(configuration: &configuration::Configuration, 
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -314,8 +126,7 @@ pub async fn create_amazon_motors(configuration: &configuration::Configuration, 
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -334,14 +145,14 @@ pub async fn create_amazon_motors(configuration: &configuration::Configuration, 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateAmazonMotorsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_confirm_delivery_details(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateConfirmDeliveryDetailsRequest) -> Result<crate::models::CreateConfirmDeliveryDetailsResponse, Error<CreateConfirmDeliveryDetailsError>> {
+pub async fn create_confirm_delivery_details(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateConfirmDeliveryDetailsRequest) -> Result<crate::models::CreateConfirmDeliveryDetailsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -358,16 +169,21 @@ pub async fn create_confirm_delivery_details(configuration: &configuration::Conf
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -378,8 +194,7 @@ pub async fn create_confirm_delivery_details(configuration: &configuration::Conf
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -398,14 +213,14 @@ pub async fn create_confirm_delivery_details(configuration: &configuration::Conf
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateConfirmDeliveryDetailsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a message to ask a buyer an order-related question prior to shipping their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_confirm_order_details(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateConfirmOrderDetailsRequest) -> Result<crate::models::CreateConfirmOrderDetailsResponse, Error<CreateConfirmOrderDetailsError>> {
+pub async fn create_confirm_order_details(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateConfirmOrderDetailsRequest) -> Result<crate::models::CreateConfirmOrderDetailsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -422,16 +237,21 @@ pub async fn create_confirm_order_details(configuration: &configuration::Configu
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -442,8 +262,7 @@ pub async fn create_confirm_order_details(configuration: &configuration::Configu
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -462,14 +281,14 @@ pub async fn create_confirm_order_details(configuration: &configuration::Configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateConfirmOrderDetailsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_confirm_service_details(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateConfirmServiceDetailsRequest) -> Result<crate::models::CreateConfirmServiceDetailsResponse, Error<CreateConfirmServiceDetailsError>> {
+pub async fn create_confirm_service_details(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateConfirmServiceDetailsRequest) -> Result<crate::models::CreateConfirmServiceDetailsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -486,16 +305,21 @@ pub async fn create_confirm_service_details(configuration: &configuration::Confi
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -506,8 +330,7 @@ pub async fn create_confirm_service_details(configuration: &configuration::Confi
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -526,14 +349,14 @@ pub async fn create_confirm_service_details(configuration: &configuration::Confi
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateConfirmServiceDetailsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a message to a buyer to share a digital access key needed to utilize digital content in their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_digital_access_key(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateDigitalAccessKeyRequest) -> Result<crate::models::CreateDigitalAccessKeyResponse, Error<CreateDigitalAccessKeyError>> {
+pub async fn create_digital_access_key(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateDigitalAccessKeyRequest) -> Result<crate::models::CreateDigitalAccessKeyResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -550,16 +373,21 @@ pub async fn create_digital_access_key(configuration: &configuration::Configurat
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -570,8 +398,7 @@ pub async fn create_digital_access_key(configuration: &configuration::Configurat
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -590,14 +417,14 @@ pub async fn create_digital_access_key(configuration: &configuration::Configurat
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateDigitalAccessKeyError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_legal_disclosure(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateLegalDisclosureRequest) -> Result<crate::models::CreateLegalDisclosureResponse, Error<CreateLegalDisclosureError>> {
+pub async fn create_legal_disclosure(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateLegalDisclosureRequest) -> Result<crate::models::CreateLegalDisclosureResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -614,16 +441,21 @@ pub async fn create_legal_disclosure(configuration: &configuration::Configuratio
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -634,8 +466,7 @@ pub async fn create_legal_disclosure(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -654,14 +485,14 @@ pub async fn create_legal_disclosure(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateLegalDisclosureError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer's problem.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_negative_feedback_removal(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::CreateNegativeFeedbackRemovalResponse, Error<CreateNegativeFeedbackRemovalError>> {
+pub async fn create_negative_feedback_removal(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::CreateNegativeFeedbackRemovalResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -678,16 +509,21 @@ pub async fn create_negative_feedback_removal(configuration: &configuration::Con
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -698,8 +534,7 @@ pub async fn create_negative_feedback_removal(configuration: &configuration::Con
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -717,14 +552,14 @@ pub async fn create_negative_feedback_removal(configuration: &configuration::Con
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateNegativeFeedbackRemovalError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_unexpected_problem(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateUnexpectedProblemRequest) -> Result<crate::models::CreateUnexpectedProblemResponse, Error<CreateUnexpectedProblemError>> {
+pub async fn create_unexpected_problem(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateUnexpectedProblemRequest) -> Result<crate::models::CreateUnexpectedProblemResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -741,16 +576,21 @@ pub async fn create_unexpected_problem(configuration: &configuration::Configurat
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -761,8 +601,7 @@ pub async fn create_unexpected_problem(configuration: &configuration::Configurat
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -781,14 +620,14 @@ pub async fn create_unexpected_problem(configuration: &configuration::Configurat
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateUnexpectedProblemError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a message to a buyer to provide details about warranty information on a purchase in their order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_warranty(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateWarrantyRequest) -> Result<crate::models::CreateWarrantyResponse, Error<CreateWarrantyError>> {
+pub async fn create_warranty(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::CreateWarrantyRequest) -> Result<crate::models::CreateWarrantyResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -805,16 +644,21 @@ pub async fn create_warranty(configuration: &configuration::Configuration, amazo
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -825,8 +669,7 @@ pub async fn create_warranty(configuration: &configuration::Configuration, amazo
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -845,14 +688,14 @@ pub async fn create_warranty(configuration: &configuration::Configuration, amazo
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateWarrantyError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a response containing attributes related to an order. This includes buyer preferences.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |
-pub async fn get_attributes(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::GetAttributesResponse, Error<GetAttributesError>> {
+pub async fn get_attributes(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::GetAttributesResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -869,16 +712,21 @@ pub async fn get_attributes(configuration: &configuration::Configuration, amazon
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -889,8 +737,7 @@ pub async fn get_attributes(configuration: &configuration::Configuration, amazon
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -908,14 +755,14 @@ pub async fn get_attributes(configuration: &configuration::Configuration, amazon
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetAttributesError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_messaging_actions_for_order(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::GetMessagingActionsForOrderResponse, Error<GetMessagingActionsForOrderError>> {
+pub async fn get_messaging_actions_for_order(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>) -> Result<crate::models::GetMessagingActionsForOrderResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -932,16 +779,21 @@ pub async fn get_messaging_actions_for_order(configuration: &configuration::Conf
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -952,8 +804,7 @@ pub async fn get_messaging_actions_for_order(configuration: &configuration::Conf
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -971,14 +822,14 @@ pub async fn get_messaging_actions_for_order(configuration: &configuration::Conf
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetMessagingActionsForOrderError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends a message providing the buyer an invoice
-pub async fn send_invoice(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::InvoiceRequest) -> Result<crate::models::InvoiceResponse, Error<SendInvoiceError>> {
+pub async fn send_invoice(configuration: &configuration::Configuration, amazon_order_id: &str, marketplace_ids: Vec<String>, body: crate::models::InvoiceRequest) -> Result<crate::models::InvoiceResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -995,16 +846,21 @@ pub async fn send_invoice(configuration: &configuration::Configuration, amazon_o
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1015,8 +871,7 @@ pub async fn send_invoice(configuration: &configuration::Configuration, amazon_o
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1035,8 +890,8 @@ pub async fn send_invoice(configuration: &configuration::Configuration, amazon_o
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SendInvoiceError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

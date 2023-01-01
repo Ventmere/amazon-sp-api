@@ -14,9 +14,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InvalidSku {
     /// The seller SKU of the item.
-    #[serde(rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
-    #[serde(rename = "ErrorReason", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ErrorReason", skip_serializing_if = "Option::is_none")]
     pub error_reason: Option<crate::models::ErrorReason>,
 }
 

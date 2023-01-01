@@ -14,15 +14,15 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardFourImageTextModule {
-    #[serde(rename = "headline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headline", skip_serializing_if = "Option::is_none")]
     pub headline: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "block1", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "block1", skip_serializing_if = "Option::is_none")]
     pub block1: Option<Box<crate::models::StandardImageTextBlock>>,
-    #[serde(rename = "block2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "block2", skip_serializing_if = "Option::is_none")]
     pub block2: Option<Box<crate::models::StandardImageTextBlock>>,
-    #[serde(rename = "block3", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "block3", skip_serializing_if = "Option::is_none")]
     pub block3: Option<Box<crate::models::StandardImageTextBlock>>,
-    #[serde(rename = "block4", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "block4", skip_serializing_if = "Option::is_none")]
     pub block4: Option<Box<crate::models::StandardImageTextBlock>>,
 }
 

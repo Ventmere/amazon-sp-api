@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ImageCropSpecification {
-    #[serde(rename = "size")]
+    #[serde(default, rename = "size")]
     pub size: Box<crate::models::ImageDimensions>,
-    #[serde(rename = "offset", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "offset", skip_serializing_if = "Option::is_none")]
     pub offset: Option<Box<crate::models::ImageOffsets>>,
 }
 

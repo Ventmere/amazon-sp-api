@@ -15,11 +15,11 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct BoxContentsFeeDetails {
     /// The item quantity.
-    #[serde(rename = "TotalUnits", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalUnits", skip_serializing_if = "Option::is_none")]
     pub total_units: Option<i32>,
-    #[serde(rename = "FeePerUnit", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeePerUnit", skip_serializing_if = "Option::is_none")]
     pub fee_per_unit: Option<Box<crate::models::Amount>>,
-    #[serde(rename = "TotalFee", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalFee", skip_serializing_if = "Option::is_none")]
     pub total_fee: Option<Box<crate::models::Amount>>,
 }
 

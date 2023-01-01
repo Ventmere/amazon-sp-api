@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CompetitivePricingType {
     /// A list of competitive pricing information.
-    #[serde(rename = "CompetitivePrices")]
+    #[serde(default, rename = "CompetitivePrices")]
     pub competitive_prices: Vec<crate::models::CompetitivePriceType>,
     /// The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
-    #[serde(rename = "NumberOfOfferListings")]
+    #[serde(default, rename = "NumberOfOfferListings")]
     pub number_of_offer_listings: Vec<crate::models::OfferListingCountType>,
-    #[serde(rename = "TradeInValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TradeInValue", skip_serializing_if = "Option::is_none")]
     pub trade_in_value: Option<Box<crate::models::MoneyType>>,
 }
 

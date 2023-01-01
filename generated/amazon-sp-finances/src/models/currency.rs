@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Currency {
     /// The three-digit currency code in ISO 4217 format.
-    #[serde(rename = "CurrencyCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CurrencyCode", skip_serializing_if = "Option::is_none")]
     pub currency_code: Option<String>,
-    #[serde(rename = "CurrencyAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CurrencyAmount", skip_serializing_if = "Option::is_none")]
     pub currency_amount: Option<f32>,
 }
 

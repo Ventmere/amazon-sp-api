@@ -14,20 +14,20 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ImportDetails {
     /// This is used for import purchase orders only. If the recipient requests, this field will contain the shipment method of payment.
-    #[serde(rename = "methodOfPayment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "methodOfPayment", skip_serializing_if = "Option::is_none")]
     pub method_of_payment: Option<MethodOfPayment>,
     /// The container's seal number.
-    #[serde(rename = "sealNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sealNumber", skip_serializing_if = "Option::is_none")]
     pub seal_number: Option<String>,
-    #[serde(rename = "route", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "route", skip_serializing_if = "Option::is_none")]
     pub route: Option<Box<crate::models::Route>>,
     /// Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if shipment has multiple containers.
-    #[serde(rename = "importContainers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "importContainers", skip_serializing_if = "Option::is_none")]
     pub import_containers: Option<String>,
-    #[serde(rename = "billableWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "billableWeight", skip_serializing_if = "Option::is_none")]
     pub billable_weight: Option<Box<crate::models::Weight>>,
     /// Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
-    #[serde(rename = "estimatedShipByDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedShipByDate", skip_serializing_if = "Option::is_none")]
     pub estimated_ship_by_date: Option<String>,
 }
 

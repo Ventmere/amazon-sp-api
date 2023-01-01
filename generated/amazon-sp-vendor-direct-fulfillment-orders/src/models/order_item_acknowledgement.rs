@@ -14,15 +14,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItemAcknowledgement {
     /// Line item sequence number for the item.
-    #[serde(rename = "itemSequenceNumber")]
+    #[serde(default, rename = "itemSequenceNumber")]
     pub item_sequence_number: String,
     /// Buyer's standard identification number (ASIN) of an item.
-    #[serde(rename = "buyerProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "buyerProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub buyer_product_identifier: Option<String>,
     /// The vendor selected product identification of the item. Should be the same as was provided in the purchase order.
-    #[serde(rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "vendorProductIdentifier", skip_serializing_if = "Option::is_none")]
     pub vendor_product_identifier: Option<String>,
-    #[serde(rename = "acknowledgedQuantity")]
+    #[serde(default, rename = "acknowledgedQuantity")]
     pub acknowledged_quantity: Box<crate::models::ItemQuantity>,
 }
 

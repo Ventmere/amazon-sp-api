@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PurchaseLabelsResult {
     /// The unique shipment identifier.
-    #[serde(rename = "shipmentId")]
+    #[serde(default, rename = "shipmentId")]
     pub shipment_id: String,
     /// Client reference id.
-    #[serde(rename = "clientReferenceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "clientReferenceId", skip_serializing_if = "Option::is_none")]
     pub client_reference_id: Option<String>,
-    #[serde(rename = "acceptedRate")]
+    #[serde(default, rename = "acceptedRate")]
     pub accepted_rate: Box<crate::models::AcceptedRate>,
     /// A list of label results
-    #[serde(rename = "labelResults")]
+    #[serde(default, rename = "labelResults")]
     pub label_results: Vec<crate::models::LabelResult>,
 }
 

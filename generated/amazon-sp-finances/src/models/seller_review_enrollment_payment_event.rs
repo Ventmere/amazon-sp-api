@@ -14,19 +14,19 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SellerReviewEnrollmentPaymentEvent {
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// An enrollment identifier.
-    #[serde(rename = "EnrollmentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "EnrollmentId", skip_serializing_if = "Option::is_none")]
     pub enrollment_id: Option<String>,
     /// The Amazon Standard Identification Number (ASIN) of the item that was enrolled in the Early Reviewer Program.
-    #[serde(rename = "ParentASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ParentASIN", skip_serializing_if = "Option::is_none")]
     pub parent_asin: Option<String>,
-    #[serde(rename = "FeeComponent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeeComponent", skip_serializing_if = "Option::is_none")]
     pub fee_component: Option<Box<crate::models::FeeComponent>>,
-    #[serde(rename = "ChargeComponent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ChargeComponent", skip_serializing_if = "Option::is_none")]
     pub charge_component: Option<Box<crate::models::ChargeComponent>>,
-    #[serde(rename = "TotalAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalAmount", skip_serializing_if = "Option::is_none")]
     pub total_amount: Option<Box<crate::models::Currency>>,
 }
 

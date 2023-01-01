@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListingsItemSubmissionResponse {
     /// A selling partner provided identifier for an Amazon listing.
-    #[serde(rename = "sku")]
+    #[serde(default, rename = "sku")]
     pub sku: String,
     /// The status of the listings item submission.
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: Status,
     /// The unique identifier of the listings item submission.
-    #[serde(rename = "submissionId")]
+    #[serde(default, rename = "submissionId")]
     pub submission_id: String,
     /// Listings item issues related to the listings item submission.
-    #[serde(rename = "issues", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "issues", skip_serializing_if = "Option::is_none")]
     pub issues: Option<Vec<crate::models::Issue>>,
 }
 

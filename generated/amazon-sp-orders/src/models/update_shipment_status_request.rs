@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdateShipmentStatusRequest {
     /// The unobfuscated marketplace identifier.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
-    #[serde(rename = "shipmentStatus")]
+    #[serde(default, rename = "shipmentStatus")]
     pub shipment_status: crate::models::ShipmentStatus,
     /// For partial shipment status updates, the list of order items and quantities to be updated.
-    #[serde(rename = "orderItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderItems", skip_serializing_if = "Option::is_none")]
     pub order_items: Option<Vec<crate::models::OrderItemsInner>>,
 }
 

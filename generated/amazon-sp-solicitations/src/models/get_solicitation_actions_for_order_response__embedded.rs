@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetSolicitationActionsForOrderResponseEmbedded {
-    #[serde(rename = "actions")]
+    #[serde(default, rename = "actions")]
     pub actions: Vec<crate::models::GetSolicitationActionResponse>,
 }
 

@@ -14,11 +14,11 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardImageTextBlock {
-    #[serde(rename = "image", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "image", skip_serializing_if = "Option::is_none")]
     pub image: Option<Box<crate::models::ImageComponent>>,
-    #[serde(rename = "headline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headline", skip_serializing_if = "Option::is_none")]
     pub headline: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "body", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "body", skip_serializing_if = "Option::is_none")]
     pub body: Option<Box<crate::models::ParagraphComponent>>,
 }
 

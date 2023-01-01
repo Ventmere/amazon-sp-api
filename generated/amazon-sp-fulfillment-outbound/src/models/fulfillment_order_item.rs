@@ -15,41 +15,41 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentOrderItem {
     /// The seller SKU of the item.
-    #[serde(rename = "sellerSku")]
+    #[serde(default, rename = "sellerSku")]
     pub seller_sku: String,
     /// A fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
     /// The item quantity.
-    #[serde(rename = "quantity")]
+    #[serde(default, rename = "quantity")]
     pub quantity: i32,
     /// A message to the gift recipient, if applicable.
-    #[serde(rename = "giftMessage", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "giftMessage", skip_serializing_if = "Option::is_none")]
     pub gift_message: Option<String>,
     /// Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
-    #[serde(rename = "displayableComment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "displayableComment", skip_serializing_if = "Option::is_none")]
     pub displayable_comment: Option<String>,
     /// Amazon's fulfillment network SKU of the item.
-    #[serde(rename = "fulfillmentNetworkSku", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentNetworkSku", skip_serializing_if = "Option::is_none")]
     pub fulfillment_network_sku: Option<String>,
     /// Indicates whether the item is sellable or unsellable.
-    #[serde(rename = "orderItemDisposition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderItemDisposition", skip_serializing_if = "Option::is_none")]
     pub order_item_disposition: Option<String>,
     /// The item quantity.
-    #[serde(rename = "cancelledQuantity")]
+    #[serde(default, rename = "cancelledQuantity")]
     pub cancelled_quantity: i32,
     /// The item quantity.
-    #[serde(rename = "unfulfillableQuantity")]
+    #[serde(default, rename = "unfulfillableQuantity")]
     pub unfulfillable_quantity: i32,
-    #[serde(rename = "estimatedShipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedShipDate", skip_serializing_if = "Option::is_none")]
     pub estimated_ship_date: Option<String>,
-    #[serde(rename = "estimatedArrivalDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedArrivalDate", skip_serializing_if = "Option::is_none")]
     pub estimated_arrival_date: Option<String>,
-    #[serde(rename = "perUnitPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "perUnitPrice", skip_serializing_if = "Option::is_none")]
     pub per_unit_price: Option<Box<crate::models::Money>>,
-    #[serde(rename = "perUnitTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "perUnitTax", skip_serializing_if = "Option::is_none")]
     pub per_unit_tax: Option<Box<crate::models::Money>>,
-    #[serde(rename = "perUnitDeclaredValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "perUnitDeclaredValue", skip_serializing_if = "Option::is_none")]
     pub per_unit_declared_value: Option<Box<crate::models::Money>>,
 }
 

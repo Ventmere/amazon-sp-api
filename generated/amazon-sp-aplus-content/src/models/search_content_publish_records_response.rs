@@ -14,13 +14,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SearchContentPublishRecordsResponse {
     /// A set of messages to the user, such as warnings or comments.
-    #[serde(rename = "warnings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "warnings", skip_serializing_if = "Option::is_none")]
     pub warnings: Option<Vec<crate::models::Error>>,
     /// A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
-    #[serde(rename = "nextPageToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "nextPageToken", skip_serializing_if = "Option::is_none")]
     pub next_page_token: Option<String>,
     /// A list of A+ Content publishing records.
-    #[serde(rename = "publishRecordList")]
+    #[serde(default, rename = "publishRecordList")]
     pub publish_record_list: Vec<crate::models::PublishRecord>,
 }
 

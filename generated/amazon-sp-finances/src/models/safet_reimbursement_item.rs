@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SafetReimbursementItem {
     /// A list of charge information on the seller's account.
-    #[serde(rename = "itemChargeList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "itemChargeList", skip_serializing_if = "Option::is_none")]
     pub item_charge_list: Option<Vec<crate::models::ChargeComponent>>,
     /// The description of the item as shown on the product detail page on the retail website.
-    #[serde(rename = "productDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "productDescription", skip_serializing_if = "Option::is_none")]
     pub product_description: Option<String>,
     /// The number of units of the item being reimbursed.
-    #[serde(rename = "quantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantity", skip_serializing_if = "Option::is_none")]
     pub quantity: Option<String>,
 }
 

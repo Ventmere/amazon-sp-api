@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InvalidReturnItem {
     /// An identifier assigned by the seller to the return item.
-    #[serde(rename = "sellerReturnItemId")]
+    #[serde(default, rename = "sellerReturnItemId")]
     pub seller_return_item_id: String,
     /// The identifier assigned to the item by the seller when the fulfillment order was created.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
-    #[serde(rename = "invalidItemReason")]
+    #[serde(default, rename = "invalidItemReason")]
     pub invalid_item_reason: Box<crate::models::InvalidItemReason>,
 }
 

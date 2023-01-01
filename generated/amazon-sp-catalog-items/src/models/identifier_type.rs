@@ -13,9 +13,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct IdentifierType {
-    #[serde(rename = "MarketplaceASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceASIN", skip_serializing_if = "Option::is_none")]
     pub marketplace_asin: Option<Box<crate::models::AsinIdentifier>>,
-    #[serde(rename = "SKUIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SKUIdentifier", skip_serializing_if = "Option::is_none")]
     pub sku_identifier: Option<Box<crate::models::SellerSkuIdentifier>>,
 }
 

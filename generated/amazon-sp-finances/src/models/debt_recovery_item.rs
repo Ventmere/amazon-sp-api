@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DebtRecoveryItem {
-    #[serde(rename = "RecoveryAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RecoveryAmount", skip_serializing_if = "Option::is_none")]
     pub recovery_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "OriginalAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OriginalAmount", skip_serializing_if = "Option::is_none")]
     pub original_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "GroupBeginDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GroupBeginDate", skip_serializing_if = "Option::is_none")]
     pub group_begin_date: Option<String>,
-    #[serde(rename = "GroupEndDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GroupEndDate", skip_serializing_if = "Option::is_none")]
     pub group_end_date: Option<String>,
 }
 

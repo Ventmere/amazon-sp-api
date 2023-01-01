@@ -14,69 +14,69 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RelationshipType {
-    #[serde(rename = "Identifiers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Identifiers", skip_serializing_if = "Option::is_none")]
     pub identifiers: Option<Box<crate::models::IdentifierType>>,
     /// The color variation of the item.
-    #[serde(rename = "Color", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Color", skip_serializing_if = "Option::is_none")]
     pub color: Option<String>,
     /// The edition variation of the item.
-    #[serde(rename = "Edition", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Edition", skip_serializing_if = "Option::is_none")]
     pub edition: Option<String>,
     /// The flavor variation of the item.
-    #[serde(rename = "Flavor", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Flavor", skip_serializing_if = "Option::is_none")]
     pub flavor: Option<String>,
     /// The gem type variations of the item.
-    #[serde(rename = "GemType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GemType", skip_serializing_if = "Option::is_none")]
     pub gem_type: Option<Vec<String>>,
     /// The golf club flex variation of an item.
-    #[serde(rename = "GolfClubFlex", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GolfClubFlex", skip_serializing_if = "Option::is_none")]
     pub golf_club_flex: Option<String>,
     /// The hand orientation variation of an item.
-    #[serde(rename = "HandOrientation", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HandOrientation", skip_serializing_if = "Option::is_none")]
     pub hand_orientation: Option<String>,
     /// The hardware platform variation of an item.
-    #[serde(rename = "HardwarePlatform", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HardwarePlatform", skip_serializing_if = "Option::is_none")]
     pub hardware_platform: Option<String>,
     /// The material type variations of an item.
-    #[serde(rename = "MaterialType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MaterialType", skip_serializing_if = "Option::is_none")]
     pub material_type: Option<Vec<String>>,
     /// The metal type variation of an item.
-    #[serde(rename = "MetalType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MetalType", skip_serializing_if = "Option::is_none")]
     pub metal_type: Option<String>,
     /// The model variation of an item.
-    #[serde(rename = "Model", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Model", skip_serializing_if = "Option::is_none")]
     pub model: Option<String>,
     /// The operating system variations of an item.
-    #[serde(rename = "OperatingSystem", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OperatingSystem", skip_serializing_if = "Option::is_none")]
     pub operating_system: Option<Vec<String>>,
     /// The product type subcategory variation of an item.
-    #[serde(rename = "ProductTypeSubcategory", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductTypeSubcategory", skip_serializing_if = "Option::is_none")]
     pub product_type_subcategory: Option<String>,
     /// The ring size variation of an item.
-    #[serde(rename = "RingSize", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RingSize", skip_serializing_if = "Option::is_none")]
     pub ring_size: Option<String>,
     /// The shaft material variation of an item.
-    #[serde(rename = "ShaftMaterial", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShaftMaterial", skip_serializing_if = "Option::is_none")]
     pub shaft_material: Option<String>,
     /// The scent variation of an item.
-    #[serde(rename = "Scent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Scent", skip_serializing_if = "Option::is_none")]
     pub scent: Option<String>,
     /// The size variation of an item.
-    #[serde(rename = "Size", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Size", skip_serializing_if = "Option::is_none")]
     pub size: Option<String>,
     /// The size per pearl variation of an item.
-    #[serde(rename = "SizePerPearl", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SizePerPearl", skip_serializing_if = "Option::is_none")]
     pub size_per_pearl: Option<String>,
-    #[serde(rename = "GolfClubLoft", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "GolfClubLoft", skip_serializing_if = "Option::is_none")]
     pub golf_club_loft: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "TotalDiamondWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalDiamondWeight", skip_serializing_if = "Option::is_none")]
     pub total_diamond_weight: Option<Box<crate::models::DecimalWithUnits>>,
-    #[serde(rename = "TotalGemWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalGemWeight", skip_serializing_if = "Option::is_none")]
     pub total_gem_weight: Option<Box<crate::models::DecimalWithUnits>>,
     /// The package quantity variation of an item.
-    #[serde(rename = "PackageQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PackageQuantity", skip_serializing_if = "Option::is_none")]
     pub package_quantity: Option<i32>,
-    #[serde(rename = "ItemDimensions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemDimensions", skip_serializing_if = "Option::is_none")]
     pub item_dimensions: Option<Box<crate::models::DimensionType>>,
 }
 

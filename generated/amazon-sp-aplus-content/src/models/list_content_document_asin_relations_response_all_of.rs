@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListContentDocumentAsinRelationsResponseAllOf {
     /// The set of ASIN metadata.
-    #[serde(rename = "asinMetadataSet")]
+    #[serde(default, rename = "asinMetadataSet")]
     pub asin_metadata_set: Vec<crate::models::AsinMetadata>,
 }
 

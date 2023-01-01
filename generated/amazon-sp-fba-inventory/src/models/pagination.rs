@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Pagination {
     /// A generated string used to retrieve the next page of the result. If nextToken is returned, pass the value of nextToken to the next request. If nextToken is not returned, there are no more items to return.
-    #[serde(rename = "nextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "nextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
 }
 

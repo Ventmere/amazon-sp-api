@@ -49,6 +49,7 @@ amazon-sp-api-shared = { path = "../amazon-sp-api-shared" }
 aws-sig-auth = "0.46.0"
 http = "0.2.8"
 thiserror = "1.0.31"
+reqwest = { version = "^0.11", features = ["json", "multipart"] }
 
 amazon-sp-aplus-content = { version = "0.1.0", optional = true }
 amazon-sp-authorization = { version = "0.1.0", optional = true }

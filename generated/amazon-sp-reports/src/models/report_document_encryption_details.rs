@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ReportDocumentEncryptionDetails {
     /// The encryption standard required to decrypt the document contents.
-    #[serde(rename = "standard")]
+    #[serde(default, rename = "standard")]
     pub standard: Standard,
     /// The vector to decrypt the document contents using Cipher Block Chaining (CBC).
-    #[serde(rename = "initializationVector")]
+    #[serde(default, rename = "initializationVector")]
     pub initialization_vector: String,
     /// The encryption key used to decrypt the document contents.
-    #[serde(rename = "key")]
+    #[serde(default, rename = "key")]
     pub key: String,
 }
 

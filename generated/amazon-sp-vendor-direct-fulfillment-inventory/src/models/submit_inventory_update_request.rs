@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SubmitInventoryUpdateRequest {
-    #[serde(rename = "inventory", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "inventory", skip_serializing_if = "Option::is_none")]
     pub inventory: Option<Box<crate::models::InventoryUpdate>>,
 }
 

@@ -14,13 +14,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Categories {
     /// The identifier for the product category (or browse node).
-    #[serde(rename = "ProductCategoryId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductCategoryId", skip_serializing_if = "Option::is_none")]
     pub product_category_id: Option<String>,
     /// The name of the product category (or browse node).
-    #[serde(rename = "ProductCategoryName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductCategoryName", skip_serializing_if = "Option::is_none")]
     pub product_category_name: Option<String>,
     /// The parent product category.
-    #[serde(rename = "parent", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "parent", skip_serializing_if = "Option::is_none")]
     pub parent: Option<serde_json::Value>,
 }
 

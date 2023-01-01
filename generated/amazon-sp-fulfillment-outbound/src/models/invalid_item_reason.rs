@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InvalidItemReason {
-    #[serde(rename = "invalidItemReasonCode")]
+    #[serde(default, rename = "invalidItemReasonCode")]
     pub invalid_item_reason_code: crate::models::InvalidItemReasonCode,
     /// A human readable description of the invalid item reason code.
-    #[serde(rename = "description")]
+    #[serde(default, rename = "description")]
     pub description: String,
 }
 

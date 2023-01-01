@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ChargeInstrument {
     /// A short description of the charge instrument.
-    #[serde(rename = "Description", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
     /// The account tail (trailing digits) of the charge instrument.
-    #[serde(rename = "Tail", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Tail", skip_serializing_if = "Option::is_none")]
     pub tail: Option<String>,
-    #[serde(rename = "Amount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Amount", skip_serializing_if = "Option::is_none")]
     pub amount: Option<Box<crate::models::Currency>>,
 }
 

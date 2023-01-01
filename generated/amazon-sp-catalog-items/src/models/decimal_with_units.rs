@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DecimalWithUnits {
     /// The decimal value.
-    #[serde(rename = "value", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "value", skip_serializing_if = "Option::is_none")]
     pub value: Option<f32>,
     /// The unit of the decimal value.
-    #[serde(rename = "Units", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Units", skip_serializing_if = "Option::is_none")]
     pub units: Option<String>,
 }
 

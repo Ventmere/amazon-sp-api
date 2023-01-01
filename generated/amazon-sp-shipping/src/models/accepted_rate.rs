@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AcceptedRate {
-    #[serde(rename = "totalCharge", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "totalCharge", skip_serializing_if = "Option::is_none")]
     pub total_charge: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "billedWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "billedWeight", skip_serializing_if = "Option::is_none")]
     pub billed_weight: Option<Box<crate::models::Weight>>,
-    #[serde(rename = "serviceType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceType", skip_serializing_if = "Option::is_none")]
     pub service_type: Option<crate::models::ServiceType>,
-    #[serde(rename = "promise", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "promise", skip_serializing_if = "Option::is_none")]
     pub promise: Option<Box<crate::models::ShippingPromiseSet>>,
 }
 

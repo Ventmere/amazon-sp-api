@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardSingleSideImageModule {
-    #[serde(rename = "imagePositionType")]
+    #[serde(default, rename = "imagePositionType")]
     pub image_position_type: crate::models::PositionType,
-    #[serde(rename = "block", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "block", skip_serializing_if = "Option::is_none")]
     pub block: Option<Box<crate::models::StandardImageTextBlock>>,
 }
 

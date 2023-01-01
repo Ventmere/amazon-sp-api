@@ -14,18 +14,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItemAcknowledgement {
     /// This indicates the acknowledgement code.
-    #[serde(rename = "acknowledgementCode")]
+    #[serde(default, rename = "acknowledgementCode")]
     pub acknowledgement_code: AcknowledgementCode,
-    #[serde(rename = "acknowledgedQuantity")]
+    #[serde(default, rename = "acknowledgedQuantity")]
     pub acknowledged_quantity: Box<crate::models::ItemQuantity>,
     /// Estimated ship date per line item. Must be in ISO-8601 date/time format.
-    #[serde(rename = "scheduledShipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scheduledShipDate", skip_serializing_if = "Option::is_none")]
     pub scheduled_ship_date: Option<String>,
     /// Estimated delivery date per line item. Must be in ISO-8601 date/time format.
-    #[serde(rename = "scheduledDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "scheduledDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub scheduled_delivery_date: Option<String>,
     /// Indicates the reason for rejection.
-    #[serde(rename = "rejectionReason", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "rejectionReason", skip_serializing_if = "Option::is_none")]
     pub rejection_reason: Option<RejectionReason>,
 }
 

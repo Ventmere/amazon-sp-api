@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RangeCapacity {
-    #[serde(rename = "capacityType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "capacityType", skip_serializing_if = "Option::is_none")]
     pub capacity_type: Option<crate::models::CapacityType>,
     /// Array of capacity slots in range slot format.
-    #[serde(rename = "slots", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "slots", skip_serializing_if = "Option::is_none")]
     pub slots: Option<Vec<crate::models::RangeSlot>>,
 }
 

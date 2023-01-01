@@ -14,13 +14,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateFulfillmentReturnResult {
     /// An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
-    #[serde(rename = "returnItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "returnItems", skip_serializing_if = "Option::is_none")]
     pub return_items: Option<Vec<crate::models::ReturnItem>>,
     /// An array of invalid return item information.
-    #[serde(rename = "invalidReturnItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "invalidReturnItems", skip_serializing_if = "Option::is_none")]
     pub invalid_return_items: Option<Vec<crate::models::InvalidReturnItem>>,
     /// An array of return authorization information.
-    #[serde(rename = "returnAuthorizations", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "returnAuthorizations", skip_serializing_if = "Option::is_none")]
     pub return_authorizations: Option<Vec<crate::models::ReturnAuthorization>>,
 }
 

@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetShipmentsResult {
     /// A list of inbound shipment information.
-    #[serde(rename = "ShipmentData", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentData", skip_serializing_if = "Option::is_none")]
     pub shipment_data: Option<Vec<crate::models::InboundShipmentInfo>>,
     /// When present and not empty, pass this string token in the next request to return the next response page.
-    #[serde(rename = "NextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
 }
 

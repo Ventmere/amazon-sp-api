@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartneredSmallParcelDataOutput {
     /// A list of packages, including shipping information from the Amazon-partnered carrier.
-    #[serde(rename = "PackageList")]
+    #[serde(default, rename = "PackageList")]
     pub package_list: Vec<crate::models::PartneredSmallParcelPackageOutput>,
-    #[serde(rename = "PartneredEstimate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PartneredEstimate", skip_serializing_if = "Option::is_none")]
     pub partnered_estimate: Option<Box<crate::models::PartneredEstimate>>,
 }
 

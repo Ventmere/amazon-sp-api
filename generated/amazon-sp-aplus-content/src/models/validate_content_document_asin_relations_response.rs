@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ValidateContentDocumentAsinRelationsResponse {
     /// A set of messages to the user, such as warnings or comments.
-    #[serde(rename = "warnings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "warnings", skip_serializing_if = "Option::is_none")]
     pub warnings: Option<Vec<crate::models::Error>>,
     /// A list of error responses returned when a request is unsuccessful.
-    #[serde(rename = "errors")]
+    #[serde(default, rename = "errors")]
     pub errors: Vec<crate::models::Error>,
 }
 

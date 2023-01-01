@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemEligibilityPreview {
     /// The ASIN for which eligibility was determined.
-    #[serde(rename = "asin")]
+    #[serde(default, rename = "asin")]
     pub asin: String,
     /// The marketplace for which eligibility was determined.
-    #[serde(rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "marketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// The program for which eligibility was determined.
-    #[serde(rename = "program")]
+    #[serde(default, rename = "program")]
     pub program: Program,
     /// Indicates if the item is eligible for the program.
-    #[serde(rename = "isEligibleForProgram")]
+    #[serde(default, rename = "isEligibleForProgram")]
     pub is_eligible_for_program: bool,
     /// Potential Ineligibility Reason Codes.
-    #[serde(rename = "ineligibilityReasonList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ineligibilityReasonList", skip_serializing_if = "Option::is_none")]
     pub ineligibility_reason_list: Option<Vec<IneligibilityReasonList>>,
 }
 

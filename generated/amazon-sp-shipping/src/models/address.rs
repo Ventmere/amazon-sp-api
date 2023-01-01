@@ -15,37 +15,37 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Address {
     /// The name of the person, business or institution at that address.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
     /// First line of that address.
-    #[serde(rename = "addressLine1")]
+    #[serde(default, rename = "addressLine1")]
     pub address_line1: String,
     /// Additional address information, if required.
-    #[serde(rename = "addressLine2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "addressLine2", skip_serializing_if = "Option::is_none")]
     pub address_line2: Option<String>,
     /// Additional address information, if required.
-    #[serde(rename = "addressLine3", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "addressLine3", skip_serializing_if = "Option::is_none")]
     pub address_line3: Option<String>,
     /// The state or region where the person, business or institution is located.
-    #[serde(rename = "stateOrRegion")]
+    #[serde(default, rename = "stateOrRegion")]
     pub state_or_region: String,
     /// The city where the person, business or institution is located.
-    #[serde(rename = "city")]
+    #[serde(default, rename = "city")]
     pub city: String,
     /// The two digit country code. In ISO 3166-1 alpha-2 format.
-    #[serde(rename = "countryCode")]
+    #[serde(default, rename = "countryCode")]
     pub country_code: String,
     /// The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
-    #[serde(rename = "postalCode")]
+    #[serde(default, rename = "postalCode")]
     pub postal_code: String,
     /// The email address of the contact associated with the address.
-    #[serde(rename = "email", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "email", skip_serializing_if = "Option::is_none")]
     pub email: Option<String>,
     /// The email cc addresses of the contact associated with the address.
-    #[serde(rename = "copyEmails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "copyEmails", skip_serializing_if = "Option::is_none")]
     pub copy_emails: Option<Vec<String>>,
     /// The phone number of the person, business or institution located at that address.
-    #[serde(rename = "phoneNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "phoneNumber", skip_serializing_if = "Option::is_none")]
     pub phone_number: Option<String>,
 }
 

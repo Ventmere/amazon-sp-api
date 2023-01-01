@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetAdditionalSellerInputsResult {
     /// A list of additional inputs.
-    #[serde(rename = "ShipmentLevelFields", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentLevelFields", skip_serializing_if = "Option::is_none")]
     pub shipment_level_fields: Option<Vec<crate::models::AdditionalInputs>>,
     /// A list of item level fields.
-    #[serde(rename = "ItemLevelFieldsList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemLevelFieldsList", skip_serializing_if = "Option::is_none")]
     pub item_level_fields_list: Option<Vec<crate::models::ItemLevelFields>>,
 }
 

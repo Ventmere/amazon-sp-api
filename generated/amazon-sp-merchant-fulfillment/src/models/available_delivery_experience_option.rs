@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AvailableDeliveryExperienceOption {
-    #[serde(rename = "DeliveryExperienceOption")]
+    #[serde(default, rename = "DeliveryExperienceOption")]
     pub delivery_experience_option: crate::models::DeliveryExperienceOption,
-    #[serde(rename = "Charge")]
+    #[serde(default, rename = "Charge")]
     pub charge: Box<crate::models::CurrencyAmount>,
 }
 

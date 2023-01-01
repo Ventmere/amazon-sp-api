@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItemStatusReceivingStatus {
     /// Receive status of the line item.
-    #[serde(rename = "receiveStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "receiveStatus", skip_serializing_if = "Option::is_none")]
     pub receive_status: Option<ReceiveStatus>,
-    #[serde(rename = "receivedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "receivedQuantity", skip_serializing_if = "Option::is_none")]
     pub received_quantity: Option<Box<crate::models::ItemQuantity>>,
     /// The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
-    #[serde(rename = "lastReceiveDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "lastReceiveDate", skip_serializing_if = "Option::is_none")]
     pub last_receive_date: Option<String>,
 }
 

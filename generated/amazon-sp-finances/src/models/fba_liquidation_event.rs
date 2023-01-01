@@ -14,14 +14,14 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FbaLiquidationEvent {
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// The identifier for the original removal order.
-    #[serde(rename = "OriginalRemovalOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OriginalRemovalOrderId", skip_serializing_if = "Option::is_none")]
     pub original_removal_order_id: Option<String>,
-    #[serde(rename = "LiquidationProceedsAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LiquidationProceedsAmount", skip_serializing_if = "Option::is_none")]
     pub liquidation_proceeds_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "LiquidationFeeAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LiquidationFeeAmount", skip_serializing_if = "Option::is_none")]
     pub liquidation_fee_amount: Option<Box<crate::models::Currency>>,
 }
 

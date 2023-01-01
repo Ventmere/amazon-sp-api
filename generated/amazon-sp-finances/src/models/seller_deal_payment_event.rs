@@ -14,25 +14,25 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SellerDealPaymentEvent {
-    #[serde(rename = "postedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "postedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// The unique identifier of the deal.
-    #[serde(rename = "dealId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "dealId", skip_serializing_if = "Option::is_none")]
     pub deal_id: Option<String>,
     /// The internal description of the deal.
-    #[serde(rename = "dealDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "dealDescription", skip_serializing_if = "Option::is_none")]
     pub deal_description: Option<String>,
     /// The type of event: SellerDealComplete.
-    #[serde(rename = "eventType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "eventType", skip_serializing_if = "Option::is_none")]
     pub event_type: Option<String>,
     /// The type of fee: RunLightningDealFee.
-    #[serde(rename = "feeType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "feeType", skip_serializing_if = "Option::is_none")]
     pub fee_type: Option<String>,
-    #[serde(rename = "feeAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "feeAmount", skip_serializing_if = "Option::is_none")]
     pub fee_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "taxAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxAmount", skip_serializing_if = "Option::is_none")]
     pub tax_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "totalAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "totalAmount", skip_serializing_if = "Option::is_none")]
     pub total_amount: Option<Box<crate::models::Currency>>,
 }
 

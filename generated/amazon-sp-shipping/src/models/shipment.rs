@@ -15,21 +15,21 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Shipment {
     /// The unique shipment identifier.
-    #[serde(rename = "shipmentId")]
+    #[serde(default, rename = "shipmentId")]
     pub shipment_id: String,
     /// Client reference id.
-    #[serde(rename = "clientReferenceId")]
+    #[serde(default, rename = "clientReferenceId")]
     pub client_reference_id: String,
-    #[serde(rename = "shipFrom")]
+    #[serde(default, rename = "shipFrom")]
     pub ship_from: Box<crate::models::Address>,
-    #[serde(rename = "shipTo")]
+    #[serde(default, rename = "shipTo")]
     pub ship_to: Box<crate::models::Address>,
-    #[serde(rename = "acceptedRate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "acceptedRate", skip_serializing_if = "Option::is_none")]
     pub accepted_rate: Option<Box<crate::models::AcceptedRate>>,
-    #[serde(rename = "shipper", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipper", skip_serializing_if = "Option::is_none")]
     pub shipper: Option<Box<crate::models::Party>>,
     /// A list of container.
-    #[serde(rename = "containers")]
+    #[serde(default, rename = "containers")]
     pub containers: Vec<crate::models::Container>,
 }
 

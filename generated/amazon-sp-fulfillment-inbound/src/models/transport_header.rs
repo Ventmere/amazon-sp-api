@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TransportHeader {
     /// The Amazon seller identifier.
-    #[serde(rename = "SellerId")]
+    #[serde(default, rename = "SellerId")]
     pub seller_id: String,
     /// A shipment identifier originally returned by the createInboundShipmentPlan operation.
-    #[serde(rename = "ShipmentId")]
+    #[serde(default, rename = "ShipmentId")]
     pub shipment_id: String,
     /// Indicates whether a putTransportDetails request is for a partnered carrier.  Possible values:  * true – Request is for an Amazon-partnered carrier.  * false – Request is for a non-Amazon-partnered carrier.
-    #[serde(rename = "IsPartnered")]
+    #[serde(default, rename = "IsPartnered")]
     pub is_partnered: bool,
-    #[serde(rename = "ShipmentType")]
+    #[serde(default, rename = "ShipmentType")]
     pub shipment_type: crate::models::ShipmentType,
 }
 

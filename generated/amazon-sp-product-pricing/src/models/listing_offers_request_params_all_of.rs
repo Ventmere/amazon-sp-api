@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListingOffersRequestParamsAllOf {
     /// The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
-    #[serde(rename = "SellerSKU")]
+    #[serde(default, rename = "SellerSKU")]
     pub seller_sku: String,
 }
 

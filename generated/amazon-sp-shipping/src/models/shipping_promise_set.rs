@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShippingPromiseSet {
-    #[serde(rename = "deliveryWindow", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "deliveryWindow", skip_serializing_if = "Option::is_none")]
     pub delivery_window: Option<Box<crate::models::TimeRange>>,
-    #[serde(rename = "receiveWindow", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "receiveWindow", skip_serializing_if = "Option::is_none")]
     pub receive_window: Option<Box<crate::models::TimeRange>>,
 }
 

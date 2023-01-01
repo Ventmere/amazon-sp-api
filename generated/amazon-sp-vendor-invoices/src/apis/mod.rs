@@ -1,5 +1,4 @@
 pub use amazon_sp_api_shared::error::SharedError as Error;
-pub use amazon_sp_api_shared::request::ResponseContent;
 
 pub mod vendor_payments_api;
 

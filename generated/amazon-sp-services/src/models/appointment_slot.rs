@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AppointmentSlot {
     /// Time window start time in ISO 8601 format.
-    #[serde(rename = "startTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "startTime", skip_serializing_if = "Option::is_none")]
     pub start_time: Option<String>,
     /// Time window end time in ISO 8601 format.
-    #[serde(rename = "endTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "endTime", skip_serializing_if = "Option::is_none")]
     pub end_time: Option<String>,
     /// Number of resources for which a slot can be reserved.
-    #[serde(rename = "capacity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "capacity", skip_serializing_if = "Option::is_none")]
     pub capacity: Option<i32>,
 }
 

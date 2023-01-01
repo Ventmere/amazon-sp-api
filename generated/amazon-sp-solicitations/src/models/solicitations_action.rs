@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SolicitationsAction {
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
 }
 

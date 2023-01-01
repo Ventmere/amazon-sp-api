@@ -14,14 +14,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListingOffersRequestParams {
     /// A marketplace identifier. Specifies the marketplace for which prices are returned.
-    #[serde(rename = "MarketplaceId")]
+    #[serde(default, rename = "MarketplaceId")]
     pub marketplace_id: String,
-    #[serde(rename = "ItemCondition")]
+    #[serde(default, rename = "ItemCondition")]
     pub item_condition: crate::models::ItemCondition,
-    #[serde(rename = "CustomerType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CustomerType", skip_serializing_if = "Option::is_none")]
     pub customer_type: Option<crate::models::CustomerType>,
     /// The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
-    #[serde(rename = "SellerSKU")]
+    #[serde(default, rename = "SellerSKU")]
     pub seller_sku: String,
 }
 

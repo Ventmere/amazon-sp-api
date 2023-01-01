@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentDates {
     /// Time by which the vendor is required to ship the order.
-    #[serde(rename = "requiredShipDate")]
+    #[serde(default, rename = "requiredShipDate")]
     pub required_ship_date: String,
     /// Delivery date promised to the Amazon customer.
-    #[serde(rename = "promisedDeliveryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "promisedDeliveryDate", skip_serializing_if = "Option::is_none")]
     pub promised_delivery_date: Option<String>,
 }
 

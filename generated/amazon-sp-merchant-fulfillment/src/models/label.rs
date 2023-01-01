@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Label {
     /// Custom text to print on the label.  Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support CustomTextForLabel.
-    #[serde(rename = "CustomTextForLabel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CustomTextForLabel", skip_serializing_if = "Option::is_none")]
     pub custom_text_for_label: Option<String>,
-    #[serde(rename = "Dimensions")]
+    #[serde(default, rename = "Dimensions")]
     pub dimensions: Box<crate::models::LabelDimensions>,
-    #[serde(rename = "FileContents")]
+    #[serde(default, rename = "FileContents")]
     pub file_contents: Box<crate::models::FileContents>,
-    #[serde(rename = "LabelFormat", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LabelFormat", skip_serializing_if = "Option::is_none")]
     pub label_format: Option<crate::models::LabelFormat>,
-    #[serde(rename = "StandardIdForLabel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "StandardIdForLabel", skip_serializing_if = "Option::is_none")]
     pub standard_id_for_label: Option<crate::models::StandardIdForLabel>,
 }
 

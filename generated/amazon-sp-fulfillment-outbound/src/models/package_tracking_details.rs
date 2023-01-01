@@ -14,41 +14,41 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PackageTrackingDetails {
     /// The package identifier.
-    #[serde(rename = "packageNumber")]
+    #[serde(default, rename = "packageNumber")]
     pub package_number: i32,
     /// The tracking number for the package.
-    #[serde(rename = "trackingNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "trackingNumber", skip_serializing_if = "Option::is_none")]
     pub tracking_number: Option<String>,
     /// Link on swiship.com that allows customers to track the package.
-    #[serde(rename = "customerTrackingLink", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "customerTrackingLink", skip_serializing_if = "Option::is_none")]
     pub customer_tracking_link: Option<String>,
     /// The name of the carrier.
-    #[serde(rename = "carrierCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "carrierCode", skip_serializing_if = "Option::is_none")]
     pub carrier_code: Option<String>,
     /// The phone number of the carrier.
-    #[serde(rename = "carrierPhoneNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "carrierPhoneNumber", skip_serializing_if = "Option::is_none")]
     pub carrier_phone_number: Option<String>,
     /// The URL of the carrier’s website.
-    #[serde(rename = "carrierURL", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "carrierURL", skip_serializing_if = "Option::is_none")]
     pub carrier_url: Option<String>,
-    #[serde(rename = "shipDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipDate", skip_serializing_if = "Option::is_none")]
     pub ship_date: Option<String>,
-    #[serde(rename = "estimatedArrivalDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "estimatedArrivalDate", skip_serializing_if = "Option::is_none")]
     pub estimated_arrival_date: Option<String>,
-    #[serde(rename = "shipToAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipToAddress", skip_serializing_if = "Option::is_none")]
     pub ship_to_address: Option<Box<crate::models::TrackingAddress>>,
-    #[serde(rename = "currentStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "currentStatus", skip_serializing_if = "Option::is_none")]
     pub current_status: Option<crate::models::CurrentStatus>,
     /// Description corresponding to the CurrentStatus value.
-    #[serde(rename = "currentStatusDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "currentStatusDescription", skip_serializing_if = "Option::is_none")]
     pub current_status_description: Option<String>,
     /// The name of the person who signed for the package.
-    #[serde(rename = "signedForBy", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "signedForBy", skip_serializing_if = "Option::is_none")]
     pub signed_for_by: Option<String>,
-    #[serde(rename = "additionalLocationInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "additionalLocationInfo", skip_serializing_if = "Option::is_none")]
     pub additional_location_info: Option<crate::models::AdditionalLocationInfo>,
     /// An array of tracking event information.
-    #[serde(rename = "trackingEvents", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "trackingEvents", skip_serializing_if = "Option::is_none")]
     pub tracking_events: Option<Vec<crate::models::TrackingEvent>>,
 }
 

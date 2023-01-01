@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Length {
     /// The value in units.
-    #[serde(rename = "value", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "value", skip_serializing_if = "Option::is_none")]
     pub value: Option<f32>,
-    #[serde(rename = "unit", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "unit", skip_serializing_if = "Option::is_none")]
     pub unit: Option<crate::models::UnitOfLength>,
 }
 

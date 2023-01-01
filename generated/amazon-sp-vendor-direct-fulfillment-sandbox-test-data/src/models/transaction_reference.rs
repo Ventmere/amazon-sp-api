@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TransactionReference {
-    #[serde(rename = "transactionId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "transactionId", skip_serializing_if = "Option::is_none")]
     pub transaction_id: Option<String>,
 }
 

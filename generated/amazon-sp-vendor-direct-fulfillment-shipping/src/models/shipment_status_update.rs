@@ -14,13 +14,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentStatusUpdate {
     /// Purchase order number of the shipment for which to update the shipment status.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
-    #[serde(rename = "sellingParty")]
+    #[serde(default, rename = "sellingParty")]
     pub selling_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "shipFromParty")]
+    #[serde(default, rename = "shipFromParty")]
     pub ship_from_party: Box<crate::models::PartyIdentification>,
-    #[serde(rename = "statusUpdateDetails")]
+    #[serde(default, rename = "statusUpdateDetails")]
     pub status_update_details: Box<crate::models::StatusUpdateDetails>,
 }
 

@@ -14,12 +14,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Expiry {
     /// Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
-    #[serde(rename = "manufacturerDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "manufacturerDate", skip_serializing_if = "Option::is_none")]
     pub manufacturer_date: Option<String>,
     /// The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
-    #[serde(rename = "expiryDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "expiryDate", skip_serializing_if = "Option::is_none")]
     pub expiry_date: Option<String>,
-    #[serde(rename = "expiryAfterDuration", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "expiryAfterDuration", skip_serializing_if = "Option::is_none")]
     pub expiry_after_duration: Option<Box<crate::models::Duration>>,
 }
 

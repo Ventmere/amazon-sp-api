@@ -14,16 +14,16 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShippingServiceOptions {
-    #[serde(rename = "DeliveryExperience")]
+    #[serde(default, rename = "DeliveryExperience")]
     pub delivery_experience: crate::models::DeliveryExperienceType,
-    #[serde(rename = "DeclaredValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "DeclaredValue", skip_serializing_if = "Option::is_none")]
     pub declared_value: Option<Box<crate::models::CurrencyAmount>>,
     /// When true, the carrier will pick up the package.  Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
-    #[serde(rename = "CarrierWillPickUp")]
+    #[serde(default, rename = "CarrierWillPickUp")]
     pub carrier_will_pick_up: bool,
-    #[serde(rename = "CarrierWillPickUpOption", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CarrierWillPickUpOption", skip_serializing_if = "Option::is_none")]
     pub carrier_will_pick_up_option: Option<crate::models::CarrierWillPickUpOption>,
-    #[serde(rename = "LabelFormat", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LabelFormat", skip_serializing_if = "Option::is_none")]
     pub label_format: Option<crate::models::LabelFormat>,
 }
 

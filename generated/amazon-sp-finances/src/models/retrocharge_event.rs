@@ -15,22 +15,22 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RetrochargeEvent {
     /// The type of event.  Possible values:  * Retrocharge  * RetrochargeReversal
-    #[serde(rename = "RetrochargeEventType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RetrochargeEventType", skip_serializing_if = "Option::is_none")]
     pub retrocharge_event_type: Option<String>,
     /// An Amazon-defined identifier for an order.
-    #[serde(rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
     pub amazon_order_id: Option<String>,
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
-    #[serde(rename = "BaseTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BaseTax", skip_serializing_if = "Option::is_none")]
     pub base_tax: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "ShippingTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingTax", skip_serializing_if = "Option::is_none")]
     pub shipping_tax: Option<Box<crate::models::Currency>>,
     /// The name of the marketplace where the retrocharge event occurred.
-    #[serde(rename = "MarketplaceName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceName", skip_serializing_if = "Option::is_none")]
     pub marketplace_name: Option<String>,
     /// A list of information about taxes withheld.
-    #[serde(rename = "RetrochargeTaxWithheldList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "RetrochargeTaxWithheldList", skip_serializing_if = "Option::is_none")]
     pub retrocharge_tax_withheld_list: Option<Vec<crate::models::TaxWithheldComponent>>,
 }
 

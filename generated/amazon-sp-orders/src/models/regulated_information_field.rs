@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RegulatedInformationField {
     /// The unique identifier for the field.
-    #[serde(rename = "FieldId")]
+    #[serde(default, rename = "FieldId")]
     pub field_id: String,
     /// The name for the field.
-    #[serde(rename = "FieldLabel")]
+    #[serde(default, rename = "FieldLabel")]
     pub field_label: String,
     /// The type of field.
-    #[serde(rename = "FieldType")]
+    #[serde(default, rename = "FieldType")]
     pub field_type: FieldType,
     /// The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain a URL to download the attachment here.
-    #[serde(rename = "FieldValue")]
+    #[serde(default, rename = "FieldValue")]
     pub field_value: String,
 }
 

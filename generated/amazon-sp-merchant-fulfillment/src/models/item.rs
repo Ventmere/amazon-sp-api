@@ -15,21 +15,21 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Item {
     /// An Amazon-defined identifier for an individual item in an order.
-    #[serde(rename = "OrderItemId")]
+    #[serde(default, rename = "OrderItemId")]
     pub order_item_id: String,
     /// The number of items.
-    #[serde(rename = "Quantity")]
+    #[serde(default, rename = "Quantity")]
     pub quantity: i32,
-    #[serde(rename = "ItemWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemWeight", skip_serializing_if = "Option::is_none")]
     pub item_weight: Option<Box<crate::models::Weight>>,
     /// The description of the item.
-    #[serde(rename = "ItemDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemDescription", skip_serializing_if = "Option::is_none")]
     pub item_description: Option<String>,
     /// A list of transparency codes.
-    #[serde(rename = "TransparencyCodeList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TransparencyCodeList", skip_serializing_if = "Option::is_none")]
     pub transparency_code_list: Option<Vec<String>>,
     /// A list of additional seller input pairs required to purchase shipping.
-    #[serde(rename = "ItemLevelSellerInputsList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ItemLevelSellerInputsList", skip_serializing_if = "Option::is_none")]
     pub item_level_seller_inputs_list: Option<Vec<crate::models::AdditionalSellerInputs>>,
 }
 

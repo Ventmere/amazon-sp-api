@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateScheduledPackagesRequest {
     /// A string of up to 255 characters.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// An array allowing users to specify orders to be scheduled.
-    #[serde(rename = "orderScheduleDetailsList")]
+    #[serde(default, rename = "orderScheduleDetailsList")]
     pub order_schedule_details_list: Vec<crate::models::OrderScheduleDetails>,
-    #[serde(rename = "labelFormat")]
+    #[serde(default, rename = "labelFormat")]
     pub label_format: crate::models::LabelFormat,
 }
 

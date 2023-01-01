@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardProductDescriptionModule {
-    #[serde(rename = "body")]
+    #[serde(default, rename = "body")]
     pub body: Box<crate::models::ParagraphComponent>,
 }
 

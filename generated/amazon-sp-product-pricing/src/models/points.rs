@@ -14,9 +14,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Points {
     /// The number of points.
-    #[serde(rename = "PointsNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PointsNumber", skip_serializing_if = "Option::is_none")]
     pub points_number: Option<i32>,
-    #[serde(rename = "PointsMonetaryValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PointsMonetaryValue", skip_serializing_if = "Option::is_none")]
     pub points_monetary_value: Option<Box<crate::models::MoneyType>>,
 }
 

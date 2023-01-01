@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemQuantity {
     /// Amount of units shipped for a specific item at a shipment level. If the item is present only in certain cartons or pallets within the shipment, please provide this at the appropriate carton or pallet level.
-    #[serde(rename = "amount")]
+    #[serde(default, rename = "amount")]
     pub amount: i32,
     /// Unit of measure for the shipped quantity.
-    #[serde(rename = "unitOfMeasure")]
+    #[serde(default, rename = "unitOfMeasure")]
     pub unit_of_measure: UnitOfMeasure,
     /// The case size, in the event that we ordered using cases. Otherwise, 1.
-    #[serde(rename = "unitSize", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "unitSize", skip_serializing_if = "Option::is_none")]
     pub unit_size: Option<i32>,
 }
 

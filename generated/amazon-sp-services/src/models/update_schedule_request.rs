@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdateScheduleRequest {
     /// List of `AvailabilityRecord`s to represent the capacity of a resource over a time range.
-    #[serde(rename = "schedules")]
+    #[serde(default, rename = "schedules")]
     pub schedules: Vec<crate::models::AvailabilityRecord>,
 }
 

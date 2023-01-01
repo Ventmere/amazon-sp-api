@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Party {
     /// This is the Amazon Shipping account id generated during the Amazon Shipping onboarding process.
-    #[serde(rename = "accountId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "accountId", skip_serializing_if = "Option::is_none")]
     pub account_id: Option<String>,
 }
 

@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AllowanceDetails {
     /// Type of the allowance applied.
-    #[serde(rename = "type")]
+    #[serde(default, rename = "type")]
     pub _type: Type,
     /// Description of the allowance.
-    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
-    #[serde(rename = "allowanceAmount")]
+    #[serde(default, rename = "allowanceAmount")]
     pub allowance_amount: Box<crate::models::Money>,
     /// Tax amount details applied on this allowance.
-    #[serde(rename = "taxDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxDetails", skip_serializing_if = "Option::is_none")]
     pub tax_details: Option<Vec<crate::models::TaxDetails>>,
 }
 

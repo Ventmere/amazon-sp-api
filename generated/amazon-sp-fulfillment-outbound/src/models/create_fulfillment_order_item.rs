@@ -15,28 +15,28 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateFulfillmentOrderItem {
     /// The seller SKU of the item.
-    #[serde(rename = "sellerSku")]
+    #[serde(default, rename = "sellerSku")]
     pub seller_sku: String,
     /// A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same SellerSKU. For example, the seller might assign different SellerFulfillmentOrderItemId values to two items in a fulfillment order that share the same SellerSKU but have different GiftMessage values.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
     /// The item quantity.
-    #[serde(rename = "quantity")]
+    #[serde(default, rename = "quantity")]
     pub quantity: i32,
     /// A message to the gift recipient, if applicable.
-    #[serde(rename = "giftMessage", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "giftMessage", skip_serializing_if = "Option::is_none")]
     pub gift_message: Option<String>,
     /// Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
-    #[serde(rename = "displayableComment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "displayableComment", skip_serializing_if = "Option::is_none")]
     pub displayable_comment: Option<String>,
     /// Amazon's fulfillment network SKU of the item.
-    #[serde(rename = "fulfillmentNetworkSku", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentNetworkSku", skip_serializing_if = "Option::is_none")]
     pub fulfillment_network_sku: Option<String>,
-    #[serde(rename = "perUnitDeclaredValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "perUnitDeclaredValue", skip_serializing_if = "Option::is_none")]
     pub per_unit_declared_value: Option<Box<crate::models::Money>>,
-    #[serde(rename = "perUnitPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "perUnitPrice", skip_serializing_if = "Option::is_none")]
     pub per_unit_price: Option<Box<crate::models::Money>>,
-    #[serde(rename = "perUnitTax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "perUnitTax", skip_serializing_if = "Option::is_none")]
     pub per_unit_tax: Option<Box<crate::models::Money>>,
 }
 

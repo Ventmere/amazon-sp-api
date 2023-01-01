@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TaxClassification {
     /// The type of tax.
-    #[serde(rename = "Name", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     /// The entity's tax identifier.
-    #[serde(rename = "Value", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Value", skip_serializing_if = "Option::is_none")]
     pub value: Option<String>,
 }
 

@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderItemsInner {
     /// The unique identifier of the order item.
-    #[serde(rename = "orderItemId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderItemId", skip_serializing_if = "Option::is_none")]
     pub order_item_id: Option<String>,
     /// The quantity for which to update the shipment status.
-    #[serde(rename = "quantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantity", skip_serializing_if = "Option::is_none")]
     pub quantity: Option<i32>,
 }
 

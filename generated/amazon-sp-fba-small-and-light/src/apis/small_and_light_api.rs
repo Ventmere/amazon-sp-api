@@ -11,88 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`delete_small_and_light_enrollment_by_seller_sku`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum DeleteSmallAndLightEnrollmentBySellerSkuError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_small_and_light_eligibility_by_seller_sku`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetSmallAndLightEligibilityBySellerSkuError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_small_and_light_enrollment_by_seller_sku`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetSmallAndLightEnrollmentBySellerSkuError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_small_and_light_fee_preview`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetSmallAndLightFeePreviewError {
-    Status400(crate::models::ErrorList),
-    Status401(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`put_small_and_light_enrollment_by_seller_sku`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PutSmallAndLightEnrollmentBySellerSkuError {
-    Status400(crate::models::ErrorList),
-    Status403(crate::models::ErrorList),
-    Status404(crate::models::ErrorList),
-    Status413(crate::models::ErrorList),
-    Status415(crate::models::ErrorList),
-    Status429(crate::models::ErrorList),
-    Status500(crate::models::ErrorList),
-    Status503(crate::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Removes the item indicated by the specified seller SKU from the Small and Light program in the specified marketplace. If the item is not eligible for disenrollment, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn delete_small_and_light_enrollment_by_seller_sku(configuration: &configuration::Configuration, seller_sku: &str, marketplace_ids: Vec<String>) -> Result<(), Error<DeleteSmallAndLightEnrollmentBySellerSkuError>> {
+pub async fn delete_small_and_light_enrollment_by_seller_sku(configuration: &configuration::Configuration, seller_sku: &str, marketplace_ids: Vec<String>) -> Result<(), Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -109,16 +33,21 @@ pub async fn delete_small_and_light_enrollment_by_seller_sku(configuration: &con
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "DELETE",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -129,8 +58,7 @@ pub async fn delete_small_and_light_enrollment_by_seller_sku(configuration: &con
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -148,14 +76,14 @@ pub async fn delete_small_and_light_enrollment_by_seller_sku(configuration: &con
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         Ok(())
     } else {
-        let local_var_entity: Option<DeleteSmallAndLightEnrollmentBySellerSkuError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_small_and_light_eligibility_by_seller_sku(configuration: &configuration::Configuration, seller_sku: &str, marketplace_ids: Vec<String>) -> Result<crate::models::SmallAndLightEligibility, Error<GetSmallAndLightEligibilityBySellerSkuError>> {
+pub async fn get_small_and_light_eligibility_by_seller_sku(configuration: &configuration::Configuration, seller_sku: &str, marketplace_ids: Vec<String>) -> Result<crate::models::SmallAndLightEligibility, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -172,16 +100,21 @@ pub async fn get_small_and_light_eligibility_by_seller_sku(configuration: &confi
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -192,8 +125,7 @@ pub async fn get_small_and_light_eligibility_by_seller_sku(configuration: &confi
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -211,14 +143,14 @@ pub async fn get_small_and_light_eligibility_by_seller_sku(configuration: &confi
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetSmallAndLightEligibilityBySellerSkuError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the Small and Light enrollment status for the item indicated by the specified seller SKU in the specified marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_small_and_light_enrollment_by_seller_sku(configuration: &configuration::Configuration, seller_sku: &str, marketplace_ids: Vec<String>) -> Result<crate::models::SmallAndLightEnrollment, Error<GetSmallAndLightEnrollmentBySellerSkuError>> {
+pub async fn get_small_and_light_enrollment_by_seller_sku(configuration: &configuration::Configuration, seller_sku: &str, marketplace_ids: Vec<String>) -> Result<crate::models::SmallAndLightEnrollment, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -235,16 +167,21 @@ pub async fn get_small_and_light_enrollment_by_seller_sku(configuration: &config
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -255,8 +192,7 @@ pub async fn get_small_and_light_enrollment_by_seller_sku(configuration: &config
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -274,14 +210,14 @@ pub async fn get_small_and_light_enrollment_by_seller_sku(configuration: &config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetSmallAndLightEnrollmentBySellerSkuError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 3 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_small_and_light_fee_preview(configuration: &configuration::Configuration, body: crate::models::SmallAndLightFeePreviewRequest) -> Result<crate::models::SmallAndLightFeePreviews, Error<GetSmallAndLightFeePreviewError>> {
+pub async fn get_small_and_light_fee_preview(configuration: &configuration::Configuration, body: crate::models::SmallAndLightFeePreviewRequest) -> Result<crate::models::SmallAndLightFeePreviews, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -294,16 +230,21 @@ pub async fn get_small_and_light_fee_preview(configuration: &configuration::Conf
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -314,8 +255,7 @@ pub async fn get_small_and_light_fee_preview(configuration: &configuration::Conf
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -334,14 +274,14 @@ pub async fn get_small_and_light_fee_preview(configuration: &configuration::Conf
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetSmallAndLightFeePreviewError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Enrolls the item indicated by the specified seller SKU in the Small and Light program in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn put_small_and_light_enrollment_by_seller_sku(configuration: &configuration::Configuration, seller_sku: &str, marketplace_ids: Vec<String>) -> Result<crate::models::SmallAndLightEnrollment, Error<PutSmallAndLightEnrollmentBySellerSkuError>> {
+pub async fn put_small_and_light_enrollment_by_seller_sku(configuration: &configuration::Configuration, seller_sku: &str, marketplace_ids: Vec<String>) -> Result<crate::models::SmallAndLightEnrollment, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -358,16 +298,21 @@ pub async fn put_small_and_light_enrollment_by_seller_sku(configuration: &config
     };
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -378,8 +323,7 @@ pub async fn put_small_and_light_enrollment_by_seller_sku(configuration: &config
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -397,8 +341,8 @@ pub async fn put_small_and_light_enrollment_by_seller_sku(configuration: &config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PutSmallAndLightEnrollmentBySellerSkuError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

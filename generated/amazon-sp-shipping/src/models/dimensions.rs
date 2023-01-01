@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Dimensions {
     /// The length of the container.
-    #[serde(rename = "length")]
+    #[serde(default, rename = "length")]
     pub length: f32,
     /// The width of the container.
-    #[serde(rename = "width")]
+    #[serde(default, rename = "width")]
     pub width: f32,
     /// The height of the container.
-    #[serde(rename = "height")]
+    #[serde(default, rename = "height")]
     pub height: f32,
     /// The unit of these measurements.
-    #[serde(rename = "unit")]
+    #[serde(default, rename = "unit")]
     pub unit: Unit,
 }
 

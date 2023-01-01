@@ -15,27 +15,27 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InboundShipmentItem {
     /// A shipment identifier originally returned by the createInboundShipmentPlan operation.
-    #[serde(rename = "ShipmentId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentId", skip_serializing_if = "Option::is_none")]
     pub shipment_id: Option<String>,
     /// The seller SKU of the item.
-    #[serde(rename = "SellerSKU")]
+    #[serde(default, rename = "SellerSKU")]
     pub seller_sku: String,
     /// Amazon's fulfillment network SKU of the item.
-    #[serde(rename = "FulfillmentNetworkSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FulfillmentNetworkSKU", skip_serializing_if = "Option::is_none")]
     pub fulfillment_network_sku: Option<String>,
     /// The item quantity.
-    #[serde(rename = "QuantityShipped")]
+    #[serde(default, rename = "QuantityShipped")]
     pub quantity_shipped: i32,
     /// The item quantity.
-    #[serde(rename = "QuantityReceived", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "QuantityReceived", skip_serializing_if = "Option::is_none")]
     pub quantity_received: Option<i32>,
     /// The item quantity.
-    #[serde(rename = "QuantityInCase", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "QuantityInCase", skip_serializing_if = "Option::is_none")]
     pub quantity_in_case: Option<i32>,
-    #[serde(rename = "ReleaseDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ReleaseDate", skip_serializing_if = "Option::is_none")]
     pub release_date: Option<String>,
     /// A list of preparation instructions and who is responsible for that preparation.
-    #[serde(rename = "PrepDetailsList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PrepDetailsList", skip_serializing_if = "Option::is_none")]
     pub prep_details_list: Option<Vec<crate::models::PrepDetails>>,
 }
 

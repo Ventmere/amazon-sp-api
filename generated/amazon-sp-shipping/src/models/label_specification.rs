@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LabelSpecification {
     /// The format of the label. Enum of PNG only for now.
-    #[serde(rename = "labelFormat")]
+    #[serde(default, rename = "labelFormat")]
     pub label_format: LabelFormat,
     /// The label stock size specification in length and height. Enum of 4x6 only for now.
-    #[serde(rename = "labelStockSize")]
+    #[serde(default, rename = "labelStockSize")]
     pub label_stock_size: LabelStockSize,
 }
 

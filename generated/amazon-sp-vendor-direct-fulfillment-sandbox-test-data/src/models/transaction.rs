@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Transaction {
     /// The unique identifier returned in the response to the generateOrderScenarios request.
-    #[serde(rename = "transactionId")]
+    #[serde(default, rename = "transactionId")]
     pub transaction_id: String,
     /// The current processing status of the transaction.
-    #[serde(rename = "status")]
+    #[serde(default, rename = "status")]
     pub status: Status,
-    #[serde(rename = "testCaseData", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "testCaseData", skip_serializing_if = "Option::is_none")]
     pub test_case_data: Option<Box<crate::models::TestCaseData>>,
 }
 

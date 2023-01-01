@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Weight {
     /// The unit of measurement.
-    #[serde(rename = "unit")]
+    #[serde(default, rename = "unit")]
     pub unit: Unit,
     /// The measurement value.
-    #[serde(rename = "value")]
+    #[serde(default, rename = "value")]
     pub value: f32,
 }
 

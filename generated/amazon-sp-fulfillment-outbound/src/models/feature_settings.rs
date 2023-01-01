@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FeatureSettings {
     /// The name of the feature.
-    #[serde(rename = "featureName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "featureName", skip_serializing_if = "Option::is_none")]
     pub feature_name: Option<String>,
     /// Specifies the policy to use when fulfilling an order.
-    #[serde(rename = "featureFulfillmentPolicy", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "featureFulfillmentPolicy", skip_serializing_if = "Option::is_none")]
     pub feature_fulfillment_policy: Option<FeatureFulfillmentPolicy>,
 }
 

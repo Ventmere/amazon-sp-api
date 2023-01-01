@@ -14,18 +14,18 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SafetReimbursementEvent {
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// A SAFE-T claim identifier.
-    #[serde(rename = "SAFETClaimId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SAFETClaimId", skip_serializing_if = "Option::is_none")]
     pub safet_claim_id: Option<String>,
-    #[serde(rename = "ReimbursedAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ReimbursedAmount", skip_serializing_if = "Option::is_none")]
     pub reimbursed_amount: Option<Box<crate::models::Currency>>,
     /// Indicates why the seller was reimbursed.
-    #[serde(rename = "ReasonCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ReasonCode", skip_serializing_if = "Option::is_none")]
     pub reason_code: Option<String>,
     /// A list of SAFETReimbursementItems.
-    #[serde(rename = "SAFETReimbursementItemList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SAFETReimbursementItemList", skip_serializing_if = "Option::is_none")]
     pub safet_reimbursement_item_list: Option<Vec<crate::models::SafetReimbursementItem>>,
 }
 

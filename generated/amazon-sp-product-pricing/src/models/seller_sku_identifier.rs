@@ -14,13 +14,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SellerSkuIdentifier {
     /// A marketplace identifier.
-    #[serde(rename = "MarketplaceId")]
+    #[serde(default, rename = "MarketplaceId")]
     pub marketplace_id: String,
     /// The seller identifier submitted for the operation.
-    #[serde(rename = "SellerId")]
+    #[serde(default, rename = "SellerId")]
     pub seller_id: String,
     /// The seller stock keeping unit (SKU) of the item.
-    #[serde(rename = "SellerSKU")]
+    #[serde(default, rename = "SellerSKU")]
     pub seller_sku: String,
 }
 

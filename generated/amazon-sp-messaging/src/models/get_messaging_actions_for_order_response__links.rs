@@ -13,10 +13,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetMessagingActionsForOrderResponseLinks {
-    #[serde(rename = "self")]
+    #[serde(default, rename = "self")]
     pub _self: Box<crate::models::LinkObject>,
     /// Eligible actions for the specified amazonOrderId.
-    #[serde(rename = "actions")]
+    #[serde(default, rename = "actions")]
     pub actions: Vec<crate::models::LinkObject>,
 }
 

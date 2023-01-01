@@ -11,66 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`list_financial_event_groups`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ListFinancialEventGroupsError {
-    Status400(crate::models::ListFinancialEventGroupsResponse),
-    Status403(crate::models::ListFinancialEventGroupsResponse),
-    Status404(crate::models::ListFinancialEventGroupsResponse),
-    Status429(crate::models::ListFinancialEventGroupsResponse),
-    Status500(crate::models::ListFinancialEventGroupsResponse),
-    Status503(crate::models::ListFinancialEventGroupsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`list_financial_events`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ListFinancialEventsError {
-    Status400(crate::models::ListFinancialEventsResponse),
-    Status403(crate::models::ListFinancialEventsResponse),
-    Status404(crate::models::ListFinancialEventsResponse),
-    Status429(crate::models::ListFinancialEventsResponse),
-    Status500(crate::models::ListFinancialEventsResponse),
-    Status503(crate::models::ListFinancialEventsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`list_financial_events_by_group_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ListFinancialEventsByGroupIdError {
-    Status400(crate::models::ListFinancialEventsResponse),
-    Status403(crate::models::ListFinancialEventsResponse),
-    Status404(crate::models::ListFinancialEventsResponse),
-    Status429(crate::models::ListFinancialEventsResponse),
-    Status500(crate::models::ListFinancialEventsResponse),
-    Status503(crate::models::ListFinancialEventsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`list_financial_events_by_order_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ListFinancialEventsByOrderIdError {
-    Status400(crate::models::ListFinancialEventsResponse),
-    Status403(crate::models::ListFinancialEventsResponse),
-    Status404(crate::models::ListFinancialEventsResponse),
-    Status429(crate::models::ListFinancialEventsResponse),
-    Status500(crate::models::ListFinancialEventsResponse),
-    Status503(crate::models::ListFinancialEventsResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Returns financial event groups for a given date range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn list_financial_event_groups(configuration: &configuration::Configuration, max_results_per_page: Option<i32>, financial_event_group_started_before: Option<String>, financial_event_group_started_after: Option<String>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventGroupsResponse, Error<ListFinancialEventGroupsError>> {
+pub async fn list_financial_event_groups(configuration: &configuration::Configuration, max_results_per_page: Option<i32>, financial_event_group_started_before: Option<String>, financial_event_group_started_after: Option<String>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventGroupsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -95,16 +41,21 @@ pub async fn list_financial_event_groups(configuration: &configuration::Configur
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -115,8 +66,7 @@ pub async fn list_financial_event_groups(configuration: &configuration::Configur
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -134,14 +84,14 @@ pub async fn list_financial_event_groups(configuration: &configuration::Configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ListFinancialEventGroupsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns financial events for the specified data range.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn list_financial_events(configuration: &configuration::Configuration, max_results_per_page: Option<i32>, posted_after: Option<String>, posted_before: Option<String>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventsResponse, Error<ListFinancialEventsError>> {
+pub async fn list_financial_events(configuration: &configuration::Configuration, max_results_per_page: Option<i32>, posted_after: Option<String>, posted_before: Option<String>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -166,16 +116,21 @@ pub async fn list_financial_events(configuration: &configuration::Configuration,
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -186,8 +141,7 @@ pub async fn list_financial_events(configuration: &configuration::Configuration,
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -205,14 +159,14 @@ pub async fn list_financial_events(configuration: &configuration::Configuration,
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ListFinancialEventsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns all financial events for the specified financial event group.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn list_financial_events_by_group_id(configuration: &configuration::Configuration, event_group_id: &str, max_results_per_page: Option<i32>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventsResponse, Error<ListFinancialEventsByGroupIdError>> {
+pub async fn list_financial_events_by_group_id(configuration: &configuration::Configuration, event_group_id: &str, max_results_per_page: Option<i32>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -231,16 +185,21 @@ pub async fn list_financial_events_by_group_id(configuration: &configuration::Co
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -251,8 +210,7 @@ pub async fn list_financial_events_by_group_id(configuration: &configuration::Co
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -270,14 +228,14 @@ pub async fn list_financial_events_by_group_id(configuration: &configuration::Co
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ListFinancialEventsByGroupIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns all financial events for the specified order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn list_financial_events_by_order_id(configuration: &configuration::Configuration, order_id: &str, max_results_per_page: Option<i32>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventsResponse, Error<ListFinancialEventsByOrderIdError>> {
+pub async fn list_financial_events_by_order_id(configuration: &configuration::Configuration, order_id: &str, max_results_per_page: Option<i32>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -296,16 +254,21 @@ pub async fn list_financial_events_by_order_id(configuration: &configuration::Co
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -316,8 +279,7 @@ pub async fn list_financial_events_by_order_id(configuration: &configuration::Co
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -335,8 +297,8 @@ pub async fn list_financial_events_by_order_id(configuration: &configuration::Co
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ListFinancialEventsByOrderIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PurchaseShipmentResult {
     /// The unique shipment identifier.
-    #[serde(rename = "shipmentId")]
+    #[serde(default, rename = "shipmentId")]
     pub shipment_id: String,
-    #[serde(rename = "serviceRate")]
+    #[serde(default, rename = "serviceRate")]
     pub service_rate: Box<crate::models::ServiceRate>,
     /// A list of label results
-    #[serde(rename = "labelResults")]
+    #[serde(default, rename = "labelResults")]
     pub label_results: Vec<crate::models::LabelResult>,
 }
 

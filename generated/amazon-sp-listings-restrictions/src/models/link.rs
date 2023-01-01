@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Link {
     /// The URI of the related resource.
-    #[serde(rename = "resource")]
+    #[serde(default, rename = "resource")]
     pub resource: String,
     /// The HTTP verb used to interact with the related resource.
-    #[serde(rename = "verb")]
+    #[serde(default, rename = "verb")]
     pub verb: Verb,
     /// The title of the related resource.
-    #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     /// The media type of the related resource.
-    #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "type", skip_serializing_if = "Option::is_none")]
     pub _type: Option<String>,
 }
 

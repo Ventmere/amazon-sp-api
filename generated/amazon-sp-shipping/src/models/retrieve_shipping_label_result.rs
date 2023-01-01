@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct RetrieveShippingLabelResult {
     /// Contains binary image data encoded as a base-64 string.
-    #[serde(rename = "labelStream")]
+    #[serde(default, rename = "labelStream")]
     pub label_stream: String,
-    #[serde(rename = "labelSpecification")]
+    #[serde(default, rename = "labelSpecification")]
     pub label_specification: Box<crate::models::LabelSpecification>,
 }
 

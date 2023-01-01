@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemIdentifier {
     /// A marketplace identifier. Specifies the marketplace from which prices are returned.
-    #[serde(rename = "MarketplaceId")]
+    #[serde(default, rename = "MarketplaceId")]
     pub marketplace_id: String,
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
     /// The seller stock keeping unit (SKU) of the item.
-    #[serde(rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
-    #[serde(rename = "ItemCondition")]
+    #[serde(default, rename = "ItemCondition")]
     pub item_condition: crate::models::ConditionType,
 }
 

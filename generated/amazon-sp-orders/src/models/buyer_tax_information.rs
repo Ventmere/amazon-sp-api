@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct BuyerTaxInformation {
     /// Business buyer's company legal name.
-    #[serde(rename = "BuyerLegalCompanyName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerLegalCompanyName", skip_serializing_if = "Option::is_none")]
     pub buyer_legal_company_name: Option<String>,
     /// Business buyer's address.
-    #[serde(rename = "BuyerBusinessAddress", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerBusinessAddress", skip_serializing_if = "Option::is_none")]
     pub buyer_business_address: Option<String>,
     /// Business buyer's tax registration ID.
-    #[serde(rename = "BuyerTaxRegistrationId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerTaxRegistrationId", skip_serializing_if = "Option::is_none")]
     pub buyer_tax_registration_id: Option<String>,
     /// Business buyer's tax office.
-    #[serde(rename = "BuyerTaxOffice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyerTaxOffice", skip_serializing_if = "Option::is_none")]
     pub buyer_tax_office: Option<String>,
 }
 

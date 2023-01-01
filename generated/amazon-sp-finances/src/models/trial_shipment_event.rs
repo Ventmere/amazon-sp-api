@@ -15,18 +15,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TrialShipmentEvent {
     /// An Amazon-defined identifier for an order.
-    #[serde(rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
     pub amazon_order_id: Option<String>,
     /// The identifier of the financial event group.
-    #[serde(rename = "FinancialEventGroupId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FinancialEventGroupId", skip_serializing_if = "Option::is_none")]
     pub financial_event_group_id: Option<String>,
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
-    #[serde(rename = "SKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SKU", skip_serializing_if = "Option::is_none")]
     pub SKU: Option<String>,
     /// A list of fee component information.
-    #[serde(rename = "FeeList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeeList", skip_serializing_if = "Option::is_none")]
     pub fee_list: Option<Vec<crate::models::FeeComponent>>,
 }
 

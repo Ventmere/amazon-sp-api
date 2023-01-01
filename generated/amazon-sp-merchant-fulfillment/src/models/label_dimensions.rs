@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LabelDimensions {
     /// A label dimension.
-    #[serde(rename = "Length")]
+    #[serde(default, rename = "Length")]
     pub length: f32,
     /// A label dimension.
-    #[serde(rename = "Width")]
+    #[serde(default, rename = "Width")]
     pub width: f32,
-    #[serde(rename = "Unit")]
+    #[serde(default, rename = "Unit")]
     pub unit: crate::models::UnitOfLength,
 }
 

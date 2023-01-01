@@ -14,14 +14,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TaxDetails {
     /// A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
-    #[serde(rename = "taxRate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxRate", skip_serializing_if = "Option::is_none")]
     pub tax_rate: Option<String>,
-    #[serde(rename = "taxAmount")]
+    #[serde(default, rename = "taxAmount")]
     pub tax_amount: Box<crate::models::Money>,
-    #[serde(rename = "taxableAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "taxableAmount", skip_serializing_if = "Option::is_none")]
     pub taxable_amount: Option<Box<crate::models::Money>>,
     /// Tax type.
-    #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "type", skip_serializing_if = "Option::is_none")]
     pub _type: Option<Type>,
 }
 

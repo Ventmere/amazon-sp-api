@@ -14,25 +14,25 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Package {
-    #[serde(rename = "scheduledPackageId")]
+    #[serde(default, rename = "scheduledPackageId")]
     pub scheduled_package_id: Box<crate::models::ScheduledPackageId>,
-    #[serde(rename = "packageDimensions")]
+    #[serde(default, rename = "packageDimensions")]
     pub package_dimensions: Box<crate::models::Dimensions>,
-    #[serde(rename = "packageWeight")]
+    #[serde(default, rename = "packageWeight")]
     pub package_weight: Box<crate::models::Weight>,
     /// A list of items contained in the package.
-    #[serde(rename = "packageItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageItems", skip_serializing_if = "Option::is_none")]
     pub package_items: Option<Vec<crate::models::Item>>,
-    #[serde(rename = "packageTimeSlot")]
+    #[serde(default, rename = "packageTimeSlot")]
     pub package_time_slot: Box<crate::models::TimeSlot>,
     /// Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
-    #[serde(rename = "packageIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageIdentifier", skip_serializing_if = "Option::is_none")]
     pub package_identifier: Option<String>,
-    #[serde(rename = "invoice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "invoice", skip_serializing_if = "Option::is_none")]
     pub invoice: Option<Box<crate::models::InvoiceData>>,
-    #[serde(rename = "packageStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageStatus", skip_serializing_if = "Option::is_none")]
     pub package_status: Option<crate::models::PackageStatus>,
-    #[serde(rename = "trackingDetails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "trackingDetails", skip_serializing_if = "Option::is_none")]
     pub tracking_details: Option<Box<crate::models::TrackingDetails>>,
 }
 

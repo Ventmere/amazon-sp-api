@@ -15,21 +15,21 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PublishRecord {
     /// The identifier for the marketplace where the A+ Content is published.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// The IETF language tag. This only supports the primary language subtag with one secondary language subtag. The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
-    #[serde(rename = "locale")]
+    #[serde(default, rename = "locale")]
     pub locale: String,
     /// The Amazon Standard Identification Number (ASIN).
-    #[serde(rename = "asin")]
+    #[serde(default, rename = "asin")]
     pub asin: String,
-    #[serde(rename = "contentType")]
+    #[serde(default, rename = "contentType")]
     pub content_type: crate::models::ContentType,
     /// The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
-    #[serde(rename = "contentSubType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "contentSubType", skip_serializing_if = "Option::is_none")]
     pub content_sub_type: Option<String>,
     /// A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-    #[serde(rename = "contentReferenceKey")]
+    #[serde(default, rename = "contentReferenceKey")]
     pub content_reference_key: String,
 }
 

@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateReservationRequest {
     /// Resource (store) identifier.
-    #[serde(rename = "resourceId")]
+    #[serde(default, rename = "resourceId")]
     pub resource_id: String,
-    #[serde(rename = "reservation")]
+    #[serde(default, rename = "reservation")]
     pub reservation: Box<crate::models::Reservation>,
 }
 

@@ -14,15 +14,15 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PackageDimensions {
-    #[serde(rename = "Length", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Length", skip_serializing_if = "Option::is_none")]
     pub length: Option<f64>,
-    #[serde(rename = "Width", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Width", skip_serializing_if = "Option::is_none")]
     pub width: Option<f64>,
-    #[serde(rename = "Height", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Height", skip_serializing_if = "Option::is_none")]
     pub height: Option<f64>,
-    #[serde(rename = "Unit", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Unit", skip_serializing_if = "Option::is_none")]
     pub unit: Option<crate::models::UnitOfLength>,
-    #[serde(rename = "PredefinedPackageDimensions", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PredefinedPackageDimensions", skip_serializing_if = "Option::is_none")]
     pub predefined_package_dimensions: Option<crate::models::PredefinedPackageDimensions>,
 }
 

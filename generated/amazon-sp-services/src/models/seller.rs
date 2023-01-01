@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Seller {
     /// The identifier of the seller of the service job.
-    #[serde(rename = "sellerId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "sellerId", skip_serializing_if = "Option::is_none")]
     pub seller_id: Option<String>,
 }
 

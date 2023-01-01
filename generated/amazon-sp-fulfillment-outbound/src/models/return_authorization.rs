@@ -15,18 +15,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ReturnAuthorization {
     /// An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.
-    #[serde(rename = "returnAuthorizationId")]
+    #[serde(default, rename = "returnAuthorizationId")]
     pub return_authorization_id: String,
     /// An identifier for the Amazon fulfillment center that the return items should be sent to.
-    #[serde(rename = "fulfillmentCenterId")]
+    #[serde(default, rename = "fulfillmentCenterId")]
     pub fulfillment_center_id: String,
-    #[serde(rename = "returnToAddress")]
+    #[serde(default, rename = "returnToAddress")]
     pub return_to_address: Box<crate::models::Address>,
     /// The return merchandise authorization (RMA) that Amazon needs to process the return.
-    #[serde(rename = "amazonRmaId")]
+    #[serde(default, rename = "amazonRmaId")]
     pub amazon_rma_id: String,
     /// A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.
-    #[serde(rename = "rmaPageURL")]
+    #[serde(default, rename = "rmaPageURL")]
     pub rma_page_url: String,
 }
 

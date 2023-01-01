@@ -19,7 +19,7 @@ pub async fn run(refresh_token: String) -> Result<()> {
     refresh_token
   );
 
-  auth_state.get_access_token::<()>(&client).await?;
+  auth_state.get_access_token(&client).await?;
 
   Ok(())
 }

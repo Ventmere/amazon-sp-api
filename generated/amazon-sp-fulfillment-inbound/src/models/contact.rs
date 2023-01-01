@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Contact {
     /// The name of the contact person.
-    #[serde(rename = "Name")]
+    #[serde(default, rename = "Name")]
     pub name: String,
     /// The phone number of the contact person.
-    #[serde(rename = "Phone")]
+    #[serde(default, rename = "Phone")]
     pub phone: String,
     /// The email address of the contact person.
-    #[serde(rename = "Email")]
+    #[serde(default, rename = "Email")]
     pub email: String,
     /// The fax number of the contact person.
-    #[serde(rename = "Fax", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Fax", skip_serializing_if = "Option::is_none")]
     pub fax: Option<String>,
 }
 

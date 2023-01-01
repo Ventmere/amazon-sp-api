@@ -15,31 +15,31 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FinancialEventGroup {
     /// A unique identifier for the financial event group.
-    #[serde(rename = "FinancialEventGroupId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FinancialEventGroupId", skip_serializing_if = "Option::is_none")]
     pub financial_event_group_id: Option<String>,
     /// The processing status of the financial event group indicates whether the balance of the financial event group is settled.  Possible values:  * Open  * Closed
-    #[serde(rename = "ProcessingStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProcessingStatus", skip_serializing_if = "Option::is_none")]
     pub processing_status: Option<String>,
     /// The status of the fund transfer.
-    #[serde(rename = "FundTransferStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FundTransferStatus", skip_serializing_if = "Option::is_none")]
     pub fund_transfer_status: Option<String>,
-    #[serde(rename = "OriginalTotal", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OriginalTotal", skip_serializing_if = "Option::is_none")]
     pub original_total: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "ConvertedTotal", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ConvertedTotal", skip_serializing_if = "Option::is_none")]
     pub converted_total: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "FundTransferDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FundTransferDate", skip_serializing_if = "Option::is_none")]
     pub fund_transfer_date: Option<String>,
     /// The trace identifier used by sellers to look up transactions externally.
-    #[serde(rename = "TraceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TraceId", skip_serializing_if = "Option::is_none")]
     pub trace_id: Option<String>,
     /// The account tail of the payment instrument.
-    #[serde(rename = "AccountTail", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AccountTail", skip_serializing_if = "Option::is_none")]
     pub account_tail: Option<String>,
-    #[serde(rename = "BeginningBalance", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BeginningBalance", skip_serializing_if = "Option::is_none")]
     pub beginning_balance: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "FinancialEventGroupStart", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FinancialEventGroupStart", skip_serializing_if = "Option::is_none")]
     pub financial_event_group_start: Option<String>,
-    #[serde(rename = "FinancialEventGroupEnd", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FinancialEventGroupEnd", skip_serializing_if = "Option::is_none")]
     pub financial_event_group_end: Option<String>,
 }
 

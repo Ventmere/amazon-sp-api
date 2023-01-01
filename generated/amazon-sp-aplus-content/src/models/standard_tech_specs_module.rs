@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardTechSpecsModule {
-    #[serde(rename = "headline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headline", skip_serializing_if = "Option::is_none")]
     pub headline: Option<Box<crate::models::TextComponent>>,
     /// The specification list.
-    #[serde(rename = "specificationList")]
+    #[serde(default, rename = "specificationList")]
     pub specification_list: Vec<crate::models::StandardTextPairBlock>,
     /// The number of tables to present. Features are evenly divided between the tables.
-    #[serde(rename = "tableCount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "tableCount", skip_serializing_if = "Option::is_none")]
     pub table_count: Option<i32>,
 }
 

@@ -11,28 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`get_item_eligibility_preview`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetItemEligibilityPreviewError {
-    Status400(crate::models::GetItemEligibilityPreviewResponse),
-    Status401(crate::models::GetItemEligibilityPreviewResponse),
-    Status403(crate::models::GetItemEligibilityPreviewResponse),
-    Status404(crate::models::GetItemEligibilityPreviewResponse),
-    Status429(crate::models::GetItemEligibilityPreviewResponse),
-    Status500(crate::models::GetItemEligibilityPreviewResponse),
-    Status503(crate::models::GetItemEligibilityPreviewResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item's eligibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_item_eligibility_preview(configuration: &configuration::Configuration, asin: &str, program: &str, marketplace_ids: Option<Vec<String>>) -> Result<crate::models::GetItemEligibilityPreviewResponse, Error<GetItemEligibilityPreviewError>> {
+pub async fn get_item_eligibility_preview(configuration: &configuration::Configuration, asin: &str, program: &str, marketplace_ids: Option<Vec<String>>) -> Result<crate::models::GetItemEligibilityPreviewResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -53,16 +37,21 @@ pub async fn get_item_eligibility_preview(configuration: &configuration::Configu
     url_builder = url_builder.query(&[("program", &program.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -73,8 +62,7 @@ pub async fn get_item_eligibility_preview(configuration: &configuration::Configu
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -92,8 +80,8 @@ pub async fn get_item_eligibility_preview(configuration: &configuration::Configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetItemEligibilityPreviewError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

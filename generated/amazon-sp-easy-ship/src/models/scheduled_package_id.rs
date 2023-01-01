@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ScheduledPackageId {
     /// An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-    #[serde(rename = "amazonOrderId")]
+    #[serde(default, rename = "amazonOrderId")]
     pub amazon_order_id: String,
     /// An Amazon-defined identifier for the scheduled package.
-    #[serde(rename = "packageId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageId", skip_serializing_if = "Option::is_none")]
     pub package_id: Option<String>,
 }
 

@@ -15,24 +15,24 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AssociatedItem {
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "asin", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "asin", skip_serializing_if = "Option::is_none")]
     pub asin: Option<String>,
     /// The title of the item.
-    #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     /// The total number of items included in the order.
-    #[serde(rename = "quantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantity", skip_serializing_if = "Option::is_none")]
     pub quantity: Option<i32>,
     /// The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format.
-    #[serde(rename = "orderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "orderId", skip_serializing_if = "Option::is_none")]
     pub order_id: Option<String>,
     /// The status of the item.
-    #[serde(rename = "itemStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "itemStatus", skip_serializing_if = "Option::is_none")]
     pub item_status: Option<ItemStatus>,
     /// The brand name of the item.
-    #[serde(rename = "brandName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "brandName", skip_serializing_if = "Option::is_none")]
     pub brand_name: Option<String>,
-    #[serde(rename = "itemDelivery", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "itemDelivery", skip_serializing_if = "Option::is_none")]
     pub item_delivery: Option<Box<crate::models::ItemDelivery>>,
 }
 

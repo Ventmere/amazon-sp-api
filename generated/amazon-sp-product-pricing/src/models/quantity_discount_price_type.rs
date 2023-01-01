@@ -15,11 +15,11 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct QuantityDiscountPriceType {
     /// Indicates at what quantity this price becomes active.
-    #[serde(rename = "quantityTier")]
+    #[serde(default, rename = "quantityTier")]
     pub quantity_tier: i32,
-    #[serde(rename = "quantityDiscountType")]
+    #[serde(default, rename = "quantityDiscountType")]
     pub quantity_discount_type: crate::models::QuantityDiscountType,
-    #[serde(rename = "listingPrice")]
+    #[serde(default, rename = "listingPrice")]
     pub listing_price: Box<crate::models::MoneyType>,
 }
 

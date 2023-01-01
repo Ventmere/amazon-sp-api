@@ -14,25 +14,25 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LowestPriceType {
     /// Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-    #[serde(rename = "condition")]
+    #[serde(default, rename = "condition")]
     pub condition: String,
     /// Indicates whether the item is fulfilled by Amazon or by the seller.
-    #[serde(rename = "fulfillmentChannel")]
+    #[serde(default, rename = "fulfillmentChannel")]
     pub fulfillment_channel: String,
-    #[serde(rename = "offerType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "offerType", skip_serializing_if = "Option::is_none")]
     pub offer_type: Option<crate::models::OfferCustomerType>,
     /// Indicates at what quantity this price becomes active.
-    #[serde(rename = "quantityTier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantityTier", skip_serializing_if = "Option::is_none")]
     pub quantity_tier: Option<i32>,
-    #[serde(rename = "quantityDiscountType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "quantityDiscountType", skip_serializing_if = "Option::is_none")]
     pub quantity_discount_type: Option<crate::models::QuantityDiscountType>,
-    #[serde(rename = "LandedPrice")]
+    #[serde(default, rename = "LandedPrice")]
     pub landed_price: Box<crate::models::MoneyType>,
-    #[serde(rename = "ListingPrice")]
+    #[serde(default, rename = "ListingPrice")]
     pub listing_price: Box<crate::models::MoneyType>,
-    #[serde(rename = "Shipping")]
+    #[serde(default, rename = "Shipping")]
     pub shipping: Box<crate::models::MoneyType>,
-    #[serde(rename = "Points", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Points", skip_serializing_if = "Option::is_none")]
     pub points: Option<Box<crate::models::Points>>,
 }
 

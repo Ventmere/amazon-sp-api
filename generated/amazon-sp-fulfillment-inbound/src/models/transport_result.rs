@@ -14,13 +14,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TransportResult {
-    #[serde(rename = "TransportStatus")]
+    #[serde(default, rename = "TransportStatus")]
     pub transport_status: crate::models::TransportStatus,
     /// An error code that identifies the type of error that occured.
-    #[serde(rename = "ErrorCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ErrorCode", skip_serializing_if = "Option::is_none")]
     pub error_code: Option<String>,
     /// A message that describes the error condition.
-    #[serde(rename = "ErrorDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ErrorDescription", skip_serializing_if = "Option::is_none")]
     pub error_description: Option<String>,
 }
 

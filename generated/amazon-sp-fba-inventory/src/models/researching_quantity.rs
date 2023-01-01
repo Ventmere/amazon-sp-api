@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ResearchingQuantity {
     /// The total number of units currently being researched in Amazon's fulfillment network.
-    #[serde(rename = "totalResearchingQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "totalResearchingQuantity", skip_serializing_if = "Option::is_none")]
     pub total_researching_quantity: Option<i32>,
     /// A list of quantity details for items currently being researched.
-    #[serde(rename = "researchingQuantityBreakdown", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "researchingQuantityBreakdown", skip_serializing_if = "Option::is_none")]
     pub researching_quantity_breakdown: Option<Vec<crate::models::ResearchingQuantityEntry>>,
 }
 

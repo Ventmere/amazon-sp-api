@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct TextItem {
     /// The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection.
-    #[serde(rename = "position")]
+    #[serde(default, rename = "position")]
     pub position: i32,
-    #[serde(rename = "text")]
+    #[serde(default, rename = "text")]
     pub text: Box<crate::models::TextComponent>,
 }
 

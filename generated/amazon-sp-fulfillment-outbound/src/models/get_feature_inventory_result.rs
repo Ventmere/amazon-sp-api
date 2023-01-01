@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetFeatureInventoryResult {
     /// The requested marketplace.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// The name of the feature.
-    #[serde(rename = "featureName")]
+    #[serde(default, rename = "featureName")]
     pub feature_name: String,
     /// When present and not empty, pass this string token in the next request to return the next response page.
-    #[serde(rename = "nextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "nextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
     /// An array of SKUs eligible for this feature and the quantity available.
-    #[serde(rename = "featureSkus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "featureSkus", skip_serializing_if = "Option::is_none")]
     pub feature_skus: Option<Vec<crate::models::FeatureSku>>,
 }
 

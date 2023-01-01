@@ -14,21 +14,21 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct StandardSingleImageSpecsDetailModule {
-    #[serde(rename = "headline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "headline", skip_serializing_if = "Option::is_none")]
     pub headline: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "image", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "image", skip_serializing_if = "Option::is_none")]
     pub image: Option<Box<crate::models::ImageComponent>>,
-    #[serde(rename = "descriptionHeadline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "descriptionHeadline", skip_serializing_if = "Option::is_none")]
     pub description_headline: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "descriptionBlock1", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "descriptionBlock1", skip_serializing_if = "Option::is_none")]
     pub description_block1: Option<Box<crate::models::StandardTextBlock>>,
-    #[serde(rename = "descriptionBlock2", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "descriptionBlock2", skip_serializing_if = "Option::is_none")]
     pub description_block2: Option<Box<crate::models::StandardTextBlock>>,
-    #[serde(rename = "specificationHeadline", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "specificationHeadline", skip_serializing_if = "Option::is_none")]
     pub specification_headline: Option<Box<crate::models::TextComponent>>,
-    #[serde(rename = "specificationListBlock", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "specificationListBlock", skip_serializing_if = "Option::is_none")]
     pub specification_list_block: Option<Box<crate::models::StandardHeaderTextListBlock>>,
-    #[serde(rename = "specificationTextBlock", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "specificationTextBlock", skip_serializing_if = "Option::is_none")]
     pub specification_text_block: Option<Box<crate::models::StandardTextBlock>>,
 }
 

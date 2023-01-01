@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateReturnItem {
     /// An identifier assigned by the seller to the return item.
-    #[serde(rename = "sellerReturnItemId")]
+    #[serde(default, rename = "sellerReturnItemId")]
     pub seller_return_item_id: String,
     /// The identifier assigned to the item by the seller when the fulfillment order was created.
-    #[serde(rename = "sellerFulfillmentOrderItemId")]
+    #[serde(default, rename = "sellerFulfillmentOrderItemId")]
     pub seller_fulfillment_order_item_id: String,
     /// The identifier for the shipment that is associated with the return item.
-    #[serde(rename = "amazonShipmentId")]
+    #[serde(default, rename = "amazonShipmentId")]
     pub amazon_shipment_id: String,
     /// The return reason code assigned to the return item by the seller.
-    #[serde(rename = "returnReasonCode")]
+    #[serde(default, rename = "returnReasonCode")]
     pub return_reason_code: String,
     /// An optional comment about the return item.
-    #[serde(rename = "returnComment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "returnComment", skip_serializing_if = "Option::is_none")]
     pub return_comment: Option<String>,
 }
 

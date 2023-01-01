@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PackageDetails {
     /// A list of items contained in the package.
-    #[serde(rename = "packageItems", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageItems", skip_serializing_if = "Option::is_none")]
     pub package_items: Option<Vec<crate::models::Item>>,
-    #[serde(rename = "packageTimeSlot")]
+    #[serde(default, rename = "packageTimeSlot")]
     pub package_time_slot: Box<crate::models::TimeSlot>,
     /// Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
-    #[serde(rename = "packageIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageIdentifier", skip_serializing_if = "Option::is_none")]
     pub package_identifier: Option<String>,
 }
 

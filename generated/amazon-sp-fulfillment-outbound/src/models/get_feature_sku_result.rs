@@ -15,18 +15,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetFeatureSkuResult {
     /// The requested marketplace.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// The name of the feature.
-    #[serde(rename = "featureName")]
+    #[serde(default, rename = "featureName")]
     pub feature_name: String,
     /// When true, the seller SKU is eligible for the requested feature.
-    #[serde(rename = "isEligible")]
+    #[serde(default, rename = "isEligible")]
     pub is_eligible: bool,
     /// A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * MERCHANT_NOT_ENROLLED - The merchant isn't enrolled for the feature. * SKU_NOT_ELIGIBLE - The SKU doesn't reside in a warehouse that supports the feature. * INVALID_SKU - There is an issue with the SKU provided.
-    #[serde(rename = "ineligibleReasons", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ineligibleReasons", skip_serializing_if = "Option::is_none")]
     pub ineligible_reasons: Option<Vec<String>>,
-    #[serde(rename = "skuInfo", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "skuInfo", skip_serializing_if = "Option::is_none")]
     pub sku_info: Option<Box<crate::models::FeatureSku>>,
 }
 

@@ -15,24 +15,24 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentDetails {
     /// When true, this is a priority shipment.
-    #[serde(rename = "isPriorityShipment")]
+    #[serde(default, rename = "isPriorityShipment")]
     pub is_priority_shipment: bool,
     /// When true, this order is part of a scheduled delivery program.
-    #[serde(rename = "isScheduledDeliveryShipment", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "isScheduledDeliveryShipment", skip_serializing_if = "Option::is_none")]
     pub is_scheduled_delivery_shipment: Option<bool>,
     /// When true, a packing slip is required to be sent to the customer.
-    #[serde(rename = "isPslipRequired")]
+    #[serde(default, rename = "isPslipRequired")]
     pub is_pslip_required: bool,
     /// When true, the order contain a gift. Include the gift message and gift wrap information.
-    #[serde(rename = "isGift", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "isGift", skip_serializing_if = "Option::is_none")]
     pub is_gift: Option<bool>,
     /// Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the 'Help' section on Vendor Central for 'ship methods'.
-    #[serde(rename = "shipMethod")]
+    #[serde(default, rename = "shipMethod")]
     pub ship_method: String,
-    #[serde(rename = "shipmentDates")]
+    #[serde(default, rename = "shipmentDates")]
     pub shipment_dates: Box<crate::models::ShipmentDates>,
     /// Message to customer for order status.
-    #[serde(rename = "messageToCustomer")]
+    #[serde(default, rename = "messageToCustomer")]
     pub message_to_customer: String,
 }
 

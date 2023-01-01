@@ -11,74 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`get_packing_slip`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetPackingSlipError {
-    Status400(crate::models::GetPackingSlipResponse),
-    Status401(crate::models::GetPackingSlipResponse),
-    Status403(crate::models::GetPackingSlipResponse),
-    Status404(crate::models::GetPackingSlipResponse),
-    Status415(crate::models::GetPackingSlipResponse),
-    Status429(crate::models::GetPackingSlipResponse),
-    Status500(crate::models::GetPackingSlipResponse),
-    Status503(crate::models::GetPackingSlipResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_packing_slips`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetPackingSlipsError {
-    Status400(crate::models::GetPackingSlipListResponse),
-    Status401(crate::models::GetPackingSlipListResponse),
-    Status403(crate::models::GetPackingSlipListResponse),
-    Status404(crate::models::GetPackingSlipListResponse),
-    Status415(crate::models::GetPackingSlipListResponse),
-    Status429(crate::models::GetPackingSlipListResponse),
-    Status500(crate::models::GetPackingSlipListResponse),
-    Status503(crate::models::GetPackingSlipListResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`submit_shipment_confirmations`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SubmitShipmentConfirmationsError {
-    Status400(crate::models::SubmitShipmentConfirmationsResponse),
-    Status403(crate::models::SubmitShipmentConfirmationsResponse),
-    Status404(crate::models::SubmitShipmentConfirmationsResponse),
-    Status413(crate::models::SubmitShipmentConfirmationsResponse),
-    Status415(crate::models::SubmitShipmentConfirmationsResponse),
-    Status429(crate::models::SubmitShipmentConfirmationsResponse),
-    Status500(crate::models::SubmitShipmentConfirmationsResponse),
-    Status503(crate::models::SubmitShipmentConfirmationsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`submit_shipment_status_updates`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SubmitShipmentStatusUpdatesError {
-    Status400(crate::models::SubmitShipmentStatusUpdatesResponse),
-    Status403(crate::models::SubmitShipmentStatusUpdatesResponse),
-    Status404(crate::models::SubmitShipmentStatusUpdatesResponse),
-    Status413(crate::models::SubmitShipmentStatusUpdatesResponse),
-    Status415(crate::models::SubmitShipmentStatusUpdatesResponse),
-    Status429(crate::models::SubmitShipmentStatusUpdatesResponse),
-    Status500(crate::models::SubmitShipmentStatusUpdatesResponse),
-    Status503(crate::models::SubmitShipmentStatusUpdatesResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Returns a packing slip based on the purchaseOrderNumber that you specify.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_packing_slip(configuration: &configuration::Configuration, purchase_order_number: &str) -> Result<crate::models::GetPackingSlipResponse, Error<GetPackingSlipError>> {
+pub async fn get_packing_slip(configuration: &configuration::Configuration, purchase_order_number: &str) -> Result<crate::models::GetPackingSlipResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -91,16 +29,21 @@ pub async fn get_packing_slip(configuration: &configuration::Configuration, purc
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -111,8 +54,7 @@ pub async fn get_packing_slip(configuration: &configuration::Configuration, purc
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -130,14 +72,14 @@ pub async fn get_packing_slip(configuration: &configuration::Configuration, purc
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetPackingSlipError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a list of packing slips for the purchase orders that match the criteria specified. Date range to search must not be more than 7 days.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_packing_slips(configuration: &configuration::Configuration, created_after: String, created_before: String, ship_from_party_id: Option<&str>, limit: Option<i32>, sort_order: Option<&str>, next_token: Option<&str>) -> Result<crate::models::GetPackingSlipListResponse, Error<GetPackingSlipsError>> {
+pub async fn get_packing_slips(configuration: &configuration::Configuration, created_after: String, created_before: String, ship_from_party_id: Option<&str>, limit: Option<i32>, sort_order: Option<&str>, next_token: Option<&str>) -> Result<crate::models::GetPackingSlipListResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -164,16 +106,21 @@ pub async fn get_packing_slips(configuration: &configuration::Configuration, cre
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -184,8 +131,7 @@ pub async fn get_packing_slips(configuration: &configuration::Configuration, cre
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -203,14 +149,14 @@ pub async fn get_packing_slips(configuration: &configuration::Configuration, cre
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetPackingSlipsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Submits one or more shipment confirmations for vendor orders.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn submit_shipment_confirmations(configuration: &configuration::Configuration, body: crate::models::SubmitShipmentConfirmationsRequest) -> Result<crate::models::SubmitShipmentConfirmationsResponse, Error<SubmitShipmentConfirmationsError>> {
+pub async fn submit_shipment_confirmations(configuration: &configuration::Configuration, body: crate::models::SubmitShipmentConfirmationsRequest) -> Result<crate::models::SubmitShipmentConfirmationsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -223,16 +169,21 @@ pub async fn submit_shipment_confirmations(configuration: &configuration::Config
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -243,8 +194,7 @@ pub async fn submit_shipment_confirmations(configuration: &configuration::Config
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -263,14 +213,14 @@ pub async fn submit_shipment_confirmations(configuration: &configuration::Config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SubmitShipmentConfirmationsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// This API call is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API will submit a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn submit_shipment_status_updates(configuration: &configuration::Configuration, body: crate::models::SubmitShipmentStatusUpdatesRequest) -> Result<crate::models::SubmitShipmentStatusUpdatesResponse, Error<SubmitShipmentStatusUpdatesError>> {
+pub async fn submit_shipment_status_updates(configuration: &configuration::Configuration, body: crate::models::SubmitShipmentStatusUpdatesRequest) -> Result<crate::models::SubmitShipmentStatusUpdatesResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -283,16 +233,21 @@ pub async fn submit_shipment_status_updates(configuration: &configuration::Confi
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -303,8 +258,7 @@ pub async fn submit_shipment_status_updates(configuration: &configuration::Confi
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -323,8 +277,8 @@ pub async fn submit_shipment_status_updates(configuration: &configuration::Confi
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SubmitShipmentStatusUpdatesError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ShipmentInvoiceStatusResponse {
-    #[serde(rename = "Shipments", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Shipments", skip_serializing_if = "Option::is_none")]
     pub shipments: Option<Box<crate::models::ShipmentInvoiceStatusInfo>>,
 }
 

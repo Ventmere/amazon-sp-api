@@ -15,25 +15,25 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AffordabilityExpenseEvent {
     /// An Amazon-defined identifier for an order.
-    #[serde(rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
     pub amazon_order_id: Option<String>,
-    #[serde(rename = "PostedDate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PostedDate", skip_serializing_if = "Option::is_none")]
     pub posted_date: Option<String>,
     /// An encrypted, Amazon-defined marketplace identifier.
-    #[serde(rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "MarketplaceId", skip_serializing_if = "Option::is_none")]
     pub marketplace_id: Option<String>,
     /// Indicates the type of transaction.   Possible values:  * Charge - For an affordability promotion expense.  * Refund - For an affordability promotion expense reversal.
-    #[serde(rename = "TransactionType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TransactionType", skip_serializing_if = "Option::is_none")]
     pub transaction_type: Option<String>,
-    #[serde(rename = "BaseExpense", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BaseExpense", skip_serializing_if = "Option::is_none")]
     pub base_expense: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "TaxTypeCGST")]
+    #[serde(default, rename = "TaxTypeCGST")]
     pub tax_type_cgst: Box<crate::models::Currency>,
-    #[serde(rename = "TaxTypeSGST")]
+    #[serde(default, rename = "TaxTypeSGST")]
     pub tax_type_sgst: Box<crate::models::Currency>,
-    #[serde(rename = "TaxTypeIGST")]
+    #[serde(default, rename = "TaxTypeIGST")]
     pub tax_type_igst: Box<crate::models::Currency>,
-    #[serde(rename = "TotalExpense", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalExpense", skip_serializing_if = "Option::is_none")]
     pub total_expense: Option<Box<crate::models::Currency>>,
 }
 

@@ -14,20 +14,20 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateShipmentRequest {
-    #[serde(rename = "ShipmentRequestDetails")]
+    #[serde(default, rename = "ShipmentRequestDetails")]
     pub shipment_request_details: Box<crate::models::ShipmentRequestDetails>,
     /// An Amazon-defined shipping service identifier.
-    #[serde(rename = "ShippingServiceId")]
+    #[serde(default, rename = "ShippingServiceId")]
     pub shipping_service_id: String,
     /// Identifies a shipping service order made by a carrier.
-    #[serde(rename = "ShippingServiceOfferId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShippingServiceOfferId", skip_serializing_if = "Option::is_none")]
     pub shipping_service_offer_id: Option<String>,
-    #[serde(rename = "HazmatType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "HazmatType", skip_serializing_if = "Option::is_none")]
     pub hazmat_type: Option<crate::models::HazmatType>,
-    #[serde(rename = "LabelFormatOption", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LabelFormatOption", skip_serializing_if = "Option::is_none")]
     pub label_format_option: Option<Box<crate::models::LabelFormatOptionRequest>>,
     /// A list of additional seller input pairs required to purchase shipping.
-    #[serde(rename = "ShipmentLevelSellerInputsList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ShipmentLevelSellerInputsList", skip_serializing_if = "Option::is_none")]
     pub shipment_level_seller_inputs_list: Option<Vec<crate::models::AdditionalSellerInputs>>,
 }
 

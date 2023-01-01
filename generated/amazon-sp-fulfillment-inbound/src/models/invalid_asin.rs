@@ -14,9 +14,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InvalidAsin {
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
-    #[serde(rename = "ErrorReason", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ErrorReason", skip_serializing_if = "Option::is_none")]
     pub error_reason: Option<crate::models::ErrorReason>,
 }
 

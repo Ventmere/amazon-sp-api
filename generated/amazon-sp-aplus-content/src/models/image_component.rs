@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ImageComponent {
     /// This identifier is provided by the Selling Partner API for Uploads.
-    #[serde(rename = "uploadDestinationId")]
+    #[serde(default, rename = "uploadDestinationId")]
     pub upload_destination_id: String,
-    #[serde(rename = "imageCropSpecification")]
+    #[serde(default, rename = "imageCropSpecification")]
     pub image_crop_specification: Box<crate::models::ImageCropSpecification>,
     /// The alternative text for the image.
-    #[serde(rename = "altText")]
+    #[serde(default, rename = "altText")]
     pub alt_text: String,
 }
 

@@ -15,9 +15,9 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ListFinancialEventsPayload {
     /// When present and not empty, pass this string token in the next request to return the next response page.
-    #[serde(rename = "NextToken", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NextToken", skip_serializing_if = "Option::is_none")]
     pub next_token: Option<String>,
-    #[serde(rename = "FinancialEvents", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FinancialEvents", skip_serializing_if = "Option::is_none")]
     pub financial_events: Option<Box<crate::models::FinancialEvents>>,
 }
 

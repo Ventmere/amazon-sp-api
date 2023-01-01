@@ -15,14 +15,14 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AsinPrepInstructions {
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
-    #[serde(rename = "BarcodeInstruction", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BarcodeInstruction", skip_serializing_if = "Option::is_none")]
     pub barcode_instruction: Option<crate::models::BarcodeInstruction>,
-    #[serde(rename = "PrepGuidance", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PrepGuidance", skip_serializing_if = "Option::is_none")]
     pub prep_guidance: Option<crate::models::PrepGuidance>,
     /// A list of preparation instructions to help with item sourcing decisions.
-    #[serde(rename = "PrepInstructionList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PrepInstructionList", skip_serializing_if = "Option::is_none")]
     pub prep_instruction_list: Option<Vec<crate::models::PrepInstruction>>,
 }
 

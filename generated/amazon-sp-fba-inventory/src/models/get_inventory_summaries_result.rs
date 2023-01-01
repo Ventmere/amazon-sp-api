@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetInventorySummariesResult {
-    #[serde(rename = "granularity")]
+    #[serde(default, rename = "granularity")]
     pub granularity: Box<crate::models::Granularity>,
     /// A list of inventory summaries.
-    #[serde(rename = "inventorySummaries")]
+    #[serde(default, rename = "inventorySummaries")]
     pub inventory_summaries: Vec<crate::models::InventorySummary>,
 }
 

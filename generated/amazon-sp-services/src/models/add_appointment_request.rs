@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AddAppointmentRequest {
-    #[serde(rename = "appointmentTime")]
+    #[serde(default, rename = "appointmentTime")]
     pub appointment_time: Box<crate::models::AppointmentTimeInput>,
 }
 

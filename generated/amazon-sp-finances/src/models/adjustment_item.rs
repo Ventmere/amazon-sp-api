@@ -15,23 +15,23 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct AdjustmentItem {
     /// Represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement.
-    #[serde(rename = "Quantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Quantity", skip_serializing_if = "Option::is_none")]
     pub quantity: Option<String>,
-    #[serde(rename = "PerUnitAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PerUnitAmount", skip_serializing_if = "Option::is_none")]
     pub per_unit_amount: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "TotalAmount", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "TotalAmount", skip_serializing_if = "Option::is_none")]
     pub total_amount: Option<Box<crate::models::Currency>>,
     /// The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
-    #[serde(rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
     /// A unique identifier assigned to products stored in and fulfilled from a fulfillment center.
-    #[serde(rename = "FnSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FnSKU", skip_serializing_if = "Option::is_none")]
     pub fn_sku: Option<String>,
     /// A short description of the item.
-    #[serde(rename = "ProductDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ProductDescription", skip_serializing_if = "Option::is_none")]
     pub product_description: Option<String>,
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
 }
 

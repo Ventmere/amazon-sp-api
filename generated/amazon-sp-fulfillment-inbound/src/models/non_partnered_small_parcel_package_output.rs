@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct NonPartneredSmallParcelPackageOutput {
     /// The carrier that you are using for the inbound shipment.
-    #[serde(rename = "CarrierName")]
+    #[serde(default, rename = "CarrierName")]
     pub carrier_name: String,
     /// The tracking number of the package, provided by the carrier.
-    #[serde(rename = "TrackingId")]
+    #[serde(default, rename = "TrackingId")]
     pub tracking_id: String,
-    #[serde(rename = "PackageStatus")]
+    #[serde(default, rename = "PackageStatus")]
     pub package_status: crate::models::PackageStatus,
 }
 

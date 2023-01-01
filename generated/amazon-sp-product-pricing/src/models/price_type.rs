@@ -13,13 +13,13 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PriceType {
-    #[serde(rename = "LandedPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LandedPrice", skip_serializing_if = "Option::is_none")]
     pub landed_price: Option<Box<crate::models::MoneyType>>,
-    #[serde(rename = "ListingPrice")]
+    #[serde(default, rename = "ListingPrice")]
     pub listing_price: Box<crate::models::MoneyType>,
-    #[serde(rename = "Shipping", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Shipping", skip_serializing_if = "Option::is_none")]
     pub shipping: Option<Box<crate::models::MoneyType>>,
-    #[serde(rename = "Points", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "Points", skip_serializing_if = "Option::is_none")]
     pub points: Option<Box<crate::models::Points>>,
 }
 

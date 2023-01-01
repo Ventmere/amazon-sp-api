@@ -15,12 +15,12 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateFeedDocumentResult {
     /// The identifier of the feed document.
-    #[serde(rename = "feedDocumentId")]
+    #[serde(default, rename = "feedDocumentId")]
     pub feed_document_id: String,
     /// The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
-    #[serde(rename = "url")]
+    #[serde(default, rename = "url")]
     pub url: String,
-    #[serde(rename = "encryptionDetails")]
+    #[serde(default, rename = "encryptionDetails")]
     pub encryption_details: Box<crate::models::FeedDocumentEncryptionDetails>,
 }
 

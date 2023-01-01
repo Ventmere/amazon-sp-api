@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PackingSlip {
     /// Purchase order number of the shipment that the packing slip is for.
-    #[serde(rename = "purchaseOrderNumber")]
+    #[serde(default, rename = "purchaseOrderNumber")]
     pub purchase_order_number: String,
     /// A Base64encoded string of the packing slip PDF.
-    #[serde(rename = "content")]
+    #[serde(default, rename = "content")]
     pub content: String,
     /// The format of the file such as PDF, JPEG etc.
-    #[serde(rename = "contentType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "contentType", skip_serializing_if = "Option::is_none")]
     pub content_type: Option<ContentType>,
 }
 

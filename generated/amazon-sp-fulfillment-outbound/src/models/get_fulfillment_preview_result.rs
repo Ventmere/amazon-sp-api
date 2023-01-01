@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetFulfillmentPreviewResult {
     /// An array of fulfillment preview information.
-    #[serde(rename = "fulfillmentPreviews", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentPreviews", skip_serializing_if = "Option::is_none")]
     pub fulfillment_previews: Option<Vec<crate::models::FulfillmentPreview>>,
 }
 

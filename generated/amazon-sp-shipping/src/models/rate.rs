@@ -15,18 +15,18 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Rate {
     /// An identifier for the rate.
-    #[serde(rename = "rateId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "rateId", skip_serializing_if = "Option::is_none")]
     pub rate_id: Option<String>,
-    #[serde(rename = "totalCharge", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "totalCharge", skip_serializing_if = "Option::is_none")]
     pub total_charge: Option<Box<crate::models::Currency>>,
-    #[serde(rename = "billedWeight", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "billedWeight", skip_serializing_if = "Option::is_none")]
     pub billed_weight: Option<Box<crate::models::Weight>>,
     /// The time after which the offering will expire.
-    #[serde(rename = "expirationTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "expirationTime", skip_serializing_if = "Option::is_none")]
     pub expiration_time: Option<String>,
-    #[serde(rename = "serviceType", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "serviceType", skip_serializing_if = "Option::is_none")]
     pub service_type: Option<crate::models::ServiceType>,
-    #[serde(rename = "promise", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "promise", skip_serializing_if = "Option::is_none")]
     pub promise: Option<Box<crate::models::ShippingPromiseSet>>,
 }
 

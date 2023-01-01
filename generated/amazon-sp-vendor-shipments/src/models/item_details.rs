@@ -15,17 +15,17 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ItemDetails {
     /// The Amazon purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
-    #[serde(rename = "purchaseOrderNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "purchaseOrderNumber", skip_serializing_if = "Option::is_none")]
     pub purchase_order_number: Option<String>,
     /// The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
-    #[serde(rename = "lotNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "lotNumber", skip_serializing_if = "Option::is_none")]
     pub lot_number: Option<String>,
-    #[serde(rename = "expiry", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "expiry", skip_serializing_if = "Option::is_none")]
     pub expiry: Option<Box<crate::models::Expiry>>,
-    #[serde(rename = "maximumRetailPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "maximumRetailPrice", skip_serializing_if = "Option::is_none")]
     pub maximum_retail_price: Option<Box<crate::models::Money>>,
     /// Identification of the instructions on how specified item/carton/pallet should be handled.
-    #[serde(rename = "handlingCode", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "handlingCode", skip_serializing_if = "Option::is_none")]
     pub handling_code: Option<HandlingCode>,
 }
 

@@ -15,15 +15,15 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Subscription {
     /// The subscription identifier generated when the subscription is created.
-    #[serde(rename = "subscriptionId")]
+    #[serde(default, rename = "subscriptionId")]
     pub subscription_id: String,
     /// The version of the payload object to be used in the notification.
-    #[serde(rename = "payloadVersion")]
+    #[serde(default, rename = "payloadVersion")]
     pub payload_version: String,
     /// The identifier for the destination where notifications will be delivered.
-    #[serde(rename = "destinationId")]
+    #[serde(default, rename = "destinationId")]
     pub destination_id: String,
-    #[serde(rename = "processingDirective", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "processingDirective", skip_serializing_if = "Option::is_none")]
     pub processing_directive: Option<Box<crate::models::ProcessingDirective>>,
 }
 

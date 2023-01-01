@@ -14,29 +14,29 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ProductTypeDefinition {
-    #[serde(rename = "metaSchema", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "metaSchema", skip_serializing_if = "Option::is_none")]
     pub meta_schema: Option<Box<crate::models::SchemaLink>>,
-    #[serde(rename = "schema")]
+    #[serde(default, rename = "schema")]
     pub schema: Box<crate::models::SchemaLink>,
     /// Name of the requirements set represented in this product type definition.
-    #[serde(rename = "requirements")]
+    #[serde(default, rename = "requirements")]
     pub requirements: Requirements,
     /// Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).
-    #[serde(rename = "requirementsEnforced")]
+    #[serde(default, rename = "requirementsEnforced")]
     pub requirements_enforced: RequirementsEnforced,
     /// Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.
-    #[serde(rename = "propertyGroups")]
+    #[serde(default, rename = "propertyGroups")]
     pub property_groups: ::std::collections::HashMap<String, crate::models::PropertyGroup>,
     /// Locale of the display elements contained in the product type definition.
-    #[serde(rename = "locale")]
+    #[serde(default, rename = "locale")]
     pub locale: String,
     /// Amazon marketplace identifiers for which the product type definition is applicable.
-    #[serde(rename = "marketplaceIds")]
+    #[serde(default, rename = "marketplaceIds")]
     pub marketplace_ids: Vec<String>,
     /// The name of the Amazon product type that this product type definition applies to.
-    #[serde(rename = "productType")]
+    #[serde(default, rename = "productType")]
     pub product_type: String,
-    #[serde(rename = "productTypeVersion")]
+    #[serde(default, rename = "productTypeVersion")]
     pub product_type_version: Box<crate::models::ProductTypeVersion>,
 }
 

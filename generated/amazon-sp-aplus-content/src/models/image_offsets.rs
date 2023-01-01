@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ImageOffsets {
-    #[serde(rename = "x")]
+    #[serde(default, rename = "x")]
     pub x: Box<crate::models::IntegerWithUnits>,
-    #[serde(rename = "y")]
+    #[serde(default, rename = "y")]
     pub y: Box<crate::models::IntegerWithUnits>,
 }
 

@@ -14,9 +14,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Amount {
-    #[serde(rename = "CurrencyCode")]
+    #[serde(default, rename = "CurrencyCode")]
     pub currency_code: crate::models::CurrencyCode,
-    #[serde(rename = "Value")]
+    #[serde(default, rename = "Value")]
     pub value: f64,
 }
 

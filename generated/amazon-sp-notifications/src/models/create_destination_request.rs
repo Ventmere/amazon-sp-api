@@ -14,10 +14,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateDestinationRequest {
-    #[serde(rename = "resourceSpecification")]
+    #[serde(default, rename = "resourceSpecification")]
     pub resource_specification: Box<crate::models::DestinationResourceSpecification>,
     /// A developer-defined name to help identify this destination.
-    #[serde(rename = "name")]
+    #[serde(default, rename = "name")]
     pub name: String,
 }
 

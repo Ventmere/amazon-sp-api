@@ -14,7 +14,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateFeedResult {
     /// The identifier for the feed. This identifier is unique only in combination with a seller ID.
-    #[serde(rename = "feedId")]
+    #[serde(default, rename = "feedId")]
     pub feed_id: String,
 }
 

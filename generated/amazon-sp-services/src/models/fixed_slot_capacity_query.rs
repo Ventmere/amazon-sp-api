@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FixedSlotCapacityQuery {
     /// An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.
-    #[serde(rename = "capacityTypes", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "capacityTypes", skip_serializing_if = "Option::is_none")]
     pub capacity_types: Option<Vec<crate::models::CapacityType>>,
     /// Size in which slots are being requested. This value should be a multiple of 5 and fall in the range: 5 <= `slotDuration` <= 360.
-    #[serde(rename = "slotDuration", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "slotDuration", skip_serializing_if = "Option::is_none")]
     pub slot_duration: Option<f32>,
     /// Start date time from which the capacity slots are being requested in ISO 8601 format.
-    #[serde(rename = "startDateTime")]
+    #[serde(default, rename = "startDateTime")]
     pub start_date_time: String,
     /// End date time up to which the capacity slots are being requested in ISO 8601 format.
-    #[serde(rename = "endDateTime")]
+    #[serde(default, rename = "endDateTime")]
     pub end_date_time: String,
 }
 

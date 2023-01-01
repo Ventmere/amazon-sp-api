@@ -15,10 +15,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct NonPartneredSmallParcelDataInput {
     /// The carrier that you are using for the inbound shipment.
-    #[serde(rename = "CarrierName")]
+    #[serde(default, rename = "CarrierName")]
     pub carrier_name: String,
     /// A list of package tracking information.
-    #[serde(rename = "PackageList")]
+    #[serde(default, rename = "PackageList")]
     pub package_list: Vec<crate::models::NonPartneredSmallParcelPackageInput>,
 }
 

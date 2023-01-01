@@ -13,9 +13,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct MarketplaceParticipation {
-    #[serde(rename = "marketplace")]
+    #[serde(default, rename = "marketplace")]
     pub marketplace: Box<crate::models::Marketplace>,
-    #[serde(rename = "participation")]
+    #[serde(default, rename = "participation")]
     pub participation: Box<crate::models::Participation>,
 }
 

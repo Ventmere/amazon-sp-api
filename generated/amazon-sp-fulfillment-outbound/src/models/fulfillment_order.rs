@@ -15,42 +15,42 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FulfillmentOrder {
     /// The fulfillment order identifier submitted with the createFulfillmentOrder operation.
-    #[serde(rename = "sellerFulfillmentOrderId")]
+    #[serde(default, rename = "sellerFulfillmentOrderId")]
     pub seller_fulfillment_order_id: String,
     /// The identifier for the marketplace the fulfillment order is placed against.
-    #[serde(rename = "marketplaceId")]
+    #[serde(default, rename = "marketplaceId")]
     pub marketplace_id: String,
     /// A fulfillment order identifier submitted with the createFulfillmentOrder operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
-    #[serde(rename = "displayableOrderId")]
+    #[serde(default, rename = "displayableOrderId")]
     pub displayable_order_id: String,
-    #[serde(rename = "displayableOrderDate")]
+    #[serde(default, rename = "displayableOrderDate")]
     pub displayable_order_date: String,
     /// A text block submitted with the createFulfillmentOrder operation. Displays in recipient-facing materials such as the packing slip.
-    #[serde(rename = "displayableOrderComment")]
+    #[serde(default, rename = "displayableOrderComment")]
     pub displayable_order_comment: String,
-    #[serde(rename = "shippingSpeedCategory")]
+    #[serde(default, rename = "shippingSpeedCategory")]
     pub shipping_speed_category: crate::models::ShippingSpeedCategory,
-    #[serde(rename = "deliveryWindow", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "deliveryWindow", skip_serializing_if = "Option::is_none")]
     pub delivery_window: Option<Box<crate::models::DeliveryWindow>>,
-    #[serde(rename = "destinationAddress")]
+    #[serde(default, rename = "destinationAddress")]
     pub destination_address: Box<crate::models::Address>,
-    #[serde(rename = "fulfillmentAction", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentAction", skip_serializing_if = "Option::is_none")]
     pub fulfillment_action: Option<crate::models::FulfillmentAction>,
-    #[serde(rename = "fulfillmentPolicy", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "fulfillmentPolicy", skip_serializing_if = "Option::is_none")]
     pub fulfillment_policy: Option<crate::models::FulfillmentPolicy>,
-    #[serde(rename = "codSettings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "codSettings", skip_serializing_if = "Option::is_none")]
     pub cod_settings: Option<Box<crate::models::CodSettings>>,
-    #[serde(rename = "receivedDate")]
+    #[serde(default, rename = "receivedDate")]
     pub received_date: String,
-    #[serde(rename = "fulfillmentOrderStatus")]
+    #[serde(default, rename = "fulfillmentOrderStatus")]
     pub fulfillment_order_status: crate::models::FulfillmentOrderStatus,
-    #[serde(rename = "statusUpdatedDate")]
+    #[serde(default, rename = "statusUpdatedDate")]
     pub status_updated_date: String,
     /// A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
-    #[serde(rename = "notificationEmails", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "notificationEmails", skip_serializing_if = "Option::is_none")]
     pub notification_emails: Option<Vec<String>>,
     /// A list of features and their fulfillment policies to apply to the order.
-    #[serde(rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "featureConstraints", skip_serializing_if = "Option::is_none")]
     pub feature_constraints: Option<Vec<crate::models::FeatureSettings>>,
 }
 

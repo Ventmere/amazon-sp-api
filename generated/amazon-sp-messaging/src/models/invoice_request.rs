@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InvoiceRequest {
     /// Attachments to include in the message to the buyer.
-    #[serde(rename = "attachments", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "attachments", skip_serializing_if = "Option::is_none")]
     pub attachments: Option<Vec<crate::models::Attachment>>,
 }
 

@@ -14,10 +14,10 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SalesRankType {
     ///  Identifies the item category from which the sales rank is taken.
-    #[serde(rename = "ProductCategoryId")]
+    #[serde(default, rename = "ProductCategoryId")]
     pub product_category_id: String,
     /// The sales rank of the item within the item category.
-    #[serde(rename = "Rank")]
+    #[serde(default, rename = "Rank")]
     pub rank: i32,
 }
 

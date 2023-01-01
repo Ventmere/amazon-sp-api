@@ -15,13 +15,13 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Warning {
     /// An warning code that identifies the type of warning that occurred.
-    #[serde(rename = "code")]
+    #[serde(default, rename = "code")]
     pub code: String,
     /// A message that describes the warning condition in a human-readable form.
-    #[serde(rename = "message")]
+    #[serde(default, rename = "message")]
     pub message: String,
     /// Additional details that can help the caller understand or address the warning.
-    #[serde(rename = "details", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "details", skip_serializing_if = "Option::is_none")]
     pub details: Option<String>,
 }
 

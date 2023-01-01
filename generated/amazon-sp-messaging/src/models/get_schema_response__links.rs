@@ -13,7 +13,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetSchemaResponseLinks {
-    #[serde(rename = "self")]
+    #[serde(default, rename = "self")]
     pub _self: Box<crate::models::LinkObject>,
 }
 

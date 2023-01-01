@@ -14,16 +14,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetPrepInstructionsResult {
     /// A list of SKU labeling requirements and item preparation instructions.
-    #[serde(rename = "SKUPrepInstructionsList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SKUPrepInstructionsList", skip_serializing_if = "Option::is_none")]
     pub sku_prep_instructions_list: Option<Vec<crate::models::SkuPrepInstructions>>,
     /// A list of invalid SKU values and the reason they are invalid.
-    #[serde(rename = "InvalidSKUList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "InvalidSKUList", skip_serializing_if = "Option::is_none")]
     pub invalid_sku_list: Option<Vec<crate::models::InvalidSku>>,
     /// A list of item preparation instructions.
-    #[serde(rename = "ASINPrepInstructionsList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASINPrepInstructionsList", skip_serializing_if = "Option::is_none")]
     pub asin_prep_instructions_list: Option<Vec<crate::models::AsinPrepInstructions>>,
     /// A list of invalid ASIN values and the reasons they are invalid.
-    #[serde(rename = "InvalidASINList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "InvalidASINList", skip_serializing_if = "Option::is_none")]
     pub invalid_asin_list: Option<Vec<crate::models::InvalidAsin>>,
 }
 

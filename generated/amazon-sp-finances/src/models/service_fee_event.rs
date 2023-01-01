@@ -15,25 +15,25 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ServiceFeeEvent {
     /// An Amazon-defined identifier for an order.
-    #[serde(rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonOrderId", skip_serializing_if = "Option::is_none")]
     pub amazon_order_id: Option<String>,
     /// A short description of the service fee reason.
-    #[serde(rename = "FeeReason", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeeReason", skip_serializing_if = "Option::is_none")]
     pub fee_reason: Option<String>,
     /// A list of fee component information.
-    #[serde(rename = "FeeList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeeList", skip_serializing_if = "Option::is_none")]
     pub fee_list: Option<Vec<crate::models::FeeComponent>>,
     /// The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
-    #[serde(rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerSKU", skip_serializing_if = "Option::is_none")]
     pub seller_sku: Option<String>,
     /// A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center.
-    #[serde(rename = "FnSKU", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FnSKU", skip_serializing_if = "Option::is_none")]
     pub fn_sku: Option<String>,
     /// A short description of the service fee event.
-    #[serde(rename = "FeeDescription", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeeDescription", skip_serializing_if = "Option::is_none")]
     pub fee_description: Option<String>,
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ASIN", skip_serializing_if = "Option::is_none")]
     pub ASIN: Option<String>,
 }
 

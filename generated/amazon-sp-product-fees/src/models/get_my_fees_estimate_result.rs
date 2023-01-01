@@ -14,7 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct GetMyFeesEstimateResult {
-    #[serde(rename = "FeesEstimateResult", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "FeesEstimateResult", skip_serializing_if = "Option::is_none")]
     pub fees_estimate_result: Option<Box<crate::models::FeesEstimateResult>>,
 }
 

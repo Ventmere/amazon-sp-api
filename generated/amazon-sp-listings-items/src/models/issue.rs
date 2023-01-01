@@ -15,16 +15,16 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Issue {
     /// An issue code that identifies the type of issue.
-    #[serde(rename = "code")]
+    #[serde(default, rename = "code")]
     pub code: String,
     /// A message that describes the issue.
-    #[serde(rename = "message")]
+    #[serde(default, rename = "message")]
     pub message: String,
     /// The severity of the issue.
-    #[serde(rename = "severity")]
+    #[serde(default, rename = "severity")]
     pub severity: Severity,
     /// Name of the attribute associated with the issue, if applicable.
-    #[serde(rename = "attributeName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "attributeName", skip_serializing_if = "Option::is_none")]
     pub attribute_name: Option<String>,
 }
 

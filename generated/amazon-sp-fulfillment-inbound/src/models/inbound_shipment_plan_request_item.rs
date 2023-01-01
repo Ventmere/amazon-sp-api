@@ -15,21 +15,21 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct InboundShipmentPlanRequestItem {
     /// The seller SKU of the item.
-    #[serde(rename = "SellerSKU")]
+    #[serde(default, rename = "SellerSKU")]
     pub seller_sku: String,
     /// The Amazon Standard Identification Number (ASIN) of the item.
-    #[serde(rename = "ASIN")]
+    #[serde(default, rename = "ASIN")]
     pub ASIN: String,
-    #[serde(rename = "Condition")]
+    #[serde(default, rename = "Condition")]
     pub condition: crate::models::Condition,
     /// The item quantity.
-    #[serde(rename = "Quantity")]
+    #[serde(default, rename = "Quantity")]
     pub quantity: i32,
     /// The item quantity.
-    #[serde(rename = "QuantityInCase", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "QuantityInCase", skip_serializing_if = "Option::is_none")]
     pub quantity_in_case: Option<i32>,
     /// A list of preparation instructions and who is responsible for that preparation.
-    #[serde(rename = "PrepDetailsList", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PrepDetailsList", skip_serializing_if = "Option::is_none")]
     pub prep_details_list: Option<Vec<crate::models::PrepDetails>>,
 }
 

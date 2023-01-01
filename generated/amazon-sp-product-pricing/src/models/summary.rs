@@ -15,27 +15,27 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Summary {
     /// The number of unique offers contained in NumberOfOffers.
-    #[serde(rename = "TotalOfferCount")]
+    #[serde(default, rename = "TotalOfferCount")]
     pub total_offer_count: i32,
-    #[serde(rename = "NumberOfOffers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "NumberOfOffers", skip_serializing_if = "Option::is_none")]
     pub number_of_offers: Option<Vec<crate::models::OfferCountType>>,
-    #[serde(rename = "LowestPrices", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "LowestPrices", skip_serializing_if = "Option::is_none")]
     pub lowest_prices: Option<Vec<crate::models::LowestPriceType>>,
-    #[serde(rename = "BuyBoxPrices", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyBoxPrices", skip_serializing_if = "Option::is_none")]
     pub buy_box_prices: Option<Vec<crate::models::BuyBoxPriceType>>,
-    #[serde(rename = "ListPrice", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ListPrice", skip_serializing_if = "Option::is_none")]
     pub list_price: Option<Box<crate::models::MoneyType>>,
-    #[serde(rename = "CompetitivePriceThreshold", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "CompetitivePriceThreshold", skip_serializing_if = "Option::is_none")]
     pub competitive_price_threshold: Option<Box<crate::models::MoneyType>>,
-    #[serde(rename = "SuggestedLowerPricePlusShipping", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SuggestedLowerPricePlusShipping", skip_serializing_if = "Option::is_none")]
     pub suggested_lower_price_plus_shipping: Option<Box<crate::models::MoneyType>>,
     /// A list of sales rank information for the item, by category.
-    #[serde(rename = "SalesRankings", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SalesRankings", skip_serializing_if = "Option::is_none")]
     pub sales_rankings: Option<Vec<crate::models::SalesRankType>>,
-    #[serde(rename = "BuyBoxEligibleOffers", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "BuyBoxEligibleOffers", skip_serializing_if = "Option::is_none")]
     pub buy_box_eligible_offers: Option<Vec<crate::models::OfferCountType>>,
     /// When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
-    #[serde(rename = "OffersAvailableTime", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "OffersAvailableTime", skip_serializing_if = "Option::is_none")]
     pub offers_available_time: Option<String>,
 }
 

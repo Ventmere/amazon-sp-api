@@ -15,19 +15,19 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct LabelData {
     /// Identifier for the package. The first package will be 001, the second 002, and so on. This number is used as a reference to refer to this package from the pallet level.
-    #[serde(rename = "packageIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "packageIdentifier", skip_serializing_if = "Option::is_none")]
     pub package_identifier: Option<String>,
     /// Package tracking identifier from the shipping carrier.
-    #[serde(rename = "trackingNumber", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "trackingNumber", skip_serializing_if = "Option::is_none")]
     pub tracking_number: Option<String>,
     /// Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation.
-    #[serde(rename = "shipMethod", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipMethod", skip_serializing_if = "Option::is_none")]
     pub ship_method: Option<String>,
     /// Shipping method name for internal reference.
-    #[serde(rename = "shipMethodName", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "shipMethodName", skip_serializing_if = "Option::is_none")]
     pub ship_method_name: Option<String>,
     /// This field will contain the Base64encoded string of the shipment label content.
-    #[serde(rename = "content")]
+    #[serde(default, rename = "content")]
     pub content: String,
 }
 

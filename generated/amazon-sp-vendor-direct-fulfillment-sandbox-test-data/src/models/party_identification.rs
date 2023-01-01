@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartyIdentification {
     /// Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
-    #[serde(rename = "partyId")]
+    #[serde(default, rename = "partyId")]
     pub party_id: String,
 }
 

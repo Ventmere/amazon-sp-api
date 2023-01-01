@@ -14,39 +14,39 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PartneredLtlDataOutput {
-    #[serde(rename = "Contact")]
+    #[serde(default, rename = "Contact")]
     pub contact: Box<crate::models::Contact>,
-    #[serde(rename = "BoxCount")]
+    #[serde(default, rename = "BoxCount")]
     pub box_count: i64,
-    #[serde(rename = "SellerFreightClass", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerFreightClass", skip_serializing_if = "Option::is_none")]
     pub seller_freight_class: Option<crate::models::SellerFreightClass>,
-    #[serde(rename = "FreightReadyDate")]
+    #[serde(default, rename = "FreightReadyDate")]
     pub freight_ready_date: String,
     /// A list of pallet information.
-    #[serde(rename = "PalletList")]
+    #[serde(default, rename = "PalletList")]
     pub pallet_list: Vec<crate::models::Pallet>,
-    #[serde(rename = "TotalWeight")]
+    #[serde(default, rename = "TotalWeight")]
     pub total_weight: Box<crate::models::Weight>,
-    #[serde(rename = "SellerDeclaredValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "SellerDeclaredValue", skip_serializing_if = "Option::is_none")]
     pub seller_declared_value: Option<Box<crate::models::Amount>>,
-    #[serde(rename = "AmazonCalculatedValue", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "AmazonCalculatedValue", skip_serializing_if = "Option::is_none")]
     pub amazon_calculated_value: Option<Box<crate::models::Amount>>,
-    #[serde(rename = "PreviewPickupDate")]
+    #[serde(default, rename = "PreviewPickupDate")]
     pub preview_pickup_date: String,
-    #[serde(rename = "PreviewDeliveryDate")]
+    #[serde(default, rename = "PreviewDeliveryDate")]
     pub preview_delivery_date: String,
-    #[serde(rename = "PreviewFreightClass")]
+    #[serde(default, rename = "PreviewFreightClass")]
     pub preview_freight_class: crate::models::SellerFreightClass,
     /// A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
-    #[serde(rename = "AmazonReferenceId")]
+    #[serde(default, rename = "AmazonReferenceId")]
     pub amazon_reference_id: String,
     /// Indicates whether the bill of lading for the shipment is available.
-    #[serde(rename = "IsBillOfLadingAvailable")]
+    #[serde(default, rename = "IsBillOfLadingAvailable")]
     pub is_bill_of_lading_available: bool,
-    #[serde(rename = "PartneredEstimate", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "PartneredEstimate", skip_serializing_if = "Option::is_none")]
     pub partnered_estimate: Option<Box<crate::models::PartneredEstimate>>,
     /// The carrier for the inbound shipment.
-    #[serde(rename = "CarrierName")]
+    #[serde(default, rename = "CarrierName")]
     pub carrier_name: String,
 }
 

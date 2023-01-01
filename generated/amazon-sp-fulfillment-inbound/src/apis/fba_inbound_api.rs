@@ -11,252 +11,12 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use amazon_sp_api_shared::request::UrlBuilder;
-
-
-/// struct for typed errors of method [`confirm_preorder`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ConfirmPreorderError {
-    Status400(crate::models::ConfirmPreorderResponse),
-    Status401(crate::models::ConfirmPreorderResponse),
-    Status403(crate::models::ConfirmPreorderResponse),
-    Status404(crate::models::ConfirmPreorderResponse),
-    Status429(crate::models::ConfirmPreorderResponse),
-    Status500(crate::models::ConfirmPreorderResponse),
-    Status503(crate::models::ConfirmPreorderResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`confirm_transport`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ConfirmTransportError {
-    Status400(crate::models::ConfirmTransportResponse),
-    Status401(crate::models::ConfirmTransportResponse),
-    Status403(crate::models::ConfirmTransportResponse),
-    Status404(crate::models::ConfirmTransportResponse),
-    Status429(crate::models::ConfirmTransportResponse),
-    Status500(crate::models::ConfirmTransportResponse),
-    Status503(crate::models::ConfirmTransportResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_inbound_shipment`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateInboundShipmentError {
-    Status400(crate::models::InboundShipmentResponse),
-    Status401(crate::models::InboundShipmentResponse),
-    Status403(crate::models::InboundShipmentResponse),
-    Status404(crate::models::InboundShipmentResponse),
-    Status429(crate::models::InboundShipmentResponse),
-    Status500(crate::models::InboundShipmentResponse),
-    Status503(crate::models::InboundShipmentResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`create_inbound_shipment_plan`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateInboundShipmentPlanError {
-    Status400(crate::models::CreateInboundShipmentPlanResponse),
-    Status401(crate::models::CreateInboundShipmentPlanResponse),
-    Status403(crate::models::CreateInboundShipmentPlanResponse),
-    Status404(crate::models::CreateInboundShipmentPlanResponse),
-    Status429(crate::models::CreateInboundShipmentPlanResponse),
-    Status500(crate::models::CreateInboundShipmentPlanResponse),
-    Status503(crate::models::CreateInboundShipmentPlanResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`estimate_transport`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum EstimateTransportError {
-    Status400(crate::models::EstimateTransportResponse),
-    Status401(crate::models::EstimateTransportResponse),
-    Status403(crate::models::EstimateTransportResponse),
-    Status404(crate::models::EstimateTransportResponse),
-    Status429(crate::models::EstimateTransportResponse),
-    Status500(crate::models::EstimateTransportResponse),
-    Status503(crate::models::EstimateTransportResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_bill_of_lading`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetBillOfLadingError {
-    Status400(crate::models::GetBillOfLadingResponse),
-    Status401(crate::models::GetBillOfLadingResponse),
-    Status403(crate::models::GetBillOfLadingResponse),
-    Status404(crate::models::GetBillOfLadingResponse),
-    Status429(crate::models::GetBillOfLadingResponse),
-    Status500(crate::models::GetBillOfLadingResponse),
-    Status503(crate::models::GetBillOfLadingResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_inbound_guidance`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetInboundGuidanceError {
-    Status400(crate::models::GetInboundGuidanceResponse),
-    Status401(crate::models::GetInboundGuidanceResponse),
-    Status403(crate::models::GetInboundGuidanceResponse),
-    Status404(crate::models::GetInboundGuidanceResponse),
-    Status429(crate::models::GetInboundGuidanceResponse),
-    Status500(crate::models::GetInboundGuidanceResponse),
-    Status503(crate::models::GetInboundGuidanceResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_labels`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetLabelsError {
-    Status400(crate::models::GetLabelsResponse),
-    Status401(crate::models::GetLabelsResponse),
-    Status403(crate::models::GetLabelsResponse),
-    Status404(crate::models::GetLabelsResponse),
-    Status429(crate::models::GetLabelsResponse),
-    Status500(crate::models::GetLabelsResponse),
-    Status503(crate::models::GetLabelsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_preorder_info`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetPreorderInfoError {
-    Status400(crate::models::GetPreorderInfoResponse),
-    Status401(crate::models::GetPreorderInfoResponse),
-    Status403(crate::models::GetPreorderInfoResponse),
-    Status404(crate::models::GetPreorderInfoResponse),
-    Status429(crate::models::GetPreorderInfoResponse),
-    Status500(crate::models::GetPreorderInfoResponse),
-    Status503(crate::models::GetPreorderInfoResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_prep_instructions`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetPrepInstructionsError {
-    Status400(crate::models::GetPrepInstructionsResponse),
-    Status401(crate::models::GetPrepInstructionsResponse),
-    Status403(crate::models::GetPrepInstructionsResponse),
-    Status404(crate::models::GetPrepInstructionsResponse),
-    Status429(crate::models::GetPrepInstructionsResponse),
-    Status500(crate::models::GetPrepInstructionsResponse),
-    Status503(crate::models::GetPrepInstructionsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_shipment_items`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetShipmentItemsError {
-    Status400(crate::models::GetShipmentItemsResponse),
-    Status401(crate::models::GetShipmentItemsResponse),
-    Status403(crate::models::GetShipmentItemsResponse),
-    Status404(crate::models::GetShipmentItemsResponse),
-    Status429(crate::models::GetShipmentItemsResponse),
-    Status500(crate::models::GetShipmentItemsResponse),
-    Status503(crate::models::GetShipmentItemsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_shipment_items_by_shipment_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetShipmentItemsByShipmentIdError {
-    Status400(crate::models::GetShipmentItemsResponse),
-    Status401(crate::models::GetShipmentItemsResponse),
-    Status403(crate::models::GetShipmentItemsResponse),
-    Status404(crate::models::GetShipmentItemsResponse),
-    Status429(crate::models::GetShipmentItemsResponse),
-    Status500(crate::models::GetShipmentItemsResponse),
-    Status503(crate::models::GetShipmentItemsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_shipments`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetShipmentsError {
-    Status400(crate::models::GetShipmentsResponse),
-    Status401(crate::models::GetShipmentsResponse),
-    Status403(crate::models::GetShipmentsResponse),
-    Status404(crate::models::GetShipmentsResponse),
-    Status429(crate::models::GetShipmentsResponse),
-    Status500(crate::models::GetShipmentsResponse),
-    Status503(crate::models::GetShipmentsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_transport_details`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetTransportDetailsError {
-    Status400(crate::models::GetTransportDetailsResponse),
-    Status401(crate::models::GetTransportDetailsResponse),
-    Status403(crate::models::GetTransportDetailsResponse),
-    Status404(crate::models::GetTransportDetailsResponse),
-    Status429(crate::models::GetTransportDetailsResponse),
-    Status500(crate::models::GetTransportDetailsResponse),
-    Status503(crate::models::GetTransportDetailsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`put_transport_details`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PutTransportDetailsError {
-    Status400(crate::models::PutTransportDetailsResponse),
-    Status401(crate::models::PutTransportDetailsResponse),
-    Status403(crate::models::PutTransportDetailsResponse),
-    Status404(crate::models::PutTransportDetailsResponse),
-    Status429(crate::models::PutTransportDetailsResponse),
-    Status500(crate::models::PutTransportDetailsResponse),
-    Status503(crate::models::PutTransportDetailsResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`update_inbound_shipment`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum UpdateInboundShipmentError {
-    Status400(crate::models::InboundShipmentResponse),
-    Status401(crate::models::InboundShipmentResponse),
-    Status403(crate::models::InboundShipmentResponse),
-    Status404(crate::models::InboundShipmentResponse),
-    Status429(crate::models::InboundShipmentResponse),
-    Status500(crate::models::InboundShipmentResponse),
-    Status503(crate::models::InboundShipmentResponse),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`void_transport`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum VoidTransportError {
-    Status400(crate::models::VoidTransportResponse),
-    Status401(crate::models::VoidTransportResponse),
-    Status403(crate::models::VoidTransportResponse),
-    Status404(crate::models::VoidTransportResponse),
-    Status429(crate::models::VoidTransportResponse),
-    Status500(crate::models::VoidTransportResponse),
-    Status503(crate::models::VoidTransportResponse),
-    UnknownValue(serde_json::Value),
-}
+use amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 /// Returns information needed to confirm a shipment for pre-order. Call this operation after calling the getPreorderInfo operation to get the NeedByDate value and other pre-order information about the shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn confirm_preorder(configuration: &configuration::Configuration, shipment_id: &str, need_by_date: String, marketplace_id: &str) -> Result<crate::models::ConfirmPreorderResponse, Error<ConfirmPreorderError>> {
+pub async fn confirm_preorder(configuration: &configuration::Configuration, shipment_id: &str, need_by_date: String, marketplace_id: &str) -> Result<crate::models::ConfirmPreorderResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -271,16 +31,21 @@ pub async fn confirm_preorder(configuration: &configuration::Configuration, ship
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -291,8 +56,7 @@ pub async fn confirm_preorder(configuration: &configuration::Configuration, ship
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -310,14 +74,14 @@ pub async fn confirm_preorder(configuration: &configuration::Configuration, ship
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ConfirmPreorderError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Confirms that the seller accepts the Amazon-partnered shipping estimate, agrees to allow Amazon to charge their account for the shipping cost, and requests that the Amazon-partnered carrier ship the inbound shipment.  Prior to calling the confirmTransport operation, you should call the getTransportDetails operation to get the Amazon-partnered shipping estimate.  Important: After confirming the transportation request, if the seller decides that they do not want the Amazon-partnered carrier to ship the inbound shipment, you can call the voidTransport operation to cancel the transportation request. Note that for a Small Parcel shipment, the seller has 24 hours after confirming a transportation request to void the transportation request. For a Less Than Truckload/Full Truckload (LTL/FTL) shipment, the seller has one hour after confirming a transportation request to void it. After the grace period has expired the seller's account will be charged for the shipping cost.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn confirm_transport(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::ConfirmTransportResponse, Error<ConfirmTransportError>> {
+pub async fn confirm_transport(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::ConfirmTransportResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -330,16 +94,21 @@ pub async fn confirm_transport(configuration: &configuration::Configuration, shi
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -350,8 +119,7 @@ pub async fn confirm_transport(configuration: &configuration::Configuration, shi
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -369,14 +137,14 @@ pub async fn confirm_transport(configuration: &configuration::Configuration, shi
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ConfirmTransportError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a new inbound shipment based on the specified shipmentId that was returned by the createInboundShipmentPlan operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_inbound_shipment(configuration: &configuration::Configuration, shipment_id: &str, body: crate::models::InboundShipmentRequest) -> Result<crate::models::InboundShipmentResponse, Error<CreateInboundShipmentError>> {
+pub async fn create_inbound_shipment(configuration: &configuration::Configuration, shipment_id: &str, body: crate::models::InboundShipmentRequest) -> Result<crate::models::InboundShipmentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -389,16 +157,21 @@ pub async fn create_inbound_shipment(configuration: &configuration::Configuratio
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -409,8 +182,7 @@ pub async fn create_inbound_shipment(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -429,14 +201,14 @@ pub async fn create_inbound_shipment(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateInboundShipmentError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns one or more inbound shipment plans, which provide the information you need to create one or more inbound shipments for a set of items that you specify. Multiple inbound shipment plans might be required so that items can be optimally placed in Amazon's fulfillment network—for example, positioning inventory closer to the customer. Alternatively, two inbound shipment plans might be created with the same Amazon fulfillment center destination if the two shipment plans require different processing—for example, items that require labels must be shipped separately from stickerless, commingled inventory.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn create_inbound_shipment_plan(configuration: &configuration::Configuration, body: crate::models::CreateInboundShipmentPlanRequest) -> Result<crate::models::CreateInboundShipmentPlanResponse, Error<CreateInboundShipmentPlanError>> {
+pub async fn create_inbound_shipment_plan(configuration: &configuration::Configuration, body: crate::models::CreateInboundShipmentPlanRequest) -> Result<crate::models::CreateInboundShipmentPlanResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -449,16 +221,21 @@ pub async fn create_inbound_shipment_plan(configuration: &configuration::Configu
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -469,8 +246,7 @@ pub async fn create_inbound_shipment_plan(configuration: &configuration::Configu
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -489,14 +265,14 @@ pub async fn create_inbound_shipment_plan(configuration: &configuration::Configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CreateInboundShipmentPlanError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Initiates the process of estimating the shipping cost for an inbound shipment by an Amazon-partnered carrier.  Prior to calling the estimateTransport operation, you must call the putTransportDetails operation to provide Amazon with the transportation information for the inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn estimate_transport(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::EstimateTransportResponse, Error<EstimateTransportError>> {
+pub async fn estimate_transport(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::EstimateTransportResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -509,16 +285,21 @@ pub async fn estimate_transport(configuration: &configuration::Configuration, sh
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -529,8 +310,7 @@ pub async fn estimate_transport(configuration: &configuration::Configuration, sh
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -548,14 +328,14 @@ pub async fn estimate_transport(configuration: &configuration::Configuration, sh
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<EstimateTransportError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a bill of lading for a Less Than Truckload/Full Truckload (LTL/FTL) shipment. The getBillOfLading operation returns PDF document data for printing a bill of lading for an Amazon-partnered Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_bill_of_lading(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::GetBillOfLadingResponse, Error<GetBillOfLadingError>> {
+pub async fn get_bill_of_lading(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::GetBillOfLadingResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -568,16 +348,21 @@ pub async fn get_bill_of_lading(configuration: &configuration::Configuration, sh
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -588,8 +373,7 @@ pub async fn get_bill_of_lading(configuration: &configuration::Configuration, sh
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -607,14 +391,14 @@ pub async fn get_bill_of_lading(configuration: &configuration::Configuration, sh
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetBillOfLadingError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns information that lets a seller know if Amazon recommends sending an item to a given marketplace. In some cases, Amazon provides guidance for why a given SellerSKU or ASIN is not recommended for shipment to Amazon's fulfillment network. Sellers may still ship items that are not recommended, at their discretion.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_inbound_guidance(configuration: &configuration::Configuration, marketplace_id: &str, seller_sku_list: Option<Vec<String>>, asin_list: Option<Vec<String>>) -> Result<crate::models::GetInboundGuidanceResponse, Error<GetInboundGuidanceError>> {
+pub async fn get_inbound_guidance(configuration: &configuration::Configuration, marketplace_id: &str, seller_sku_list: Option<Vec<String>>, asin_list: Option<Vec<String>>) -> Result<crate::models::GetInboundGuidanceResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -640,16 +424,21 @@ pub async fn get_inbound_guidance(configuration: &configuration::Configuration, 
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -660,8 +449,7 @@ pub async fn get_inbound_guidance(configuration: &configuration::Configuration, 
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -679,14 +467,14 @@ pub async fn get_inbound_guidance(configuration: &configuration::Configuration, 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetInboundGuidanceError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns package/pallet labels for faster and more accurate shipment processing at the Amazon fulfillment center.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_labels(configuration: &configuration::Configuration, shipment_id: &str, page_type: &str, label_type: &str, number_of_packages: Option<i32>, package_labels_to_print: Option<Vec<String>>, number_of_pallets: Option<i32>, page_size: Option<i32>, page_start_index: Option<i32>) -> Result<crate::models::GetLabelsResponse, Error<GetLabelsError>> {
+pub async fn get_labels(configuration: &configuration::Configuration, shipment_id: &str, page_type: &str, label_type: &str, number_of_packages: Option<i32>, package_labels_to_print: Option<Vec<String>>, number_of_pallets: Option<i32>, page_size: Option<i32>, page_start_index: Option<i32>) -> Result<crate::models::GetLabelsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -719,16 +507,21 @@ pub async fn get_labels(configuration: &configuration::Configuration, shipment_i
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -739,8 +532,7 @@ pub async fn get_labels(configuration: &configuration::Configuration, shipment_i
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -758,14 +550,14 @@ pub async fn get_labels(configuration: &configuration::Configuration, shipment_i
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetLabelsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns pre-order information, including dates, that a seller needs before confirming a shipment for pre-order.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_preorder_info(configuration: &configuration::Configuration, shipment_id: &str, marketplace_id: &str) -> Result<crate::models::GetPreorderInfoResponse, Error<GetPreorderInfoError>> {
+pub async fn get_preorder_info(configuration: &configuration::Configuration, shipment_id: &str, marketplace_id: &str) -> Result<crate::models::GetPreorderInfoResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -779,16 +571,21 @@ pub async fn get_preorder_info(configuration: &configuration::Configuration, shi
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -799,8 +596,7 @@ pub async fn get_preorder_info(configuration: &configuration::Configuration, shi
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -818,14 +614,14 @@ pub async fn get_preorder_info(configuration: &configuration::Configuration, shi
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetPreorderInfoError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns labeling requirements and item preparation instructions to help prepare items for shipment to Amazon's fulfillment network.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_prep_instructions(configuration: &configuration::Configuration, ship_to_country_code: &str, seller_sku_list: Option<Vec<String>>, asin_list: Option<Vec<String>>) -> Result<crate::models::GetPrepInstructionsResponse, Error<GetPrepInstructionsError>> {
+pub async fn get_prep_instructions(configuration: &configuration::Configuration, ship_to_country_code: &str, seller_sku_list: Option<Vec<String>>, asin_list: Option<Vec<String>>) -> Result<crate::models::GetPrepInstructionsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -851,16 +647,21 @@ pub async fn get_prep_instructions(configuration: &configuration::Configuration,
     }
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -871,8 +672,7 @@ pub async fn get_prep_instructions(configuration: &configuration::Configuration,
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -890,14 +690,14 @@ pub async fn get_prep_instructions(configuration: &configuration::Configuration,
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetPrepInstructionsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_shipment_items(configuration: &configuration::Configuration, query_type: &str, marketplace_id: &str, last_updated_after: Option<String>, last_updated_before: Option<String>, next_token: Option<&str>) -> Result<crate::models::GetShipmentItemsResponse, Error<GetShipmentItemsError>> {
+pub async fn get_shipment_items(configuration: &configuration::Configuration, query_type: &str, marketplace_id: &str, last_updated_after: Option<String>, last_updated_before: Option<String>, next_token: Option<&str>) -> Result<crate::models::GetShipmentItemsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -921,16 +721,21 @@ pub async fn get_shipment_items(configuration: &configuration::Configuration, qu
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -941,8 +746,7 @@ pub async fn get_shipment_items(configuration: &configuration::Configuration, qu
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -960,14 +764,14 @@ pub async fn get_shipment_items(configuration: &configuration::Configuration, qu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetShipmentItemsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a list of items in a specified inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_shipment_items_by_shipment_id(configuration: &configuration::Configuration, shipment_id: &str, marketplace_id: &str) -> Result<crate::models::GetShipmentItemsResponse, Error<GetShipmentItemsByShipmentIdError>> {
+pub async fn get_shipment_items_by_shipment_id(configuration: &configuration::Configuration, shipment_id: &str, marketplace_id: &str) -> Result<crate::models::GetShipmentItemsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -981,16 +785,21 @@ pub async fn get_shipment_items_by_shipment_id(configuration: &configuration::Co
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1001,8 +810,7 @@ pub async fn get_shipment_items_by_shipment_id(configuration: &configuration::Co
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1020,14 +828,14 @@ pub async fn get_shipment_items_by_shipment_id(configuration: &configuration::Co
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetShipmentItemsByShipmentIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns a list of inbound shipments based on criteria that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_shipments(configuration: &configuration::Configuration, query_type: &str, marketplace_id: &str, shipment_status_list: Option<Vec<String>>, shipment_id_list: Option<Vec<String>>, last_updated_after: Option<String>, last_updated_before: Option<String>, next_token: Option<&str>) -> Result<crate::models::GetShipmentsResponse, Error<GetShipmentsError>> {
+pub async fn get_shipments(configuration: &configuration::Configuration, query_type: &str, marketplace_id: &str, shipment_status_list: Option<Vec<String>>, shipment_id_list: Option<Vec<String>>, last_updated_after: Option<String>, last_updated_before: Option<String>, next_token: Option<&str>) -> Result<crate::models::GetShipmentsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1063,16 +871,21 @@ pub async fn get_shipments(configuration: &configuration::Configuration, query_t
     url_builder = url_builder.query(&[("MarketplaceId", &marketplace_id.to_string())]);
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1083,8 +896,7 @@ pub async fn get_shipments(configuration: &configuration::Configuration, query_t
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1102,14 +914,14 @@ pub async fn get_shipments(configuration: &configuration::Configuration, query_t
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetShipmentsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Returns current transportation information about an inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn get_transport_details(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::GetTransportDetailsResponse, Error<GetTransportDetailsError>> {
+pub async fn get_transport_details(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::GetTransportDetailsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1122,16 +934,21 @@ pub async fn get_transport_details(configuration: &configuration::Configuration,
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "GET",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1142,8 +959,7 @@ pub async fn get_transport_details(configuration: &configuration::Configuration,
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1161,14 +977,14 @@ pub async fn get_transport_details(configuration: &configuration::Configuration,
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetTransportDetailsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Sends transportation information to Amazon about an inbound shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn put_transport_details(configuration: &configuration::Configuration, shipment_id: &str, body: crate::models::PutTransportDetailsRequest) -> Result<crate::models::PutTransportDetailsResponse, Error<PutTransportDetailsError>> {
+pub async fn put_transport_details(configuration: &configuration::Configuration, shipment_id: &str, body: crate::models::PutTransportDetailsRequest) -> Result<crate::models::PutTransportDetailsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1181,16 +997,21 @@ pub async fn put_transport_details(configuration: &configuration::Configuration,
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1201,8 +1022,7 @@ pub async fn put_transport_details(configuration: &configuration::Configuration,
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1221,14 +1041,14 @@ pub async fn put_transport_details(configuration: &configuration::Configuration,
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PutTransportDetailsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Updates or removes items from the inbound shipment identified by the specified shipment identifier. Adding new items is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn update_inbound_shipment(configuration: &configuration::Configuration, shipment_id: &str, body: crate::models::InboundShipmentRequest) -> Result<crate::models::InboundShipmentResponse, Error<UpdateInboundShipmentError>> {
+pub async fn update_inbound_shipment(configuration: &configuration::Configuration, shipment_id: &str, body: crate::models::InboundShipmentRequest) -> Result<crate::models::InboundShipmentResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1241,16 +1061,21 @@ pub async fn update_inbound_shipment(configuration: &configuration::Configuratio
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "PUT",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &serde_json::to_string(&body).expect("param should serialize to string"),
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1261,8 +1086,7 @@ pub async fn update_inbound_shipment(configuration: &configuration::Configuratio
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1281,14 +1105,14 @@ pub async fn update_inbound_shipment(configuration: &configuration::Configuratio
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<UpdateInboundShipmentError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// Cancels a previously-confirmed request to ship an inbound shipment using an Amazon-partnered carrier.  To be successful, you must call this operation before the VoidDeadline date that is returned by the getTransportDetails operation.  Important: The VoidDeadline date is 24 hours after you confirm a Small Parcel shipment transportation request or one hour after you confirm a Less Than Truckload/Full Truckload (LTL/FTL) shipment transportation request. After the void deadline passes, your account will be charged for the shipping cost.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn void_transport(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::VoidTransportResponse, Error<VoidTransportError>> {
+pub async fn void_transport(configuration: &configuration::Configuration, shipment_id: &str) -> Result<crate::models::VoidTransportResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -1301,16 +1125,21 @@ pub async fn void_transport(configuration: &configuration::Configuration, shipme
 
 
     let url = url_builder.build()?;
+    let access_token = if let Some(ref rdt) = local_var_configuration.rdt {
+        Some(rdt.token()?)
+    } else {
+        if let Some(ref auth) = local_var_configuration.auth {
+            Some(auth.get_access_token(&local_var_configuration.client).await?)
+        } else {
+            None
+        }
+    };
 
     if let Some(ref local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         let local_var_new_headers = match local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    "POST",
-        if let Some(ref auth) = configuration.auth {
-            Some(auth.get_access_token(&configuration.client).await?)
-        } else {
-            None
-        },
+        access_token.clone(),
 	    &"",
 	    ) {
 	      Ok(new_headers) => new_headers,
@@ -1321,8 +1150,7 @@ pub async fn void_transport(configuration: &configuration::Configuration, shipme
 	}
     }
 
-    if let Some(ref auth) = local_var_configuration.auth {
-        let token = auth.get_access_token(&local_var_configuration.client).await?;
+    if let Some(token) = access_token {
         local_var_req_builder = local_var_req_builder.header("x-amz-access-token", token.as_str());
     }
 
@@ -1340,8 +1168,8 @@ pub async fn void_transport(configuration: &configuration::Configuration, shipme
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<VoidTransportError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        let error_list = serde_json::from_str::<amazon_sp_api_shared::request::ErrorList>(&local_var_content).ok();
+        let local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         Err(Error::ResponseError(local_var_error))
     }
 }

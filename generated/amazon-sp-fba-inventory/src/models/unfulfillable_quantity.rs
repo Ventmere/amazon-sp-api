@@ -15,25 +15,25 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UnfulfillableQuantity {
     /// The total number of units in Amazon's fulfillment network in unsellable condition.
-    #[serde(rename = "totalUnfulfillableQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "totalUnfulfillableQuantity", skip_serializing_if = "Option::is_none")]
     pub total_unfulfillable_quantity: Option<i32>,
     /// The number of units in customer damaged disposition.
-    #[serde(rename = "customerDamagedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "customerDamagedQuantity", skip_serializing_if = "Option::is_none")]
     pub customer_damaged_quantity: Option<i32>,
     /// The number of units in warehouse damaged disposition.
-    #[serde(rename = "warehouseDamagedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "warehouseDamagedQuantity", skip_serializing_if = "Option::is_none")]
     pub warehouse_damaged_quantity: Option<i32>,
     /// The number of units in distributor damaged disposition.
-    #[serde(rename = "distributorDamagedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "distributorDamagedQuantity", skip_serializing_if = "Option::is_none")]
     pub distributor_damaged_quantity: Option<i32>,
     /// The number of units in carrier damaged disposition.
-    #[serde(rename = "carrierDamagedQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "carrierDamagedQuantity", skip_serializing_if = "Option::is_none")]
     pub carrier_damaged_quantity: Option<i32>,
     /// The number of units in defective disposition.
-    #[serde(rename = "defectiveQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "defectiveQuantity", skip_serializing_if = "Option::is_none")]
     pub defective_quantity: Option<i32>,
     /// The number of units in expired disposition.
-    #[serde(rename = "expiredQuantity", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "expiredQuantity", skip_serializing_if = "Option::is_none")]
     pub expired_quantity: Option<i32>,
 }
 

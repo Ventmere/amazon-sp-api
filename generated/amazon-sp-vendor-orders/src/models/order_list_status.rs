@@ -13,9 +13,9 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrderListStatus {
-    #[serde(rename = "pagination", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "pagination", skip_serializing_if = "Option::is_none")]
     pub pagination: Option<Box<crate::models::Pagination>>,
-    #[serde(rename = "ordersStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "ordersStatus", skip_serializing_if = "Option::is_none")]
     pub orders_status: Option<Vec<crate::models::OrderStatus>>,
 }
 

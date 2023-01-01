@@ -88,37 +88,37 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShippingService {
     <span class="doccomment">/// A plain text representation of a carrier&#39;s shipping service. For example, \&quot;UPS Ground\&quot; or \&quot;FedEx Standard Overnight\&quot;. 
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceName&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_name: String,
     <span class="doccomment">/// The name of the carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CarrierName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierName&quot;</span>)]
     </span><span class="kw">pub </span>carrier_name: String,
     <span class="doccomment">/// An Amazon-defined shipping service identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceId&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_id: String,
     <span class="doccomment">/// An Amazon-defined shipping service offer identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceOfferId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceOfferId&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_offer_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipDate&quot;</span>)]
     </span><span class="kw">pub </span>ship_date: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;EarliestEstimatedDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;EarliestEstimatedDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>earliest_estimated_delivery_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LatestEstimatedDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LatestEstimatedDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>latest_estimated_delivery_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Rate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Rate&quot;</span>)]
     </span><span class="kw">pub </span>rate: Box&lt;<span class="kw">crate</span>::models::CurrencyAmount&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceOptions&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceOptions&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_options: Box&lt;<span class="kw">crate</span>::models::ShippingServiceOptions&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;AvailableShippingServiceOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;AvailableShippingServiceOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>available_shipping_service_options: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::AvailableShippingServiceOptions&gt;&gt;,
     <span class="doccomment">/// List of label formats.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AvailableLabelFormats&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AvailableLabelFormats&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>available_label_formats: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::LabelFormat&gt;&gt;,
     <span class="doccomment">/// The available label formats.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AvailableFormatOptionsForLabel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AvailableFormatOptionsForLabel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>available_format_options_for_label: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::LabelFormatOption&gt;&gt;,
     <span class="doccomment">/// When true, additional seller inputs are required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RequiresAdditionalSellerInputs&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RequiresAdditionalSellerInputs&quot;</span>)]
     </span><span class="kw">pub </span>requires_additional_seller_inputs: bool,
 }
 

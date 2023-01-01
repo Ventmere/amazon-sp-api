@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SellerFeedbackType {
     <span class="doccomment">/// The percentage of positive feedback for the seller in the past 365 days.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerPositiveFeedbackRating&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerPositiveFeedbackRating&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_positive_feedback_rating: <span class="prelude-ty">Option</span>&lt;f64&gt;,
     <span class="doccomment">/// The number of ratings received about the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FeedbackCount&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FeedbackCount&quot;</span>)]
     </span><span class="kw">pub </span>feedback_count: i64,
 }
 

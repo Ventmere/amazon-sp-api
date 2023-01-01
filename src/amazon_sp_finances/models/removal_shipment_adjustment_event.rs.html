@@ -64,22 +64,22 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RemovalShipmentAdjustmentEvent {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>posted_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The unique identifier for the adjustment event.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AdjustmentEventId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AdjustmentEventId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>adjustment_event_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The merchant removal orderId.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MerchantOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MerchantOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>merchant_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The orderId for shipping inventory.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TransactionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TransactionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>transaction_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RemovalShipmentItemAdjustmentList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RemovalShipmentItemAdjustmentList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>removal_shipment_item_adjustment_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RemovalShipmentItemAdjustment&gt;&gt;,
 }
 

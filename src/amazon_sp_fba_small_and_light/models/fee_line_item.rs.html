@@ -67,9 +67,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeeLineItem {
     <span class="doccomment">/// The type of fee charged to the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;feeType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;feeType&quot;</span>)]
     </span><span class="kw">pub </span>fee_type: FeeType,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;feeCharge&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;feeCharge&quot;</span>)]
     </span><span class="kw">pub </span>fee_charge: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
 }
 

@@ -71,17 +71,17 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShippingLabel {
     <span class="doccomment">/// This field will contain the Purchase Order Number for this order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;sellingParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;sellingParty&quot;</span>)]
     </span><span class="kw">pub </span>selling_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipFromParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipFromParty&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
     <span class="doccomment">/// Format of the label.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;labelFormat&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;labelFormat&quot;</span>)]
     </span><span class="kw">pub </span>label_format: LabelFormat,
     <span class="doccomment">/// Provides the details of the packages in this shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;labelData&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;labelData&quot;</span>)]
     </span><span class="kw">pub </span>label_data: Vec&lt;<span class="kw">crate</span>::models::LabelData&gt;,
 }
 

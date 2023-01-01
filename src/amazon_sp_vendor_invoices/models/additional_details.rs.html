@@ -70,13 +70,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AdditionalDetails {
     <span class="doccomment">/// The type of the additional information provided by the selling party.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;type&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;type&quot;</span>)]
     </span><span class="kw">pub </span>_type: Type,
     <span class="doccomment">/// The detail of the additional information provided by the selling party.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;detail&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;detail&quot;</span>)]
     </span><span class="kw">pub </span>detail: String,
     <span class="doccomment">/// The language code of the additional information detail.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;languageCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;languageCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>language_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

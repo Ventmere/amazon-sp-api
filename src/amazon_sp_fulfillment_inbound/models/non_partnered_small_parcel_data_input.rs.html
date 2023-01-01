@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>NonPartneredSmallParcelDataInput {
     <span class="doccomment">/// The carrier that you are using for the inbound shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CarrierName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierName&quot;</span>)]
     </span><span class="kw">pub </span>carrier_name: String,
     <span class="doccomment">/// A list of package tracking information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PackageList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PackageList&quot;</span>)]
     </span><span class="kw">pub </span>package_list: Vec&lt;<span class="kw">crate</span>::models::NonPartneredSmallParcelPackageInput&gt;,
 }
 

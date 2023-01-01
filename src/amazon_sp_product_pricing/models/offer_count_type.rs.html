@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OfferCountType {
     <span class="doccomment">/// Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;condition&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;condition&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>condition: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_channel: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::FulfillmentChannelType&gt;,
     <span class="doccomment">/// The number of offers in a fulfillment channel that meet a specific condition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OfferCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OfferCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>offer_count: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

@@ -48,10 +48,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PaymentExecutionDetailItem {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Payment&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Payment&quot;</span>)]
     </span><span class="kw">pub </span>payment: Box&lt;<span class="kw">crate</span>::models::Money&gt;,
     <span class="doccomment">/// A sub-payment method for a COD order.  Possible values:  * COD - Cash On Delivery.  * GC - Gift Card.  * PointsAccount - Amazon Points.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PaymentMethod&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PaymentMethod&quot;</span>)]
     </span><span class="kw">pub </span>payment_method: String,
 }
 

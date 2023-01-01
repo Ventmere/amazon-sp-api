@@ -80,32 +80,32 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SolutionProviderCreditEvent {
     <span class="doccomment">/// The transaction type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProviderTransactionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ProviderTransactionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>provider_transaction_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A seller-defined identifier for an order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The identifier of the marketplace where the order was placed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The two-letter country code of the country associated with the marketplace where the order was placed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceCountryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceCountryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_country_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The Amazon-defined identifier of the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The store name where the payment event occurred.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerStoreName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerStoreName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_store_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The Amazon-defined identifier of the solution provider.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProviderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ProviderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>provider_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The store name where the payment event occurred.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProviderStoreName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ProviderStoreName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>provider_store_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TransactionAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TransactionAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>transaction_amount: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TransactionCreationDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TransactionCreationDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>transaction_creation_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

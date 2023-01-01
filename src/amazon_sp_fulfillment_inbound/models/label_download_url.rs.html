@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>LabelDownloadUrl {
     <span class="doccomment">/// URL to download the label for the package. Note: The URL will only be valid for 15 seconds
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;DownloadURL&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;DownloadURL&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>download_url: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

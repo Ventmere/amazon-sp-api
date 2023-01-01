@@ -90,26 +90,26 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FulfillmentShipment {
     <span class="doccomment">/// A shipment identifier assigned by Amazon.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amazonShipmentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amazonShipmentId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_shipment_id: String,
     <span class="doccomment">/// An identifier for the fulfillment center that the shipment will be sent from.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentCenterId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentCenterId&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_center_id: String,
     <span class="doccomment">/// The current status of the shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentShipmentStatus&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentShipmentStatus&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_shipment_status: FulfillmentShipmentStatus,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shippingDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shippingDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;estimatedArrivalDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;estimatedArrivalDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>estimated_arrival_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shippingNotes&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shippingNotes&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_notes: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
     <span class="doccomment">/// An array of fulfillment shipment item information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentShipmentItem&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentShipmentItem&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_shipment_item: Vec&lt;<span class="kw">crate</span>::models::FulfillmentShipmentItem&gt;,
     <span class="doccomment">/// An array of fulfillment shipment package information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentShipmentPackage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentShipmentPackage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_shipment_package: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FulfillmentShipmentPackage&gt;&gt;,
 }
 

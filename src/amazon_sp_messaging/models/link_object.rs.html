@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>LinkObject {
     <span class="doccomment">/// A URI for this object.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;href&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;href&quot;</span>)]
     </span><span class="kw">pub </span>href: String,
     <span class="doccomment">/// An identifier for this object.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;name&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;name&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>name: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

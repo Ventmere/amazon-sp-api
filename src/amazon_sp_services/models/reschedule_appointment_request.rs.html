@@ -48,10 +48,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RescheduleAppointmentRequest {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;appointmentTime&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;appointmentTime&quot;</span>)]
     </span><span class="kw">pub </span>appointment_time: Box&lt;<span class="kw">crate</span>::models::AppointmentTimeInput&gt;,
     <span class="doccomment">/// The appointment reschedule reason code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;rescheduleReasonCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;rescheduleReasonCode&quot;</span>)]
     </span><span class="kw">pub </span>reschedule_reason_code: String,
 }
 

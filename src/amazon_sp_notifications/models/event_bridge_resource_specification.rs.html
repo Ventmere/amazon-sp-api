@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>EventBridgeResourceSpecification {
     <span class="doccomment">/// The AWS region in which you will be receiving the notifications.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;region&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;region&quot;</span>)]
     </span><span class="kw">pub </span>region: String,
     <span class="doccomment">/// The identifier for the AWS account that is responsible for charges related to receiving notifications.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;accountId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;accountId&quot;</span>)]
     </span><span class="kw">pub </span>account_id: String,
 }
 

@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RegulatedInformation {
     <span class="doccomment">/// A list of regulated information fields as collected from the regulatory form.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Fields&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Fields&quot;</span>)]
     </span><span class="kw">pub </span>fields: Vec&lt;<span class="kw">crate</span>::models::RegulatedInformationField&gt;,
 }
 

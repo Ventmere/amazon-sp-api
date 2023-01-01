@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AvailableDeliveryExperienceOption {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;DeliveryExperienceOption&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;DeliveryExperienceOption&quot;</span>)]
     </span><span class="kw">pub </span>delivery_experience_option: <span class="kw">crate</span>::models::DeliveryExperienceOption,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Charge&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Charge&quot;</span>)]
     </span><span class="kw">pub </span>charge: Box&lt;<span class="kw">crate</span>::models::CurrencyAmount&gt;,
 }
 

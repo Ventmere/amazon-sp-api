@@ -52,11 +52,11 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PutTransportDetailsRequest {
     <span class="doccomment">/// Indicates whether a putTransportDetails request is for an Amazon-partnered carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsPartnered&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsPartnered&quot;</span>)]
     </span><span class="kw">pub </span>is_partnered: bool,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentType&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentType&quot;</span>)]
     </span><span class="kw">pub </span>shipment_type: <span class="kw">crate</span>::models::ShipmentType,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TransportDetails&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TransportDetails&quot;</span>)]
     </span><span class="kw">pub </span>transport_details: Box&lt;<span class="kw">crate</span>::models::TransportDetailInput&gt;,
 }
 

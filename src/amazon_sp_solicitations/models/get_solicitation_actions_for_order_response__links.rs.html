@@ -45,10 +45,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetSolicitationActionsForOrderResponseLinks {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;self&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;self&quot;</span>)]
     </span><span class="kw">pub </span>_self: Box&lt;<span class="kw">crate</span>::models::LinkObject&gt;,
     <span class="doccomment">/// Eligible actions for the specified amazonOrderId.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;actions&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;actions&quot;</span>)]
     </span><span class="kw">pub </span>actions: Vec&lt;<span class="kw">crate</span>::models::LinkObject&gt;,
 }
 

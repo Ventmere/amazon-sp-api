@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemDeliveryPromise {
     <span class="doccomment">/// The date and time of the start of the promised delivery window in ISO 8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;startTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;startTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>start_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The date and time of the end of the promised delivery window in ISO 8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;endTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;endTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>end_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

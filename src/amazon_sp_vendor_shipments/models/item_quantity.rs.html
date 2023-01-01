@@ -68,13 +68,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemQuantity {
     <span class="doccomment">/// Amount of units shipped for a specific item at a shipment level. If the item is present only in certain cartons or pallets within the shipment, please provide this at the appropriate carton or pallet level.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amount&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amount&quot;</span>)]
     </span><span class="kw">pub </span>amount: i32,
     <span class="doccomment">/// Unit of measure for the shipped quantity.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;unitOfMeasure&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;unitOfMeasure&quot;</span>)]
     </span><span class="kw">pub </span>unit_of_measure: UnitOfMeasure,
     <span class="doccomment">/// The case size, in the event that we ordered using cases. Otherwise, 1.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;unitSize&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;unitSize&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>unit_size: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

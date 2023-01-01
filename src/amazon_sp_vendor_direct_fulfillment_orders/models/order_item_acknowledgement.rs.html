@@ -54,15 +54,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderItemAcknowledgement {
     <span class="doccomment">/// Line item sequence number for the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;itemSequenceNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;itemSequenceNumber&quot;</span>)]
     </span><span class="kw">pub </span>item_sequence_number: String,
     <span class="doccomment">/// Buyer&#39;s standard identification number (ASIN) of an item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The vendor selected product identification of the item. Should be the same as was provided in the purchase order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>vendor_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;acknowledgedQuantity&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;acknowledgedQuantity&quot;</span>)]
     </span><span class="kw">pub </span>acknowledged_quantity: Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;,
 }
 

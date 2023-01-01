@@ -61,18 +61,18 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ReturnAuthorization {
     <span class="doccomment">/// An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;returnAuthorizationId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;returnAuthorizationId&quot;</span>)]
     </span><span class="kw">pub </span>return_authorization_id: String,
     <span class="doccomment">/// An identifier for the Amazon fulfillment center that the return items should be sent to.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentCenterId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentCenterId&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_center_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;returnToAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;returnToAddress&quot;</span>)]
     </span><span class="kw">pub </span>return_to_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
     <span class="doccomment">/// The return merchandise authorization (RMA) that Amazon needs to process the return.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amazonRmaId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amazonRmaId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_rma_id: String,
     <span class="doccomment">/// A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;rmaPageURL&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;rmaPageURL&quot;</span>)]
     </span><span class="kw">pub </span>rma_page_url: String,
 }
 

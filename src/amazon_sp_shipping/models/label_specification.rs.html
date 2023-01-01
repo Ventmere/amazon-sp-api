@@ -74,10 +74,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>LabelSpecification {
     <span class="doccomment">/// The format of the label. Enum of PNG only for now.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;labelFormat&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;labelFormat&quot;</span>)]
     </span><span class="kw">pub </span>label_format: LabelFormat,
     <span class="doccomment">/// The label stock size specification in length and height. Enum of 4x6 only for now.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;labelStockSize&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;labelStockSize&quot;</span>)]
     </span><span class="kw">pub </span>label_stock_size: LabelStockSize,
 }
 

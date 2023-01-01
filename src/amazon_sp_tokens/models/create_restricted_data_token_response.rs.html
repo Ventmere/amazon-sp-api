@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateRestrictedDataTokenResponse {
     <span class="doccomment">/// A Restricted Data Token (RDT). This is a short-lived access token that authorizes calls to restricted operations. Pass this value with the x-amz-access-token header when making subsequent calls to these restricted resources.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;restrictedDataToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;restrictedDataToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>restricted_data_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The lifetime of the Restricted Data Token, in seconds.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;expiresIn&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;expiresIn&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>expires_in: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

@@ -65,21 +65,21 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>StandardComparisonProductBlock {
     <span class="doccomment">/// The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;position&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;position&quot;</span>)]
     </span><span class="kw">pub </span>position: i32,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;image&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;image&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>image: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ImageComponent&gt;&gt;,
     <span class="doccomment">/// The comparison product title.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>title: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>asin: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Determines whether this block of content is visually highlighted.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;highlight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;highlight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>highlight: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// Comparison metrics for the product.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;metrics&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;metrics&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>metrics: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::PlainTextItem&gt;&gt;,
 }
 

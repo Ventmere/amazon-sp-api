@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CompetitivePricingType {
     <span class="doccomment">/// A list of competitive pricing information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CompetitivePrices&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CompetitivePrices&quot;</span>)]
     </span><span class="kw">pub </span>competitive_prices: Vec&lt;<span class="kw">crate</span>::models::CompetitivePriceType&gt;,
     <span class="doccomment">/// The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfOfferListings&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;NumberOfOfferListings&quot;</span>)]
     </span><span class="kw">pub </span>number_of_offer_listings: Vec&lt;<span class="kw">crate</span>::models::OfferListingCountType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TradeInValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TradeInValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>trade_in_value: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
 }
 

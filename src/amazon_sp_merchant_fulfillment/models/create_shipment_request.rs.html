@@ -62,20 +62,20 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateShipmentRequest {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentRequestDetails&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentRequestDetails&quot;</span>)]
     </span><span class="kw">pub </span>shipment_request_details: Box&lt;<span class="kw">crate</span>::models::ShipmentRequestDetails&gt;,
     <span class="doccomment">/// An Amazon-defined shipping service identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceId&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_id: String,
     <span class="doccomment">/// Identifies a shipping service order made by a carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceOfferId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceOfferId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_offer_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;HazmatType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;HazmatType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>hazmat_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::HazmatType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LabelFormatOption&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LabelFormatOption&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>label_format_option: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::LabelFormatOptionRequest&gt;&gt;,
     <span class="doccomment">/// A list of additional seller input pairs required to purchase shipping.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentLevelSellerInputsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentLevelSellerInputsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_level_seller_inputs_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AdditionalSellerInputs&gt;&gt;,
 }
 

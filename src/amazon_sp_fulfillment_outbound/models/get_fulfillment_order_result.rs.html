@@ -57,19 +57,19 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetFulfillmentOrderResult {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentOrder&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentOrder&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_order: Box&lt;<span class="kw">crate</span>::models::FulfillmentOrder&gt;,
     <span class="doccomment">/// An array of fulfillment order item information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentOrderItems&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentOrderItems&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_order_items: Vec&lt;<span class="kw">crate</span>::models::FulfillmentOrderItem&gt;,
     <span class="doccomment">/// An array of fulfillment shipment information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentShipments&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentShipments&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_shipments: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FulfillmentShipment&gt;&gt;,
     <span class="doccomment">/// An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;returnItems&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;returnItems&quot;</span>)]
     </span><span class="kw">pub </span>return_items: Vec&lt;<span class="kw">crate</span>::models::ReturnItem&gt;,
     <span class="doccomment">/// An array of return authorization information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;returnAuthorizations&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;returnAuthorizations&quot;</span>)]
     </span><span class="kw">pub </span>return_authorizations: Vec&lt;<span class="kw">crate</span>::models::ReturnAuthorization&gt;,
 }
 

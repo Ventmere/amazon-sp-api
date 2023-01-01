@@ -57,15 +57,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TrackingInformation {
     <span class="doccomment">/// The tracking id generated to each shipment. It contains a series of letters or digits or both.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingId&quot;</span>)]
     </span><span class="kw">pub </span>tracking_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;summary&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;summary&quot;</span>)]
     </span><span class="kw">pub </span>summary: Box&lt;<span class="kw">crate</span>::models::TrackingSummary&gt;,
     <span class="doccomment">/// The promised delivery date and time of a shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;promisedDeliveryDate&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;promisedDeliveryDate&quot;</span>)]
     </span><span class="kw">pub </span>promised_delivery_date: String,
     <span class="doccomment">/// A list of events of a shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;eventHistory&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;eventHistory&quot;</span>)]
     </span><span class="kw">pub </span>event_history: Vec&lt;<span class="kw">crate</span>::models::Event&gt;,
 }
 

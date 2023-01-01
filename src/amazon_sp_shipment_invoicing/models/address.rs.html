@@ -89,39 +89,39 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Address {
     <span class="doccomment">/// The name.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Name&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Name&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The street address.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AddressLine1&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AddressLine1&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>address_line1: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Additional street address information, if required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AddressLine2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AddressLine2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>address_line2: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Additional street address information, if required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AddressLine3&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AddressLine3&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>address_line3: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The city.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;City&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;City&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>city: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The county.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;County&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;County&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>county: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The district.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;District&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;District&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>district: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The state or region.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;StateOrRegion&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;StateOrRegion&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>state_or_region: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The postal code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PostalCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PostalCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>postal_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The country code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CountryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CountryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>country_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The phone number.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Phone&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Phone&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>phone: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;AddressType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;AddressType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>address_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::AddressTypeEnum&gt;,
 }
 

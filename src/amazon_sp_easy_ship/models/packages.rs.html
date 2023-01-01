@@ -44,7 +44,7 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Packages {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;packages&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;packages&quot;</span>)]
     </span><span class="kw">pub </span>packages: Vec&lt;<span class="kw">crate</span>::models::Package&gt;,
 }
 

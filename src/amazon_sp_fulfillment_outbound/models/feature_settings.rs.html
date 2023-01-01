@@ -64,10 +64,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeatureSettings {
     <span class="doccomment">/// The name of the feature.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>feature_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Specifies the policy to use when fulfilling an order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureFulfillmentPolicy&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureFulfillmentPolicy&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>feature_fulfillment_policy: <span class="prelude-ty">Option</span>&lt;FeatureFulfillmentPolicy&gt;,
 }
 

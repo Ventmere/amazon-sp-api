@@ -177,91 +177,91 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderItem {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ASIN&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ASIN&quot;</span>)]
     </span><span class="kw">pub </span>ASIN: String,
     <span class="doccomment">/// The seller stock keeping unit (SKU) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerSKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerSKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// An Amazon-defined order item identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderItemId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OrderItemId&quot;</span>)]
     </span><span class="kw">pub </span>order_item_id: String,
     <span class="doccomment">/// The name of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>title: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The number of items in the order. 
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;QuantityOrdered&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;QuantityOrdered&quot;</span>)]
     </span><span class="kw">pub </span>quantity_ordered: i32,
     <span class="doccomment">/// The number of items shipped.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;QuantityShipped&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;QuantityShipped&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>quantity_shipped: <span class="prelude-ty">Option</span>&lt;i32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ProductInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ProductInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>product_info: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ProductInfoDetail&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PointsGranted&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PointsGranted&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>points_granted: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PointsGrantedDetail&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ItemPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_price: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_price: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ItemTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_tax: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_tax: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingDiscount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingDiscount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_discount: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingDiscountTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingDiscountTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_discount_tax: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PromotionDiscount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PromotionDiscount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>promotion_discount: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PromotionDiscountTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PromotionDiscountTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>promotion_discount_tax: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
     <span class="doccomment">/// A list of promotion identifiers provided by the seller when the promotions were created.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PromotionIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PromotionIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>promotion_ids: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CODFee&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CODFee&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>cod_fee: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CODFeeDiscount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CODFeeDiscount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>cod_fee_discount: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
     <span class="doccomment">/// When true, the item is a gift.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsGift&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsGift&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>, deserialize_with = <span class="string">&quot;amazon_sp_api_shared::helpers::deserialize_opt_bool_from_string&quot;</span>)]
     </span><span class="kw">pub </span>is_gift: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// The condition of the item as described by the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ConditionNote&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ConditionNote&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>condition_note: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ConditionId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ConditionId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>condition_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ConditionSubtypeId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ConditionSubtypeId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>condition_subtype_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ScheduledDeliveryStartDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ScheduledDeliveryStartDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scheduled_delivery_start_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ScheduledDeliveryEndDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ScheduledDeliveryEndDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scheduled_delivery_end_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PriceDesignation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PriceDesignation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>price_designation: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TaxCollection&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxCollection&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_collection: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::TaxCollection&gt;&gt;,
     <span class="doccomment">/// When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SerialNumberRequired&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SerialNumberRequired&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>serial_number_required: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// When true, transparency codes are required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsTransparency&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsTransparency&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>is_transparency: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IossNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IossNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ioss_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The store chain store identifier. Linked to a specific store in a store chain.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;StoreChainStoreId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;StoreChainStoreId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>store_chain_store_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;DeemedResellerCategory&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;DeemedResellerCategory&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>deemed_reseller_category: <span class="prelude-ty">Option</span>&lt;DeemedResellerCategory&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyerInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_info: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ItemBuyerInfo&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyerRequestedCancel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerRequestedCancel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_requested_cancel: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::BuyerRequestedCancel&gt;&gt;,
 }
 

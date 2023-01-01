@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SmallAndLightFeePreviews {
     <span class="doccomment">/// A list of fee estimates for the requested items. The order of the fee estimates will follow the same order as the items in the request, with duplicates removed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;data&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;data&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>data: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeePreview&gt;&gt;,
 }
 

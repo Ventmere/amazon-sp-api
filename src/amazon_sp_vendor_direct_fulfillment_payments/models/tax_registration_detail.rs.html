@@ -71,15 +71,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TaxRegistrationDetail {
     <span class="doccomment">/// Tax registration type for the entity.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxRegistrationType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxRegistrationType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_registration_type: <span class="prelude-ty">Option</span>&lt;TaxRegistrationType&gt;,
     <span class="doccomment">/// Tax registration number for the party. For example, VAT ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxRegistrationNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxRegistrationNumber&quot;</span>)]
     </span><span class="kw">pub </span>tax_registration_number: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;taxRegistrationAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;taxRegistrationAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_registration_address: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Address&gt;&gt;,
     <span class="doccomment">/// Tax registration message that can be used for additional tax related details.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxRegistrationMessage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxRegistrationMessage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_registration_message: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

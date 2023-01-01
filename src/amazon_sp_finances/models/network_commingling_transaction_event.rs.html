@@ -71,25 +71,25 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>NetworkComminglingTransactionEvent {
     <span class="doccomment">/// The type of network item swap.  Possible values:  * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.  * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TransactionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TransactionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>transaction_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>posted_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The identifier for the network item swap.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NetCoTransactionID&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;NetCoTransactionID&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>net_co_transaction_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The reason for the network item swap.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SwapReason&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SwapReason&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>swap_reason: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the swapped item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ASIN&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ASIN&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ASIN: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The marketplace in which the event took place.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TaxExclusiveAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxExclusiveAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_exclusive_amount: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TaxAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_amount: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
 }
 

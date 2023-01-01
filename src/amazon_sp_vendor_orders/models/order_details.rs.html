@@ -129,41 +129,41 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderDetails {
     <span class="doccomment">/// The date the purchase order was placed. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderDate&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderDate&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_date: String,
     <span class="doccomment">/// The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than &#39;purchaseOrderDate&#39;. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderChangedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderChangedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_changed_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The date when current purchase order state was changed. Current purchase order state is available in the field &#39;purchaseOrderState&#39;. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderStateChangedDate&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderStateChangedDate&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_state_changed_date: String,
     <span class="doccomment">/// Type of purchase order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_type: <span class="prelude-ty">Option</span>&lt;PurchaseOrderType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;importDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;importDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>import_details: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ImportDetails&gt;&gt;,
     <span class="doccomment">/// If requested by the recipient, this field will contain a promotional/deal number. The discount code line is optional. It is used to obtain a price discount on items on the order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;dealCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;dealCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>deal_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Payment method used.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;paymentMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;paymentMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>payment_method: <span class="prelude-ty">Option</span>&lt;PaymentMethod&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;buyingParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;buyingParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buying_party: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;sellingParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;sellingParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>selling_party: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipToParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipToParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_party: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;billToParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;billToParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>bill_to_party: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;&gt;,
     <span class="doccomment">/// Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shipWindow&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shipWindow&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_window: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;deliveryWindow&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;deliveryWindow&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>delivery_window: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of items in this purchase order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;items&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;items&quot;</span>)]
     </span><span class="kw">pub </span>items: Vec&lt;<span class="kw">crate</span>::models::OrderItem&gt;,
 }
 

@@ -56,14 +56,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ContainerItem {
     <span class="doccomment">/// The quantity of the items of this type in the container.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;quantity&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;quantity&quot;</span>)]
     </span><span class="kw">pub </span>quantity: f32,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;unitPrice&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;unitPrice&quot;</span>)]
     </span><span class="kw">pub </span>unit_price: Box&lt;<span class="kw">crate</span>::models::Currency&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;unitWeight&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;unitWeight&quot;</span>)]
     </span><span class="kw">pub </span>unit_weight: Box&lt;<span class="kw">crate</span>::models::Weight&gt;,
     <span class="doccomment">/// A descriptive title of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;title&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;title&quot;</span>)]
     </span><span class="kw">pub </span>title: String,
 }
 

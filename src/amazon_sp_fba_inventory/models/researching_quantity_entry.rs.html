@@ -66,10 +66,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ResearchingQuantityEntry {
     <span class="doccomment">/// The duration of the research.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">pub </span>name: Name,
     <span class="doccomment">/// The number of units.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;quantity&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;quantity&quot;</span>)]
     </span><span class="kw">pub </span>quantity: i32,
 }
 

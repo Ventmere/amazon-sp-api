@@ -47,10 +47,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AsinIdentifier {
     <span class="doccomment">/// A marketplace identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ASIN&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ASIN&quot;</span>)]
     </span><span class="kw">pub </span>ASIN: String,
 }
 

@@ -104,29 +104,29 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ProductTypeDefinition {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;metaSchema&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;metaSchema&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>meta_schema: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::SchemaLink&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;schema&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;schema&quot;</span>)]
     </span><span class="kw">pub </span>schema: Box&lt;<span class="kw">crate</span>::models::SchemaLink&gt;,
     <span class="doccomment">/// Name of the requirements set represented in this product type definition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;requirements&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;requirements&quot;</span>)]
     </span><span class="kw">pub </span>requirements: Requirements,
     <span class="doccomment">/// Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;requirementsEnforced&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;requirementsEnforced&quot;</span>)]
     </span><span class="kw">pub </span>requirements_enforced: RequirementsEnforced,
     <span class="doccomment">/// Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;propertyGroups&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;propertyGroups&quot;</span>)]
     </span><span class="kw">pub </span>property_groups: ::std::collections::HashMap&lt;String, <span class="kw">crate</span>::models::PropertyGroup&gt;,
     <span class="doccomment">/// Locale of the display elements contained in the product type definition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;locale&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;locale&quot;</span>)]
     </span><span class="kw">pub </span>locale: String,
     <span class="doccomment">/// Amazon marketplace identifiers for which the product type definition is applicable.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceIds&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceIds&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_ids: Vec&lt;String&gt;,
     <span class="doccomment">/// The name of the Amazon product type that this product type definition applies to.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;productType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;productType&quot;</span>)]
     </span><span class="kw">pub </span>product_type: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;productTypeVersion&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;productTypeVersion&quot;</span>)]
     </span><span class="kw">pub </span>product_type_version: Box&lt;<span class="kw">crate</span>::models::ProductTypeVersion&gt;,
 }
 

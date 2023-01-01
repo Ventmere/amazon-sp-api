@@ -56,14 +56,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShippingOfferingFilter {
     <span class="doccomment">/// When true, include a packing slip with the label.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IncludePackingSlipWithLabel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IncludePackingSlipWithLabel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>include_packing_slip_with_label: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// When true, include complex shipping options.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IncludeComplexShippingOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IncludeComplexShippingOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>include_complex_shipping_options: <span class="prelude-ty">Option</span>&lt;bool&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CarrierWillPickUp&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierWillPickUp&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_will_pick_up: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::CarrierWillPickUpOption&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;DeliveryExperience&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;DeliveryExperience&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>delivery_experience: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::DeliveryExperienceOption&gt;,
 }
 

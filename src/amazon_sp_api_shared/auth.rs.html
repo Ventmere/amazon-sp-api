@@ -277,13 +277,15 @@
 <span id="277">277</span>
 <span id="278">278</span>
 <span id="279">279</span>
+<span id="280">280</span>
+<span id="281">281</span>
 </pre><pre class="rust"><code><span class="kw">use </span>parking_lot::RwLock;
 <span class="kw">use </span>std::sync::Arc;
 <span class="kw">use </span>std::time::{Instant, Duration};
 <span class="kw">use </span>reqwest::Client;
-<span class="kw">use </span>serde_derive::{Serialize, Deserialize};
+<span class="kw">use </span>serde::{Serialize, Deserialize};
 <span class="kw">use </span><span class="kw">crate</span>::error::{SharedError};
-<span class="kw">use </span><span class="kw">crate</span>::request::ResponseContent;
+<span class="kw">use </span><span class="kw">crate</span>::request::ResponseError;
 
 <span class="attribute">#[derive(Debug, Clone)]
 </span><span class="kw">pub struct </span>AuthState {
@@ -331,7 +333,7 @@
     <span class="self">self</span>.token.write().take();
   }
 
-  <span class="kw">pub async fn </span>get_access_token&lt;T&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, client: <span class="kw-2">&amp;</span>Client) -&gt; <span class="prelude-ty">Result</span>&lt;String, SharedError&lt;T&gt;&gt; {
+  <span class="kw">pub async fn </span>get_access_token(<span class="kw-2">&amp;</span><span class="self">self</span>, client: <span class="kw-2">&amp;</span>Client) -&gt; <span class="prelude-ty">Result</span>&lt;String, SharedError&gt; {
     <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = <span class="self">self</span>.token.read().as_ref().map(|v| v.clone()) {
       <span class="kw">if </span>token.expires_at.checked_duration_since(Instant::now()).map(|d| d &gt; Duration::from_secs(<span class="number">60</span>)).unwrap_or_default() {
         <span class="macro">tracing::debug!</span>(<span class="string">&quot;reuse token&quot;</span>);
@@ -358,10 +360,10 @@
         <span class="kw">let </span>body = res.text().<span class="kw">await</span>.ok();
         <span class="kw">if </span>!status.is_success() {
           <span class="kw">return </span><span class="prelude-val">Err</span>(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
                 status,
                 content: body.unwrap_or_default(),
-                entity: <span class="prelude-val">None</span>,
+                error_list: <span class="prelude-val">None</span>,
             })
           )
         }
@@ -370,10 +372,10 @@
           serde_json::from_str(body)<span class="question-mark">?
         </span>} <span class="kw">else </span>{
           <span class="kw">return </span><span class="prelude-val">Err</span>(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
               status,
               content: <span class="string">&quot;&quot;</span>.to_string(),
-              entity: <span class="prelude-val">None</span>,
+              error_list: <span class="prelude-val">None</span>,
             })
           )
         };
@@ -408,10 +410,10 @@
         <span class="kw">let </span>body = res.text().<span class="kw">await</span>.ok();
         <span class="kw">if </span>!status.is_success() {
           <span class="kw">return </span><span class="prelude-val">Err</span>(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
                 status,
                 content: body.unwrap_or_default(),
-                entity: <span class="prelude-val">None</span>,
+                error_list: <span class="prelude-val">None</span>,
             })
           )
         }
@@ -420,10 +422,10 @@
           serde_json::from_str(body)<span class="question-mark">?
         </span>} <span class="kw">else </span>{
           <span class="kw">return </span><span class="prelude-val">Err</span>(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
               status,
               content: <span class="string">&quot;&quot;</span>.to_string(),
-              entity: <span class="prelude-val">None</span>,
+              error_list: <span class="prelude-val">None</span>,
             })
           )
         };
@@ -459,10 +461,10 @@
         <span class="kw">let </span>body = res.text().<span class="kw">await</span>.ok();
         <span class="kw">if </span>!status.is_success() {
           <span class="kw">return </span><span class="prelude-val">Err</span>(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
                 status,
                 content: body.unwrap_or_default(),
-                entity: <span class="prelude-val">None</span>,
+                error_list: <span class="prelude-val">None</span>,
             })
           )
         }
@@ -471,10 +473,10 @@
           serde_json::from_str(body)<span class="question-mark">?
         </span>} <span class="kw">else </span>{
           <span class="kw">return </span><span class="prelude-val">Err</span>(
-            SharedError::ResponseError(ResponseContent {
+            SharedError::ResponseError(ResponseError {
               status,
               content: <span class="string">&quot;&quot;</span>.to_string(),
-              entity: <span class="prelude-val">None</span>,
+              error_list: <span class="prelude-val">None</span>,
             })
           )
         };
@@ -522,10 +524,11 @@
   },
   Grantless {
     scope: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str,
-  }
+  },
 }
 
 <span class="attribute">#[derive(Debug, Clone)]
+#[allow(unused)]
 </span><span class="kw">struct </span>Token {
   access_token: String,
   expires_at: Instant,
@@ -550,6 +553,7 @@
 }
 
 <span class="attribute">#[derive(Debug, Deserialize)]
+#[allow(unused)]
 </span><span class="kw">struct </span>AuthorizationCodeGrantReply {
   access_token: String,
   token_type: String,

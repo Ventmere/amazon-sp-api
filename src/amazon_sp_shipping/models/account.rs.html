@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Account {
     <span class="doccomment">/// This is the Amazon Shipping account id generated during the Amazon Shipping onboarding process.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;accountId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;accountId&quot;</span>)]
     </span><span class="kw">pub </span>account_id: String,
 }
 

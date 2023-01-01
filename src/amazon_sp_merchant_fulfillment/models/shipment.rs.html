@@ -92,39 +92,39 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Shipment {
     <span class="doccomment">/// An Amazon-defined shipment identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentId&quot;</span>)]
     </span><span class="kw">pub </span>shipment_id: String,
     <span class="doccomment">/// An Amazon-defined order identifier, in 3-7-7 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_order_id: String,
     <span class="doccomment">/// A seller-defined order identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The list of items to be included in a shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemList&quot;</span>)]
     </span><span class="kw">pub </span>item_list: Vec&lt;<span class="kw">crate</span>::models::Item&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipToAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipToAddress&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PackageDimensions&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PackageDimensions&quot;</span>)]
     </span><span class="kw">pub </span>package_dimensions: Box&lt;<span class="kw">crate</span>::models::PackageDimensions&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Weight&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Weight&quot;</span>)]
     </span><span class="kw">pub </span>weight: Box&lt;<span class="kw">crate</span>::models::Weight&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Insurance&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Insurance&quot;</span>)]
     </span><span class="kw">pub </span>insurance: Box&lt;<span class="kw">crate</span>::models::CurrencyAmount&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingService&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingService&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service: Box&lt;<span class="kw">crate</span>::models::ShippingService&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Label&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Label&quot;</span>)]
     </span><span class="kw">pub </span>label: Box&lt;<span class="kw">crate</span>::models::Label&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Status&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Status&quot;</span>)]
     </span><span class="kw">pub </span>status: <span class="kw">crate</span>::models::ShipmentStatus,
     <span class="doccomment">/// The shipment tracking identifier provided by the carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TrackingId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TrackingId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tracking_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CreatedDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CreatedDate&quot;</span>)]
     </span><span class="kw">pub </span>created_date: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LastUpdatedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LastUpdatedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>last_updated_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

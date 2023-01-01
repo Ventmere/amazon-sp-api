@@ -45,10 +45,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SchemaLink {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;link&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;link&quot;</span>)]
     </span><span class="kw">pub </span>link: Box&lt;<span class="kw">crate</span>::models::SchemaLinkLink&gt;,
     <span class="doccomment">/// Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;checksum&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;checksum&quot;</span>)]
     </span><span class="kw">pub </span>checksum: String,
 }
 

@@ -60,19 +60,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemOffersRequest {
     <span class="doccomment">/// The resource path of the operation you are calling in batch without any query parameters.  If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`  If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.  **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;uri&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;uri&quot;</span>)]
     </span><span class="kw">pub </span>uri: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;method&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;method&quot;</span>)]
     </span><span class="kw">pub </span>method: <span class="kw">crate</span>::models::HttpMethod,
     <span class="doccomment">/// A mapping of additional HTTP headers to send/receive for the individual batch request.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;headers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;headers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>headers: <span class="prelude-ty">Option</span>&lt;::std::collections::HashMap&lt;String, String&gt;&gt;,
     <span class="doccomment">/// A marketplace identifier. Specifies the marketplace for which prices are returned.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ItemCondition&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemCondition&quot;</span>)]
     </span><span class="kw">pub </span>item_condition: <span class="kw">crate</span>::models::ItemCondition,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CustomerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CustomerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>customer_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::CustomerType&gt;,
 }
 

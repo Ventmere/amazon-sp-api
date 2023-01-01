@@ -52,13 +52,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>StandardTechSpecsModule {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;headline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;headline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>headline: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::TextComponent&gt;&gt;,
     <span class="doccomment">/// The specification list.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;specificationList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;specificationList&quot;</span>)]
     </span><span class="kw">pub </span>specification_list: Vec&lt;<span class="kw">crate</span>::models::StandardTextPairBlock&gt;,
     <span class="doccomment">/// The number of tables to present. Features are evenly divided between the tables.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;tableCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;tableCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>table_count: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

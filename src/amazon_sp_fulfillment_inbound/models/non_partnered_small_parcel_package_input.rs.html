@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>NonPartneredSmallParcelPackageInput {
     <span class="doccomment">/// The tracking number of the package, provided by the carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TrackingId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TrackingId&quot;</span>)]
     </span><span class="kw">pub </span>tracking_id: String,
 }
 

@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PurchaseShipmentResult {
     <span class="doccomment">/// The unique shipment identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shipmentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shipmentId&quot;</span>)]
     </span><span class="kw">pub </span>shipment_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;serviceRate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceRate&quot;</span>)]
     </span><span class="kw">pub </span>service_rate: Box&lt;<span class="kw">crate</span>::models::ServiceRate&gt;,
     <span class="doccomment">/// A list of label results
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;labelResults&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;labelResults&quot;</span>)]
     </span><span class="kw">pub </span>label_results: Vec&lt;<span class="kw">crate</span>::models::LabelResult&gt;,
 }
 

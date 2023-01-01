@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"amazon_sp_api":[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.66.0/core/ops/deref/trait.Deref.html\" title=\"trait core::ops::deref::Deref\">Deref</a> for <a class=\"struct\" href=\"amazon_sp_api/client/struct.SpApiClient.html\" title=\"struct amazon_sp_api::client::SpApiClient\">SpApiClient</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

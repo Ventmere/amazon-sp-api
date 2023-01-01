@@ -53,13 +53,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>DimensionType {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Height&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Height&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>height: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Length&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Length&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>length: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Width&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Width&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>width: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Weight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Weight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DecimalWithUnits&gt;&gt;,
 }
 

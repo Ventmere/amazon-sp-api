@@ -61,18 +61,18 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TrialShipmentEvent {
     <span class="doccomment">/// An Amazon-defined identifier for an order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmazonOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AmazonOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>amazon_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The identifier of the financial event group.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FinancialEventGroupId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FinancialEventGroupId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>financial_event_group_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>posted_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The seller SKU of the item. The seller SKU is qualified by the seller&#39;s seller ID, which is included with every call to the Selling Partner API.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>SKU: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of fee component information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FeeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FeeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fee_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeeComponent&gt;&gt;,
 }
 

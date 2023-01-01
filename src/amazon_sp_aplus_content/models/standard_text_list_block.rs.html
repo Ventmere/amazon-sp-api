@@ -44,7 +44,7 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>StandardTextListBlock {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;textList&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;textList&quot;</span>)]
     </span><span class="kw">pub </span>text_list: Vec&lt;<span class="kw">crate</span>::models::TextItem&gt;,
 }
 

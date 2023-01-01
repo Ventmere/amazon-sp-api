@@ -66,22 +66,22 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Marketplace {
     <span class="doccomment">/// The encrypted marketplace value.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;id&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;id&quot;</span>)]
     </span><span class="kw">pub </span>id: String,
     <span class="doccomment">/// Marketplace name.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">pub </span>name: String,
     <span class="doccomment">/// The ISO 3166-1 alpha-2 format country code of the marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;countryCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;countryCode&quot;</span>)]
     </span><span class="kw">pub </span>country_code: String,
     <span class="doccomment">/// The ISO 4217 format currency code of the marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;defaultCurrencyCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;defaultCurrencyCode&quot;</span>)]
     </span><span class="kw">pub </span>default_currency_code: String,
     <span class="doccomment">/// The ISO 639-1 format language code of the marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;defaultLanguageCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;defaultLanguageCode&quot;</span>)]
     </span><span class="kw">pub </span>default_language_code: String,
     <span class="doccomment">/// The domain name of the marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;domainName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;domainName&quot;</span>)]
     </span><span class="kw">pub </span>domain_name: String,
 }
 

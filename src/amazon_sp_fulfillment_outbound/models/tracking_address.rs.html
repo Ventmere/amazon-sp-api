@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TrackingAddress {
     <span class="doccomment">/// The city.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;city&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;city&quot;</span>)]
     </span><span class="kw">pub </span>city: String,
     <span class="doccomment">/// The state.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;state&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;state&quot;</span>)]
     </span><span class="kw">pub </span>state: String,
     <span class="doccomment">/// The country.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;country&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;country&quot;</span>)]
     </span><span class="kw">pub </span>country: String,
 }
 

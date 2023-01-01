@@ -70,13 +70,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PatchOperation {
     <span class="doccomment">/// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See &lt;https://tools.ietf.org/html/rfc6902&gt;.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;op&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;op&quot;</span>)]
     </span><span class="kw">pub </span>op: Op,
     <span class="doccomment">/// JSON Pointer path of the element to patch. See &lt;https://tools.ietf.org/html/rfc6902&gt;.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;path&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;path&quot;</span>)]
     </span><span class="kw">pub </span>path: String,
     <span class="doccomment">/// JSON value to add, replace, or delete.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;value&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;value&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value: <span class="prelude-ty">Option</span>&lt;Vec&lt;serde_json::Value&gt;&gt;,
 }
 

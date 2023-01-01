@@ -53,13 +53,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ServiceRate {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;totalCharge&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;totalCharge&quot;</span>)]
     </span><span class="kw">pub </span>total_charge: Box&lt;<span class="kw">crate</span>::models::Currency&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;billableWeight&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;billableWeight&quot;</span>)]
     </span><span class="kw">pub </span>billable_weight: Box&lt;<span class="kw">crate</span>::models::Weight&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;serviceType&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceType&quot;</span>)]
     </span><span class="kw">pub </span>service_type: <span class="kw">crate</span>::models::ServiceType,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;promise&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;promise&quot;</span>)]
     </span><span class="kw">pub </span>promise: Box&lt;<span class="kw">crate</span>::models::ShippingPromiseSet&gt;,
 }
 

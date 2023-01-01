@@ -51,13 +51,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SearchContentPublishRecordsResponse {
     <span class="doccomment">/// A set of messages to the user, such as warnings or comments.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;warnings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;warnings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>warnings: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Error&gt;&gt;,
     <span class="doccomment">/// A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;nextPageToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;nextPageToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_page_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of A+ Content publishing records.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;publishRecordList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;publishRecordList&quot;</span>)]
     </span><span class="kw">pub </span>publish_record_list: Vec&lt;<span class="kw">crate</span>::models::PublishRecord&gt;,
 }
 

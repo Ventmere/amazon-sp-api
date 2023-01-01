@@ -49,9 +49,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Label {
     <span class="doccomment">/// Contains binary image data encoded as a base-64 string.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;labelStream&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;labelStream&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>label_stream: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;labelSpecification&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;labelSpecification&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>label_specification: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::LabelSpecification&gt;&gt;,
 }
 

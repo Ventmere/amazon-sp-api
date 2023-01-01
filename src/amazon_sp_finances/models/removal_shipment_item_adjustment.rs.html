@@ -67,22 +67,22 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RemovalShipmentItemAdjustment {
     <span class="doccomment">/// An identifier for an item in a removal shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RemovalShipmentItemId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RemovalShipmentItemId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>removal_shipment_item_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The tax collection model applied to the item.  Possible values:  * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.  * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TaxCollectionModel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxCollectionModel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_collection_model: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The Amazon fulfillment network SKU for the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FulfillmentNetworkSKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FulfillmentNetworkSKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_network_sku: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Adjusted quantity of removal shipmentItemAdjustment items.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AdjustedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AdjustedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>adjusted_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;RevenueAdjustment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;RevenueAdjustment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>revenue_adjustment: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TaxAmountAdjustment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxAmountAdjustment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_amount_adjustment: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TaxWithheldAdjustment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxWithheldAdjustment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_withheld_adjustment: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
 }
 

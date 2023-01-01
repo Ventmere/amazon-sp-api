@@ -185,10 +185,29 @@
 <span id="185">185</span>
 <span id="186">186</span>
 <span id="187">187</span>
+<span id="188">188</span>
+<span id="189">189</span>
+<span id="190">190</span>
+<span id="191">191</span>
+<span id="192">192</span>
+<span id="193">193</span>
+<span id="194">194</span>
+<span id="195">195</span>
+<span id="196">196</span>
+<span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
+<span id="202">202</span>
+<span id="203">203</span>
+<span id="204">204</span>
+<span id="205">205</span>
+<span id="206">206</span>
 </pre><pre class="rust"><code><span class="kw">use </span>anyhow::Result;
 <span class="kw">use </span>once_cell::sync::Lazy;
 <span class="kw">use </span>regex::Regex;
-<span class="kw">use </span>std::{fs, path::{Path, PathBuf}, process};
+<span class="kw">use </span>std::{fs, path::{Path, PathBuf}, process, io::Write};
 
 <span class="kw">pub fn </span>run(filter_module: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;()&gt; {
   <span class="kw">let </span>models_dir = fs::read_dir(<span class="string">&quot;deps/selling-partner-api-models/models&quot;</span>)<span class="question-mark">?</span>;
@@ -250,7 +269,8 @@
       .arg(<span class="string">&quot;openapi/config.yaml&quot;</span>)
       .output()<span class="question-mark">?</span>;
     <span class="kw">if </span>!output.status.success() {
-      <span class="macro">tracing::error!</span>(<span class="string">&quot;{:?}&quot;</span>, output);
+      <span class="macro">tracing::error!</span>(<span class="string">&quot;openapi-generator exited with error:&quot;</span>);
+      std::io::stderr().write_all(<span class="kw-2">&amp;</span>output.stderr)<span class="question-mark">?</span>;
       <span class="kw">return </span><span class="prelude-val">Err</span>(<span class="macro">anyhow::format_err!</span>(<span class="string">&quot;openapi-generator execution failed&quot;</span>));
     }
 
@@ -260,6 +280,24 @@
       .chain(lib_rs_content.into_iter())
       .collect();
     fs::write(out_path.join(<span class="string">&quot;src/lib.rs&quot;</span>), updated)<span class="question-mark">?</span>;
+
+    <span class="kw">if </span><span class="self">self</span>.name == <span class="string">&quot;orders&quot; </span>{
+      <span class="comment">// https://github.com/amzn/selling-partner-api-docs/issues/480
+
+      </span><span class="kw">let </span>replaces = <span class="kw-2">&amp;</span>[
+        (<span class="string">&quot;src/models/product_info_detail.rs&quot;</span>, <span class="string">r##&quot;#[serde(default, rename = &quot;NumberOfItems&quot;, skip_serializing_if = &quot;Option::is_none&quot;)]&quot;##</span>, <span class="string">r##&quot;#[serde(default, rename = &quot;NumberOfItems&quot;, skip_serializing_if = &quot;Option::is_none&quot;, deserialize_with = &quot;amazon_sp_api_shared::helpers::deserialize_opt_i32_with_parse&quot;)]&quot;##</span>),
+        (<span class="string">&quot;src/models/order_item.rs&quot;</span>, <span class="string">r##&quot;#[serde(default, rename = &quot;IsGift&quot;, skip_serializing_if = &quot;Option::is_none&quot;)]&quot;##</span>, <span class="string">r##&quot;#[serde(default, rename = &quot;IsGift&quot;, skip_serializing_if = &quot;Option::is_none&quot;, deserialize_with = &quot;amazon_sp_api_shared::helpers::deserialize_opt_bool_from_string&quot;)]&quot;##</span>),
+      ];
+
+      <span class="kw">for </span>(file, from, to) <span class="kw">in </span>replaces {
+        <span class="kw">let </span>lib_rs_content = fs::read_to_string(out_path.join(file))<span class="question-mark">?</span>;
+        <span class="kw">let </span>updated = lib_rs_content.replace(
+          from, 
+          to
+        );
+        fs::write(out_path.join(file), updated)<span class="question-mark">?</span>;
+      }      
+    }
 
     <span class="prelude-val">Ok</span>(())
   }

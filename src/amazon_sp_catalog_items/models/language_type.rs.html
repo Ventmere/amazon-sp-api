@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>LanguageType {
     <span class="doccomment">/// The name attribute of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Name&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Name&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The type attribute of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The audio format attribute of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AudioFormat&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AudioFormat&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>audio_format: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

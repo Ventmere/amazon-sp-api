@@ -57,15 +57,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetFulfillmentPreviewItem {
     <span class="doccomment">/// The seller SKU of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerSku&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerSku&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: String,
     <span class="doccomment">/// The item quantity.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;quantity&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;quantity&quot;</span>)]
     </span><span class="kw">pub </span>quantity: i32,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;perUnitDeclaredValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;perUnitDeclaredValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>per_unit_declared_value: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
     <span class="doccomment">/// A fulfillment order item identifier that the seller creates to track items in the fulfillment preview.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerFulfillmentOrderItemId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerFulfillmentOrderItemId&quot;</span>)]
     </span><span class="kw">pub </span>seller_fulfillment_order_item_id: String,
 }
 

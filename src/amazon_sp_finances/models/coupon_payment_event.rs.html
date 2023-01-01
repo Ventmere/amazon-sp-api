@@ -69,25 +69,25 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CouponPaymentEvent {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>posted_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A coupon identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CouponId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CouponId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>coupon_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The description provided by the seller when they created the coupon.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerCouponDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerCouponDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_coupon_description: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The number of coupon clips or redemptions.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ClipOrRedemptionCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ClipOrRedemptionCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>clip_or_redemption_count: <span class="prelude-ty">Option</span>&lt;i64&gt;,
     <span class="doccomment">/// A payment event identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PaymentEventId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PaymentEventId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>payment_event_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;FeeComponent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;FeeComponent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fee_component: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FeeComponent&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ChargeComponent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ChargeComponent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>charge_component: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ChargeComponent&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TotalAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TotalAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>total_amount: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
 }
 

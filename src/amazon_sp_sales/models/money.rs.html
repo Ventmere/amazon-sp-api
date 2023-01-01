@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Money {
     <span class="doccomment">/// Three-digit currency code. In ISO 4217 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;currencyCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;currencyCode&quot;</span>)]
     </span><span class="kw">pub </span>currency_code: String,
     <span class="doccomment">/// A decimal number with no loss of precision. Useful when precision loss is unnaceptable, as with currencies. Follows RFC7159 for number representation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amount&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amount&quot;</span>)]
     </span><span class="kw">pub </span>amount: String,
 }
 

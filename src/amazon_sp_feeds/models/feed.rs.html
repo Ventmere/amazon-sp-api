@@ -91,28 +91,28 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Feed {
     <span class="doccomment">/// The identifier for the feed. This identifier is unique only in combination with a seller ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;feedId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;feedId&quot;</span>)]
     </span><span class="kw">pub </span>feed_id: String,
     <span class="doccomment">/// The feed type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;feedType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;feedType&quot;</span>)]
     </span><span class="kw">pub </span>feed_type: String,
     <span class="doccomment">/// A list of identifiers for the marketplaces that the feed is applied to.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_ids: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
     <span class="doccomment">/// The date and time when the feed was created, in ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;createdTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;createdTime&quot;</span>)]
     </span><span class="kw">pub </span>created_time: String,
     <span class="doccomment">/// The processing status of the feed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;processingStatus&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;processingStatus&quot;</span>)]
     </span><span class="kw">pub </span>processing_status: ProcessingStatus,
     <span class="doccomment">/// The date and time when feed processing started, in ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;processingStartTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;processingStartTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>processing_start_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The date and time when feed processing completed, in ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;processingEndTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;processingEndTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>processing_end_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The identifier for the feed document. This identifier is unique only in combination with a seller ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;resultFeedDocumentId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;resultFeedDocumentId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>result_feed_document_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

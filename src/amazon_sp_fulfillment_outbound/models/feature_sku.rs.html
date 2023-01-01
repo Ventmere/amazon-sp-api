@@ -62,19 +62,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeatureSku {
     <span class="doccomment">/// Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerSku&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerSku&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The unique SKU used by Amazon&#39;s fulfillment network.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fnSku&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fnSku&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fn_sku: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>asin: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The number of SKUs available for this service.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;skuCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;skuCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>sku_count: <span class="prelude-ty">Option</span>&lt;f32&gt;,
     <span class="doccomment">/// Other seller SKUs that are shared across the same inventory.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;overlappingSkus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;overlappingSkus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>overlapping_skus: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
 }
 

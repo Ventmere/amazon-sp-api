@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Weight {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Value&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Value&quot;</span>)]
     </span><span class="kw">pub </span>value: f64,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Unit&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Unit&quot;</span>)]
     </span><span class="kw">pub </span>unit: <span class="kw">crate</span>::models::UnitOfWeight,
 }
 

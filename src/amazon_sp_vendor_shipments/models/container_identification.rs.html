@@ -67,10 +67,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ContainerIdentification {
     <span class="doccomment">/// The container identification type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containerIdentificationType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containerIdentificationType&quot;</span>)]
     </span><span class="kw">pub </span>container_identification_type: ContainerIdentificationType,
     <span class="doccomment">/// Container identification number that adheres to the definition of the container identification type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containerIdentificationNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containerIdentificationNumber&quot;</span>)]
     </span><span class="kw">pub </span>container_identification_number: String,
 }
 

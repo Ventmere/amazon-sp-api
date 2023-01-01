@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AsinInboundGuidance {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ASIN&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ASIN&quot;</span>)]
     </span><span class="kw">pub </span>ASIN: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;InboundGuidance&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;InboundGuidance&quot;</span>)]
     </span><span class="kw">pub </span>inbound_guidance: <span class="kw">crate</span>::models::InboundGuidance,
     <span class="doccomment">/// A list of inbound guidance reason information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;GuidanceReasonList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;GuidanceReasonList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>guidance_reason_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::GuidanceReason&gt;&gt;,
 }
 

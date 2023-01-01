@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SubmitAcknowledgementRequest {
     <span class="doccomment">/// A list of one or more purchase orders.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderAcknowledgements&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;orderAcknowledgements&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>order_acknowledgements: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::OrderAcknowledgementItem&gt;&gt;,
 }
 

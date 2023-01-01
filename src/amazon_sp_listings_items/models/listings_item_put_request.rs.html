@@ -70,13 +70,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListingsItemPutRequest {
     <span class="doccomment">/// The Amazon product type of the listings item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;productType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;productType&quot;</span>)]
     </span><span class="kw">pub </span>product_type: String,
     <span class="doccomment">/// The name of the requirements set for the provided data.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;requirements&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;requirements&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>requirements: <span class="prelude-ty">Option</span>&lt;Requirements&gt;,
     <span class="doccomment">/// JSON object containing structured listings item attribute data keyed by attribute name.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;attributes&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;attributes&quot;</span>)]
     </span><span class="kw">pub </span>attributes: serde_json::Value,
 }
 

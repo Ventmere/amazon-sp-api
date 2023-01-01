@@ -44,9 +44,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Points {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PointsNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PointsNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>points_number: <span class="prelude-ty">Option</span>&lt;i32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PointsMonetaryValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PointsMonetaryValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>points_monetary_value: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
 }
 

@@ -65,21 +65,21 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderBuyerInfo {
     <span class="doccomment">/// An Amazon-defined order identifier, in 3-7-7 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_order_id: String,
     <span class="doccomment">/// The anonymized email address of the buyer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerEmail&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerEmail&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_email: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The buyer name or the recipient name.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The county of the buyer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerCounty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerCounty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_county: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyerTaxInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerTaxInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_tax_info: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::BuyerTaxInfo&gt;&gt;,
     <span class="doccomment">/// The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PurchaseOrderNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PurchaseOrderNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

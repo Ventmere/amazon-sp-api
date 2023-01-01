@@ -336,63 +336,6 @@
 <span id="336">336</span>
 <span id="337">337</span>
 <span id="338">338</span>
-<span id="339">339</span>
-<span id="340">340</span>
-<span id="341">341</span>
-<span id="342">342</span>
-<span id="343">343</span>
-<span id="344">344</span>
-<span id="345">345</span>
-<span id="346">346</span>
-<span id="347">347</span>
-<span id="348">348</span>
-<span id="349">349</span>
-<span id="350">350</span>
-<span id="351">351</span>
-<span id="352">352</span>
-<span id="353">353</span>
-<span id="354">354</span>
-<span id="355">355</span>
-<span id="356">356</span>
-<span id="357">357</span>
-<span id="358">358</span>
-<span id="359">359</span>
-<span id="360">360</span>
-<span id="361">361</span>
-<span id="362">362</span>
-<span id="363">363</span>
-<span id="364">364</span>
-<span id="365">365</span>
-<span id="366">366</span>
-<span id="367">367</span>
-<span id="368">368</span>
-<span id="369">369</span>
-<span id="370">370</span>
-<span id="371">371</span>
-<span id="372">372</span>
-<span id="373">373</span>
-<span id="374">374</span>
-<span id="375">375</span>
-<span id="376">376</span>
-<span id="377">377</span>
-<span id="378">378</span>
-<span id="379">379</span>
-<span id="380">380</span>
-<span id="381">381</span>
-<span id="382">382</span>
-<span id="383">383</span>
-<span id="384">384</span>
-<span id="385">385</span>
-<span id="386">386</span>
-<span id="387">387</span>
-<span id="388">388</span>
-<span id="389">389</span>
-<span id="390">390</span>
-<span id="391">391</span>
-<span id="392">392</span>
-<span id="393">393</span>
-<span id="394">394</span>
-<span id="395">395</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for Easy Ship
  *
@@ -406,89 +349,12 @@
 
 </span><span class="kw">use </span>reqwest;
 
-<span class="kw">use </span><span class="kw">crate</span>::apis::ResponseContent;
 <span class="kw">use super</span>::{Error, configuration};
-<span class="kw">use </span>amazon_sp_api_shared::request::UrlBuilder;
-
-
-<span class="doccomment">/// struct for typed errors of method [`create_scheduled_package`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>CreateScheduledPackageError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status401(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`create_scheduled_package_bulk`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>CreateScheduledPackageBulkError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status401(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`get_scheduled_package`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>GetScheduledPackageError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status401(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`list_handover_slots`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>ListHandoverSlotsError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status401(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`update_scheduled_packages`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>UpdateScheduledPackagesError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status401(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
+<span class="kw">use </span>amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 <span class="doccomment">/// Schedules an Easy Ship order and returns the scheduled package information.  This operation does the following:  *  Specifies the time slot and handover method for the order to be scheduled for delivery.  * Updates the Easy Ship order status.  * Generates a shipping label and an invoice. Calling `createScheduledPackage` also generates a warranty document if you specify a `SerialNumber` value. To get these documents, see [How to get invoice, shipping label, and warranty documents](doc:easy-ship-api-v2022-03-23-use-case-guide).  * Shows the status of Easy Ship orders when you call the `getOrders` operation of the Selling Partner API for Orders and examine the `EasyShipShipmentStatus` property in the response body.  See the **Shipping Label**, **Invoice**, and **Warranty** columns in the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) to see which documents are supported in each marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>create_scheduled_package(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, create_scheduled_package_request: <span class="kw">crate</span>::models::CreateScheduledPackageRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::Package, Error&lt;CreateScheduledPackageError&gt;&gt; {
+</span><span class="kw">pub async fn </span>create_scheduled_package(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, create_scheduled_package_request: <span class="kw">crate</span>::models::CreateScheduledPackageRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::Package, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -501,16 +367,21 @@
 
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>create_scheduled_package_request).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -521,8 +392,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -541,14 +411,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;CreateScheduledPackageError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// This operation automatically schedules a time slot for all the `amazonOrderId`s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easy-ship-api-v2022-03-23-marketplace-document-support-table)).  Developers calling this operation may optionally assign a `packageDetails` object, allowing them to input a preferred time slot for each order in ther request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.   Regarding the shipping label&#39;s file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.  This operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn&#39;t be scheduled, then Amazon adds the `rejectedOrders` list into the response, which contains an entry for each order we couldn&#39;t process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.  The table below displays the supported request and burst maximum rates: | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 | The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>create_scheduled_package_bulk(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, create_scheduled_packages_request: <span class="kw">crate</span>::models::CreateScheduledPackagesRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::CreateScheduledPackagesResponse, Error&lt;CreateScheduledPackageBulkError&gt;&gt; {
+</span><span class="kw">pub async fn </span>create_scheduled_package_bulk(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, create_scheduled_packages_request: <span class="kw">crate</span>::models::CreateScheduledPackagesRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::CreateScheduledPackagesResponse, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -561,16 +431,21 @@
 
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>create_scheduled_packages_request).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -581,8 +456,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -601,14 +475,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;CreateScheduledPackageBulkError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Returns information about a package, including dimensions, weight, time slot information for handover, invoice and item information, and status.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>get_scheduled_package(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, amazon_order_id: <span class="kw-2">&amp;</span>str, marketplace_id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::Package, Error&lt;GetScheduledPackageError&gt;&gt; {
+</span><span class="kw">pub async fn </span>get_scheduled_package(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, amazon_order_id: <span class="kw-2">&amp;</span>str, marketplace_id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::Package, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -623,16 +497,21 @@
     url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;marketplaceId&quot;</span>, <span class="kw-2">&amp;</span>marketplace_id.to_string())]);
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -643,8 +522,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -662,14 +540,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetScheduledPackageError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Returns time slots available for Easy Ship orders to be scheduled based on the package weight and dimensions that the seller specifies.  This operation is available for scheduled and unscheduled orders based on marketplace support. See **Get Time Slots** in the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  This operation can return time slots that have either pickup or drop-off handover methods - see **Supported Handover Methods** in the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>list_handover_slots(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, list_handover_slots_request: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::ListHandoverSlotsRequest&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListHandoverSlotsResponse, Error&lt;ListHandoverSlotsError&gt;&gt; {
+</span><span class="kw">pub async fn </span>list_handover_slots(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, list_handover_slots_request: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::ListHandoverSlotsRequest&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListHandoverSlotsResponse, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -682,16 +560,21 @@
 
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>list_handover_slots_request).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -702,8 +585,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -722,14 +604,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;ListHandoverSlotsError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Updates the time slot for handing over the package indicated by the specified `scheduledPackageId`. You can get the new `slotId` value for the time slot by calling the `listHandoverSlots` operation before making another `patch` call.  See the **Update Package** column in the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) to see which marketplaces this operation is supported in.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>update_scheduled_packages(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, update_scheduled_packages_request: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::UpdateScheduledPackagesRequest&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::Packages, Error&lt;UpdateScheduledPackagesError&gt;&gt; {
+</span><span class="kw">pub async fn </span>update_scheduled_packages(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, update_scheduled_packages_request: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::UpdateScheduledPackagesRequest&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::Packages, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -742,16 +624,21 @@
 
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;PATCH&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>update_scheduled_packages_request).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -762,8 +649,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -782,8 +668,8 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;UpdateScheduledPackagesError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }

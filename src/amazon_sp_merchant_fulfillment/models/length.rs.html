@@ -49,9 +49,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Length {
     <span class="doccomment">/// The value in units.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;value&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;value&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value: <span class="prelude-ty">Option</span>&lt;f32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;unit&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;unit&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>unit: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::UnitOfLength&gt;,
 }
 

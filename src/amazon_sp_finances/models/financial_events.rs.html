@@ -150,85 +150,85 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FinancialEvents {
     <span class="doccomment">/// A list of shipment event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
     <span class="doccomment">/// A list of shipment event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RefundEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RefundEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>refund_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
     <span class="doccomment">/// A list of shipment event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;GuaranteeClaimEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;GuaranteeClaimEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>guarantee_claim_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
     <span class="doccomment">/// A list of shipment event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ChargebackEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ChargebackEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>chargeback_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
     <span class="doccomment">/// A list of events related to the seller&#39;s Pay with Amazon account.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PayWithAmazonEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PayWithAmazonEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>pay_with_amazon_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::PayWithAmazonEvent&gt;&gt;,
     <span class="doccomment">/// A list of information about solution provider credits.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ServiceProviderCreditEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ServiceProviderCreditEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>service_provider_credit_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::SolutionProviderCreditEvent&gt;&gt;,
     <span class="doccomment">/// A list of information about Retrocharge or RetrochargeReversal events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RetrochargeEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RetrochargeEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>retrocharge_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RetrochargeEvent&gt;&gt;,
     <span class="doccomment">/// A list of rental transaction event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RentalTransactionEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RentalTransactionEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rental_transaction_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RentalTransactionEvent&gt;&gt;,
     <span class="doccomment">/// A list of sponsored products payment events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProductAdsPaymentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ProductAdsPaymentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>product_ads_payment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ProductAdsPaymentEvent&gt;&gt;,
     <span class="doccomment">/// A list of information about service fee events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ServiceFeeEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ServiceFeeEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>service_fee_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ServiceFeeEvent&gt;&gt;,
     <span class="doccomment">/// A list of payment events for deal-related fees.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerDealPaymentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerDealPaymentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_deal_payment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::SellerDealPaymentEvent&gt;&gt;,
     <span class="doccomment">/// A list of debt recovery event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;DebtRecoveryEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;DebtRecoveryEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>debt_recovery_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::DebtRecoveryEvent&gt;&gt;,
     <span class="doccomment">/// A list of loan servicing events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;LoanServicingEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;LoanServicingEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>loan_servicing_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::LoanServicingEvent&gt;&gt;,
     <span class="doccomment">/// A list of adjustment event information for the seller&#39;s account.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AdjustmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AdjustmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>adjustment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AdjustmentEvent&gt;&gt;,
     <span class="doccomment">/// A list of SAFETReimbursementEvents.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SAFETReimbursementEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SAFETReimbursementEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>safet_reimbursement_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::SafetReimbursementEvent&gt;&gt;,
     <span class="doccomment">/// A list of information about fee events for the Early Reviewer Program.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerReviewEnrollmentPaymentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerReviewEnrollmentPaymentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_review_enrollment_payment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::SellerReviewEnrollmentPaymentEvent&gt;&gt;,
     <span class="doccomment">/// A list of FBA inventory liquidation payment events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FBALiquidationEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FBALiquidationEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fba_liquidation_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FbaLiquidationEvent&gt;&gt;,
     <span class="doccomment">/// A list of coupon payment event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CouponPaymentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CouponPaymentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>coupon_payment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::CouponPaymentEvent&gt;&gt;,
     <span class="doccomment">/// A list of fee events related to Amazon Imaging services.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ImagingServicesFeeEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ImagingServicesFeeEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>imaging_services_fee_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ImagingServicesFeeEvent&gt;&gt;,
     <span class="doccomment">/// A list of network commingling transaction events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NetworkComminglingTransactionEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;NetworkComminglingTransactionEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>network_commingling_transaction_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::NetworkComminglingTransactionEvent&gt;&gt;,
     <span class="doccomment">/// A list of expense information related to an affordability promotion.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AffordabilityExpenseEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AffordabilityExpenseEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>affordability_expense_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AffordabilityExpenseEvent&gt;&gt;,
     <span class="doccomment">/// A list of expense information related to an affordability promotion.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AffordabilityExpenseReversalEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AffordabilityExpenseReversalEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>affordability_expense_reversal_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AffordabilityExpenseEvent&gt;&gt;,
     <span class="doccomment">/// A list of information about trial shipment financial events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TrialShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TrialShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>trial_shipment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TrialShipmentEvent&gt;&gt;,
     <span class="doccomment">/// A list of information about shipment settle financial events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentSettleEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentSettleEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_settle_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
     <span class="doccomment">/// List of TaxWithholding events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TaxWithholdingEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxWithholdingEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_withholding_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TaxWithholdingEvent&gt;&gt;,
     <span class="doccomment">/// A list of removal shipment event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RemovalShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RemovalShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>removal_shipment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RemovalShipmentEvent&gt;&gt;,
     <span class="doccomment">/// A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RemovalShipmentAdjustmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RemovalShipmentAdjustmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>removal_shipment_adjustment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RemovalShipmentAdjustmentEvent&gt;&gt;,
 }
 

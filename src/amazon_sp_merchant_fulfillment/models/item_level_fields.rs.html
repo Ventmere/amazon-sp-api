@@ -47,10 +47,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemLevelFields {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Asin&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Asin&quot;</span>)]
     </span><span class="kw">pub </span>asin: String,
     <span class="doccomment">/// A list of additional inputs.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AdditionalInputs&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AdditionalInputs&quot;</span>)]
     </span><span class="kw">pub </span>additional_inputs: Vec&lt;<span class="kw">crate</span>::models::AdditionalInputs&gt;,
 }
 

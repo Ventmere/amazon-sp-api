@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>UploadDestination {
     <span class="doccomment">/// The unique identifier for the upload destination.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;uploadDestinationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;uploadDestinationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>upload_destination_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The URL for the upload destination.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;url&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;url&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>url: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The headers to include in the upload request.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;headers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;headers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>headers: <span class="prelude-ty">Option</span>&lt;serde_json::Value&gt;,
 }
 

@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeesEstimate {
     <span class="doccomment">/// The time at which the fees were estimated. This defaults to the time the request is made.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TimeOfFeesEstimation&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TimeOfFeesEstimation&quot;</span>)]
     </span><span class="kw">pub </span>time_of_fees_estimation: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TotalFeesEstimate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TotalFeesEstimate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>total_fees_estimate: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
     <span class="doccomment">/// A list of other fees that contribute to a given fee.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FeeDetailList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FeeDetailList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fee_detail_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeeDetail&gt;&gt;,
 }
 

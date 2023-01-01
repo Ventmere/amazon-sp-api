@@ -62,19 +62,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateReturnItem {
     <span class="doccomment">/// An identifier assigned by the seller to the return item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerReturnItemId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerReturnItemId&quot;</span>)]
     </span><span class="kw">pub </span>seller_return_item_id: String,
     <span class="doccomment">/// The identifier assigned to the item by the seller when the fulfillment order was created.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerFulfillmentOrderItemId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerFulfillmentOrderItemId&quot;</span>)]
     </span><span class="kw">pub </span>seller_fulfillment_order_item_id: String,
     <span class="doccomment">/// The identifier for the shipment that is associated with the return item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amazonShipmentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amazonShipmentId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_shipment_id: String,
     <span class="doccomment">/// The return reason code assigned to the return item by the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;returnReasonCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;returnReasonCode&quot;</span>)]
     </span><span class="kw">pub </span>return_reason_code: String,
     <span class="doccomment">/// An optional comment about the return item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;returnComment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;returnComment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>return_comment: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

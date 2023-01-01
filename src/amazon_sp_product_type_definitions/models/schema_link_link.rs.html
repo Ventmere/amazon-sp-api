@@ -62,10 +62,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SchemaLinkLink {
     <span class="doccomment">/// URI resource for the link.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;resource&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;resource&quot;</span>)]
     </span><span class="kw">pub </span>resource: String,
     <span class="doccomment">/// HTTP method for the link operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;verb&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;verb&quot;</span>)]
     </span><span class="kw">pub </span>verb: Verb,
 }
 

@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Location {
     <span class="doccomment">/// The state or region where the person, business or institution is located.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;stateOrRegion&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;stateOrRegion&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>state_or_region: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The city where the person, business or institution is located.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;city&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;city&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>city: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The two digit country code. In ISO 3166-1 alpha-2 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;countryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;countryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>country_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;postalCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;postalCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>postal_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

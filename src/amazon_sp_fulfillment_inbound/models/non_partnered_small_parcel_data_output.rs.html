@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>NonPartneredSmallParcelDataOutput {
     <span class="doccomment">/// A list of packages, including carrier, tracking number, and status information for each package.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PackageList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PackageList&quot;</span>)]
     </span><span class="kw">pub </span>package_list: Vec&lt;<span class="kw">crate</span>::models::NonPartneredSmallParcelPackageOutput&gt;,
 }
 

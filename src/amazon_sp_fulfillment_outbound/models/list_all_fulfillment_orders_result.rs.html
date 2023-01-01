@@ -47,10 +47,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListAllFulfillmentOrdersResult {
     <span class="doccomment">/// When present and not empty, pass this string token in the next request to return the next response page.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;nextToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;nextToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// An array of fulfillment order information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentOrders&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentOrders&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_orders: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FulfillmentOrder&gt;&gt;,
 }
 

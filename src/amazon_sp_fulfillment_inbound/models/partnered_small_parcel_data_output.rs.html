@@ -49,9 +49,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PartneredSmallParcelDataOutput {
     <span class="doccomment">/// A list of packages, including shipping information from the Amazon-partnered carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PackageList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PackageList&quot;</span>)]
     </span><span class="kw">pub </span>package_list: Vec&lt;<span class="kw">crate</span>::models::PartneredSmallParcelPackageOutput&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PartneredEstimate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PartneredEstimate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>partnered_estimate: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartneredEstimate&gt;&gt;,
 }
 

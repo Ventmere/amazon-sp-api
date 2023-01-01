@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":[["SpApiEndpoint",""]],"mod":[["config",""],["error",""]]};
+window.SIDEBAR_ITEMS = {"enum":[["SpApiEndpoint",""]],"mod":[["apis",""],["client",""],["config",""],["error",""]]};

@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListingsItemPatchRequest {
     <span class="doccomment">/// The Amazon product type of the listings item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;productType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;productType&quot;</span>)]
     </span><span class="kw">pub </span>product_type: String,
     <span class="doccomment">/// One or more JSON Patch operations to perform on the listings item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;patches&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;patches&quot;</span>)]
     </span><span class="kw">pub </span>patches: Vec&lt;<span class="kw">crate</span>::models::PatchOperation&gt;,
 }
 

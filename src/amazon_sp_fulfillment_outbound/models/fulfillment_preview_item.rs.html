@@ -75,18 +75,18 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FulfillmentPreviewItem {
     <span class="doccomment">/// The seller SKU of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerSku&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerSku&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: String,
     <span class="doccomment">/// The item quantity.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;quantity&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;quantity&quot;</span>)]
     </span><span class="kw">pub </span>quantity: i32,
     <span class="doccomment">/// A fulfillment order item identifier that the seller created with a call to the createFulfillmentOrder operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerFulfillmentOrderItemId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerFulfillmentOrderItemId&quot;</span>)]
     </span><span class="kw">pub </span>seller_fulfillment_order_item_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;estimatedShippingWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;estimatedShippingWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>estimated_shipping_weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
     <span class="doccomment">/// The method used to calculate the estimated shipping weight.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shippingWeightCalculationMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shippingWeightCalculationMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_weight_calculation_method: <span class="prelude-ty">Option</span>&lt;ShippingWeightCalculationMethod&gt;,
 }
 

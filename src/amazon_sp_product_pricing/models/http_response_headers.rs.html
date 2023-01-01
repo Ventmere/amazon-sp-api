@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>HttpResponseHeaders {
     <span class="doccomment">/// The timestamp that the API request was received.  For more information, consult [RFC 2616 Section 14](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Date&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Date&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Unique request reference ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;x-amzn-RequestId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;x-amzn-RequestId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>x_amzn_request_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

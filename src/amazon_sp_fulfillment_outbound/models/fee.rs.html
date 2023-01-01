@@ -67,9 +67,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Fee {
     <span class="doccomment">/// The type of fee.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">pub </span>name: Name,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;amount&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;amount&quot;</span>)]
     </span><span class="kw">pub </span>amount: Box&lt;<span class="kw">crate</span>::models::Money&gt;,
 }
 

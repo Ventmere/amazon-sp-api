@@ -48,10 +48,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RangeCapacity {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;capacityType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;capacityType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>capacity_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::CapacityType&gt;,
     <span class="doccomment">/// Array of capacity slots in range slot format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;slots&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;slots&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>slots: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RangeSlot&gt;&gt;,
 }
 

@@ -52,13 +52,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TransportResult {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TransportStatus&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TransportStatus&quot;</span>)]
     </span><span class="kw">pub </span>transport_status: <span class="kw">crate</span>::models::TransportStatus,
     <span class="doccomment">/// An error code that identifies the type of error that occured.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ErrorCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ErrorCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>error_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A message that describes the error condition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ErrorDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ErrorDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>error_description: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

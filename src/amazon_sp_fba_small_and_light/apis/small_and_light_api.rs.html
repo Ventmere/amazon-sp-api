@@ -347,62 +347,6 @@
 <span id="347">347</span>
 <span id="348">348</span>
 <span id="349">349</span>
-<span id="350">350</span>
-<span id="351">351</span>
-<span id="352">352</span>
-<span id="353">353</span>
-<span id="354">354</span>
-<span id="355">355</span>
-<span id="356">356</span>
-<span id="357">357</span>
-<span id="358">358</span>
-<span id="359">359</span>
-<span id="360">360</span>
-<span id="361">361</span>
-<span id="362">362</span>
-<span id="363">363</span>
-<span id="364">364</span>
-<span id="365">365</span>
-<span id="366">366</span>
-<span id="367">367</span>
-<span id="368">368</span>
-<span id="369">369</span>
-<span id="370">370</span>
-<span id="371">371</span>
-<span id="372">372</span>
-<span id="373">373</span>
-<span id="374">374</span>
-<span id="375">375</span>
-<span id="376">376</span>
-<span id="377">377</span>
-<span id="378">378</span>
-<span id="379">379</span>
-<span id="380">380</span>
-<span id="381">381</span>
-<span id="382">382</span>
-<span id="383">383</span>
-<span id="384">384</span>
-<span id="385">385</span>
-<span id="386">386</span>
-<span id="387">387</span>
-<span id="388">388</span>
-<span id="389">389</span>
-<span id="390">390</span>
-<span id="391">391</span>
-<span id="392">392</span>
-<span id="393">393</span>
-<span id="394">394</span>
-<span id="395">395</span>
-<span id="396">396</span>
-<span id="397">397</span>
-<span id="398">398</span>
-<span id="399">399</span>
-<span id="400">400</span>
-<span id="401">401</span>
-<span id="402">402</span>
-<span id="403">403</span>
-<span id="404">404</span>
-<span id="405">405</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for FBA Small And Light
  *
@@ -416,88 +360,12 @@
 
 </span><span class="kw">use </span>reqwest;
 
-<span class="kw">use </span><span class="kw">crate</span>::apis::ResponseContent;
 <span class="kw">use super</span>::{Error, configuration};
-<span class="kw">use </span>amazon_sp_api_shared::request::UrlBuilder;
-
-
-<span class="doccomment">/// struct for typed errors of method [`delete_small_and_light_enrollment_by_seller_sku`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>DeleteSmallAndLightEnrollmentBySellerSkuError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status413(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`get_small_and_light_eligibility_by_seller_sku`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>GetSmallAndLightEligibilityBySellerSkuError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status413(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`get_small_and_light_enrollment_by_seller_sku`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>GetSmallAndLightEnrollmentBySellerSkuError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status413(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`get_small_and_light_fee_preview`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>GetSmallAndLightFeePreviewError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status401(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`put_small_and_light_enrollment_by_seller_sku`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>PutSmallAndLightEnrollmentBySellerSkuError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status404(<span class="kw">crate</span>::models::ErrorList),
-    Status413(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
+<span class="kw">use </span>amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 <span class="doccomment">/// Removes the item indicated by the specified seller SKU from the Small and Light program in the specified marketplace. If the item is not eligible for disenrollment, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-</span><span class="kw">pub async fn </span>delete_small_and_light_enrollment_by_seller_sku(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&lt;DeleteSmallAndLightEnrollmentBySellerSkuError&gt;&gt; {
+</span><span class="kw">pub async fn </span>delete_small_and_light_enrollment_by_seller_sku(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -514,16 +382,21 @@
     };
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;DELETE&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -534,8 +407,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -553,14 +425,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         <span class="prelude-val">Ok</span>(())
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;DeleteSmallAndLightEnrollmentBySellerSkuError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-</span><span class="kw">pub async fn </span>get_small_and_light_eligibility_by_seller_sku(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SmallAndLightEligibility, Error&lt;GetSmallAndLightEligibilityBySellerSkuError&gt;&gt; {
+</span><span class="kw">pub async fn </span>get_small_and_light_eligibility_by_seller_sku(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SmallAndLightEligibility, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -577,16 +449,21 @@
     };
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -597,8 +474,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -616,14 +492,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetSmallAndLightEligibilityBySellerSkuError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Returns the Small and Light enrollment status for the item indicated by the specified seller SKU in the specified marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-</span><span class="kw">pub async fn </span>get_small_and_light_enrollment_by_seller_sku(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SmallAndLightEnrollment, Error&lt;GetSmallAndLightEnrollmentBySellerSkuError&gt;&gt; {
+</span><span class="kw">pub async fn </span>get_small_and_light_enrollment_by_seller_sku(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SmallAndLightEnrollment, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -640,16 +516,21 @@
     };
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -660,8 +541,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -679,14 +559,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetSmallAndLightEnrollmentBySellerSkuError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 3 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-</span><span class="kw">pub async fn </span>get_small_and_light_fee_preview(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, body: <span class="kw">crate</span>::models::SmallAndLightFeePreviewRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SmallAndLightFeePreviews, Error&lt;GetSmallAndLightFeePreviewError&gt;&gt; {
+</span><span class="kw">pub async fn </span>get_small_and_light_fee_preview(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, body: <span class="kw">crate</span>::models::SmallAndLightFeePreviewRequest) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SmallAndLightFeePreviews, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -699,16 +579,21 @@
 
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;POST&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -719,8 +604,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -739,14 +623,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetSmallAndLightFeePreviewError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Enrolls the item indicated by the specified seller SKU in the Small and Light program in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-</span><span class="kw">pub async fn </span>put_small_and_light_enrollment_by_seller_sku(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SmallAndLightEnrollment, Error&lt;PutSmallAndLightEnrollmentBySellerSkuError&gt;&gt; {
+</span><span class="kw">pub async fn </span>put_small_and_light_enrollment_by_seller_sku(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::SmallAndLightEnrollment, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -763,16 +647,21 @@
     };
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;PUT&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -783,8 +672,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -802,8 +690,8 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;PutSmallAndLightEnrollmentBySellerSkuError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }

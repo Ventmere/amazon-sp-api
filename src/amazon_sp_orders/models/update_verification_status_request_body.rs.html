@@ -52,13 +52,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>UpdateVerificationStatusRequestBody {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;status&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;status&quot;</span>)]
     </span><span class="kw">pub </span>status: <span class="kw">crate</span>::models::VerificationStatus,
     <span class="doccomment">/// The identifier for the order&#39;s regulated information reviewer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;externalReviewerId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;externalReviewerId&quot;</span>)]
     </span><span class="kw">pub </span>external_reviewer_id: String,
     <span class="doccomment">/// The unique identifier for the rejection reason used for rejecting the order&#39;s regulated information. Only required if the new status is rejected.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;rejectionReasonId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;rejectionReasonId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rejection_reason_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

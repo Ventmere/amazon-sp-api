@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ContainerSpecification {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;dimensions&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;dimensions&quot;</span>)]
     </span><span class="kw">pub </span>dimensions: Box&lt;<span class="kw">crate</span>::models::Dimensions&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;weight&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;weight&quot;</span>)]
     </span><span class="kw">pub </span>weight: Box&lt;<span class="kw">crate</span>::models::Weight&gt;,
 }
 

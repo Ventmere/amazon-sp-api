@@ -49,9 +49,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TextItem {
     <span class="doccomment">/// The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;position&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;position&quot;</span>)]
     </span><span class="kw">pub </span>position: i32,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;text&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;text&quot;</span>)]
     </span><span class="kw">pub </span>text: Box&lt;<span class="kw">crate</span>::models::TextComponent&gt;,
 }
 

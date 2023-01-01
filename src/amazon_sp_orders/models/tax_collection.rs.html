@@ -74,10 +74,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TaxCollection {
     <span class="doccomment">/// The tax collection model applied to the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Model&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Model&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>model: <span class="prelude-ty">Option</span>&lt;Model&gt;,
     <span class="doccomment">/// The party responsible for withholding the taxes and remitting them to the taxing authority.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ResponsibleParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ResponsibleParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>responsible_party: <span class="prelude-ty">Option</span>&lt;ResponsibleParty&gt;,
 }
 

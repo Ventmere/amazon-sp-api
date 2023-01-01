@@ -227,38 +227,6 @@
 <span id="227">227</span>
 <span id="228">228</span>
 <span id="229">229</span>
-<span id="230">230</span>
-<span id="231">231</span>
-<span id="232">232</span>
-<span id="233">233</span>
-<span id="234">234</span>
-<span id="235">235</span>
-<span id="236">236</span>
-<span id="237">237</span>
-<span id="238">238</span>
-<span id="239">239</span>
-<span id="240">240</span>
-<span id="241">241</span>
-<span id="242">242</span>
-<span id="243">243</span>
-<span id="244">244</span>
-<span id="245">245</span>
-<span id="246">246</span>
-<span id="247">247</span>
-<span id="248">248</span>
-<span id="249">249</span>
-<span id="250">250</span>
-<span id="251">251</span>
-<span id="252">252</span>
-<span id="253">253</span>
-<span id="254">254</span>
-<span id="255">255</span>
-<span id="256">256</span>
-<span id="257">257</span>
-<span id="258">258</span>
-<span id="259">259</span>
-<span id="260">260</span>
-<span id="261">261</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for Listings Items
  *
@@ -272,56 +240,12 @@
 
 </span><span class="kw">use </span>reqwest;
 
-<span class="kw">use </span><span class="kw">crate</span>::apis::ResponseContent;
 <span class="kw">use super</span>::{Error, configuration};
-<span class="kw">use </span>amazon_sp_api_shared::request::UrlBuilder;
-
-
-<span class="doccomment">/// struct for typed errors of method [`delete_listings_item`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>DeleteListingsItemError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status413(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`patch_listings_item`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>PatchListingsItemError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status413(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
-
-<span class="doccomment">/// struct for typed errors of method [`put_listings_item`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>PutListingsItemError {
-    Status400(<span class="kw">crate</span>::models::ErrorList),
-    Status403(<span class="kw">crate</span>::models::ErrorList),
-    Status413(<span class="kw">crate</span>::models::ErrorList),
-    Status415(<span class="kw">crate</span>::models::ErrorList),
-    Status429(<span class="kw">crate</span>::models::ErrorList),
-    Status500(<span class="kw">crate</span>::models::ErrorList),
-    Status503(<span class="kw">crate</span>::models::ErrorList),
-    UnknownValue(serde_json::Value),
-}
+<span class="kw">use </span>amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 <span class="doccomment">/// Delete a listings item for a selling partner.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>delete_listings_item(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_id: <span class="kw-2">&amp;</span>str, sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;, issue_locale: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListingsItemSubmissionResponse, Error&lt;DeleteListingsItemError&gt;&gt; {
+</span><span class="kw">pub async fn </span>delete_listings_item(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_id: <span class="kw-2">&amp;</span>str, sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;, issue_locale: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListingsItemSubmissionResponse, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -341,16 +265,21 @@
     }
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;DELETE&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -361,8 +290,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -380,14 +308,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;DeleteListingsItemError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>patch_listings_item(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_id: <span class="kw-2">&amp;</span>str, sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;, body: <span class="kw">crate</span>::models::ListingsItemPatchRequest, issue_locale: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListingsItemSubmissionResponse, Error&lt;PatchListingsItemError&gt;&gt; {
+</span><span class="kw">pub async fn </span>patch_listings_item(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_id: <span class="kw-2">&amp;</span>str, sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;, body: <span class="kw">crate</span>::models::ListingsItemPatchRequest, issue_locale: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListingsItemSubmissionResponse, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -407,16 +335,21 @@
     }
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;PATCH&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -427,8 +360,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -447,14 +379,14 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;PatchListingsItemError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }
 
 <span class="doccomment">/// Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>put_listings_item(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_id: <span class="kw-2">&amp;</span>str, sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;, body: <span class="kw">crate</span>::models::ListingsItemPutRequest, issue_locale: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListingsItemSubmissionResponse, Error&lt;PutListingsItemError&gt;&gt; {
+</span><span class="kw">pub async fn </span>put_listings_item(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, seller_id: <span class="kw-2">&amp;</span>str, sku: <span class="kw-2">&amp;</span>str, marketplace_ids: Vec&lt;String&gt;, body: <span class="kw">crate</span>::models::ListingsItemPutRequest, issue_locale: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListingsItemSubmissionResponse, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -474,16 +406,21 @@
     }
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;PUT&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span>serde_json::to_string(<span class="kw-2">&amp;</span>body).expect(<span class="string">&quot;param should serialize to string&quot;</span>),
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -494,8 +431,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -514,8 +450,8 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;PutListingsItemError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }

@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FulfillmentInstruction {
     <span class="doccomment">/// Denotes the recommended sourceId where the order should be fulfilled from.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FulfillmentSupplySourceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FulfillmentSupplySourceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_supply_source_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

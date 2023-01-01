@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>UpdateShipmentStatusRequest {
     <span class="doccomment">/// The unobfuscated marketplace identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipmentStatus&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipmentStatus&quot;</span>)]
     </span><span class="kw">pub </span>shipment_status: <span class="kw">crate</span>::models::ShipmentStatus,
     <span class="doccomment">/// For partial shipment status updates, the list of order items and quantities to be updated.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;orderItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>order_items: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::OrderItemsInner&gt;&gt;,
 }
 

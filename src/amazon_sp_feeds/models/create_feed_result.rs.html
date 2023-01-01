@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateFeedResult {
     <span class="doccomment">/// The identifier for the feed. This identifier is unique only in combination with a seller ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;feedId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;feedId&quot;</span>)]
     </span><span class="kw">pub </span>feed_id: String,
 }
 

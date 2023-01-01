@@ -67,22 +67,22 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>InventoryDetails {
     <span class="doccomment">/// The item quantity that can be picked, packed, and shipped.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillableQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillableQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillable_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units in an inbound shipment for which you have notified Amazon.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;inboundWorkingQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;inboundWorkingQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>inbound_working_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;inboundShippedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;inboundShippedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>inbound_shipped_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;inboundReceivingQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;inboundReceivingQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>inbound_receiving_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;reservedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;reservedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>reserved_quantity: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ReservedQuantity&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;researchingQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;researchingQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>researching_quantity: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ResearchingQuantity&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;unfulfillableQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;unfulfillableQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>unfulfillable_quantity: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::UnfulfillableQuantity&gt;&gt;,
 }
 

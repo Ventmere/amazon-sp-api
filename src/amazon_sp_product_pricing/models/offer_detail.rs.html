@@ -94,43 +94,43 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OfferDetail {
     <span class="doccomment">/// When true, this is the seller&#39;s offer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MyOffer&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MyOffer&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>my_offer: <span class="prelude-ty">Option</span>&lt;bool&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;offerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;offerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>offer_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::OfferCustomerType&gt;,
     <span class="doccomment">/// The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SubCondition&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SubCondition&quot;</span>)]
     </span><span class="kw">pub </span>sub_condition: String,
     <span class="doccomment">/// The seller identifier for the offer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Information about the condition of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ConditionNotes&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ConditionNotes&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>condition_notes: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;SellerFeedbackRating&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerFeedbackRating&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_feedback_rating: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::SellerFeedbackType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingTime&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingTime&quot;</span>)]
     </span><span class="kw">pub </span>shipping_time: Box&lt;<span class="kw">crate</span>::models::DetailedShippingTimeType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ListingPrice&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ListingPrice&quot;</span>)]
     </span><span class="kw">pub </span>listing_price: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;quantityDiscountPrices&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;quantityDiscountPrices&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>quantity_discount_prices: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::QuantityDiscountPriceType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Points&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Points&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>points: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Points&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Shipping&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Shipping&quot;</span>)]
     </span><span class="kw">pub </span>shipping: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipsFrom&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipsFrom&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ships_from: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ShipsFromType&gt;&gt;,
     <span class="doccomment">/// When true, the offer is fulfilled by Amazon.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsFulfilledByAmazon&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsFulfilledByAmazon&quot;</span>)]
     </span><span class="kw">pub </span>is_fulfilled_by_amazon: bool,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PrimeInformation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PrimeInformation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>prime_information: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PrimeInformationType&gt;&gt;,
     <span class="doccomment">/// When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsBuyBoxWinner&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsBuyBoxWinner&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>is_buy_box_winner: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// When true, the seller of the item is eligible to win the Buy Box.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsFeaturedMerchant&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsFeaturedMerchant&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>is_featured_merchant: <span class="prelude-ty">Option</span>&lt;bool&gt;,
 }
 

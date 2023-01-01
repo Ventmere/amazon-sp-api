@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PackageDetails {
     <span class="doccomment">/// A list of items contained in the package.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;packageItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;packageItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>package_items: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Item&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;packageTimeSlot&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;packageTimeSlot&quot;</span>)]
     </span><span class="kw">pub </span>package_time_slot: Box&lt;<span class="kw">crate</span>::models::TimeSlot&gt;,
     <span class="doccomment">/// Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;packageIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;packageIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>package_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ImageOffsets {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;x&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;x&quot;</span>)]
     </span><span class="kw">pub </span>x: Box&lt;<span class="kw">crate</span>::models::IntegerWithUnits&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;y&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;y&quot;</span>)]
     </span><span class="kw">pub </span>y: Box&lt;<span class="kw">crate</span>::models::IntegerWithUnits&gt;,
 }
 

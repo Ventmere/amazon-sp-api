@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TaxWithheldComponent {
     <span class="doccomment">/// The tax collection model applied to the item.  Possible values:  * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.  * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TaxCollectionModel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxCollectionModel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_collection_model: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of charge information on the seller&#39;s account.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TaxesWithheld&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxesWithheld&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>taxes_withheld: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ChargeComponent&gt;&gt;,
 }
 

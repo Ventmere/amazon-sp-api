@@ -57,15 +57,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemDetails {
     <span class="doccomment">/// The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>vendor_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;availableQuantity&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;availableQuantity&quot;</span>)]
     </span><span class="kw">pub </span>available_quantity: Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;,
     <span class="doccomment">/// When true, the item is permanently unavailable.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;isObsolete&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;isObsolete&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>is_obsolete: <span class="prelude-ty">Option</span>&lt;bool&gt;,
 }
 

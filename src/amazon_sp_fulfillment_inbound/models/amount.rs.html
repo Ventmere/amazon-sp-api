@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Amount {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CurrencyCode&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CurrencyCode&quot;</span>)]
     </span><span class="kw">pub </span>currency_code: <span class="kw">crate</span>::models::CurrencyCode,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Value&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Value&quot;</span>)]
     </span><span class="kw">pub </span>value: f64,
 }
 

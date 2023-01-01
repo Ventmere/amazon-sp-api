@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemQuantity {
     <span class="doccomment">/// Quantity of units shipped for a specific item at a shipment level. If the item is present only in certain packages or pallets within the shipment, please provide this at the appropriate package or pallet level.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amount&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amount&quot;</span>)]
     </span><span class="kw">pub </span>amount: i32,
     <span class="doccomment">/// Unit of measure for the shipped quantity.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;unitOfMeasure&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;unitOfMeasure&quot;</span>)]
     </span><span class="kw">pub </span>unit_of_measure: String,
 }
 

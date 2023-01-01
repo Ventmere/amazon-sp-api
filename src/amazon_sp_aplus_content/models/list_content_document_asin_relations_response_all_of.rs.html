@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListContentDocumentAsinRelationsResponseAllOf {
     <span class="doccomment">/// The set of ASIN metadata.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asinMetadataSet&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asinMetadataSet&quot;</span>)]
     </span><span class="kw">pub </span>asin_metadata_set: Vec&lt;<span class="kw">crate</span>::models::AsinMetadata&gt;,
 }
 

@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>InvoiceData {
     <span class="doccomment">/// A string of up to 255 characters.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;invoiceNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;invoiceNumber&quot;</span>)]
     </span><span class="kw">pub </span>invoice_number: String,
     <span class="doccomment">/// A datetime value in ISO 8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;invoiceDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;invoiceDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>invoice_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

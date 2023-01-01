@@ -54,15 +54,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PackedItem {
     <span class="doccomment">/// Item Sequence Number for the item. This must be the same value as sent in the order for a given item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;itemSequenceNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;itemSequenceNumber&quot;</span>)]
     </span><span class="kw">pub </span>item_sequence_number: i32,
     <span class="doccomment">/// Buyer&#39;s Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>vendor_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;packedQuantity&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;packedQuantity&quot;</span>)]
     </span><span class="kw">pub </span>packed_quantity: Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;,
 }
 

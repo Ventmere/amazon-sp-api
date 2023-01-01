@@ -70,13 +70,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Transaction {
     <span class="doccomment">/// The unique identifier returned in the &#39;transactionId&#39; field in response to the post request of a specific transaction.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;transactionId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;transactionId&quot;</span>)]
     </span><span class="kw">pub </span>transaction_id: String,
     <span class="doccomment">/// Current processing status of the transaction.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;status&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;status&quot;</span>)]
     </span><span class="kw">pub </span>status: Status,
     <span class="doccomment">/// A list of error responses returned when a request is unsuccessful.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>errors: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Error&gt;&gt;,
 }
 

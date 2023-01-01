@@ -89,37 +89,37 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ContentModule {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;contentModuleType&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;contentModuleType&quot;</span>)]
     </span><span class="kw">pub </span>content_module_type: <span class="kw">crate</span>::models::ContentModuleType,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardCompanyLogo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardCompanyLogo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_company_logo: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardCompanyLogoModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardComparisonTable&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardComparisonTable&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_comparison_table: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardComparisonTableModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardFourImageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardFourImageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_four_image_text: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardFourImageTextModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardFourImageTextQuadrant&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardFourImageTextQuadrant&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_four_image_text_quadrant: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardFourImageTextQuadrantModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardHeaderImageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardHeaderImageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_header_image_text: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardHeaderImageTextModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardImageSidebar&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardImageSidebar&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_image_sidebar: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardImageSidebarModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardImageTextOverlay&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardImageTextOverlay&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_image_text_overlay: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardImageTextOverlayModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardMultipleImageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardMultipleImageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_multiple_image_text: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardMultipleImageTextModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardProductDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardProductDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_product_description: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardProductDescriptionModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardSingleImageHighlights&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardSingleImageHighlights&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_single_image_highlights: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardSingleImageHighlightsModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardSingleImageSpecsDetail&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardSingleImageSpecsDetail&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_single_image_specs_detail: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardSingleImageSpecsDetailModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardSingleSideImage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardSingleSideImage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_single_side_image: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardSingleSideImageModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardTechSpecs&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardTechSpecs&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_tech_specs: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardTechSpecsModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_text: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardTextModule&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;standardThreeImageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;standardThreeImageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>standard_three_image_text: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardThreeImageTextModule&gt;&gt;,
 }
 

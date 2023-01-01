@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ScheduledPackageId {
     <span class="doccomment">/// An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amazonOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amazonOrderId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_order_id: String,
     <span class="doccomment">/// An Amazon-defined identifier for the scheduled package.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;packageId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;packageId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>package_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

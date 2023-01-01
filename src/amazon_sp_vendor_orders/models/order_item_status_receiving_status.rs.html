@@ -69,12 +69,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderItemStatusReceivingStatus {
     <span class="doccomment">/// Receive status of the line item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;receiveStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;receiveStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>receive_status: <span class="prelude-ty">Option</span>&lt;ReceiveStatus&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;receivedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;receivedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>received_quantity: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;&gt;,
     <span class="doccomment">/// The date when the most recent item was received at the buyer&#39;s warehouse. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;lastReceiveDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;lastReceiveDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>last_receive_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

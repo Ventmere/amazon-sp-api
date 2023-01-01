@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Scenario {
     <span class="doccomment">/// An identifier that identifies the type of scenario that user can use for testing.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;scenarioId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;scenarioId&quot;</span>)]
     </span><span class="kw">pub </span>scenario_id: String,
     <span class="doccomment">/// A list of orders that can be used by the caller to test each life cycle or scenario.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orders&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;orders&quot;</span>)]
     </span><span class="kw">pub </span>orders: Vec&lt;<span class="kw">crate</span>::models::TestOrder&gt;,
 }
 

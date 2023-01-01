@@ -52,13 +52,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShipmentStatusUpdate {
     <span class="doccomment">/// Purchase order number of the shipment for which to update the shipment status.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;sellingParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;sellingParty&quot;</span>)]
     </span><span class="kw">pub </span>selling_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipFromParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipFromParty&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;statusUpdateDetails&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;statusUpdateDetails&quot;</span>)]
     </span><span class="kw">pub </span>status_update_details: Box&lt;<span class="kw">crate</span>::models::StatusUpdateDetails&gt;,
 }
 

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":[["auth",""],["configuration",""],["error",""],["request",""]]};
+window.SIDEBAR_ITEMS = {"mod":[["auth",""],["configuration",""],["error",""],["helpers",""],["request",""]]};

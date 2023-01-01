@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ScheduledDeliveryInfo {
     <span class="doccomment">/// The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;deliveryTimeZone&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;deliveryTimeZone&quot;</span>)]
     </span><span class="kw">pub </span>delivery_time_zone: String,
     <span class="doccomment">/// An array of delivery windows.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;deliveryWindows&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;deliveryWindows&quot;</span>)]
     </span><span class="kw">pub </span>delivery_windows: Vec&lt;<span class="kw">crate</span>::models::DeliveryWindow&gt;,
 }
 

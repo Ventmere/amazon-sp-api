@@ -83,34 +83,34 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ReturnItem {
     <span class="doccomment">/// An identifier assigned by the seller to the return item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerReturnItemId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerReturnItemId&quot;</span>)]
     </span><span class="kw">pub </span>seller_return_item_id: String,
     <span class="doccomment">/// The identifier assigned to the item by the seller when the fulfillment order was created.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerFulfillmentOrderItemId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerFulfillmentOrderItemId&quot;</span>)]
     </span><span class="kw">pub </span>seller_fulfillment_order_item_id: String,
     <span class="doccomment">/// The identifier for the shipment that is associated with the return item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amazonShipmentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amazonShipmentId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_shipment_id: String,
     <span class="doccomment">/// The return reason code assigned to the return item by the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerReturnReasonCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerReturnReasonCode&quot;</span>)]
     </span><span class="kw">pub </span>seller_return_reason_code: String,
     <span class="doccomment">/// An optional comment about the return item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;returnComment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;returnComment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>return_comment: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The return reason code that the Amazon fulfillment center assigned to the return item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amazonReturnReasonCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amazonReturnReasonCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>amazon_return_reason_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;status&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;status&quot;</span>)]
     </span><span class="kw">pub </span>status: <span class="kw">crate</span>::models::FulfillmentReturnItemStatus,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;statusChangedDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;statusChangedDate&quot;</span>)]
     </span><span class="kw">pub </span>status_changed_date: String,
     <span class="doccomment">/// Identifies the return authorization used to return this item. See ReturnAuthorization.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;returnAuthorizationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;returnAuthorizationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>return_authorization_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;returnReceivedCondition&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;returnReceivedCondition&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>return_received_condition: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::ReturnItemDisposition&gt;,
     <span class="doccomment">/// The identifier for the Amazon fulfillment center that processed the return item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentCenterId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentCenterId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_center_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

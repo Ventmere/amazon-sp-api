@@ -49,13 +49,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetSchemaResponse {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;_links&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;_links&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>_links: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::GetSchemaResponseLinks&gt;&gt;,
     <span class="doccomment">/// A JSON schema document describing the expected payload of the action. This object can be validated against &lt;a href=http://json-schema.org/draft-04/schema&gt;http://json-schema.org/draft-04/schema&lt;/a&gt;.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;payload&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;payload&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>payload: <span class="prelude-ty">Option</span>&lt;::std::collections::HashMap&lt;String, serde_json::Value&gt;&gt;,
     <span class="doccomment">/// A list of error responses returned when a request is unsuccessful.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>errors: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Error&gt;&gt;,
 }
 

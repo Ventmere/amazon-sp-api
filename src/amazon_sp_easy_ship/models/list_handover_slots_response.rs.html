@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListHandoverSlotsResponse {
     <span class="doccomment">/// An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amazonOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amazonOrderId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_order_id: String,
     <span class="doccomment">/// A list of time slots.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;timeSlots&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;timeSlots&quot;</span>)]
     </span><span class="kw">pub </span>time_slots: Vec&lt;<span class="kw">crate</span>::models::TimeSlot&gt;,
 }
 

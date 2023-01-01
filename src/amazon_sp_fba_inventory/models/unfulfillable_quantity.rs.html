@@ -70,25 +70,25 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>UnfulfillableQuantity {
     <span class="doccomment">/// The total number of units in Amazon&#39;s fulfillment network in unsellable condition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;totalUnfulfillableQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;totalUnfulfillableQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>total_unfulfillable_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units in customer damaged disposition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;customerDamagedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;customerDamagedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>customer_damaged_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units in warehouse damaged disposition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;warehouseDamagedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;warehouseDamagedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>warehouse_damaged_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units in distributor damaged disposition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;distributorDamagedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;distributorDamagedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>distributor_damaged_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units in carrier damaged disposition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;carrierDamagedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;carrierDamagedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_damaged_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units in defective disposition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;defectiveQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;defectiveQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>defective_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of units in expired disposition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;expiredQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;expiredQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>expired_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

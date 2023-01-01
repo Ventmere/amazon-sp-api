@@ -50,13 +50,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemOffersResponse {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;headers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;headers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>headers: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::HttpResponseHeaders&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;status&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;status&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>status: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::GetOffersHttpStatusLine&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;body&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;body&quot;</span>)]
     </span><span class="kw">pub </span>body: Box&lt;<span class="kw">crate</span>::models::GetOffersResponse&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;request&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;request&quot;</span>)]
     </span><span class="kw">pub </span>request: Box&lt;<span class="kw">crate</span>::models::ItemOffersRequestParams&gt;,
 }
 

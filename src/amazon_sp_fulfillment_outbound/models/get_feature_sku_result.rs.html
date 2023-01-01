@@ -61,18 +61,18 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetFeatureSkuResult {
     <span class="doccomment">/// The requested marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// The name of the feature.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureName&quot;</span>)]
     </span><span class="kw">pub </span>feature_name: String,
     <span class="doccomment">/// When true, the seller SKU is eligible for the requested feature.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;isEligible&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;isEligible&quot;</span>)]
     </span><span class="kw">pub </span>is_eligible: bool,
     <span class="doccomment">/// A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * MERCHANT_NOT_ENROLLED - The merchant isn&#39;t enrolled for the feature. * SKU_NOT_ELIGIBLE - The SKU doesn&#39;t reside in a warehouse that supports the feature. * INVALID_SKU - There is an issue with the SKU provided.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ineligibleReasons&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ineligibleReasons&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ineligible_reasons: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;skuInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;skuInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>sku_info: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FeatureSku&gt;&gt;,
 }
 

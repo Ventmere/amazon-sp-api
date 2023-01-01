@@ -47,10 +47,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CustomerInvoice {
     <span class="doccomment">/// The purchase order number for this order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
     <span class="doccomment">/// The Base64encoded customer invoice.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;content&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;content&quot;</span>)]
     </span><span class="kw">pub </span>content: String,
 }
 

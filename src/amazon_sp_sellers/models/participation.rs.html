@@ -48,10 +48,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Participation {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;isParticipating&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;isParticipating&quot;</span>)]
     </span><span class="kw">pub </span>is_participating: bool,
     <span class="doccomment">/// Specifies if the seller has suspended listings. True if the seller Listing Status is set to Inactive, otherwise False.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;hasSuspendedListings&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;hasSuspendedListings&quot;</span>)]
     </span><span class="kw">pub </span>has_suspended_listings: bool,
 }
 

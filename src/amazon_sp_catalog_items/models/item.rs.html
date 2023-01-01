@@ -56,16 +56,16 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Item {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Identifiers&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Identifiers&quot;</span>)]
     </span><span class="kw">pub </span>identifiers: Box&lt;<span class="kw">crate</span>::models::IdentifierType&gt;,
     <span class="doccomment">/// A list of attributes for the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AttributeSets&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AttributeSets&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>attribute_sets: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AttributeSetListType&gt;&gt;,
     <span class="doccomment">/// A list of variation relationship information, if applicable for the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Relationships&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Relationships&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>relationships: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RelationshipType&gt;&gt;,
     <span class="doccomment">/// A list of sales rank information for the item by category.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SalesRankings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SalesRankings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>sales_rankings: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::SalesRankType&gt;&gt;,
 }
 

@@ -56,14 +56,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderRegulatedInfo {
     <span class="doccomment">/// An Amazon-defined order identifier, in 3-7-7 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_order_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;RegulatedInformation&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;RegulatedInformation&quot;</span>)]
     </span><span class="kw">pub </span>regulated_information: Box&lt;<span class="kw">crate</span>::models::RegulatedInformation&gt;,
     <span class="doccomment">/// When true, the order requires attaching a dosage information label when shipped.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RequiresDosageLabel&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RequiresDosageLabel&quot;</span>)]
     </span><span class="kw">pub </span>requires_dosage_label: bool,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;RegulatedOrderVerificationStatus&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;RegulatedOrderVerificationStatus&quot;</span>)]
     </span><span class="kw">pub </span>regulated_order_verification_status: Box&lt;<span class="kw">crate</span>::models::RegulatedOrderVerificationStatus&gt;,
 }
 

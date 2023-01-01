@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":[["Error",""]],"fn":[["urlencode",""]],"mod":[["configuration",""],["customer_invoices_api",""],["vendor_shipping_api",""],["vendor_shipping_labels_api",""]],"struct":[["ResponseContent",""]]};
+window.SIDEBAR_ITEMS = {"enum":[["Error",""]],"fn":[["urlencode",""]],"mod":[["configuration",""],["customer_invoices_api",""],["vendor_shipping_api",""],["vendor_shipping_labels_api",""]]};

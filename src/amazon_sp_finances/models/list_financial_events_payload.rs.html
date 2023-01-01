@@ -49,9 +49,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListFinancialEventsPayload {
     <span class="doccomment">/// When present and not empty, pass this string token in the next request to return the next response page.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NextToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;NextToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;FinancialEvents&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;FinancialEvents&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>financial_events: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FinancialEvents&gt;&gt;,
 }
 

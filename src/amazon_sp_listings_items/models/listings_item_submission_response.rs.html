@@ -72,16 +72,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListingsItemSubmissionResponse {
     <span class="doccomment">/// A selling partner provided identifier for an Amazon listing.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sku&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sku&quot;</span>)]
     </span><span class="kw">pub </span>sku: String,
     <span class="doccomment">/// The status of the listings item submission.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;status&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;status&quot;</span>)]
     </span><span class="kw">pub </span>status: Status,
     <span class="doccomment">/// The unique identifier of the listings item submission.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;submissionId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;submissionId&quot;</span>)]
     </span><span class="kw">pub </span>submission_id: String,
     <span class="doccomment">/// Listings item issues related to the listings item submission.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;issues&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;issues&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>issues: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Issue&gt;&gt;,
 }
 

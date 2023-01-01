@@ -57,16 +57,16 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShippingServiceOptions {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;DeliveryExperience&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;DeliveryExperience&quot;</span>)]
     </span><span class="kw">pub </span>delivery_experience: <span class="kw">crate</span>::models::DeliveryExperienceType,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;DeclaredValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;DeclaredValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>declared_value: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::CurrencyAmount&gt;&gt;,
     <span class="doccomment">/// When true, the carrier will pick up the package.  Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CarrierWillPickUp&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierWillPickUp&quot;</span>)]
     </span><span class="kw">pub </span>carrier_will_pick_up: bool,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CarrierWillPickUpOption&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierWillPickUpOption&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_will_pick_up_option: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::CarrierWillPickUpOption&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LabelFormat&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LabelFormat&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>label_format: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::LabelFormat&gt;,
 }
 

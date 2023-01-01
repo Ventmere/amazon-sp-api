@@ -54,14 +54,14 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TrackingEvent {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;eventDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;eventDate&quot;</span>)]
     </span><span class="kw">pub </span>event_date: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;eventAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;eventAddress&quot;</span>)]
     </span><span class="kw">pub </span>event_address: Box&lt;<span class="kw">crate</span>::models::TrackingAddress&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;eventCode&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;eventCode&quot;</span>)]
     </span><span class="kw">pub </span>event_code: <span class="kw">crate</span>::models::EventCode,
     <span class="doccomment">/// A description for the corresponding event code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;eventDescription&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;eventDescription&quot;</span>)]
     </span><span class="kw">pub </span>event_description: String,
 }
 

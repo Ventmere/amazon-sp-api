@@ -53,13 +53,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TransportDetailInput {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PartneredSmallParcelData&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PartneredSmallParcelData&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>partnered_small_parcel_data: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartneredSmallParcelDataInput&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;NonPartneredSmallParcelData&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;NonPartneredSmallParcelData&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>non_partnered_small_parcel_data: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::NonPartneredSmallParcelDataInput&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PartneredLtlData&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PartneredLtlData&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>partnered_ltl_data: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartneredLtlDataInput&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;NonPartneredLtlData&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;NonPartneredLtlData&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>non_partnered_ltl_data: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::NonPartneredLtlDataInput&gt;&gt;,
 }
 

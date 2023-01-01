@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Granularity {
     <span class="doccomment">/// The granularity type for the inventory aggregation level.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;granularityType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;granularityType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>granularity_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The granularity ID for the specified granularity type. When granularityType is Marketplace, specify the marketplaceId.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;granularityId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;granularityId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>granularity_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

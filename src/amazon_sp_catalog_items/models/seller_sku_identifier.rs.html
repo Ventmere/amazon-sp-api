@@ -51,13 +51,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SellerSkuIdentifier {
     <span class="doccomment">/// A marketplace identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// The seller identifier submitted for the operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerId&quot;</span>)]
     </span><span class="kw">pub </span>seller_id: String,
     <span class="doccomment">/// The seller stock keeping unit (SKU) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerSKU&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerSKU&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: String,
 }
 

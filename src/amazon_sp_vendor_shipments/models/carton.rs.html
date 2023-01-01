@@ -64,20 +64,20 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Carton {
     <span class="doccomment">/// A list of carton identifiers.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;cartonIdentifiers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;cartonIdentifiers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carton_identifiers: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ContainerIdentification&gt;&gt;,
     <span class="doccomment">/// Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;cartonSequenceNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;cartonSequenceNumber&quot;</span>)]
     </span><span class="kw">pub </span>carton_sequence_number: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;dimensions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;dimensions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>dimensions: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Dimensions&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;weight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;weight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
     <span class="doccomment">/// This is required to be provided for every carton in the small parcel shipments.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tracking_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of container item details.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;items&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;items&quot;</span>)]
     </span><span class="kw">pub </span>items: Vec&lt;<span class="kw">crate</span>::models::ContainerItem&gt;,
 }
 

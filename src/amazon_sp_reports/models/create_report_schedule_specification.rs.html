@@ -105,19 +105,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateReportScheduleSpecification {
     <span class="doccomment">/// The report type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportType&quot;</span>)]
     </span><span class="kw">pub </span>report_type: String,
     <span class="doccomment">/// A list of marketplace identifiers for the report schedule.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceIds&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceIds&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_ids: Vec&lt;String&gt;,
     <span class="doccomment">/// Additional information passed to reports. This varies by report type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>report_options: <span class="prelude-ty">Option</span>&lt;::std::collections::HashMap&lt;String, String&gt;&gt;,
     <span class="doccomment">/// One of a set of predefined ISO 8601 periods that specifies how often a report should be created.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;period&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;period&quot;</span>)]
     </span><span class="kw">pub </span>period: Period,
     <span class="doccomment">/// The date and time when the schedule will create its next report, in ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;nextReportCreationTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;nextReportCreationTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_report_creation_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

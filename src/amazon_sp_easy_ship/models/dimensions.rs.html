@@ -61,18 +61,18 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Dimensions {
     <span class="doccomment">/// The numerical value of the specified dimension.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;length&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;length&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>length: <span class="prelude-ty">Option</span>&lt;f32&gt;,
     <span class="doccomment">/// The numerical value of the specified dimension.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;width&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;width&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>width: <span class="prelude-ty">Option</span>&lt;f32&gt;,
     <span class="doccomment">/// The numerical value of the specified dimension.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;height&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;height&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>height: <span class="prelude-ty">Option</span>&lt;f32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;unit&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;unit&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>unit: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::UnitOfLength&gt;,
     <span class="doccomment">/// A string of up to 255 characters.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;identifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;identifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

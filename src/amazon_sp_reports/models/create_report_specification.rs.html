@@ -59,19 +59,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateReportSpecification {
     <span class="doccomment">/// Additional information passed to reports. This varies by report type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>report_options: <span class="prelude-ty">Option</span>&lt;::std::collections::HashMap&lt;String, String&gt;&gt;,
     <span class="doccomment">/// The report type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportType&quot;</span>)]
     </span><span class="kw">pub </span>report_type: String,
     <span class="doccomment">/// The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;dataStartTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;dataStartTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>data_start_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;dataEndTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;dataEndTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>data_end_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceIds&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceIds&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_ids: Vec&lt;String&gt;,
 }
 

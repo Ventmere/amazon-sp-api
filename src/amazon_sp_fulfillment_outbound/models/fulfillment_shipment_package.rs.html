@@ -57,15 +57,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FulfillmentShipmentPackage {
     <span class="doccomment">/// Identifies a package in a shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;packageNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;packageNumber&quot;</span>)]
     </span><span class="kw">pub </span>package_number: i32,
     <span class="doccomment">/// Identifies the carrier who will deliver the shipment to the recipient.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;carrierCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;carrierCode&quot;</span>)]
     </span><span class="kw">pub </span>carrier_code: String,
     <span class="doccomment">/// The tracking number, if provided, can be used to obtain tracking and delivery information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tracking_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;estimatedArrivalDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;estimatedArrivalDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>estimated_arrival_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

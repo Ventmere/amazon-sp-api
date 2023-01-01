@@ -63,20 +63,20 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PartneredLtlDataInput {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Contact&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Contact&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>contact: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Contact&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BoxCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BoxCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>box_count: <span class="prelude-ty">Option</span>&lt;i64&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;SellerFreightClass&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerFreightClass&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_freight_class: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::SellerFreightClass&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;FreightReadyDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;FreightReadyDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>freight_ready_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of pallet information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PalletList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PalletList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>pallet_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Pallet&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TotalWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TotalWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>total_weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;SellerDeclaredValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerDeclaredValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_declared_value: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Amount&gt;&gt;,
 }
 

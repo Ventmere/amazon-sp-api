@@ -74,16 +74,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>DetailedShippingTimeType {
     <span class="doccomment">/// The minimum time, in hours, that the item will likely be shipped after the order has been placed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;minimumHours&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;minimumHours&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>minimum_hours: <span class="prelude-ty">Option</span>&lt;i64&gt;,
     <span class="doccomment">/// The maximum time, in hours, that the item will likely be shipped after the order has been placed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;maximumHours&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;maximumHours&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>maximum_hours: <span class="prelude-ty">Option</span>&lt;i64&gt;,
     <span class="doccomment">/// The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;availableDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;availableDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>available_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Indicates whether the item is available for shipping now, or on a known or an unknown date in the future. If known, the availableDate property indicates the date that the item will be available for shipping. Possible values: NOW, FUTURE_WITHOUT_DATE, FUTURE_WITH_DATE.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;availabilityType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;availabilityType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>availability_type: <span class="prelude-ty">Option</span>&lt;AvailabilityType&gt;,
 }
 

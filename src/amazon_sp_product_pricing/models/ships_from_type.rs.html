@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShipsFromType {
     <span class="doccomment">/// The state from where the item is shipped.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;State&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;State&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>state: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The country from where the item is shipped.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Country&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Country&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>country: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

@@ -66,13 +66,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PackingSlip {
     <span class="doccomment">/// Purchase order number of the shipment that the packing slip is for.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
     <span class="doccomment">/// A Base64encoded string of the packing slip PDF.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;content&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;content&quot;</span>)]
     </span><span class="kw">pub </span>content: String,
     <span class="doccomment">/// The format of the file such as PDF, JPEG etc.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>content_type: <span class="prelude-ty">Option</span>&lt;ContentType&gt;,
 }
 

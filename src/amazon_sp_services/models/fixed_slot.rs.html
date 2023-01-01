@@ -62,19 +62,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FixedSlot {
     <span class="doccomment">/// Start date time of slot in ISO 8601 format with precision of seconds.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;startDateTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;startDateTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>start_date_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Scheduled capacity corresponding to the slot. This capacity represents the originally allocated capacity as per resource schedule.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;scheduledCapacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;scheduledCapacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scheduled_capacity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// Available capacity corresponding to the slot. This capacity represents the capacity available for allocation to reservations.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;availableCapacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;availableCapacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>available_capacity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;encumberedCapacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;encumberedCapacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>encumbered_capacity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reservedCapacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reservedCapacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>reserved_capacity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

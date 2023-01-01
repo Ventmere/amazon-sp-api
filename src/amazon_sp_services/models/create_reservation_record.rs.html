@@ -52,13 +52,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateReservationRecord {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;reservation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;reservation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>reservation: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Reservation&gt;&gt;,
     <span class="doccomment">/// A list of warnings returned in the sucessful execution response of an API request.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;warnings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;warnings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>warnings: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Warning&gt;&gt;,
     <span class="doccomment">/// A list of error responses returned when a request is unsuccessful.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>errors: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Error&gt;&gt;,
 }
 

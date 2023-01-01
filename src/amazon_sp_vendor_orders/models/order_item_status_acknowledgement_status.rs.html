@@ -74,14 +74,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderItemStatusAcknowledgementStatus {
     <span class="doccomment">/// Confirmation status of line item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;confirmationStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;confirmationStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>confirmation_status: <span class="prelude-ty">Option</span>&lt;ConfirmationStatus&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;acceptedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;acceptedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>accepted_quantity: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;rejectedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;rejectedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rejected_quantity: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;&gt;,
     <span class="doccomment">/// Details of item quantity confirmed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;acknowledgementStatusDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;acknowledgementStatusDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>acknowledgement_status_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AcknowledgementStatusDetails&gt;&gt;,
 }
 

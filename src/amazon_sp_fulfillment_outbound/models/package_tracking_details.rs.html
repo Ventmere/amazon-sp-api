@@ -90,41 +90,41 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PackageTrackingDetails {
     <span class="doccomment">/// The package identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;packageNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;packageNumber&quot;</span>)]
     </span><span class="kw">pub </span>package_number: i32,
     <span class="doccomment">/// The tracking number for the package.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tracking_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Link on swiship.com that allows customers to track the package.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;customerTrackingLink&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;customerTrackingLink&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>customer_tracking_link: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The name of the carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;carrierCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;carrierCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The phone number of the carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;carrierPhoneNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;carrierPhoneNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_phone_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The URL of the carrier’s website.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;carrierURL&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;carrierURL&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_url: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;estimatedArrivalDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;estimatedArrivalDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>estimated_arrival_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipToAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipToAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_address: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::TrackingAddress&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;currentStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;currentStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>current_status: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::CurrentStatus&gt;,
     <span class="doccomment">/// Description corresponding to the CurrentStatus value.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;currentStatusDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;currentStatusDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>current_status_description: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The name of the person who signed for the package.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;signedForBy&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;signedForBy&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>signed_for_by: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;additionalLocationInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;additionalLocationInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>additional_location_info: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::AdditionalLocationInfo&gt;,
     <span class="doccomment">/// An array of tracking event information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingEvents&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingEvents&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tracking_events: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TrackingEvent&gt;&gt;,
 }
 

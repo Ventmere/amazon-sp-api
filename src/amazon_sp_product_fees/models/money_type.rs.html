@@ -47,10 +47,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>MoneyType {
     <span class="doccomment">/// The currency code in ISO 4217 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CurrencyCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CurrencyCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>currency_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The monetary value.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Amount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Amount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>amount: <span class="prelude-ty">Option</span>&lt;f32&gt;,
 }
 

@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeesEstimateError {
     <span class="doccomment">/// An error type, identifying either the receiver or the sender as the originator of the error.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Type&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Type&quot;</span>)]
     </span><span class="kw">pub </span>_type: String,
     <span class="doccomment">/// An error code that identifies the type of error that occurred.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Code&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Code&quot;</span>)]
     </span><span class="kw">pub </span>code: String,
     <span class="doccomment">/// A message that describes the error condition.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Message&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Message&quot;</span>)]
     </span><span class="kw">pub </span>message: String,
     <span class="doccomment">/// Additional information that can help the caller understand or fix the issue.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Detail&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Detail&quot;</span>)]
     </span><span class="kw">pub </span>detail: Vec&lt;serde_json::Value&gt;,
 }
 

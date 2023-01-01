@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PartneredSmallParcelDataInput {
     <span class="doccomment">/// A list of dimensions and weight information for packages.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PackageList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PackageList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>package_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::PartneredSmallParcelPackageInput&gt;&gt;,
     <span class="doccomment">/// The Amazon-partnered carrier to use for the inbound shipment. **`CarrierName`** values in France (FR), Italy (IT), Spain (ES), the United Kingdom (UK), and the United States (US): `UNITED_PARCEL_SERVICE_INC`. &lt;br&gt; **`CarrierName`** values in Germany (DE): `DHL_STANDARD`,`UNITED_PARCEL_SERVICE_INC`. &lt;br&gt;Default: `UNITED_PARCEL_SERVICE_INC`.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CarrierName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

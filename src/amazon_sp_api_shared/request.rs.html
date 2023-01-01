@@ -39,23 +39,54 @@
 <span id="39">39</span>
 <span id="40">40</span>
 <span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
 </pre><pre class="rust"><code><span class="kw">use </span><span class="kw">crate</span>::error::SharedError;
 <span class="kw">use </span>reqwest::Url;
-<span class="kw">use </span>serde::Serialize;
+<span class="kw">use </span>serde::{Serialize, Deserialize};
 
 <span class="attribute">#[derive(Debug, Clone)]
-</span><span class="kw">pub struct </span>ResponseContent&lt;T&gt; {
+</span><span class="kw">pub struct </span>ResponseError {
   <span class="kw">pub </span>status: reqwest::StatusCode,
   <span class="kw">pub </span>content: String,
-  <span class="kw">pub </span>entity: <span class="prelude-ty">Option</span>&lt;T&gt;,
+  <span class="kw">pub </span>error_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;Error&gt;&gt;,
 }
 
-<span class="kw">pub struct </span>UrlBuilder&lt;E&gt; {
-  url: <span class="prelude-ty">Result</span>&lt;Url, SharedError&lt;E&gt;&gt;,
+<span class="kw">pub struct </span>UrlBuilder {
+  url: <span class="prelude-ty">Result</span>&lt;Url, SharedError&gt;,
 }
 
-<span class="kw">impl</span>&lt;E&gt; UrlBuilder&lt;E&gt; {
-  <span class="kw">pub fn </span>parse(base: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, SharedError&lt;E&gt;&gt; {
+<span class="kw">impl </span>UrlBuilder {
+  <span class="kw">pub fn </span>parse(base: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, SharedError&gt; {
     <span class="prelude-val">Ok</span>(<span class="self">Self </span>{
       url: <span class="prelude-val">Ok</span>(Url::parse(base)<span class="question-mark">?</span>),
     })
@@ -76,9 +107,39 @@
     <span class="self">self
   </span>}
 
-  <span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Url, SharedError&lt;E&gt;&gt; {
+  <span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Url, SharedError&gt; {
     <span class="self">self</span>.url
   }
 }
-</code></pre></div>
+
+
+<span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+</span><span class="kw">pub struct </span>Error {
+    <span class="doccomment">/// The code that identifies the type of error condition.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;code&quot;</span>)]
+    </span><span class="kw">pub </span>code: String,
+    <span class="doccomment">/// A human readable description of the error condition.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;message&quot;</span>)]
+    </span><span class="kw">pub </span>message: String,
+    <span class="doccomment">/// Additional information, if available, to clarify the error condition.
+    </span><span class="attribute">#[serde(rename = <span class="string">&quot;details&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>details: <span class="prelude-ty">Option</span>&lt;String&gt;,
+}
+
+<span class="kw">impl </span>Error {
+    <span class="doccomment">/// Error response returned when the request is unsuccessful.
+    </span><span class="kw">pub fn </span>new(code: String, message: String) -&gt; Error {
+        Error {
+            code,
+            message,
+            details: <span class="prelude-val">None</span>,
+        }
+    }
+}
+
+<span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+</span><span class="kw">pub struct </span>ErrorList {
+    <span class="doccomment">/// A list of error responses returned when the request is unsuccessful.
+    </span><span class="kw">pub </span>errors: Vec&lt;Error&gt;,
+}</code></pre></div>
 </section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="amazon_sp_api_shared" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

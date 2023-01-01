@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>NonPartneredLtlDataInput {
     <span class="doccomment">/// The carrier that you are using for the inbound shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CarrierName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierName&quot;</span>)]
     </span><span class="kw">pub </span>carrier_name: String,
     <span class="doccomment">/// The PRO number (\&quot;progressive number\&quot; or \&quot;progressive ID\&quot;) assigned to the shipment by the carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ProNumber&quot;</span>)]
     </span><span class="kw">pub </span>pro_number: String,
 }
 

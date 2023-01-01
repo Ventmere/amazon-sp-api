@@ -52,11 +52,11 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>QuantityDiscountPriceType {
     <span class="doccomment">/// Indicates at what quantity this price becomes active.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;quantityTier&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;quantityTier&quot;</span>)]
     </span><span class="kw">pub </span>quantity_tier: i32,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;quantityDiscountType&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;quantityDiscountType&quot;</span>)]
     </span><span class="kw">pub </span>quantity_discount_type: <span class="kw">crate</span>::models::QuantityDiscountType,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;listingPrice&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;listingPrice&quot;</span>)]
     </span><span class="kw">pub </span>listing_price: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
 }
 

@@ -49,9 +49,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AdditionalSellerInputs {
     <span class="doccomment">/// The name of the additional input field.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AdditionalInputFieldName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AdditionalInputFieldName&quot;</span>)]
     </span><span class="kw">pub </span>additional_input_field_name: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;AdditionalSellerInput&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;AdditionalSellerInput&quot;</span>)]
     </span><span class="kw">pub </span>additional_seller_input: Box&lt;<span class="kw">crate</span>::models::AdditionalSellerInput&gt;,
 }
 

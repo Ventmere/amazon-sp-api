@@ -66,22 +66,22 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AsinMetadata {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asin&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asin&quot;</span>)]
     </span><span class="kw">pub </span>asin: String,
     <span class="doccomment">/// The set of ASIN badges.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;badgeSet&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;badgeSet&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>badge_set: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AsinBadge&gt;&gt;,
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;parent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;parent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>parent: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The title for the ASIN in the Amazon catalog.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>title: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The default image for the ASIN in the Amazon catalog.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;imageUrl&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;imageUrl&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>image_url: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A set of content reference keys.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentReferenceKeySet&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentReferenceKeySet&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>content_reference_key_set: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
 }
 

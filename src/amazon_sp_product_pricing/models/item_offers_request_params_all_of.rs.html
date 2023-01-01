@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemOffersRequestParamsAllOf {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the item. This is the same Asin passed as a request parameter.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>asin: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>BuyerRequestedCancel {
     <span class="doccomment">/// When true, the buyer has requested cancellation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsBuyerRequestedCancel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsBuyerRequestedCancel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>is_buyer_requested_cancel: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// The reason that the buyer requested cancellation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerCancelReason&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerCancelReason&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_cancel_reason: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

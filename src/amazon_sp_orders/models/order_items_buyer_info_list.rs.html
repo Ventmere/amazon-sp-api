@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderItemsBuyerInfoList {
     <span class="doccomment">/// A single order item&#39;s buyer information list.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderItems&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OrderItems&quot;</span>)]
     </span><span class="kw">pub </span>order_items: Vec&lt;<span class="kw">crate</span>::models::OrderItemBuyerInfo&gt;,
     <span class="doccomment">/// When present and not empty, pass this string token in the next request to return the next response page.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NextToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;NextToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// An Amazon-defined order identifier, in 3-7-7 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_order_id: String,
 }
 

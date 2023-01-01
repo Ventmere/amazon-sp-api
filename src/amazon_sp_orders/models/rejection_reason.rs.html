@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RejectionReason {
     <span class="doccomment">/// The unique identifier for the rejection reason.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RejectionReasonId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RejectionReasonId&quot;</span>)]
     </span><span class="kw">pub </span>rejection_reason_id: String,
     <span class="doccomment">/// The description of this rejection reason.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RejectionReasonDescription&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RejectionReasonDescription&quot;</span>)]
     </span><span class="kw">pub </span>rejection_reason_description: String,
 }
 

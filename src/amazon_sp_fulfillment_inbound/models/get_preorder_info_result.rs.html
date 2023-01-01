@@ -53,14 +53,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetPreorderInfoResult {
     <span class="doccomment">/// Indicates whether the shipment contains items that have been enabled for pre-order. For more information about enabling items for pre-order, see the Seller Central Help.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentContainsPreorderableItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentContainsPreorderableItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_contains_preorderable_items: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// Indicates whether this shipment has been confirmed for pre-order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentConfirmedForPreorder&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentConfirmedForPreorder&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_confirmed_for_preorder: <span class="prelude-ty">Option</span>&lt;bool&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;NeedByDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;NeedByDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>need_by_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ConfirmedFulfillableDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ConfirmedFulfillableDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>confirmed_fulfillable_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

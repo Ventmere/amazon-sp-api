@@ -73,15 +73,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Stop {
     <span class="doccomment">/// Provide the function code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;functionCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;functionCode&quot;</span>)]
     </span><span class="kw">pub </span>function_code: FunctionCode,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;locationIdentification&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;locationIdentification&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>location_identification: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Location&gt;&gt;,
     <span class="doccomment">/// Date and time of the arrival of the cargo.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;arrivalTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;arrivalTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>arrival_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Date and time of the departure of the cargo.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;departureTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;departureTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>departure_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

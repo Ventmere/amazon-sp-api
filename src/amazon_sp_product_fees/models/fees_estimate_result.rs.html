@@ -55,13 +55,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeesEstimateResult {
     <span class="doccomment">/// The status of the fee request. Possible values: Success, ClientError, ServiceError.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Status&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Status&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>status: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;FeesEstimateIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;FeesEstimateIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fees_estimate_identifier: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FeesEstimateIdentifier&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;FeesEstimate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;FeesEstimate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fees_estimate: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FeesEstimate&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Error&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Error&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>error: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FeesEstimateError&gt;&gt;,
 }
 

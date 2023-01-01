@@ -83,20 +83,20 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ImportDetails {
     <span class="doccomment">/// This is used for import purchase orders only. If the recipient requests, this field will contain the shipment method of payment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;methodOfPayment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;methodOfPayment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>method_of_payment: <span class="prelude-ty">Option</span>&lt;MethodOfPayment&gt;,
     <span class="doccomment">/// The container&#39;s seal number.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sealNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sealNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seal_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;route&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;route&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>route: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Route&gt;&gt;,
     <span class="doccomment">/// Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if shipment has multiple containers.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;importContainers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;importContainers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>import_containers: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;billableWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;billableWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>billable_weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
     <span class="doccomment">/// Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;estimatedShipByDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;estimatedShipByDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>estimated_ship_by_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

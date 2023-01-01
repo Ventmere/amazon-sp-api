@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetAdditionalSellerInputsRequest {
     <span class="doccomment">/// An Amazon-defined shipping service identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceId&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
     <span class="doccomment">/// An Amazon-defined order identifier, in 3-7-7 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OrderId&quot;</span>)]
     </span><span class="kw">pub </span>order_id: String,
 }
 

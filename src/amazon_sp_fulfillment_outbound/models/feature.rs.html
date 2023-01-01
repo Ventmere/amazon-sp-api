@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Feature {
     <span class="doccomment">/// The feature name.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureName&quot;</span>)]
     </span><span class="kw">pub </span>feature_name: String,
     <span class="doccomment">/// The feature description.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureDescription&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureDescription&quot;</span>)]
     </span><span class="kw">pub </span>feature_description: String,
     <span class="doccomment">/// When true, indicates that the seller is eligible to use the feature.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerEligible&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerEligible&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_eligible: <span class="prelude-ty">Option</span>&lt;bool&gt;,
 }
 

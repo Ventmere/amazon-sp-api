@@ -90,18 +90,18 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderItemAcknowledgement {
     <span class="doccomment">/// This indicates the acknowledgement code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;acknowledgementCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;acknowledgementCode&quot;</span>)]
     </span><span class="kw">pub </span>acknowledgement_code: AcknowledgementCode,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;acknowledgedQuantity&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;acknowledgedQuantity&quot;</span>)]
     </span><span class="kw">pub </span>acknowledged_quantity: Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;,
     <span class="doccomment">/// Estimated ship date per line item. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;scheduledShipDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;scheduledShipDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scheduled_ship_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Estimated delivery date per line item. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;scheduledDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;scheduledDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scheduled_delivery_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Indicates the reason for rejection.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;rejectionReason&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;rejectionReason&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rejection_reason: <span class="prelude-ty">Option</span>&lt;RejectionReason&gt;,
 }
 

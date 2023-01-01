@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["ResponseContent",""],["UrlBuilder",""]]};
+window.SIDEBAR_ITEMS = {"struct":[["Error",""],["ErrorList",""],["ResponseError",""],["UrlBuilder",""]]};

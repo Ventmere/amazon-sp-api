@@ -53,13 +53,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>StandardThreeImageTextModule {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;headline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;headline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>headline: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::TextComponent&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;block1&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;block1&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>block1: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardImageTextBlock&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;block2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;block2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>block2: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardImageTextBlock&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;block3&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;block3&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>block3: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardImageTextBlock&gt;&gt;,
 }
 

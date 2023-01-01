@@ -94,14 +94,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TaxDetails {
     <span class="doccomment">/// Type of the tax applied.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxType&quot;</span>)]
     </span><span class="kw">pub </span>tax_type: TaxType,
     <span class="doccomment">/// A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. &lt;br&gt;**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxRate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxRate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_rate: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;taxAmount&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;taxAmount&quot;</span>)]
     </span><span class="kw">pub </span>tax_amount: Box&lt;<span class="kw">crate</span>::models::Money&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;taxableAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;taxableAmount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>taxable_amount: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
 }
 

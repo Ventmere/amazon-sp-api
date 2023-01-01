@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PlainTextItem {
     <span class="doccomment">/// The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;position&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;position&quot;</span>)]
     </span><span class="kw">pub </span>position: i32,
     <span class="doccomment">/// The actual plain text.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;value&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;value&quot;</span>)]
     </span><span class="kw">pub </span>value: String,
 }
 

@@ -52,11 +52,11 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ContentRecord {
     <span class="doccomment">/// A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentReferenceKey&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentReferenceKey&quot;</span>)]
     </span><span class="kw">pub </span>content_reference_key: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;contentMetadata&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;contentMetadata&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>content_metadata: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ContentMetadata&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;contentDocument&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;contentDocument&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>content_document: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ContentDocument&gt;&gt;,
 }
 

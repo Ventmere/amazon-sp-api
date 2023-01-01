@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FulfillmentDocument {
     <span class="doccomment">/// The identifier of the upload destination. Get this value by calling the `createServiceDocumentUploadDestination` operation of the Services API.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;uploadDestinationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;uploadDestinationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>upload_destination_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentSha256&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentSha256&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>content_sha256: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Recurrence {
     <span class="doccomment">/// End time of the recurrence.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;endTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;endTime&quot;</span>)]
     </span><span class="kw">pub </span>end_time: String,
     <span class="doccomment">/// Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;daysOfWeek&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;daysOfWeek&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>days_of_week: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::DayOfWeek&gt;&gt;,
     <span class="doccomment">/// Days of the month when recurrence is valid.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;daysOfMonth&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;daysOfMonth&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>days_of_month: <span class="prelude-ty">Option</span>&lt;Vec&lt;i32&gt;&gt;,
 }
 

@@ -75,27 +75,27 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Summary {
     <span class="doccomment">/// The number of unique offers contained in NumberOfOffers.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TotalOfferCount&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TotalOfferCount&quot;</span>)]
     </span><span class="kw">pub </span>total_offer_count: i32,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfOffers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;NumberOfOffers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>number_of_offers: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::OfferCountType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LowestPrices&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LowestPrices&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>lowest_prices: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::LowestPriceType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyBoxPrices&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyBoxPrices&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buy_box_prices: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::BuyBoxPriceType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ListPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ListPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>list_price: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CompetitivePriceThreshold&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CompetitivePriceThreshold&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>competitive_price_threshold: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;SuggestedLowerPricePlusShipping&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;SuggestedLowerPricePlusShipping&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>suggested_lower_price_plus_shipping: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
     <span class="doccomment">/// A list of sales rank information for the item, by category.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SalesRankings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SalesRankings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>sales_rankings: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::SalesRankType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyBoxEligibleOffers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyBoxEligibleOffers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buy_box_eligible_offers: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::OfferCountType&gt;&gt;,
     <span class="doccomment">/// When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OffersAvailableTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OffersAvailableTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>offers_available_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

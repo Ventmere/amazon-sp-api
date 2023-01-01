@@ -71,25 +71,25 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderAcknowledgementItem {
     <span class="doccomment">/// Line item sequence number for the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;itemSequenceNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;itemSequenceNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_sequence_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Amazon Standard Identification Number (ASIN) of an item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;amazonProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;amazonProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>amazon_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>vendor_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;orderedQuantity&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;orderedQuantity&quot;</span>)]
     </span><span class="kw">pub </span>ordered_quantity: Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;netCost&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;netCost&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>net_cost: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;listPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;listPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>list_price: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
     <span class="doccomment">/// The discount multiplier that should be applied to the price if a vendor sells books with a list price. This is a multiplier factor to arrive at a final discounted price. A multiplier of .90 would be the factor if a 10% discount is given.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;discountMultiplier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;discountMultiplier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>discount_multiplier: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// This is used to indicate acknowledged quantity.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;itemAcknowledgements&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;itemAcknowledgements&quot;</span>)]
     </span><span class="kw">pub </span>item_acknowledgements: Vec&lt;<span class="kw">crate</span>::models::OrderItemAcknowledgement&gt;,
 }
 

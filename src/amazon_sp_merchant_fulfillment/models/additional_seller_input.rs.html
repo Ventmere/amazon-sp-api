@@ -73,26 +73,26 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AdditionalSellerInput {
     <span class="doccomment">/// The data type of the additional information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;DataType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;DataType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>data_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The value when the data type is string.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ValueAsString&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAsString&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value_as_string: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The value when the data type is boolean.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ValueAsBoolean&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAsBoolean&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value_as_boolean: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// The value when the data type is integer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ValueAsInteger&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAsInteger&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value_as_integer: <span class="prelude-ty">Option</span>&lt;i32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ValueAsTimestamp&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAsTimestamp&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value_as_timestamp: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ValueAsAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAsAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value_as_address: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Address&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ValueAsWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAsWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value_as_weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ValueAsDimension&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAsDimension&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value_as_dimension: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Length&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ValueAsCurrency&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAsCurrency&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>value_as_currency: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::CurrencyAmount&gt;&gt;,
 }
 

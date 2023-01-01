@@ -62,19 +62,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RejectedShippingService {
     <span class="doccomment">/// The rejected shipping carrier name. e.g. USPS
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CarrierName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierName&quot;</span>)]
     </span><span class="kw">pub </span>carrier_name: String,
     <span class="doccomment">/// The rejected shipping service localized name. e.g. FedEx Standard Overnight
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceName&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_name: String,
     <span class="doccomment">/// An Amazon-defined shipping service identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceId&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_id: String,
     <span class="doccomment">/// A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RejectionReasonCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RejectionReasonCode&quot;</span>)]
     </span><span class="kw">pub </span>rejection_reason_code: String,
     <span class="doccomment">/// A localized human readable description of the rejected reason.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RejectionReasonMessage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RejectionReasonMessage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rejection_reason_message: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

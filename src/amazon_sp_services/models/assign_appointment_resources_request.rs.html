@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AssignAppointmentResourcesRequest {
     <span class="doccomment">/// List of resources that performs or performed job appointment fulfillment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;resources&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;resources&quot;</span>)]
     </span><span class="kw">pub </span>resources: Vec&lt;<span class="kw">crate</span>::models::AppointmentResource&gt;,
 }
 

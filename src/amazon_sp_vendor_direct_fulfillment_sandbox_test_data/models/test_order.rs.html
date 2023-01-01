@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TestOrder {
     <span class="doccomment">/// An error code that identifies the type of error that occurred.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;orderId&quot;</span>)]
     </span><span class="kw">pub </span>order_id: String,
 }
 

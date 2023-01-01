@@ -103,37 +103,37 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Report {
     <span class="doccomment">/// A list of marketplace identifiers for the report.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_ids: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
     <span class="doccomment">/// The identifier for the report. This identifier is unique only in combination with a seller ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportId&quot;</span>)]
     </span><span class="kw">pub </span>report_id: String,
     <span class="doccomment">/// The report type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportType&quot;</span>)]
     </span><span class="kw">pub </span>report_type: String,
     <span class="doccomment">/// The start of a date and time range used for selecting the data to report.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;dataStartTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;dataStartTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>data_start_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The end of a date and time range used for selecting the data to report.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;dataEndTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;dataEndTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>data_end_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportScheduleId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportScheduleId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>report_schedule_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The date and time when the report was created.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;createdTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;createdTime&quot;</span>)]
     </span><span class="kw">pub </span>created_time: String,
     <span class="doccomment">/// The processing status of the report.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;processingStatus&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;processingStatus&quot;</span>)]
     </span><span class="kw">pub </span>processing_status: ProcessingStatus,
     <span class="doccomment">/// The date and time when the report processing started, in ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;processingStartTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;processingStartTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>processing_start_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The date and time when the report processing completed, in ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;processingEndTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;processingEndTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>processing_end_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve and decrypt the report document&#39;s contents.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportDocumentId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportDocumentId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>report_document_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

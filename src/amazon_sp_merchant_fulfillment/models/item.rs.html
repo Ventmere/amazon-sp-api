@@ -65,21 +65,21 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Item {
     <span class="doccomment">/// An Amazon-defined identifier for an individual item in an order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderItemId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OrderItemId&quot;</span>)]
     </span><span class="kw">pub </span>order_item_id: String,
     <span class="doccomment">/// The number of items.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Quantity&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Quantity&quot;</span>)]
     </span><span class="kw">pub </span>quantity: i32,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ItemWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
     <span class="doccomment">/// The description of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_description: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of transparency codes.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TransparencyCodeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TransparencyCodeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>transparency_code_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
     <span class="doccomment">/// A list of additional seller input pairs required to purchase shipping.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemLevelSellerInputsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemLevelSellerInputsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_level_seller_inputs_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AdditionalSellerInputs&gt;&gt;,
 }
 

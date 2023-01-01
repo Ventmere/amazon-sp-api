@@ -58,15 +58,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CodSettings {
     <span class="doccomment">/// When true, this fulfillment order requires a COD (Cash On Delivery) payment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;isCodRequired&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;isCodRequired&quot;</span>)]
     </span><span class="kw">pub </span>is_cod_required: bool,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;codCharge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;codCharge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>cod_charge: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;codChargeTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;codChargeTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>cod_charge_tax: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shippingCharge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shippingCharge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_charge: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shippingChargeTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shippingChargeTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_charge_tax: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
 }
 

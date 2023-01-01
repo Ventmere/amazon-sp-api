@@ -57,15 +57,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PurchaseLabelsResult {
     <span class="doccomment">/// The unique shipment identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shipmentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shipmentId&quot;</span>)]
     </span><span class="kw">pub </span>shipment_id: String,
     <span class="doccomment">/// Client reference id.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;clientReferenceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;clientReferenceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>client_reference_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;acceptedRate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;acceptedRate&quot;</span>)]
     </span><span class="kw">pub </span>accepted_rate: Box&lt;<span class="kw">crate</span>::models::AcceptedRate&gt;,
     <span class="doccomment">/// A list of label results
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;labelResults&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;labelResults&quot;</span>)]
     </span><span class="kw">pub </span>label_results: Vec&lt;<span class="kw">crate</span>::models::LabelResult&gt;,
 }
 

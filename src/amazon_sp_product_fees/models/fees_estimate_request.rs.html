@@ -57,17 +57,17 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeesEstimateRequest {
     <span class="doccomment">/// A marketplace identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// When true, the offer is fulfilled by Amazon.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsAmazonFulfilled&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsAmazonFulfilled&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>is_amazon_fulfilled: <span class="prelude-ty">Option</span>&lt;bool&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PriceToEstimateFees&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PriceToEstimateFees&quot;</span>)]
     </span><span class="kw">pub </span>price_to_estimate_fees: Box&lt;<span class="kw">crate</span>::models::PriceToEstimateFees&gt;,
     <span class="doccomment">/// A unique identifier provided by the caller to track this request.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Identifier&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Identifier&quot;</span>)]
     </span><span class="kw">pub </span>identifier: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;OptionalFulfillmentProgram&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;OptionalFulfillmentProgram&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>optional_fulfillment_program: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::OptionalFulfillmentProgram&gt;,
 }
 

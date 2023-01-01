@@ -41,7 +41,7 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetMessagingActionsForOrderResponseEmbedded {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;actions&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;actions&quot;</span>)]
     </span><span class="kw">pub </span>actions: Vec&lt;<span class="kw">crate</span>::models::GetMessagingActionResponse&gt;,
 }
 

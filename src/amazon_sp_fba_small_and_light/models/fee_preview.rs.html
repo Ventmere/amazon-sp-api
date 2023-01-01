@@ -60,17 +60,17 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeePreview {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) value used to identify the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>asin: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;price&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;price&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>price: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
     <span class="doccomment">/// A list of the Small and Light fees for the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;feeBreakdown&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;feeBreakdown&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fee_breakdown: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeeLineItem&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;totalFees&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;totalFees&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>total_fees: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
     <span class="doccomment">/// One or more unexpected errors occurred during the getSmallAndLightFeePreview operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>errors: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Error&gt;&gt;,
 }
 

@@ -63,19 +63,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>InboundShipmentPlan {
     <span class="doccomment">/// A shipment identifier originally returned by the createInboundShipmentPlan operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentId&quot;</span>)]
     </span><span class="kw">pub </span>shipment_id: String,
     <span class="doccomment">/// An Amazon fulfillment center identifier created by Amazon.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;DestinationFulfillmentCenterId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;DestinationFulfillmentCenterId&quot;</span>)]
     </span><span class="kw">pub </span>destination_fulfillment_center_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipToAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipToAddress&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LabelPrepType&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LabelPrepType&quot;</span>)]
     </span><span class="kw">pub </span>label_prep_type: <span class="kw">crate</span>::models::LabelPrepType,
     <span class="doccomment">/// A list of inbound shipment plan item information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Items&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Items&quot;</span>)]
     </span><span class="kw">pub </span>items: Vec&lt;<span class="kw">crate</span>::models::InboundShipmentPlanItem&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;EstimatedBoxContentsFee&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;EstimatedBoxContentsFee&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>estimated_box_contents_fee: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::BoxContentsFeeDetails&gt;&gt;,
 }
 

@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SubmitInvoiceRequest {
     <span class="doccomment">/// Shipment invoice document content.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;InvoiceContent&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;InvoiceContent&quot;</span>)]
     </span><span class="kw">pub </span>invoice_content: String,
     <span class="doccomment">/// An Amazon marketplace identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ContentMD5Value&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ContentMD5Value&quot;</span>)]
     </span><span class="kw">pub </span>content_md5_value: String,
 }
 

@@ -73,12 +73,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Reservation {
     <span class="doccomment">/// Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reservationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reservationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>reservation_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Type of reservation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;type&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;type&quot;</span>)]
     </span><span class="kw">pub </span>_type: Type,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;availability&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;availability&quot;</span>)]
     </span><span class="kw">pub </span>availability: Box&lt;<span class="kw">crate</span>::models::AvailabilityRecord&gt;,
 }
 

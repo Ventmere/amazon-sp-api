@@ -66,12 +66,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Order {
     <span class="doccomment">/// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
     <span class="doccomment">/// This field will contain the current state of the purchase order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderState&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderState&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_state: PurchaseOrderState,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;orderDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;orderDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>order_details: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::OrderDetails&gt;&gt;,
 }
 

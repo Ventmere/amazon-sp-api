@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>InboundShipmentPlanItem {
     <span class="doccomment">/// The seller SKU of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerSKU&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerSKU&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: String,
     <span class="doccomment">/// Amazon&#39;s fulfillment network SKU of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FulfillmentNetworkSKU&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FulfillmentNetworkSKU&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_network_sku: String,
     <span class="doccomment">/// The item quantity.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Quantity&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Quantity&quot;</span>)]
     </span><span class="kw">pub </span>quantity: i32,
     <span class="doccomment">/// A list of preparation instructions and who is responsible for that preparation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PrepDetailsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PrepDetailsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>prep_details_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::PrepDetails&gt;&gt;,
 }
 

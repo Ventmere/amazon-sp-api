@@ -69,27 +69,27 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OfferType {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;offerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;offerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>offer_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::OfferCustomerType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyingPrice&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyingPrice&quot;</span>)]
     </span><span class="kw">pub </span>buying_price: Box&lt;<span class="kw">crate</span>::models::PriceType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;RegularPrice&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;RegularPrice&quot;</span>)]
     </span><span class="kw">pub </span>regular_price: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;businessPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;businessPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>business_price: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;quantityDiscountPrices&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;quantityDiscountPrices&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>quantity_discount_prices: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::QuantityDiscountPriceType&gt;&gt;,
     <span class="doccomment">/// The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FulfillmentChannel&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FulfillmentChannel&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_channel: String,
     <span class="doccomment">/// The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemCondition&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemCondition&quot;</span>)]
     </span><span class="kw">pub </span>item_condition: String,
     <span class="doccomment">/// The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemSubCondition&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemSubCondition&quot;</span>)]
     </span><span class="kw">pub </span>item_sub_condition: String,
     <span class="doccomment">/// The seller stock keeping unit (SKU) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerSKU&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerSKU&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: String,
 }
 

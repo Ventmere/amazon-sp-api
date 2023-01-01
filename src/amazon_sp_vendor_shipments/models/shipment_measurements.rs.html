@@ -55,15 +55,15 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShipmentMeasurements {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;grossShipmentWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;grossShipmentWeight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>gross_shipment_weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipmentVolume&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipmentVolume&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_volume: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Volume&gt;&gt;,
     <span class="doccomment">/// Number of cartons present in the shipment. Provide the cartonCount only for unpalletized shipments.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;cartonCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;cartonCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carton_count: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;palletCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;palletCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>pallet_count: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

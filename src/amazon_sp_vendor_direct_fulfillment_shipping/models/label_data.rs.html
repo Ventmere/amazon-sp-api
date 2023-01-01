@@ -62,19 +62,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>LabelData {
     <span class="doccomment">/// Identifier for the package. The first package will be 001, the second 002, and so on. This number is used as a reference to refer to this package from the pallet level.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;packageIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;packageIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>package_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Package tracking identifier from the shipping carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tracking_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shipMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shipMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_method: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Shipping method name for internal reference.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shipMethodName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shipMethodName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_method_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// This field will contain the Base64encoded string of the shipment label content.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;content&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;content&quot;</span>)]
     </span><span class="kw">pub </span>content: String,
 }
 

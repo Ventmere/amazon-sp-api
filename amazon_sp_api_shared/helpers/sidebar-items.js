@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":[["deserialize_opt_bool_from_string",""],["deserialize_opt_i32_with_parse",""]]};

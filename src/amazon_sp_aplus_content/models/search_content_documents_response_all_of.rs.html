@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SearchContentDocumentsResponseAllOf {
     <span class="doccomment">/// A list of A+ Content metadata records.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentMetadataRecords&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentMetadataRecords&quot;</span>)]
     </span><span class="kw">pub </span>content_metadata_records: Vec&lt;<span class="kw">crate</span>::models::ContentMetadataRecord&gt;,
 }
 

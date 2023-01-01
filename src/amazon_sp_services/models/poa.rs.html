@@ -78,19 +78,19 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Poa {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;appointmentTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;appointmentTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>appointment_time: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::AppointmentTime&gt;&gt;,
     <span class="doccomment">/// A list of technicians.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;technicians&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;technicians&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>technicians: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Technician&gt;&gt;,
     <span class="doccomment">/// The identifier of the technician who uploaded the POA.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;uploadingTechnician&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;uploadingTechnician&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>uploading_technician: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The date and time when the POA was uploaded in ISO 8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;uploadTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;uploadTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>upload_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The type of POA uploaded.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;poaType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;poaType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>poa_type: <span class="prelude-ty">Option</span>&lt;PoaType&gt;,
 }
 

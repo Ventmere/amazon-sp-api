@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SqsResource {
     <span class="doccomment">/// The Amazon Resource Name (ARN) associated with the SQS queue.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;arn&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;arn&quot;</span>)]
     </span><span class="kw">pub </span>arn: String,
 }
 

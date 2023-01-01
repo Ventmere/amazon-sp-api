@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Location {
     <span class="doccomment">/// Type of location identification.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Location code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;locationCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;locationCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>location_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The two digit country code. In ISO 3166-1 alpha-2 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;countryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;countryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>country_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

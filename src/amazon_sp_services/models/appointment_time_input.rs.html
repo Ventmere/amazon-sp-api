@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AppointmentTimeInput {
     <span class="doccomment">/// The date, time in UTC for the start time of an appointment in ISO 8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;startTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;startTime&quot;</span>)]
     </span><span class="kw">pub </span>start_time: String,
     <span class="doccomment">/// The duration of an appointment in minutes.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;durationInMinutes&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;durationInMinutes&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>duration_in_minutes: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

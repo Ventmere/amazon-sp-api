@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SmallAndLightEnrollment {
     <span class="doccomment">/// A marketplace identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerSKU&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerSKU&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;status&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;status&quot;</span>)]
     </span><span class="kw">pub </span>status: <span class="kw">crate</span>::models::SmallAndLightEnrollmentStatus,
 }
 

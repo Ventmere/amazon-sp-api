@@ -68,23 +68,23 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetFulfillmentPreviewRequest {
     <span class="doccomment">/// The marketplace the fulfillment order is placed against.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;address&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;address&quot;</span>)]
     </span><span class="kw">pub </span>address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
     <span class="doccomment">/// An array of fulfillment preview item information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;items&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;items&quot;</span>)]
     </span><span class="kw">pub </span>items: Vec&lt;<span class="kw">crate</span>::models::GetFulfillmentPreviewItem&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shippingSpeedCategories&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shippingSpeedCategories&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_speed_categories: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShippingSpeedCategory&gt;&gt;,
     <span class="doccomment">/// Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).  Possible values:  * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;includeCODFulfillmentPreview&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;includeCODFulfillmentPreview&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>include_cod_fulfillment_preview: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// Specifies whether to return the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;includeDeliveryWindows&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;includeDeliveryWindows&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>include_delivery_windows: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// A list of features and their fulfillment policies to apply to the order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureConstraints&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureConstraints&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>feature_constraints: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeatureSettings&gt;&gt;,
 }
 

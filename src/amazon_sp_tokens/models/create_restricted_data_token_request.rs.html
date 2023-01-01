@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateRestrictedDataTokenRequest {
     <span class="doccomment">/// The application ID for the target application to which access is being delegated.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;targetApplication&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;targetApplication&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>target_application: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of restricted resources. Maximum: 50
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;restrictedResources&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;restrictedResources&quot;</span>)]
     </span><span class="kw">pub </span>restricted_resources: Vec&lt;<span class="kw">crate</span>::models::RestrictedResource&gt;,
 }
 

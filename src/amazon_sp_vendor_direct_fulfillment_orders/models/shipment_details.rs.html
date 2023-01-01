@@ -69,24 +69,24 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShipmentDetails {
     <span class="doccomment">/// When true, this is a priority shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;isPriorityShipment&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;isPriorityShipment&quot;</span>)]
     </span><span class="kw">pub </span>is_priority_shipment: bool,
     <span class="doccomment">/// When true, this order is part of a scheduled delivery program.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;isScheduledDeliveryShipment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;isScheduledDeliveryShipment&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>is_scheduled_delivery_shipment: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// When true, a packing slip is required to be sent to the customer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;isPslipRequired&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;isPslipRequired&quot;</span>)]
     </span><span class="kw">pub </span>is_pslip_required: bool,
     <span class="doccomment">/// When true, the order contain a gift. Include the gift message and gift wrap information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;isGift&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;isGift&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>is_gift: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     <span class="doccomment">/// Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the &#39;Help&#39; section on Vendor Central for &#39;ship methods&#39;.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shipMethod&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shipMethod&quot;</span>)]
     </span><span class="kw">pub </span>ship_method: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipmentDates&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipmentDates&quot;</span>)]
     </span><span class="kw">pub </span>shipment_dates: Box&lt;<span class="kw">crate</span>::models::ShipmentDates&gt;,
     <span class="doccomment">/// Message to customer for order status.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;messageToCustomer&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;messageToCustomer&quot;</span>)]
     </span><span class="kw">pub </span>message_to_customer: String,
 }
 

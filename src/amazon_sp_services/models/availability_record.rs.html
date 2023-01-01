@@ -57,15 +57,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AvailabilityRecord {
     <span class="doccomment">/// Denotes the time from when the resource is available in a day in ISO-8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;startTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;startTime&quot;</span>)]
     </span><span class="kw">pub </span>start_time: String,
     <span class="doccomment">/// Denotes the time till when the resource is available in a day in ISO-8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;endTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;endTime&quot;</span>)]
     </span><span class="kw">pub </span>end_time: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;recurrence&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;recurrence&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>recurrence: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Recurrence&gt;&gt;,
     <span class="doccomment">/// Signifies the capacity of a resource which is available.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;capacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;capacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>capacity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

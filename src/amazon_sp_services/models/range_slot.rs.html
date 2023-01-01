@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RangeSlot {
     <span class="doccomment">/// Start date time of slot in ISO 8601 format with precision of seconds.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;startDateTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;startDateTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>start_date_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// End date time of slot in ISO 8601 format with precision of seconds.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;endDateTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;endDateTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>end_date_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Capacity of the slot.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;capacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;capacity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>capacity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

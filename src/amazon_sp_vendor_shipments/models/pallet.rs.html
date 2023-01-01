@@ -67,22 +67,22 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Pallet {
     <span class="doccomment">/// A list of pallet identifiers.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;palletIdentifiers&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;palletIdentifiers&quot;</span>)]
     </span><span class="kw">pub </span>pallet_identifiers: Vec&lt;<span class="kw">crate</span>::models::ContainerIdentification&gt;,
     <span class="doccomment">/// Number of layers per pallet.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;tier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;tier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tier: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// Number of cartons per layer on the pallet.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;block&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;block&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>block: <span class="prelude-ty">Option</span>&lt;i32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;dimensions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;dimensions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>dimensions: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Dimensions&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;weight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;weight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;cartonReferenceDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;cartonReferenceDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carton_reference_details: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::CartonReferenceDetails&gt;&gt;,
     <span class="doccomment">/// A list of container item details.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;items&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;items&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>items: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ContainerItem&gt;&gt;,
 }
 

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":[["Error",""]],"fn":[["urlencode",""]],"mod":[["configuration",""],["tokens_api",""]],"struct":[["ResponseContent",""]]};
+window.SIDEBAR_ITEMS = {"enum":[["Error",""]],"fn":[["urlencode",""]],"mod":[["configuration",""],["tokens_api",""]]};

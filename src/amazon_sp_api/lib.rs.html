@@ -3,9 +3,173 @@
 <span id="3">3</span>
 <span id="4">4</span>
 <span id="5">5</span>
+<span id="6">6</span>
+<span id="7">7</span>
+<span id="8">8</span>
+<span id="9">9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
+<span id="80">80</span>
+<span id="81">81</span>
+<span id="82">82</span>
+<span id="83">83</span>
+<span id="84">84</span>
+<span id="85">85</span>
+<span id="86">86</span>
+<span id="87">87</span>
 </pre><pre class="rust"><code><span class="kw">mod </span>constants;
 <span class="kw">pub use </span>constants::SpApiEndpoint;
 <span class="kw">pub mod </span>config;
 <span class="kw">pub use </span>amazon_sp_api_shared <span class="kw">as </span>shared;
-<span class="kw">pub mod </span>error;</code></pre></div>
+<span class="kw">pub mod </span>error;
+<span class="kw">pub mod </span>client;
+
+<span class="kw">pub mod </span>apis {
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;aplus_content&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_aplus_content <span class="kw">as </span>aplus_content;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;authorization&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_authorization <span class="kw">as </span>authorization;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;catalog_items&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_catalog_items <span class="kw">as </span>catalog_items;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;easy_ship&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_easy_ship <span class="kw">as </span>easy_ship;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;fba_inbound_eligibility&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_fba_inbound_eligibility <span class="kw">as </span>fba_inbound_eligibility;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;fba_inventory&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_fba_inventory <span class="kw">as </span>fba_inventory;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;fba_small_and_light&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_fba_small_and_light <span class="kw">as </span>fba_small_and_light;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;feeds&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_feeds <span class="kw">as </span>feeds;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;finances&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_finances <span class="kw">as </span>finances;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;fulfillment_inbound&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_fulfillment_inbound <span class="kw">as </span>fulfillment_inbound;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;fulfillment_outbound&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_fulfillment_outbound <span class="kw">as </span>fulfillment_outbound;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;listings_items&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_listings_items <span class="kw">as </span>listings_items;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;listings_restrictions&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_listings_restrictions <span class="kw">as </span>listings_restrictions;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;merchant_fulfillment&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_merchant_fulfillment <span class="kw">as </span>merchant_fulfillment;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;messaging&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_messaging <span class="kw">as </span>messaging;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;notifications&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_notifications <span class="kw">as </span>notifications;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;orders&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_orders <span class="kw">as </span>orders;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;product_fees&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_product_fees <span class="kw">as </span>product_fees;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;product_pricing&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_product_pricing <span class="kw">as </span>product_pricing;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;product_type_definitions&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_product_type_definitions <span class="kw">as </span>product_type_definitions;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;reports&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_reports <span class="kw">as </span>reports;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;sales&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_sales <span class="kw">as </span>sales;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;sellers&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_sellers <span class="kw">as </span>sellers;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;services&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_services <span class="kw">as </span>services;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;shipment_invoicing&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_shipment_invoicing <span class="kw">as </span>shipment_invoicing;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;shipping&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_shipping <span class="kw">as </span>shipping;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;solicitations&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_solicitations <span class="kw">as </span>solicitations;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;tokens&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_tokens <span class="kw">as </span>tokens;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;uploads&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_uploads <span class="kw">as </span>uploads;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_direct_fulfillment_inventory&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_direct_fulfillment_inventory <span class="kw">as </span>vendor_direct_fulfillment_inventory;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_direct_fulfillment_orders&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_direct_fulfillment_orders <span class="kw">as </span>vendor_direct_fulfillment_orders;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_direct_fulfillment_payments&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_direct_fulfillment_payments <span class="kw">as </span>vendor_direct_fulfillment_payments;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_direct_fulfillment_sandbox_test_data&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_direct_fulfillment_sandbox_test_data <span class="kw">as </span>vendor_direct_fulfillment_sandbox_test_data;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_direct_fulfillment_shipping&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_direct_fulfillment_shipping <span class="kw">as </span>vendor_direct_fulfillment_shipping;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_direct_fulfillment_transactions&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_direct_fulfillment_transactions <span class="kw">as </span>vendor_direct_fulfillment_transactions;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_invoices&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_invoices <span class="kw">as </span>vendor_invoices;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_orders&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_orders <span class="kw">as </span>vendor_orders;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_shipments&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_shipments <span class="kw">as </span>vendor_shipments;
+  <span class="attribute">#[cfg(feature = <span class="string">&quot;vendor_transaction_status&quot;</span>)]
+  </span><span class="kw">pub use </span>amazon_sp_vendor_transaction_status <span class="kw">as </span>vendor_transaction_status;
+}</code></pre></div>
 </section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="amazon_sp_api" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>

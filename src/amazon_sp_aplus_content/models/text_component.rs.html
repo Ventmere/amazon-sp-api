@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TextComponent {
     <span class="doccomment">/// The actual plain text.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;value&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;value&quot;</span>)]
     </span><span class="kw">pub </span>value: String,
     <span class="doccomment">/// A set of content decorators.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;decoratorSet&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;decoratorSet&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>decorator_set: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Decorator&gt;&gt;,
 }
 

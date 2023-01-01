@@ -53,14 +53,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShippingLabelRequest {
     <span class="doccomment">/// Purchase order number of the order for which to create a shipping label.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;sellingParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;sellingParty&quot;</span>)]
     </span><span class="kw">pub </span>selling_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipFromParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipFromParty&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
     <span class="doccomment">/// A list of the packages in this shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containers&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>containers: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Container&gt;&gt;,
 }
 

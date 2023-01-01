@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ScopeOfWork {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the service job.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>asin: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The title of the service job.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>title: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The number of service jobs.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;quantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;quantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// A list of skills required to perform the job.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;requiredSkills&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;requiredSkills&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>required_skills: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
 }
 

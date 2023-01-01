@@ -53,14 +53,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListingOffersRequestParams {
     <span class="doccomment">/// A marketplace identifier. Specifies the marketplace for which prices are returned.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ItemCondition&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemCondition&quot;</span>)]
     </span><span class="kw">pub </span>item_condition: <span class="kw">crate</span>::models::ItemCondition,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CustomerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CustomerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>customer_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::CustomerType&gt;,
     <span class="doccomment">/// The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerSKU&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerSKU&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: String,
 }
 

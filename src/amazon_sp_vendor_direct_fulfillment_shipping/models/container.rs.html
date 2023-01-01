@@ -99,38 +99,38 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Container {
     <span class="doccomment">/// The type of container.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containerType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containerType&quot;</span>)]
     </span><span class="kw">pub </span>container_type: ContainerType,
     <span class="doccomment">/// The container identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containerIdentifier&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containerIdentifier&quot;</span>)]
     </span><span class="kw">pub </span>container_identifier: String,
     <span class="doccomment">/// The tracking number.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tracking_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The manifest identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;manifestId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;manifestId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>manifest_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The date of the manifest.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;manifestDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;manifestDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>manifest_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The shipment method.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shipMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shipMethod&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_method: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// SCAC code required for NA VOC vendors only.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;scacCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;scacCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scac_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Carrier required for EU VOC vendors only.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;carrier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;carrier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containerSequenceNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containerSequenceNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>container_sequence_number: <span class="prelude-ty">Option</span>&lt;i32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;dimensions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;dimensions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>dimensions: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Dimensions&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;weight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;weight&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>weight: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Weight&gt;&gt;,
     <span class="doccomment">/// A list of packed items.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;packedItems&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;packedItems&quot;</span>)]
     </span><span class="kw">pub </span>packed_items: Vec&lt;<span class="kw">crate</span>::models::PackedItem&gt;,
 }
 

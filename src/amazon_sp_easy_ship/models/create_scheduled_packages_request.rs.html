@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateScheduledPackagesRequest {
     <span class="doccomment">/// A string of up to 255 characters.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// An array allowing users to specify orders to be scheduled.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderScheduleDetailsList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;orderScheduleDetailsList&quot;</span>)]
     </span><span class="kw">pub </span>order_schedule_details_list: Vec&lt;<span class="kw">crate</span>::models::OrderScheduleDetails&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;labelFormat&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;labelFormat&quot;</span>)]
     </span><span class="kw">pub </span>label_format: <span class="kw">crate</span>::models::LabelFormat,
 }
 

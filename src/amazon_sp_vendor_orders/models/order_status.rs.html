@@ -82,23 +82,23 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderStatus {
     <span class="doccomment">/// The buyer&#39;s purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
     <span class="doccomment">/// The status of the buyer&#39;s purchase order for this order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderStatus&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderStatus&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_status: PurchaseOrderStatus,
     <span class="doccomment">/// The date the purchase order was placed. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderDate&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderDate&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_date: String,
     <span class="doccomment">/// The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;lastUpdatedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;lastUpdatedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>last_updated_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;sellingParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;sellingParty&quot;</span>)]
     </span><span class="kw">pub </span>selling_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipToParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipToParty&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
     <span class="doccomment">/// Detailed description of items order status.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;itemStatus&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;itemStatus&quot;</span>)]
     </span><span class="kw">pub </span>item_status: Vec&lt;<span class="kw">crate</span>::models::OrderItemStatus&gt;,
 }
 

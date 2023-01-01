@@ -67,24 +67,24 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetOffersResult {
     <span class="doccomment">/// A marketplace identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceID&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceID&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ASIN&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ASIN&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ASIN: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The stock keeping unit (SKU) of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>SKU: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ItemCondition&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemCondition&quot;</span>)]
     </span><span class="kw">pub </span>item_condition: <span class="kw">crate</span>::models::ConditionType,
     <span class="doccomment">/// The status of the operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;status&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;status&quot;</span>)]
     </span><span class="kw">pub </span>status: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Identifier&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Identifier&quot;</span>)]
     </span><span class="kw">pub </span>identifier: Box&lt;<span class="kw">crate</span>::models::ItemIdentifier&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Summary&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Summary&quot;</span>)]
     </span><span class="kw">pub </span>summary: Box&lt;<span class="kw">crate</span>::models::Summary&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Offers&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Offers&quot;</span>)]
     </span><span class="kw">pub </span>offers: Vec&lt;<span class="kw">crate</span>::models::OfferDetail&gt;,
 }
 

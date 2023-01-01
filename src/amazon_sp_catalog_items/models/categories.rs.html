@@ -51,13 +51,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Categories {
     <span class="doccomment">/// The identifier for the product category (or browse node).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProductCategoryId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ProductCategoryId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>product_category_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The name of the product category (or browse node).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProductCategoryName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ProductCategoryName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>product_category_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The parent product category.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;parent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;parent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>parent: <span class="prelude-ty">Option</span>&lt;serde_json::Value&gt;,
 }
 

@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OfferListingCountType {
     <span class="doccomment">/// The number of offer listings.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Count&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Count&quot;</span>)]
     </span><span class="kw">pub </span>count: i32,
     <span class="doccomment">/// The condition of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;condition&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;condition&quot;</span>)]
     </span><span class="kw">pub </span>condition: String,
 }
 

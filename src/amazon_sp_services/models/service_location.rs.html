@@ -65,9 +65,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ServiceLocation {
     <span class="doccomment">/// The location of the service job.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;serviceLocationType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceLocationType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>service_location_type: <span class="prelude-ty">Option</span>&lt;ServiceLocationType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;address&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;address&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>address: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Address&gt;&gt;,
 }
 

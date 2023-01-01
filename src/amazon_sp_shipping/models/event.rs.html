@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Event {
     <span class="doccomment">/// The event code of a shipment, such as Departed, Received, and ReadyForReceive.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;eventCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;eventCode&quot;</span>)]
     </span><span class="kw">pub </span>event_code: String,
     <span class="doccomment">/// The date and time of an event for a shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;eventTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;eventTime&quot;</span>)]
     </span><span class="kw">pub </span>event_time: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;location&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;location&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>location: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Location&gt;&gt;,
 }
 

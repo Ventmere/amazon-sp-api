@@ -90,13 +90,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Restriction {
     <span class="doccomment">/// A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// The condition that applies to the restriction.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;conditionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;conditionType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>condition_type: <span class="prelude-ty">Option</span>&lt;ConditionType&gt;,
     <span class="doccomment">/// A list of reasons for the restriction.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reasons&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reasons&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>reasons: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Reason&gt;&gt;,
 }
 

@@ -92,41 +92,41 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShipmentItem {
     <span class="doccomment">/// The seller SKU of the item. The seller SKU is qualified by the seller&#39;s seller ID, which is included with every call to the Selling Partner API.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerSKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerSKU&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// An Amazon-defined order item identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderItemId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OrderItemId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>order_item_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// An Amazon-defined order adjustment identifier defined for refunds, guarantee claims, and chargeback events.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;OrderAdjustmentItemId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;OrderAdjustmentItemId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>order_adjustment_item_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The number of items shipped.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;QuantityShipped&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;QuantityShipped&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>quantity_shipped: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// A list of charge information on the seller&#39;s account.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemChargeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemChargeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_charge_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ChargeComponent&gt;&gt;,
     <span class="doccomment">/// A list of charge information on the seller&#39;s account.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemChargeAdjustmentList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemChargeAdjustmentList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_charge_adjustment_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ChargeComponent&gt;&gt;,
     <span class="doccomment">/// A list of fee component information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemFeeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemFeeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_fee_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeeComponent&gt;&gt;,
     <span class="doccomment">/// A list of fee component information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemFeeAdjustmentList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemFeeAdjustmentList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_fee_adjustment_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeeComponent&gt;&gt;,
     <span class="doccomment">/// A list of information about taxes withheld.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemTaxWithheldList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemTaxWithheldList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_tax_withheld_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TaxWithheldComponent&gt;&gt;,
     <span class="doccomment">/// A list of promotions.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PromotionList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PromotionList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>promotion_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Promotion&gt;&gt;,
     <span class="doccomment">/// A list of promotions.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PromotionAdjustmentList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PromotionAdjustmentList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>promotion_adjustment_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Promotion&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CostOfPointsGranted&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CostOfPointsGranted&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>cost_of_points_granted: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CostOfPointsReturned&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CostOfPointsReturned&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>cost_of_points_returned: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Currency&gt;&gt;,
 }
 

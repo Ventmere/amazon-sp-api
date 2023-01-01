@@ -47,10 +47,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderItemsInner {
     <span class="doccomment">/// The unique identifier of the order item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderItemId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;orderItemId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>order_item_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The quantity for which to update the shipment status.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;quantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;quantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

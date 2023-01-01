@@ -55,16 +55,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetPrepInstructionsResult {
     <span class="doccomment">/// A list of SKU labeling requirements and item preparation instructions.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SKUPrepInstructionsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SKUPrepInstructionsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>sku_prep_instructions_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::SkuPrepInstructions&gt;&gt;,
     <span class="doccomment">/// A list of invalid SKU values and the reason they are invalid.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;InvalidSKUList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;InvalidSKUList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>invalid_sku_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::InvalidSku&gt;&gt;,
     <span class="doccomment">/// A list of item preparation instructions.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ASINPrepInstructionsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ASINPrepInstructionsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>asin_prep_instructions_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AsinPrepInstructions&gt;&gt;,
     <span class="doccomment">/// A list of invalid ASIN values and the reasons they are invalid.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;InvalidASINList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;InvalidASINList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>invalid_asin_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::InvalidAsin&gt;&gt;,
 }
 

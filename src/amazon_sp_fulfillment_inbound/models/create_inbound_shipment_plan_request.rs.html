@@ -58,17 +58,17 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateInboundShipmentPlanRequest {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LabelPrepPreference&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LabelPrepPreference&quot;</span>)]
     </span><span class="kw">pub </span>label_prep_preference: <span class="kw">crate</span>::models::LabelPrepPreference,
     <span class="doccomment">/// The two-character country code for the country where the inbound shipment is to be sent.  Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error.   Values:   ShipToCountryCode values for North America:  * CA – Canada  * MX - Mexico  * US - United States  ShipToCountryCode values for MCI sellers in Europe:  * DE – Germany  * ES – Spain  * FR – France  * GB – United Kingdom  * IT – Italy  Default: The country code for the seller&#39;s home marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipToCountryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipToCountryCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_country_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The two-character country code, followed by a dash and then up to three characters that represent the subdivision of the country where the inbound shipment is to be sent. For example, \&quot;IN-MH\&quot;. In full ISO 3166-2 format.  Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipToCountrySubdivisionCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipToCountrySubdivisionCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_country_subdivision_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;InboundShipmentPlanRequestItems&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;InboundShipmentPlanRequestItems&quot;</span>)]
     </span><span class="kw">pub </span>inbound_shipment_plan_request_items: Vec&lt;<span class="kw">crate</span>::models::InboundShipmentPlanRequestItem&gt;,
 }
 

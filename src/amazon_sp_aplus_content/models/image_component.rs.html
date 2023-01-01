@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ImageComponent {
     <span class="doccomment">/// This identifier is provided by the Selling Partner API for Uploads.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;uploadDestinationId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;uploadDestinationId&quot;</span>)]
     </span><span class="kw">pub </span>upload_destination_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;imageCropSpecification&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;imageCropSpecification&quot;</span>)]
     </span><span class="kw">pub </span>image_crop_specification: Box&lt;<span class="kw">crate</span>::models::ImageCropSpecification&gt;,
     <span class="doccomment">/// The alternative text for the image.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;altText&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;altText&quot;</span>)]
     </span><span class="kw">pub </span>alt_text: String,
 }
 

@@ -66,21 +66,21 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>InboundShipmentHeader {
     <span class="doccomment">/// The name for the shipment. Use a naming convention that helps distinguish between shipments over time, such as the date the shipment was created.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentName&quot;</span>)]
     </span><span class="kw">pub </span>shipment_name: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
     <span class="doccomment">/// The identifier for the fulfillment center to which the shipment will be shipped. Get this value from the InboundShipmentPlan object in the response returned by the createInboundShipmentPlan operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;DestinationFulfillmentCenterId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;DestinationFulfillmentCenterId&quot;</span>)]
     </span><span class="kw">pub </span>destination_fulfillment_center_id: String,
     <span class="doccomment">/// Indicates whether or not an inbound shipment contains case-packed boxes. Note: A shipment must contain either all case-packed boxes or all individually packed boxes.  Possible values:  true - All boxes in the shipment must be case packed.  false - All boxes in the shipment must be individually packed.  Note: If AreCasesRequired = true for an inbound shipment, then the value of QuantityInCase must be greater than zero for every item in the shipment. Otherwise the service returns an error.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AreCasesRequired&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AreCasesRequired&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>are_cases_required: <span class="prelude-ty">Option</span>&lt;bool&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentStatus&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentStatus&quot;</span>)]
     </span><span class="kw">pub </span>shipment_status: <span class="kw">crate</span>::models::ShipmentStatus,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LabelPrepPreference&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LabelPrepPreference&quot;</span>)]
     </span><span class="kw">pub </span>label_prep_preference: <span class="kw">crate</span>::models::LabelPrepPreference,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;IntendedBoxContentsSource&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;IntendedBoxContentsSource&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>intended_box_contents_source: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::IntendedBoxContentsSource&gt;,
 }
 

@@ -53,13 +53,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>StandardFourImageTextQuadrantModule {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;block1&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;block1&quot;</span>)]
     </span><span class="kw">pub </span>block1: Box&lt;<span class="kw">crate</span>::models::StandardImageTextBlock&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;block2&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;block2&quot;</span>)]
     </span><span class="kw">pub </span>block2: Box&lt;<span class="kw">crate</span>::models::StandardImageTextBlock&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;block3&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;block3&quot;</span>)]
     </span><span class="kw">pub </span>block3: Box&lt;<span class="kw">crate</span>::models::StandardImageTextBlock&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;block4&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;block4&quot;</span>)]
     </span><span class="kw">pub </span>block4: Box&lt;<span class="kw">crate</span>::models::StandardImageTextBlock&gt;,
 }
 

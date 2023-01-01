@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ResearchingQuantity {
     <span class="doccomment">/// The total number of units currently being researched in Amazon&#39;s fulfillment network.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;totalResearchingQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;totalResearchingQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>total_researching_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// A list of quantity details for items currently being researched.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;researchingQuantityBreakdown&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;researchingQuantityBreakdown&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>researching_quantity_breakdown: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ResearchingQuantityEntry&gt;&gt;,
 }
 

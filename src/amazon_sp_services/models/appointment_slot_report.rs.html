@@ -72,16 +72,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AppointmentSlotReport {
     <span class="doccomment">/// Defines the type of slots.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;schedulingType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;schedulingType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scheduling_type: <span class="prelude-ty">Option</span>&lt;SchedulingType&gt;,
     <span class="doccomment">/// Start Time from which the appointment slots are generated in ISO 8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;startTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;startTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>start_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// End Time up to which the appointment slots are generated in ISO 8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;endTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;endTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>end_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A list of time windows along with associated capacity in which the service can be performed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;appointmentSlots&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;appointmentSlots&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>appointment_slots: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AppointmentSlot&gt;&gt;,
 }
 

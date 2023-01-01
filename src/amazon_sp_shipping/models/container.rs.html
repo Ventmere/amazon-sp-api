@@ -75,19 +75,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Container {
     <span class="doccomment">/// The type of physical container being used. (always &#39;PACKAGE&#39;)
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>container_type: <span class="prelude-ty">Option</span>&lt;ContainerType&gt;,
     <span class="doccomment">/// An identifier for the container. This must be unique within all the containers in the same shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containerReferenceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containerReferenceId&quot;</span>)]
     </span><span class="kw">pub </span>container_reference_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;value&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;value&quot;</span>)]
     </span><span class="kw">pub </span>value: Box&lt;<span class="kw">crate</span>::models::Currency&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;dimensions&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;dimensions&quot;</span>)]
     </span><span class="kw">pub </span>dimensions: Box&lt;<span class="kw">crate</span>::models::Dimensions&gt;,
     <span class="doccomment">/// A list of the items in the container.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;items&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;items&quot;</span>)]
     </span><span class="kw">pub </span>items: Vec&lt;<span class="kw">crate</span>::models::ContainerItem&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;weight&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;weight&quot;</span>)]
     </span><span class="kw">pub </span>weight: Box&lt;<span class="kw">crate</span>::models::Weight&gt;,
 }
 

@@ -52,11 +52,11 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AcknowledgementStatusDetails {
     <span class="doccomment">/// The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;acknowledgementDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;acknowledgementDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>acknowledgement_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;acceptedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;acceptedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>accepted_quantity: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;rejectedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;rejectedQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rejected_quantity: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;&gt;,
 }
 

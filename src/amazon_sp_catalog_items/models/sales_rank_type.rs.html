@@ -47,10 +47,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SalesRankType {
     <span class="doccomment">/// Identifies the item category from which the sales rank is taken.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ProductCategoryId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ProductCategoryId&quot;</span>)]
     </span><span class="kw">pub </span>product_category_id: String,
     <span class="doccomment">/// The sales rank of the item within the item category.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Rank&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Rank&quot;</span>)]
     </span><span class="kw">pub </span>rank: i32,
 }
 

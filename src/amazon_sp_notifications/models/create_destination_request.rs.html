@@ -48,10 +48,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateDestinationRequest {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;resourceSpecification&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;resourceSpecification&quot;</span>)]
     </span><span class="kw">pub </span>resource_specification: Box&lt;<span class="kw">crate</span>::models::DestinationResourceSpecification&gt;,
     <span class="doccomment">/// A developer-defined name to help identify this destination.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">pub </span>name: String,
 }
 

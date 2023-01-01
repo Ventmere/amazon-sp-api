@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ImageCropSpecification {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;size&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;size&quot;</span>)]
     </span><span class="kw">pub </span>size: Box&lt;<span class="kw">crate</span>::models::ImageDimensions&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;offset&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;offset&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>offset: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ImageOffsets&gt;&gt;,
 }
 

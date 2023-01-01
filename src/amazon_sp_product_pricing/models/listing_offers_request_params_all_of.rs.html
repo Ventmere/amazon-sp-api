@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ListingOffersRequestParamsAllOf {
     <span class="doccomment">/// The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerSKU&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerSKU&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: String,
 }
 

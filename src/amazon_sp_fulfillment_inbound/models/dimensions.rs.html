@@ -53,13 +53,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Dimensions {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Length&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Length&quot;</span>)]
     </span><span class="kw">pub </span>length: f64,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Width&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Width&quot;</span>)]
     </span><span class="kw">pub </span>width: f64,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Height&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Height&quot;</span>)]
     </span><span class="kw">pub </span>height: f64,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Unit&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Unit&quot;</span>)]
     </span><span class="kw">pub </span>unit: <span class="kw">crate</span>::models::UnitOfMeasurement,
 }
 

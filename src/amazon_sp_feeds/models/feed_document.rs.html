@@ -66,15 +66,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeedDocument {
     <span class="doccomment">/// The identifier for the feed document. This identifier is unique only in combination with a seller ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;feedDocumentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;feedDocumentId&quot;</span>)]
     </span><span class="kw">pub </span>feed_document_id: String,
     <span class="doccomment">/// A presigned URL for the feed document. If `compressionAlgorithm` is not returned, you can download the feed directly from this URL. This URL expires after 5 minutes.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;url&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;url&quot;</span>)]
     </span><span class="kw">pub </span>url: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;encryptionDetails&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;encryptionDetails&quot;</span>)]
     </span><span class="kw">pub </span>encryption_details: Box&lt;<span class="kw">crate</span>::models::FeedDocumentEncryptionDetails&gt;,
     <span class="doccomment">/// If the feed document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the feed when you download. Otherwise, you can download the feed directly. Refer to [Step 6. Download and decrypt the feed processing report](doc:feeds-api-v2020-09-04-use-case-guide#step-6-download-and-decrypt-the-feed-processing-report) in the use case guide, where sample code is provided.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;compressionAlgorithm&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;compressionAlgorithm&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>compression_algorithm: <span class="prelude-ty">Option</span>&lt;CompressionAlgorithm&gt;,
 }
 

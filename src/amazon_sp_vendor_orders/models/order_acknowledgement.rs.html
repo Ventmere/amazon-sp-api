@@ -54,15 +54,15 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderAcknowledgement {
     <span class="doccomment">/// The purchase order number. Formatting Notes: 8-character alpha-numeric code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;sellingParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;sellingParty&quot;</span>)]
     </span><span class="kw">pub </span>selling_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
     <span class="doccomment">/// The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;acknowledgementDate&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;acknowledgementDate&quot;</span>)]
     </span><span class="kw">pub </span>acknowledgement_date: String,
     <span class="doccomment">/// A list of the items being acknowledged with associated details.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;items&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;items&quot;</span>)]
     </span><span class="kw">pub </span>items: Vec&lt;<span class="kw">crate</span>::models::OrderAcknowledgementItem&gt;,
 }
 

@@ -70,16 +70,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Link {
     <span class="doccomment">/// The URI of the related resource.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;resource&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;resource&quot;</span>)]
     </span><span class="kw">pub </span>resource: String,
     <span class="doccomment">/// The HTTP verb used to interact with the related resource.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;verb&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;verb&quot;</span>)]
     </span><span class="kw">pub </span>verb: Verb,
     <span class="doccomment">/// The title of the related resource.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;title&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>title: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The media type of the related resource.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

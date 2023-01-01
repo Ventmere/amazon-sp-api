@@ -72,16 +72,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>RegulatedInformationField {
     <span class="doccomment">/// The unique identifier for the field.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FieldId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FieldId&quot;</span>)]
     </span><span class="kw">pub </span>field_id: String,
     <span class="doccomment">/// The name for the field.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FieldLabel&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FieldLabel&quot;</span>)]
     </span><span class="kw">pub </span>field_label: String,
     <span class="doccomment">/// The type of field.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FieldType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FieldType&quot;</span>)]
     </span><span class="kw">pub </span>field_type: FieldType,
     <span class="doccomment">/// The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain a URL to download the attachment here.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FieldValue&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FieldValue&quot;</span>)]
     </span><span class="kw">pub </span>field_value: String,
 }
 

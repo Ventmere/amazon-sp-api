@@ -80,32 +80,32 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PayWithAmazonEvent {
     <span class="doccomment">/// An order identifier that is specified by the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TransactionPostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TransactionPostedDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>transaction_posted_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The type of business object.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BusinessObjectType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BusinessObjectType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>business_object_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The sales channel for the transaction.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SalesChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SalesChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>sales_channel: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Charge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Charge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>charge: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ChargeComponent&gt;&gt;,
     <span class="doccomment">/// A list of fee component information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FeeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FeeList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fee_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeeComponent&gt;&gt;,
     <span class="doccomment">/// The type of payment.  Possible values:  * Sales
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PaymentAmountType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PaymentAmountType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>payment_amount_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A short description of this payment event.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmountDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AmountDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>amount_description: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The fulfillment channel.  Possible values:  * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)  * MFN - Merchant Fulfillment Network (self-fulfilled)
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;FulfillmentChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;FulfillmentChannel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_channel: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The store name where the event occurred.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;StoreName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;StoreName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>store_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

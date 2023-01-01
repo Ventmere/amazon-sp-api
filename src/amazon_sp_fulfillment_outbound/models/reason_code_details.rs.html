@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ReasonCodeDetails {
     <span class="doccomment">/// A code that indicates a valid return reason.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;returnReasonCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;returnReasonCode&quot;</span>)]
     </span><span class="kw">pub </span>return_reason_code: String,
     <span class="doccomment">/// A human readable description of the return reason code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;description&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;description&quot;</span>)]
     </span><span class="kw">pub </span>description: String,
     <span class="doccomment">/// A translation of the description. The translation is in the language specified in the Language request parameter.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;translatedDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;translatedDescription&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>translated_description: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

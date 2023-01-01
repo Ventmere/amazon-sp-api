@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>EventFilterAllOf {
     <span class="doccomment">/// An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;eventFilterType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;eventFilterType&quot;</span>)]
     </span><span class="kw">pub </span>event_filter_type: String,
 }
 

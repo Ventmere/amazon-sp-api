@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PostContentDocumentAsinRelationsRequest {
     <span class="doccomment">/// The set of ASINs.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asinSet&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asinSet&quot;</span>)]
     </span><span class="kw">pub </span>asin_set: Vec&lt;String&gt;,
 }
 

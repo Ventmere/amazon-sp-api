@@ -72,16 +72,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Dimensions {
     <span class="doccomment">/// The length of the container.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;length&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;length&quot;</span>)]
     </span><span class="kw">pub </span>length: f32,
     <span class="doccomment">/// The width of the container.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;width&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;width&quot;</span>)]
     </span><span class="kw">pub </span>width: f32,
     <span class="doccomment">/// The height of the container.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;height&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;height&quot;</span>)]
     </span><span class="kw">pub </span>height: f32,
     <span class="doccomment">/// The unit of these measurements.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;unit&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;unit&quot;</span>)]
     </span><span class="kw">pub </span>unit: Unit,
 }
 

@@ -77,32 +77,32 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>InvoiceItem {
     <span class="doccomment">/// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;itemSequenceNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;itemSequenceNumber&quot;</span>)]
     </span><span class="kw">pub </span>item_sequence_number: String,
     <span class="doccomment">/// Buyer&#39;s standard identification number (ASIN) of an item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;buyerProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The vendor selected product identification of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;vendorProductIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>vendor_product_identifier: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;invoicedQuantity&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;invoicedQuantity&quot;</span>)]
     </span><span class="kw">pub </span>invoiced_quantity: Box&lt;<span class="kw">crate</span>::models::ItemQuantity&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;netCost&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;netCost&quot;</span>)]
     </span><span class="kw">pub </span>net_cost: Box&lt;<span class="kw">crate</span>::models::Money&gt;,
     <span class="doccomment">/// The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;purchaseOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>purchase_order_number: String,
     <span class="doccomment">/// The vendor&#39;s order number for this order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;vendorOrderNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;vendorOrderNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>vendor_order_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// HSN tax code. The HSN number cannot contain alphabets.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;hsnCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;hsnCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>hsn_code: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Individual tax details per line item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TaxDetail&gt;&gt;,
     <span class="doccomment">/// Individual charge details per line item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;chargeDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;chargeDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>charge_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ChargeDetails&gt;&gt;,
 }
 

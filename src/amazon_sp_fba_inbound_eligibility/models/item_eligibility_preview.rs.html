@@ -164,19 +164,19 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemEligibilityPreview {
     <span class="doccomment">/// The ASIN for which eligibility was determined.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asin&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asin&quot;</span>)]
     </span><span class="kw">pub </span>asin: String,
     <span class="doccomment">/// The marketplace for which eligibility was determined.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The program for which eligibility was determined.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;program&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;program&quot;</span>)]
     </span><span class="kw">pub </span>program: Program,
     <span class="doccomment">/// Indicates if the item is eligible for the program.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;isEligibleForProgram&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;isEligibleForProgram&quot;</span>)]
     </span><span class="kw">pub </span>is_eligible_for_program: bool,
     <span class="doccomment">/// Potential Ineligibility Reason Codes.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ineligibilityReasonList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ineligibilityReasonList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ineligibility_reason_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;IneligibilityReasonList&gt;&gt;,
 }
 

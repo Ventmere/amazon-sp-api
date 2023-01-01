@@ -80,16 +80,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PaymentTerms {
     <span class="doccomment">/// The payment term type for the invoice.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>_type: <span class="prelude-ty">Option</span>&lt;Type&gt;,
     <span class="doccomment">/// A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. &lt;br&gt;**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;discountPercent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;discountPercent&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>discount_percent: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The number of calendar days from the Base date (Invoice date) until the discount is no longer valid.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;discountDueDays&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;discountDueDays&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>discount_due_days: <span class="prelude-ty">Option</span>&lt;f32&gt;,
     <span class="doccomment">/// The number of calendar days from the base date (invoice date) until the total amount on the invoice is due.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;netDueDays&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;netDueDays&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>net_due_days: <span class="prelude-ty">Option</span>&lt;f32&gt;,
 }
 

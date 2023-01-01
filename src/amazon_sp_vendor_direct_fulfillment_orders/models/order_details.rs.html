@@ -94,28 +94,28 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>OrderDetails {
     <span class="doccomment">/// The customer order number.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;customerOrderNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;customerOrderNumber&quot;</span>)]
     </span><span class="kw">pub </span>customer_order_number: String,
     <span class="doccomment">/// The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderDate&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;orderDate&quot;</span>)]
     </span><span class="kw">pub </span>order_date: String,
     <span class="doccomment">/// Current status of the order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;orderStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;orderStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>order_status: <span class="prelude-ty">Option</span>&lt;OrderStatus&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipmentDetails&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipmentDetails&quot;</span>)]
     </span><span class="kw">pub </span>shipment_details: Box&lt;<span class="kw">crate</span>::models::ShipmentDetails&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;taxTotal&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;taxTotal&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_total: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::OrderDetailsTaxTotal&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;sellingParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;sellingParty&quot;</span>)]
     </span><span class="kw">pub </span>selling_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipFromParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipFromParty&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipToParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipToParty&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_party: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;billToParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;billToParty&quot;</span>)]
     </span><span class="kw">pub </span>bill_to_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
     <span class="doccomment">/// A list of items in this purchase order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;items&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;items&quot;</span>)]
     </span><span class="kw">pub </span>items: Vec&lt;<span class="kw">crate</span>::models::OrderItem&gt;,
 }
 

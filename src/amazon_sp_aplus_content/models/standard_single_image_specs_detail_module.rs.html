@@ -65,21 +65,21 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>StandardSingleImageSpecsDetailModule {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;headline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;headline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>headline: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::TextComponent&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;image&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;image&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>image: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ImageComponent&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;descriptionHeadline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;descriptionHeadline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>description_headline: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::TextComponent&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;descriptionBlock1&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;descriptionBlock1&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>description_block1: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardTextBlock&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;descriptionBlock2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;descriptionBlock2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>description_block2: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardTextBlock&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;specificationHeadline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;specificationHeadline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>specification_headline: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::TextComponent&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;specificationListBlock&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;specificationListBlock&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>specification_list_block: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardHeaderTextListBlock&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;specificationTextBlock&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;specificationTextBlock&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>specification_text_block: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StandardTextBlock&gt;&gt;,
 }
 

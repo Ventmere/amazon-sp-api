@@ -61,10 +61,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Duration {
     <span class="doccomment">/// Unit for duration.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;durationUnit&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;durationUnit&quot;</span>)]
     </span><span class="kw">pub </span>duration_unit: DurationUnit,
     <span class="doccomment">/// Value for the duration in terms of the durationUnit.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;durationValue&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;durationValue&quot;</span>)]
     </span><span class="kw">pub </span>duration_value: i32,
 }
 

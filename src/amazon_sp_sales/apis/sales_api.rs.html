@@ -102,19 +102,6 @@
 <span id="102">102</span>
 <span id="103">103</span>
 <span id="104">104</span>
-<span id="105">105</span>
-<span id="106">106</span>
-<span id="107">107</span>
-<span id="108">108</span>
-<span id="109">109</span>
-<span id="110">110</span>
-<span id="111">111</span>
-<span id="112">112</span>
-<span id="113">113</span>
-<span id="114">114</span>
-<span id="115">115</span>
-<span id="116">116</span>
-<span id="117">117</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for Sales
  *
@@ -128,29 +115,12 @@
 
 </span><span class="kw">use </span>reqwest;
 
-<span class="kw">use </span><span class="kw">crate</span>::apis::ResponseContent;
 <span class="kw">use super</span>::{Error, configuration};
-<span class="kw">use </span>amazon_sp_api_shared::request::UrlBuilder;
-
-
-<span class="doccomment">/// struct for typed errors of method [`get_order_metrics`]
-</span><span class="attribute">#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-</span><span class="kw">pub enum </span>GetOrderMetricsError {
-    Status400(<span class="kw">crate</span>::models::GetOrderMetricsResponse),
-    Status403(<span class="kw">crate</span>::models::GetOrderMetricsResponse),
-    Status404(<span class="kw">crate</span>::models::GetOrderMetricsResponse),
-    Status413(<span class="kw">crate</span>::models::GetOrderMetricsResponse),
-    Status415(<span class="kw">crate</span>::models::GetOrderMetricsResponse),
-    Status429(<span class="kw">crate</span>::models::GetOrderMetricsResponse),
-    Status500(<span class="kw">crate</span>::models::GetOrderMetricsResponse),
-    Status503(<span class="kw">crate</span>::models::GetOrderMetricsResponse),
-    UnknownValue(serde_json::Value),
-}
+<span class="kw">use </span>amazon_sp_api_shared::{request::UrlBuilder, error::ResponseError};
 
 
 <span class="doccomment">/// Returns aggregated order metrics for given interval, broken down by granularity, for given buyer type.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | .5 | 15 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
-</span><span class="kw">pub async fn </span>get_order_metrics(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, marketplace_ids: Vec&lt;String&gt;, interval: <span class="kw-2">&amp;</span>str, granularity: <span class="kw-2">&amp;</span>str, granularity_time_zone: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, buyer_type: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, fulfillment_network: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, first_day_of_week: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, asin: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, sku: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetOrderMetricsResponse, Error&lt;GetOrderMetricsError&gt;&gt; {
+</span><span class="kw">pub async fn </span>get_order_metrics(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, marketplace_ids: Vec&lt;String&gt;, interval: <span class="kw-2">&amp;</span>str, granularity: <span class="kw-2">&amp;</span>str, granularity_time_zone: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, buyer_type: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, fulfillment_network: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, first_day_of_week: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, asin: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, sku: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::GetOrderMetricsResponse, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -187,16 +157,21 @@
     }
 
     <span class="kw">let </span>url = url_builder.build()<span class="question-mark">?</span>;
+    <span class="kw">let </span>access_token = <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>rdt) = local_var_configuration.rdt {
+        <span class="prelude-val">Some</span>(rdt.token()<span class="question-mark">?</span>)
+    } <span class="kw">else </span>{
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
+            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
+        } <span class="kw">else </span>{
+            <span class="prelude-val">None
+        </span>}
+    };
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_aws_v4_key) = local_var_configuration.aws_v4_key {
         <span class="kw">let </span>local_var_new_headers = <span class="kw">match </span>local_var_aws_v4_key.sign(
 	    url.as_str(),
 	    <span class="string">&quot;GET&quot;</span>,
-        <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = configuration.auth {
-            <span class="prelude-val">Some</span>(auth.get_access_token(<span class="kw-2">&amp;</span>configuration.client).<span class="kw">await</span><span class="question-mark">?</span>)
-        } <span class="kw">else </span>{
-            <span class="prelude-val">None
-        </span>},
+        access_token.clone(),
 	    <span class="kw-2">&amp;</span><span class="string">&quot;&quot;</span>,
 	    ) {
 	      <span class="prelude-val">Ok</span>(new_headers) =&gt; new_headers,
@@ -207,8 +182,7 @@
 	}
     }
 
-    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>auth) = local_var_configuration.auth {
-        <span class="kw">let </span>token = auth.get_access_token(<span class="kw-2">&amp;</span>local_var_configuration.client).<span class="kw">await</span><span class="question-mark">?</span>;
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = access_token {
         local_var_req_builder = local_var_req_builder.header(<span class="string">&quot;x-amz-access-token&quot;</span>, token.as_str());
     }
 
@@ -226,8 +200,8 @@
     <span class="kw">if </span>!local_var_status.is_client_error() &amp;&amp; !local_var_status.is_server_error() {
         serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).map_err(Error::from)
     } <span class="kw">else </span>{
-        <span class="kw">let </span>local_var_entity: <span class="prelude-ty">Option</span>&lt;GetOrderMetricsError&gt; = serde_json::from_str(<span class="kw-2">&amp;</span>local_var_content).ok();
-        <span class="kw">let </span>local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        <span class="kw">let </span>error_list = serde_json::from_str::&lt;amazon_sp_api_shared::request::ErrorList&gt;(<span class="kw-2">&amp;</span>local_var_content).ok();
+        <span class="kw">let </span>local_var_error = ResponseError { status: local_var_status, content: local_var_content, error_list: error_list.map(|e| e.errors) };
         <span class="prelude-val">Err</span>(Error::ResponseError(local_var_error))
     }
 }

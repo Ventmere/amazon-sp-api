@@ -50,11 +50,11 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PartneredEstimate {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Amount&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Amount&quot;</span>)]
     </span><span class="kw">pub </span>amount: Box&lt;<span class="kw">crate</span>::models::Amount&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ConfirmDeadline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ConfirmDeadline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>confirm_deadline: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;VoidDeadline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;VoidDeadline&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>void_deadline: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

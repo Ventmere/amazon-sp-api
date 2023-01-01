@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FixedSlotCapacity {
     <span class="doccomment">/// Resource Identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;resourceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;resourceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>resource_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The duration of each slot which is returned. This value will be a multiple of 5 and fall in the following range: 5 &lt;= `slotDuration` &lt;= 360.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;slotDuration&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;slotDuration&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>slot_duration: <span class="prelude-ty">Option</span>&lt;f32&gt;,
     <span class="doccomment">/// Array of capacity slots in fixed slot format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;capacities&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;capacities&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>capacities: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FixedSlot&gt;&gt;,
     <span class="doccomment">/// Next page token, if there are more pages.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;nextPageToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;nextPageToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_page_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

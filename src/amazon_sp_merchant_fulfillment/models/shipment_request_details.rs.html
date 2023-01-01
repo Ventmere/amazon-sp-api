@@ -75,27 +75,27 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ShipmentRequestDetails {
     <span class="doccomment">/// An Amazon-defined order identifier, in 3-7-7 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AmazonOrderId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_order_id: String,
     <span class="doccomment">/// A seller-defined order identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The list of items to be included in a shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemList&quot;</span>)]
     </span><span class="kw">pub </span>item_list: Vec&lt;<span class="kw">crate</span>::models::Item&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipFromAddress&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PackageDimensions&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PackageDimensions&quot;</span>)]
     </span><span class="kw">pub </span>package_dimensions: Box&lt;<span class="kw">crate</span>::models::PackageDimensions&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Weight&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Weight&quot;</span>)]
     </span><span class="kw">pub </span>weight: Box&lt;<span class="kw">crate</span>::models::Weight&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;MustArriveByDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;MustArriveByDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>must_arrive_by_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceOptions&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceOptions&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_options: Box&lt;<span class="kw">crate</span>::models::ShippingServiceOptions&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LabelCustomization&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LabelCustomization&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>label_customization: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::LabelCustomization&gt;&gt;,
 }
 

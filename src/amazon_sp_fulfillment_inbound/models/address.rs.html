@@ -71,28 +71,28 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Address {
     <span class="doccomment">/// Name of the individual or business.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Name&quot;</span>)]
     </span><span class="kw">pub </span>name: String,
     <span class="doccomment">/// The street address information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AddressLine1&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AddressLine1&quot;</span>)]
     </span><span class="kw">pub </span>address_line1: String,
     <span class="doccomment">/// Additional street address information, if required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AddressLine2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AddressLine2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>address_line2: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The district or county.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;DistrictOrCounty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;DistrictOrCounty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>district_or_county: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The city.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;City&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;City&quot;</span>)]
     </span><span class="kw">pub </span>city: String,
     <span class="doccomment">/// The state or province code.  If state or province codes are used in your marketplace, it is recommended that you include one with your request. This helps Amazon to select the most appropriate Amazon fulfillment center for your inbound shipment plan.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;StateOrProvinceCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;StateOrProvinceCode&quot;</span>)]
     </span><span class="kw">pub </span>state_or_province_code: String,
     <span class="doccomment">/// The country code in two-character ISO 3166-1 alpha-2 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CountryCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CountryCode&quot;</span>)]
     </span><span class="kw">pub </span>country_code: String,
     <span class="doccomment">/// The postal code.  If postal codes are used in your marketplace, we recommended that you include one with your request. This helps Amazon select the most appropriate Amazon fulfillment center for the inbound shipment plan.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PostalCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PostalCode&quot;</span>)]
     </span><span class="kw">pub </span>postal_code: String,
 }
 

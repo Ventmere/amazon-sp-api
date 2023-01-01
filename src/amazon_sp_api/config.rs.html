@@ -24,7 +24,7 @@
 <span id="24">24</span>
 </pre><pre class="rust"><code><span class="kw">use </span>std::env;
 
-<span class="attribute">#[derive(Debug)]
+<span class="attribute">#[derive(Debug, Clone)]
 </span><span class="kw">pub struct </span>SpApiConfig {
   <span class="kw">pub </span>app_id: String,
   <span class="kw">pub </span>is_draft: bool,

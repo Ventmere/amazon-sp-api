@@ -74,16 +74,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Issue {
     <span class="doccomment">/// An issue code that identifies the type of issue.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;code&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;code&quot;</span>)]
     </span><span class="kw">pub </span>code: String,
     <span class="doccomment">/// A message that describes the issue.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;message&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;message&quot;</span>)]
     </span><span class="kw">pub </span>message: String,
     <span class="doccomment">/// The severity of the issue.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;severity&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;severity&quot;</span>)]
     </span><span class="kw">pub </span>severity: Severity,
     <span class="doccomment">/// Name of the attribute associated with the issue, if applicable.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;attributeName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;attributeName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>attribute_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

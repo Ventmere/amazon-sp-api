@@ -66,22 +66,22 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ReportSchedule {
     <span class="doccomment">/// The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportScheduleId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportScheduleId&quot;</span>)]
     </span><span class="kw">pub </span>report_schedule_id: String,
     <span class="doccomment">/// The report type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportType&quot;</span>)]
     </span><span class="kw">pub </span>report_type: String,
     <span class="doccomment">/// A list of marketplace identifiers. The report document&#39;s contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_ids: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
     <span class="doccomment">/// Additional information passed to reports. This varies by report type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reportOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reportOptions&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>report_options: <span class="prelude-ty">Option</span>&lt;::std::collections::HashMap&lt;String, String&gt;&gt;,
     <span class="doccomment">/// An ISO 8601 period value that indicates how often a report should be created.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;period&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;period&quot;</span>)]
     </span><span class="kw">pub </span>period: String,
     <span class="doccomment">/// The date and time when the schedule will create its next report, in ISO 8601 date time format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;nextReportCreationTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;nextReportCreationTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_report_creation_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

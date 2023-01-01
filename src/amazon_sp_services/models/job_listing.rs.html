@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>JobListing {
     <span class="doccomment">/// Total result size of the query result.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;totalResultSize&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;totalResultSize&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>total_result_size: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// A generated string used to pass information to your next request. If `nextPageToken` is returned, pass the value of `nextPageToken` to the `pageToken` to get next results.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;nextPageToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;nextPageToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_page_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// A generated string used to pass information to your next request. If `previousPageToken` is returned, pass the value of `previousPageToken` to the `pageToken` to get previous page results.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;previousPageToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;previousPageToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>previous_page_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// List of job details for the given input.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;jobs&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;jobs&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>jobs: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ServiceJob&gt;&gt;,
 }
 

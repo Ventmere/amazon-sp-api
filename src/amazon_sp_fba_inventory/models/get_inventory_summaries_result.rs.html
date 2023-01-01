@@ -48,10 +48,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetInventorySummariesResult {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;granularity&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;granularity&quot;</span>)]
     </span><span class="kw">pub </span>granularity: Box&lt;<span class="kw">crate</span>::models::Granularity&gt;,
     <span class="doccomment">/// A list of inventory summaries.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;inventorySummaries&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;inventorySummaries&quot;</span>)]
     </span><span class="kw">pub </span>inventory_summaries: Vec&lt;<span class="kw">crate</span>::models::InventorySummary&gt;,
 }
 

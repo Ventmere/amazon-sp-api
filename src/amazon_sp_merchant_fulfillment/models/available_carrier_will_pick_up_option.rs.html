@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AvailableCarrierWillPickUpOption {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;CarrierWillPickUpOption&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierWillPickUpOption&quot;</span>)]
     </span><span class="kw">pub </span>carrier_will_pick_up_option: <span class="kw">crate</span>::models::CarrierWillPickUpOption,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Charge&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Charge&quot;</span>)]
     </span><span class="kw">pub </span>charge: Box&lt;<span class="kw">crate</span>::models::CurrencyAmount&gt;,
 }
 

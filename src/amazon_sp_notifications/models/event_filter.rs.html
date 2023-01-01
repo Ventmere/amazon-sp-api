@@ -52,13 +52,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>EventFilter {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;aggregationSettings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;aggregationSettings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>aggregation_settings: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::AggregationSettings&gt;&gt;,
     <span class="doccomment">/// A list of marketplace identifiers to subscribe to (e.g. ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceIds&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_ids: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
     <span class="doccomment">/// An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;eventFilterType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;eventFilterType&quot;</span>)]
     </span><span class="kw">pub </span>event_filter_type: String,
 }
 

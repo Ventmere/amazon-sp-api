@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateWarrantyRequest {
     <span class="doccomment">/// Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer&#39;s language of preference, which can be retrieved from the GetAttributes operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;attachments&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;attachments&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>attachments: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Attachment&gt;&gt;,
     <span class="doccomment">/// The start date of the warranty coverage to include in the message to the buyer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;coverageStartDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;coverageStartDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>coverage_start_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The end date of the warranty coverage to include in the message to the buyer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;coverageEndDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;coverageEndDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>coverage_end_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

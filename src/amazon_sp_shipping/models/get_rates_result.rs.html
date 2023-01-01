@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetRatesResult {
     <span class="doccomment">/// A list of service rates.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;serviceRates&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceRates&quot;</span>)]
     </span><span class="kw">pub </span>service_rates: Vec&lt;<span class="kw">crate</span>::models::ServiceRate&gt;,
 }
 

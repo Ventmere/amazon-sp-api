@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SearchContentPublishRecordsResponseAllOf {
     <span class="doccomment">/// A list of A+ Content publishing records.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;publishRecordList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;publishRecordList&quot;</span>)]
     </span><span class="kw">pub </span>publish_record_list: Vec&lt;<span class="kw">crate</span>::models::PublishRecord&gt;,
 }
 

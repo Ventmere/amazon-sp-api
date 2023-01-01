@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetAdditionalSellerInputsResult {
     <span class="doccomment">/// A list of additional inputs.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentLevelFields&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentLevelFields&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_level_fields: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AdditionalInputs&gt;&gt;,
     <span class="doccomment">/// A list of item level fields.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ItemLevelFieldsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ItemLevelFieldsList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>item_level_fields_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ItemLevelFields&gt;&gt;,
 }
 

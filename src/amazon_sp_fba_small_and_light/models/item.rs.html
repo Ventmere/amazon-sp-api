@@ -49,9 +49,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Item {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) value used to identify the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asin&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asin&quot;</span>)]
     </span><span class="kw">pub </span>asin: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;price&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;price&quot;</span>)]
     </span><span class="kw">pub </span>price: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
 }
 

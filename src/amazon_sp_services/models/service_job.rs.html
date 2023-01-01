@@ -117,41 +117,41 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ServiceJob {
     <span class="doccomment">/// The date and time of the creation of the job in ISO 8601 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;createTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;createTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>create_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Amazon identifier for the service job.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;serviceJobId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceJobId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>service_job_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The status of the service job.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;serviceJobStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceJobStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>service_job_status: <span class="prelude-ty">Option</span>&lt;ServiceJobStatus&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;scopeOfWork&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;scopeOfWork&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scope_of_work: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ScopeOfWork&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;seller&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;seller&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Seller&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;serviceJobProvider&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceJobProvider&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>service_job_provider: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ServiceJobProvider&gt;&gt;,
     <span class="doccomment">/// A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;preferredAppointmentTimes&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;preferredAppointmentTimes&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>preferred_appointment_times: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AppointmentTime&gt;&gt;,
     <span class="doccomment">/// A list of appointments.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;appointments&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;appointments&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>appointments: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Appointment&gt;&gt;,
     <span class="doccomment">/// The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;serviceOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceOrderId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>service_order_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The marketplace identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The Amazon-defined identifier for the region scope.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;storeId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;storeId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>store_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;buyer&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;buyer&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Buyer&gt;&gt;,
     <span class="doccomment">/// A list of items associated with the service job.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;associatedItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;associatedItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>associated_items: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AssociatedItem&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;serviceLocation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;serviceLocation&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>service_location: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ServiceLocation&gt;&gt;,
 }
 

@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>LabelResult {
     <span class="doccomment">/// An identifier for the container. This must be unique within all the containers in the same shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containerReferenceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containerReferenceId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>container_reference_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The tracking identifier assigned to the container.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tracking_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;label&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;label&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>label: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Label&gt;&gt;,
 }
 

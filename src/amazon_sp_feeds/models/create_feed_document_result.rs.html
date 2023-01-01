@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateFeedDocumentResult {
     <span class="doccomment">/// The identifier of the feed document.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;feedDocumentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;feedDocumentId&quot;</span>)]
     </span><span class="kw">pub </span>feed_document_id: String,
     <span class="doccomment">/// The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;url&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;url&quot;</span>)]
     </span><span class="kw">pub </span>url: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;encryptionDetails&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;encryptionDetails&quot;</span>)]
     </span><span class="kw">pub </span>encryption_details: Box&lt;<span class="kw">crate</span>::models::FeedDocumentEncryptionDetails&gt;,
 }
 

@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PrimeInformationType {
     <span class="doccomment">/// Indicates whether the offer is an Amazon Prime offer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsPrime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsPrime&quot;</span>)]
     </span><span class="kw">pub </span>is_prime: bool,
     <span class="doccomment">/// Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsNationalPrime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsNationalPrime&quot;</span>)]
     </span><span class="kw">pub </span>is_national_prime: bool,
 }
 

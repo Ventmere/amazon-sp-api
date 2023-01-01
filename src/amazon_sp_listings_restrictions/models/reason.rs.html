@@ -70,13 +70,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Reason {
     <span class="doccomment">/// A message describing the reason for the restriction.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;message&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;message&quot;</span>)]
     </span><span class="kw">pub </span>message: String,
     <span class="doccomment">/// A code indicating why the listing is restricted.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reasonCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reasonCode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>reason_code: <span class="prelude-ty">Option</span>&lt;ReasonCode&gt;,
     <span class="doccomment">/// A list of path forward links that may allow Selling Partners to remove the restriction.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;links&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;links&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>links: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Link&gt;&gt;,
 }
 

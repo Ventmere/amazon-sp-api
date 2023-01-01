@@ -47,10 +47,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CartonReferenceDetails {
     <span class="doccomment">/// Pallet level carton count is mandatory for single item pallet and optional for mixed item pallet.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;cartonCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;cartonCount&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carton_count: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the &#39;cartons&#39; segment to refer to that carton&#39;s details here.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;cartonReferenceNumbers&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;cartonReferenceNumbers&quot;</span>)]
     </span><span class="kw">pub </span>carton_reference_numbers: Vec&lt;String&gt;,
 }
 

@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Contact {
     <span class="doccomment">/// The name of the contact person.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Name&quot;</span>)]
     </span><span class="kw">pub </span>name: String,
     <span class="doccomment">/// The phone number of the contact person.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Phone&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Phone&quot;</span>)]
     </span><span class="kw">pub </span>phone: String,
     <span class="doccomment">/// The email address of the contact person.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Email&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Email&quot;</span>)]
     </span><span class="kw">pub </span>email: String,
     <span class="doccomment">/// The fax number of the contact person.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Fax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Fax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fax: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

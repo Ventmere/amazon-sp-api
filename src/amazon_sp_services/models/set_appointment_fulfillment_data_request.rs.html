@@ -52,13 +52,13 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SetAppointmentFulfillmentDataRequest {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_time: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FulfillmentTime&gt;&gt;,
     <span class="doccomment">/// List of resources that performs or performed job appointment fulfillment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;appointmentResources&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;appointmentResources&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>appointment_resources: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AppointmentResource&gt;&gt;,
     <span class="doccomment">/// List of documents captured during service appointment fulfillment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentDocuments&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentDocuments&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_documents: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FulfillmentDocument&gt;&gt;,
 }
 

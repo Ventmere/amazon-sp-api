@@ -56,16 +56,16 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Decorator {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;type&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::DecoratorType&gt;,
     <span class="doccomment">/// The starting character of this decorator within the content string. Use zero for the first character.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;offset&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;offset&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>offset: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;length&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;length&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>length: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     <span class="doccomment">/// The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;depth&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;depth&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>depth: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

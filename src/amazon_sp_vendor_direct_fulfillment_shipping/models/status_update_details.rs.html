@@ -64,20 +64,20 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>StatusUpdateDetails {
     <span class="doccomment">/// This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;trackingNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;trackingNumber&quot;</span>)]
     </span><span class="kw">pub </span>tracking_number: String,
     <span class="doccomment">/// Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;statusCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;statusCode&quot;</span>)]
     </span><span class="kw">pub </span>status_code: String,
     <span class="doccomment">/// Provides a reason code for the status of the package that will provide additional information about the transportation status.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;reasonCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;reasonCode&quot;</span>)]
     </span><span class="kw">pub </span>reason_code: String,
     <span class="doccomment">/// The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;statusDateTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;statusDateTime&quot;</span>)]
     </span><span class="kw">pub </span>status_date_time: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;statusLocationAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;statusLocationAddress&quot;</span>)]
     </span><span class="kw">pub </span>status_location_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipmentSchedule&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipmentSchedule&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_schedule: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::StatusUpdateDetailsShipmentSchedule&gt;&gt;,
 }
 

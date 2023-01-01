@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PartyIdentification {
     <span class="doccomment">/// Assigned identification for the party.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;partyId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;partyId&quot;</span>)]
     </span><span class="kw">pub </span>party_id: String,
 }
 

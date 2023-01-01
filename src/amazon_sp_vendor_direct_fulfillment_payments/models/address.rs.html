@@ -86,37 +86,37 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Address {
     <span class="doccomment">/// The name of the person, business or institution at that address.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">pub </span>name: String,
     <span class="doccomment">/// First line of the address.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;addressLine1&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;addressLine1&quot;</span>)]
     </span><span class="kw">pub </span>address_line1: String,
     <span class="doccomment">/// Additional street address information, if required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;addressLine2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;addressLine2&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>address_line2: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Additional street address information, if required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;addressLine3&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;addressLine3&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>address_line3: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The city where the person, business or institution is located.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;city&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;city&quot;</span>)]
     </span><span class="kw">pub </span>city: String,
     <span class="doccomment">/// The county where person, business or institution is located.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;county&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;county&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>county: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The district where person, business or institution is located.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;district&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;district&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>district: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The state or region where person, business or institution is located.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;stateOrRegion&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;stateOrRegion&quot;</span>)]
     </span><span class="kw">pub </span>state_or_region: String,
     <span class="doccomment">/// The postal code of that address. It conatins a series of letters or digits or both, sometimes including spaces or punctuation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;postalCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;postalCode&quot;</span>)]
     </span><span class="kw">pub </span>postal_code: String,
     <span class="doccomment">/// The two digit country code in ISO 3166-1 alpha-2 format.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;countryCode&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;countryCode&quot;</span>)]
     </span><span class="kw">pub </span>country_code: String,
     <span class="doccomment">/// The phone number of the person, business or institution located at that address.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;phone&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;phone&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>phone: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

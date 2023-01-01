@@ -90,39 +90,39 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PartneredLtlDataOutput {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Contact&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Contact&quot;</span>)]
     </span><span class="kw">pub </span>contact: Box&lt;<span class="kw">crate</span>::models::Contact&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BoxCount&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BoxCount&quot;</span>)]
     </span><span class="kw">pub </span>box_count: i64,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;SellerFreightClass&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerFreightClass&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_freight_class: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::SellerFreightClass&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;FreightReadyDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;FreightReadyDate&quot;</span>)]
     </span><span class="kw">pub </span>freight_ready_date: String,
     <span class="doccomment">/// A list of pallet information.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;PalletList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;PalletList&quot;</span>)]
     </span><span class="kw">pub </span>pallet_list: Vec&lt;<span class="kw">crate</span>::models::Pallet&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;TotalWeight&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;TotalWeight&quot;</span>)]
     </span><span class="kw">pub </span>total_weight: Box&lt;<span class="kw">crate</span>::models::Weight&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;SellerDeclaredValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;SellerDeclaredValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_declared_value: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Amount&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;AmazonCalculatedValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;AmazonCalculatedValue&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>amazon_calculated_value: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Amount&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PreviewPickupDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PreviewPickupDate&quot;</span>)]
     </span><span class="kw">pub </span>preview_pickup_date: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PreviewDeliveryDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PreviewDeliveryDate&quot;</span>)]
     </span><span class="kw">pub </span>preview_delivery_date: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PreviewFreightClass&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PreviewFreightClass&quot;</span>)]
     </span><span class="kw">pub </span>preview_freight_class: <span class="kw">crate</span>::models::SellerFreightClass,
     <span class="doccomment">/// A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AmazonReferenceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AmazonReferenceId&quot;</span>)]
     </span><span class="kw">pub </span>amazon_reference_id: String,
     <span class="doccomment">/// Indicates whether the bill of lading for the shipment is available.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsBillOfLadingAvailable&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsBillOfLadingAvailable&quot;</span>)]
     </span><span class="kw">pub </span>is_bill_of_lading_available: bool,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PartneredEstimate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PartneredEstimate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>partnered_estimate: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartneredEstimate&gt;&gt;,
     <span class="doccomment">/// The carrier for the inbound shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CarrierName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierName&quot;</span>)]
     </span><span class="kw">pub </span>carrier_name: String,
 }
 

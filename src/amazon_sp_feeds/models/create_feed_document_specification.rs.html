@@ -43,7 +43,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateFeedDocumentSpecification {
     <span class="doccomment">/// The content type of the feed.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentType&quot;</span>)]
     </span><span class="kw">pub </span>content_type: String,
 }
 

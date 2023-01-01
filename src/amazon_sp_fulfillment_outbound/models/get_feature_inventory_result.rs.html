@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetFeatureInventoryResult {
     <span class="doccomment">/// The requested marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// The name of the feature.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureName&quot;</span>)]
     </span><span class="kw">pub </span>feature_name: String,
     <span class="doccomment">/// When present and not empty, pass this string token in the next request to return the next response page.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;nextToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;nextToken&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>next_token: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// An array of SKUs eligible for this feature and the quantity available.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureSkus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureSkus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>feature_skus: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeatureSku&gt;&gt;,
 }
 

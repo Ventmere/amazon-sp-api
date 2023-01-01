@@ -48,10 +48,10 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>InvalidItemReason {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;invalidItemReasonCode&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;invalidItemReasonCode&quot;</span>)]
     </span><span class="kw">pub </span>invalid_item_reason_code: <span class="kw">crate</span>::models::InvalidItemReasonCode,
     <span class="doccomment">/// A human readable description of the invalid item reason code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;description&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;description&quot;</span>)]
     </span><span class="kw">pub </span>description: String,
 }
 

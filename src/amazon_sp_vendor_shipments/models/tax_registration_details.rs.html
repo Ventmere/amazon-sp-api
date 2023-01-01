@@ -64,10 +64,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TaxRegistrationDetails {
     <span class="doccomment">/// Tax registration type for the entity.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxRegistrationType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxRegistrationType&quot;</span>)]
     </span><span class="kw">pub </span>tax_registration_type: TaxRegistrationType,
     <span class="doccomment">/// Tax registration number for the entity. For example, VAT ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxRegistrationNumber&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxRegistrationNumber&quot;</span>)]
     </span><span class="kw">pub </span>tax_registration_number: String,
 }
 

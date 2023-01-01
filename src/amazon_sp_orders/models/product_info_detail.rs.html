@@ -46,7 +46,7 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ProductInfoDetail {
     <span class="doccomment">/// The total number of items that are included in the ASIN.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;NumberOfItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;NumberOfItems&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>, deserialize_with = <span class="string">&quot;amazon_sp_api_shared::helpers::deserialize_opt_i32_with_parse&quot;</span>)]
     </span><span class="kw">pub </span>number_of_items: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"struct":[["AWSv4Key",""],["Configuration",""]]};
+window.SIDEBAR_ITEMS = {"struct":[["AWSv4Key",""],["Configuration",""],["RestrictedDataToken",""]]};

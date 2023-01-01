@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateShipmentResult {
     <span class="doccomment">/// The unique shipment identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;shipmentId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;shipmentId&quot;</span>)]
     </span><span class="kw">pub </span>shipment_id: String,
     <span class="doccomment">/// A list of all the available rates that can be used to send the shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;eligibleRates&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;eligibleRates&quot;</span>)]
     </span><span class="kw">pub </span>eligible_rates: Vec&lt;<span class="kw">crate</span>::models::Rate&gt;,
 }
 

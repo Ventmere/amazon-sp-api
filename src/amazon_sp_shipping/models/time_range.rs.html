@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TimeRange {
     <span class="doccomment">/// The start date and time. This defaults to the current date and time.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;start&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;start&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>start: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The end date and time. This must come after the value of start. This defaults to the next business day from the start.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;end&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;end&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>end: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

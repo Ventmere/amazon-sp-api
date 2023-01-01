@@ -107,43 +107,43 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Invoice {
     <span class="doccomment">/// Identifies the type of invoice.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;invoiceType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;invoiceType&quot;</span>)]
     </span><span class="kw">pub </span>invoice_type: InvoiceType,
     <span class="doccomment">/// Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;id&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;id&quot;</span>)]
     </span><span class="kw">pub </span>id: String,
     <span class="doccomment">/// An additional unique reference number used for regulatory or other purposes.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;referenceNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;referenceNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>reference_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Defines a date and time according to ISO8601.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;date&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;date&quot;</span>)]
     </span><span class="kw">pub </span>date: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;remitToParty&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;remitToParty&quot;</span>)]
     </span><span class="kw">pub </span>remit_to_party: Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipToParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipToParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_to_party: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipFromParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipFromParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>ship_from_party: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;billToParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;billToParty&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>bill_to_party: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PartyIdentification&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;paymentTerms&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;paymentTerms&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>payment_terms: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::PaymentTerms&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;invoiceTotal&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;invoiceTotal&quot;</span>)]
     </span><span class="kw">pub </span>invoice_total: Box&lt;<span class="kw">crate</span>::models::Money&gt;,
     <span class="doccomment">/// Total tax amount details for all line items.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;taxDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;taxDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TaxDetails&gt;&gt;,
     <span class="doccomment">/// Additional details provided by the selling party, for tax related or other purposes.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;additionalDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;additionalDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>additional_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AdditionalDetails&gt;&gt;,
     <span class="doccomment">/// Total charge amount details for all line items.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;chargeDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;chargeDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>charge_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ChargeDetails&gt;&gt;,
     <span class="doccomment">/// Total allowance amount details for all line items.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;allowanceDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;allowanceDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>allowance_details: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AllowanceDetails&gt;&gt;,
     <span class="doccomment">/// The list of invoice items.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;items&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;items&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>items: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::InvoiceItem&gt;&gt;,
 }
 

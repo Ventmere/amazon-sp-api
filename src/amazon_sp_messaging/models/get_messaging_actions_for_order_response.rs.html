@@ -51,12 +51,12 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetMessagingActionsForOrderResponse {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;_links&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;_links&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>_links: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::GetMessagingActionsForOrderResponseLinks&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;_embedded&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;_embedded&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>_embedded: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::GetMessagingActionsForOrderResponseEmbedded&gt;&gt;,
     <span class="doccomment">/// A list of error responses returned when a request is unsuccessful.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;errors&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>errors: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Error&gt;&gt;,
 }
 

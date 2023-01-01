@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GiftDetails {
     <span class="doccomment">/// Gift message to be printed in shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;giftMessage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;giftMessage&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>gift_message: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Gift wrap identifier for the gift wrapping, if any.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;giftWrapId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;giftWrapId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>gift_wrap_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

@@ -58,17 +58,17 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>PartneredSmallParcelPackageOutput {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Dimensions&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Dimensions&quot;</span>)]
     </span><span class="kw">pub </span>dimensions: Box&lt;<span class="kw">crate</span>::models::Dimensions&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Weight&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Weight&quot;</span>)]
     </span><span class="kw">pub </span>weight: Box&lt;<span class="kw">crate</span>::models::Weight&gt;,
     <span class="doccomment">/// The carrier specified with a previous call to putTransportDetails.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CarrierName&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CarrierName&quot;</span>)]
     </span><span class="kw">pub </span>carrier_name: String,
     <span class="doccomment">/// The tracking number of the package, provided by the carrier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TrackingId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TrackingId&quot;</span>)]
     </span><span class="kw">pub </span>tracking_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;PackageStatus&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;PackageStatus&quot;</span>)]
     </span><span class="kw">pub </span>package_status: <span class="kw">crate</span>::models::PackageStatus,
 }
 

@@ -68,23 +68,23 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>SellerInputDefinition {
     <span class="doccomment">/// When true, the additional input field is required.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;IsRequired&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;IsRequired&quot;</span>)]
     </span><span class="kw">pub </span>is_required: bool,
     <span class="doccomment">/// The data type of the additional input field.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;DataType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;DataType&quot;</span>)]
     </span><span class="kw">pub </span>data_type: String,
     <span class="doccomment">/// List of constraints.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Constraints&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Constraints&quot;</span>)]
     </span><span class="kw">pub </span>constraints: Vec&lt;<span class="kw">crate</span>::models::Constraint&gt;,
     <span class="doccomment">/// The display text for the additional input field.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;InputDisplayText&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;InputDisplayText&quot;</span>)]
     </span><span class="kw">pub </span>input_display_text: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;InputTarget&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;InputTarget&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>input_target: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::InputTargetType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;StoredValue&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;StoredValue&quot;</span>)]
     </span><span class="kw">pub </span>stored_value: Box&lt;<span class="kw">crate</span>::models::AdditionalSellerInput&gt;,
     <span class="doccomment">/// The set of fixed values in an additional seller input.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RestrictedSetValues&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RestrictedSetValues&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>restricted_set_values: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
 }
 

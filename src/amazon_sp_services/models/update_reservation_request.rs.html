@@ -49,9 +49,9 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>UpdateReservationRequest {
     <span class="doccomment">/// Resource (store) identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;resourceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;resourceId&quot;</span>)]
     </span><span class="kw">pub </span>resource_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;reservation&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;reservation&quot;</span>)]
     </span><span class="kw">pub </span>reservation: Box&lt;<span class="kw">crate</span>::models::Reservation&gt;,
 }
 

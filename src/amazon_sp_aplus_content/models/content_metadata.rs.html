@@ -61,18 +61,18 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ContentMetadata {
     <span class="doccomment">/// The A+ Content document name.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">pub </span>name: String,
     <span class="doccomment">/// The identifier for the marketplace where the A+ Content is published.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;status&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;status&quot;</span>)]
     </span><span class="kw">pub </span>status: <span class="kw">crate</span>::models::ContentStatus,
     <span class="doccomment">/// The set of content badges.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;badgeSet&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;badgeSet&quot;</span>)]
     </span><span class="kw">pub </span>badge_set: Vec&lt;<span class="kw">crate</span>::models::ContentBadge&gt;,
     <span class="doccomment">/// The approximate age of the A+ Content document and metadata.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;updateTime&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;updateTime&quot;</span>)]
     </span><span class="kw">pub </span>update_time: String,
 }
 

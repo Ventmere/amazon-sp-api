@@ -58,17 +58,17 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ItemBuyerInfo {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;BuyerCustomizedInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerCustomizedInfo&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_customized_info: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::BuyerCustomizedInfoDetail&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;GiftWrapPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;GiftWrapPrice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>gift_wrap_price: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;GiftWrapTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;GiftWrapTax&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>gift_wrap_tax: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Money&gt;&gt;,
     <span class="doccomment">/// A gift message provided by the buyer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;GiftMessageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;GiftMessageText&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>gift_message_text: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The gift wrap level specified by the buyer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;GiftWrapLevel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;GiftWrapLevel&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>gift_wrap_level: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

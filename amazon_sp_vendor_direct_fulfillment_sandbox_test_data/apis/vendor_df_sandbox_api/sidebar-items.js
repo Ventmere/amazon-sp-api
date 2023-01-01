@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":[["GenerateOrderScenariosError","struct for typed errors of method [`generate_order_scenarios`]"]],"fn":[["generate_order_scenarios","Submits a request to generate test order data for Vendor Direct Fulfillment API entities."]]};
+window.SIDEBAR_ITEMS = {"fn":[["generate_order_scenarios","Submits a request to generate test order data for Vendor Direct Fulfillment API entities."]]};

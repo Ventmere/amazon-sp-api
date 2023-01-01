@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>BuyerTaxInformation {
     <span class="doccomment">/// Business buyer&#39;s company legal name.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerLegalCompanyName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerLegalCompanyName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_legal_company_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Business buyer&#39;s address.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerBusinessAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerBusinessAddress&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_business_address: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Business buyer&#39;s tax registration ID.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerTaxRegistrationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerTaxRegistrationId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_tax_registration_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Business buyer&#39;s tax office.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;BuyerTaxOffice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;BuyerTaxOffice&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>buyer_tax_office: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

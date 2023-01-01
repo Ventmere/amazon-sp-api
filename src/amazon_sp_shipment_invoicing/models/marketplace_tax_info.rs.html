@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>MarketplaceTaxInfo {
     <span class="doccomment">/// The legal name of the company.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;CompanyLegalName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CompanyLegalName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>company_legal_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The country or region imposing the tax.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TaxingRegion&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxingRegion&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>taxing_region: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The list of tax classifications.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TaxClassifications&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxClassifications&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>tax_classifications: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TaxClassification&gt;&gt;,
 }
 

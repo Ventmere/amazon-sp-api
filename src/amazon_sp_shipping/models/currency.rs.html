@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Currency {
     <span class="doccomment">/// The amount of currency.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;value&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;value&quot;</span>)]
     </span><span class="kw">pub </span>value: f32,
     <span class="doccomment">/// A 3-character currency code.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;unit&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;unit&quot;</span>)]
     </span><span class="kw">pub </span>unit: String,
 }
 

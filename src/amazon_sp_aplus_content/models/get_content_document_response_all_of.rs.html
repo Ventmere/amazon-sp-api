@@ -41,7 +41,7 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetContentDocumentResponseAllOf {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;contentRecord&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;contentRecord&quot;</span>)]
     </span><span class="kw">pub </span>content_record: Box&lt;<span class="kw">crate</span>::models::ContentRecord&gt;,
 }
 

@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetEligibleShipmentServicesRequest {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShipmentRequestDetails&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentRequestDetails&quot;</span>)]
     </span><span class="kw">pub </span>shipment_request_details: Box&lt;<span class="kw">crate</span>::models::ShipmentRequestDetails&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ShippingOfferingFilter&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingOfferingFilter&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipping_offering_filter: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ShippingOfferingFilter&gt;&gt;,
 }
 

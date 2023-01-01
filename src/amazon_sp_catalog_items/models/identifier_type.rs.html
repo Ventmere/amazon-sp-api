@@ -44,9 +44,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>IdentifierType {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceASIN&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;MarketplaceASIN&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_asin: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::AsinIdentifier&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;SKUIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;SKUIdentifier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>sku_identifier: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::SellerSkuIdentifier&gt;&gt;,
 }
 

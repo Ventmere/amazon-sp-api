@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Destination {
     <span class="doccomment">/// The developer-defined name for this destination.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;name&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">pub </span>name: String,
     <span class="doccomment">/// The destination identifier generated when you created the destination.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;destinationId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;destinationId&quot;</span>)]
     </span><span class="kw">pub </span>destination_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;resource&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;resource&quot;</span>)]
     </span><span class="kw">pub </span>resource: Box&lt;<span class="kw">crate</span>::models::DestinationResource&gt;,
 }
 

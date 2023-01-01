@@ -72,16 +72,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Dimensions {
     <span class="doccomment">/// A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  &lt;br&gt;**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;length&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;length&quot;</span>)]
     </span><span class="kw">pub </span>length: String,
     <span class="doccomment">/// A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  &lt;br&gt;**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;width&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;width&quot;</span>)]
     </span><span class="kw">pub </span>width: String,
     <span class="doccomment">/// A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  &lt;br&gt;**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;height&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;height&quot;</span>)]
     </span><span class="kw">pub </span>height: String,
     <span class="doccomment">/// The unit of measure for dimensions.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;unitOfMeasure&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;unitOfMeasure&quot;</span>)]
     </span><span class="kw">pub </span>unit_of_measure: UnitOfMeasure,
 }
 

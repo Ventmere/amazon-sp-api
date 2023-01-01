@@ -56,14 +56,14 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateShipmentRequest {
     <span class="doccomment">/// Client reference id.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;clientReferenceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;clientReferenceId&quot;</span>)]
     </span><span class="kw">pub </span>client_reference_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipTo&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipTo&quot;</span>)]
     </span><span class="kw">pub </span>ship_to: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shipFrom&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shipFrom&quot;</span>)]
     </span><span class="kw">pub </span>ship_from: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
     <span class="doccomment">/// A list of container.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;containers&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;containers&quot;</span>)]
     </span><span class="kw">pub </span>containers: Vec&lt;<span class="kw">crate</span>::models::Container&gt;,
 }
 

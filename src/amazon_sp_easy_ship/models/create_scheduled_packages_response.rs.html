@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>CreateScheduledPackagesResponse {
     <span class="doccomment">/// A list of packages. Refer to the `Package` object.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;scheduledPackages&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;scheduledPackages&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scheduled_packages: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Package&gt;&gt;,
     <span class="doccomment">/// A list of orders we couldn&#39;t scheduled on your behalf. Each element contains the reason and details on the error.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;rejectedOrders&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;rejectedOrders&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rejected_orders: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RejectedOrder&gt;&gt;,
     <span class="doccomment">/// A pre-signed URL for the zip document containing the shipping labels and the documents enabled for your marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;printableDocumentsUrl&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;printableDocumentsUrl&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>printable_documents_url: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

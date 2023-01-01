@@ -50,10 +50,10 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>AvailableShippingServiceOptions {
     <span class="doccomment">/// List of available carrier pickup options.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AvailableCarrierWillPickUpOptions&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AvailableCarrierWillPickUpOptions&quot;</span>)]
     </span><span class="kw">pub </span>available_carrier_will_pick_up_options: Vec&lt;<span class="kw">crate</span>::models::AvailableCarrierWillPickUpOption&gt;,
     <span class="doccomment">/// List of available delivery experience options.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;AvailableDeliveryExperienceOptions&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AvailableDeliveryExperienceOptions&quot;</span>)]
     </span><span class="kw">pub </span>available_delivery_experience_options: Vec&lt;<span class="kw">crate</span>::models::AvailableDeliveryExperienceOption&gt;,
 }
 

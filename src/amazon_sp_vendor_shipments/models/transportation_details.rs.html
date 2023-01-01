@@ -71,16 +71,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>TransportationDetails {
     <span class="doccomment">/// Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;carrierScac&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;carrierScac&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_scac: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;carrierShipmentReferenceNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;carrierShipmentReferenceNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>carrier_shipment_reference_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The mode of transportation for this shipment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;transportationMode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;transportationMode&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>transportation_mode: <span class="prelude-ty">Option</span>&lt;TransportationMode&gt;,
     <span class="doccomment">/// Bill Of Lading (BOL) number is the unique number assigned by the vendor. The BOL present in the Shipment Confirmation message ideally matches the paper BOL provided with the shipment, but that is no must. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;billOfLadingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;billOfLadingNumber&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>bill_of_lading_number: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

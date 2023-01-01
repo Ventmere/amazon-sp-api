@@ -69,25 +69,25 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>BuyBoxPriceType {
     <span class="doccomment">/// Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;condition&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;condition&quot;</span>)]
     </span><span class="kw">pub </span>condition: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;offerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;offerType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>offer_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::OfferCustomerType&gt;,
     <span class="doccomment">/// Indicates at what quantity this price becomes active.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;quantityTier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;quantityTier&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>quantity_tier: <span class="prelude-ty">Option</span>&lt;i32&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;quantityDiscountType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;quantityDiscountType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>quantity_discount_type: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::QuantityDiscountType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;LandedPrice&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;LandedPrice&quot;</span>)]
     </span><span class="kw">pub </span>landed_price: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;ListingPrice&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ListingPrice&quot;</span>)]
     </span><span class="kw">pub </span>listing_price: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Shipping&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Shipping&quot;</span>)]
     </span><span class="kw">pub </span>shipping: Box&lt;<span class="kw">crate</span>::models::MoneyType&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;Points&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;Points&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>points: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Points&gt;&gt;,
     <span class="doccomment">/// The seller identifier for the offer.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

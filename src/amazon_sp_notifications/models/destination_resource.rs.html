@@ -47,9 +47,9 @@
 
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>DestinationResource {
-    <span class="attribute">#[serde(rename = <span class="string">&quot;sqs&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;sqs&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>sqs: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::SqsResource&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;eventBridge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;eventBridge&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>event_bridge: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::EventBridgeResource&gt;&gt;,
 }
 

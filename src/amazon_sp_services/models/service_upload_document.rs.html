@@ -76,13 +76,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ServiceUploadDocument {
     <span class="doccomment">/// The content type of the to-be-uploaded file
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentType&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentType&quot;</span>)]
     </span><span class="kw">pub </span>content_type: ContentType,
     <span class="doccomment">/// The content length of the to-be-uploaded file
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentLength&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentLength&quot;</span>)]
     </span><span class="kw">pub </span>content_length: f32,
     <span class="doccomment">/// An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;contentMD5&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;contentMD5&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>content_md5: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

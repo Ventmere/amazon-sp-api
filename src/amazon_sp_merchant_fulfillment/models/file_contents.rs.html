@@ -53,12 +53,12 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FileContents {
     <span class="doccomment">/// Data for printing labels, in the form of a Base64-encoded, GZip-compressed string.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Contents&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Contents&quot;</span>)]
     </span><span class="kw">pub </span>contents: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;FileType&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;FileType&quot;</span>)]
     </span><span class="kw">pub </span>file_type: <span class="kw">crate</span>::models::FileType,
     <span class="doccomment">/// An MD5 hash to validate the PDF document data, in the form of a Base64-encoded string.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;Checksum&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;Checksum&quot;</span>)]
     </span><span class="kw">pub </span>checksum: String,
 }
 

@@ -73,27 +73,27 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>InventorySummary {
     <span class="doccomment">/// The Amazon Standard Identification Number (ASIN) of an item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;asin&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>asin: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Amazon&#39;s fulfillment network SKU identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;fnSku&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;fnSku&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fn_sku: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The seller SKU of the item.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerSku&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerSku&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>seller_sku: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The condition of the item as described by the seller (for example, New Item).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;condition&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;condition&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>condition: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;inventoryDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;inventoryDetails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>inventory_details: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::InventoryDetails&gt;&gt;,
     <span class="doccomment">/// The date and time that any quantity was last updated.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;lastUpdatedTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;lastUpdatedTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>last_updated_time: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The localized language product title of the item within the specific marketplace.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;productName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;productName&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>product_name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The total number of units in an inbound shipment or in Amazon fulfillment centers.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;totalQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;totalQuantity&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>total_quantity: <span class="prelude-ty">Option</span>&lt;i32&gt;,
 }
 

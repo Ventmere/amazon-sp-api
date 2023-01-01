@@ -96,42 +96,42 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FulfillmentOrder {
     <span class="doccomment">/// The fulfillment order identifier submitted with the createFulfillmentOrder operation.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;sellerFulfillmentOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;sellerFulfillmentOrderId&quot;</span>)]
     </span><span class="kw">pub </span>seller_fulfillment_order_id: String,
     <span class="doccomment">/// The identifier for the marketplace the fulfillment order is placed against.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;marketplaceId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;marketplaceId&quot;</span>)]
     </span><span class="kw">pub </span>marketplace_id: String,
     <span class="doccomment">/// A fulfillment order identifier submitted with the createFulfillmentOrder operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;displayableOrderId&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;displayableOrderId&quot;</span>)]
     </span><span class="kw">pub </span>displayable_order_id: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;displayableOrderDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;displayableOrderDate&quot;</span>)]
     </span><span class="kw">pub </span>displayable_order_date: String,
     <span class="doccomment">/// A text block submitted with the createFulfillmentOrder operation. Displays in recipient-facing materials such as the packing slip.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;displayableOrderComment&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;displayableOrderComment&quot;</span>)]
     </span><span class="kw">pub </span>displayable_order_comment: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;shippingSpeedCategory&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;shippingSpeedCategory&quot;</span>)]
     </span><span class="kw">pub </span>shipping_speed_category: <span class="kw">crate</span>::models::ShippingSpeedCategory,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;deliveryWindow&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;deliveryWindow&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>delivery_window: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::DeliveryWindow&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;destinationAddress&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;destinationAddress&quot;</span>)]
     </span><span class="kw">pub </span>destination_address: Box&lt;<span class="kw">crate</span>::models::Address&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentAction&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentAction&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_action: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::FulfillmentAction&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentPolicy&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentPolicy&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_policy: <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::models::FulfillmentPolicy&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;codSettings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;codSettings&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>cod_settings: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::CodSettings&gt;&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;receivedDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;receivedDate&quot;</span>)]
     </span><span class="kw">pub </span>received_date: String,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;fulfillmentOrderStatus&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;fulfillmentOrderStatus&quot;</span>)]
     </span><span class="kw">pub </span>fulfillment_order_status: <span class="kw">crate</span>::models::FulfillmentOrderStatus,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;statusUpdatedDate&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;statusUpdatedDate&quot;</span>)]
     </span><span class="kw">pub </span>status_updated_date: String,
     <span class="doccomment">/// A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;notificationEmails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;notificationEmails&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>notification_emails: <span class="prelude-ty">Option</span>&lt;Vec&lt;String&gt;&gt;,
     <span class="doccomment">/// A list of features and their fulfillment policies to apply to the order.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;featureConstraints&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;featureConstraints&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>feature_constraints: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::FeatureSettings&gt;&gt;,
 }
 

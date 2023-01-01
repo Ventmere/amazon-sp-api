@@ -80,20 +80,20 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>Appointment {
     <span class="doccomment">/// The appointment identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;appointmentId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;appointmentId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>appointment_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// The status of the appointment.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;appointmentStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;appointmentStatus&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>appointment_status: <span class="prelude-ty">Option</span>&lt;AppointmentStatus&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;appointmentTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;appointmentTime&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>appointment_time: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::AppointmentTime&gt;&gt;,
     <span class="doccomment">/// A list of technicians assigned to the service job.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;assignedTechnicians&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;assignedTechnicians&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>assigned_technicians: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::Technician&gt;&gt;,
     <span class="doccomment">/// The appointment identifier.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;rescheduledAppointmentId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;rescheduledAppointmentId&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rescheduled_appointment_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[serde(rename = <span class="string">&quot;poa&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;poa&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>poa: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::Poa&gt;&gt;,
 }
 

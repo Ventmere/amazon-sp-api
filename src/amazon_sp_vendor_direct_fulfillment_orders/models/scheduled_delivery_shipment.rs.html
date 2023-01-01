@@ -54,13 +54,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>ScheduledDeliveryShipment {
     <span class="doccomment">/// Scheduled delivery service type.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;scheduledDeliveryServiceType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;scheduledDeliveryServiceType&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>scheduled_delivery_service_type: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Earliest nominated delivery date for the scheduled delivery.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;earliestNominatedDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;earliestNominatedDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>earliest_nominated_delivery_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
     <span class="doccomment">/// Latest nominated delivery date for the scheduled delivery.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;latestNominatedDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;latestNominatedDeliveryDate&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>latest_nominated_delivery_date: <span class="prelude-ty">Option</span>&lt;String&gt;,
 }
 

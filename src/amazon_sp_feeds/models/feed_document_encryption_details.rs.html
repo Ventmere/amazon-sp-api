@@ -66,13 +66,13 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>FeedDocumentEncryptionDetails {
     <span class="doccomment">/// The encryption standard required to encrypt or decrypt the document contents.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;standard&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;standard&quot;</span>)]
     </span><span class="kw">pub </span>standard: Standard,
     <span class="doccomment">/// The vector to encrypt or decrypt the document contents using Cipher Block Chaining (CBC).
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;initializationVector&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;initializationVector&quot;</span>)]
     </span><span class="kw">pub </span>initialization_vector: String,
     <span class="doccomment">/// The encryption key used to encrypt or decrypt the document contents.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;key&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;key&quot;</span>)]
     </span><span class="kw">pub </span>key: String,
 }
 

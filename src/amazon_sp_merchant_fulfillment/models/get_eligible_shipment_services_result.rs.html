@@ -58,16 +58,16 @@
 </span><span class="attribute">#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 </span><span class="kw">pub struct </span>GetEligibleShipmentServicesResult {
     <span class="doccomment">/// A list of shipping services offers.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;ShippingServiceList&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShippingServiceList&quot;</span>)]
     </span><span class="kw">pub </span>shipping_service_list: Vec&lt;<span class="kw">crate</span>::models::ShippingService&gt;,
     <span class="doccomment">/// List of services that were for some reason unavailable for this request
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;RejectedShippingServiceList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RejectedShippingServiceList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>rejected_shipping_service_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RejectedShippingService&gt;&gt;,
     <span class="doccomment">/// A list of temporarily unavailable carriers.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TemporarilyUnavailableCarrierList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TemporarilyUnavailableCarrierList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>temporarily_unavailable_carrier_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TemporarilyUnavailableCarrier&gt;&gt;,
     <span class="doccomment">/// List of carriers whose terms and conditions were not accepted by the seller.
-    </span><span class="attribute">#[serde(rename = <span class="string">&quot;TermsAndConditionsNotAcceptedCarrierList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TermsAndConditionsNotAcceptedCarrierList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>terms_and_conditions_not_accepted_carrier_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TermsAndConditionsNotAcceptedCarrier&gt;&gt;,
 }
 

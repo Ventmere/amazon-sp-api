@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct BuyerRequestedCancel {
     /// When true, the buyer has requested cancellation.
-    #[serde(default, rename = "IsBuyerRequestedCancel", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "IsBuyerRequestedCancel", skip_serializing_if = "Option::is_none", deserialize_with = "amazon_sp_api_shared::helpers::deserialize_opt_bool_from_string")]
     pub is_buyer_requested_cancel: Option<bool>,
     /// The reason that the buyer requested cancellation.
     #[serde(default, rename = "BuyerCancelReason", skip_serializing_if = "Option::is_none")]

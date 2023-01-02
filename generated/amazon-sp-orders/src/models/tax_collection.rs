@@ -50,12 +50,14 @@ impl Default for Model {
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum ResponsibleParty {
     #[serde(rename = "Amazon Services, Inc.")]
-    AmazonServicesInc,
+    ServicesInc,
+    #[serde(rename = "Amazon Commercial Services Pty Ltd")]
+    CommercialServicesPtyLtd,
 }
 
 impl Default for ResponsibleParty {
     fn default() -> ResponsibleParty {
-        Self::AmazonServicesInc
+        Self::ServicesInc
     }
 }
 

@@ -81,6 +81,7 @@ impl ModuleInfo {
       let replaces = &[
         ("src/models/product_info_detail.rs", r##"#[serde(default, rename = "NumberOfItems", skip_serializing_if = "Option::is_none")]"##, r##"#[serde(default, rename = "NumberOfItems", skip_serializing_if = "Option::is_none", deserialize_with = "amazon_sp_api_shared::helpers::deserialize_opt_i32_with_parse")]"##),
         ("src/models/order_item.rs", r##"#[serde(default, rename = "IsGift", skip_serializing_if = "Option::is_none")]"##, r##"#[serde(default, rename = "IsGift", skip_serializing_if = "Option::is_none", deserialize_with = "amazon_sp_api_shared::helpers::deserialize_opt_bool_from_string")]"##),
+        ("src/models/buyer_requested_cancel.rs", r##"#[serde(default, rename = "IsBuyerRequestedCancel", skip_serializing_if = "Option::is_none")]"##, r##"#[serde(default, rename = "IsBuyerRequestedCancel", skip_serializing_if = "Option::is_none", deserialize_with = "amazon_sp_api_shared::helpers::deserialize_opt_bool_from_string")]"##),
       ];
 
       for (file, from, to) in replaces {

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["ChargeRefundTransaction","ChargeRefundTransaction : The charge refund transaction."]]};

@@ -133,6 +133,28 @@
 <span id="133">133</span>
 <span id="134">134</span>
 <span id="135">135</span>
+<span id="136">136</span>
+<span id="137">137</span>
+<span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
+<span id="154">154</span>
+<span id="155">155</span>
+<span id="156">156</span>
+<span id="157">157</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for Finances
  *
@@ -152,6 +174,9 @@
     <span class="doccomment">/// A list of shipment event information.
     </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>shipment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
+    <span class="doccomment">/// A list of `ShipmentEvent` items.
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentSettleEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>shipment_settle_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
     <span class="doccomment">/// A list of shipment event information.
     </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RefundEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>refund_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
@@ -215,21 +240,34 @@
     <span class="doccomment">/// A list of expense information related to an affordability promotion.
     </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AffordabilityExpenseReversalEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>affordability_expense_reversal_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AffordabilityExpenseEvent&gt;&gt;,
-    <span class="doccomment">/// A list of information about trial shipment financial events.
-    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TrialShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
-    </span><span class="kw">pub </span>trial_shipment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TrialShipmentEvent&gt;&gt;,
-    <span class="doccomment">/// A list of information about shipment settle financial events.
-    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ShipmentSettleEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
-    </span><span class="kw">pub </span>shipment_settle_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ShipmentEvent&gt;&gt;,
-    <span class="doccomment">/// List of TaxWithholding events.
-    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxWithholdingEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
-    </span><span class="kw">pub </span>tax_withholding_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TaxWithholdingEvent&gt;&gt;,
     <span class="doccomment">/// A list of removal shipment event information.
     </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RemovalShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>removal_shipment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RemovalShipmentEvent&gt;&gt;,
     <span class="doccomment">/// A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
     </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;RemovalShipmentAdjustmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
     </span><span class="kw">pub </span>removal_shipment_adjustment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::RemovalShipmentAdjustmentEvent&gt;&gt;,
+    <span class="doccomment">/// A list of information about trial shipment financial events.
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TrialShipmentEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>trial_shipment_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TrialShipmentEvent&gt;&gt;,
+    <span class="doccomment">/// A list of `TDSReimbursementEvent` items.
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TDSReimbursementEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>tds_reimbursement_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TdsReimbursementEvent&gt;&gt;,
+    <span class="doccomment">/// A list of `AdhocDisbursement` events.
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;AdhocDisbursementEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>adhoc_disbursement_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::AdhocDisbursementEvent&gt;&gt;,
+    <span class="doccomment">/// A list of `TaxWithholding` events.
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;TaxWithholdingEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>tax_withholding_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::TaxWithholdingEvent&gt;&gt;,
+    <span class="doccomment">/// A list of charge refund events.
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;ChargeRefundEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>charge_refund_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::ChargeRefundEvent&gt;&gt;,
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;FailedAdhocDisbursementEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>failed_adhoc_disbursement_event_list: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::FailedAdhocDisbursementEventList&gt;&gt;,
+    <span class="attribute">#[serde(default, rename = <span class="string">&quot;ValueAddedServiceChargeEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>value_added_service_charge_event_list: <span class="prelude-ty">Option</span>&lt;Box&lt;<span class="kw">crate</span>::models::ValueAddedServiceChargeEventList&gt;&gt;,
+    <span class="doccomment">/// A list of `CapacityReservationBillingEvent` events.
+    </span><span class="attribute">#[serde(default, rename = <span class="string">&quot;CapacityReservationBillingEventList&quot;</span>, skip_serializing_if = <span class="string">&quot;Option::is_none&quot;</span>)]
+    </span><span class="kw">pub </span>capacity_reservation_billing_event_list: <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw">crate</span>::models::CapacityReservationBillingEvent&gt;&gt;,
 }
 
 <span class="kw">impl </span>FinancialEvents {
@@ -237,6 +275,7 @@
     </span><span class="kw">pub fn </span>new() -&gt; FinancialEvents {
         FinancialEvents {
             shipment_event_list: <span class="prelude-val">None</span>,
+            shipment_settle_event_list: <span class="prelude-val">None</span>,
             refund_event_list: <span class="prelude-val">None</span>,
             guarantee_claim_event_list: <span class="prelude-val">None</span>,
             chargeback_event_list: <span class="prelude-val">None</span>,
@@ -258,11 +297,16 @@
             network_commingling_transaction_event_list: <span class="prelude-val">None</span>,
             affordability_expense_event_list: <span class="prelude-val">None</span>,
             affordability_expense_reversal_event_list: <span class="prelude-val">None</span>,
-            trial_shipment_event_list: <span class="prelude-val">None</span>,
-            shipment_settle_event_list: <span class="prelude-val">None</span>,
-            tax_withholding_event_list: <span class="prelude-val">None</span>,
             removal_shipment_event_list: <span class="prelude-val">None</span>,
             removal_shipment_adjustment_event_list: <span class="prelude-val">None</span>,
+            trial_shipment_event_list: <span class="prelude-val">None</span>,
+            tds_reimbursement_event_list: <span class="prelude-val">None</span>,
+            adhoc_disbursement_event_list: <span class="prelude-val">None</span>,
+            tax_withholding_event_list: <span class="prelude-val">None</span>,
+            charge_refund_event_list: <span class="prelude-val">None</span>,
+            failed_adhoc_disbursement_event_list: <span class="prelude-val">None</span>,
+            value_added_service_charge_event_list: <span class="prelude-val">None</span>,
+            capacity_reservation_billing_event_list: <span class="prelude-val">None</span>,
         }
     }
 }

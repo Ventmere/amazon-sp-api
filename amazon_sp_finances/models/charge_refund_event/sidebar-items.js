@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["ChargeRefundEvent","ChargeRefundEvent : An event related to charge refund."]]};

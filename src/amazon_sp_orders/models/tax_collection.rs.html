@@ -57,6 +57,8 @@
 <span id="57">57</span>
 <span id="58">58</span>
 <span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for Orders
  *
@@ -96,6 +98,8 @@
 </span><span class="kw">pub enum </span>Model {
     <span class="attribute">#[serde(rename = <span class="string">&quot;MarketplaceFacilitator&quot;</span>)]
     </span>MarketplaceFacilitator,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;LowValueGoods&quot;</span>)]
+    </span>LowValueGoods,
 }
 
 <span class="kw">impl </span>Default <span class="kw">for </span>Model {

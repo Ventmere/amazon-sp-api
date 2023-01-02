@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["ValueAddedServiceChargeEventList","ValueAddedServiceChargeEventList : An event related to a value added service charge."]]};

@@ -303,6 +303,12 @@
 <span id="303">303</span>
 <span id="304">304</span>
 <span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
+<span id="310">310</span>
+<span id="311">311</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for Finances
  *
@@ -471,7 +477,7 @@
 }
 
 <span class="doccomment">/// Returns all financial events for the specified financial event group.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-</span><span class="kw">pub async fn </span>list_financial_events_by_group_id(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, event_group_id: <span class="kw-2">&amp;</span>str, max_results_per_page: <span class="prelude-ty">Option</span>&lt;i32&gt;, next_token: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListFinancialEventsResponse, Error&gt; {
+</span><span class="kw">pub async fn </span>list_financial_events_by_group_id(configuration: <span class="kw-2">&amp;</span>configuration::Configuration, event_group_id: <span class="kw-2">&amp;</span>str, max_results_per_page: <span class="prelude-ty">Option</span>&lt;i32&gt;, posted_after: <span class="prelude-ty">Option</span>&lt;String&gt;, posted_before: <span class="prelude-ty">Option</span>&lt;String&gt;, next_token: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::models::ListFinancialEventsResponse, Error&gt; {
     <span class="kw">let </span>local_var_configuration = configuration;
 
     <span class="kw">let </span>local_var_client = <span class="kw-2">&amp;</span>local_var_configuration.client;
@@ -484,6 +490,12 @@
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = max_results_per_page {
         url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;MaxResultsPerPage&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
+    }
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = posted_after {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;PostedAfter&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
+    }
+    <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = posted_before {
+        url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;PostedBefore&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);
     }
     <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>local_var_str) = next_token {
         url_builder = url_builder.query(<span class="kw-2">&amp;</span>[(<span class="string">&quot;NextToken&quot;</span>, <span class="kw-2">&amp;</span>local_var_str.to_string())]);

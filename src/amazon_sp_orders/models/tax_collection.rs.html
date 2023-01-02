@@ -59,6 +59,8 @@
 <span id="59">59</span>
 <span id="60">60</span>
 <span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
 </pre><pre class="rust"><code><span class="comment">/*
  * Selling Partner API for Orders
  *
@@ -111,12 +113,14 @@
 </span><span class="attribute">#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 </span><span class="kw">pub enum </span>ResponsibleParty {
     <span class="attribute">#[serde(rename = <span class="string">&quot;Amazon Services, Inc.&quot;</span>)]
-    </span>AmazonServicesInc,
+    </span>ServicesInc,
+    <span class="attribute">#[serde(rename = <span class="string">&quot;Amazon Commercial Services Pty Ltd&quot;</span>)]
+    </span>CommercialServicesPtyLtd,
 }
 
 <span class="kw">impl </span>Default <span class="kw">for </span>ResponsibleParty {
     <span class="kw">fn </span>default() -&gt; ResponsibleParty {
-        <span class="self">Self</span>::AmazonServicesInc
+        <span class="self">Self</span>::ServicesInc
     }
 }
 

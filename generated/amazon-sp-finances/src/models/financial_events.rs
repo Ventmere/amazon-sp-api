@@ -17,6 +17,9 @@ pub struct FinancialEvents {
     /// A list of shipment event information.
     #[serde(default, rename = "ShipmentEventList", skip_serializing_if = "Option::is_none")]
     pub shipment_event_list: Option<Vec<crate::models::ShipmentEvent>>,
+    /// A list of `ShipmentEvent` items.
+    #[serde(default, rename = "ShipmentSettleEventList", skip_serializing_if = "Option::is_none")]
+    pub shipment_settle_event_list: Option<Vec<crate::models::ShipmentEvent>>,
     /// A list of shipment event information.
     #[serde(default, rename = "RefundEventList", skip_serializing_if = "Option::is_none")]
     pub refund_event_list: Option<Vec<crate::models::ShipmentEvent>>,
@@ -80,21 +83,34 @@ pub struct FinancialEvents {
     /// A list of expense information related to an affordability promotion.
     #[serde(default, rename = "AffordabilityExpenseReversalEventList", skip_serializing_if = "Option::is_none")]
     pub affordability_expense_reversal_event_list: Option<Vec<crate::models::AffordabilityExpenseEvent>>,
-    /// A list of information about trial shipment financial events.
-    #[serde(default, rename = "TrialShipmentEventList", skip_serializing_if = "Option::is_none")]
-    pub trial_shipment_event_list: Option<Vec<crate::models::TrialShipmentEvent>>,
-    /// A list of information about shipment settle financial events.
-    #[serde(default, rename = "ShipmentSettleEventList", skip_serializing_if = "Option::is_none")]
-    pub shipment_settle_event_list: Option<Vec<crate::models::ShipmentEvent>>,
-    /// List of TaxWithholding events.
-    #[serde(default, rename = "TaxWithholdingEventList", skip_serializing_if = "Option::is_none")]
-    pub tax_withholding_event_list: Option<Vec<crate::models::TaxWithholdingEvent>>,
     /// A list of removal shipment event information.
     #[serde(default, rename = "RemovalShipmentEventList", skip_serializing_if = "Option::is_none")]
     pub removal_shipment_event_list: Option<Vec<crate::models::RemovalShipmentEvent>>,
     /// A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
     #[serde(default, rename = "RemovalShipmentAdjustmentEventList", skip_serializing_if = "Option::is_none")]
     pub removal_shipment_adjustment_event_list: Option<Vec<crate::models::RemovalShipmentAdjustmentEvent>>,
+    /// A list of information about trial shipment financial events.
+    #[serde(default, rename = "TrialShipmentEventList", skip_serializing_if = "Option::is_none")]
+    pub trial_shipment_event_list: Option<Vec<crate::models::TrialShipmentEvent>>,
+    /// A list of `TDSReimbursementEvent` items.
+    #[serde(default, rename = "TDSReimbursementEventList", skip_serializing_if = "Option::is_none")]
+    pub tds_reimbursement_event_list: Option<Vec<crate::models::TdsReimbursementEvent>>,
+    /// A list of `AdhocDisbursement` events.
+    #[serde(default, rename = "AdhocDisbursementEventList", skip_serializing_if = "Option::is_none")]
+    pub adhoc_disbursement_event_list: Option<Vec<crate::models::AdhocDisbursementEvent>>,
+    /// A list of `TaxWithholding` events.
+    #[serde(default, rename = "TaxWithholdingEventList", skip_serializing_if = "Option::is_none")]
+    pub tax_withholding_event_list: Option<Vec<crate::models::TaxWithholdingEvent>>,
+    /// A list of charge refund events.
+    #[serde(default, rename = "ChargeRefundEventList", skip_serializing_if = "Option::is_none")]
+    pub charge_refund_event_list: Option<Vec<crate::models::ChargeRefundEvent>>,
+    #[serde(default, rename = "FailedAdhocDisbursementEventList", skip_serializing_if = "Option::is_none")]
+    pub failed_adhoc_disbursement_event_list: Option<Box<crate::models::FailedAdhocDisbursementEventList>>,
+    #[serde(default, rename = "ValueAddedServiceChargeEventList", skip_serializing_if = "Option::is_none")]
+    pub value_added_service_charge_event_list: Option<Box<crate::models::ValueAddedServiceChargeEventList>>,
+    /// A list of `CapacityReservationBillingEvent` events.
+    #[serde(default, rename = "CapacityReservationBillingEventList", skip_serializing_if = "Option::is_none")]
+    pub capacity_reservation_billing_event_list: Option<Vec<crate::models::CapacityReservationBillingEvent>>,
 }
 
 impl FinancialEvents {
@@ -102,6 +118,7 @@ impl FinancialEvents {
     pub fn new() -> FinancialEvents {
         FinancialEvents {
             shipment_event_list: None,
+            shipment_settle_event_list: None,
             refund_event_list: None,
             guarantee_claim_event_list: None,
             chargeback_event_list: None,
@@ -123,11 +140,16 @@ impl FinancialEvents {
             network_commingling_transaction_event_list: None,
             affordability_expense_event_list: None,
             affordability_expense_reversal_event_list: None,
-            trial_shipment_event_list: None,
-            shipment_settle_event_list: None,
-            tax_withholding_event_list: None,
             removal_shipment_event_list: None,
             removal_shipment_adjustment_event_list: None,
+            trial_shipment_event_list: None,
+            tds_reimbursement_event_list: None,
+            adhoc_disbursement_event_list: None,
+            tax_withholding_event_list: None,
+            charge_refund_event_list: None,
+            failed_adhoc_disbursement_event_list: None,
+            value_added_service_charge_event_list: None,
+            capacity_reservation_billing_event_list: None,
         }
     }
 }

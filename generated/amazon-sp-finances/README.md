@@ -34,17 +34,22 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AdhocDisbursementEvent](docs/AdhocDisbursementEvent.md)
  - [AdjustmentEvent](docs/AdjustmentEvent.md)
  - [AdjustmentItem](docs/AdjustmentItem.md)
  - [AffordabilityExpenseEvent](docs/AffordabilityExpenseEvent.md)
+ - [CapacityReservationBillingEvent](docs/CapacityReservationBillingEvent.md)
  - [ChargeComponent](docs/ChargeComponent.md)
  - [ChargeInstrument](docs/ChargeInstrument.md)
+ - [ChargeRefundEvent](docs/ChargeRefundEvent.md)
+ - [ChargeRefundTransaction](docs/ChargeRefundTransaction.md)
  - [CouponPaymentEvent](docs/CouponPaymentEvent.md)
  - [Currency](docs/Currency.md)
  - [DebtRecoveryEvent](docs/DebtRecoveryEvent.md)
  - [DebtRecoveryItem](docs/DebtRecoveryItem.md)
  - [DirectPayment](docs/DirectPayment.md)
  - [Error](docs/Error.md)
+ - [FailedAdhocDisbursementEventList](docs/FailedAdhocDisbursementEventList.md)
  - [FbaLiquidationEvent](docs/FbaLiquidationEvent.md)
  - [FeeComponent](docs/FeeComponent.md)
  - [FinancialEventGroup](docs/FinancialEventGroup.md)
@@ -76,7 +81,9 @@ Class | Method | HTTP request | Description
  - [TaxWithheldComponent](docs/TaxWithheldComponent.md)
  - [TaxWithholdingEvent](docs/TaxWithholdingEvent.md)
  - [TaxWithholdingPeriod](docs/TaxWithholdingPeriod.md)
+ - [TdsReimbursementEvent](docs/TdsReimbursementEvent.md)
  - [TrialShipmentEvent](docs/TrialShipmentEvent.md)
+ - [ValueAddedServiceChargeEventList](docs/ValueAddedServiceChargeEventList.md)
 
 
 To get access to the crate's generated documentation, use:

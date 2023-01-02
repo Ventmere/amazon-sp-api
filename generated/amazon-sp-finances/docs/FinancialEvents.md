@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **shipment_event_list** | Option<[**Vec<crate::models::ShipmentEvent>**](ShipmentEvent.md)> | A list of shipment event information. | [optional]
+**shipment_settle_event_list** | Option<[**Vec<crate::models::ShipmentEvent>**](ShipmentEvent.md)> | A list of `ShipmentEvent` items. | [optional]
 **refund_event_list** | Option<[**Vec<crate::models::ShipmentEvent>**](ShipmentEvent.md)> | A list of shipment event information. | [optional]
 **guarantee_claim_event_list** | Option<[**Vec<crate::models::ShipmentEvent>**](ShipmentEvent.md)> | A list of shipment event information. | [optional]
 **chargeback_event_list** | Option<[**Vec<crate::models::ShipmentEvent>**](ShipmentEvent.md)> | A list of shipment event information. | [optional]
@@ -26,11 +27,16 @@ Name | Type | Description | Notes
 **network_commingling_transaction_event_list** | Option<[**Vec<crate::models::NetworkComminglingTransactionEvent>**](NetworkComminglingTransactionEvent.md)> | A list of network commingling transaction events. | [optional]
 **affordability_expense_event_list** | Option<[**Vec<crate::models::AffordabilityExpenseEvent>**](AffordabilityExpenseEvent.md)> | A list of expense information related to an affordability promotion. | [optional]
 **affordability_expense_reversal_event_list** | Option<[**Vec<crate::models::AffordabilityExpenseEvent>**](AffordabilityExpenseEvent.md)> | A list of expense information related to an affordability promotion. | [optional]
-**trial_shipment_event_list** | Option<[**Vec<crate::models::TrialShipmentEvent>**](TrialShipmentEvent.md)> | A list of information about trial shipment financial events. | [optional]
-**shipment_settle_event_list** | Option<[**Vec<crate::models::ShipmentEvent>**](ShipmentEvent.md)> | A list of information about shipment settle financial events. | [optional]
-**tax_withholding_event_list** | Option<[**Vec<crate::models::TaxWithholdingEvent>**](TaxWithholdingEvent.md)> | List of TaxWithholding events. | [optional]
 **removal_shipment_event_list** | Option<[**Vec<crate::models::RemovalShipmentEvent>**](RemovalShipmentEvent.md)> | A list of removal shipment event information. | [optional]
 **removal_shipment_adjustment_event_list** | Option<[**Vec<crate::models::RemovalShipmentAdjustmentEvent>**](RemovalShipmentAdjustmentEvent.md)> | A comma-delimited list of Removal shipmentAdjustment details for FBA inventory. | [optional]
+**trial_shipment_event_list** | Option<[**Vec<crate::models::TrialShipmentEvent>**](TrialShipmentEvent.md)> | A list of information about trial shipment financial events. | [optional]
+**tds_reimbursement_event_list** | Option<[**Vec<crate::models::TdsReimbursementEvent>**](TDSReimbursementEvent.md)> | A list of `TDSReimbursementEvent` items. | [optional]
+**adhoc_disbursement_event_list** | Option<[**Vec<crate::models::AdhocDisbursementEvent>**](AdhocDisbursementEvent.md)> | A list of `AdhocDisbursement` events. | [optional]
+**tax_withholding_event_list** | Option<[**Vec<crate::models::TaxWithholdingEvent>**](TaxWithholdingEvent.md)> | A list of `TaxWithholding` events. | [optional]
+**charge_refund_event_list** | Option<[**Vec<crate::models::ChargeRefundEvent>**](ChargeRefundEvent.md)> | A list of charge refund events. | [optional]
+**failed_adhoc_disbursement_event_list** | Option<[**crate::models::FailedAdhocDisbursementEventList**](FailedAdhocDisbursementEventList.md)> |  | [optional]
+**value_added_service_charge_event_list** | Option<[**crate::models::ValueAddedServiceChargeEventList**](ValueAddedServiceChargeEventList.md)> |  | [optional]
+**capacity_reservation_billing_event_list** | Option<[**Vec<crate::models::CapacityReservationBillingEvent>**](CapacityReservationBillingEvent.md)> | A list of `CapacityReservationBillingEvent` events. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

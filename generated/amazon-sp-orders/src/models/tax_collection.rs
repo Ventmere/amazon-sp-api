@@ -37,6 +37,8 @@ impl TaxCollection {
 pub enum Model {
     #[serde(rename = "MarketplaceFacilitator")]
     MarketplaceFacilitator,
+    #[serde(rename = "LowValueGoods")]
+    LowValueGoods,
 }
 
 impl Default for Model {

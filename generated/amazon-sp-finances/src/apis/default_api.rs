@@ -166,7 +166,7 @@ pub async fn list_financial_events(configuration: &configuration::Configuration,
 }
 
 /// Returns all financial events for the specified financial event group.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.5 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-pub async fn list_financial_events_by_group_id(configuration: &configuration::Configuration, event_group_id: &str, max_results_per_page: Option<i32>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventsResponse, Error> {
+pub async fn list_financial_events_by_group_id(configuration: &configuration::Configuration, event_group_id: &str, max_results_per_page: Option<i32>, posted_after: Option<String>, posted_before: Option<String>, next_token: Option<&str>) -> Result<crate::models::ListFinancialEventsResponse, Error> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -179,6 +179,12 @@ pub async fn list_financial_events_by_group_id(configuration: &configuration::Co
 
     if let Some(ref local_var_str) = max_results_per_page {
         url_builder = url_builder.query(&[("MaxResultsPerPage", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = posted_after {
+        url_builder = url_builder.query(&[("PostedAfter", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = posted_before {
+        url_builder = url_builder.query(&[("PostedBefore", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = next_token {
         url_builder = url_builder.query(&[("NextToken", &local_var_str.to_string())]);

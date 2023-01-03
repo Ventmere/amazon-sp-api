@@ -1,3 +1,3 @@
 [submodule "deps/selling-partner-api-models"]
 	path = deps/selling-partner-api-models
-	url = https://github.com/amzn/selling-partner-api-models.git
+	url = https://github.com/Ventmere/selling-partner-api-models.git

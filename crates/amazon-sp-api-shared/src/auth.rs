@@ -53,11 +53,16 @@ impl AuthState {
   }
 
   pub async fn get_access_token(&self, client: &Client) -> Result<String, SharedError> {
+    let mut should_refresh = false;
     if let Some(token) = self.token.read().as_ref().map(|v| v.clone()) {
       if token.expires_at.checked_duration_since(Instant::now()).map(|d| d > Duration::from_secs(60)).unwrap_or_default() {
         tracing::debug!("reuse token");
         return Ok(token.access_token)
       }
+      should_refresh = true;
+    };
+
+    if should_refresh {
       self.token.write().take();
     }
 

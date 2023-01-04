@@ -279,6 +279,11 @@
 <span id="279">279</span>
 <span id="280">280</span>
 <span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
 </pre><pre class="rust"><code><span class="kw">use </span>parking_lot::RwLock;
 <span class="kw">use </span>std::sync::Arc;
 <span class="kw">use </span>std::time::{Instant, Duration};
@@ -334,11 +339,16 @@
   }
 
   <span class="kw">pub async fn </span>get_access_token(<span class="kw-2">&amp;</span><span class="self">self</span>, client: <span class="kw-2">&amp;</span>Client) -&gt; <span class="prelude-ty">Result</span>&lt;String, SharedError&gt; {
+    <span class="kw">let </span><span class="kw-2">mut </span>should_refresh = <span class="bool-val">false</span>;
     <span class="kw">if let </span><span class="prelude-val">Some</span>(token) = <span class="self">self</span>.token.read().as_ref().map(|v| v.clone()) {
       <span class="kw">if </span>token.expires_at.checked_duration_since(Instant::now()).map(|d| d &gt; Duration::from_secs(<span class="number">60</span>)).unwrap_or_default() {
         <span class="macro">tracing::debug!</span>(<span class="string">&quot;reuse token&quot;</span>);
         <span class="kw">return </span><span class="prelude-val">Ok</span>(token.access_token)
       }
+      should_refresh = <span class="bool-val">true</span>;
+    };
+
+    <span class="kw">if </span>should_refresh {
       <span class="self">self</span>.token.write().take();
     }
 
